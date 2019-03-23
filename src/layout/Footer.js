@@ -9,7 +9,11 @@ class Footer extends React.Component {
   };
 
   render() {
-    return <h1>Hello from Footer </h1>;
+    return (
+      <footer className="footer mt-auto py-3 fixed-bottom bg-dark">
+        <span className="text-muted">Hello from the footer</span>
+      </footer>
+    );
   }
 }
 

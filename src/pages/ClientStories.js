@@ -1,5 +1,6 @@
 import React from "react";
 import * as contentful from "contentful";
+import ClientStoriesItem from "./clientStories/ClientStoriesItem";
 
 class ClientStories extends React.Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class ClientStories extends React.Component {
         <p>This is the Blog Page</p>
         <br />
         {this.state.posts.map(({ fields }, i) => (
-          <pre key={i}>{JSON.stringify(fields, null, 2)}</pre>
+          <ClientStoriesItem key={i} {...fields} />
         ))}
       </div>
     );
