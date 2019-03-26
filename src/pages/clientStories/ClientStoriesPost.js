@@ -32,6 +32,7 @@ class ClientStoriesPost extends React.Component {
           ))}
         </div>
         <Link
+          className="btn btn-primary"
           to={{
             pathname: "/client"
           }}
