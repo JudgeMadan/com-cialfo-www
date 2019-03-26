@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+const moment = require("moment");
 
 class ClientStoriesPost extends React.Component {
   constructor(props) {
@@ -10,18 +12,32 @@ class ClientStoriesPost extends React.Component {
     return (
       <div className="jumbotron jumbotron-fluid">
         <div className="container">
-          <h1>HELLO</h1>
           <h1 className="display-4">{this.state.title}</h1>
           <img
             className="rounded float-left img-thumbnail"
             src={this.state.icon}
           />
           <p className="lead">{this.state.content}</p>
+          <h3 className="display-5">School Successes</h3>
           {this.state.clientSchool.map((school, i) => (
-            <p>{school.fields.schoolName}</p>
+            <div key={i} className="card">
+              <p className="card-body">
+                <span>University: {school.fields.schoolName}</span>
+                <br />
+                <span>
+                  {moment(school.fields.admissionDate).format("MMMM D, YYYY")};
+                </span>
+              </p>
+            </div>
           ))}
-          {/* <p>{this.state.clientSchool[0].fields.schoolName}</p> */}
         </div>
+        <Link
+          to={{
+            pathname: "/client"
+          }}
+        >
+          Back to Clients
+        </Link>
       </div>
     );
   }

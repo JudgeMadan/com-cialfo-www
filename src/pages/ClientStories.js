@@ -34,7 +34,6 @@ class ClientStories extends React.Component {
   render() {
     return (
       <div>
-        <p>This is the Blog Page</p>
         <br />
         {this.state.posts.map(({ fields }, i) => (
           <ClientStoriesItem key={i} {...fields} />
