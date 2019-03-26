@@ -20,13 +20,16 @@ class ClientStories extends React.Component {
     this.fetchPosts().then(this.setPosts);
   }
 
-  fetchPosts = () => this.client.getEntries();
+  fetchPosts = () =>
+    this.client.getEntries({
+      content_type: "title"
+    });
 
   setPosts = response => {
     this.setState({
       posts: response.items
     });
-    console.log(this.state);
+    console.log(this.state.posts[0].fields);
   };
 
   render() {
