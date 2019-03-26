@@ -1,19 +1,29 @@
 import React from "react";
 
-const ClientStoriesPost = ({
-  location: {
-    state: { props }
+class ClientStoriesPost extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = props.location.state.props;
   }
-}) => (
-  <div className="jumbotron jumbotron-fluid">
-    <div className="container">
-      <h1>HELLO</h1>
-      <h1 className="display-4">{props.title}</h1>
-      <img className="rounded float-left img-thumbnail" src={props.icon} />
-      <p className="lead">{props.content}</p>
-      {/* <p className="lead">{props.clientSchool[0].schoolTitle}</p> */}
-      <p>{props.clientSchool[0].fields.schoolName}</p>
-    </div>
-  </div>
-);
+  render() {
+    console.log(this.state);
+    return (
+      <div className="jumbotron jumbotron-fluid">
+        <div className="container">
+          <h1>HELLO</h1>
+          <h1 className="display-4">{this.state.title}</h1>
+          <img
+            className="rounded float-left img-thumbnail"
+            src={this.state.icon}
+          />
+          <p className="lead">{this.state.content}</p>
+          {this.state.clientSchool.map((school, i) => (
+            <p>{school.fields.schoolName}</p>
+          ))}
+          {/* <p>{this.state.clientSchool[0].fields.schoolName}</p> */}
+        </div>
+      </div>
+    );
+  }
+}
 export default ClientStoriesPost;

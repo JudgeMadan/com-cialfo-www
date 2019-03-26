@@ -29,7 +29,6 @@ class ClientStories extends React.Component {
     this.setState({
       posts: response.items
     });
-    console.log(this.state.posts[0].fields);
   };
 
   render() {
