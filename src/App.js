@@ -6,9 +6,11 @@ import Router from "./layout/Router";
 class App extends Component {
   render() {
     return (
-      <div className="container">
-        <Header className="navbar navbar-expand-md navbar-dark fixed-top bg-dark" />
-        <Router />
+      <div>
+        <Header className="navbar-fixed-top stick" />
+        <div className="container">
+          <Router />
+        </div>
         <Footer />
       </div>
     );
