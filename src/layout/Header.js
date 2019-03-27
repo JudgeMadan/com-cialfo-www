@@ -1,5 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+// import Dropdown from "react-bootstrap/Dropdown";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 class Header extends React.Component {
   toggleNav = () => {
@@ -10,23 +14,35 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <NavLink to="/" className="navbar-brand">
-          Cialfo
-        </NavLink>
-        <ul className="navbar-nav mr-auto">
-          <li className="navbar-item">
+      <Navbar variant="dark" fixed="top" sticky="top" bg="dark" expand="lg">
+        <Navbar.Brand href="#home">
+          <NavLink to="/" className="navbar-brand">
+            Cialfo
+          </NavLink>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
             <NavLink className="nav-link" to="/client">
               Clients
             </NavLink>
-          </li>
-          <li className="navbar-item dropdown">
-            <NavLink className="nav-link" to="/feature">
-              Features
-            </NavLink>
-          </li>
-        </ul>
-      </div>
+            <NavDropdown title="Features" id="basic-nav-dropdown">
+              <NavLink
+                className="nav-link text-secondary"
+                to="/feature/feature-1"
+              >
+                Feature 1
+              </NavLink>
+              <NavLink
+                className="nav-link text-secondary"
+                to="/feature/feature-2"
+              >
+                Feature 2
+              </NavLink>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     );
   }
 }
