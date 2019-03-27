@@ -17,15 +17,15 @@ class Features extends React.Component {
   });
 
   componentDidMount() {
-    this.fetchPosts().then(this.setPosts);
+    this.fetchFeatures().then(this.setFeatures);
   }
 
-  fetchPosts = () =>
+  fetchFeatures = () =>
     this.client.getEntries({
       content_type: "features"
     });
 
-  setPosts = response => {
+  setFeatures = response => {
     this.setState({
       features: response.items
     });
