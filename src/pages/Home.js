@@ -6,7 +6,7 @@ class Home extends React.Component {
     super(props);
     this.state = {
       testArticles: [],
-      locale: "zh-CN"
+      locale: ""
     };
   }
 
@@ -26,7 +26,7 @@ class Home extends React.Component {
   fetchTestArticles = () =>
     this.client.getEntries({
       content_type: "testArticleGlobal",
-      locale: this.state.locale
+      locale: this.props.locale
     });
 
   setTestArticles = response => {

@@ -6,14 +6,32 @@ import ClientStoriesPost from "../pages/clientStories/ClientStoriesPost";
 import FeatureClusterItem from "../pages/features/FeatureClusterItem.js";
 import Home from "../pages/Home";
 
-const Router = () => (
-  <Switch>
-    <Route exact path="/" component={Home} />
-    <Route exact path="/client" component={ClientStories} />
-    <Route exact path="/feature" component={Features} />
-    <Route path="/feature/:featureClusterItem" component={FeatureClusterItem} />
-    <Route path="/client/:clientStoryItem" component={ClientStoriesPost} />
-  </Switch>
-);
-
+class Router extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <Home
+              locale={this.props.locale}
+              updateLocale={this.props.updateLocale}
+            />
+          )}
+        />
+        <Route exact path="/client" component={ClientStories} />
+        <Route exact path="/feature" component={Features} />
+        <Route
+          path="/feature/:featureClusterItem"
+          component={FeatureClusterItem}
+        />
+        <Route path="/client/:clientStoryItem" component={ClientStoriesPost} />
+      </Switch>
+    );
+  }
+}
 export default Router;
