@@ -11,9 +11,6 @@ class App extends Component {
     };
   }
 
-  // locale: "en-US"
-  // locale: "zh-CN"
-
   updateLocale = locale => {
     this.setState({
       locale: locale
@@ -21,11 +18,15 @@ class App extends Component {
   };
 
   render() {
+    console.log("App: " + this.state.locale);
     return (
       <div>
-        <Header className="navbar-fixed-top stick" />
+        <Header
+          updateLocale={this.updateLocale}
+          className="navbar-fixed-top stick"
+        />
         <div className="container">
-          <Router locale={this.state.locale} updateLocale={this.updateLocale} />
+          <Router locale={this.state.locale} />
         </div>
         <Footer />
       </div>

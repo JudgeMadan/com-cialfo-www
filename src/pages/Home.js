@@ -6,7 +6,7 @@ class Home extends React.Component {
     super(props);
     this.state = {
       testArticles: [],
-      locale: ""
+      locale: "en-US"
     };
   }
 
@@ -23,6 +23,12 @@ class Home extends React.Component {
     this.fetchTestArticles().then(this.setTestArticles);
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.locale !== this.props.locale) {
+      this.fetchTestArticles().then(this.setTestArticles);
+    }
+  }
+
   fetchTestArticles = () =>
     this.client.getEntries({
       content_type: "testArticleGlobal",
@@ -36,6 +42,7 @@ class Home extends React.Component {
   };
 
   render() {
+    console.log("Home: " + this.props.locale);
     return (
       <div className="jumbotron">
         <div className="container">

@@ -12,6 +12,10 @@ class Header extends React.Component {
     }));
   };
 
+  updateLocale = locale => {
+    this.props.updateLocale(locale);
+  };
+
   render() {
     return (
       <Navbar variant="dark" fixed="top" sticky="top" bg="dark" expand="lg">
@@ -29,6 +33,14 @@ class Header extends React.Component {
             <Link className="nav-link" to="/feature">
               Features
             </Link>
+            <NavDropdown title="Language">
+              <NavDropdown.Item onClick={() => this.updateLocale("en-US")}>
+                English
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={() => this.updateLocale("zh-CN")}>
+                Chinese
+              </NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
