@@ -11,18 +11,12 @@ class Router extends React.Component {
     super(props);
   }
   render() {
-    console.log(this.props);
     return (
       <Switch>
         <Route
           exact
           path="/"
-          render={() => (
-            <Home
-              locale={this.props.locale}
-              updateLocale={this.props.updateLocale}
-            />
-          )}
+          render={() => <Home locale={this.props.locale} />}
         />
         <Route exact path="/client" component={ClientStories} />
         <Route exact path="/feature" component={Features} />

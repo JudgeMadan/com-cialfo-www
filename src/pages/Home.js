@@ -6,12 +6,9 @@ class Home extends React.Component {
     super(props);
     this.state = {
       testArticles: [],
-      locale: "en-US"
+      locale: ""
     };
   }
-
-  // locale: "en-US"
-  // locale: "zh-CN"
 
   client = contentful.createClient({
     space: "kn93hfefankj",
@@ -42,7 +39,6 @@ class Home extends React.Component {
   };
 
   render() {
-    console.log("Home: " + this.props.locale);
     return (
       <div className="jumbotron">
         <div className="container">

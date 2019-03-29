@@ -6,12 +6,6 @@ import { Link } from "react-router-dom";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 class Header extends React.Component {
-  toggleNav = () => {
-    this.setState(prevState => ({
-      isActive: !prevState.isActive
-    }));
-  };
-
   updateLocale = locale => {
     this.props.updateLocale(locale);
   };

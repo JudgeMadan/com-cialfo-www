@@ -7,7 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      locale: "en-US"
+      locale: ""
     };
   }
 
@@ -18,7 +18,6 @@ class App extends Component {
   };
 
   render() {
-    console.log("App: " + this.state.locale);
     return (
       <div>
         <Header
