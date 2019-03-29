@@ -1,13 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-
 class Footer extends React.Component {
-  toggleNav = () => {
-    this.setState(prevState => ({
-      isActive: !prevState.isActive
-    }));
-  };
-
   render() {
     return (
       <div className="navbar pt-0 navbar-expand-md navbar-dark fixed-bottom bg-dark">
