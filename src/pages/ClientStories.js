@@ -6,7 +6,8 @@ class ClientStories extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: []
+      posts: [],
+      loadLimit: 1
     };
   }
 
@@ -22,7 +23,8 @@ class ClientStories extends React.Component {
 
   fetchClients = () =>
     this.client.getEntries({
-      content_type: "title"
+      content_type: "title",
+      limit: this.state.loadLimit
     });
 
   setClients = response => {
@@ -31,13 +33,26 @@ class ClientStories extends React.Component {
     });
   };
 
+  loadOneMore = () => {
+    this.setState({
+      loadLimit: this.state.loadLimit + 1
+    });
+    this.fetchClients().then(this.setClients);
+  };
+
+  // componentDidUpdate() {
+  //   this.fetchClients().then(this.setClients);
+  // }
+
   render() {
+    console.log(this.state.loadLimit);
     return (
       <div>
         <br />
         {this.state.posts.map(({ fields }, i) => (
           <ClientStoriesItem key={i} {...fields} />
         ))}
+        <button onClick={() => this.loadOneMore()}>Add Client Story</button>
       </div>
     );
   }
