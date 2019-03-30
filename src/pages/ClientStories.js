@@ -22,12 +22,6 @@ class ClientStories extends React.Component {
     this.fetchClients().then(this.setClients);
   }
 
-  // componentDidUpdate(prevState) {
-  //   if (prevState.state.loadLimit !== this.state.loadLimit) {
-  //     this.fetchClients().then(this.setClients);
-  //   }
-  // }
-
   fetchClients = () =>
     this.client.getEntries({
       content_type: "title",
