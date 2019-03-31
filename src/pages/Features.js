@@ -1,12 +1,15 @@
 import React from "react";
 import * as contentful from "contentful";
 import FeatureCluster from "./features/FeatureCluster";
+import Button from "react-bootstrap/Button";
 
 class Features extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      features: []
+      features: [],
+      skip: 0,
+      loadLimit: 1
     };
   }
 
@@ -22,13 +25,24 @@ class Features extends React.Component {
 
   fetchFeatures = () =>
     this.client.getEntries({
-      content_type: "features"
+      content_type: "features",
+      limit: this.state.loadLimit,
+      skip: this.state.skip
     });
 
   setFeatures = response => {
     this.setState({
       features: response.items
     });
+  };
+
+  loadMore = () => {
+    this.setState(
+      {
+        skip: this.state.skip + 1
+      },
+      () => this.fetchFeatures().then(this.setFeatures)
+    );
   };
 
   render() {
@@ -39,6 +53,9 @@ class Features extends React.Component {
         {this.state.features.map(({ fields }, i) => (
           <FeatureCluster key={i} {...fields} />
         ))}
+        <Button variant="info" onClick={() => this.loadMore()}>
+          Add Feature Story
+        </Button>
       </div>
     );
   }

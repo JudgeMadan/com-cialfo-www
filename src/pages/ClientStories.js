@@ -1,12 +1,15 @@
 import React from "react";
 import * as contentful from "contentful";
 import ClientStoriesItem from "./clientStories/ClientStoriesItem";
+import Button from "react-bootstrap/Button";
 
 class ClientStories extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: []
+      posts: [],
+      loadLimit: 1,
+      skip: 0
     };
   }
 
@@ -22,7 +25,9 @@ class ClientStories extends React.Component {
 
   fetchClients = () =>
     this.client.getEntries({
-      content_type: "title"
+      content_type: "title",
+      limit: this.state.loadLimit,
+      skip: this.state.skip
     });
 
   setClients = response => {
@@ -31,13 +36,27 @@ class ClientStories extends React.Component {
     });
   };
 
+  loadMore = () => {
+    this.setState(
+      {
+        loadLimit: this.state.loadLimit + 1
+      },
+      () => this.fetchClients().then(this.setClients)
+    );
+  };
+
   render() {
+    console.log(this.state.loadLimit);
+    console.log(this.state.posts);
     return (
       <div>
         <br />
         {this.state.posts.map(({ fields }, i) => (
           <ClientStoriesItem key={i} {...fields} />
         ))}
+        <Button variant="info" onClick={() => this.loadMore()}>
+          Add Client Story
+        </Button>
       </div>
     );
   }
