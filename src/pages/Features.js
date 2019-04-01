@@ -9,7 +9,8 @@ class Features extends React.Component {
     this.state = {
       features: [],
       skip: 0,
-      loadLimit: 1
+      loadLimit: 1,
+      canAddFeatures: true
     };
   }
 
@@ -42,24 +43,40 @@ class Features extends React.Component {
       {
         skip: this.state.skip + 1
       },
-      () => this.fetchFeatures().then(this.setFeatures)
+      () =>
+        this.fetchFeatures().then(response => {
+          if (response.items.length > 0) {
+            this.setFeatures(response);
+          } else {
+            console.log("welp");
+            return;
+          }
+        })
     );
   };
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div>
         <br />
         {this.state.features.map(({ fields }, i) => (
           <FeatureCluster key={i} {...fields} />
         ))}
-        <Button variant="info" onClick={() => this.loadMore()}>
-          Add Feature Story
-        </Button>
+        {this.state.canAddFeatures && (
+          <Button variant="info" onClick={() => this.loadMore()}>
+            Add Feature Story
+          </Button>
+        )}
       </div>
     );
   }
 }
+
+// {this.state.i == (this.props.podcasts.length + 1) * -1 && (
+//   <div className="row">
+//     <h1>No more podcasts</h1>
+//   </div>
+// )}
 
 export default Features;
