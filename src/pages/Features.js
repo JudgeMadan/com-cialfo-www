@@ -48,8 +48,9 @@ class Features extends React.Component {
           if (response.items.length > 0) {
             this.setFeatures(response);
           } else {
-            console.log("welp");
-            return;
+            this.setState({
+              canAddFeatures: false
+            });
           }
         })
     );
@@ -67,6 +68,9 @@ class Features extends React.Component {
           <Button variant="info" onClick={() => this.loadMore()}>
             Add Feature Story
           </Button>
+        )}
+        {this.state.canAddFeatures == false && (
+          <Button variant="warning">No More Features :/</Button>
         )}
       </div>
     );
