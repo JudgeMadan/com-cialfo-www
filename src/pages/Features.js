@@ -73,10 +73,4 @@ class Features extends React.Component {
   }
 }
 
-// {this.state.i == (this.props.podcasts.length + 1) * -1 && (
-//   <div className="row">
-//     <h1>No more podcasts</h1>
-//   </div>
-// )}
-
 export default Features;
