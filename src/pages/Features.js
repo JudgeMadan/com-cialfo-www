@@ -23,12 +23,13 @@ class Features extends React.Component {
     this.fetchFeatures().then(this.setFeatures);
   }
 
-  fetchFeatures = () =>
-    this.client.getEntries({
+  fetchFeatures = () => {
+    return this.client.getEntries({
       content_type: "features",
       limit: this.state.loadLimit,
       skip: this.state.skip
     });
+  };
 
   setFeatures = response => {
     this.setState({

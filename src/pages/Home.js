@@ -13,7 +13,8 @@ class Home extends React.Component {
   client = contentful.createClient({
     space: "kn93hfefankj",
     accessToken:
-      "bddb1871044902e088b9aec331fca83c23351f0f2c390633d7a8e1b428317981"
+      "bddb1871044902e088b9aec331fca83c23351f0f2c390633d7a8e1b428317981",
+    fallbackCode: null
   });
 
   componentDidMount() {
@@ -39,11 +40,14 @@ class Home extends React.Component {
   };
 
   render() {
+    const filteredResults = this.state.testArticles.filter(
+      article => article.fields.localized_2
+    );
     return (
       <div className="jumbotron">
         <div className="container">
           <h1 className="col-sm display-4">Welcome to Cialfo</h1>
-          {this.state.testArticles.map(({ fields }, i) => (
+          {filteredResults.map(({ fields }, i) => (
             <HomeItem key={i} {...fields} />
           ))}
         </div>
