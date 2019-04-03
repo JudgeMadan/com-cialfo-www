@@ -57,7 +57,6 @@ class Features extends React.Component {
   };
 
   render() {
-    // console.log(this.state);
     return (
       <div>
         <br />
@@ -69,7 +68,7 @@ class Features extends React.Component {
             Add Feature Story
           </Button>
         )}
-        {this.state.canAddFeatures == false && (
+        {this.state.canAddFeatures === false && (
           <Button variant="warning">No More Features :/</Button>
         )}
       </div>
