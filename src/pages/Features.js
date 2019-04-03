@@ -11,13 +11,14 @@ class Features extends React.Component {
     super(props);
     this.state = {
       features: {},
+      image: null,
       skip: 0,
       loadLimit: 1,
       canAddFeatures: true,
-      locale: "zh-CN"
+      locale: "en-US"
     };
   }
-
+  image = "hey";
   client = contentful.createClient({
     space: "1acwuo4zy8aa",
     accessToken:
@@ -39,7 +40,9 @@ class Features extends React.Component {
 
   setFeatures = response => {
     this.setState({
-      features: response.items[0].fields
+      features: response.items[0].fields,
+      image:
+        response.items[0].fields.featuresPageTeacherPortalImage2.fields.file.url
     });
   };
 
@@ -62,8 +65,8 @@ class Features extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     const features = this.state.features;
-    console.log(features);
     return (
       <Container>
         <Row className="justify-content-md-center">
@@ -74,7 +77,7 @@ class Features extends React.Component {
         </Row>
         <Row>
           <Col>
-            <img src={features.featuresPageTeacherPortalImage} />
+            <img src={this.state.image} />
           </Col>
           <Col>
             <Row>{features.featuresPageTeacherPortalTitle}</Row>
