@@ -2,22 +2,26 @@ import React from "react";
 import * as contentful from "contentful";
 import FeatureCluster from "./features/FeatureCluster";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 class Features extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      features: [],
+      features: {},
       skip: 0,
       loadLimit: 1,
-      canAddFeatures: true
+      canAddFeatures: true,
+      locale: "zh-CN"
     };
   }
 
   client = contentful.createClient({
-    space: "kn93hfefankj",
+    space: "1acwuo4zy8aa",
     accessToken:
-      "bddb1871044902e088b9aec331fca83c23351f0f2c390633d7a8e1b428317981"
+      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
   });
 
   componentDidMount() {
@@ -26,15 +30,16 @@ class Features extends React.Component {
 
   fetchFeatures = () => {
     return this.client.getEntries({
-      content_type: "features",
+      content_type: "featuresPage",
       limit: this.state.loadLimit,
-      skip: this.state.skip
+      skip: this.state.skip,
+      locale: this.state.locale
     });
   };
 
   setFeatures = response => {
     this.setState({
-      features: response.items
+      features: response.items[0].fields
     });
   };
 
@@ -57,22 +62,46 @@ class Features extends React.Component {
   };
 
   render() {
-    // console.log(this.state);
+    const features = this.state.features;
+    console.log(features);
     return (
-      <div>
-        <br />
-        {this.state.features.map(({ fields }, i) => (
-          <FeatureCluster key={i} {...fields} />
-        ))}
-        {this.state.canAddFeatures && (
-          <Button variant="info" onClick={() => this.loadMore()}>
-            Add Feature Story
-          </Button>
-        )}
-        {this.state.canAddFeatures == false && (
-          <Button variant="warning">No More Features :/</Button>
-        )}
-      </div>
+      <Container>
+        <Row className="justify-content-md-center">
+          {features.featuresPageTitle}
+        </Row>
+        <Row className="justify-content-md-center">
+          <img src={features.featuresPageCdProductImage} />
+        </Row>
+        <Row>
+          <Col>
+            <img src={features.featuresPageTeacherPortalImage} />
+          </Col>
+          <Col>
+            <Row>{features.featuresPageTeacherPortalTitle}</Row>
+            <Row>{features.featuresPageTeacherPortalBlurb}</Row>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Row>{features.featuresPageTranscriptTitle}</Row>
+            <Row>{features.featuresPageTranscriptBlurb}</Row>
+          </Col>
+          <Col>
+            <img src={features.featuresPageTranscriptImage} />
+          </Col>
+        </Row>
+        <Row className="justify-content-md-center">
+          {features.featuresPagePartnersTitle}
+        </Row>
+        <Row>
+          <Col>
+            <img src={features.featuresPagePartnersCommonApp} />
+          </Col>
+          <Col>
+            <img src={features.featuresPagePartnersParchment} />
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
