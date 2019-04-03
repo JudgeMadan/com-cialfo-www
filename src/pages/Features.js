@@ -70,7 +70,9 @@ class Features extends React.Component {
     return (
       <Container>
         <Row className="justify-content-md-center">
-          {features.featuresPageTitle}
+          <h1 className="justify-content-md-center">
+            {features.featuresPageTitle}
+          </h1>
         </Row>
         <Row className="justify-content-md-center">
           <img src={features.featuresPageCdProductImage} />
@@ -81,7 +83,11 @@ class Features extends React.Component {
           </Col>
           <Col>
             <Row>{features.featuresPageTeacherPortalTitle}</Row>
-            <Row>{features.featuresPageTeacherPortalBlurb}</Row>
+            <Row>
+              <span className="text-right">
+                {features.featuresPageTeacherPortalBlurb}
+              </span>
+            </Row>
           </Col>
         </Row>
         <Row>
@@ -90,7 +96,8 @@ class Features extends React.Component {
             <Row>{features.featuresPageTranscriptBlurb}</Row>
           </Col>
           <Col>
-            <img src={features.featuresPageTranscriptImage} />
+            <img src={this.state.image} />
+            {/* <img src={features.featuresPageTranscriptImage} /> */}
           </Col>
         </Row>
         <Row className="justify-content-md-center">
