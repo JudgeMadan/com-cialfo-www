@@ -18,7 +18,6 @@ class Features extends React.Component {
       locale: "en-US"
     };
   }
-  image = "hey";
   client = contentful.createClient({
     space: "1acwuo4zy8aa",
     accessToken:
@@ -65,14 +64,11 @@ class Features extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     const features = this.state.features;
     return (
       <Container>
-        <Row className="justify-content-md-center">
-          <h1 className="justify-content-md-center">
-            {features.featuresPageTitle}
-          </h1>
+        <Row>
+          <h1 className="text-center">{features.featuresPageTitle}</h1>
         </Row>
         <Row className="justify-content-md-center">
           <img src={features.featuresPageCdProductImage} />
@@ -82,33 +78,44 @@ class Features extends React.Component {
             <img src={this.state.image} />
           </Col>
           <Col>
-            <Row>{features.featuresPageTeacherPortalTitle}</Row>
             <Row>
-              <span className="text-right">
+              <h1 className="text-right">
+                {features.featuresPageTeacherPortalTitle}
+              </h1>
+            </Row>
+            <Row>
+              <p className="text-right">
                 {features.featuresPageTeacherPortalBlurb}
-              </span>
+              </p>
             </Row>
           </Col>
         </Row>
         <Row>
           <Col>
-            <Row>{features.featuresPageTranscriptTitle}</Row>
-            <Row>{features.featuresPageTranscriptBlurb}</Row>
+            <Row className="pb-5">
+              <h1>{features.featuresPageTranscriptTitle}</h1>
+            </Row>
+            <Row>
+              <p>{features.featuresPageTranscriptBlurb}</p>
+            </Row>
           </Col>
           <Col>
             <img src={this.state.image} />
-            {/* <img src={features.featuresPageTranscriptImage} /> */}
           </Col>
         </Row>
         <Row className="justify-content-md-center">
-          {features.featuresPagePartnersTitle}
+          <h1>{features.featuresPagePartnersTitle}</h1>
         </Row>
         <Row>
           <Col>
-            <img src={features.featuresPagePartnersCommonApp} />
+            <Row className="justify-content-md-start">
+              <img src={features.featuresPagePartnersCommonApp} />
+            </Row>
           </Col>
           <Col>
-            <img src={features.featuresPagePartnersParchment} />
+            <Row className="justify-content-md-end">
+              <img src={features.featuresPagePartnersParchment} />
+            </Row>
           </Col>
         </Row>
       </Container>
