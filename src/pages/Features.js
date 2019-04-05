@@ -2,22 +2,26 @@ import React from "react";
 import * as contentful from "contentful";
 import FeatureCluster from "./features/FeatureCluster";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 class Features extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      features: [],
+      features: {},
+      image: null,
       skip: 0,
       loadLimit: 1,
-      canAddFeatures: true
+      canAddFeatures: true,
+      locale: "en-US"
     };
   }
-
   client = contentful.createClient({
-    space: "kn93hfefankj",
+    space: "1acwuo4zy8aa",
     accessToken:
-      "bddb1871044902e088b9aec331fca83c23351f0f2c390633d7a8e1b428317981"
+      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
   });
 
   componentDidMount() {
@@ -26,15 +30,18 @@ class Features extends React.Component {
 
   fetchFeatures = () => {
     return this.client.getEntries({
-      content_type: "features",
+      content_type: "featuresPage",
       limit: this.state.loadLimit,
-      skip: this.state.skip
+      skip: this.state.skip,
+      locale: this.state.locale
     });
   };
 
   setFeatures = response => {
     this.setState({
-      features: response.items
+      features: response.items[0].fields,
+      image:
+        response.items[0].fields.featuresPageTeacherPortalImage2.fields.file.url
     });
   };
 
@@ -57,21 +64,61 @@ class Features extends React.Component {
   };
 
   render() {
+    const features = this.state.features;
     return (
-      <div>
-        <br />
-        {this.state.features.map(({ fields }, i) => (
-          <FeatureCluster key={i} {...fields} />
-        ))}
-        {this.state.canAddFeatures && (
-          <Button variant="info" onClick={() => this.loadMore()}>
-            Add Feature Story
-          </Button>
-        )}
-        {this.state.canAddFeatures === false && (
-          <Button variant="warning">No More Features :/</Button>
-        )}
-      </div>
+      <Container>
+        <Row>
+          <h1 className="text-center">{features.featuresPageTitle}</h1>
+        </Row>
+        <Row className="pb-5 justify-content-md-center">
+          <img src={features.featuresPageCdProductImage} />
+        </Row>
+        <Row className="pb-5">
+          <Col>
+            <img src={this.state.image} />
+          </Col>
+          <Col>
+            <Row>
+              <h1 className="text-right">
+                {features.featuresPageTeacherPortalTitle}
+              </h1>
+            </Row>
+            <Row>
+              <p className="text-right">
+                {features.featuresPageTeacherPortalBlurb}
+              </p>
+            </Row>
+          </Col>
+        </Row>
+        <Row className="pb-5">
+          <Col>
+            <Row>
+              <h1>{features.featuresPageTranscriptTitle}</h1>
+            </Row>
+            <Row>
+              <p>{features.featuresPageTranscriptBlurb}</p>
+            </Row>
+          </Col>
+          <Col>
+            <img src={this.state.image} />
+          </Col>
+        </Row>
+        <Row className="justify-content-md-center">
+          <h1>{features.featuresPagePartnersTitle}</h1>
+        </Row>
+        <Row>
+          <Col>
+            <Row className="justify-content-md-start">
+              <img src={features.featuresPagePartnersCommonApp} />
+            </Row>
+          </Col>
+          <Col>
+            <Row className="justify-content-md-end">
+              <img src={features.featuresPagePartnersParchment} />
+            </Row>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
