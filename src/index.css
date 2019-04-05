@@ -22,3 +22,7 @@ code {
 #testContentBlue {
   background-color: blue;
 }
+
+.footerListGroupItem {
+  border: none;
+}
