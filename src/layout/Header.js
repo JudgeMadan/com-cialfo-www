@@ -12,31 +12,40 @@ class Header extends React.Component {
 
   render() {
     return (
-      <Navbar variant="dark" fixed="top" sticky="top" bg="dark" expand="lg">
-        <Navbar.Brand href="#home">
+      <Navbar
+        bg="light"
+        className="justify-content-between"
+        fixed="top"
+        sticky="top"
+        expand="lg"
+      >
+        <Nav href="#home">
           <Link to="/" className="navbar-brand">
-            Cialfo
+            Cialfo Logo
           </Link>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Link className="nav-link" to="/client">
-              Clients
-            </Link>
-            <Link className="nav-link" to="/feature">
-              Features
-            </Link>
-            <NavDropdown title="Language">
-              <NavDropdown.Item onClick={() => this.updateLocale("en-US")}>
-                English
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={() => this.updateLocale("zh-CN")}>
-                Chinese
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
+        </Nav>
+        <Nav className="justify-content-end">
+          <Link className="nav-link" to="/client">
+            Features
+          </Link>
+          <Link className="nav-link" to="/pricing">
+            Pricing
+          </Link>
+          <Link className="nav-link" to="/about">
+            About
+          </Link>
+          <Link className="nav-link" to="/contact">
+            Contact
+          </Link>
+          <NavDropdown title="Language">
+            <NavDropdown.Item onClick={() => this.updateLocale("en-US")}>
+              English
+            </NavDropdown.Item>
+            <NavDropdown.Item onClick={() => this.updateLocale("zh-CN")}>
+              Chinese
+            </NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
       </Navbar>
     );
   }
