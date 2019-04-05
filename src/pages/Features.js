@@ -70,10 +70,10 @@ class Features extends React.Component {
         <Row>
           <h1 className="text-center">{features.featuresPageTitle}</h1>
         </Row>
-        <Row className="justify-content-md-center">
+        <Row className="pb-5 justify-content-md-center">
           <img src={features.featuresPageCdProductImage} />
         </Row>
-        <Row>
+        <Row className="pb-5">
           <Col>
             <img src={this.state.image} />
           </Col>
@@ -90,9 +90,9 @@ class Features extends React.Component {
             </Row>
           </Col>
         </Row>
-        <Row>
+        <Row className="pb-5">
           <Col>
-            <Row className="pb-5">
+            <Row>
               <h1>{features.featuresPageTranscriptTitle}</h1>
             </Row>
             <Row>
