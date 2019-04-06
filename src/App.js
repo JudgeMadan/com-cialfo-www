@@ -20,14 +20,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header
-          updateLocale={this.updateLocale}
-          className="navbar-fixed-top stick"
-        />
-        <div className="container">
-          <Router locale={this.state.locale} />
-        </div>
-        <Footer />
+        <Header />
+        <Router className="testContentBlue" locale={this.state.locale} />
+        <Footer className="testContentBlue" />
       </div>
     );
   }
