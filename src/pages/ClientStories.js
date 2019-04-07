@@ -2,21 +2,20 @@ import React from "react";
 import * as contentful from "contentful";
 import ClientStoriesItem from "./clientStories/ClientStoriesItem";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 class ClientStories extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      posts: [],
-      loadLimit: 1,
-      skip: 0
-    };
+    this.state = {};
   }
 
   client = contentful.createClient({
-    space: "kn93hfefankj",
+    space: "1acwuo4zy8aa",
     accessToken:
-      "bddb1871044902e088b9aec331fca83c23351f0f2c390633d7a8e1b428317981"
+      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
   });
 
   componentDidMount() {
@@ -25,15 +24,19 @@ class ClientStories extends React.Component {
 
   fetchClients = () =>
     this.client.getEntries({
-      content_type: "title",
+      content_type: "clientStoryPage",
       limit: this.state.loadLimit,
       skip: this.state.skip
     });
 
   setClients = response => {
-    this.setState({
-      posts: response.items
-    });
+    const clientStoryPageStory =
+      response.items[0].fields.clientStoryPageStory.fields;
+    for (let key in clientStoryPageStory) {
+      this.setState({
+        [key]: clientStoryPageStory[key]
+      });
+    }
   };
 
   loadMore = () => {
@@ -46,18 +49,11 @@ class ClientStories extends React.Component {
   };
 
   render() {
-    console.log(this.state.loadLimit);
-    console.log(this.state.posts);
+    console.log(this.state);
     return (
-      <div>
-        <br />
-        {this.state.posts.map(({ fields }, i) => (
-          <ClientStoriesItem key={i} {...fields} />
-        ))}
-        <Button variant="info" onClick={() => this.loadMore()}>
-          Add Client Story
-        </Button>
-      </div>
+      <Container>
+        {/* <Row>{this.state.clientStoryPage.fields.clientStorySchoolName}</Row> */}
+      </Container>
     );
   }
 }
