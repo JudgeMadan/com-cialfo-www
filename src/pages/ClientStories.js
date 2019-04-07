@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+// import location from "icons/location";
 
 class ClientStories extends React.Component {
   constructor(props) {
@@ -52,7 +53,55 @@ class ClientStories extends React.Component {
     console.log(this.state);
     return (
       <Container>
-        {/* <Row>{this.state.clientStoryPage.fields.clientStorySchoolName}</Row> */}
+        <Row>
+          <Col>
+            <Row>
+              <p className="font-weight-bold">
+                {this.state.clientStorySchoolName}
+              </p>
+            </Row>
+            <Row>{this.state.clientStoryStoryBlurb}</Row>
+          </Col>
+          <Col>
+            <Row>
+              <img src={this.state.clientStorySchoolImage} />
+            </Row>
+          </Col>
+        </Row>
+        <Row className="mt-5">
+          <Col>
+            <Row>
+              <p className="font-weight-bold">Triangle</p>
+            </Row>
+            <Row>
+              <p>{'"' + this.state.clientStoryShortTestimonial + '"'}</p>
+            </Row>
+            <Row>
+              <p>
+                Number of Seniors:
+                <span>{" " + this.state.clientStoryNumberOfSeniors}</span>
+              </p>
+            </Row>
+            <Row>
+              <p>
+                Counseling Team:
+                <span>{" " + this.state.clientStoryConsultingTeam}</span>
+              </p>
+            </Row>
+            <Row>
+              <p>
+                Curriculum:
+                <span>{" " + this.state.clientStoryCurriculum}</span>
+              </p>
+            </Row>
+            <Row>
+              <p>
+                Location:
+                <span>{" " + this.state.clientStorySchoolLocation}</span>
+              </p>
+            </Row>
+          </Col>
+        </Row>
       </Container>
     );
   }

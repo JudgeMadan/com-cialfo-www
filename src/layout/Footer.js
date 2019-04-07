@@ -39,7 +39,7 @@ class Footer extends React.Component {
             </Col>
             <Col>
               <ListGroup variant="flush">
-                <ListGroup.Item className="font-weight-bold pb-1 footerListGroupItem">
+                <ListGroup.Item className="font-weight-bold pt-1 pb-1 footerListGroupItem">
                   Resources
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
