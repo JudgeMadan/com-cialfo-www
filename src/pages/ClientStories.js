@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-// import location from "icons/location";
+import Octicon, { Location } from "@githubprimer/octicons-react";
 
 class ClientStories extends React.Component {
   constructor(props) {
@@ -50,7 +50,6 @@ class ClientStories extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container>
         <Row>
@@ -71,7 +70,7 @@ class ClientStories extends React.Component {
         <Row className="mt-5">
           <Col>
             <Row>
-              <p className="font-weight-bold">Triangle</p>
+              <Octicon size="large" icon={Location} />
             </Row>
             <Row>
               <p>{'"' + this.state.clientStoryShortTestimonial + '"'}</p>
