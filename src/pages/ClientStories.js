@@ -101,14 +101,19 @@ class ClientStories extends React.Component {
             </Row>
           </Col>
           <Col>
-            <h1>Content</h1>
+            <Row>
+              <h1>Content</h1>
+            </Row>
+            <Row>
+              <img src="https://via.placeholder.com/150" />
+            </Row>
+            <Row>
+              <h1>Content</h1>
+            </Row>
           </Col>
         </Row>
-        <Row>
-          <Col />
-          <Col>
-            <h1>More Content</h1>
-          </Col>
+        <Row className="justify-content-md-center">
+          <h1>More Stories</h1>
         </Row>
       </Container>
     );
