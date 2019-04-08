@@ -24,14 +24,12 @@ class ClientStoriesItem extends React.Component {
 
   fetchClients = () =>
     this.client.getEntries({
-      content_type: "clientStoryPage",
-      limit: this.state.loadLimit,
-      skip: this.state.skip
+      content_type: "clientStory",
+      limit: this.state.loadLimit
     });
 
   setClients = response => {
-    const clientStoryPageStory =
-      response.items[0].fields.clientStoryPageStory.fields;
+    const clientStoryPageStory = response.items[0].fields;
     for (let key in clientStoryPageStory) {
       this.setState({
         [key]: clientStoryPageStory[key]
@@ -49,6 +47,7 @@ class ClientStoriesItem extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container className="py-5">
         <Row>
@@ -101,13 +100,13 @@ class ClientStoriesItem extends React.Component {
           </Col>
           <Col>
             <Row>
-              <h1>Content</h1>
+              <p>{this.state.clientStoryClientStoryDetail1}</p>
             </Row>
             <Row>
               <img src="https://via.placeholder.com/150" />
             </Row>
             <Row>
-              <h1>Content</h1>
+              <p>{this.state.clientStoryClientStoryDetail2A}</p>
             </Row>
           </Col>
         </Row>
