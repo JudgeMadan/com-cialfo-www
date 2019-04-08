@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Octicon, { Location } from "@githubprimer/octicons-react";
+import Octicon, { Location, TriangleUp } from "@githubprimer/octicons-react";
 
 class ClientStories extends React.Component {
   constructor(props) {
@@ -61,16 +61,16 @@ class ClientStories extends React.Component {
             </Row>
             <Row>{this.state.clientStoryStoryBlurb}</Row>
           </Col>
-          <Col>
-            <Row>
+          <Col id="testContentBlue">
+            <Row className="justify-content-md-end">
               <img src={this.state.clientStorySchoolImage} />
             </Row>
           </Col>
         </Row>
         <Row className="mt-5">
-          <Col>
+          <Col id="testContentRed" className="font-weight-bold px-5 mr-5">
             <Row>
-              <Octicon size="large" icon={Location} />
+              <Octicon size="large" icon={TriangleUp} />
             </Row>
             <Row>
               <p>{'"' + this.state.clientStoryShortTestimonial + '"'}</p>
@@ -95,10 +95,19 @@ class ClientStories extends React.Component {
             </Row>
             <Row>
               <p>
-                Location:
+                <Octicon size="small" icon={Location} />
                 <span>{" " + this.state.clientStorySchoolLocation}</span>
               </p>
             </Row>
+          </Col>
+          <Col>
+            <h1>Content</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col />
+          <Col>
+            <h1>More Content</h1>
           </Col>
         </Row>
       </Container>
