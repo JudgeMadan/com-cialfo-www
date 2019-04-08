@@ -26,3 +26,8 @@ code {
 .footerListGroupItem {
   border: none;
 }
+
+.schoolCard {
+  background-color: #3386df;
+  color: white;
+}

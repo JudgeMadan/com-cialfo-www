@@ -24,28 +24,31 @@ class Header extends React.Component {
             Cialfo Logo
           </Link>
         </Nav>
-        <Nav className="justify-content-end">
-          <Link className="nav-link" to="/client">
-            Features
-          </Link>
-          <Link className="nav-link" to="/pricing">
-            Pricing
-          </Link>
-          <Link className="nav-link" to="/about">
-            About
-          </Link>
-          <Link className="nav-link" to="/contact">
-            Contact
-          </Link>
-          <NavDropdown title="Language">
-            <NavDropdown.Item onClick={() => this.updateLocale("en-US")}>
-              English
-            </NavDropdown.Item>
-            <NavDropdown.Item onClick={() => this.updateLocale("zh-CN")}>
-              Chinese
-            </NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Nav>
+            <Link className="nav-link" to="/client">
+              Features
+            </Link>
+            <Link className="nav-link" to="/pricing">
+              Pricing
+            </Link>
+            <Link className="nav-link" to="/about">
+              About
+            </Link>
+            <Link className="nav-link" to="/contact">
+              Contact
+            </Link>
+            <NavDropdown title="Language">
+              <NavDropdown.Item onClick={() => this.updateLocale("en-US")}>
+                English
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={() => this.updateLocale("zh-CN")}>
+                Chinese
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
     );
   }
