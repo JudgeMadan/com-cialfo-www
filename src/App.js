@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header updateLocale={this.updateLocale} />
         <Router className="testContentBlue" locale={this.state.locale} />
         <Footer className="testContentBlue" />
       </div>
