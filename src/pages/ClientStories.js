@@ -1,7 +1,7 @@
 import React from "react";
 import * as contentful from "contentful";
 import ClientStoriesItem from "./clientStories/ClientStoriesItem";
-import ClientStoriesCarousel from "./clientStories/ClientStoriesCarousel";
+import ClientStoriesMarquee from "./clientStories/ClientStoriesMarquee";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -60,7 +60,7 @@ class ClientStories extends React.Component {
           <h1>More Stories</h1>
         </Row>
         <Row className="justify-content-md-center">
-          <ClientStoriesCarousel />
+          <ClientStoriesMarquee />
         </Row>
       </Container>
     );

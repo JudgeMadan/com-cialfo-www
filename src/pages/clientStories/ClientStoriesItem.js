@@ -59,7 +59,7 @@ class ClientStoriesItem extends React.Component {
             </Row>
             <Row>{this.state.clientStoryStoryBlurb}</Row>
           </Col>
-          <Col id="testContentBlue">
+          <Col>
             <Row className="justify-content-md-end">
               <img src={this.state.clientStorySchoolImage} />
             </Row>
