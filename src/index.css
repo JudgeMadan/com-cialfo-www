@@ -41,6 +41,15 @@ code {
   }
 }
 
+@-webkit-keyframes scroll2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-100%, 0);
+  }
+}
+
 .marquee {
   background-color: #3386df;
   width: 100%;
@@ -49,12 +58,24 @@ code {
   overflow: hidden;
 }
 
-.marquee .content {
+.content {
   display: inline-block;
   padding-left: 100%;
-  -webkit-animation: scroll 5s infinite linear;
+  -webkit-animation: scroll 10s infinite linear;
+  animation-play-state: running;
+}
+
+.content2 {
+  display: inline-block;
+  padding-left: 100%;
+  -webkit-animation: scroll2 10s infinite linear;
+  animation-delay: 6s;
 }
 
 .marquee .content img {
+  padding: 0 100px 0 0;
+}
+
+.marquee .content2 img {
   padding: 0 100px 0 0;
 }
