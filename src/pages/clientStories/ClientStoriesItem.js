@@ -9,7 +9,9 @@ import Octicon, { Location, TriangleUp } from "@githubprimer/octicons-react";
 class ClientStoriesItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      clientStoryApiKey: "7BLnyQxFOezaog26iqOZ7"
+    };
   }
 
   client = contentful.createClient({
@@ -19,17 +21,34 @@ class ClientStoriesItem extends React.Component {
   });
 
   componentDidMount() {
-    this.fetchClients().then(this.setClients);
+    this.setState(
+      {
+        clientStoryApiKey: this.props.clientStoryApiKey
+      },
+      () => {
+        this.fetchClientStory().then(this.setClients);
+      }
+    );
   }
 
-  fetchClients = () =>
-    this.client.getEntries({
-      content_type: "clientStory",
-      limit: this.state.loadLimit
-    });
+  componentDidUpdate(prevProps) {
+    if (prevProps.clientStoryApiKey !== this.props.clientStoryApiKey) {
+      this.setState(
+        {
+          clientStoryApiKey: this.props.clientStoryApiKey
+        },
+        () => {
+          this.fetchClientStory().then(this.setClients);
+        }
+      );
+    }
+  }
+
+  fetchClientStory = () => this.client.getEntry(this.state.clientStoryApiKey);
 
   setClients = response => {
-    const clientStoryPageStory = response.items[0].fields;
+    console.log(response);
+    const clientStoryPageStory = response.fields;
     for (let key in clientStoryPageStory) {
       this.setState({
         [key]: clientStoryPageStory[key]
@@ -37,17 +56,7 @@ class ClientStoriesItem extends React.Component {
     }
   };
 
-  loadMore = () => {
-    this.setState(
-      {
-        loadLimit: this.state.loadLimit + 1
-      },
-      () => this.fetchClients().then(this.setClients)
-    );
-  };
-
   render() {
-    console.log(this.state);
     return (
       <Container className="py-5">
         <Row>
