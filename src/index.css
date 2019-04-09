@@ -62,14 +62,7 @@ code {
   display: inline-block;
   padding-left: 100%;
   -webkit-animation: scroll 10s infinite linear;
-  animation-play-state: running;
-}
-
-.content2 {
-  display: inline-block;
-  padding-left: 100%;
-  -webkit-animation: scroll2 10s infinite linear;
-  animation-delay: 6s;
+  scroll-behavior: smooth;
 }
 
 .marquee .content img {

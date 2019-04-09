@@ -19,6 +19,14 @@ class ClientStoriesMarquee extends React.Component {
         <div className="content">
           <img src="https://fillmurray.com/g/200/300" />
           <img src="https://fillmurray.com/200/300" />
+          <img src="https://fillmurray.com/g/200/300" />
+          <img src="https://fillmurray.com/200/300" />
+        </div>
+        <div className="content">
+          <img src="https://fillmurray.com/g/200/300" />
+          <img src="https://fillmurray.com/200/300" />
+          <img src="https://fillmurray.com/g/200/300" />
+          <img src="https://fillmurray.com/200/300" />
         </div>
       </h1>
     );
