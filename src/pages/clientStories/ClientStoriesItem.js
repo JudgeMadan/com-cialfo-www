@@ -47,7 +47,6 @@ class ClientStoriesItem extends React.Component {
   fetchClientStory = () => this.client.getEntry(this.state.clientStoryApiKey);
 
   setClients = response => {
-    console.log(response);
     const clientStoryPageStory = response.fields;
     for (let key in clientStoryPageStory) {
       this.setState({
