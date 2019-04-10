@@ -15,6 +15,10 @@ class ClientStoriesMarqueeItem extends React.Component {
       "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
   });
 
+  updateClientStoryApiKey = clientStoryApiKey => {
+    this.props.updateClientStoryApiKey(clientStoryApiKey);
+  };
+
   fetchClientStoryMarqueeItems = () =>
     this.client.getEntries({
       content_type: "clientStoryMarqueeItem"
@@ -40,31 +44,22 @@ class ClientStoriesMarqueeItem extends React.Component {
   }
 
   render() {
-    console.log(this.state);
+    console.log(this.props);
     return (
       <div>
         {this.state.clientStoryMarquee.map((item, index) => {
-          return <h1>{item.clientStoryMarqueeApiKey}</h1>;
+          return (
+            <img
+              onClick={() =>
+                this.updateClientStoryApiKey(item.clientStoryMarqueeApiKey)
+              }
+              src={item.clientStoryMarqueeImgLink}
+              key={index}
+            />
+          );
         })}
       </div>
     );
   }
 }
 export default ClientStoriesMarqueeItem;
-
-// setClientStoryMarqueeItems = response => {
-//   const items = response.items;
-//   items.map(item =>
-//     this.setState(
-//       {
-//         [item.sys.id]: {
-//           clientStoryMarqueeApiKey: item.fields.clientStoryMarqueeApiKey,
-//           clientStoryMarqueeImgLink:
-//             item.fields.clientStoryMarqueeClientStoryImg.fields
-//               .clientStoryMarqueeImage.fields.file.url
-//         }
-//       }
-//        () => console.log(this.state)
-//     )
-//   );
-// };

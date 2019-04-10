@@ -14,10 +14,6 @@ class ClientStoriesMarquee extends React.Component {
       "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
   });
 
-  updateClientStoryApiKey = clientStoryApiKey => {
-    this.props.updateClientStoryApiKey(clientStoryApiKey);
-  };
-
   fetchClientStoryMarqueeItems = () =>
     this.client.getEntries({
       content_type: "clientStoryMarqueeItem"
@@ -35,11 +31,13 @@ class ClientStoriesMarquee extends React.Component {
   }
 
   render() {
-    console.log(this.clientStoryMarquee);
     return (
       <h1 className="marquee">
         <div className="content">
-          <img
+          <ClientStoriesMarqueeItem
+            updateClientStoryApiKey={this.props.updateClientStoryApiKey}
+          />
+          {/* <img
             onClick={() =>
               this.updateClientStoryApiKey("7BLnyQxFOezaog26iqOZ7")
             }
@@ -50,9 +48,9 @@ class ClientStoriesMarquee extends React.Component {
               this.updateClientStoryApiKey("593AozfnlOemEh7qSo5NFp")
             }
             src="https://fillmurray.com/200/300"
-          />
+          /> */}
         </div>
-        <ClientStoriesMarqueeItem />
+        {/* <ClientStoriesMarqueeItem /> */}
       </h1>
     );
   }
