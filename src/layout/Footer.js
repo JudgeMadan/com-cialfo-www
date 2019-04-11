@@ -24,7 +24,6 @@ class Footer extends React.Component {
 
   setNavBar = response => {
     const footerContent = response.items[0].fields;
-    console.log(footerContent);
     for (let key in footerContent) {
       this.setState({
         [key]: footerContent[key]
@@ -43,7 +42,6 @@ class Footer extends React.Component {
   }
 
   render() {
-    console.log(this.props.locale);
     return (
       <NavBar className="mt-5" sticky="bottom">
         <Col>

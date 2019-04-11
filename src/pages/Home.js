@@ -6,54 +6,53 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import ReactPlayer from "react-player";
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      testArticles: [],
-      locale: ""
-    };
+    this.state = {};
   }
 
   client = contentful.createClient({
-    space: "kn93hfefankj",
+    space: "1acwuo4zy8aa",
     accessToken:
-      "bddb1871044902e088b9aec331fca83c23351f0f2c390633d7a8e1b428317981",
-    fallbackCode: null
+      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
   });
 
   componentDidMount() {
-    this.fetchTestArticles().then(this.setTestArticles);
+    this.fetchHomeContent().then(this.setHomeContent);
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.locale !== this.props.locale) {
-      this.fetchTestArticles().then(this.setTestArticles);
+      this.fetchHomeContent().then(this.setHomeContent);
     }
   }
 
-  fetchTestArticles = () =>
+  fetchHomeContent = () =>
     this.client.getEntries({
-      content_type: "testArticleGlobal",
+      content_type: "homePageHeaderProductImage",
       locale: this.props.locale
     });
 
-  setTestArticles = response => {
-    this.setState({
-      testArticles: response.items
-    });
+  setHomeContent = response => {
+    const homeContent = response.items[0].fields;
+    console.log(response.items[0].fields);
+    for (let key in homeContent) {
+      this.setState({
+        [key]: homeContent[key]
+      });
+    }
   };
 
   render() {
-    const filteredResults = this.state.testArticles.filter(
-      article => article.fields.localized_2
-    );
+    console.log(this.state);
     return (
       <Container>
         <Row>
           <Col>
             <Row>
-              <h1>Create, manage and track college applications</h1>
+              <h1>{this.state.homePageHeaderTitle}</h1>
             </Row>
             <Row>
               <Form>
@@ -62,7 +61,9 @@ class Home extends React.Component {
                     <Col>
                       <Form.Control
                         type="email"
-                        placeholder="Your Email Address"
+                        placeholder={
+                          this.state.homePageHeaderEmailPlaceholderText
+                        }
                       />
                     </Col>
                     <Col>
@@ -140,6 +141,9 @@ class Home extends React.Component {
               <p>Learn about reporting</p>
             </Row>
           </Col>
+        </Row>
+        <Row>
+          <ReactPlayer url="https://cialfoplatform.wistia.com/medias/idfpk6s1q1" />
         </Row>
       </Container>
     );
