@@ -68,7 +68,7 @@ class Home extends React.Component {
                     </Col>
                     <Col>
                       <Button variant="primary" type="submit">
-                        Get a Demo
+                        {this.state.homePageHeaderEmailSubmitButtonText}
                       </Button>
                     </Col>
                   </Row>
@@ -77,7 +77,7 @@ class Home extends React.Component {
             </Row>
           </Col>
           <Col>
-            <h1>IMG</h1>
+            {/* <img src={this.state.homePageHeaderProductImage.fields.file.url} /> */}
           </Col>
         </Row>
         <Row>
