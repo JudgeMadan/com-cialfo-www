@@ -1,9 +1,8 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import NavItem from "react-bootstrap/NavItem";
 
 class Header extends React.Component {
   updateLocale = locale => {
@@ -27,26 +26,37 @@ class Header extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
-            <Link className="nav-link" to="/client">
+            <Link className="nav-link" to="/clients">
+              Clients
+            </Link>
+            <Link className="nav-link" to="/features">
               Features
             </Link>
-            <Link className="nav-link" to="/pricing">
-              Pricing
-            </Link>
             <Link className="nav-link" to="/about">
-              About
+              About Us
             </Link>
-            <Link className="nav-link" to="/contact">
-              Contact
+            <Link className="nav-link" to="/resources">
+              Resources
             </Link>
-            <NavDropdown title="Language">
-              <NavDropdown.Item onClick={() => this.updateLocale("en-US")}>
+            <Link className="nav-link" to="/solutions">
+              Solutions
+            </Link>
+            {this.props.locale !== "zh-CN" && (
+              <NavItem
+                onClick={() => this.updateLocale("zh-CN")}
+                className="nav-link"
+              >
+                中文
+              </NavItem>
+            )}
+            {this.props.locale === "zh-CN" && (
+              <NavItem
+                onClick={() => this.updateLocale("en-US")}
+                className="nav-link "
+              >
                 English
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={() => this.updateLocale("zh-CN")}>
-                Chinese
-              </NavDropdown.Item>
-            </NavDropdown>
+              </NavItem>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

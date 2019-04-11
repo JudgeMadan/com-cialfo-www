@@ -44,7 +44,6 @@ class ClientStoriesMarqueeItem extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         {this.state.clientStoryMarquee.map((item, index) => {

@@ -32,7 +32,10 @@ class ClientStoriesItem extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.clientStoryApiKey !== this.props.clientStoryApiKey) {
+    if (
+      prevProps.clientStoryApiKey !== this.props.clientStoryApiKey ||
+      prevProps.locale !== this.props.locale
+    ) {
       this.setState(
         {
           clientStoryApiKey: this.props.clientStoryApiKey
@@ -44,10 +47,18 @@ class ClientStoriesItem extends React.Component {
     }
   }
 
-  fetchClientStory = () => this.client.getEntry(this.state.clientStoryApiKey);
+  // fetchClientStory = () => this.client.getEntry(this.state.clientStoryApiKey);
+  fetchClientStory = () =>
+    this.client.getEntries({
+      content_type: "clientStory",
+      locale: this.props.locale
+    });
 
   setClients = response => {
-    const clientStoryPageStory = response.fields;
+    const filteredResponse = response.items.filter(
+      item => item.sys.id == this.state.clientStoryApiKey
+    );
+    const clientStoryPageStory = filteredResponse[0].fields;
     for (let key in clientStoryPageStory) {
       this.setState({
         [key]: clientStoryPageStory[key]
@@ -56,6 +67,7 @@ class ClientStoriesItem extends React.Component {
   };
 
   render() {
+    console.log(this.props.locale);
     return (
       <Container className="py-5">
         <Row>

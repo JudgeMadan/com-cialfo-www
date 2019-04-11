@@ -30,6 +30,7 @@ class ClientStories extends React.Component {
           <ClientStoriesItem
             clientStoryApiKey={this.state.clientStoryApiKey}
             className="pt-5"
+            locale={this.props.locale}
           />
         </Row>
         <Row className="justify-content-md-center">

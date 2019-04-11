@@ -1,7 +1,5 @@
 import React from "react";
 import * as contentful from "contentful";
-import FeatureCluster from "./features/FeatureCluster";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -12,10 +10,7 @@ class Features extends React.Component {
     this.state = {
       features: {},
       image: null,
-      skip: 0,
-      loadLimit: 1,
-      canAddFeatures: true,
-      locale: "en-US"
+      locale: "zh-CN"
     };
   }
   client = contentful.createClient({
@@ -28,12 +23,16 @@ class Features extends React.Component {
     this.fetchFeatures().then(this.setFeatures);
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.locale !== this.props.locale) {
+      this.fetchFeatures().then(this.setFeatures);
+    }
+  }
+
   fetchFeatures = () => {
     return this.client.getEntries({
       content_type: "featuresPage",
-      limit: this.state.loadLimit,
-      skip: this.state.skip,
-      locale: this.state.locale
+      locale: this.props.locale
     });
   };
 
@@ -43,24 +42,6 @@ class Features extends React.Component {
       image:
         response.items[0].fields.featuresPageTeacherPortalImage2.fields.file.url
     });
-  };
-
-  loadMore = () => {
-    this.setState(
-      {
-        skip: this.state.skip + 1
-      },
-      () =>
-        this.fetchFeatures().then(response => {
-          if (response.items.length > 0) {
-            this.setFeatures(response);
-          } else {
-            this.setState({
-              canAddFeatures: false
-            });
-          }
-        })
-    );
   };
 
   render() {
