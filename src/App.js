@@ -22,7 +22,7 @@ class App extends Component {
       <div>
         <Header locale={this.state.locale} updateLocale={this.updateLocale} />
         <Router locale={this.state.locale} />
-        <Footer />
+        <Footer locale={this.state.locale} />
       </div>
     );
   }

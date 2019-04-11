@@ -3,8 +3,47 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import NavBar from "react-bootstrap/Navbar";
+import * as contentful from "contentful";
 class Footer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  client = contentful.createClient({
+    space: "1acwuo4zy8aa",
+    accessToken:
+      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
+  });
+
+  fetchNavBar = () =>
+    this.client.getEntries({
+      content_type: "footer",
+      locale: this.props.locale
+    });
+
+  setNavBar = response => {
+    const footerContent = response.items[0].fields;
+    console.log(footerContent);
+    for (let key in footerContent) {
+      this.setState({
+        [key]: footerContent[key]
+      });
+    }
+  };
+
+  componentDidMount() {
+    this.fetchNavBar().then(this.setNavBar);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.locale !== this.props.locale) {
+      this.fetchNavBar().then(this.setNavBar);
+    }
+  }
+
   render() {
+    console.log(this.props.locale);
     return (
       <NavBar className="mt-5" sticky="bottom">
         <Col>
@@ -12,69 +51,69 @@ class Footer extends React.Component {
             <Col>
               <ListGroup variant="flush">
                 <ListGroup.Item className="pb-1 pt-1 font-weight-bold footerListGroupItem">
-                  Platform
+                  {this.state.platform}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                  Why Cialfo
+                  {this.state.whyCialfo}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                  For Principals
+                  {this.state.forPrincipals}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                  For Counselors
+                  {this.state.forCounselors}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
-                  For IT Teams
+                  {this.state.forITTeams}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                  Cialfo vs BridgeU
+                  {this.state.cialfoVsBridgeU}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                  Cialfo vs Naviance
+                  {this.state.cialfoVsNaviance}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                  Cialfo vs Maia
+                  {this.state.cialfoVsMaia}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
             <Col>
               <ListGroup variant="flush">
                 <ListGroup.Item className="font-weight-bold pt-1 pb-1 footerListGroupItem">
-                  Resources
+                  {this.state.resources}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                  Knowledge Base
+                  {this.state.knowledgeBase}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                  Community
+                  {this.state.community}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                  Cialfo Tips
+                  {this.state.cialfoTips}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                  Events
+                  {this.state.events}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                  Partners
+                  {this.state.partners}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
             <Col>
               <ListGroup variant="flush">
                 <ListGroup.Item className="pb-1 pt-1 font-weight-bold footerListGroupItem">
-                  Team
+                  {this.state.team}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                  About Us
+                  {this.state.aboutUs}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                  Blog
+                  {this.state.blog}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                  Media Kit
+                  {this.state.mediaKit}
                 </ListGroup.Item>
                 <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                  Careers
+                  {this.state.careers}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
