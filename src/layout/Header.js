@@ -2,12 +2,48 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
+import * as contentful from "contentful";
 import NavItem from "react-bootstrap/NavItem";
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   updateLocale = locale => {
     this.props.updateLocale(locale);
   };
+
+  client = contentful.createClient({
+    space: "1acwuo4zy8aa",
+    accessToken:
+      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
+  });
+
+  fetchNavBar = () =>
+    this.client.getEntries({
+      content_type: "navBar",
+      locale: this.props.locale
+    });
+
+  setNavBar = response => {
+    const navBarContent = response.items[0].fields;
+    for (let key in navBarContent) {
+      this.setState({
+        [key]: navBarContent[key]
+      });
+    }
+  };
+
+  componentDidMount() {
+    this.fetchNavBar().then(this.setNavBar);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.locale !== this.props.locale) {
+      this.fetchNavBar().then(this.setNavBar);
+    }
+  }
 
   render() {
     return (
@@ -27,19 +63,19 @@ class Header extends React.Component {
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
             <Link className="nav-link" to="/clients">
-              Clients
+              {this.state.clientsPage}
             </Link>
             <Link className="nav-link" to="/features">
-              Features
+              {this.state.featuresPage}
             </Link>
             <Link className="nav-link" to="/about">
-              About Us
+              {this.state.aboutUsPage}
             </Link>
             <Link className="nav-link" to="/resources">
-              Resources
+              {this.state.resourcesPage}
             </Link>
             <Link className="nav-link" to="/solutions">
-              Solutions
+              {this.state.solutionsPage}
             </Link>
             {this.props.locale !== "zh-CN" && (
               <NavItem

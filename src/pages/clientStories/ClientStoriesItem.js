@@ -47,7 +47,6 @@ class ClientStoriesItem extends React.Component {
     }
   }
 
-  // fetchClientStory = () => this.client.getEntry(this.state.clientStoryApiKey);
   fetchClientStory = () =>
     this.client.getEntries({
       content_type: "clientStory",
