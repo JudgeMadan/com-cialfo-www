@@ -37,11 +37,17 @@ class Home extends React.Component {
 
   setHomeContent = response => {
     const homeContent = response.items[0].fields;
-    console.log(response.items[0].fields);
+    console.log(homeContent);
     for (let key in homeContent) {
-      this.setState({
-        [key]: homeContent[key]
-      });
+      if (typeof homeContent[key] === "string") {
+        this.setState({
+          [key]: homeContent[key]
+        });
+      } else {
+        this.setState({
+          [key]: homeContent[key].fields.file.url
+        });
+      }
     }
   };
 
@@ -77,73 +83,61 @@ class Home extends React.Component {
             </Row>
           </Col>
           <Col>
-            {/* <img src={this.state.homePageHeaderProductImage.fields.file.url} /> */}
+            <img src={this.state.homePageHeaderProductImage} />
           </Col>
         </Row>
         <Row>
-          <h1>The top international schools trust Cialfo</h1>
+          <h1>{this.state.homePageSchoolTestimonialsTitle}</h1>
         </Row>
         <HomeMarquee />
         <Row>
           <Col>
-            <h1>IMG</h1>
+            <img src={this.state.homePageFeaturesSendDocumentImage} />
           </Col>
           <Col>
             <Row>
-              <h1>Send documents securely</h1>
+              <h1>{this.state.homePageFeaturesSendDocumentTitle}</h1>
             </Row>
             <Row>
-              <p>
-                Use our Parchment and Common Application integrations to send
-                documents and transcripts securely to colleges.
-              </p>
+              <p>{this.state.homePageFeaturesSendDocumentBlurb}</p>
             </Row>
-            <Row>
-              <p>Learn more about document sending</p>
-            </Row>
+            <Row>{this.state.homePageFeaturesSendDocumentLinkText}</Row>
           </Col>
         </Row>
         <Row>
           <Col>
             <Row>
-              <h1>Leverage a global college database</h1>
+              <h1>{this.state.homePageFeaturesLeverageTitle}</h1>
             </Row>
             <Row>
-              <p>
-                Cialfo's database of colleges convers countries across the
-                world. Research and explore schools virtually.
-              </p>
+              <p>{this.state.homePageFeaturesLeverageBlurb}</p>
             </Row>
             <Row>
-              <p>Learn more about researching colleges</p>
+              <p>{this.state.homePageFeaturesLeverageLinkText}</p>
             </Row>
           </Col>
           <Col>
-            <h1>IMG</h1>
+            <img src={this.state.homePageFeaturesLeverageImage} />
           </Col>
         </Row>
         <Row>
           <Col>
-            <h1>IMG</h1>
+            <img src={this.state.homePageFeaturesDiscoverImage} />
           </Col>
           <Col>
             <Row>
-              <h1>Discover insights about your students</h1>
+              <h1>{this.state.homePageFeaturesDiscoverTitle} </h1>
             </Row>
             <Row>
-              <p>
-                How many students were accepted, rejected or waitlisted? What
-                are your most popular schools? Cialfo puts the power of data in
-                your hands.
-              </p>
+              <p>{this.state.homePageFeaturesDiscoverBlurb}</p>
             </Row>
             <Row>
-              <p>Learn about reporting</p>
+              <p>{this.state.homePageFeaturesDiscoverLinkText}</p>
             </Row>
           </Col>
         </Row>
         <Row>
-          <ReactPlayer url="https://cialfoplatform.wistia.com/medias/idfpk6s1q1" />
+          <ReactPlayer url={this.state.homePageVideoCaseStudyVideoEmbed} />
         </Row>
       </Container>
     );
