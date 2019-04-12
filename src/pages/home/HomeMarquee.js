@@ -1,10 +1,6 @@
 import React from "react";
 
 class HomeMarquee extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-  }
-
   render() {
     return (
       <h1 className="marquee">

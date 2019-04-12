@@ -1,6 +1,5 @@
 import * as contentful from "contentful";
 import React from "react";
-import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -55,7 +54,7 @@ class ClientStoriesItem extends React.Component {
 
   setClients = response => {
     const filteredResponse = response.items.filter(
-      item => item.sys.id == this.state.clientStoryApiKey
+      item => item.sys.id === this.state.clientStoryApiKey
     );
     const clientStoryPageStory = filteredResponse[0].fields;
     for (let key in clientStoryPageStory) {
@@ -66,7 +65,6 @@ class ClientStoriesItem extends React.Component {
   };
 
   render() {
-    console.log(this.props.locale);
     return (
       <Container className="py-5">
         <Row>

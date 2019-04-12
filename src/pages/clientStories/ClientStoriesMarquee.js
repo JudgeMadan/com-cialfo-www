@@ -2,10 +2,6 @@ import React from "react";
 import ClientStoriesMarqueeItem from "./clientStoriesMarquee/ClientStoriesMarqueeItem";
 
 class ClientStoriesMarquee extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <h1 className="marquee">

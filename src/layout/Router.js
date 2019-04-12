@@ -5,9 +5,6 @@ import Features from "../pages/Features";
 import Home from "../pages/Home";
 
 class Router extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <Switch>

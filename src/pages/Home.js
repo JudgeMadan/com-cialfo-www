@@ -37,7 +37,6 @@ class Home extends React.Component {
 
   setHomeContent = response => {
     const homeContent = response.items[0].fields;
-    console.log(homeContent);
     for (let key in homeContent) {
       if (typeof homeContent[key] === "string") {
         this.setState({
@@ -52,7 +51,6 @@ class Home extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container>
         <Row>
