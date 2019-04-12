@@ -8,8 +8,6 @@ class Features extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      features: {},
-      image: null,
       locale: "zh-CN"
     };
   }
@@ -37,36 +35,44 @@ class Features extends React.Component {
   };
 
   setFeatures = response => {
-    this.setState({
-      features: response.items[0].fields,
-      image:
-        response.items[0].fields.featuresPageTeacherPortalImage2.fields.file.url
-    });
+    const featureContent = response.items[0].fields;
+    console.log(featureContent);
+    for (let key in featureContent) {
+      if (typeof featureContent[key] === "string") {
+        this.setState({
+          [key]: featureContent[key]
+        });
+      } else {
+        this.setState({
+          [key]: featureContent[key].fields.file.url
+        });
+      }
+    }
   };
 
   render() {
-    const features = this.state.features;
+    console.log(this.state);
     return (
       <Container>
         <Row>
-          <h1 className="text-center">{features.featuresPageTitle}</h1>
+          <h1>{this.state.featuresPageTitle}</h1>
         </Row>
         <Row className="pb-5 justify-content-md-center">
-          <img src={features.featuresPageCdProductImage} />
+          <img src={this.state.featuresPageCdProductImage} />
         </Row>
         <Row className="pb-5">
           <Col>
-            <img src={this.state.image} />
+            <img src={this.state.featuresPageTeacherPortalImage2} />
           </Col>
           <Col>
             <Row>
               <h1 className="text-right">
-                {features.featuresPageTeacherPortalTitle}
+                {this.state.featuresPageTeacherPortalTitle}
               </h1>
             </Row>
             <Row>
               <p className="text-right">
-                {features.featuresPageTeacherPortalBlurb}
+                {this.state.featuresPageTeacherPortalBlurb}
               </p>
             </Row>
           </Col>
@@ -74,28 +80,28 @@ class Features extends React.Component {
         <Row className="pb-5">
           <Col>
             <Row>
-              <h1>{features.featuresPageTranscriptTitle}</h1>
+              <h1>{this.state.featuresPageTranscriptTitle}</h1>
             </Row>
             <Row>
-              <p>{features.featuresPageTranscriptBlurb}</p>
+              <p>{this.state.featuresPageTranscriptBlurb}</p>
             </Row>
           </Col>
           <Col>
-            <img src={this.state.image} />
+            <img src={this.state.featuresPageTeacherPortalImage2} />
           </Col>
         </Row>
         <Row className="justify-content-md-center">
-          <h1>{features.featuresPagePartnersTitle}</h1>
+          <h1>{this.state.featuresPagePartnersTitle}</h1>
         </Row>
         <Row>
           <Col>
             <Row className="justify-content-md-start">
-              <img src={features.featuresPagePartnersCommonApp} />
+              <img src={this.state.featuresPagePartnersCommonApp} />
             </Row>
           </Col>
           <Col>
             <Row className="justify-content-md-end">
-              <img src={features.featuresPagePartnersParchment} />
+              <img src={this.state.featuresPagePartnersParchment} />
             </Row>
           </Col>
         </Row>
