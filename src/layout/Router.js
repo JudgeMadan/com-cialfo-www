@@ -25,7 +25,8 @@ class Router extends React.Component {
           path="/features"
           render={() => <Features locale={this.props.locale} />}
         />
-        <Route render={() => <Home locale={this.props.locale} />} />
+        {/* MAKE A 404 Page instead */}
+        {/* <Route render={() => <Home locale={this.props.locale} />} /> */}
       </Switch>
     );
   }

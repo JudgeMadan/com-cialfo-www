@@ -89,30 +89,30 @@ class ClientStoriesItem extends React.Component {
                 <Octicon size="large" icon={TriangleUp} />
               </Row>
               <Row>
-                <p>{'"' + this.state.clientStoryShortTestimonial + '"'}</p>
+                <p> "{this.state.clientStoryShortTestimonial}"</p>
               </Row>
               <Row>
                 <p>
                   Number of Seniors:
-                  <span>{" " + this.state.clientStoryNumberOfSeniors}</span>
+                  <span> {this.state.clientStoryNumberOfSeniors}</span>
                 </p>
               </Row>
               <Row>
                 <p>
                   Counseling Team:
-                  <span>{" " + this.state.clientStoryConsultingTeam}</span>
+                  <span> {this.state.clientStoryConsultingTeam}</span>
                 </p>
               </Row>
               <Row>
                 <p>
                   Curriculum:
-                  <span>{" " + this.state.clientStoryCurriculum}</span>
+                  <span> {this.state.clientStoryCurriculum}</span>
                 </p>
               </Row>
               <Row>
                 <p>
                   <Octicon size="small" icon={Location} />
-                  <span>{" " + this.state.clientStorySchoolLocation}</span>
+                  <span> {this.state.clientStorySchoolLocation}</span>
                 </p>
               </Row>
             </Container>

@@ -8,7 +8,9 @@ import NavItem from "react-bootstrap/NavItem";
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      mykey: process.env.MYKEY
+    };
   }
   updateLocale = locale => {
     this.props.updateLocale(locale);
@@ -46,6 +48,7 @@ class Header extends React.Component {
   }
 
   render() {
+    console.log(process.env);
     return (
       <Navbar
         bg="light"
@@ -64,6 +67,7 @@ class Header extends React.Component {
           <Nav>
             <Link className="nav-link" to="/clients">
               {this.state.clientsPage}
+              {this.state.mykey}
             </Link>
             <Link className="nav-link" to="/features">
               {this.state.featuresPage}

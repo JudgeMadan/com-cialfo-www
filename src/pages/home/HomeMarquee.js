@@ -3,12 +3,26 @@ import React from "react";
 class HomeMarquee extends React.Component {
   render() {
     return (
-      <h1 className="marquee">
-        <div className="content">
-          <img src="https://fillmurray.com/g/100/100" />
-          <img src="https://fillmurray.com/100/100" />
+      <div className="c-marquee is-animated">
+        <div className="c-marquee__container">
+          <h1 className="c-marquee__item">Bye</h1>
+          <h1 className="c-marquee__item">Hey</h1>
+          <h1 className="c-marquee__item">Bye</h1>
+          <h1 className="c-marquee__item">Hey</h1>
+          <h1 className="c-marquee__item">Bye</h1>
+          <h1 className="c-marquee__item">Hey</h1>
+          <h1 className="c-marquee__item">Bye</h1>
+          <h1 className="c-marquee__item">Hey</h1>
+          <h1 className="c-marquee__item">Bye</h1>
+          <h1 className="c-marquee__item">Hey</h1>
+          <h1 className="c-marquee__item">Bye</h1>
+          <h1 className="c-marquee__item">Hey</h1>
+          <h1 className="c-marquee__item">Bye</h1>
+          <h1 className="c-marquee__item">Hey</h1>
+          <h1 className="c-marquee__item">Bye</h1>
+          <h1 className="c-marquee__item">Hey</h1>
         </div>
-      </h1>
+      </div>
     );
   }
 }
