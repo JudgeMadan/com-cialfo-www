@@ -3,24 +3,36 @@ import React from "react";
 class HomeMarquee extends React.Component {
   render() {
     return (
-      <div className="c-marquee is-animated">
-        <div className="c-marquee__container">
-          <h1 className="c-marquee__item">Bye</h1>
-          <h1 className="c-marquee__item">Hey</h1>
-          <h1 className="c-marquee__item">Bye</h1>
-          <h1 className="c-marquee__item">Hey</h1>
-          <h1 className="c-marquee__item">Bye</h1>
-          <h1 className="c-marquee__item">Hey</h1>
-          <h1 className="c-marquee__item">Bye</h1>
-          <h1 className="c-marquee__item">Hey</h1>
-          <h1 className="c-marquee__item">Bye</h1>
-          <h1 className="c-marquee__item">Hey</h1>
-          <h1 className="c-marquee__item">Bye</h1>
-          <h1 className="c-marquee__item">Hey</h1>
-          <h1 className="c-marquee__item">Bye</h1>
-          <h1 className="c-marquee__item">Hey</h1>
-          <h1 className="c-marquee__item">Bye</h1>
-          <h1 className="c-marquee__item">Hey</h1>
+      <div className="marquee">
+        <div className="marquee--inner">
+          <div className="contentSpan">
+            <div className="orb ">
+              <img src="https://fillmurray.com/150/100" />
+            </div>
+            <div className="orb ">
+              <img src="https://fillmurray.com/150/100" />
+            </div>
+            <div className="orb ">
+              <img src="https://fillmurray.com/150/100" />
+            </div>
+            <div className="orb ">
+              <img src="https://fillmurray.com/150/100" />
+            </div>
+          </div>
+          <div className="contentSpan">
+            <div className="orb ">
+              <img src="https://fillmurray.com/150/100" />
+            </div>
+            <div className="orb ">
+              <img src="https://fillmurray.com/150/100" />
+            </div>
+            <div className="orb ">
+              <img src="https://fillmurray.com/150/100" />
+            </div>
+            <div className="orb ">
+              <img src="https://fillmurray.com/150/100" />
+            </div>
+          </div>
         </div>
       </div>
     );

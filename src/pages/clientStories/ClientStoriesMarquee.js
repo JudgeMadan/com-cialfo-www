@@ -5,7 +5,7 @@ class ClientStoriesMarquee extends React.Component {
   render() {
     return (
       <h1 className="marquee">
-        <div className="content">
+        <div className="marquee--inner">
           <ClientStoriesMarqueeItem
             updateClientStoryApiKey={this.props.updateClientStoryApiKey}
           />
