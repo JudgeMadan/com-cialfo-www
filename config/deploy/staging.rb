@@ -22,6 +22,9 @@
 # role :db,  %w{deploy@example.com}
 
 
+server 'www-staging-marketing.cialfo.co',
+  user: 'deployer',
+  roles: %w{sudo}
 
 # Configuration
 # =============
