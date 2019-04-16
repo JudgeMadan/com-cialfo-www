@@ -1,5 +1,6 @@
 import React from "react";
 import HomeMarquee from "./home/HomeMarquee";
+import HomePartnerImages from "./home/HomeParterImages";
 import * as contentful from "contentful";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -41,6 +42,10 @@ class Home extends React.Component {
       if (typeof homeContent[key] === "string") {
         this.setState({
           [key]: homeContent[key]
+        });
+      } else if (Array.isArray(homeContent[key])) {
+        this.setState({
+          [key]: homeContent[key].map(test => test.fields.file.url)
         });
       } else {
         this.setState({
@@ -135,8 +140,15 @@ class Home extends React.Component {
           </Col>
         </Row>
         <Row>
+          <h1>{this.state.homePageVideoCaseStudyTitle}</h1>
           <ReactPlayer url={this.state.homePageVideoCaseStudyVideoEmbed} />
         </Row>
+        <Row>
+          <h1>{this.state.homePagePoweredByOurPartnersTitle}</h1>
+        </Row>
+        <HomePartnerImages
+          partnerImages={this.state.homePagePoweredByOurPartnersPartners}
+        />
       </Container>
     );
   }

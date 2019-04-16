@@ -48,7 +48,6 @@ class Header extends React.Component {
   }
 
   render() {
-    console.log(process.env);
     return (
       <Navbar
         bg="light"
