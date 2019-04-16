@@ -1,6 +1,6 @@
 import React from "react";
 import HomeMarquee from "./home/HomeMarquee";
-import HomePartnerImages from "./home/HomeParterImages";
+import HomePartnerImages from "./home/HomePartnerImages";
 import * as contentful from "contentful";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import ReactPlayer from "react-player";
+import "./home/Home.css";
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -56,12 +57,20 @@ class Home extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container>
-        <Row>
+        <Row className="top_row">
           <Col>
             <Row>
-              <h1>{this.state.homePageHeaderTitle}</h1>
+              <h1 className="primary_font homePageHeaderTitle">
+                {this.state.homePageHeaderTitle}
+              </h1>
+            </Row>
+            <Row>
+              <h1 className="secondary_font homePageHeaderBlurb">
+                {this.state.homePageHeaderBlurb}
+              </h1>
             </Row>
             <Row>
               <Form>
@@ -69,6 +78,7 @@ class Home extends React.Component {
                   <Row>
                     <Col>
                       <Form.Control
+                        className="primary_font homePageHeaderEmailFormText"
                         type="email"
                         placeholder={
                           this.state.homePageHeaderEmailPlaceholderText
@@ -76,7 +86,11 @@ class Home extends React.Component {
                       />
                     </Col>
                     <Col>
-                      <Button variant="primary" type="submit">
+                      <Button
+                        className="primary_font homePageHeaderEmailFormText"
+                        variant="primary"
+                        type="submit"
+                      >
                         {this.state.homePageHeaderEmailSubmitButtonText}
                       </Button>
                     </Col>
@@ -85,68 +99,99 @@ class Home extends React.Component {
               </Form>
             </Row>
           </Col>
-          <Col>
+          <Col className="homePageHeaderProductImage">
             <img src={this.state.homePageHeaderProductImage} />
           </Col>
         </Row>
-        <Row>
-          <h1>{this.state.homePageSchoolTestimonialsTitle}</h1>
+        <Row className="homePageSchoolTestimonialsTitle">
+          <h1 className="primary_font">
+            {this.state.homePageSchoolTestimonialsTitle}
+          </h1>
         </Row>
-        <HomeMarquee />
-        <Row>
-          <Col>
+        <Row className="homeMarquee">
+          <HomeMarquee />
+        </Row>
+        <Row className="featureRows">
+          <Col className="homePageFeaturesImage">
             <img src={this.state.homePageFeaturesSendDocumentImage} />
           </Col>
           <Col>
             <Row>
-              <h1>{this.state.homePageFeaturesSendDocumentTitle}</h1>
+              <h1 className="primary_font">
+                {this.state.homePageFeaturesSendDocumentTitle}
+              </h1>
             </Row>
             <Row>
-              <p>{this.state.homePageFeaturesSendDocumentBlurb}</p>
+              <p className="secondary_font">
+                {this.state.homePageFeaturesSendDocumentBlurb}
+              </p>
             </Row>
-            <Row>{this.state.homePageFeaturesSendDocumentLinkText}</Row>
+            <Row>
+              <p className="secondary_font homePageFeaturesSendDocumentLinkText">
+                {this.state.homePageFeaturesSendDocumentLinkText}
+              </p>
+            </Row>
           </Col>
         </Row>
-        <Row>
+        <Row className="featureRows">
           <Col>
             <Row>
-              <h1>{this.state.homePageFeaturesLeverageTitle}</h1>
+              <h1 className="primary_font">
+                {this.state.homePageFeaturesLeverageTitle}
+              </h1>
             </Row>
             <Row>
-              <p>{this.state.homePageFeaturesLeverageBlurb}</p>
+              <p className="secondary_font">
+                {this.state.homePageFeaturesLeverageBlurb}
+              </p>
             </Row>
             <Row>
-              <p>{this.state.homePageFeaturesLeverageLinkText}</p>
+              <p className="secondary_font homePageFeaturesLeverageLinkText">
+                {this.state.homePageFeaturesLeverageLinkText}
+              </p>
             </Row>
           </Col>
-          <Col>
+          <Col className="homePageFeaturesImage">
             <img src={this.state.homePageFeaturesLeverageImage} />
           </Col>
         </Row>
-        <Row>
-          <Col>
+        <Row className="featureRows">
+          <Col className="homePageFeaturesImage">
             <img src={this.state.homePageFeaturesDiscoverImage} />
           </Col>
           <Col>
             <Row>
-              <h1>{this.state.homePageFeaturesDiscoverTitle} </h1>
+              <h1 className="primary_font">
+                {this.state.homePageFeaturesDiscoverTitle}
+              </h1>
             </Row>
             <Row>
-              <p>{this.state.homePageFeaturesDiscoverBlurb}</p>
+              <p className="secondary_font">
+                {this.state.homePageFeaturesDiscoverBlurb}
+              </p>
             </Row>
             <Row>
-              <p>{this.state.homePageFeaturesDiscoverLinkText}</p>
+              <p className="secondary_font homePageFeaturesDiscoverLinkText">
+                {this.state.homePageFeaturesDiscoverLinkText}
+              </p>
             </Row>
           </Col>
         </Row>
-        <Row>
-          <h1>{this.state.homePageVideoCaseStudyTitle}</h1>
+        <Row className="homePageVideoCaseStudyTitle">
+          <h1 className="primary_font">
+            {this.state.homePageVideoCaseStudyTitle}
+          </h1>
+        </Row>
+        <Row className="homePageVideoCaseStudyVideoEmbed">
           <ReactPlayer url={this.state.homePageVideoCaseStudyVideoEmbed} />
         </Row>
-        <Row>
-          <h1>{this.state.homePagePoweredByOurPartnersTitle}</h1>
+        <Row className="homePagePoweredByOurPartnersTitle">
+          <h1 className="primary_font">
+            {this.state.homePagePoweredByOurPartnersTitle}
+          </h1>
         </Row>
         <HomePartnerImages
+          className="homePartnerImages"
           partnerImages={this.state.homePagePoweredByOurPartnersPartners}
         />
       </Container>
