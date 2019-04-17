@@ -22,6 +22,8 @@
 # role :db,  %w{deploy@example.com}
 
 
+set :branch, 'staging'
+
 server '127.0.0.1',
   user: 'deployer',
   roles: %w{sudo},
