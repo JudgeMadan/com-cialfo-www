@@ -5,6 +5,8 @@ set :application, "ciaflo-www-marketing"
 set :repo_url, 'git@github.com:cialfo/cialfo-www-marketing'
 set :pty, true
 
+set :linked_dirs, fetch(:linked_dirs, []).push('node_modules')
+
 set :deploy_to, '~/apps/marketing_cialfo_co'
 
 set :keep_releases, 2
