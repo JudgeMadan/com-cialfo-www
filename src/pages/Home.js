@@ -120,7 +120,7 @@ class Home extends React.Component {
           <HomeMarquee />
         </Row>
         <Row className="featureRows">
-          <Col className="homePageFeaturesImage">
+          <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
             <img src={this.state.homePageFeaturesSendDocumentImage} />
           </Col>
           <Col>
@@ -159,12 +159,12 @@ class Home extends React.Component {
               </p>
             </Row>
           </Col>
-          <Col className="homePageFeaturesImage">
+          <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
             <img src={this.state.homePageFeaturesLeverageImage} />
           </Col>
         </Row>
         <Row className="featureRows">
-          <Col className="homePageFeaturesImage">
+          <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
             <img src={this.state.homePageFeaturesDiscoverImage} />
           </Col>
           <Col>
@@ -185,19 +185,21 @@ class Home extends React.Component {
             </Row>
           </Col>
         </Row>
-        <Row className="homePageVideoCaseStudyTitle">
-          <h1 className="primary_font">
-            {this.state.homePageVideoCaseStudyTitle}
-          </h1>
-        </Row>
-        <Row className="homePageVideoCaseStudyVideoEmbed">
-          <ReactPlayer url={this.state.homePageVideoCaseStudyVideoEmbed} />
-        </Row>
-        <Row className="homePagePoweredByOurPartnersTitle">
-          <h1 className="primary_font">
-            {this.state.homePagePoweredByOurPartnersTitle}
-          </h1>
-        </Row>
+        <Container className="homePageVideoCaseStudy">
+          <Row className="homePageVideoCaseStudyTitle">
+            <h1 className="primary_font">
+              {this.state.homePageVideoCaseStudyTitle}
+            </h1>
+          </Row>
+          <Row className="homePageVideoCaseStudyVideoEmbed">
+            <ReactPlayer url={this.state.homePageVideoCaseStudyVideoEmbed} />
+          </Row>
+          <Row className="homePagePoweredByOurPartnersTitle">
+            <h1 className="primary_font">
+              {this.state.homePagePoweredByOurPartnersTitle}
+            </h1>
+          </Row>
+        </Container>
         <HomePartnerImages
           className="homePartnerImages"
           partnerImages={this.state.homePagePoweredByOurPartnersPartners}

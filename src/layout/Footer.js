@@ -44,7 +44,7 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <NavBar className="mt-5" sticky="bottom">
+      <NavBar className="mt-5 footer-background" sticky="bottom">
         <Col>
           <Row className="small">
             <Col>

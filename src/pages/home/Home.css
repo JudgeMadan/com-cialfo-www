@@ -99,6 +99,14 @@
   align-items: center;
 }
 
+.homePageFeaturesImageBackground {
+  background: linear-gradient(90deg, #ebf9ff 50%, white 50%);
+}
+
+.homePageFeaturesImageBackgroundReverse {
+  background: linear-gradient(90deg, white 50%, #ebf9ff 50%);
+}
+
 .homeMarquee {
   margin-bottom: 238px;
 }
@@ -109,18 +117,25 @@
 }
 
 .homePageVideoCaseStudyTitle {
+  text-align: center;
   justify-content: center;
-  margin-bottom: 75px;
+  margin-bottom: 50px;
+  padding: 50px 150px 0px 150px;
+  color: white;
+}
+.homePageVideoCaseStudy {
+  background: linear-gradient(#1886df 50%, white 50%);
 }
 
 .homePageVideoCaseStudyVideoEmbed {
   justify-content: center;
   margin-bottom: 150px;
+  /* background: linear-gradient(#1886df 50%, white 50%); */
 }
 
 .homePagePoweredByOurPartnersTitle {
   justify-content: center;
-  margin-bottom: 40px;
+  margin: 40px;
 }
 
 .homePageHeaderProductImage {

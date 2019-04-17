@@ -20,8 +20,13 @@
 
 .footerListGroupItem {
   font-family: "roboto_regular";
+  background-color: #ebf9ff !important;
 }
 
 .nav-link:hover {
   color: #1886df !important;
+}
+
+.footer-background {
+  background-color: #ebf9ff;
 }
