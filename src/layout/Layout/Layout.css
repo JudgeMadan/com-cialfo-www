@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "roboto_regular";
+  src: url("./Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header {
+  background-color: white;
+}
+
+.nav-link {
+  font-family: "roboto_regular";
+  color: #2b1f30 !important;
+}
+
+.navbar-brand {
+  font-family: "roboto_regular";
+}
+
+.footerListGroupItem {
+  font-family: "roboto_regular";
+}
+
+.nav-link:hover {
+  color: #1886df !important;
+}

@@ -4,13 +4,12 @@ import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import * as contentful from "contentful";
 import NavItem from "react-bootstrap/NavItem";
+import "./Layout/Layout.css";
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      mykey: process.env.MYKEY
-    };
+    this.state = {};
   }
   updateLocale = locale => {
     this.props.updateLocale(locale);
@@ -50,8 +49,7 @@ class Header extends React.Component {
   render() {
     return (
       <Navbar
-        bg="light"
-        className="justify-content-between"
+        className="justify-content-between header"
         fixed="top"
         sticky="top"
         expand="lg"
@@ -66,7 +64,6 @@ class Header extends React.Component {
           <Nav>
             <Link className="nav-link" to="/clients">
               {this.state.clientsPage}
-              {this.state.mykey}
             </Link>
             <Link className="nav-link" to="/features">
               {this.state.featuresPage}
@@ -91,7 +88,7 @@ class Header extends React.Component {
             {this.props.locale === "zh-CN" && (
               <NavItem
                 onClick={() => this.updateLocale("en-US")}
-                className="nav-link "
+                className="nav-link"
               >
                 English
               </NavItem>

@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import NavBar from "react-bootstrap/Navbar";
 import * as contentful from "contentful";
+import "./Layout/Layout.css";
 class Footer extends React.Component {
   constructor(props) {
     super(props);
