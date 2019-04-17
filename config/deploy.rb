@@ -14,5 +14,5 @@ set :keep_releases, 2
 namespace :deploy do
   after :updated, "yarn:install"
   after :updated, "yarn:build"
-  # after :finished, "nginx:reload"
+  after :finished, "nginx:reload"
 end
