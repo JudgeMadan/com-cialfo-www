@@ -5,4 +5,9 @@ namespace :yarn do
   	  execute "cd #{release_path}; yarn install"
     end
   end
+  task :build do
+    on roles(:all) do
+      execute "cd #{release_path}; yarn build"
+    end
+  end
 end
