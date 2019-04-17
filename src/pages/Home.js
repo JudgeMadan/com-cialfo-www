@@ -31,6 +31,10 @@ class Home extends React.Component {
     }
   }
 
+  getDemo = () => {
+    console.log("hey");
+  };
+
   fetchHomeContent = () =>
     this.client.getEntries({
       content_type: "homePageHeaderProductImage",
@@ -73,30 +77,34 @@ class Home extends React.Component {
               </h1>
             </Row>
             <Row>
-              <Form>
-                <Form.Group>
-                  <Row>
-                    <Col>
-                      <Form.Control
-                        className="primary_font homePageHeaderEmailFormText"
-                        type="email"
-                        placeholder={
-                          this.state.homePageHeaderEmailPlaceholderText
-                        }
-                      />
-                    </Col>
-                    <Col>
-                      <Button
-                        className="primary_font homePageHeaderEmailFormText"
-                        variant="primary"
-                        type="submit"
-                      >
-                        {this.state.homePageHeaderEmailSubmitButtonText}
-                      </Button>
-                    </Col>
-                  </Row>
-                </Form.Group>
-              </Form>
+              <Container>
+                <Form>
+                  <Form.Group>
+                    <Row>
+                      <Col className="homePageHeaderEmailForm" xs={8}>
+                        <Form.Control
+                          className="primary_font homePageHeaderEmailFormText"
+                          type="email"
+                          plaintext
+                          placeholder={
+                            this.state.homePageHeaderEmailPlaceholderText
+                          }
+                        />
+                      </Col>
+                      <Col className="homePageHeaderEmailSubmitButton homePageHeaderEmailForm">
+                        <p
+                          className="primary_font btn-lg homePageHeaderEmailFormText"
+                          variant="link"
+                          type="submit"
+                          onClick={this.getDemo}
+                        >
+                          {this.state.homePageHeaderEmailSubmitButtonText}
+                        </p>
+                      </Col>
+                    </Row>
+                  </Form.Group>
+                </Form>
+              </Container>
             </Row>
           </Col>
           <Col className="homePageHeaderProductImage">

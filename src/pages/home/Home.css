@@ -45,8 +45,27 @@
 .homePageHeaderEmailFormText {
   font-size: 22px;
   line-height: 24px;
+  color: #958f97 !important;
+}
 
-  color: #2b1f30;
+.no-border {
+  border: 0;
+  box-shadow: none;
+}
+
+.homePageHeaderEmailFormText:hover {
+  font-size: 22px;
+  line-height: 24px;
+  color: #2b1f30 !important;
+}
+
+.homePageHeaderEmailForm {
+  border-bottom: 4px solid #f4f4f5;
+}
+
+.homePageHeaderEmailForm:hover {
+  border-bottom: 4px solid #1981d6;
+  align-content: space-between;
 }
 
 .homePageSchoolTestimonialsTitle {
@@ -67,6 +86,11 @@
 .homePageFeaturesDiscoverLinkText {
   border-bottom: 1px solid #ffca43;
   padding-bottom: 3px;
+}
+
+.homePageHeaderEmailSubmitButton {
+  display: flex;
+  align-self: center;
 }
 
 .homePageFeaturesImage {
