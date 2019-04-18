@@ -12,6 +12,14 @@
   font-style: normal;
 }
 
+#testContentRed {
+  background-color: red;
+}
+
+#testContentBlue {
+  background-color: blue;
+}
+
 .primary_font {
   font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
 }
@@ -30,6 +38,29 @@
   font-weight: bold;
   font-size: 18px;
   line-height: 28px;
+}
+
+.aboutPageHeaderText {
+  margin-right: 100px;
+}
+
+.aboutPageHeaderTitle {
+  margin-bottom: 20px;
+}
+
+.aboutPageTitle {
+  margin-bottom: 175px;
+}
+
+.byTheNumbersTitle {
+  justify-content: center;
+  margin-bottom: 75px;
+}
+
+.byTheNumbersObject {
+  /* justify-content: center; */
+  align-content: center;
+  margin: 0 20px 0 20px;
 }
 
 .aboutPageWhoWeAreImage {

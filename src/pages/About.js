@@ -62,10 +62,10 @@ class About extends React.Component {
     console.log(this.props.locale);
     return (
       <Container>
-        <Row>
-          <Col>
+        <Row className="aboutPageTitle">
+          <Col className="aboutPageHeaderText">
             <Row>
-              <h1 className="primary_font">
+              <h1 className="primary_font aboutPageHeaderTitle">
                 {this.state.aboutPageHeaderTitle}
               </h1>
             </Row>
@@ -79,7 +79,7 @@ class About extends React.Component {
             <img src={this.state.aboutPageHeaderImage} />
           </Col>
         </Row>
-        <Row>
+        <Row className="byTheNumbersTitle">
           <h1 className="primary_font">{this.state.aboutPageNumbersTitle}</h1>
         </Row>
         <AboutByTheNumbers byTheNumbers={this.state.aboutPageNumbersArray} />
