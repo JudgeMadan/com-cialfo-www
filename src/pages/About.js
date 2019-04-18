@@ -23,6 +23,12 @@ class About extends React.Component {
       "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
   });
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.locale !== this.props.locale) {
+      this.fetchAboutContent().then(this.setAboutContent);
+    }
+  }
+
   componentDidMount() {
     this.fetchAboutContent().then(this.setAboutContent);
   }
@@ -53,7 +59,7 @@ class About extends React.Component {
   };
 
   render() {
-    console.log(this.state);
+    console.log(this.props.locale);
     return (
       <Container>
         <Row>
