@@ -1,6 +1,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import "./About.css";
 
 class AboutBusinessAdvisors extends React.Component {
   constructor(props) {
@@ -16,7 +17,9 @@ class AboutBusinessAdvisors extends React.Component {
         return (
           <Col key={businessAdvisor.sys.id}>
             <Row>
-              <p>{businessAdvisor.fields.aboutPageBusinessAdvisorBlurb}</p>
+              <p className="secondary_font">
+                {businessAdvisor.fields.aboutPageBusinessAdvisorBlurb}
+              </p>
             </Row>
             <Row>
               <Col>
@@ -28,7 +31,9 @@ class AboutBusinessAdvisors extends React.Component {
                 />
               </Col>
               <Col>
-                <h2>{businessAdvisor.fields.aboutPageBusinessAdvisorTitle}</h2>
+                <h2 className="secondary_font">
+                  {businessAdvisor.fields.aboutPageBusinessAdvisorTitle}
+                </h2>
               </Col>
             </Row>
           </Col>

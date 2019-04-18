@@ -1,3 +1,37 @@
+@font-face {
+  font-family: "domainedisplay_regular";
+  src: url("./DomaineDispNar-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto_regular";
+  src: url("./Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.primary_font {
+  font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
+}
+
+.secondary_font {
+  font-family: "roboto_regular";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.secondary_font_bold {
+  font-family: "roboto_regular";
+  font-style: medium;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 28px;
+}
+
 .aboutPageWhoWeAreImage {
   background-color: blue;
   max-width: 100px;

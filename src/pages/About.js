@@ -65,10 +65,14 @@ class About extends React.Component {
         <Row>
           <Col>
             <Row>
-              <h1>{this.state.aboutPageHeaderTitle}</h1>
+              <h1 className="primary_font">
+                {this.state.aboutPageHeaderTitle}
+              </h1>
             </Row>
             <Row>
-              <h2>{this.state.aboutPageHeaderSubtitle}</h2>
+              <h2 className="secondary_font">
+                {this.state.aboutPageHeaderSubtitle}
+              </h2>
             </Row>
           </Col>
           <Col>
@@ -76,7 +80,7 @@ class About extends React.Component {
           </Col>
         </Row>
         <Row>
-          <h1>{this.state.aboutPageNumbersTitle}</h1>
+          <h1 className="primary_font">{this.state.aboutPageNumbersTitle}</h1>
         </Row>
         <AboutByTheNumbers byTheNumbers={this.state.aboutPageNumbersArray} />
         <Row>
@@ -93,29 +97,35 @@ class About extends React.Component {
           </Col>
         </Row>
         <Row>
-          <h1>{this.state.aboutPageLeadershipTitle}</h1>
+          <h1 className="primary_font">
+            {this.state.aboutPageLeadershipTitle}
+          </h1>
         </Row>
         <AboutLeadershipTeam
           leadershipTeam={this.state.aboutPageLeadershipLeaders}
         />
         <Row>
-          <h1>{this.state.aboutPagePartnersTitle}</h1>
+          <h1 className="primary_font">{this.state.aboutPagePartnersTitle}</h1>
         </Row>
         <AboutPartners partners={this.state.aboutPagePartnersPartners} />
         <Row>
-          <h1>{this.state.aboutPageCounselorsTitle}</h1>
+          <h1 className="primary_font">
+            {this.state.aboutPageCounselorsTitle}
+          </h1>
         </Row>
         <AboutCounselors
           counselors={this.state.aboutPageCounselorsCounselors}
         />
         <Row>
-          <h1>{this.state.aboutPageBusinessAdvisorsTitle}</h1>
+          <h1 className="primary_font">
+            {this.state.aboutPageBusinessAdvisorsTitle}
+          </h1>
         </Row>
         <AboutBusinessAdvisors
           businessAdvisors={this.state.aboutPageBusinessAdvisorsAdvisors}
         />
         <Row>
-          <h1>{this.state.aboutPageOfficesTitle}</h1>
+          <h1 className="primary_font">{this.state.aboutPageOfficesTitle}</h1>
         </Row>
         <AboutCialfoOffices
           cialfoOffices={this.state.aboutPageOfficesLocations}

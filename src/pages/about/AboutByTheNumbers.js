@@ -1,6 +1,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import "./About.css";
 
 class AboutByTheNumbers extends React.Component {
   constructor(props) {
@@ -15,8 +16,12 @@ class AboutByTheNumbers extends React.Component {
       byTheNumbersObject = byTheNumbers.map(number => {
         return (
           <Col key={number.sys.id}>
-            <h1>{number.fields.aboutPageNumbersObjectTitle}</h1>
-            <h2>{number.fields.aboutPageNumbersObjectSubtitle}</h2>
+            <h1 className="primary_font">
+              {number.fields.aboutPageNumbersObjectTitle}
+            </h1>
+            <h2 className="secondary_font">
+              {number.fields.aboutPageNumbersObjectSubtitle}
+            </h2>
           </Col>
         );
       });
