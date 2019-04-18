@@ -4,6 +4,11 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import AboutByTheNumbers from "./about/AboutByTheNumbers";
+import AboutLeadershipTeam from "./about/AboutLeadershipTeam";
+import AboutPartners from "./about/AboutPartners";
+import AboutCounselors from "./about/AboutCounselors";
+import AboutBusinessAdvisors from "./about/AboutBusinessAdvisors";
+import AboutCialfoOffices from "./about/AboutCialfoOffices";
 import "./about/About.css";
 
 class About extends React.Component {
@@ -81,6 +86,34 @@ class About extends React.Component {
             </Row>
           </Col>
         </Row>
+        <Row>
+          <h1>{this.state.aboutPageLeadershipTitle}</h1>
+        </Row>
+        <AboutLeadershipTeam
+          leadershipTeam={this.state.aboutPageLeadershipLeaders}
+        />
+        <Row>
+          <h1>{this.state.aboutPagePartnersTitle}</h1>
+        </Row>
+        <AboutPartners partners={this.state.aboutPagePartnersPartners} />
+        <Row>
+          <h1>{this.state.aboutPageCounselorsTitle}</h1>
+        </Row>
+        <AboutCounselors
+          counselors={this.state.aboutPageCounselorsCounselors}
+        />
+        <Row>
+          <h1>{this.state.aboutPageBusinessAdvisorsTitle}</h1>
+        </Row>
+        <AboutBusinessAdvisors
+          businessAdvisors={this.state.aboutPageBusinessAdvisorsAdvisors}
+        />
+        <Row>
+          <h1>{this.state.aboutPageOfficesTitle}</h1>
+        </Row>
+        <AboutCialfoOffices
+          cialfoOffices={this.state.aboutPageOfficesLocations}
+        />
       </Container>
     );
   }
