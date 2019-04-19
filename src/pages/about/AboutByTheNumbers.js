@@ -16,18 +16,18 @@ class AboutByTheNumbers extends React.Component {
     if (byTheNumbers) {
       byTheNumbersObject = byTheNumbers.map(number => {
         return (
-          <Col
-            className="byTheNumbersObject"
-            id="testContentRed"
-            key={number.sys.id}
-          >
-            <Container id="testContentBlue">
-              <h1 className="primary_font">
-                {number.fields.aboutPageNumbersObjectTitle}
-              </h1>
-              <h2 className="secondary_font">
-                {number.fields.aboutPageNumbersObjectSubtitle}
-              </h2>
+          <Col className="byTheNumbersObject" key={number.sys.id}>
+            <Container className="byTheNumbersObjectContainer">
+              <Row className="byTheNumbersObjectContent byTheNumbersObjectContentRow">
+                <h1 className="primary_font">
+                  {number.fields.aboutPageNumbersObjectTitle}
+                </h1>
+              </Row>
+              <Row className="byTheNumbersObjectContent byTheNumbersObjectContentRow">
+                <h2 className="secondary_font aboutPageNumbersObjectSubtitle">
+                  {number.fields.aboutPageNumbersObjectSubtitle}
+                </h2>
+              </Row>
             </Container>
           </Col>
         );

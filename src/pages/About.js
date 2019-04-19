@@ -82,7 +82,9 @@ class About extends React.Component {
         <Row className="byTheNumbersTitle">
           <h1 className="primary_font">{this.state.aboutPageNumbersTitle}</h1>
         </Row>
-        <AboutByTheNumbers byTheNumbers={this.state.aboutPageNumbersArray} />
+        <Row className="aboutByTheNumbers">
+          <AboutByTheNumbers byTheNumbers={this.state.aboutPageNumbersArray} />
+        </Row>
         <Row>
           <Col className="aboutPageWhoWeAreImage">
             <img
