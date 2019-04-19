@@ -1,6 +1,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 import "./About.css";
 
 class AboutLeadershipTeam extends React.Component {
@@ -16,17 +17,26 @@ class AboutLeadershipTeam extends React.Component {
       leadershipTeamObject = leadershipTeam.map(leader => {
         return (
           <Col key={leader.sys.id}>
-            <img
-              src={
-                leader.fields.aboutPageLeadersObjectLeaderImage.fields.file.url
-              }
-            />
-            <h1 className="secondary_font_bold">
-              {leader.fields.aboutPageLeadersObjectTitle}
-            </h1>
-            <h2 className="secondary_font">
-              {leader.fields.aboutPageLeadersObjectSubtitle}
-            </h2>
+            <Container className="leadershipObjectContainer">
+              <Row className="leadershipObjectContent leaderImage">
+                <img
+                  src={
+                    leader.fields.aboutPageLeadersObjectLeaderImage.fields.file
+                      .url
+                  }
+                />
+              </Row>
+              <Row className="leadershipObjectContent">
+                <h1 className="secondary_font_bold">
+                  {leader.fields.aboutPageLeadersObjectTitle}
+                </h1>
+              </Row>
+              <Row className="leadershipObjectContent">
+                <h2 className="secondary_font">
+                  {leader.fields.aboutPageLeadersObjectSubtitle}
+                </h2>
+              </Row>
+            </Container>
           </Col>
         );
       });

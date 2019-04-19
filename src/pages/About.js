@@ -59,7 +59,6 @@ class About extends React.Component {
   };
 
   render() {
-    console.log(this.props.locale);
     return (
       <Container>
         <Row className="aboutPageTitle">
@@ -85,27 +84,33 @@ class About extends React.Component {
         <Row className="aboutByTheNumbers">
           <AboutByTheNumbers byTheNumbers={this.state.aboutPageNumbersArray} />
         </Row>
-        <Row>
-          <Col className="aboutPageWhoWeAreImage">
-            <img
-              className="aboutPageWhoWeAreImage"
-              src={this.state.aboutPageWhoWeAreImage}
-            />
+        <Row className="aboutWhoWeAre">
+          <Col className="aboutPageWhoWeAreImageContainer">
+            <div>
+              <img
+                className="aboutPageWhoWeAreImage"
+                src={this.state.aboutPageWhoWeAreImage}
+              />
+            </div>
           </Col>
-          <Col>
+          <Col className="aboutPageWhoWeAreContentContainer">
             <Row>
-              <p>{this.state.aboutPageWhoWeAreContent}</p>
+              <p className="aboutPageWhoWeAreContent">
+                {this.state.aboutPageWhoWeAreContent}
+              </p>
             </Row>
           </Col>
         </Row>
-        <Row>
+        <Row className="aboutPageLeadershipTitle">
           <h1 className="primary_font">
             {this.state.aboutPageLeadershipTitle}
           </h1>
         </Row>
-        <AboutLeadershipTeam
-          leadershipTeam={this.state.aboutPageLeadershipLeaders}
-        />
+        <Row className="aboutPageLeadershipTeam">
+          <AboutLeadershipTeam
+            leadershipTeam={this.state.aboutPageLeadershipLeaders}
+          />
+        </Row>
         <Row>
           <h1 className="primary_font">{this.state.aboutPagePartnersTitle}</h1>
         </Row>

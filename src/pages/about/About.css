@@ -45,11 +45,13 @@
 }
 
 .aboutPageHeaderTitle {
+  background-color: red;
   margin-bottom: 20px;
 }
 
 .aboutPageTitle {
   margin-bottom: 175px;
+  margin-top: 100px;
 }
 
 .byTheNumbersTitle {
@@ -66,13 +68,33 @@
   align-content: center;
   justify-content: center;
   text-align: center;
-  /* margin: 0 20px 0 20px; */
+}
+
+.aboutWhoWeAre {
+  background-color: #1886df;
+  margin-bottom: 150px;
+}
+
+.aboutPageWhoWeAreImageContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 50px 0 50px 0;
 }
 
 .aboutPageWhoWeAreImage {
-  background-color: green;
-  max-width: 100px;
+  max-width: 300px;
   max-height: auto;
+  margin-right: 50px;
+}
+
+.aboutPageWhoWeAreContent {
+  margin: 0 20px 0 20px;
+  color: white;
+}
+
+.aboutPageWhoWeAreContentContainer {
+  display: flex;
+  align-items: center;
 }
 
 .aboutByTheNumbers {
@@ -97,4 +119,30 @@
 
 .byTheNumbersObject:nth-child(even) {
   margin-top: 50px;
+}
+
+.aboutPageLeadershipTitle {
+  justify-content: center;
+  margin-bottom: 75px;
+}
+
+.aboutPageLeadershipTeam {
+  justify-content: center;
+  margin-bottom: 200px;
+}
+
+.leaderImage {
+  margin-bottom: 75px;
+}
+
+.leadershipObjectContainer {
+  height: 150px;
+  padding-bottom: 150px;
+  padding-top: 50px;
+}
+
+.leadershipObjectContent {
+  align-content: center;
+  justify-content: center;
+  text-align: center;
 }
