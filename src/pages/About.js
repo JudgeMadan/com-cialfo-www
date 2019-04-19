@@ -60,25 +60,29 @@ class About extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Container className="aboutPage">
         <Row className="aboutPageTitle">
-          <Col className="aboutPageHeaderText">
+          <Container>
             <Row>
-              <h1 className="primary_font aboutPageHeaderTitle">
-                {this.state.aboutPageHeaderTitle}
-              </h1>
+              <Col className="aboutPageHeaderText">
+                <Row>
+                  <h1 className="primary_font aboutPageHeaderTitle">
+                    {this.state.aboutPageHeaderTitle}
+                  </h1>
+                </Row>
+                <Row>
+                  <h2 className="secondary_font">
+                    {this.state.aboutPageHeaderSubtitle}
+                  </h2>
+                </Row>
+              </Col>
+              <Col>
+                <img src={this.state.aboutPageHeaderImage} />
+              </Col>
             </Row>
-            <Row>
-              <h2 className="secondary_font">
-                {this.state.aboutPageHeaderSubtitle}
-              </h2>
-            </Row>
-          </Col>
-          <Col>
-            <img src={this.state.aboutPageHeaderImage} />
-          </Col>
+          </Container>
         </Row>
-        <Row className="byTheNumbersTitle">
+        <Row className="contentTitle">
           <h1 className="primary_font">{this.state.aboutPageNumbersTitle}</h1>
         </Row>
         <Row className="aboutByTheNumbers">
@@ -101,7 +105,7 @@ class About extends React.Component {
             </Row>
           </Col>
         </Row>
-        <Row className="aboutPageLeadershipTitle">
+        <Row className="contentTitle">
           <h1 className="primary_font">
             {this.state.aboutPageLeadershipTitle}
           </h1>
@@ -112,17 +116,30 @@ class About extends React.Component {
           />
         </Row>
         <Row>
-          <h1 className="primary_font">{this.state.aboutPagePartnersTitle}</h1>
+          <Container className="partners">
+            <Row className="contentTitle partnersTitle">
+              <h1 className="primary_font">
+                {this.state.aboutPagePartnersTitle}
+              </h1>
+            </Row>
+            <Row className="aboutPartners">
+              <AboutPartners partners={this.state.aboutPagePartnersPartners} />
+            </Row>
+          </Container>
         </Row>
-        <AboutPartners partners={this.state.aboutPagePartnersPartners} />
-        <Row>
+
+        <Row className="contentTitle">
           <h1 className="primary_font">
             {this.state.aboutPageCounselorsTitle}
           </h1>
         </Row>
-        <AboutCounselors
-          counselors={this.state.aboutPageCounselorsCounselors}
-        />
+        <Row id="testContentRed">
+          <Container>
+            <AboutCounselors
+              counselors={this.state.aboutPageCounselorsCounselors}
+            />
+          </Container>
+        </Row>
         <Row>
           <h1 className="primary_font">
             {this.state.aboutPageBusinessAdvisorsTitle}

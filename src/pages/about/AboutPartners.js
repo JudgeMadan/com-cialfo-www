@@ -15,7 +15,10 @@ class AboutPartners extends React.Component {
       partnersObject = partners.map(partner => {
         return (
           <Col key={partner.sys.id}>
-            <img src={partner.fields.aboutPagePartners[0].fields.file.url} />
+            <img
+              className="aboutPagePartnersImage"
+              src={partner.fields.aboutPagePartners[0].fields.file.url}
+            />
           </Col>
         );
       });
