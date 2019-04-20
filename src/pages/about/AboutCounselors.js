@@ -2,7 +2,6 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 
 class AboutCounselors extends React.Component {
@@ -19,7 +18,7 @@ class AboutCounselors extends React.Component {
         return (
           <Col xs={4} key={counselor.sys.id}>
             <Container className="counselorObject ">
-              <div className="counselorInnerObject ">
+              <div className="innerObject ">
                 <Row>
                   <div>
                     <p>{counselor.fields.aboutPageCounselorBlurb}</p>

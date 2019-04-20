@@ -180,10 +180,32 @@
   margin: 15px 30px;
 }
 
-.counselorInnerObject {
+.innerObject {
   padding: 40px;
 }
 
 .aboutPageCounselorTitle {
   margin: auto;
+}
+
+.counselors {
+  margin-bottom: 150px;
+}
+
+.businessAdvisors {
+  background-color: #ebf9ff;
+  margin-bottom: 150px;
+}
+
+.businessAdvisorsContainer {
+  background-color: #ebf9ff;
+  margin-bottom: 150px;
+}
+
+.aboutPageBusinessAdvisorsTitle {
+  margin-top: 150px;
+}
+.advisorObject {
+  background-color: white;
+  margin: 15px 30px;
 }
