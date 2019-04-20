@@ -34,7 +34,7 @@ class AboutCounselors extends React.Component {
                       }
                     />
                   </Col>
-                  <Col className="test">
+                  <Col className="aboutPageCounselorTitle">
                     <div>
                       <p className="secondary_font_bold text-center">
                         {counselor.fields.aboutPageCounselorTitle}
