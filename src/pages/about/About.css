@@ -176,10 +176,14 @@
 }
 
 .counselorObject {
-  padding: 0 100px 0 100px;
   background-color: #ebf9ff;
+  margin: 15px 30px;
+}
+
+.counselorInnerObject {
+  padding: 40px;
 }
 
 .test {
-  /* margin: 0 100px 0 100px; */
+  margin: auto;
 }

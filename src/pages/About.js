@@ -133,7 +133,7 @@ class About extends React.Component {
             {this.state.aboutPageCounselorsTitle}
           </h1>
         </Row>
-        <Row id="testContentRed">
+        <Row>
           <Container>
             <AboutCounselors
               counselors={this.state.aboutPageCounselorsCounselors}
