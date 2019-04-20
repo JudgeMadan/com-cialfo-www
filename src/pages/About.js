@@ -155,7 +155,7 @@ class About extends React.Component {
             />
           </Container>
         </Row>
-        <Row>
+        <Row className="contentTitle">
           <h1 className="primary_font">{this.state.aboutPageOfficesTitle}</h1>
         </Row>
         <AboutCialfoOffices

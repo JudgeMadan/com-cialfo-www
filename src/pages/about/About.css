@@ -86,7 +86,7 @@
 }
 
 .aboutPageWhoWeAreImage {
-  max-width: 300px;
+  max-width: 500px;
   max-height: auto;
   margin-right: 50px;
 }
@@ -208,4 +208,18 @@
 .advisorObject {
   background-color: white;
   margin: 15px 30px;
+}
+
+.centeredText {
+  text-align: center;
+}
+
+.officesContainer {
+  padding: 40px 40px;
+  background-color: #ebf9ff;
+}
+
+.pinContainer {
+  display: flex;
+  justify-content: center;
 }
