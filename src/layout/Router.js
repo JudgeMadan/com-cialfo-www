@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import ClientStories from "../pages/ClientStories";
 import Features from "../pages/Features";
 import Home from "../pages/Home";
-import FeaturesTranscripts from "../pages/features/FeaturesTranscripts";
+import FeaturesSend from "../pages/features/FeaturesSend";
 import About from "../pages/About";
 
 class Router extends React.Component {
@@ -36,8 +36,8 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
-          path="/features/transcripts"
-          render={() => <FeaturesTranscripts locale={this.props.locale} />}
+          path="/features/send"
+          render={() => <FeaturesSend locale={this.props.locale} />}
         />
         {/* MAKE A 404 Page instead */}
         {/* <Route render={() => <Home locale={this.props.locale} />} /> */}
