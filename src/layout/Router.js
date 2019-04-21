@@ -5,6 +5,7 @@ import Features from "../pages/Features";
 import Home from "../pages/Home";
 import FeaturesSend from "../pages/features/FeaturesSend";
 import FeaturesResearch from "../pages/features/FeaturesResearch";
+import FeaturesDocuments from "../pages/features/FeaturesDocuments";
 import About from "../pages/About";
 
 class Router extends React.Component {
@@ -48,6 +49,12 @@ class Router extends React.Component {
         />
         {/* MAKE A 404 Page instead */}
         {/* <Route render={() => <Home locale={this.props.locale} />} /> */}
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/features/documents"
+          render={() => <FeaturesDocuments locale={this.props.locale} />}
+        />
       </Switch>
     );
   }
