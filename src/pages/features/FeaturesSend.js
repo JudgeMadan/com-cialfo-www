@@ -4,6 +4,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ReactPlayer from "react-player";
+import "./Features.css";
+import FeaturesSubfooter from "./FeaturesSubfooter";
 
 class FeaturesSend extends React.Component {
   constructor(props) {
@@ -55,43 +57,71 @@ class FeaturesSend extends React.Component {
   };
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
-      <Container>
-        <Row>
-          <h1>{this.state.sendTitle}</h1>
+      <Container className="featuresSendPage">
+        <Row className="titleContainer">
+          <h1 className="primary_font">{this.state.sendTitle}</h1>
         </Row>
-        <Row className="homePageVideoCaseStudyVideoEmbed">
-          <ReactPlayer url={this.state.sendVideo} />
+        <Row className="featuresVideoEmbed">
+          <ReactPlayer
+            width="1000px"
+            height="560px"
+            url={this.state.sendVideo}
+          />
         </Row>
         <Row>
-          <Col>
+          <Col className="featureImage">
             <img src={this.state.sendPortalImage} />
           </Col>
-          <Col>
-            <Row>
-              <h1>{this.state.sendPortalTitle}</h1>
-            </Row>
-            <Row>
-              <h1>{this.state.sendPortalBlurb}</h1>
-            </Row>
+          <Col className="featureSubSectionTextAlign">
+            <Container>
+              <Row>
+                <Col md={{ span: 6, offset: 3 }}>
+                  <h1 className="primary_font">{this.state.sendPortalTitle}</h1>
+                </Col>
+              </Row>
+              <Row>
+                <Col md={{ span: 6, offset: 3 }}>
+                  <h1 className="secondary_font">
+                    {this.state.sendPortalBlurb}
+                  </h1>
+                </Col>
+              </Row>
+            </Container>
           </Col>
         </Row>
         <Row>
-          <Col>
-            <Row>
-              <h1>{this.state.sendTranscriptTitle}</h1>
-            </Row>
-            <Row>
-              <h1>{this.state.sendTranscriptBlurb}</h1>
-            </Row>
+          <Col className="featureSubSectionTextAlign">
+            <Container>
+              <Row>
+                <Col md={{ span: 6, offset: 3 }}>
+                  <h1 className="primary_font">
+                    {this.state.sendTranscriptTitle}
+                  </h1>
+                </Col>
+              </Row>
+              <Row>
+                <Col md={{ span: 6, offset: 3 }}>
+                  <h1 className="secondary_font">
+                    {this.state.sendTranscriptBlurb}
+                  </h1>
+                </Col>
+              </Row>
+            </Container>
           </Col>
-          <Col>
+          <Col className="featureImage">
             <img src={this.state.sendTranscriptImage} />
           </Col>
         </Row>
+        <Row className="featureSendPartnersTitle">
+          <h1 className="primary_font">{this.state.sendPartnersTitle}</h1>
+        </Row>
         <Row>
-          <h1>{this.state.sendPartnersTitle}</h1>
+          <FeaturesSubfooter
+            img={this.state.sendFooterImage}
+            quote={this.state.sendFooterQuote}
+          />
         </Row>
       </Container>
     );
