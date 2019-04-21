@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import ReactPlayer from "react-player";
 import "./Features.css";
 import FeaturesSubfooter from "./FeaturesSubfooter";
-
+import FeaturesBullets from "./FeaturesBullets";
 class FeaturesResearch extends React.Component {
   constructor(props) {
     super(props);
@@ -37,7 +37,7 @@ class FeaturesResearch extends React.Component {
   };
 
   setFeaturesResearchPage = response => {
-    console.log(response.items[0].fields);
+    // console.log(response.items[0].fields);
     const sendingPageContent = response.items[0].fields;
     for (let key in sendingPageContent) {
       if (typeof sendingPageContent[key] === "string") {
@@ -57,7 +57,6 @@ class FeaturesResearch extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container className="featuresSendPage">
         <Row className="titleContainer">
@@ -85,9 +84,9 @@ class FeaturesResearch extends React.Component {
               </Row>
               <Row>
                 <Col md={{ span: 6, offset: 3 }}>
-                  <h1 className="secondary_font">
-                    {this.state.sendPortalBlurb}
-                  </h1>
+                  <FeaturesBullets
+                    bullets={this.state.researchKnowledgeBlurb}
+                  />
                 </Col>
               </Row>
             </Container>
@@ -105,9 +104,9 @@ class FeaturesResearch extends React.Component {
               </Row>
               <Row>
                 <Col md={{ span: 6, offset: 3 }}>
-                  <h1 className="secondary_font">
-                    {this.state.sendTranscriptBlurb}
-                  </h1>
+                  <FeaturesBullets
+                    bullets={this.state.researchTranscriptBlurb}
+                  />
                 </Col>
               </Row>
             </Container>
@@ -116,7 +115,7 @@ class FeaturesResearch extends React.Component {
             <img src={this.state.researchTranscriptImg} />
           </Col>
         </Row>
-        <Row>
+        <Row className="researchBottomRow">
           <Col className="featureImage">
             <img src={this.state.researchKnowledgeImg} />
           </Col>
@@ -131,9 +130,9 @@ class FeaturesResearch extends React.Component {
               </Row>
               <Row>
                 <Col md={{ span: 6, offset: 3 }}>
-                  <h1 className="secondary_font">
-                    {this.state.sendPortalBlurb}
-                  </h1>
+                  <FeaturesBullets
+                    bullets={this.state.researchKnowledgeBlurb}
+                  />
                 </Col>
               </Row>
             </Container>

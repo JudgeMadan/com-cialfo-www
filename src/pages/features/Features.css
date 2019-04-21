@@ -30,6 +30,8 @@
   padding-left: 33%;
   padding-right: 33%;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .featuresSendPage {
@@ -76,4 +78,12 @@
 .test {
   align-items: center;
   display: flex;
+}
+
+.bullet_point {
+  margin-bottom: 10px;
+}
+
+.researchBottomRow {
+  margin-bottom: 250px;
 }

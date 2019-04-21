@@ -3,32 +3,48 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./Features.css";
+import pointer from "../features/Pointer.png";
 
-class FeaturesSubfooter extends React.Component {
+class FeaturesBullets extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    // console.log(this.props);
-    return (
-      <Container className="featuresSendPage subFooterPage">
-        <Container className="test">
-          <Row>
-            <Col>
-              <img src="https://via.placeholder.com/360x500" />
+    const bullets = this.props.bullets;
+    let bulletsObject;
 
-              {/* <img src={this.props.img} /> */}
-            </Col>
-            <Col className="test">
-              <h1 className="primary_font sub_footer_quote">
-                "{this.props.quote}"
-              </h1>
-            </Col>
-          </Row>
-        </Container>
-      </Container>
-    );
+    if (bullets) {
+      bulletsObject = bullets.map(bullet => {
+        return (
+          <div className="bullet_point">
+            <img src={pointer} />
+            <span className="secondary_font"> {bullet.fields.bulletPoint}</span>
+          </div>
+        );
+      });
+    }
+
+    return <Row>{bulletsObject}</Row>;
   }
 }
-export default FeaturesSubfooter;
+export default FeaturesBullets;
+
+// const images = this.props.partnerImages;
+// let imageObject;
+
+// if (images) {
+//   imageObject = images.map(image => {
+//     return (
+//       <Col className="homePartnerImages">
+//         <img className="homePartnerImages" src={image} />
+//       </Col>
+//     );
+//   });
+// }
+
+// return (
+//   <div>
+//     <Row>{imageObject}</Row>
+//   </div>
+// );
