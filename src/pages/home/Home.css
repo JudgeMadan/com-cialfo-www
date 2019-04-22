@@ -1,0 +1,160 @@
+@font-face {
+  font-family: "domainedisplay_regular";
+  src: url("./DomaineDispNar-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto_regular";
+  src: url("./Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.primary_font {
+  font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
+}
+
+.secondary_font {
+  font-family: "roboto_regular";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.secondary_font_regular {
+  font-family: "roboto_regular";
+  font-style: medium;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.top_row {
+  margin: 130px 0 150px 0;
+}
+
+.homePageHeaderTitle {
+  font-size: 60px;
+  line-height: 62px;
+  color: #2b1f30;
+}
+
+.homePageHeaderBlurb {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: #2b1f30;
+}
+
+.homePageHeaderEmailFormText {
+  font-size: 22px;
+  line-height: 24px;
+  color: #958f97 !important;
+}
+
+.no-border {
+  border: 0;
+  box-shadow: none;
+}
+
+.homePageHeaderEmailFormText:hover {
+  font-size: 22px;
+  line-height: 24px;
+  color: #2b1f30 !important;
+}
+
+.homePageHeaderEmailForm {
+  border-bottom: 4px solid #f4f4f5;
+}
+
+.homePageHeaderEmailForm:hover {
+  border-bottom: 4px solid #1981d6;
+  align-content: space-between;
+}
+
+.homePageSchoolTestimonialsTitle {
+  justify-content: center;
+  margin-bottom: 75px;
+}
+
+.homePageFeaturesSendDocumentLinkText {
+  border-bottom: 1px solid #1986df;
+  padding-bottom: 3px;
+}
+
+.homePageFeaturesLeverageLinkText {
+  border-bottom: 1px solid #ff6574;
+  padding-bottom: 3px;
+}
+
+.homePageFeaturesDiscoverLinkText {
+  border-bottom: 1px solid #ffca43;
+  padding-bottom: 3px;
+}
+
+.homePageHeaderEmailSubmitButton {
+  display: flex;
+  align-self: center;
+}
+
+.homePageFeaturesImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homePageFeaturesImageBackground {
+  background: linear-gradient(90deg, #ebf9ff 50%, white 50%);
+}
+
+.homePageFeaturesImageBackgroundReverse {
+  background: linear-gradient(90deg, white 50%, #ebf9ff 50%);
+}
+
+.homeMarquee {
+  margin-bottom: 238px;
+}
+
+.featureRows {
+  justify-content: space-between;
+  margin-bottom: 125px;
+}
+
+.homePageVideoCaseStudyTitle {
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  padding: 50px 150px 0px 150px;
+  color: white;
+}
+.homePageVideoCaseStudy {
+  background: linear-gradient(#1886df 50%, white 50%);
+}
+
+.homePageVideoCaseStudyVideoEmbed {
+  justify-content: center;
+  margin-bottom: 150px;
+  /* background: linear-gradient(#1886df 50%, white 50%); */
+}
+
+.homePagePoweredByOurPartnersTitle {
+  justify-content: center;
+  margin: 40px;
+}
+
+.homePageHeaderProductImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homePartnerImages {
+  max-height: 150px;
+  max-width: 300px;
+  height: 100%;
+  width: auto;
+}
