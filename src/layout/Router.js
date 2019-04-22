@@ -27,7 +27,7 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
-          path="/features"
+          path="/#/features"
           render={() => <Features locale={this.props.locale} />}
         />
         <Route
