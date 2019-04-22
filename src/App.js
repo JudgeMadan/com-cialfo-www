@@ -18,6 +18,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(document.cookie);
     return (
       <div>
         <Header locale={this.state.locale} updateLocale={this.updateLocale} />

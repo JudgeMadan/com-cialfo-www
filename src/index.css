@@ -35,7 +35,8 @@ code {
 .orb {
   border-radius: 50px;
   display: inline-block;
-  margin: 0 24.7px;
+  margin: 0 20px;
+  /* margin: 0 24.7px; */
   float: left;
   transition: all 0.2s ease-out;
 }
@@ -47,8 +48,9 @@ code {
 }
 
 .marquee {
-  height: 200px;
-  width: 800px;
+  /* background-color: red; */
+  height: 300px;
+  width: 1300px;
   /* border: 2px solid #eee; */
   overflow: hidden;
   position: relative;
@@ -56,10 +58,11 @@ code {
 }
 
 .marquee--inner {
+  background-color: blue;
   display: flex;
   align-content: center;
   align-items: center;
-  width: 200%;
+  width: 300%;
   position: absolute;
   animation: marquee 5s linear infinite;
 }
@@ -104,4 +107,8 @@ code {
   100% {
     left: -100%;
   }
+}
+
+.test {
+  background-color: red;
 }
