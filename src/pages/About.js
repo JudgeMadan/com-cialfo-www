@@ -127,28 +127,35 @@ class About extends React.Component {
             </Row>
           </Container>
         </Row>
-
-        <Row className="contentTitle">
-          <h1 className="primary_font">
-            {this.state.aboutPageCounselorsTitle}
-          </h1>
+        <Row>
+          <Container className="counselors">
+            <Row className="contentTitle">
+              <h1 className="primary_font">
+                {this.state.aboutPageCounselorsTitle}
+              </h1>
+            </Row>
+            <Row>
+              <Container>
+                <AboutCounselors
+                  counselors={this.state.aboutPageCounselorsCounselors}
+                />
+              </Container>
+            </Row>
+          </Container>
         </Row>
-        <Row id="testContentRed">
-          <Container>
-            <AboutCounselors
-              counselors={this.state.aboutPageCounselorsCounselors}
+        <Row className="businessAdvisors">
+          <Container className="businessAdvisorsContainer">
+            <Row className="contentTitle aboutPageBusinessAdvisorsTitle">
+              <h1 className="primary_font">
+                {this.state.aboutPageBusinessAdvisorsTitle}
+              </h1>
+            </Row>
+            <AboutBusinessAdvisors
+              businessAdvisors={this.state.aboutPageBusinessAdvisorsAdvisors}
             />
           </Container>
         </Row>
-        <Row>
-          <h1 className="primary_font">
-            {this.state.aboutPageBusinessAdvisorsTitle}
-          </h1>
-        </Row>
-        <AboutBusinessAdvisors
-          businessAdvisors={this.state.aboutPageBusinessAdvisorsAdvisors}
-        />
-        <Row>
+        <Row className="contentTitle">
           <h1 className="primary_font">{this.state.aboutPageOfficesTitle}</h1>
         </Row>
         <AboutCialfoOffices

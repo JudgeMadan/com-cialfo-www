@@ -2,6 +2,7 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
 
 class AboutCounselors extends React.Component {
   constructor(props) {
@@ -15,25 +16,32 @@ class AboutCounselors extends React.Component {
     if (counselors) {
       counselorsObject = counselors.map(counselor => {
         return (
-          <Col key={counselor.sys.id}>
+          <Col xs={4} key={counselor.sys.id}>
             <Container className="counselorObject ">
-              <Row>
-                <div className="test">
-                  <p>{counselor.fields.aboutPageCounselorBlurb}</p>
-                </div>
-              </Row>
-              <Row>
-                <Col>
-                  <img
-                    src={
-                      counselor.fields.aboutPageCounselorImage.fields.file.url
-                    }
-                  />
-                </Col>
-                <Col>
-                  <h2>{counselor.fields.aboutPageCounselorTitle}</h2>
-                </Col>
-              </Row>
+              <div className="innerObject ">
+                <Row>
+                  <div>
+                    <p>{counselor.fields.aboutPageCounselorBlurb}</p>
+                  </div>
+                </Row>
+                <Row>
+                  <Col>
+                    <Image
+                      roundedCircle
+                      src={
+                        counselor.fields.aboutPageCounselorImage.fields.file.url
+                      }
+                    />
+                  </Col>
+                  <Col className="aboutPageCounselorTitle">
+                    <div>
+                      <p className="secondary_font_bold text-center">
+                        {counselor.fields.aboutPageCounselorTitle}
+                      </p>
+                    </div>
+                  </Col>
+                </Row>
+              </div>
             </Container>
           </Col>
         );

@@ -1,0 +1,89 @@
+@font-face {
+  font-family: "domainedisplay_regular";
+  src: url("./DomaineDispNar-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto_regular";
+  src: url("./Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.primary_font {
+  font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
+}
+
+.secondary_font {
+  font-family: "roboto_regular";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.titleContainer {
+  margin-bottom: 100px;
+  margin-top: 170px;
+  padding-left: 33%;
+  padding-right: 33%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.featuresSendPage {
+  max-width: 100% !important;
+}
+
+.featuresVideoEmbed {
+  justify-content: center;
+  margin-bottom: 220px;
+}
+
+.featureImage {
+  background-color: #ebf9ff;
+  height: 420px;
+}
+
+.featureSubSectionTextAlign {
+  display: flex;
+  align-items: center;
+}
+
+.featureSendPartnersTitle {
+  margin-top: 250px;
+  justify-content: center;
+  background-color: #ebf9ff;
+  padding-top: 100px;
+  padding-bottom: 225px;
+  margin-bottom: 220px;
+}
+
+.sub_footer_quote {
+  color: white;
+}
+
+.subFooterPage {
+  background-color: #1886df;
+  justify-content: center;
+  height: 420px;
+  margin-bottom: 220px;
+  align-items: center;
+  display: flex;
+}
+
+.test {
+  align-items: center;
+  display: flex;
+}
+
+.bullet_point {
+  margin-bottom: 10px;
+}
+
+.researchBottomRow {
+  margin-bottom: 250px;
+}

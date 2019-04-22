@@ -1,9 +1,12 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";
 import NavBar from "react-bootstrap/Navbar";
 import * as contentful from "contentful";
+import Logo from "./Layout/Logo.png";
+import { Link } from "react-router-dom";
 import "./Layout/Layout.css";
 class Footer extends React.Component {
   constructor(props) {
@@ -44,7 +47,10 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <NavBar className="mt-5 footer-background" sticky="bottom">
+      <NavBar
+        className="mt-5 footer-background align-items-start justify-content-between footer"
+        sticky="bottom"
+      >
         <Col>
           <Row className="small">
             <Col>
@@ -118,9 +124,12 @@ class Footer extends React.Component {
             </Col>
           </Row>
         </Col>
-        <Col>
+        <Col className="justify-content-md-end">
           <Row className="justify-content-md-end">
-            <p>Cialfo Logo</p>
+            <Link to="/" className="navbar-brand">
+              <img src={Logo} />
+              <span className="logo-text">Cialfo</span>
+            </Link>
           </Row>
         </Col>
       </NavBar>

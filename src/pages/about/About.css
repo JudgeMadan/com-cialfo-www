@@ -86,7 +86,7 @@
 }
 
 .aboutPageWhoWeAreImage {
-  max-width: 300px;
+  max-width: 500px;
   max-height: auto;
   margin-right: 50px;
 }
@@ -176,10 +176,50 @@
 }
 
 .counselorObject {
-  padding: 0 100px 0 100px;
+  background-color: #ebf9ff;
+  margin: 15px 30px;
+}
+
+.innerObject {
+  padding: 40px;
+}
+
+.aboutPageCounselorTitle {
+  margin: auto;
+}
+
+.counselors {
+  margin-bottom: 150px;
+}
+
+.businessAdvisors {
+  background-color: #ebf9ff;
+  margin-bottom: 150px;
+}
+
+.businessAdvisorsContainer {
+  background-color: #ebf9ff;
+  margin-bottom: 150px;
+}
+
+.aboutPageBusinessAdvisorsTitle {
+  margin-top: 150px;
+}
+.advisorObject {
+  background-color: white;
+  margin: 15px 30px;
+}
+
+.centeredText {
+  text-align: center;
+}
+
+.officesContainer {
+  padding: 40px 40px;
   background-color: #ebf9ff;
 }
 
-.test {
-  /* margin: 0 100px 0 100px; */
+.pinContainer {
+  display: flex;
+  justify-content: center;
 }

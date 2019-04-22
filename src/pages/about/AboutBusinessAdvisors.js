@@ -1,7 +1,9 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Image from "react-bootstrap/Image";
 import "./About.css";
+import Container from "react-bootstrap/Container";
 
 class AboutBusinessAdvisors extends React.Component {
   constructor(props) {
@@ -15,27 +17,34 @@ class AboutBusinessAdvisors extends React.Component {
     if (businessAdvisors) {
       businessAdvisorsObject = businessAdvisors.map(businessAdvisor => {
         return (
-          <Col key={businessAdvisor.sys.id}>
-            <Row>
-              <p className="secondary_font">
-                {businessAdvisor.fields.aboutPageBusinessAdvisorBlurb}
-              </p>
-            </Row>
-            <Row>
-              <Col>
-                <img
-                  src={
-                    businessAdvisor.fields.aboutPageBusinessAdvisorImage.fields
-                      .file.url
-                  }
-                />
-              </Col>
-              <Col>
-                <h2 className="secondary_font">
-                  {businessAdvisor.fields.aboutPageBusinessAdvisorTitle}
-                </h2>
-              </Col>
-            </Row>
+          <Col xs={4} key={businessAdvisor.sys.id}>
+            <Container className="advisorObject">
+              <div className="innerObject">
+                <Row>
+                  <p className="secondary_font">
+                    {businessAdvisor.fields.aboutPageBusinessAdvisorBlurb}
+                  </p>
+                </Row>
+                <Row>
+                  <Col>
+                    <Image
+                      roundedCircle
+                      src={
+                        businessAdvisor.fields.aboutPageBusinessAdvisorImage
+                          .fields.file.url
+                      }
+                    />
+                  </Col>
+                  <Col>
+                    <div>
+                      <p className="secondary_font_bold">
+                        {businessAdvisor.fields.aboutPageBusinessAdvisorTitle}
+                      </p>
+                    </div>
+                  </Col>
+                </Row>
+              </div>
+            </Container>
           </Col>
         );
       });
