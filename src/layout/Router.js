@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import ClientStories from "../pages/ClientStories";
 import Features from "../pages/Features";
 import Home from "../pages/Home";
+import GetADemo from "../pages/GetADemo";
 import FeaturesSend from "../pages/features/FeaturesSend";
 import FeaturesResearch from "../pages/features/FeaturesResearch";
 import FeaturesDocuments from "../pages/features/FeaturesDocuments";
@@ -54,6 +55,12 @@ class Router extends React.Component {
           exact
           path="/features/documents"
           render={() => <FeaturesDocuments locale={this.props.locale} />}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/demo"
+          render={() => <GetADemo locale={this.props.locale} />}
         />
       </Switch>
     );
