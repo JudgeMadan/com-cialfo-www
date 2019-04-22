@@ -24,7 +24,7 @@
 
 set :branch, 'staging'
 
-server 'www-staging-marketing.cialfo.co',
+server '54.92.50.188',
   user: 'deployer',
   roles: %w{sudo}
 
