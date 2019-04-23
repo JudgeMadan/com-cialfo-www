@@ -33,7 +33,7 @@
 }
 
 .homePageContainer {
-  max-width: 100% !important;
+  min-width: 100% !important;
 }
 
 .top_row {
@@ -157,6 +157,7 @@
 }
 .homePageVideoCaseStudy {
   background: linear-gradient(#1886df 50%, white 50%);
+  min-width: 100%;
 }
 
 .homePageVideoCaseStudyVideoEmbed {

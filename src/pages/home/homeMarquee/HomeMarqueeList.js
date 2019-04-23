@@ -10,7 +10,7 @@ class HomeMarqueeList extends React.Component {
 
   render() {
     return (
-      <div id="testContentPink">
+      <div>
         <HomeMarqueeListObject />
         <HomeMarqueeListObject />
         <HomeMarqueeListObject />

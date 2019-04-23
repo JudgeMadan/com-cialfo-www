@@ -62,9 +62,8 @@ class Home extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
-      <Container className="homePageContainer">
+      <div className="homePageContainer">
         <Row className="top_row">
           <Col className="top_row_left_col">
             <Row>
@@ -173,7 +172,7 @@ class Home extends React.Component {
             <img src={Screen} />
           </Col>
           <Col className="homePageFeaturesText">
-            <div className="homePageFeaturesRightSideTextObject">
+            <div className="homePageFeaturesRightSideTextObject container-fluid">
               <Row>
                 <h1 className="primary_font">
                   {this.state.homePageFeaturesDiscoverTitle}
@@ -211,7 +210,7 @@ class Home extends React.Component {
           className="homePartnerImages"
           partnerImages={this.state.homePagePoweredByOurPartnersPartners}
         />
-      </Container>
+      </div>
     );
   }
 }

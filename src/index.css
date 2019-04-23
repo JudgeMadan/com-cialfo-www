@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0 0 0 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0 0 0 0;
@@ -51,9 +57,8 @@ code {
 }
 
 .marquee {
-  /* background-color: red; */
-  height: 400px;
-  width: 1500px;
+  height: 500px;
+  width: 1690px;
   /* border: 2px solid #eee; */
   overflow: hidden;
   position: relative;
@@ -61,11 +66,10 @@ code {
 }
 
 .marquee--inner {
-  background-color: blue;
   display: flex;
   align-content: center;
   align-items: center;
-  width: 400%;
+  width: 200%;
   position: absolute;
   animation: marquee 5s linear infinite;
 }
@@ -74,10 +78,9 @@ code {
   animation-play-state: paused;
 }
 
-/* .contentSpan {
-  float: left;
-  width: 50%;
-} */
+.marqueeItem {
+  background-color: #ebf9ff;
+}
 
 .orb:nth-child(odd) {
   margin-top: 50px;
@@ -87,7 +90,7 @@ code {
   margin-bottom: 50px;
 }
 
-/* .marquee::after {
+.marquee::after {
   content: "";
   display: block;
   position: absolute;
@@ -98,10 +101,10 @@ code {
     rgba(255, 255, 255, 0) 85%,
     #fff 100%
   );
-  height: 410px;
+  height: 510px;
   width: 100%;
   pointer-events: none;
-} */
+}
 
 @keyframes marquee {
   0% {
