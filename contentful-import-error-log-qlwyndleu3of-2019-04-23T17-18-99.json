@@ -1,0 +1,191 @@
+[
+  {
+    "ts": "2019-04-23T16:18:45.643Z",
+    "level": "error",
+    "error": {
+      "name": "VersionMismatch",
+      "entity": {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "qlwyndleu3of"
+            }
+          },
+          "id": "sJWwrwkA7TXLhnqGg2YFU",
+          "type": "Asset",
+          "createdAt": "2019-04-23T16:18:29.509Z",
+          "updatedAt": "2019-04-23T16:18:35.204Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6IuCy1YvZDi5QYyZnCkV6Z"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6IuCy1YvZDi5QYyZnCkV6Z"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 2
+        },
+        "fields": {
+          "title": {
+            "en-US": "Who we are Image",
+            "zh-CN": "Group@3x"
+          },
+          "file": {
+            "en-US": {
+              "url": "//images.ctfassets.net/qlwyndleu3of/sJWwrwkA7TXLhnqGg2YFU/7768032d2d7f1b214960a5275b0021c5/Group_3x.png",
+              "details": {
+                "size": 44955,
+                "image": {
+                  "width": 1278,
+                  "height": 897
+                }
+              },
+              "fileName": "Group@3x.png",
+              "contentType": "image/png"
+            },
+            "zh-CN": {
+              "upload": "https://images.ctfassets.net/1acwuo4zy8aa/sJWwrwkA7TXLhnqGg2YFU/21ce86868354870de570e14fabfe41f6/Group_3x.png",
+              "fileName": "Group@3x.png",
+              "contentType": "image/png"
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 409,
+        "statusText": "Conflict",
+        "message": "",
+        "details": {
+        },
+        "request": {
+          "url": "https://api.contentful.com:443/spaces/qlwyndleu3of/environments/master/assets/sJWwrwkA7TXLhnqGg2YFU/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.26.3; feature space-import; sdk contentful-management.js/5.2.1; platform node.js/v10.15.3; os macOS/18.5.0;",
+            "Authorization": "Bearer ...f4243",
+            "user-agent": "node.js/v10.15.3",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 2
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "413fe2b4f51a7d05ca4dd0212db832fb"
+      }
+    }
+  },
+  {
+    "ts": "2019-04-23T16:18:50.153Z",
+    "level": "error",
+    "error": {
+      "name": "VersionMismatch",
+      "entity": {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "qlwyndleu3of"
+            }
+          },
+          "id": "sJWwrwkA7TXLhnqGg2YFU",
+          "type": "Asset",
+          "createdAt": "2019-04-23T16:18:29.509Z",
+          "updatedAt": "2019-04-23T16:18:35.204Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6IuCy1YvZDi5QYyZnCkV6Z"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6IuCy1YvZDi5QYyZnCkV6Z"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 2
+        },
+        "fields": {
+          "title": {
+            "en-US": "Who we are Image",
+            "zh-CN": "Group@3x"
+          },
+          "file": {
+            "en-US": {
+              "url": "//images.ctfassets.net/qlwyndleu3of/sJWwrwkA7TXLhnqGg2YFU/7768032d2d7f1b214960a5275b0021c5/Group_3x.png",
+              "details": {
+                "size": 44955,
+                "image": {
+                  "width": 1278,
+                  "height": 897
+                }
+              },
+              "fileName": "Group@3x.png",
+              "contentType": "image/png"
+            },
+            "zh-CN": {
+              "upload": "https://images.ctfassets.net/1acwuo4zy8aa/sJWwrwkA7TXLhnqGg2YFU/21ce86868354870de570e14fabfe41f6/Group_3x.png",
+              "fileName": "Group@3x.png",
+              "contentType": "image/png"
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 409,
+        "statusText": "Conflict",
+        "message": "",
+        "details": {
+        },
+        "request": {
+          "url": "https://api.contentful.com:443/spaces/qlwyndleu3of/environments/master/assets/sJWwrwkA7TXLhnqGg2YFU/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.26.3; feature space-import; sdk contentful-management.js/5.2.1; platform node.js/v10.15.3; os macOS/18.5.0;",
+            "Authorization": "Bearer ...f4243",
+            "user-agent": "node.js/v10.15.3",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 2
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "835e63d062acb3f3238d53094bbba774"
+      }
+    }
+  },
+  {
+    "ts": "2019-04-23T16:18:50.153Z",
+    "level": "error",
+    "error": "Could not publish the following entities: Who we are Image (sJWwrwkA7TXLhnqGg2YFU)"
+  }
+]

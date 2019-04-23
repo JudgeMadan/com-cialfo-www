@@ -52,7 +52,6 @@ class HomePartnerImages extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     const images = this.state.homePagePoweredByOurPartnersPartners;
     let imageObject;
 

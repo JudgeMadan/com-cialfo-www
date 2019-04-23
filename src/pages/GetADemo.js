@@ -43,7 +43,6 @@ class GetADemo extends React.Component {
   };
 
   setGetADemo = response => {
-    // console.log(response);
     const sendingPageContent = response.items[0].fields;
     for (let key in sendingPageContent) {
       if (typeof sendingPageContent[key] === "string") {
@@ -90,7 +89,6 @@ class GetADemo extends React.Component {
   // getADemo
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <Row className="demoTextImgContainer">

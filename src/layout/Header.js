@@ -10,16 +10,17 @@ import Logo from "./Layout/Logo.png";
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      space: "qlwyndleu3of"
+    };
   }
   updateLocale = locale => {
     this.props.updateLocale(locale);
   };
 
   client = contentful.createClient({
-    space: "1acwuo4zy8aa",
-    accessToken:
-      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
+    space: this.props.space,
+    accessToken: this.props.accessToken
   });
 
   fetchNavBar = () =>
@@ -47,7 +48,27 @@ class Header extends React.Component {
     }
   }
 
+  // render() {
+  //   const bullets = this.props.bullets;
+  //   let bulletsObject;
+
+  //   if (bullets) {
+  //     bulletsObject = bullets.map(bullet => {
+  //       return (
+  //         <div className="bullet_point">
+  //           <img src={pointer} />
+  //           <span className="secondary_font"> {bullet.fields.bulletPoint}</span>
+  //         </div>
+  //       );
+  //     });
+  //   }
+
+  //   return <Row>{bulletsObject}</Row>;
+  // }
+
   render() {
+    console.log(this.props);
+
     return (
       <Navbar
         className="justify-content-between header"
