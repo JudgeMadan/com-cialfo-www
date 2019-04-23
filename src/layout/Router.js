@@ -19,8 +19,8 @@ class Router extends React.Component {
           render={() => (
             <Home
               locale={this.props.locale}
-              space={this.state.space}
-              accessToken={this.state.accessToken}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
             />
           )}
         />
@@ -31,8 +31,8 @@ class Router extends React.Component {
           render={() => (
             <ClientStories
               locale={this.props.locale}
-              space={this.state.space}
-              accessToken={this.state.accessToken}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
             />
           )}
         />
@@ -43,8 +43,8 @@ class Router extends React.Component {
           render={() => (
             <Features
               locale={this.props.locale}
-              space={this.state.space}
-              accessToken={this.state.accessToken}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
             />
           )}
         />
@@ -55,8 +55,8 @@ class Router extends React.Component {
           render={() => (
             <About
               locale={this.props.locale}
-              space={this.state.space}
-              accessToken={this.state.accessToken}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
             />
           )}
         />
@@ -67,8 +67,8 @@ class Router extends React.Component {
           render={() => (
             <FeaturesSend
               locale={this.props.locale}
-              space={this.state.space}
-              accessToken={this.state.accessToken}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
             />
           )}
         />
@@ -79,8 +79,8 @@ class Router extends React.Component {
           render={() => (
             <FeaturesResearch
               locale={this.props.locale}
-              space={this.state.space}
-              accessToken={this.state.accessToken}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
             />
           )}
         />
@@ -93,8 +93,8 @@ class Router extends React.Component {
           render={() => (
             <FeaturesDocuments
               locale={this.props.locale}
-              space={this.state.space}
-              accessToken={this.state.accessToken}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
             />
           )}
         />
@@ -105,8 +105,8 @@ class Router extends React.Component {
           render={() => (
             <GetADemo
               locale={this.props.locale}
-              space={this.state.space}
-              accessToken={this.state.accessToken}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
             />
           )}
         />

@@ -17,9 +17,8 @@ class Home extends React.Component {
   }
 
   client = contentful.createClient({
-    space: "qlwyndleu3of",
-    accessToken:
-      "2eb1abe530767fecfa2bbc4505a44fb7a4a205df1275e863807c2d9c4470e1fe"
+    space: this.props.space,
+    accessToken: this.props.accessToken
   });
 
   componentDidMount() {
@@ -62,6 +61,7 @@ class Home extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <div className="homePageContainer">
         <Row className="top_row">

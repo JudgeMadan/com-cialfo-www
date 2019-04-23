@@ -46,27 +46,7 @@ class Header extends React.Component {
     }
   }
 
-  // render() {
-  //   const bullets = this.props.bullets;
-  //   let bulletsObject;
-
-  //   if (bullets) {
-  //     bulletsObject = bullets.map(bullet => {
-  //       return (
-  //         <div className="bullet_point">
-  //           <img src={pointer} />
-  //           <span className="secondary_font"> {bullet.fields.bulletPoint}</span>
-  //         </div>
-  //       );
-  //     });
-  //   }
-
-  //   return <Row>{bulletsObject}</Row>;
-  // }
-
   render() {
-    console.log(this.props);
-
     return (
       <Navbar
         className="justify-content-between header"
