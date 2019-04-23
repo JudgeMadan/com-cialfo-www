@@ -83,6 +83,7 @@ class Header extends React.Component {
               <Link
                 onClick={() => this.updateLocale("zh-CN")}
                 className="nav-link "
+                to="/"
               >
                 中文
               </Link>
