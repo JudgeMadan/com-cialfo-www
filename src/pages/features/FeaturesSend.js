@@ -6,6 +6,8 @@ import Col from "react-bootstrap/Col";
 import ReactPlayer from "react-player";
 import "./Features.css";
 import FeaturesSubfooter from "./FeaturesSubfooter";
+import "../home/HomePartnerImages";
+import HomePartnerImages from "../home/HomePartnerImages";
 
 class FeaturesSend extends React.Component {
   constructor(props) {
@@ -115,7 +117,7 @@ class FeaturesSend extends React.Component {
           </Col>
         </Row>
         <Row className="featureSendPartnersTitle">
-          <h1 className="primary_font">{this.state.sendPartnersTitle}</h1>
+          <HomePartnerImages locale={this.props.locale} />
         </Row>
         <Row>
           <FeaturesSubfooter

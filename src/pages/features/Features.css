@@ -58,7 +58,6 @@
   justify-content: center;
   background-color: #ebf9ff;
   padding-top: 100px;
-  padding-bottom: 225px;
   margin-bottom: 220px;
 }
 
@@ -75,9 +74,10 @@
   display: flex;
 }
 
-.test {
+.subFooterPageQuote {
   align-items: center;
   display: flex;
+  /* text-align: center; */
 }
 
 .bullet_point {

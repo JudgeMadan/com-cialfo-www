@@ -166,14 +166,17 @@
 }
 
 .homePagePoweredByOurPartnersTitle {
+  display: flex;
   justify-content: center;
+  align-items: center;
   margin: 40px;
 }
 
 .homePageHeaderProductImage {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
+  margin: 100px 100px;
 }
 
 .homePartnerImages {
@@ -188,4 +191,10 @@
 
 .imageObjectRow {
   padding: 0 400px;
+}
+
+.imageObjectTitle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
 }

@@ -205,13 +205,9 @@ class Home extends React.Component {
               url={this.state.homePageVideoCaseStudyVideoEmbed}
             />
           </Row>
-          <Row className="homePagePoweredByOurPartnersTitle">
-            <h1 className="primary_font">
-              {this.state.homePagePoweredByOurPartnersTitle}
-            </h1>
-          </Row>
         </div>
         <HomePartnerImages
+          locale={this.props.locale}
           className="homePartnerImages"
           partnerImages={this.state.homePagePoweredByOurPartnersPartners}
         />
