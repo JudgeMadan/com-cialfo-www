@@ -32,7 +32,7 @@ class ClientStories extends React.Component {
           />
         </Row>
         <Row className="justify-content-md-center">
-          <h1>More Stories</h1>
+          <h1>More Stories!!</h1>
         </Row>
         <Row className="justify-content-md-center">
           <ClientStoriesMarquee
