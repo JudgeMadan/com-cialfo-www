@@ -1,0 +1,200 @@
+@font-face {
+  font-family: "domainedisplay_regular";
+  src: url("./DomaineDispNar-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto_regular";
+  src: url("./Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.primary_font {
+  font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
+}
+
+.secondary_font {
+  font-family: "roboto_regular";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.secondary_font_regular {
+  font-family: "roboto_regular";
+  font-style: medium;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.homePageContainer {
+  max-width: 100% !important;
+}
+
+.top_row {
+  margin: 130px 0 150px 0;
+  padding: 0 150px 0 150px;
+}
+
+.top_row_left_col {
+  margin: 0 400px 0 200px;
+}
+
+.homePageHeaderTitle {
+  font-size: 60px;
+  line-height: 62px;
+  color: #2b1f30;
+}
+
+.homePageHeaderBlurb {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: #2b1f30;
+}
+
+.homePageHeaderEmailFormText {
+  font-size: 22px;
+  line-height: 24px;
+  color: #958f97 !important;
+}
+
+.no-border {
+  border: 0;
+  box-shadow: none;
+}
+
+.homePageHeaderEmailFormText:hover {
+  font-size: 22px;
+  line-height: 24px;
+  color: #2b1f30 !important;
+}
+
+.homePageHeaderEmailForm {
+  border-bottom: 4px solid #f4f4f5;
+}
+
+.homePageHeaderEmailForm:hover {
+  border-bottom: 4px solid #1981d6;
+  align-content: space-between;
+}
+
+.homePageSchoolTestimonialsTitle {
+  justify-content: center;
+  margin-bottom: 75px;
+}
+
+.homePageFeaturesSendDocumentLinkText {
+  border-bottom: 1px solid #1986df;
+  padding-bottom: 3px;
+}
+
+.homePageFeaturesLeverageLinkText {
+  border-bottom: 1px solid #ff6574;
+  padding-bottom: 3px;
+}
+
+.homePageFeaturesDiscoverLinkText {
+  border-bottom: 1px solid #ffca43;
+  padding-bottom: 3px;
+}
+
+.homePageHeaderEmailSubmitButton {
+  display: flex;
+  align-self: center;
+}
+
+.homePageFeaturesImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0 100px 0;
+}
+
+.homePageFeaturesText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homePageFeaturesRightSideTextObject {
+  margin: 0 600px 0 0;
+}
+
+.homePageFeaturesLeftSideTextObject {
+  margin: 0 0 0 600px;
+}
+
+.homePageFeaturesImageBackground {
+  background: linear-gradient(90deg, #ebf9ff 50%, white 50%);
+}
+
+.homePageFeaturesImageBackgroundReverse {
+  background: linear-gradient(90deg, white 50%, #ebf9ff 50%);
+}
+
+.homeMarquee {
+  margin-bottom: 238px;
+}
+
+.featureRows {
+  justify-content: space-between;
+  margin-bottom: 125px;
+}
+
+.homePageVideoCaseStudyTitle {
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  padding: 100px 150px 0px 150px;
+  color: white;
+}
+.homePageVideoCaseStudy {
+  background: linear-gradient(#1886df 50%, white 50%);
+}
+
+.homePageVideoCaseStudyVideoEmbed {
+  justify-content: center;
+  margin-bottom: 150px;
+  /* background: linear-gradient(#1886df 50%, white 50%); */
+}
+
+.homePagePoweredByOurPartnersTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+}
+
+.homePageHeaderProductImage {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 100px;
+}
+
+.homePartnerImages {
+  display: flex;
+  justify-content: space-around;
+  max-height: 75px;
+  max-width: 225px;
+  height: 100%;
+  width: auto;
+  margin-bottom: 150px;
+}
+
+.imageObjectRow {
+  padding: 0 400px;
+}
+
+.imageObjectTitle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}

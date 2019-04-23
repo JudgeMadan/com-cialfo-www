@@ -1,0 +1,695 @@
+# Logfile created on 2019-04-17 14:44:33 +0100 by logger.rb/56438
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-04-17 14:44:33 +0100 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1fe101f0] Running /usr/bin/env mkdir -p /tmp as deployer@www-staging-marketing.cialfo.co
+ DEBUG [1fe101f0] Command: /usr/bin/env mkdir -p /tmp
+  INFO [a1942426] Finished in 8.937 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-ciaflo-www-marketing-staging-charlescarrier.sh 0.0%
+  INFO Uploading /tmp/git-ssh-ciaflo-www-marketing-staging-charlescarrier.sh 100.0%
+  INFO [826f85ba] Running /usr/bin/env chmod 700 /tmp/git-ssh-ciaflo-www-marketing-staging-charlescarrier.sh as deployer@www-staging-marketing.cialfo.co
+ DEBUG [826f85ba] Command: /usr/bin/env chmod 700 /tmp/git-ssh-ciaflo-www-marketing-staging-charlescarrier.sh
+  INFO [9db15a5b] Finished in 0.851 seconds with exit status 0 (successful).
+  INFO [4dd4babf] Running /usr/bin/env git ls-remote git@github.com:cialfo/cialfo-www-marketing HEAD as deployer@www-staging-marketing.cialfo.co
+ DEBUG [4dd4babf] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ciaflo-www-marketing-staging-charlescarrier.sh" ; /usr/bin/env git ls-remote git@github.com:cialfo/cialfo-www-marketing HEAD )
+ DEBUG [85b20b0d] 	bde67ce9fba7113d1618cdccb62c31cfb1997da0
+ DEBUG [85b20b0d] 		
+ DEBUG [85b20b0d] 	HEAD
+  INFO [85b20b0d] Finished in 2.511 seconds with exit status 0 (successful).
+  INFO [34f76d6c] Running /usr/bin/env mkdir -p ~/apps/marketing_cialfo_co/shared ~/apps/marketing_cialfo_co/releases as deployer@www-staging-marketing.cialfo.co
+ DEBUG [34f76d6c] Command: /usr/bin/env mkdir -p ~/apps/marketing_cialfo_co/shared ~/apps/marketing_cialfo_co/releases
+  INFO [1b338cf8] Finished in 0.919 seconds with exit status 0 (successful).
+  INFO [cd3047c8] Running /usr/bin/env mkdir -p ~/apps/marketing_cialfo_co/shared/node_modules as deployer@www-staging-marketing.cialfo.co
+ DEBUG [cd3047c8] Command: /usr/bin/env mkdir -p ~/apps/marketing_cialfo_co/shared/node_modules
+  INFO [4cbb9bcb] Finished in 0.856 seconds with exit status 0 (successful).
+  INFO [7cc04989] Running /usr/bin/env sudo mkdir -pv ~/apps/marketing_cialfo_co/shared/log as deployer@www-staging-marketing.cialfo.co
+ DEBUG [7cc04989] Command: /usr/bin/env sudo mkdir -pv ~/apps/marketing_cialfo_co/shared/log
+  INFO [9af86a2b] Finished in 0.930 seconds with exit status 0 (successful).
+ DEBUG [3abb497b] Running [ -f ~/apps/marketing_cialfo_co/current/REVISION ] as deployer@www-staging-marketing.cialfo.co
+ DEBUG [3abb497b] Command: [ -f ~/apps/marketing_cialfo_co/current/REVISION ]
+ DEBUG [fcc1632f] Finished in 0.870 seconds with exit status 0 (successful).
+ DEBUG [f20f45fc] Running /usr/bin/env cat ~/apps/marketing_cialfo_co/current/REVISION 2>/dev/null as deployer@www-staging-marketing.cialfo.co
+ DEBUG [f20f45fc] Command: /usr/bin/env cat ~/apps/marketing_cialfo_co/current/REVISION 2>/dev/null
+ DEBUG [35785e18] 	bde67ce9fba7113d1618cdccb62c31cfb1997da0
+ DEBUG [35785e18] 	
+ DEBUG [35785e18] Finished in 0.860 seconds with exit status 0 (successful).
+ DEBUG [a6ef0f27] Running [ -f ~/apps/marketing_cialfo_co/repo/HEAD ] as deployer@www-staging-marketing.cialfo.co
+ DEBUG [a6ef0f27] Command: [ -f ~/apps/marketing_cialfo_co/repo/HEAD ]
+ DEBUG [20d8820d] Finished in 0.856 seconds with exit status 0 (successful).
+  INFO The repository mirror is at ~/apps/marketing_cialfo_co/repo
+ DEBUG [025dd8f3] Running if test ! -d ~/apps/marketing_cialfo_co/repo; then echo "Directory does not exist '~/apps/marketing_cialfo_co/repo'" 1>&2; false; fi as deployer@www-staging-marketing.cialfo.co
+ DEBUG [025dd8f3] Command: if test ! -d ~/apps/marketing_cialfo_co/repo; then echo "Directory does not exist '~/apps/marketing_cialfo_co/repo'" 1>&2; false; fi
+ DEBUG [cf1072fa] Finished in 0.857 seconds with exit status 0 (successful).
+  INFO [f68dcc1c] Running /usr/bin/env git remote set-url origin git@github.com:cialfo/cialfo-www-marketing as deployer@www-staging-marketing.cialfo.co
+ DEBUG [f68dcc1c] Command: cd ~/apps/marketing_cialfo_co/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ciaflo-www-marketing-staging-charlescarrier.sh" ; /usr/bin/env git remote set-url origin git@github.com:cialfo/cialfo-www-marketing )
+  INFO [ab2cf748] Finished in 0.843 seconds with exit status 0 (successful).
+  INFO [44820a1e] Running /usr/bin/env git remote update --prune as deployer@www-staging-marketing.cialfo.co
+ DEBUG [44820a1e] Command: cd ~/apps/marketing_cialfo_co/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ciaflo-www-marketing-staging-charlescarrier.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [3d047122] 	Fetching origin
+ DEBUG [3d047122] 	
+ DEBUG [3d047122] 	remote: Enumerating objects: 46, done.[K
+ DEBUG [3d047122] 	
+ DEBUG [3d047122] 	remote: Counting objects:   2% (1/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:   4% (2/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:   6% (3/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:   8% (4/46)
+ DEBUG [3d047122] 	   [K
+ DEBUG [3d047122] 	remote: Counting objects:  10% (5/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  13% (6/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  15% (7/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  17% (8
+ DEBUG [3d047122] 	/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  19% (9/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  21% (10/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  23% (11/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  
+ DEBUG [3d047122] 	26% (12/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  28% (13/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  30% (14/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  32% (15/46)   [K
+ DEBUG [3d047122] 	remote: Counting ob
+ DEBUG [3d047122] 	jects:  34% (16/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  36% (17/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  39% (18/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  41% (19/46)   [K
+ DEBUG [3d047122] 	remote: Cou
+ DEBUG [3d047122] 	nting objects:  43% (20/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  45% (21/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  47% (22/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  50% (23/46
+ DEBUG [3d047122] 	)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  52% (24/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  54% (25/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  56% (26/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  58
+ DEBUG [3d047122] 	% (27/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  60% (28/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  63% (29/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  65% (30/46)   [K
+ DEBUG [3d047122] 	remote: Counting obje
+ DEBUG [3d047122] 	cts:  67% (31/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  69% (32/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  71% (33/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  73% (34/46)   [K
+ DEBUG [3d047122] 	remote: Count
+ DEBUG [3d047122] 	ing objects:  76% (35/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  78% (36/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  80% (37/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  82% (38/46) 
+ DEBUG [3d047122] 	  [K
+ DEBUG [3d047122] 	remote: Counting objects:  84% (39/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  86% (40/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  89% (41/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  91% 
+ DEBUG [3d047122] 	(42/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  93% (43/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  95% (44/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects:  97% (45/46)   [K
+ DEBUG [3d047122] 	remote: Counting object
+ DEBUG [3d047122] 	s: 100% (46/46)   [K
+ DEBUG [3d047122] 	remote: Counting objects: 100% (46/46), done.[K
+ DEBUG [3d047122] 	
+ DEBUG [3d047122] 	remote: Compressing objects:  11% (1/9)   [K
+ DEBUG [3d047122] 	remote: Compressing objects:  22% (2/9)   [K
+ DEBUG [3d047122] 	remote: Compressing objects:  33% (3/9)   [K
+ DEBUG [3d047122] 	remote: Compressing objects:  44% (4/9)   [K
+ DEBUG [3d047122] 	remote: Compressing objects:  55% (5/9)   [K
+ DEBUG [3d047122] 	remote: Compressing objects:  66% (6/9)   [K
+ DEBUG [3d047122] 	remote: Compressing objects:  77% (7/9)   [K
+ DEBUG [3d047122] 	remote: Compressing objects:  88% (8/9)   [K
+ DEBUG [3d047122] 	remote: Compressing objects: 100% (9/9)   [K
+ DEBUG [3d047122] 	remote: Compressing objects: 100% (9/9), done.[K
+ DEBUG [3d047122] 	
+ DEBUG [3d047122] 	remote: Total 22 (delta 13), reused 22 (delta 13), pack-reused 0[K
+ DEBUG [3d047122] 	
+ DEBUG [3d047122] 	Unpacking objects:   4% (1/22)   
+ DEBUG [3d047122] 	Unpacking objects:   9% (2/22)   
+ DEBUG [3d047122] 	Unpacking objects:  13% (3/22)   
+ DEBUG [3d047122] 	Unpacking objects:  18% (4/22)   
+ DEBUG [3d047122] 	Unpacking objects:  22% (5/22)   
+ DEBUG [3d047122] 	Unpacking objects:  27% (6/22)   
+ DEBUG [3d047122] 	Unpacking objects:  31% (7/22)   
+ DEBUG [3d047122] 	Unpacking objects:  36% (8/22)   
+ DEBUG [3d047122] 	Unpacking objects:  40% (9/22)   
+ DEBUG [3d047122] 	Unpacking objects:  45% (10/22)   
+ DEBUG [3d047122] 	Unpacking objects:  50% (11/22)   
+ DEBUG [3d047122] 	Unpacking objects:  54% (12/22)   
+ DEBUG [3d047122] 	Unpacking objects:  59% (13/22)   
+ DEBUG [3d047122] 	Unpacking objects:  63% (14/22)   
+ DEBUG [3d047122] 	Unpacking objects:  68% (15/22)   
+ DEBUG [3d047122] 	Unpacking objects:  72% (16/22)   
+ DEBUG [3d047122] 	Unpacking objects:  77% (17/22)   
+ DEBUG [3d047122] 	Unpacking objects:  81% (18/22)   
+ DEBUG [3d047122] 	Unpacking objects:  86% (19/22)   
+ DEBUG [3d047122] 	Unpacking objects:  90% (20/22)   
+ DEBUG [3d047122] 	Unpacking objects:  95% (21/22)   
+ DEBUG [3d047122] 	Unpacking objects: 100% (22/22)   
+ DEBUG [3d047122] 	Unpacking objects: 100% (22/22), done.
+ DEBUG [3d047122] 	
+ DEBUG [3d047122] 	From github.com:cialfo/cialfo-www-marketing
+ DEBUG [3d047122] 	
+ DEBUG [3d047122] 	   fdf4fee..d1258e4  april_10_work -> april_10_work
+ DEBUG [3d047122] 	
+ DEBUG [3d047122] 	   70c3022..7dd6985  feature/1_deployment_setup -> feature/1_deployment_setup
+ DEBUG [3d047122] 	
+ DEBUG [3d047122] 	 * [new branch]      staging    -> staging
+ DEBUG [3d047122] 	
+  INFO [3d047122] Finished in 3.012 seconds with exit status 0 (successful).
+ DEBUG [c3bc8acd] Running if test ! -d ~/apps/marketing_cialfo_co/repo; then echo "Directory does not exist '~/apps/marketing_cialfo_co/repo'" 1>&2; false; fi as deployer@www-staging-marketing.cialfo.co
+ DEBUG [c3bc8acd] Command: if test ! -d ~/apps/marketing_cialfo_co/repo; then echo "Directory does not exist '~/apps/marketing_cialfo_co/repo'" 1>&2; false; fi
+ DEBUG [3449e104] Finished in 0.835 seconds with exit status 0 (successful).
+  INFO [290a0131] Running /usr/bin/env mkdir -p ~/apps/marketing_cialfo_co/releases/20190417134452 as deployer@www-staging-marketing.cialfo.co
+ DEBUG [290a0131] Command: cd ~/apps/marketing_cialfo_co/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ciaflo-www-marketing-staging-charlescarrier.sh" ; /usr/bin/env mkdir -p ~/apps/marketing_cialfo_co/releases/20190417134452 )
+  INFO [d5807de0] Finished in 0.881 seconds with exit status 0 (successful).
+  INFO [4add48ca] Running /usr/bin/env git archive staging | /usr/bin/env tar -x -f - -C ~/apps/marketing_cialfo_co/releases/20190417134452 as deployer@www-staging-marketing.cialfo.co
+ DEBUG [4add48ca] Command: cd ~/apps/marketing_cialfo_co/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ciaflo-www-marketing-staging-charlescarrier.sh" ; /usr/bin/env git archive staging | /usr/bin/env tar -x -f - -C ~/apps/marketing_cialfo_co/releases/20190417134452 )
+  INFO [92adf5e0] Finished in 0.853 seconds with exit status 0 (successful).
+ DEBUG [c48c8758] Running if test ! -d ~/apps/marketing_cialfo_co/repo; then echo "Directory does not exist '~/apps/marketing_cialfo_co/repo'" 1>&2; false; fi as deployer@www-staging-marketing.cialfo.co
+ DEBUG [c48c8758] Command: if test ! -d ~/apps/marketing_cialfo_co/repo; then echo "Directory does not exist '~/apps/marketing_cialfo_co/repo'" 1>&2; false; fi
+ DEBUG [ef527c86] Finished in 0.840 seconds with exit status 0 (successful).
+ DEBUG [74f0b665] Running /usr/bin/env git rev-list --max-count=1 staging as deployer@www-staging-marketing.cialfo.co
+ DEBUG [74f0b665] Command: cd ~/apps/marketing_cialfo_co/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ciaflo-www-marketing-staging-charlescarrier.sh" ; /usr/bin/env git rev-list --max-count=1 staging )
+ DEBUG [cded9881] 	0b2e2e1a42001adfc1f702c93e7641a3f7c2afc8
+ DEBUG [cded9881] 	
+ DEBUG [cded9881] Finished in 0.853 seconds with exit status 0 (successful).
+ DEBUG [60f4cbdc] Running if test ! -d ~/apps/marketing_cialfo_co/releases/20190417134452; then echo "Directory does not exist '~/apps/marketing_cialfo_co/releases/20190417134452'" 1>&2; false; fi as deployer@www-staging-marketing.cialfo.co
+ DEBUG [60f4cbdc] Command: if test ! -d ~/apps/marketing_cialfo_co/releases/20190417134452; then echo "Directory does not exist '~/apps/marketing_cialfo_co/releases/20190417134452'" 1>&2; false; fi
+ DEBUG [d702cde4] Finished in 0.839 seconds with exit status 0 (successful).
+  INFO [9e0e3ab9] Running /usr/bin/env echo "0b2e2e1a42001adfc1f702c93e7641a3f7c2afc8" > REVISION as deployer@www-staging-marketing.cialfo.co
+ DEBUG [9e0e3ab9] Command: cd ~/apps/marketing_cialfo_co/releases/20190417134452 && /usr/bin/env echo "0b2e2e1a42001adfc1f702c93e7641a3f7c2afc8" > REVISION
+  INFO [e9b35ff9] Finished in 0.852 seconds with exit status 0 (successful).
+  INFO [d5606d99] Running /usr/bin/env mkdir -p ~/apps/marketing_cialfo_co/releases/20190417134452 as deployer@www-staging-marketing.cialfo.co
+ DEBUG [d5606d99] Command: /usr/bin/env mkdir -p ~/apps/marketing_cialfo_co/releases/20190417134452
+  INFO [72b68c47] Finished in 0.854 seconds with exit status 0 (successful).
+ DEBUG [98d399ad] Running [ -L ~/apps/marketing_cialfo_co/releases/20190417134452/node_modules ] as deployer@www-staging-marketing.cialfo.co
+ DEBUG [98d399ad] Command: [ -L ~/apps/marketing_cialfo_co/releases/20190417134452/node_modules ]
+ DEBUG [31a606d1] Finished in 0.858 seconds with exit status 1 (failed).
+ DEBUG [6a52395e] Running [ -d ~/apps/marketing_cialfo_co/releases/20190417134452/node_modules ] as deployer@www-staging-marketing.cialfo.co
+ DEBUG [6a52395e] Command: [ -d ~/apps/marketing_cialfo_co/releases/20190417134452/node_modules ]
+ DEBUG [b3488f0b] Finished in 0.842 seconds with exit status 1 (failed).
+  INFO [d88c009a] Running /usr/bin/env ln -s ~/apps/marketing_cialfo_co/shared/node_modules ~/apps/marketing_cialfo_co/releases/20190417134452/node_modules as deployer@www-staging-marketing.cialfo.co
+ DEBUG [d88c009a] Command: /usr/bin/env ln -s ~/apps/marketing_cialfo_co/shared/node_modules ~/apps/marketing_cialfo_co/releases/20190417134452/node_modules
+  INFO [29bc723e] Finished in 0.862 seconds with exit status 0 (successful).
+  INFO [8faf1dd9] Running cd ~/apps/marketing_cialfo_co/releases/20190417134452; yarn install as deployer@www-staging-marketing.cialfo.co
+ DEBUG [8faf1dd9] Command: cd ~/apps/marketing_cialfo_co/releases/20190417134452; yarn install
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[1myarn install v1.15.2[22m
+ DEBUG [4ff6a986] 	
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[33mwarning[39m package-lock.json found. Your project contains lock files generated by tools other than Yarn. It is advised not to mix package managers in order to avoid resolution inconsistencies caused by unsynchronized lock files. To clear this warning, remove package-lock.json.
+ DEBUG [4ff6a986] 	
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[2m[1/4][22m Resolving packages...
+ DEBUG [4ff6a986] 	
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠁ 
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠂ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠄ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⡀ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⢀ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠠ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠐ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠈ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠁ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠂ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠄ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⡀ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⢀ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠠ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠐ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠈ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠁ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠂ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠄ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⡀ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⢀ @githubprimer/octicons-react@^8.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠠ prop-types@^15.6.1
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠐ react-is@^16.8.1
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠈ contentful@^7.5.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠁ lodash@^4.17.4
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠂ react@^16.8.4
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠄ react-bootstrap@^1.0.0-beta.6
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⡀ loose-envify@^1.0.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⢀ loose-envify@^1.0.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠠ invariant@^2.2.4
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠐ invariant@^2.2.4
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠈ invariant@^2.2.4
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠁ invariant@^2.2.4
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠂ invariant@^2.2.4
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠄ invariant@^2.2.4
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⡀ invariant@^2.2.4
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⢀ invariant@^2.2.4
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠠ invariant@^2.2.4
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠐ ua-parser-js@^0.7.18
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[33mwarning[39m react-bootstrap > react-overlays > react-popper > create-react-context > fbjs > core-js@1.2.7: core-js@<2.6.5 is no longer maintained. Please, upgrade to core-js@3 or at least to actual version of core-js@2.
+ DEBUG [4ff6a986] 	
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠈ is-stream@^1.0.1
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠁ safer-buffer@>= 2.1.2 < 3
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠂ safer-buffer@>= 2.1.2 < 3
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠄ safer-buffer@>= 2.1.2 < 3
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⡀ safer-buffer@>= 2.1.2 < 3
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⢀ safer-buffer@>= 2.1.2 < 3
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠠ safer-buffer@>= 2.1.2 < 3
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠐ safer-buffer@>= 2.1.2 < 3
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠈ safer-buffer@>= 2.1.2 < 3
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠁ gud@^1.0.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠂ react-player@^1.11.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⠄ prop-types@^15.5.6
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	⡀ value-equal@^0.4.0
+ DEBUG [4ff6a986] 	[0K
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[2m[2/4][22m Fetching packages...
+ DEBUG [4ff6a986] 	
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[----------------------------------------------------------------------] 0/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[###------------------------------------------------------------------] 62/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[#####----------------------------------------------------------------] 95/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[######--------------------------------------------------------------] 123/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[#########-----------------------------------------------------------] 182/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[############--------------------------------------------------------] 250/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[##############------------------------------------------------------] 299/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[#################---------------------------------------------------] 365/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[#####################-----------------------------------------------] 448/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[##########################------------------------------------------] 549/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[###############################-------------------------------------] 643/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[###################################---------------------------------] 728/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[########################################----------------------------] 829/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[############################################------------------------] 929/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[#################################################------------------] 1039/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[######################################################-------------] 1147/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[##########################################################---------] 1240/1421
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[################################################################---] 1349/1421
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[34minfo[39m fsevents@1.2.4: The platform "linux" is incompatible with this module.
+ DEBUG [4ff6a986] 	
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[34minfo[39m "fsevents@1.2.4" is an optional dependency and failed compatibility check. Excluding it from installation.
+ DEBUG [4ff6a986] 	
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[###################################################################] 1421/1421
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[2m[3/4][22m Linking dependencies...
+ DEBUG [4ff6a986] 	
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[33mwarning[39m " > bootstrap@4.3.1" has unmet peer dependency "jquery@1.9.1 - 3".
+ DEBUG [4ff6a986] 	
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[33mwarning[39m " > bootstrap@4.3.1" has unmet peer dependency "popper.js@^1.14.7".
+ DEBUG [4ff6a986] 	
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[----------------------------------------------------------------------] 0/1745
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[----------------------------------------------------------------------] 0/1287
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[##############------------------------------------------------------] 256/1287
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[#################################-----------------------------------] 621/1287
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[##############################################----------------------] 877/1287
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[############################################################-------] 1151/1287
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[###################################################################] 1287/1287
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[----------------------------------------------------------------------] 0/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[##-------------------------------------------------------------------] 72/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[######--------------------------------------------------------------] 238/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[##############------------------------------------------------------] 586/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[###############-----------------------------------------------------] 632/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[###############-----------------------------------------------------] 660/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[################----------------------------------------------------] 684/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[#################---------------------------------------------------] 714/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[#################---------------------------------------------------] 742/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[##################--------------------------------------------------] 766/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[##################--------------------------------------------------] 794/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[###################-------------------------------------------------] 824/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[####################------------------------------------------------] 848/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[####################------------------------------------------------] 876/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[#####################-----------------------------------------------] 924/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[#################################----------------------------------] 1460/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[################################################-------------------] 2092/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[###############################################################----] 2750/2934
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[###################################################################] 2934/2934
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[2m[4/4][22m Building fresh packages...
+ DEBUG [4ff6a986] 	
+ DEBUG [4ff6a986] 	[1B
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[32msuccess[39m Saved lockfile.
+ DEBUG [4ff6a986] 	
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	[2K
+ DEBUG [4ff6a986] 	[1G
+ DEBUG [4ff6a986] 	Done in 11.57s.
+ DEBUG [4ff6a986] 	
+  INFO [4ff6a986] Finished in 12.672 seconds with exit status 0 (successful).
+  INFO [38243ebc] Running cd ~/apps/marketing_cialfo_co/releases/20190417134452; yarn build as deployer@www-staging-marketing.cialfo.co
+ DEBUG [38243ebc] Command: cd ~/apps/marketing_cialfo_co/releases/20190417134452; yarn build
+ DEBUG [ea0ac0a4] 	[2K
+ DEBUG [ea0ac0a4] 	[1G
+ DEBUG [ea0ac0a4] 	[1myarn run v1.15.2[22m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	[2K
+ DEBUG [ea0ac0a4] 	[1G
+ DEBUG [ea0ac0a4] 	[2m$ react-scripts build[22m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	Creating an optimized production build...
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	[33mCompiled with warnings.[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	[33m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	[7m./src/pages/home/HomeMarquee.js[27m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 10:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 13:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 16:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 19:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 24:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 27:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 30:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 33:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	[7m./src/pages/features/FeaturesTranscripts.js[27m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 4:[22m  Useless constructor  [33m[4mno-useless-constructor[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	[7m./src/pages/clientStories/clientStoriesMarquee/ClientStoriesMarqueeItem.js[27m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 51:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	[7m./src/pages/Features.js[27m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 59:[22m   img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 63:[22m   img elements must have an alt prop, either with meaningful text, or an empty s
+ DEBUG [ea0ac0a4] 	tring for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 88:[22m   img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 97:[22m   img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 102:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	[7m./src/pages/home/HomePartnerImages.js[27m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 7:[22m    Useless constructor                                                                                        [33m[4mno-useless-constructor[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 19:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	[7m./src/pages/clientStories/ClientStoriesItem.js[27m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 81:[22m   img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 125:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	[7m./src/pages/Home.js[27m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 9:[22m     'Button' is defined but never used                                                                         [33m[4mno-unused-vars[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 111:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 124:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 163:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [1mLine 168:[22
+ DEBUG [ea0ac0a4] 	m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	File sizes after gzip:
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  109.84 KB  [2mbuild/static/js/[22m[36m2.f0f7f10b.chunk.js[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  22.06 KB   [2mbuild/static/css/[22m[36m2.a0b9481b.chunk.css[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  3.34 KB    [2mbuild/static/js/[22m[36mmain.1606d6e4.chunk.js[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  1.45 KB    [2mbuild/static/css/[22m[36mmain.b83b6411.chunk.css[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  762 B      [2mbuild/static/js/[22m[36mruntime~main.a8a9905a.js[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	The project was built assuming it is hosted at [32mthe server root[39m.
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	You can control this with the [32mhomepage[39m field in your [36mpackage.json[39m.
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	For example, add this to build it for GitHub Pages:
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [32m"homepage"[39m [36m:[39m [32m"http://myname.github.io/myapp"[39m[36m,[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	The [36mbuild[39m folder is ready to be deployed.
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	You may serve it with a static server:
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [36myarn[39m global add serve
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [36mserve[39m -s build
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	Find out more about deployment here:
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	  [33mhttps://bit.ly/CRA-deploy[39m
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	
+ DEBUG [ea0ac0a4] 	[2K
+ DEBUG [ea0ac0a4] 	[1G
+ DEBUG [ea0ac0a4] 	Done in 29.07s.
+ DEBUG [ea0ac0a4] 	
+  INFO [ea0ac0a4] Finished in 30.411 seconds with exit status 0 (successful).
+  INFO [c7179b35] Running /usr/bin/env ln -s ~/apps/marketing_cialfo_co/releases/20190417134452 ~/apps/marketing_cialfo_co/releases/current as deployer@www-staging-marketing.cialfo.co
+ DEBUG [c7179b35] Command: /usr/bin/env ln -s ~/apps/marketing_cialfo_co/releases/20190417134452 ~/apps/marketing_cialfo_co/releases/current
+  INFO [5dd74fee] Finished in 0.842 seconds with exit status 0 (successful).
+  INFO [4e5c0acf] Running /usr/bin/env mv ~/apps/marketing_cialfo_co/releases/current ~/apps/marketing_cialfo_co as deployer@www-staging-marketing.cialfo.co
+ DEBUG [4e5c0acf] Command: /usr/bin/env mv ~/apps/marketing_cialfo_co/releases/current ~/apps/marketing_cialfo_co
+  INFO [375a235d] Finished in 0.857 seconds with exit status 0 (successful).
+ DEBUG [f0f09a9b] Running /usr/bin/env ls -x ~/apps/marketing_cialfo_co/releases as deployer@www-staging-marketing.cialfo.co
+ DEBUG [f0f09a9b] Command: /usr/bin/env ls -x ~/apps/marketing_cialfo_co/releases
+ DEBUG [60383c4e] 	20190417094316
+ DEBUG [60383c4e] 		
+ DEBUG [60383c4e] 	20190417134452
+ DEBUG [60383c4e] 		
+ DEBUG [60383c4e] 	20190417174110
+ DEBUG [60383c4e] 	
+ DEBUG [60383c4e] Finished in 0.842 seconds with exit status 0 (successful).
+  INFO Keeping 2 of 3 deployed releases on www-staging-marketing.cialfo.co
+ DEBUG [d877bb55] Running [ -d ~/apps/marketing_cialfo_co/current ] as deployer@www-staging-marketing.cialfo.co
+ DEBUG [d877bb55] Command: [ -d ~/apps/marketing_cialfo_co/current ]
+ DEBUG [22d5a091] Finished in 0.844 seconds with exit status 0 (successful).
+ DEBUG [bd38809f] Running /usr/bin/env readlink ~/apps/marketing_cialfo_co/current as deployer@www-staging-marketing.cialfo.co
+ DEBUG [bd38809f] Command: /usr/bin/env readlink ~/apps/marketing_cialfo_co/current
+ DEBUG [9cf9aec7] 	/home/deployer/apps/marketing_cialfo_co/releases/20190417134452
+ DEBUG [9cf9aec7] 	
+ DEBUG [9cf9aec7] Finished in 0.849 seconds with exit status 0 (successful).
+  INFO [1b435343] Running /usr/bin/env rm -rf ~/apps/marketing_cialfo_co/releases/20190417094316 as deployer@www-staging-marketing.cialfo.co
+ DEBUG [1b435343] Command: /usr/bin/env rm -rf ~/apps/marketing_cialfo_co/releases/20190417094316
+  INFO [22bf5158] Finished in 0.840 seconds with exit status 0 (successful).
+ DEBUG [adf98dfa] Running if test ! -d ~/apps/marketing_cialfo_co/releases; then echo "Directory does not exist '~/apps/marketing_cialfo_co/releases'" 1>&2; false; fi as deployer@www-staging-marketing.cialfo.co
+ DEBUG [adf98dfa] Command: if test ! -d ~/apps/marketing_cialfo_co/releases; then echo "Directory does not exist '~/apps/marketing_cialfo_co/releases'" 1>&2; false; fi
+ DEBUG [875512fe] Finished in 0.849 seconds with exit status 0 (successful).
+  INFO [cc054f99] Running /usr/bin/env echo "Branch staging (at 0b2e2e1a42001adfc1f702c93e7641a3f7c2afc8) deployed as release 20190417134452 by charlescarrier" >> ~/apps/marketing_cialfo_co/revisions.log as deployer@www-staging-marketing.cialfo.co
+ DEBUG [cc054f99] Command: cd ~/apps/marketing_cialfo_co/releases && /usr/bin/env echo "Branch staging (at 0b2e2e1a42001adfc1f702c93e7641a3f7c2afc8) deployed as release 20190417134452 by charlescarrier" >> ~/apps/marketing_cialfo_co/revisions.log
+  INFO [5166266c] Finished in 0.870 seconds with exit status 0 (successful).
+  INFO [14cc14ec] Running sudo service nginx configtest as deployer@www-staging-marketing.cialfo.co
+ DEBUG [14cc14ec] Command: sudo service nginx configtest
+ DEBUG [8cc5ef66] 	 * Testing nginx configuration       
+ DEBUG [8cc5ef66] 	[80G
+ DEBUG [8cc5ef66] 	 
+ DEBUG [8cc5ef66] 	
+ DEBUG [8cc5ef66] 	[74G
+ DEBUG [8cc5ef66] 	[ OK ]
+ DEBUG [8cc5ef66] 	
+  INFO [8cc5ef66] Finished in 0.986 seconds with exit status 0 (successful).
+  INFO [8f208be5] Running /usr/bin/env sudo service nginx reload as deployer@www-staging-marketing.cialfo.co
+ DEBUG [8f208be5] Command: /usr/bin/env sudo service nginx reload
+  INFO [949f6f40] Finished in 0.883 seconds with exit status 0 (successful).

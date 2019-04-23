@@ -1,6 +1,5 @@
 import * as contentful from "contentful";
 import React from "react";
-import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -32,7 +31,10 @@ class ClientStoriesItem extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.clientStoryApiKey !== this.props.clientStoryApiKey) {
+    if (
+      prevProps.clientStoryApiKey !== this.props.clientStoryApiKey ||
+      prevProps.locale !== this.props.locale
+    ) {
       this.setState(
         {
           clientStoryApiKey: this.props.clientStoryApiKey
@@ -44,11 +46,17 @@ class ClientStoriesItem extends React.Component {
     }
   }
 
-  fetchClientStory = () => this.client.getEntry(this.state.clientStoryApiKey);
+  fetchClientStory = () =>
+    this.client.getEntries({
+      content_type: "clientStory",
+      locale: this.props.locale
+    });
 
   setClients = response => {
-    console.log(response);
-    const clientStoryPageStory = response.fields;
+    const filteredResponse = response.items.filter(
+      item => item.sys.id === this.state.clientStoryApiKey
+    );
+    const clientStoryPageStory = filteredResponse[0].fields;
     for (let key in clientStoryPageStory) {
       this.setState({
         [key]: clientStoryPageStory[key]
@@ -81,30 +89,30 @@ class ClientStoriesItem extends React.Component {
                 <Octicon size="large" icon={TriangleUp} />
               </Row>
               <Row>
-                <p>{'"' + this.state.clientStoryShortTestimonial + '"'}</p>
+                <p> "{this.state.clientStoryShortTestimonial}"</p>
               </Row>
               <Row>
                 <p>
                   Number of Seniors:
-                  <span>{" " + this.state.clientStoryNumberOfSeniors}</span>
+                  <span> {this.state.clientStoryNumberOfSeniors}</span>
                 </p>
               </Row>
               <Row>
                 <p>
                   Counseling Team:
-                  <span>{" " + this.state.clientStoryConsultingTeam}</span>
+                  <span> {this.state.clientStoryConsultingTeam}</span>
                 </p>
               </Row>
               <Row>
                 <p>
                   Curriculum:
-                  <span>{" " + this.state.clientStoryCurriculum}</span>
+                  <span> {this.state.clientStoryCurriculum}</span>
                 </p>
               </Row>
               <Row>
                 <p>
                   <Octicon size="small" icon={Location} />
-                  <span>{" " + this.state.clientStorySchoolLocation}</span>
+                  <span> {this.state.clientStorySchoolLocation}</span>
                 </p>
               </Row>
             </Container>

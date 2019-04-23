@@ -1,0 +1,225 @@
+@font-face {
+  font-family: "domainedisplay_regular";
+  src: url("./DomaineDispNar-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto_regular";
+  src: url("./Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#testContentRed {
+  background-color: red;
+}
+
+#testContentBlue {
+  background-color: blue;
+}
+
+.primary_font {
+  font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
+}
+
+.secondary_font {
+  font-family: "roboto_regular";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.secondary_font_bold {
+  font-family: "roboto_regular";
+  font-style: medium;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.aboutPage {
+  max-width: 100% !important;
+}
+
+.aboutPageHeaderText {
+  margin-right: 100px;
+}
+
+.aboutPageHeaderTitle {
+  margin-bottom: 20px;
+}
+
+.aboutPageTitle {
+  margin-bottom: 175px;
+  margin-top: 100px;
+  align-content: center;
+}
+
+.byTheNumbersTitle {
+  justify-content: center;
+  margin-bottom: 75px;
+}
+
+.byTheNumbersObject {
+  align-content: center;
+  justify-content: center;
+}
+
+.byTheNumbersObjectContent {
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.aboutWhoWeAre {
+  background-color: #1886df;
+  margin-bottom: 150px;
+}
+
+.aboutPageWhoWeAreImageContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 50px 0 50px 0;
+}
+
+.aboutPageWhoWeAreImage {
+  max-width: 500px;
+  max-height: auto;
+  margin-right: 50px;
+}
+
+.aboutPageWhoWeAreContent {
+  margin: 0 20px 0 20px;
+  color: white;
+}
+
+.aboutPageWhoWeAreContentContainer {
+  display: flex;
+  align-items: center;
+}
+
+.aboutByTheNumbers {
+  margin-bottom: 150px;
+  justify-content: center;
+}
+
+.byTheNumbersObjectContainer {
+  background-color: #ebf9ff;
+  height: 150px;
+  padding-bottom: 150px;
+  padding-top: 50px;
+}
+
+.aboutPageNumbersObjectSubtitle {
+  margin: 0 20px 0 20px;
+}
+
+.byTheNumbersObject:nth-child(odd) {
+  margin-bottom: 50px;
+}
+
+.byTheNumbersObject:nth-child(even) {
+  margin-top: 50px;
+}
+
+.contentTitle {
+  justify-content: center;
+  margin-bottom: 75px;
+}
+
+.aboutPageLeadershipTeam {
+  justify-content: center;
+  margin-bottom: 200px;
+}
+
+.leaderImage {
+  margin-bottom: 75px;
+}
+
+.leadershipObjectContainer {
+  height: 150px;
+  padding-bottom: 150px;
+  padding-top: 50px;
+}
+
+.leadershipObjectContent {
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.partnersTitle {
+  padding: 0 550px 0 550px;
+  text-align: center;
+  background-color: #ebf9ff;
+}
+
+.aboutPagePartnersImage {
+  max-width: 300px;
+  max-height: auto;
+}
+
+.aboutPartners {
+  margin-bottom: 50px;
+  justify-content: center;
+  background-color: #ebf9ff;
+}
+
+.partners {
+  background-color: #ebf9ff;
+  max-width: 100% !important;
+  padding-top: 50px;
+  margin-bottom: 150px;
+}
+
+.counselorObject {
+  background-color: #ebf9ff;
+  margin: 15px 30px;
+}
+
+.innerObject {
+  padding: 40px;
+}
+
+.aboutPageCounselorTitle {
+  margin: auto;
+}
+
+.counselors {
+  margin-bottom: 150px;
+}
+
+.businessAdvisors {
+  background-color: #ebf9ff;
+  margin-bottom: 150px;
+}
+
+.businessAdvisorsContainer {
+  background-color: #ebf9ff;
+  margin-bottom: 150px;
+}
+
+.aboutPageBusinessAdvisorsTitle {
+  margin-top: 150px;
+}
+.advisorObject {
+  background-color: white;
+  margin: 15px 30px;
+}
+
+.centeredText {
+  text-align: center;
+}
+
+.officesContainer {
+  padding: 40px 40px;
+  background-color: #ebf9ff;
+}
+
+.pinContainer {
+  display: flex;
+  justify-content: center;
+}
