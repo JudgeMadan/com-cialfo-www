@@ -32,8 +32,17 @@
   line-height: 28px;
 }
 
+.homePageContainer {
+  max-width: 100% !important;
+}
+
 .top_row {
   margin: 130px 0 150px 0;
+  padding: 0 150px 0 150px;
+}
+
+.top_row_left_col {
+  margin: 0 400px 0 200px;
 }
 
 .homePageHeaderTitle {
@@ -105,6 +114,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 100px 0 100px 0;
+}
+
+.homePageFeaturesText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homePageFeaturesRightSideTextObject {
+  margin: 0 600px 0 0;
+}
+
+.homePageFeaturesLeftSideTextObject {
+  margin: 0 0 0 600px;
 }
 
 .homePageFeaturesImageBackground {
