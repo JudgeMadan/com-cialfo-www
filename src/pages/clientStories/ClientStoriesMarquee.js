@@ -8,6 +8,8 @@ class ClientStoriesMarquee extends React.Component {
         <div className="marquee--inner">
           <ClientStoriesMarqueeItem
             updateClientStoryApiKey={this.props.updateClientStoryApiKey}
+            space={this.props.space}
+            accessToken={this.props.accessToken}
           />
         </div>
       </h1>

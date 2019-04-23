@@ -18,9 +18,8 @@ class About extends React.Component {
   }
 
   client = contentful.createClient({
-    space: "1acwuo4zy8aa",
-    accessToken:
-      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
+    space: this.props.space,
+    accessToken: this.props.accessToken
   });
 
   componentDidUpdate(prevProps) {
@@ -40,6 +39,7 @@ class About extends React.Component {
     });
 
   setAboutContent = response => {
+    console.log(response.items[0].fields);
     const aboutContent = response.items[0].fields;
     for (let key in aboutContent) {
       if (typeof aboutContent[key] === "string") {

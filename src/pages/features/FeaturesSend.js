@@ -6,6 +6,8 @@ import Col from "react-bootstrap/Col";
 import ReactPlayer from "react-player";
 import "./Features.css";
 import FeaturesSubfooter from "./FeaturesSubfooter";
+import "../home/HomePartnerImages";
+import HomePartnerImages from "../home/HomePartnerImages";
 
 class FeaturesSend extends React.Component {
   constructor(props) {
@@ -14,9 +16,8 @@ class FeaturesSend extends React.Component {
   }
 
   client = contentful.createClient({
-    space: "1acwuo4zy8aa",
-    accessToken:
-      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
+    space: this.props.space,
+    accessToken: this.props.accessToken
   });
 
   componentDidMount() {
@@ -115,7 +116,7 @@ class FeaturesSend extends React.Component {
           </Col>
         </Row>
         <Row className="featureSendPartnersTitle">
-          <h1 className="primary_font">{this.state.sendPartnersTitle}</h1>
+          <HomePartnerImages locale={this.props.locale} />
         </Row>
         <Row>
           <FeaturesSubfooter

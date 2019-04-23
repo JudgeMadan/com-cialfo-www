@@ -17,9 +17,8 @@ class Header extends React.Component {
   };
 
   client = contentful.createClient({
-    space: "1acwuo4zy8aa",
-    accessToken:
-      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
+    space: this.props.space,
+    accessToken: this.props.accessToken
   });
 
   fetchNavBar = () =>
@@ -82,7 +81,8 @@ class Header extends React.Component {
             {this.props.locale !== "zh-CN" && (
               <NavItem
                 onClick={() => this.updateLocale("zh-CN")}
-                className="nav-link"
+                className="nav-link translator"
+                to="/"
               >
                 中文
               </NavItem>
@@ -90,7 +90,7 @@ class Header extends React.Component {
             {this.props.locale === "zh-CN" && (
               <NavItem
                 onClick={() => this.updateLocale("en-US")}
-                className="nav-link"
+                className="nav-link translator"
               >
                 English
               </NavItem>

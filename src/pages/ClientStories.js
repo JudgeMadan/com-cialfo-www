@@ -19,6 +19,7 @@ class ClientStories extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <Container>
         <Row>
@@ -26,14 +27,18 @@ class ClientStories extends React.Component {
             clientStoryApiKey={this.state.clientStoryApiKey}
             className="pt-5"
             locale={this.props.locale}
+            space={this.props.space}
+            accessToken={this.props.accessToken}
           />
         </Row>
         <Row className="justify-content-md-center">
-          <h1>More Stories</h1>
+          <h1>More Stories!!</h1>
         </Row>
         <Row className="justify-content-md-center">
           <ClientStoriesMarquee
             updateClientStoryApiKey={this.updateClientStoryApiKey}
+            space={this.props.space}
+            accessToken={this.props.accessToken}
           />
         </Row>
       </Container>

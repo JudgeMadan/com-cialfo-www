@@ -9,6 +9,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import ReactPlayer from "react-player";
 import "./home/Home.css";
+import Screen from "./home/Screen.png";
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -16,9 +17,8 @@ class Home extends React.Component {
   }
 
   client = contentful.createClient({
-    space: "1acwuo4zy8aa",
-    accessToken:
-      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
+    space: this.props.space,
+    accessToken: this.props.accessToken
   });
 
   componentDidMount() {
@@ -61,11 +61,11 @@ class Home extends React.Component {
   };
 
   render() {
-    console.log(this.state);
+    console.log(this.props);
     return (
-      <Container>
+      <div className="homePageContainer">
         <Row className="top_row">
-          <Col>
+          <Col className="top_row_left_col">
             <Row>
               <h1 className="primary_font homePageHeaderTitle">
                 {this.state.homePageHeaderTitle}
@@ -121,90 +121,96 @@ class Home extends React.Component {
         </Row>
         <Row className="featureRows">
           <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-            <img src={this.state.homePageFeaturesSendDocumentImage} />
+            <img src={Screen} />
           </Col>
-          <Col>
-            <Row>
-              <h1 className="primary_font">
-                {this.state.homePageFeaturesSendDocumentTitle}
-              </h1>
-            </Row>
-            <Row>
-              <p className="secondary_font">
-                {this.state.homePageFeaturesSendDocumentBlurb}
-              </p>
-            </Row>
-            <Row>
-              <p className="secondary_font homePageFeaturesSendDocumentLinkText">
-                {this.state.homePageFeaturesSendDocumentLinkText}
-              </p>
-            </Row>
+          <Col className="homePageFeaturesText">
+            <div className="homePageFeaturesRightSideTextObject">
+              <Row>
+                <h1 className="primary_font">
+                  {this.state.homePageFeaturesSendDocumentTitle}
+                </h1>
+              </Row>
+              <Row>
+                <p className="secondary_font">
+                  {this.state.homePageFeaturesSendDocumentBlurb}
+                </p>
+              </Row>
+              <Row>
+                <p className="secondary_font homePageFeaturesSendDocumentLinkText">
+                  {this.state.homePageFeaturesSendDocumentLinkText}
+                </p>
+              </Row>
+            </div>
           </Col>
         </Row>
         <Row className="featureRows">
-          <Col>
-            <Row>
-              <h1 className="primary_font">
-                {this.state.homePageFeaturesLeverageTitle}
-              </h1>
-            </Row>
-            <Row>
-              <p className="secondary_font">
-                {this.state.homePageFeaturesLeverageBlurb}
-              </p>
-            </Row>
-            <Row>
-              <p className="secondary_font homePageFeaturesLeverageLinkText">
-                {this.state.homePageFeaturesLeverageLinkText}
-              </p>
-            </Row>
+          <Col className="homePageFeaturesText">
+            <div className="homePageFeaturesLeftSideTextObject">
+              <Row>
+                <h1 className="primary_font">
+                  {this.state.homePageFeaturesLeverageTitle}
+                </h1>
+              </Row>
+              <Row>
+                <p className="secondary_font">
+                  {this.state.homePageFeaturesLeverageBlurb}
+                </p>
+              </Row>
+              <Row>
+                <p className="secondary_font homePageFeaturesLeverageLinkText">
+                  {this.state.homePageFeaturesLeverageLinkText}
+                </p>
+              </Row>
+            </div>
           </Col>
           <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
-            <img src={this.state.homePageFeaturesLeverageImage} />
+            <img src={Screen} />
           </Col>
         </Row>
         <Row className="featureRows">
           <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-            <img src={this.state.homePageFeaturesDiscoverImage} />
+            <img src={Screen} />
           </Col>
-          <Col>
-            <Row>
-              <h1 className="primary_font">
-                {this.state.homePageFeaturesDiscoverTitle}
-              </h1>
-            </Row>
-            <Row>
-              <p className="secondary_font">
-                {this.state.homePageFeaturesDiscoverBlurb}
-              </p>
-            </Row>
-            <Row>
-              <p className="secondary_font homePageFeaturesDiscoverLinkText">
-                {this.state.homePageFeaturesDiscoverLinkText}
-              </p>
-            </Row>
+          <Col className="homePageFeaturesText">
+            <div className="homePageFeaturesRightSideTextObject container-fluid">
+              <Row>
+                <h1 className="primary_font">
+                  {this.state.homePageFeaturesDiscoverTitle}
+                </h1>
+              </Row>
+              <Row>
+                <p className="secondary_font">
+                  {this.state.homePageFeaturesDiscoverBlurb}
+                </p>
+              </Row>
+              <Row>
+                <p className="secondary_font homePageFeaturesDiscoverLinkText">
+                  {this.state.homePageFeaturesDiscoverLinkText}
+                </p>
+              </Row>
+            </div>
           </Col>
         </Row>
-        <Container className="homePageVideoCaseStudy">
+        <div className="homePageVideoCaseStudy">
           <Row className="homePageVideoCaseStudyTitle">
             <h1 className="primary_font">
               {this.state.homePageVideoCaseStudyTitle}
             </h1>
           </Row>
           <Row className="homePageVideoCaseStudyVideoEmbed">
-            <ReactPlayer url={this.state.homePageVideoCaseStudyVideoEmbed} />
+            <ReactPlayer
+              width="1000px"
+              height="560px"
+              url={this.state.homePageVideoCaseStudyVideoEmbed}
+            />
           </Row>
-          <Row className="homePagePoweredByOurPartnersTitle">
-            <h1 className="primary_font">
-              {this.state.homePagePoweredByOurPartnersTitle}
-            </h1>
-          </Row>
-        </Container>
+        </div>
         <HomePartnerImages
+          locale={this.props.locale}
           className="homePartnerImages"
           partnerImages={this.state.homePagePoweredByOurPartnersPartners}
         />
-      </Container>
+      </div>
     );
   }
 }

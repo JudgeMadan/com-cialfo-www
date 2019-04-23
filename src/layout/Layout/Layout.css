@@ -1,17 +1,3 @@
-@font-face {
-  font-family: "roboto_regular";
-  src: url("./Roboto-Regular.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "domainedisplay_regular";
-  src: url("./DomaineDispNar-Regular.otf");
-  font-weight: normal;
-  font-style: normal;
-}
-
 .logo-text {
   font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
   padding-left: 10px;
@@ -46,4 +32,12 @@
 
 .footer {
   padding: 50px 0 30px 0 !important;
+}
+
+.test {
+  margin-bottom: 100px;
+}
+
+.translator:hover {
+  cursor: pointer;
 }
