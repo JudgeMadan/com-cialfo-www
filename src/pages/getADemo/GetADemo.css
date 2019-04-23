@@ -1,0 +1,47 @@
+.demo_form_container {
+  border: solid #1886df 2px;
+  margin: 10% 20%;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.form_title_container {
+  display: flex;
+  justify-content: center;
+}
+
+.form_title {
+  font-size: 42px !important;
+}
+
+.submit_button_container {
+  display: flex;
+  justify-content: center;
+}
+
+.submit_button {
+  background-color: #1886df;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  margin-top: 30px;
+}
+
+.demoTextImgContainer {
+  background-color: #ebf9ff;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.demoTextImg {
+  max-height: 175px;
+  max-width: auto;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  background-color: red;
+}

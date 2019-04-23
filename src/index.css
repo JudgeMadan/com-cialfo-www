@@ -34,6 +34,11 @@ body {
   font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
 }
 
+.form_title {
+  font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
+  font-size: 50px;
+}
+
 .secondary_font {
   font-family: "roboto_regular";
   font-style: normal;

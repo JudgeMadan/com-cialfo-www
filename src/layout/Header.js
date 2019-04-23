@@ -80,21 +80,21 @@ class Header extends React.Component {
               {this.state.solutionsPage}
             </Link>
             {this.props.locale !== "zh-CN" && (
-              <Link
+              <NavItem
                 onClick={() => this.updateLocale("zh-CN")}
-                className="nav-link "
+                className="nav-link translator"
                 to="/"
               >
                 中文
-              </Link>
+              </NavItem>
             )}
             {this.props.locale === "zh-CN" && (
-              <Link
+              <NavItem
                 onClick={() => this.updateLocale("en-US")}
-                className="nav-link "
+                className="nav-link translator"
               >
                 English
-              </Link>
+              </NavItem>
             )}
           </Nav>
         </Navbar.Collapse>

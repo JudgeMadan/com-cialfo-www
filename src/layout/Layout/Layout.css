@@ -37,3 +37,7 @@
 .test {
   margin-bottom: 100px;
 }
+
+.translator:hover {
+  cursor: pointer;
+}
