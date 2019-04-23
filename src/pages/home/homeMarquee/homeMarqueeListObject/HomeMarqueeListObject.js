@@ -17,7 +17,7 @@ class HomeMarqueeListObject extends React.Component {
           product <br /> improvement and reasonable cost <br /> made it the
           platform for us.
         </p>
-        <h6>Dale Ford</h6>
+        <h6>Dale Ford!</h6>
         <p>British Intl School Phuket</p>
       </div>
     );
