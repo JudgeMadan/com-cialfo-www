@@ -24,7 +24,7 @@ class HomePartnerImages extends React.Component {
 
     return (
       <div>
-        <Row>{imageObject}</Row>
+        <Row className="imageObjectRow">{imageObject}</Row>
       </div>
     );
   }

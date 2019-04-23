@@ -192,21 +192,25 @@ class Home extends React.Component {
             </div>
           </Col>
         </Row>
-        <Container className="homePageVideoCaseStudy">
+        <div className="homePageVideoCaseStudy">
           <Row className="homePageVideoCaseStudyTitle">
             <h1 className="primary_font">
               {this.state.homePageVideoCaseStudyTitle}
             </h1>
           </Row>
           <Row className="homePageVideoCaseStudyVideoEmbed">
-            <ReactPlayer url={this.state.homePageVideoCaseStudyVideoEmbed} />
+            <ReactPlayer
+              width="1000px"
+              height="560px"
+              url={this.state.homePageVideoCaseStudyVideoEmbed}
+            />
           </Row>
           <Row className="homePagePoweredByOurPartnersTitle">
             <h1 className="primary_font">
               {this.state.homePagePoweredByOurPartnersTitle}
             </h1>
           </Row>
-        </Container>
+        </div>
         <HomePartnerImages
           className="homePartnerImages"
           partnerImages={this.state.homePagePoweredByOurPartnersPartners}

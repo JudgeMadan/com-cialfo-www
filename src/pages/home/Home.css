@@ -152,7 +152,7 @@
   text-align: center;
   justify-content: center;
   margin-bottom: 50px;
-  padding: 50px 150px 0px 150px;
+  padding: 100px 150px 0px 150px;
   color: white;
 }
 .homePageVideoCaseStudy {
@@ -177,8 +177,15 @@
 }
 
 .homePartnerImages {
-  max-height: 150px;
-  max-width: 300px;
+  display: flex;
+  justify-content: space-around;
+  max-height: 75px;
+  max-width: 225px;
   height: 100%;
   width: auto;
+  margin-bottom: 150px;
+}
+
+.imageObjectRow {
+  padding: 0 400px;
 }
