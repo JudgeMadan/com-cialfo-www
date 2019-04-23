@@ -10,9 +10,7 @@ import Logo from "./Layout/Logo.png";
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      space: "qlwyndleu3of"
-    };
+    this.state = {};
   }
   updateLocale = locale => {
     this.props.updateLocale(locale);

@@ -16,37 +16,73 @@ class Router extends React.Component {
         <Route
           exact
           path="/"
-          render={() => <Home locale={this.props.locale} />}
+          render={() => (
+            <Home
+              locale={this.props.locale}
+              space={this.state.space}
+              accessToken={this.state.accessToken}
+            />
+          )}
         />
         <Route
           locale={this.props.locale}
           exact
           path="/clients"
-          render={() => <ClientStories locale={this.props.locale} />}
+          render={() => (
+            <ClientStories
+              locale={this.props.locale}
+              space={this.state.space}
+              accessToken={this.state.accessToken}
+            />
+          )}
         />
         <Route
           locale={this.props.locale}
           exact
           path="/features"
-          render={() => <Features locale={this.props.locale} />}
+          render={() => (
+            <Features
+              locale={this.props.locale}
+              space={this.state.space}
+              accessToken={this.state.accessToken}
+            />
+          )}
         />
         <Route
           locale={this.props.locale}
           exact
           path="/about"
-          render={() => <About locale={this.props.locale} />}
+          render={() => (
+            <About
+              locale={this.props.locale}
+              space={this.state.space}
+              accessToken={this.state.accessToken}
+            />
+          )}
         />
         <Route
           locale={this.props.locale}
           exact
           path="/features/send"
-          render={() => <FeaturesSend locale={this.props.locale} />}
+          render={() => (
+            <FeaturesSend
+              locale={this.props.locale}
+              space={this.state.space}
+              accessToken={this.state.accessToken}
+            />
+          )}
         />
         <Route
           locale={this.props.locale}
           exact
           path="/features/research"
-          render={() => <FeaturesResearch locale={this.props.locale} />}
+          render={() => (
+            <FeaturesResearch
+              locale={this.props.locale}
+              space={this.state.space}
+              accessToken={this.state.accessToken}
+            />
+          )}
         />
         {/* MAKE A 404 Page instead */}
         {/* <Route render={() => <Home locale={this.props.locale} />} /> */}
@@ -54,13 +90,25 @@ class Router extends React.Component {
           locale={this.props.locale}
           exact
           path="/features/documents"
-          render={() => <FeaturesDocuments locale={this.props.locale} />}
+          render={() => (
+            <FeaturesDocuments
+              locale={this.props.locale}
+              space={this.state.space}
+              accessToken={this.state.accessToken}
+            />
+          )}
         />
         <Route
           locale={this.props.locale}
           exact
           path="/demo"
-          render={() => <GetADemo locale={this.props.locale} />}
+          render={() => (
+            <GetADemo
+              locale={this.props.locale}
+              space={this.state.space}
+              accessToken={this.state.accessToken}
+            />
+          )}
         />
       </Switch>
     );
