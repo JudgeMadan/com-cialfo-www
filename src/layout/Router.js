@@ -8,6 +8,7 @@ import FeaturesSend from "../pages/features/FeaturesSend";
 import FeaturesResearch from "../pages/features/FeaturesResearch";
 import FeaturesDocuments from "../pages/features/FeaturesDocuments";
 import About from "../pages/About";
+import GetADemoSimple from "../pages/GetADemoSimple";
 
 class Router extends React.Component {
   render() {
@@ -104,6 +105,18 @@ class Router extends React.Component {
           path="/demo"
           render={() => (
             <GetADemo
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/demo_simple"
+          render={() => (
+            <GetADemoSimple
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}

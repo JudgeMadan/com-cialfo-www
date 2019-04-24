@@ -1,6 +1,6 @@
 .demo_form_container {
   border: solid #1886df 2px;
-  margin: 10% 20%;
+  margin: 0 20% 10% 20%;
   padding: 5%;
   display: flex;
   justify-content: center;
@@ -26,6 +26,9 @@
   padding: 5px 10px;
   border: none;
   margin-top: 30px;
+  width: 166px;
+  height: 55px;
+  font-size: 20px;
 }
 
 .demoTextImgContainer {
@@ -43,5 +46,36 @@
 .formContainer {
   display: flex;
   justify-content: center;
-  background-color: red;
+}
+
+.title_row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.left_content_row {
+  margin-bottom: 20px;
+  margin-right: 80px;
+}
+
+.input_style {
+  border: none;
+  border-bottom: solid #ebf9ff 2px;
+  width: 400px;
+}
+.input_style:hover {
+  border: none;
+  border-bottom: solid #1886df 2px;
+}
+
+.demoTextTitleContainer {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.demoTextTitle {
+  margin: 0 30%;
+  font-size: 25px;
 }
