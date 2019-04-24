@@ -92,3 +92,25 @@
 .middle_row {
   margin-bottom: 50px;
 }
+
+.contactArray {
+  margin-top: 50px;
+  min-width: 72%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.getInTouchContactArrayContainer {
+  display: flex;
+  justify-content: center;
+  margin: 0 20% 0 20%;
+}
+
+.contactArrayRow {
+  display: inline-flex;
+  justify-content: left;
+}
+
+.white_font {
+  color: white;
+}

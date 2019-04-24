@@ -19,9 +19,17 @@ class FeaturesSubfooter extends React.Component {
               <img src="https://via.placeholder.com/360x500" />
             </Col>
             <Col className="subFooterPageQuote">
-              <h1 className="primary_font sub_footer_quote">
-                "{this.props.quote}"
-              </h1>
+              <Row>
+                <h1 className="primary_font sub_footer_quote">
+                  "{this.props.quote}"
+                </h1>
+                <br />
+                <br />
+                <p className="secondary_font white_font">
+                  {this.props.quoteAuthor}
+                </p>
+              </Row>
+              <Row />
             </Col>
           </Row>
         </Container>

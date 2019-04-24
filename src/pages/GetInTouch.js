@@ -6,6 +6,7 @@ import "./getADemo/GetADemo.css";
 import GetInTouchImg from "./getADemo/GetInTouch.png";
 import FeaturesSubfooter from "./features/FeaturesSubfooter";
 import * as contentful from "contentful";
+import GetInTouchContactArray from "./getInTouch/GetInTouchContactArray";
 
 class GetInTouch extends React.Component {
   constructor(props) {
@@ -96,6 +97,11 @@ class GetInTouch extends React.Component {
         <Row className="demoTextImgContainer">
           <img className="demoTextImg" src={GetInTouchImg} />
         </Row>
+        <Row className="getInTouchContactArrayContainer">
+          <GetInTouchContactArray
+            contactArray={this.state.getInTouchContactInfo}
+          />
+        </Row>
         <Row className="demoTextTitleContainer secondary_font">
           <h1 className="demoTextTitle">{this.state.getADemoTitle}</h1>
         </Row>
@@ -118,55 +124,61 @@ class GetInTouch extends React.Component {
               <Row className="title_row">
                 <div className="_form_element _x36013235 _full_width _clear primary_font form_title_container">
                   <div className="_form-title primary_font form_title">
-                    Make an enquiry
+                    {this.state.getInTouchFormTitle}
                   </div>
                 </div>
               </Row>
               <Row className="title_row">
                 <div class="_form_element _x11005730 _full_width left_content_row middle_row">
-                  <label class="_form-label secondary_font">Full Name</label>
+                  <label class="_form-label secondary_font">
+                    {this.state.getInTouchFullName}
+                  </label>
                   <div class="_field-wrapper">
                     <input
                       type="text"
                       name="fullname"
-                      placeholder="Type your name"
+                      placeholder={this.state.getInTouchFullNamePlaceholder}
                       className="input_style"
                     />
                   </div>
                 </div>
                 <div class="_form_element _x78348353 _full_width ">
-                  <label class="_form-label secondary_font">Email</label>
+                  <label class="_form-label secondary_font">
+                    {this.state.getInTouchEmail}
+                  </label>
                   <div class="_field-wrapper">
                     <input
                       type="text"
                       name="email"
-                      placeholder="Type your email"
+                      placeholder={this.state.getInTouchEmailPlaceholder}
                       className="input_style"
                     />
                   </div>
                 </div>
               </Row>
-              <Row className="middle_row">
+              <Row className="title_row">
                 <div class="_form_element _x11676591 _full_width left_content_row middle_row">
-                  <label class="_form-label secondary_font">Phone</label>
+                  <label class="_form-label secondary_font">
+                    {this.state.getInTouchPhone}
+                  </label>
                   <div class="_field-wrapper">
                     <input
                       type="text"
                       name="phone"
-                      placeholder="Type your phone number"
+                      placeholder={this.state.getInTouchPhonePlaceholder}
                       className="input_style"
                     />
                   </div>
                 </div>
-              </Row>
-              <Row>
-                <div class="_form_element _x99841330 _full_width left_content_row">
-                  <label class="_form-label secondary_font">Organization</label>
+                <div class="_form_element _x99841330 _full_width">
+                  <label class="_form-label secondary_font">
+                    {this.state.getInTouchMessage}
+                  </label>
                   <div class="_field-wrapper">
                     <textarea
                       type="text"
                       name="organization"
-                      placeholder="Type your organization"
+                      placeholder={this.state.getInTouchMessagePlaceholder}
                       className="textarea_style"
                       rows="5"
                       cols="43"
@@ -193,7 +205,8 @@ class GetInTouch extends React.Component {
         <Row>
           <FeaturesSubfooter
             img={this.state.getADemoSubfooterImg}
-            quote={this.state.getADemoSubfooterQuote}
+            quote={this.state.getInTouchSubfooterBlurb}
+            quoteAuthor={this.state.getInTouchFooterBlurbAuthor}
           />
         </Row>
       </div>
