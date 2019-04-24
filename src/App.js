@@ -21,6 +21,14 @@ class App extends Component {
     };
   }
 
+  // CHINA
+  // componentDidMount() {
+  //   this.setState({
+  //     space: this.state.chinaSpace.space,
+  //     accessToken: this.state.chinaSpace.accessToken
+  //   });
+  // }
+
   // INTERNATIONAL BACKUP
   // componentDidMount() {
   //   this.setState({
@@ -41,28 +49,23 @@ class App extends Component {
       "country_code=GB"
     ];
 
-    const testFilter = cookieArray2[5];
-    const testFilter2 = testFilter.substring(0, 12);
-
-    const filteredCookieArray = cookieArray.filter(
+    const country_codeArray = cookieArray2.filter(
       cookie => cookie.substring(0, 12) == "country_code"
     );
-    console.log(filteredCookieArray);
-    // this.cookieParser().then(() => {
-    //   this.setState({
-    //     space: this.state.internationalSpace.space,
-    //     accessToken: this.state.internationalSpace.accessToken
-    //   });
-    // });
-  }
 
-  // CHINA
-  // componentDidMount() {
-  //   this.setState({
-  //     space: this.state.chinaSpace.space,
-  //     accessToken: this.state.chinaSpace.accessToken
-  //   });
-  // }
+    const country_code = country_codeArray[0];
+    if (country_code === "country_code=GB") {
+      this.setState({
+        space: this.state.chinaSpace.space,
+        accessToken: this.state.chinaSpace.accessToken
+      });
+    } else {
+      this.setState({
+        space: this.state.internationalSpace.space,
+        accessToken: this.state.internationalSpace.accessToken
+      });
+    }
+  }
 
   updateLocale = locale => {
     this.setState({
