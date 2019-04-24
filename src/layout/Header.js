@@ -6,6 +6,7 @@ import * as contentful from "contentful";
 import NavItem from "react-bootstrap/NavItem";
 import "./Layout/Layout.css";
 import Logo from "./Layout/Logo.png";
+import TranslateButton from "./header/TranslateButton";
 
 class Header extends React.Component {
   constructor(props) {
@@ -47,6 +48,7 @@ class Header extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <Navbar
         className="justify-content-between header"
@@ -78,22 +80,13 @@ class Header extends React.Component {
             <Link className="nav-link" to="/solutions">
               {this.state.solutionsPage}
             </Link>
-            {this.props.locale !== "zh-CN" && (
-              <NavItem
-                onClick={() => this.updateLocale("zh-CN")}
-                className="nav-link translator"
-                to="/"
-              >
-                中文
-              </NavItem>
-            )}
-            {this.props.locale === "zh-CN" && (
-              <NavItem
-                onClick={() => this.updateLocale("en-US")}
-                className="nav-link translator"
-              >
-                English
-              </NavItem>
+            {this.props.country_code === "country_code=GB" && (
+              <TranslateButton
+                locale={this.props.locale}
+                space={this.props.space}
+                accessToken={this.props.accessToken}
+                updateLocale={this.updateLocale}
+              />
             )}
           </Nav>
         </Navbar.Collapse>
