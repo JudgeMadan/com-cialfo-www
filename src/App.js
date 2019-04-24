@@ -21,30 +21,24 @@ class App extends Component {
     };
   }
 
-  // INTERNATIONAL
+  // INTERNATIONAL BACKUP
   // componentDidMount() {
   //   this.setState({
-  // space: "qlwyndleu3of",
-  // accessToken:
-  //   "2eb1abe530767fecfa2bbc4505a44fb7a4a205df1275e863807c2d9c4470e1fe"
+  //     space: this.state.internationalSpace.space,
+  //     accessToken: this.state.internationalSpace.accessToken
   //   });
   // }
 
-  // CHINA
-  // componentDidMount() {
-  //   this.setState({
-  //     space: "1acwuo4zy8aa",
-  //     accessToken:
-  //       "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
-  //   });
-  // }
-
-  // INTERNATIONAL
+  //  INTERNATIONAL
   componentDidMount() {
-    this.setState({
-      space: this.state.internationalSpace.space,
-      accessToken: this.state.internationalSpace.accessToken
-    });
+    const region = document.cookie.split(" ");
+    console.log(region);
+    // this.cookieParser().then(() => {
+    //   this.setState({
+    //     space: this.state.internationalSpace.space,
+    //     accessToken: this.state.internationalSpace.accessToken
+    //   });
+    // });
   }
 
   // CHINA
