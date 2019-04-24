@@ -64,9 +64,18 @@
   border-bottom: solid #ebf9ff 2px;
   width: 400px;
 }
+
 .input_style:hover {
   border: none;
   border-bottom: solid #1886df 2px;
+}
+
+.textarea_style {
+  border: solid #ebf9ff 2px;
+}
+
+.textarea_style:hover {
+  border: solid #1886df 2px;
 }
 
 .demoTextTitleContainer {
@@ -78,4 +87,8 @@
 .demoTextTitle {
   margin: 0 30%;
   font-size: 25px;
+}
+
+.middle_row {
+  margin-bottom: 50px;
 }

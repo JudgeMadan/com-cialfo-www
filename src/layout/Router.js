@@ -9,6 +9,7 @@ import FeaturesResearch from "../pages/features/FeaturesResearch";
 import FeaturesDocuments from "../pages/features/FeaturesDocuments";
 import About from "../pages/About";
 import GetADemoSimple from "../pages/GetADemoSimple";
+import GetInTouch from "../pages/GetInTouch";
 
 class Router extends React.Component {
   render() {
@@ -117,6 +118,18 @@ class Router extends React.Component {
           path="/demo_simple"
           render={() => (
             <GetADemoSimple
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/get_in_touch"
+          render={() => (
+            <GetInTouch
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
