@@ -39,26 +39,33 @@ class App extends Component {
 
   //  INTERNATIONAL
   componentDidMount() {
-    const cookieArray = document.cookie.split(" ");
-    const cookieArray2 = [
-      "ajs_user_id=null;",
-      "ajs_group_id=null;",
-      "ajs_anonymous_id=%22da02155a-24b5-4a2f-975b-57a2d9b11ba7%22;",
-      "__distillery=37c1813_175da9d6-de81-42cc-a6bd-df41c410e0ac-7e613e6a1-52e74d9ca234-69d2;",
-      "intercom-id-giyujuw5=0732defb-3725-488f-809e-2b74254a709a;",
-      "country_code=GB"
-    ];
+    if (document.cookie) {
+      const cookieArray = document.cookie.split(" ");
+      const cookieArray2 = [
+        "ajs_user_id=null;",
+        "ajs_group_id=null;",
+        "ajs_anonymous_id=%22da02155a-24b5-4a2f-975b-57a2d9b11ba7%22;",
+        "__distillery=37c1813_175da9d6-de81-42cc-a6bd-df41c410e0ac-7e613e6a1-52e74d9ca234-69d2;",
+        "intercom-id-giyujuw5=0732defb-3725-488f-809e-2b74254a709a;",
+        "country_code=GB"
+      ];
 
-    const country_codeArray = cookieArray2.filter(
-      cookie => cookie.substring(0, 12) == "country_code"
-    );
+      const country_codeArray = cookieArray2.filter(
+        cookie => cookie.substring(0, 12) == "country_code"
+      );
 
-    const country_code = country_codeArray[0];
-    if (country_code === "country_code=GB") {
-      this.setState({
-        space: this.state.chinaSpace.space,
-        accessToken: this.state.chinaSpace.accessToken
-      });
+      const country_code = country_codeArray[0];
+      if (country_code === "country_code=GB") {
+        this.setState({
+          space: this.state.chinaSpace.space,
+          accessToken: this.state.chinaSpace.accessToken
+        });
+      } else {
+        this.setState({
+          space: this.state.internationalSpace.space,
+          accessToken: this.state.internationalSpace.accessToken
+        });
+      }
     } else {
       this.setState({
         space: this.state.internationalSpace.space,
@@ -66,6 +73,36 @@ class App extends Component {
       });
     }
   }
+
+  // BACKUP FILTER
+  // componentDidMount() {
+  //   const cookieArray = document.cookie.split(" ");
+  //   const cookieArray2 = [
+  //     "ajs_user_id=null;",
+  //     "ajs_group_id=null;",
+  //     "ajs_anonymous_id=%22da02155a-24b5-4a2f-975b-57a2d9b11ba7%22;",
+  //     "__distillery=37c1813_175da9d6-de81-42cc-a6bd-df41c410e0ac-7e613e6a1-52e74d9ca234-69d2;",
+  //     "intercom-id-giyujuw5=0732defb-3725-488f-809e-2b74254a709a;",
+  //     "country_code=JP"
+  //   ];
+
+  //   const country_codeArray = cookieArray2.filter(
+  //     cookie => cookie.substring(0, 12) == "country_code"
+  //   );
+
+  //   const country_code = country_codeArray[0];
+  //   if (country_code === "country_code=GB") {
+  //     this.setState({
+  //       space: this.state.chinaSpace.space,
+  //       accessToken: this.state.chinaSpace.accessToken
+  //     });
+  //   } else {
+  //     this.setState({
+  //       space: this.state.internationalSpace.space,
+  //       accessToken: this.state.internationalSpace.accessToken
+  //     });
+  //   }
+  // }
 
   updateLocale = locale => {
     this.setState({
