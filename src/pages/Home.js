@@ -98,14 +98,17 @@ class Home extends React.Component {
                           />
                         </Col>
                         <Col className="homePageHeaderEmailSubmitButton homePageHeaderEmailForm">
-                          <Button
-                            className="primary_font btn-lg homePageHeaderEmailFormText"
+                          <button
+                            className=" primary_font homePageButton"
                             type="submit"
                           >
-                            <Link className="nav-link" to="/demo">
+                            <Link
+                              className="primary_font homePageButton"
+                              to="/demo"
+                            >
                               {this.state.homePageHeaderEmailSubmitButtonText}
                             </Link>
-                          </Button>
+                          </button>
                         </Col>
                       </Row>
                     </Form.Group>
