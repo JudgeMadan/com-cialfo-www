@@ -37,7 +37,6 @@ class FourOhFour extends React.Component {
 
   setGetADemo = response => {
     const fourOhFourContent = response.items[0].fields;
-    console.log(fourOhFourContent);
     for (let key in fourOhFourContent) {
       if (typeof fourOhFourContent[key] === "string") {
         this.setState({
@@ -48,7 +47,6 @@ class FourOhFour extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="privacy_security_title">
         <Container className="four_oh_four_content">

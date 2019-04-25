@@ -166,7 +166,6 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
-          path="/404"
           render={() => (
             <FourOhFour
               locale={this.props.locale}
