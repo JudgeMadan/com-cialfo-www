@@ -12,6 +12,7 @@ import GetADemoSimple from "../pages/GetADemoSimple";
 import GetInTouch from "../pages/GetInTouch";
 import Privacy from "../pages/Privacy";
 import Security from "../pages/Security";
+import FourOhFour from "../pages/FourOhFour";
 
 class Router extends React.Component {
   render() {
@@ -156,6 +157,18 @@ class Router extends React.Component {
           path="/security"
           render={() => (
             <Security
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/404"
+          render={() => (
+            <FourOhFour
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}

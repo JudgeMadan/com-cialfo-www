@@ -31,6 +31,10 @@
   font-size: 20px;
 }
 
+.button {
+  margin-bottom: 100px;
+}
+
 .demoTextImgContainer {
   background-color: #ebf9ff;
   display: flex;
