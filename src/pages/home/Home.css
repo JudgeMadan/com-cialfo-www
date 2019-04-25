@@ -134,6 +134,7 @@
 }
 
 .featureRows {
+  display: flex;
   justify-content: space-between;
   margin-bottom: 125px;
 }
@@ -173,15 +174,13 @@
 .homePartnerImages {
   display: flex;
   justify-content: space-around;
-  max-height: 75px;
-  max-width: 225px;
-  height: 100%;
-  width: auto;
+  height: auto;
+  width: 100%;
   margin-bottom: 150px;
 }
 
 .imageObjectRow {
-  padding: 0 400px;
+  padding: 0 10%;
 }
 
 .imageObjectTitle {
@@ -190,6 +189,8 @@
   margin-bottom: 100px;
 }
 
-.topTestRow {
-  width: 500px;
+.homePageImg {
+  display: flex;
+  width: 33em;
+  height: auto;
 }

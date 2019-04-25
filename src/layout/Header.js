@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import * as contentful from "contentful";
 import NavItem from "react-bootstrap/NavItem";
 import "./Layout/Layout.css";
-import Logo from "./Layout/Logo.png";
+import Logo from "./Layout/Logo.svg";
 import TranslateButton from "./header/TranslateButton";
 
 class Header extends React.Component {
@@ -58,7 +58,6 @@ class Header extends React.Component {
         <Nav href="#home">
           <Link to="/" className="navbar-brand">
             <img src={Logo} />
-            <span className="logo-text">Cialfo</span>
           </Link>
         </Nav>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

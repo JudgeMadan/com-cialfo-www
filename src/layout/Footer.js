@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import NavBar from "react-bootstrap/Navbar";
 import * as contentful from "contentful";
-import Logo from "./Layout/Logo.png";
+import Logo from "./Layout/Logo.svg";
 import { Link } from "react-router-dom";
 import "./Layout/Layout.css";
 class Footer extends React.Component {
@@ -126,7 +126,6 @@ class Footer extends React.Component {
           <Row className="justify-content-md-end">
             <Link to="/" className="navbar-brand">
               <img src={Logo} />
-              <span className="logo-text">Cialfo</span>
             </Link>
           </Row>
         </Col>
