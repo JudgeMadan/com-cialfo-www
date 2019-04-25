@@ -45,7 +45,6 @@ class TranslateButton extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         {this.props.locale !== "zh-CN" && (

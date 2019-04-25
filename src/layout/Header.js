@@ -48,7 +48,6 @@ class Header extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <Navbar
         className="justify-content-between header"
@@ -88,6 +87,9 @@ class Header extends React.Component {
                 updateLocale={this.updateLocale}
               />
             )}
+            <Link className="nav-link" to="/demo">
+              {this.state.demoPage}
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

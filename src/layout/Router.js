@@ -8,6 +8,11 @@ import FeaturesSend from "../pages/features/FeaturesSend";
 import FeaturesResearch from "../pages/features/FeaturesResearch";
 import FeaturesDocuments from "../pages/features/FeaturesDocuments";
 import About from "../pages/About";
+import GetADemoSimple from "../pages/GetADemoSimple";
+import GetInTouch from "../pages/GetInTouch";
+import Privacy from "../pages/Privacy";
+import Security from "../pages/Security";
+import FourOhFour from "../pages/FourOhFour";
 
 class Router extends React.Component {
   render() {
@@ -104,6 +109,65 @@ class Router extends React.Component {
           path="/demo"
           render={() => (
             <GetADemo
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/demo_simple"
+          render={() => (
+            <GetADemoSimple
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/get_in_touch"
+          render={() => (
+            <GetInTouch
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/privacy"
+          render={() => (
+            <Privacy
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/security"
+          render={() => (
+            <Security
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          render={() => (
+            <FourOhFour
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}

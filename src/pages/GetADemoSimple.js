@@ -1,12 +1,13 @@
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import React from "react";
+import Container from "react-bootstrap/Container";
 import "./getADemo/GetADemo.css";
 import DemoText from "./getADemo/GetADemo.png";
 import FeaturesSubfooter from "./features/FeaturesSubfooter";
 import * as contentful from "contentful";
 
-class GetADemo extends React.Component {
+class GetADemoSimple extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -88,102 +89,82 @@ class GetADemo extends React.Component {
   // getADemo
 
   render() {
+    console.log(this.state);
     return (
       <div>
         <Row className="demoTextImgContainer">
           <img className="demoTextImg" src={DemoText} />
         </Row>
-        <form
-          method="POST"
-          onSubmit={e => this.submitForm(e)}
-          // action="https://cialfo51705.activehosted.com/proc.php"
-          id="_form_1_"
-          className="_form _form_1 _inline-form _dark demo_form_container"
-          noValidate=""
-        >
-          <input type="hidden" name="u" value="1" data-name="u" />
-          <input type="hidden" name="f" value="1" data-name="f" />
-          <input type="hidden" name="s" data-name="s" />
-          <input type="hidden" name="c" value="0" data-name="c" />
-          <input type="hidden" name="m" value="0" data-name="m" />
-          <input type="hidden" name="act" value="sub" data-name="act" />
-          <input type="hidden" name="v" value="2" data-name="v" />
-          <div class="_form-content">
-            <div className="_form_element _x65008066 _full_width _clear form_title_container">
-              <div className="primary_font form_title">
-                {this.state.getADemoFormTitle}
-              </div>
-            </div>
-            <Row>
-              <Col>
-                <div class="_form_element _x05833667 _full_width ">
-                  <label className="secondary_font">
+        <Row className="demoTextTitleContainer secondary_font">
+          <h1 className="demoTextTitle">{this.state.getADemoTitle}</h1>
+        </Row>
+        <Container className="demo_form_container">
+          <form
+            method="POST"
+            action="https://cialfo51705.activehosted.com/proc.php"
+            id="_form_2_"
+            class="_form _form_2 _inline-form  _dark"
+            novalidate
+          >
+            <input type="hidden" name="u" value="2" />
+            <input type="hidden" name="f" value="2" />
+            <input type="hidden" name="s" />
+            <input type="hidden" name="c" value="0" />
+            <input type="hidden" name="m" value="0" />
+            <input type="hidden" name="act" value="sub" />
+            <input type="hidden" name="v" value="2" />
+            <div class="_form-content">
+              <Row className="title_row">
+                <div className="_form_element _x36013235 _full_width _clear primary_font form_title_container">
+                  <div className="_form-title primary_font form_title">
+                    {this.state.getADemoFormTitle}
+                  </div>
+                </div>
+              </Row>
+              <Row>
+                <div class="_form_element _x18120362 _full_width left_content_row">
+                  <label className="_form-label secondary_font">
                     {this.state.getADemoName}
                   </label>
                   <div class="_field-wrapper">
                     <input
                       type="text"
-                      name="fullname"
+                      name="firstname"
                       placeholder={this.state.getADemoNamePlaceholder}
-                      data-name="fullname"
+                      className="input_style"
                     />
                   </div>
                 </div>
-              </Col>
-              <Col>
-                <div class="_form_element _x22732067 _full_width ">
-                  <label className="secondary_font">
-                    {this.state.getADemoSurname}
-                  </label>
-                  <div class="_field-wrapper">
-                    <input
-                      type="text"
-                      name="email"
-                      placeholder={this.state.getADemoSurnamePlaceholder}
-                      required=""
-                      data-name="email"
-                    />
-                  </div>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <div class="_form_element _field1 _full_width ">
-                  <label className="secondary_font">
+                <div class="_form_element _x44797314 _full_width ">
+                  <label class="_form-label secondary_font">
                     {this.state.getADemoEmail}
                   </label>
                   <div class="_field-wrapper">
                     <input
                       type="text"
-                      name="field[1]"
-                      value=""
+                      name="email"
                       placeholder={this.state.getADemoEmailPlaceholder}
-                      data-name="customemail"
+                      className="input_style"
                     />
                   </div>
                 </div>
-              </Col>
-              <Col>
-                <div class="_form_element _x67471486 _full_width ">
-                  <label className="secondary_font">
+              </Row>
+              <Row>
+                <div class="_form_element _x80848159 _full_width left_content_row">
+                  <label class="_form-label secondary_font">
                     {this.state.getADemoOrg}
                   </label>
-                  <div className="_field-wrapper wrapper">
+                  <div class="_field-wrapper">
                     <input
                       type="text"
                       name="organization"
                       placeholder={this.state.getADemoOrgPlaceholder}
-                      data-name="organization"
+                      className="input_style"
                     />
                   </div>
                 </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <div class="_form_element _x94439414 _full_width ">
-                  <label className="secondary_font">
+                <div class="_form_element _x04697005 _full_width ">
+                  <label class="_form-label secondary_font">
                     {this.state.getADemoMobile}
                   </label>
                   <div class="_field-wrapper">
@@ -191,45 +172,49 @@ class GetADemo extends React.Component {
                       type="text"
                       name="phone"
                       placeholder={this.state.getADemoMobilePlaceholder}
-                      data-name="phone"
+                      className="input_style"
                     />
                   </div>
                 </div>
-              </Col>
-              <Col>
-                <div class="_form_element _field3 _full_width ">
-                  <label className="secondary_font">
+              </Row>
+              <Row>
+                <div class="_form_element _x98882726 _full_width left_content_row">
+                  <label class="_form-label secondary_font">
                     {this.state.getADemoNumberOfStudents}
                   </label>
                   <div class="_field-wrapper">
                     <input
-                      type="text"
-                      name="field[3]"
-                      value=""
+                      type="number"
+                      name="lastname"
                       placeholder={
                         this.state.getADemoNumberOfStudentsPlaceholder
                       }
-                      data-name="_of_students"
+                      className="input_style"
                     />
                   </div>
                 </div>
-              </Col>
-            </Row>
-            <div class="_button-wrapper _full_width submit_button_container">
-              <button
-                id="_form_1_submit"
-                className="submit_button"
-                type="submit"
-              >
-                {this.state.getAdemoSubmitButtonText}
-              </button>
+              </Row>
+              <Row className="title_row">
+                <div class="_button-wrapper _full_width">
+                  <button
+                    id="_form_2_submit"
+                    className="_submit submit_button"
+                    type="submit"
+                  >
+                    {this.state.getAdemoSubmitButtonText}
+                  </button>
+                </div>
+              </Row>
+              <div class="_clear-element" />
             </div>
-          </div>
-        </form>
+            <div class="_form-thank-you" />
+          </form>
+        </Container>
         <Row>
           <FeaturesSubfooter
             img={this.state.getADemoSubfooterImg}
             quote={this.state.getADemoSubfooterQuote}
+            quoteAuthor={this.state.getAdemoSubfooterQuoteAuthor}
           />
         </Row>
       </div>
@@ -237,4 +222,4 @@ class GetADemo extends React.Component {
   }
 }
 
-export default GetADemo;
+export default GetADemoSimple;
