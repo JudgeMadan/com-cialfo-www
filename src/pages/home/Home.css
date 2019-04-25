@@ -29,7 +29,7 @@
 
 .top_row_left_col {
   display: flex;
-  max-width: 200px;
+  max-width: 30em;
   align-items: flex-end;
 }
 
