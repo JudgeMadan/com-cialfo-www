@@ -214,6 +214,7 @@ class GetADemoSimple extends React.Component {
           <FeaturesSubfooter
             img={this.state.getADemoSubfooterImg}
             quote={this.state.getADemoSubfooterQuote}
+            quoteAuthor={this.state.getAdemoSubfooterQuoteAuthor}
           />
         </Row>
       </div>

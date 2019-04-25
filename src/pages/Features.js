@@ -3,6 +3,10 @@ import * as contentful from "contentful";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import ReactPlayer from "react-player";
+import FeaturesSubfooter from "./features/FeaturesSubfooter";
+import FeaturesBullets from "./features/FeaturesBullets";
+import "./features/Features.css";
 
 class Features extends React.Component {
   constructor(props) {
@@ -35,8 +39,13 @@ class Features extends React.Component {
 
   setFeatures = response => {
     const featureContent = response.items[0].fields;
+    console.log(featureContent);
     for (let key in featureContent) {
       if (typeof featureContent[key] === "string") {
+        this.setState({
+          [key]: featureContent[key]
+        });
+      } else if (Array.isArray(featureContent[key])) {
         this.setState({
           [key]: featureContent[key]
         });
@@ -49,58 +58,90 @@ class Features extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container>
-        <Row>
-          <h1>{this.state.featuresPageTitle}</h1>
+        <Row className="titleContainer">
+          <h1 className="primary_font">{this.state.featuresTitle}</h1>
         </Row>
-        <Row className="pb-5 justify-content-md-center">
-          <img src={this.state.featuresPageCdProductImage} />
-        </Row>
-        <Row className="pb-5">
-          <Col>
-            <img src={this.state.featuresPageTeacherPortalImage2} />
-          </Col>
-          <Col>
-            <Row>
-              <h1 className="text-right">
-                {this.state.featuresPageTeacherPortalTitle}
-              </h1>
-            </Row>
-            <Row>
-              <p className="text-right">
-                {this.state.featuresPageTeacherPortalBlurb}
-              </p>
-            </Row>
-          </Col>
+        <Row className="featuresVideoEmbed">
+          <ReactPlayer
+            width="1000px"
+            height="560px"
+            url={this.state.featuresVideo}
+          />
         </Row>
         <Row className="pb-5">
-          <Col>
-            <Row>
-              <h1>{this.state.featuresPageTranscriptTitle}</h1>
-            </Row>
-            <Row>
-              <p>{this.state.featuresPageTranscriptBlurb}</p>
-            </Row>
+          <Col className="featureImage">
+            <h1>ADD IMAGE</h1>
           </Col>
-          <Col>
-            <img src={this.state.featuresPageTeacherPortalImage2} />
+          <Col className="featureSubSectionTextAlign">
+            <Container>
+              <Row>
+                <Col md={{ span: 6, offset: 3 }}>
+                  <h1 className="primary_font">
+                    {this.state.featuresResearchTitle}
+                  </h1>
+                </Col>
+              </Row>
+              <Row>
+                <Col md={{ span: 6, offset: 3 }}>
+                  <FeaturesBullets bullets={this.state.featuresResearchArray} />
+                </Col>
+              </Row>
+            </Container>
           </Col>
-        </Row>
-        <Row className="justify-content-md-center">
-          <h1>{this.state.featuresPagePartnersTitle}</h1>
         </Row>
         <Row>
-          <Col>
-            <Row className="justify-content-md-start">
-              <img src={this.state.featuresPagePartnersCommonApp} />
-            </Row>
+          <Col className="featureSubSectionTextAlign">
+            <Container>
+              <Row>
+                <Col md={{ span: 6, offset: 3 }}>
+                  <h1 className="primary_font">
+                    {this.state.featuresTranscriptTitle}
+                  </h1>
+                </Col>
+              </Row>
+              <Row>
+                <Col md={{ span: 6, offset: 3 }}>
+                  <FeaturesBullets
+                    bullets={this.state.featuresTranscriptArray}
+                  />
+                </Col>
+              </Row>
+            </Container>
           </Col>
-          <Col>
-            <Row className="justify-content-md-end">
-              <img src={this.state.featuresPagePartnersParchment} />
-            </Row>
+          <Col className="featureImage">
+            <h1>ADD IMAGE</h1>
           </Col>
+        </Row>
+        <Row className="researchBottomRow">
+          <Col className="featureImage">
+            <h1>ADD IMAGE</h1>
+          </Col>
+          <Col className="featureSubSectionTextAlign">
+            <Container>
+              <Row>
+                <Col md={{ span: 6, offset: 3 }}>
+                  <h1 className="primary_font">
+                    {this.state.featuresDocTitle}
+                  </h1>
+                </Col>
+              </Row>
+              <Row>
+                <Col md={{ span: 6, offset: 3 }}>
+                  <FeaturesBullets bullets={this.state.featuresDocArray} />
+                </Col>
+              </Row>
+            </Container>
+          </Col>
+        </Row>
+        <Row>
+          <FeaturesSubfooter
+            img={this.state.featuresSubfooterPhoto}
+            quote={this.state.featuresSubfooterBlurb}
+            quoteAuthor={this.state.featuresSubfooterBlurbAuthor}
+          />
         </Row>
       </Container>
     );
