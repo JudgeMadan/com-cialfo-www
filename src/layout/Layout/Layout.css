@@ -23,7 +23,7 @@
 }
 
 .nav-link:hover {
-  color: #1886df !important;
+  border-bottom: solid 2px #1886df !important;
 }
 
 .footer-background {
@@ -40,4 +40,8 @@
 
 .translator:hover {
   cursor: pointer;
+}
+
+.demo-page-link {
+  color: #1886df !important;
 }
