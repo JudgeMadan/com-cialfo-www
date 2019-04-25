@@ -9,8 +9,10 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import ReactPlayer from "react-player";
 import "./home/Home.css";
-import Screen from "./home/Screen.png";
-import Hero from "./home/Hero.png";
+import Hero from "./home/Hero.svg";
+import Documents from "./home/CDocs.svg";
+import ResearchImage from "./home/SchoolsOverview.svg";
+import Reports from "./home/Reports.svg";
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -124,7 +126,7 @@ class Home extends React.Component {
         </Row>
         <Row className="featureRows">
           <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-            <img src={Screen} />
+            <img src={Documents} />
           </Col>
           <Col className="homePageFeaturesText">
             <div className="homePageFeaturesRightSideTextObject">
@@ -167,12 +169,12 @@ class Home extends React.Component {
             </div>
           </Col>
           <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
-            <img src={Screen} />
+            <img src={ResearchImage} />
           </Col>
         </Row>
         <Row className="featureRows">
           <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-            <img src={Screen} />
+            <img src={Reports} />
           </Col>
           <Col className="homePageFeaturesText">
             <div className="homePageFeaturesRightSideTextObject">
