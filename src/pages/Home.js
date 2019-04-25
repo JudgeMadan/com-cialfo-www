@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import "./home/Home.css";
 import Hero from "./home/Hero.svg";
@@ -34,8 +35,9 @@ class Home extends React.Component {
     }
   }
 
-  getDemo = () => {
-    console.log("hey");
+  handleChange = e => {
+    const fieldContent = e.target.value;
+    this.props.sendEmailAddressToGetADemo(fieldContent);
   };
 
   fetchHomeContent = () =>
@@ -81,13 +83,14 @@ class Home extends React.Component {
               </Row>
               <Row>
                 <Container>
-                  <Form>
+                  <Form onSubmit={this.handleSubmit}>
                     <Form.Group>
                       <Row className="topTestRow">
                         <Col className="homePageHeaderEmailForm" xs={8}>
                           <Form.Control
                             className="primary_font homePageHeaderEmailFormText"
                             type="email"
+                            onChange={this.handleChange}
                             plaintext
                             placeholder={
                               this.state.homePageHeaderEmailPlaceholderText
@@ -95,14 +98,17 @@ class Home extends React.Component {
                           />
                         </Col>
                         <Col className="homePageHeaderEmailSubmitButton homePageHeaderEmailForm">
-                          <p
-                            className="primary_font btn-lg homePageHeaderEmailFormText"
-                            variant="link"
+                          <button
+                            className=" primary_font homePageButton"
                             type="submit"
-                            onClick={this.getDemo}
                           >
-                            {this.state.homePageHeaderEmailSubmitButtonText}
-                          </p>
+                            <Link
+                              className="primary_font homePageButton"
+                              to="/demo"
+                            >
+                              {this.state.homePageHeaderEmailSubmitButtonText}
+                            </Link>
+                          </button>
                         </Col>
                       </Row>
                     </Form.Group>

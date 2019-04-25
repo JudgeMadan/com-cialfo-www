@@ -8,6 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       locale: "en-US",
+      getADemoEmail: "",
       chinaSpace: {
         space: "1acwuo4zy8aa",
         accessToken:
@@ -60,6 +61,12 @@ class App extends Component {
     }
   }
 
+  sendEmailAddressToGetADemo = email => {
+    this.setState({
+      getADemoEmail: email
+    });
+  };
+
   updateLocale = locale => {
     this.setState({
       locale: locale
@@ -67,6 +74,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state.getADemoEmail);
     const space = this.state.space;
     const accessToken = this.state.accessToken;
 
@@ -84,6 +92,8 @@ class App extends Component {
             locale={this.state.locale}
             space={this.state.space}
             accessToken={this.state.accessToken}
+            getADemoEmail={this.state.getADemoEmail}
+            sendEmailAddressToGetADemo={this.sendEmailAddressToGetADemo}
           />
           <Footer
             locale={this.state.locale}

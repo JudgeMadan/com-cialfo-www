@@ -194,3 +194,15 @@
   width: 33em;
   height: auto;
 }
+
+.homePageButton {
+  font-size: 22px;
+  background: none;
+  color: #757575;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  margin-top: 10px;
+  padding-bottom: 25px;
+}
