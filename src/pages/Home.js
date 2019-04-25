@@ -79,7 +79,7 @@ class Home extends React.Component {
               <Container>
                 <Form>
                   <Form.Group>
-                    <Row>
+                    <Row className="topTestRow">
                       <Col className="homePageHeaderEmailForm" xs={8}>
                         <Form.Control
                           className="primary_font homePageHeaderEmailFormText"
