@@ -175,7 +175,7 @@ class Home extends React.Component {
             <img src={Screen} />
           </Col>
           <Col className="homePageFeaturesText">
-            <div className="homePageFeaturesRightSideTextObject container-fluid">
+            <div className="homePageFeaturesRightSideTextObject">
               <Row>
                 <h1 className="primary_font">
                   {this.state.homePageFeaturesDiscoverTitle}
