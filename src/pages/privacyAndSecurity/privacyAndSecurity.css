@@ -1,0 +1,12 @@
+.privacy_security_title {
+  display: flex;
+  justify-content: center;
+}
+
+.title_bottom {
+  margin-bottom: 100px;
+}
+
+.title_top {
+  margin-top: 50px;
+}

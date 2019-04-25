@@ -60,7 +60,7 @@ class Features extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <Container>
+      <Container className="featuresSendPage">
         <Row className="titleContainer">
           <h1 className="primary_font">{this.state.featuresTitle}</h1>
         </Row>
@@ -71,7 +71,7 @@ class Features extends React.Component {
             url={this.state.featuresVideo}
           />
         </Row>
-        <Row className="pb-5">
+        <Row>
           <Col className="featureImage">
             <h1>ADD IMAGE</h1>
           </Col>
