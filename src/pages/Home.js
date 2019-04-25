@@ -10,6 +10,7 @@ import Button from "react-bootstrap/Button";
 import ReactPlayer from "react-player";
 import "./home/Home.css";
 import Screen from "./home/Screen.png";
+import Hero from "./home/Hero.png";
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -65,49 +66,52 @@ class Home extends React.Component {
       <div className="homePageContainer">
         <Row className="top_row">
           <Col className="top_row_left_col">
-            <Row>
-              <h1 className="primary_font homePageHeaderTitle">
-                {this.state.homePageHeaderTitle}
-              </h1>
-            </Row>
-            <Row>
-              <h1 className="secondary_font homePageHeaderBlurb">
-                {this.state.homePageHeaderBlurb}
-              </h1>
-            </Row>
-            <Row>
-              <Container>
-                <Form>
-                  <Form.Group>
-                    <Row className="topTestRow">
-                      <Col className="homePageHeaderEmailForm" xs={8}>
-                        <Form.Control
-                          className="primary_font homePageHeaderEmailFormText"
-                          type="email"
-                          plaintext
-                          placeholder={
-                            this.state.homePageHeaderEmailPlaceholderText
-                          }
-                        />
-                      </Col>
-                      <Col className="homePageHeaderEmailSubmitButton homePageHeaderEmailForm">
-                        <p
-                          className="primary_font btn-lg homePageHeaderEmailFormText"
-                          variant="link"
-                          type="submit"
-                          onClick={this.getDemo}
-                        >
-                          {this.state.homePageHeaderEmailSubmitButtonText}
-                        </p>
-                      </Col>
-                    </Row>
-                  </Form.Group>
-                </Form>
-              </Container>
-            </Row>
+            <div>
+              <Row>
+                <h1 className="primary_font homePageHeaderTitle">
+                  {this.state.homePageHeaderTitle}
+                </h1>
+              </Row>
+              <Row>
+                <h1 className="secondary_font homePageHeaderBlurb">
+                  {this.state.homePageHeaderBlurb}
+                </h1>
+              </Row>
+              <Row>
+                <Container>
+                  <Form>
+                    <Form.Group>
+                      <Row className="topTestRow">
+                        <Col className="homePageHeaderEmailForm" xs={8}>
+                          <Form.Control
+                            className="primary_font homePageHeaderEmailFormText"
+                            type="email"
+                            plaintext
+                            placeholder={
+                              this.state.homePageHeaderEmailPlaceholderText
+                            }
+                          />
+                        </Col>
+                        <Col className="homePageHeaderEmailSubmitButton homePageHeaderEmailForm">
+                          <p
+                            className="primary_font btn-lg homePageHeaderEmailFormText"
+                            variant="link"
+                            type="submit"
+                            onClick={this.getDemo}
+                          >
+                            {this.state.homePageHeaderEmailSubmitButtonText}
+                          </p>
+                        </Col>
+                      </Row>
+                    </Form.Group>
+                  </Form>
+                </Container>
+              </Row>
+            </div>
           </Col>
           <Col className="homePageHeaderProductImage">
-            <img src={this.state.homePageHeaderProductImage} />
+            <img src={Hero} />
+            {/* <img src={this.state.homePageHeaderProductImage} /> */}
           </Col>
         </Row>
         <Row className="homePageSchoolTestimonialsTitle">

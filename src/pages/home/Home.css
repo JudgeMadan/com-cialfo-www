@@ -23,18 +23,21 @@
 }
 
 .top_row {
-  margin: 130px 0 150px 0;
-  padding: 0 150px 0 150px;
+  margin: 0 0 150px 0;
+  padding: 0 0 0 150px;
 }
 
 .top_row_left_col {
-  margin: 0 400px 0 200px;
+  display: flex;
+  max-width: 200px;
+  align-items: flex-end;
 }
 
 .homePageHeaderTitle {
   font-size: 60px;
   line-height: 62px;
   color: #2b1f30;
+  max-width: 400px;
 }
 
 .homePageHeaderBlurb {
@@ -43,6 +46,7 @@
   font-size: 18px;
   line-height: 28px;
   color: #2b1f30;
+  max-width: 400px;
 }
 
 .homePageHeaderEmailFormText {
@@ -163,7 +167,6 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  margin: 100px 100px;
 }
 
 .homePartnerImages {
