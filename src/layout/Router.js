@@ -3,12 +3,11 @@ import { Switch, Route } from "react-router-dom";
 import ClientStories from "../pages/ClientStories";
 import Features from "../pages/Features";
 import Home from "../pages/Home";
-import GetADemo from "../pages/GetADemo";
 import FeaturesSend from "../pages/features/FeaturesSend";
 import FeaturesResearch from "../pages/features/FeaturesResearch";
 import FeaturesDocuments from "../pages/features/FeaturesDocuments";
 import About from "../pages/About";
-import GetADemoSimple from "../pages/GetADemoSimple";
+import GetADemo from "../pages/GetADemo";
 import GetInTouch from "../pages/GetInTouch";
 import Privacy from "../pages/Privacy";
 import Security from "../pages/Security";
@@ -26,6 +25,8 @@ class Router extends React.Component {
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              getADemoEmail={this.props.getADemoEmail}
+              sendEmailAddressToGetADemo={this.props.sendEmailAddressToGetADemo}
             />
           )}
         />
@@ -89,8 +90,6 @@ class Router extends React.Component {
             />
           )}
         />
-        {/* MAKE A 404 Page instead */}
-        {/* <Route render={() => <Home locale={this.props.locale} />} /> */}
         <Route
           locale={this.props.locale}
           exact
@@ -112,18 +111,7 @@ class Router extends React.Component {
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
-            />
-          )}
-        />
-        <Route
-          locale={this.props.locale}
-          exact
-          path="/demo_simple"
-          render={() => (
-            <GetADemoSimple
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
+              getADemoEmail={this.props.getADemoEmail}
             />
           )}
         />
