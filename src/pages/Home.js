@@ -112,8 +112,7 @@ class Home extends React.Component {
             </div>
           </Col>
           <Col className="homePageHeaderProductImage">
-            <img src={Hero} />
-            {/* <img src={this.state.homePageHeaderProductImage} /> */}
+            <img className="homePageImg" src={Hero} />
           </Col>
         </Row>
         <Row className="homePageSchoolTestimonialsTitle">
@@ -126,7 +125,7 @@ class Home extends React.Component {
         </Row>
         <Row className="featureRows">
           <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-            <img src={Documents} />
+            <img className="homePageImg" src={Documents} />
           </Col>
           <Col className="homePageFeaturesText">
             <div className="homePageFeaturesRightSideTextObject">
@@ -169,12 +168,12 @@ class Home extends React.Component {
             </div>
           </Col>
           <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
-            <img src={ResearchImage} />
+            <img className="homePageImg" src={ResearchImage} />
           </Col>
         </Row>
         <Row className="featureRows">
           <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-            <img src={Reports} />
+            <img className="homePageImg" src={Reports} />
           </Col>
           <Col className="homePageFeaturesText">
             <div className="homePageFeaturesRightSideTextObject">
