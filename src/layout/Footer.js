@@ -49,7 +49,7 @@ class Footer extends React.Component {
         className="mt-5 footer-background align-items-start justify-content-between footer"
         sticky="bottom"
       >
-        <Col>
+        {/* <Col>
           <Row className="small">
             <Col>
               <ListGroup variant="flush">
@@ -121,7 +121,7 @@ class Footer extends React.Component {
               </ListGroup>
             </Col>
           </Row>
-        </Col>
+        </Col> */}
         <Col className="justify-content-md-end">
           <Row className="justify-content-md-end">
             <Link to="/" className="navbar-brand">

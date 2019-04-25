@@ -30,7 +30,7 @@ class Router extends React.Component {
             />
           )}
         />
-        <Route
+        {/* <Route
           locale={this.props.locale}
           exact
           path="/clients"
@@ -41,7 +41,7 @@ class Router extends React.Component {
               accessToken={this.props.accessToken}
             />
           )}
-        />
+        /> */}
         <Route
           locale={this.props.locale}
           exact

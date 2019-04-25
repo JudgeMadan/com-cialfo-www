@@ -3,7 +3,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import * as contentful from "contentful";
-import NavItem from "react-bootstrap/NavItem";
 import "./Layout/Layout.css";
 import Logo from "./Layout/Logo.svg";
 import TranslateButton from "./header/TranslateButton";
@@ -63,21 +62,21 @@ class Header extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
-            <Link className="nav-link" to="/clients">
+            {/* <Link className="nav-link" to="/clients">
               {this.state.clientsPage}
-            </Link>
+            </Link> */}
             <Link className="nav-link" to="/features">
               {this.state.featuresPage}
             </Link>
             <Link className="nav-link" to="/about">
               {this.state.aboutUsPage}
             </Link>
-            <Link className="nav-link" to="/resources">
+            {/* <Link className="nav-link" to="/resources">
               {this.state.resourcesPage}
             </Link>
             <Link className="nav-link" to="/solutions">
               {this.state.solutionsPage}
-            </Link>
+            </Link> */}
             {this.props.country_code === "country_code=GB" && (
               <TranslateButton
                 locale={this.props.locale}
@@ -86,7 +85,7 @@ class Header extends React.Component {
                 updateLocale={this.updateLocale}
               />
             )}
-            <Link className="nav-link" to="/demo">
+            <Link className="nav-link demo-page-link" to="/demo">
               {this.state.demoPage}
             </Link>
           </Nav>
