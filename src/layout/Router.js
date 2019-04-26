@@ -12,6 +12,7 @@ import GetInTouch from "../pages/GetInTouch";
 import Privacy from "../pages/Privacy";
 import Security from "../pages/Security";
 import FourOhFour from "../pages/FourOhFour";
+import HomeToFeatures from "../pages/Features";
 
 class Router extends React.Component {
   render() {

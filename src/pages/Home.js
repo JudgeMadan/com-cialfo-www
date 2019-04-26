@@ -146,9 +146,12 @@ class Home extends React.Component {
                 </p>
               </Row>
               <Row>
-                <p className="secondary_font homePageFeaturesSendDocumentLinkText">
+                <Link
+                  className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
+                  to="/features/send"
+                >
                   {this.state.homePageFeaturesSendDocumentLinkText}
-                </p>
+                </Link>
               </Row>
             </div>
           </Col>
@@ -167,9 +170,12 @@ class Home extends React.Component {
                 </p>
               </Row>
               <Row>
-                <p className="secondary_font homePageFeaturesLeverageLinkText">
+                <Link
+                  className="homeFeatureLink homePageFeaturesLeverageLinkText"
+                  to="/features/research"
+                >
                   {this.state.homePageFeaturesLeverageLinkText}
-                </p>
+                </Link>
               </Row>
             </div>
           </Col>
@@ -194,9 +200,12 @@ class Home extends React.Component {
                 </p>
               </Row>
               <Row>
-                <p className="secondary_font homePageFeaturesDiscoverLinkText">
+                <Link
+                  className="homeFeatureLink homePageFeaturesDiscoverLinkText"
+                  to="/features/documents"
+                >
                   {this.state.homePageFeaturesDiscoverLinkText}
-                </p>
+                </Link>
               </Row>
             </div>
           </Col>

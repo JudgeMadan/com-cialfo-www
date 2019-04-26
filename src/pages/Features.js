@@ -1,20 +1,20 @@
 import React from "react";
+import HomeMarquee from "./home/HomeMarquee";
 import * as contentful from "contentful";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
-import FeaturesSubfooter from "./features/FeaturesSubfooter";
-import FeaturesBullets from "./features/FeaturesBullets";
-import "./features/Features.css";
-
+import "./home/Home.css";
+import Documents from "./home/CDocs.svg";
+import ResearchImage from "./home/SchoolsOverview.svg";
+import Reports from "./home/Reports.svg";
 class Features extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      locale: "zh-CN"
-    };
+    this.state = {};
   }
+
   client = contentful.createClient({
     space: this.props.space,
     accessToken: this.props.accessToken
@@ -58,9 +58,8 @@ class Features extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
-      <Container className="featuresSendPage">
+      <div className="homePageContainer">
         <Row className="titleContainer">
           <h1 className="primary_font">{this.state.featuresTitle}</h1>
         </Row>
@@ -71,79 +70,96 @@ class Features extends React.Component {
             url={this.state.featuresVideo}
           />
         </Row>
-        <Row>
-          <Col className="featureImage">
-            <h1>ADD IMAGE</h1>
+        <Row className="homePageSchoolTestimonialsTitle">
+          <h1 className="primary_font">
+            {this.state.homePageSchoolTestimonialsTitle}
+          </h1>
+        </Row>
+        <Row className="homeMarquee">
+          <HomeMarquee />
+        </Row>
+        <Row className="featureRows">
+          <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
+            <img className="homePageImg" src={Documents} />
           </Col>
-          <Col className="featureSubSectionTextAlign">
-            <Container>
+          <Col className="homePageFeaturesText">
+            <div className="homePageFeaturesRightSideTextObject">
               <Row>
-                <Col md={{ span: 6, offset: 3 }}>
-                  <h1 className="primary_font">
-                    {this.state.featuresResearchTitle}
-                  </h1>
-                </Col>
+                <h1 className="primary_font">
+                  {this.state.featurePageFeaturesSendDocumentTitle}
+                </h1>
               </Row>
               <Row>
-                <Col md={{ span: 6, offset: 3 }}>
-                  <FeaturesBullets bullets={this.state.featuresResearchArray} />
-                </Col>
+                <p className="secondary_font">
+                  {this.state.featurePageFeaturesSendDocumentBlurb}
+                </p>
               </Row>
-            </Container>
+              <Row>
+                <Link
+                  className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
+                  to="/features/send"
+                >
+                  {this.state.featurePageFeaturesSendDocumentLinkText}
+                </Link>
+              </Row>
+            </div>
           </Col>
         </Row>
-        <Row>
-          <Col className="featureSubSectionTextAlign">
-            <Container>
+        <Row className="featureRows">
+          <Col className="homePageFeaturesText">
+            <div className="homePageFeaturesLeftSideTextObject">
               <Row>
-                <Col md={{ span: 6, offset: 3 }}>
-                  <h1 className="primary_font">
-                    {this.state.featuresTranscriptTitle}
-                  </h1>
-                </Col>
+                <h1 className="primary_font">
+                  {this.state.featurePageFeaturesLeverageTitle}
+                </h1>
               </Row>
               <Row>
-                <Col md={{ span: 6, offset: 3 }}>
-                  <FeaturesBullets
-                    bullets={this.state.featuresTranscriptArray}
-                  />
-                </Col>
+                <p className="secondary_font">
+                  {this.state.featurePageFeaturesLeverageBlurb}
+                </p>
               </Row>
-            </Container>
+              <Row>
+                <Link
+                  className="homeFeatureLink homePageFeaturesLeverageLinkText"
+                  to="/features/research"
+                >
+                  {this.state.featurePageFeaturesLeverageLinkText}
+                </Link>
+              </Row>
+            </div>
           </Col>
-          <Col className="featureImage">
-            <h1>ADD IMAGE</h1>
-          </Col>
-        </Row>
-        <Row className="researchBottomRow">
-          <Col className="featureImage">
-            <h1>ADD IMAGE</h1>
-          </Col>
-          <Col className="featureSubSectionTextAlign">
-            <Container>
-              <Row>
-                <Col md={{ span: 6, offset: 3 }}>
-                  <h1 className="primary_font">
-                    {this.state.featuresDocTitle}
-                  </h1>
-                </Col>
-              </Row>
-              <Row>
-                <Col md={{ span: 6, offset: 3 }}>
-                  <FeaturesBullets bullets={this.state.featuresDocArray} />
-                </Col>
-              </Row>
-            </Container>
+          <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
+            <img className="homePageImg" src={ResearchImage} />
           </Col>
         </Row>
-        <Row>
-          <FeaturesSubfooter
-            img={this.state.featuresSubfooterPhoto}
-            quote={this.state.featuresSubfooterBlurb}
-            quoteAuthor={this.state.featuresSubfooterBlurbAuthor}
-          />
+        <Row className="featureRows">
+          <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
+            <img className="homePageImg" src={Reports} />
+          </Col>
+          <Col className="homePageFeaturesText">
+            <div className="homePageFeaturesRightSideTextObject">
+              <Row>
+                <h1 className="primary_font">
+                  {this.state.featurePageFeaturesDiscoverTitle}
+                </h1>
+              </Row>
+              <Row>
+                <p className="secondary_font">
+                  {this.state.featurePageFeaturesDiscoverBlurb}
+                </p>
+              </Row>
+              <Row>
+                <Link
+                  className="homeFeatureLink homePageFeaturesDiscoverLinkText"
+                  to="/features/documents"
+                >
+                  {this.state.featurePageFeaturesDiscoverLinkText}
+                </Link>
+              </Row>
+            </div>
+          </Col>
         </Row>
-      </Container>
+      </div>
     );
   }
 }
