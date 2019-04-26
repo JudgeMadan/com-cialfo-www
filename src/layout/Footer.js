@@ -1,11 +1,10 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";
 import NavBar from "react-bootstrap/Navbar";
 import * as contentful from "contentful";
-import Logo from "./Layout/Logo.png";
+import Logo from "./Layout/Logo.svg";
 import { Link } from "react-router-dom";
 import "./Layout/Layout.css";
 class Footer extends React.Component {
@@ -15,9 +14,8 @@ class Footer extends React.Component {
   }
 
   client = contentful.createClient({
-    space: "1acwuo4zy8aa",
-    accessToken:
-      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
+    space: this.props.space,
+    accessToken: this.props.accessToken
   });
 
   fetchNavBar = () =>
@@ -48,10 +46,11 @@ class Footer extends React.Component {
   render() {
     return (
       <NavBar
-        className="mt-5 footer-background align-items-start justify-content-between footer"
+        className="pt-3 
+        footer-background align-items-start justify-content-between footer"
         sticky="bottom"
       >
-        <Col>
+        {/* <Col>
           <Row className="small">
             <Col>
               <ListGroup variant="flush">
@@ -123,12 +122,11 @@ class Footer extends React.Component {
               </ListGroup>
             </Col>
           </Row>
-        </Col>
+        </Col> */}
         <Col className="justify-content-md-end">
           <Row className="justify-content-md-end">
             <Link to="/" className="navbar-brand">
               <img src={Logo} />
-              <span className="logo-text">Cialfo</span>
             </Link>
           </Row>
         </Col>

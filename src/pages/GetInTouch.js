@@ -3,11 +3,12 @@ import Col from "react-bootstrap/Col";
 import React from "react";
 import Container from "react-bootstrap/Container";
 import "./getADemo/GetADemo.css";
-import DemoText from "./getADemo/GetADemo.png";
+import GetInTouchImg from "./getADemo/GetInTouch.png";
 import FeaturesSubfooter from "./features/FeaturesSubfooter";
 import * as contentful from "contentful";
+import GetInTouchContactArray from "./getInTouch/GetInTouchContactArray";
 
-class GetADemo extends React.Component {
+class GetInTouch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,13 +38,14 @@ class GetADemo extends React.Component {
 
   fetchGetADemo = () => {
     return this.client.getEntries({
-      content_type: "getADemo",
+      content_type: "getInTouch",
       locale: this.props.locale
     });
   };
 
   setGetADemo = response => {
     const sendingPageContent = response.items[0].fields;
+    console.log(sendingPageContent);
     for (let key in sendingPageContent) {
       if (typeof sendingPageContent[key] === "string") {
         this.setState({
@@ -86,12 +88,19 @@ class GetADemo extends React.Component {
     console.log(e.target.u.value);
   };
 
+  // getADemo
+
   render() {
-    console.log(this.props);
+    console.log(this.state);
     return (
       <div>
         <Row className="demoTextImgContainer">
-          <img className="demoTextImg" src={DemoText} />
+          <img className="demoTextImg" src={GetInTouchImg} />
+        </Row>
+        <Row className="getInTouchContactArrayContainer">
+          <GetInTouchContactArray
+            contactArray={this.state.getInTouchContactInfo}
+          />
         </Row>
         <Row className="demoTextTitleContainer secondary_font">
           <h1 className="demoTextTitle">{this.state.getADemoTitle}</h1>
@@ -100,12 +109,12 @@ class GetADemo extends React.Component {
           <form
             method="POST"
             action="https://cialfo51705.activehosted.com/proc.php"
-            id="_form_2_"
-            class="_form _form_2 _inline-form  _dark"
+            id="_form_3_"
+            class="_form _form_3 _inline-form  _dark"
             novalidate
           >
-            <input type="hidden" name="u" value="2" />
-            <input type="hidden" name="f" value="2" />
+            <input type="hidden" name="u" value="3" />
+            <input type="hidden" name="f" value="3" />
             <input type="hidden" name="s" />
             <input type="hidden" name="c" value="0" />
             <input type="hidden" name="m" value="0" />
@@ -115,80 +124,64 @@ class GetADemo extends React.Component {
               <Row className="title_row">
                 <div className="_form_element _x36013235 _full_width _clear primary_font form_title_container">
                   <div className="_form-title primary_font form_title">
-                    {this.state.getADemoFormTitle}
+                    {this.state.getInTouchFormTitle}
                   </div>
                 </div>
               </Row>
-              <Row>
-                <div class="_form_element _x18120362 _full_width left_content_row">
-                  <label className="_form-label secondary_font">
-                    {this.state.getADemoName}
+              <Row className="title_row">
+                <div class="_form_element _x11005730 _full_width left_content_row middle_row">
+                  <label class="_form-label secondary_font">
+                    {this.state.getInTouchFullName}
                   </label>
                   <div class="_field-wrapper">
                     <input
                       type="text"
-                      name="firstname"
-                      placeholder={this.state.getADemoNamePlaceholder}
+                      name="fullname"
+                      placeholder={this.state.getInTouchFullNamePlaceholder}
                       className="input_style"
                     />
                   </div>
                 </div>
-                <div class="_form_element _x44797314 _full_width ">
+                <div class="_form_element _x78348353 _full_width ">
                   <label class="_form-label secondary_font">
-                    {this.state.getADemoEmail}
+                    {this.state.getInTouchEmail}
                   </label>
                   <div class="_field-wrapper">
                     <input
-                      // value={this.props.getADemoEmail}
                       type="text"
                       name="email"
-                      placeholder={this.state.getADemoEmailPlaceholder}
+                      placeholder={this.state.getInTouchEmailPlaceholder}
                       className="input_style"
                     />
                   </div>
                 </div>
               </Row>
-              <Row>
-                <div class="_form_element _x80848159 _full_width left_content_row">
+              <Row className="title_row">
+                <div class="_form_element _x11676591 _full_width left_content_row middle_row">
                   <label class="_form-label secondary_font">
-                    {this.state.getADemoOrg}
-                  </label>
-                  <div class="_field-wrapper">
-                    <input
-                      type="text"
-                      name="organization"
-                      placeholder={this.state.getADemoOrgPlaceholder}
-                      className="input_style"
-                    />
-                  </div>
-                </div>
-                <div class="_form_element _x04697005 _full_width ">
-                  <label class="_form-label secondary_font">
-                    {this.state.getADemoMobile}
+                    {this.state.getInTouchPhone}
                   </label>
                   <div class="_field-wrapper">
                     <input
                       type="text"
                       name="phone"
-                      placeholder={this.state.getADemoMobilePlaceholder}
+                      placeholder={this.state.getInTouchPhonePlaceholder}
                       className="input_style"
                     />
                   </div>
                 </div>
-              </Row>
-              <Row>
-                <div class="_form_element _x98882726 _full_width left_content_row">
+                <div class="_form_element _x99841330 _full_width">
                   <label class="_form-label secondary_font">
-                    {this.state.getADemoNumberOfStudents}
+                    {this.state.getInTouchMessage}
                   </label>
                   <div class="_field-wrapper">
-                    <input
-                      type="number"
-                      name="lastname"
-                      placeholder={
-                        this.state.getADemoNumberOfStudentsPlaceholder
-                      }
-                      className="input_style"
+                    <textarea
+                      type="text"
+                      name="organization"
+                      placeholder={this.state.getInTouchMessagePlaceholder}
+                      className="textarea_style"
+                      rows="5"
+                      cols="43"
                     />
                   </div>
                 </div>
@@ -196,11 +189,11 @@ class GetADemo extends React.Component {
               <Row className="title_row">
                 <div class="_button-wrapper _full_width">
                   <button
-                    id="_form_2_submit"
+                    id="_form_3_submit"
                     className="_submit submit_button"
                     type="submit"
                   >
-                    {this.state.getAdemoSubmitButtonText}
+                    Submit
                   </button>
                 </div>
               </Row>
@@ -212,8 +205,8 @@ class GetADemo extends React.Component {
         <Row>
           <FeaturesSubfooter
             img={this.state.getADemoSubfooterImg}
-            quote={this.state.getADemoSubfooterQuote}
-            quoteAuthor={this.state.getAdemoSubfooterQuoteAuthor}
+            quote={this.state.getInTouchSubfooterBlurb}
+            quoteAuthor={this.state.getInTouchFooterBlurbAuthor}
           />
         </Row>
       </div>
@@ -221,4 +214,4 @@ class GetADemo extends React.Component {
   }
 }
 
-export default GetADemo;
+export default GetInTouch;

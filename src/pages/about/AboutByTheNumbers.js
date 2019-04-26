@@ -19,9 +19,9 @@ class AboutByTheNumbers extends React.Component {
           <Col className="byTheNumbersObject" key={number.sys.id}>
             <Container className="byTheNumbersObjectContainer">
               <Row className="byTheNumbersObjectContent byTheNumbersObjectContentRow">
-                <h1 className="primary_font">
-                  {number.fields.aboutPageNumbersObjectTitle}
-                </h1>
+                <img
+                  src={number.fields.aboutPageNumbersObjectImg.fields.file.url}
+                />
               </Row>
               <Row className="byTheNumbersObjectContent byTheNumbersObjectContentRow">
                 <h2 className="secondary_font aboutPageNumbersObjectSubtitle">

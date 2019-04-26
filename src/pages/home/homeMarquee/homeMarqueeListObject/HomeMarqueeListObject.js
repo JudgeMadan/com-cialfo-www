@@ -10,14 +10,14 @@ class HomeMarqueeListObject extends React.Component {
 
   render() {
     return (
-      <div id="testContentGreen" className="orb test">
+      <div className="orb marqueeItem">
         <Image src="https://fillmurray.com/75/50" roundedCircle />
         <p>
           Cialfo's international focus, service, <br /> nimble approach to
           product <br /> improvement and reasonable cost <br /> made it the
           platform for us.
         </p>
-        <h6>Dale Ford</h6>
+        <h6>Dale Ford!</h6>
         <p>British Intl School Phuket</p>
       </div>
     );

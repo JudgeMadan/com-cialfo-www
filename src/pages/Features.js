@@ -1,20 +1,23 @@
 import React from "react";
+import HomeMarquee from "./home/HomeMarquee";
 import * as contentful from "contentful";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
+import { Link } from "react-router-dom";
+import ReactPlayer from "react-player";
+import "./home/Home.css";
+import Documents from "./home/CDocs.svg";
+import ResearchImage from "./home/SchoolsOverview.svg";
+import Reports from "./home/Reports.svg";
 class Features extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      locale: "zh-CN"
-    };
+    this.state = {};
   }
+
   client = contentful.createClient({
-    space: "1acwuo4zy8aa",
-    accessToken:
-      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
+    space: this.props.space,
+    accessToken: this.props.accessToken
   });
 
   componentDidMount() {
@@ -36,8 +39,13 @@ class Features extends React.Component {
 
   setFeatures = response => {
     const featureContent = response.items[0].fields;
+    console.log(featureContent);
     for (let key in featureContent) {
       if (typeof featureContent[key] === "string") {
+        this.setState({
+          [key]: featureContent[key]
+        });
+      } else if (Array.isArray(featureContent[key])) {
         this.setState({
           [key]: featureContent[key]
         });
@@ -51,59 +59,107 @@ class Features extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Row>
-          <h1>{this.state.featuresPageTitle}</h1>
+      <div className="homePageContainer">
+        <Row className="titleContainer">
+          <h1 className="primary_font">{this.state.featuresTitle}</h1>
         </Row>
-        <Row className="pb-5 justify-content-md-center">
-          <img src={this.state.featuresPageCdProductImage} />
+        <Row className="featuresVideoEmbed">
+          <ReactPlayer
+            width="1000px"
+            height="560px"
+            url={this.state.featuresVideo}
+          />
         </Row>
-        <Row className="pb-5">
-          <Col>
-            <img src={this.state.featuresPageTeacherPortalImage2} />
-          </Col>
-          <Col>
-            <Row>
-              <h1 className="text-right">
-                {this.state.featuresPageTeacherPortalTitle}
-              </h1>
-            </Row>
-            <Row>
-              <p className="text-right">
-                {this.state.featuresPageTeacherPortalBlurb}
-              </p>
-            </Row>
-          </Col>
+        <Row className="homePageSchoolTestimonialsTitle">
+          <h1 className="primary_font">
+            {this.state.homePageSchoolTestimonialsTitle}
+          </h1>
         </Row>
-        <Row className="pb-5">
-          <Col>
-            <Row>
-              <h1>{this.state.featuresPageTranscriptTitle}</h1>
-            </Row>
-            <Row>
-              <p>{this.state.featuresPageTranscriptBlurb}</p>
-            </Row>
-          </Col>
-          <Col>
-            <img src={this.state.featuresPageTeacherPortalImage2} />
-          </Col>
+        <Row className="homeMarquee">
+          <HomeMarquee />
         </Row>
-        <Row className="justify-content-md-center">
-          <h1>{this.state.featuresPagePartnersTitle}</h1>
-        </Row>
-        <Row>
-          <Col>
-            <Row className="justify-content-md-start">
-              <img src={this.state.featuresPagePartnersCommonApp} />
-            </Row>
+        <Row className="featureRows">
+          <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
+            <img className="homePageImg" src={Documents} />
           </Col>
-          <Col>
-            <Row className="justify-content-md-end">
-              <img src={this.state.featuresPagePartnersParchment} />
-            </Row>
+          <Col className="homePageFeaturesText">
+            <div className="homePageFeaturesRightSideTextObject">
+              <Row>
+                <h1 className="primary_font">
+                  {this.state.featurePageFeaturesSendDocumentTitle}
+                </h1>
+              </Row>
+              <Row>
+                <p className="secondary_font">
+                  {this.state.featurePageFeaturesSendDocumentBlurb}
+                </p>
+              </Row>
+              <Row>
+                <Link
+                  className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
+                  to="/features/send"
+                >
+                  {this.state.featurePageFeaturesSendDocumentLinkText}
+                </Link>
+              </Row>
+            </div>
           </Col>
         </Row>
-      </Container>
+        <Row className="featureRows">
+          <Col className="homePageFeaturesText">
+            <div className="homePageFeaturesLeftSideTextObject">
+              <Row>
+                <h1 className="primary_font">
+                  {this.state.featurePageFeaturesLeverageTitle}
+                </h1>
+              </Row>
+              <Row>
+                <p className="secondary_font">
+                  {this.state.featurePageFeaturesLeverageBlurb}
+                </p>
+              </Row>
+              <Row>
+                <Link
+                  className="homeFeatureLink homePageFeaturesLeverageLinkText"
+                  to="/features/research"
+                >
+                  {this.state.featurePageFeaturesLeverageLinkText}
+                </Link>
+              </Row>
+            </div>
+          </Col>
+          <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
+            <img className="homePageImg" src={ResearchImage} />
+          </Col>
+        </Row>
+        <Row className="featureRows">
+          <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
+            <img className="homePageImg" src={Reports} />
+          </Col>
+          <Col className="homePageFeaturesText">
+            <div className="homePageFeaturesRightSideTextObject">
+              <Row>
+                <h1 className="primary_font">
+                  {this.state.featurePageFeaturesDiscoverTitle}
+                </h1>
+              </Row>
+              <Row>
+                <p className="secondary_font">
+                  {this.state.featurePageFeaturesDiscoverBlurb}
+                </p>
+              </Row>
+              <Row>
+                <Link
+                  className="homeFeatureLink homePageFeaturesDiscoverLinkText"
+                  to="/features/documents"
+                >
+                  {this.state.featurePageFeaturesDiscoverLinkText}
+                </Link>
+              </Row>
+            </div>
+          </Col>
+        </Row>
+      </div>
     );
   }
 }

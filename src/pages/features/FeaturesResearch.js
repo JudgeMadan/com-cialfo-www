@@ -57,6 +57,7 @@ class FeaturesResearch extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container className="featuresSendPage">
         <Row className="titleContainer">
@@ -140,7 +141,7 @@ class FeaturesResearch extends React.Component {
         </Row>
         <Row>
           <FeaturesSubfooter
-            img={this.state.researchFooterImage}
+            img={this.state.researchFooterImg}
             quote={this.state.researchFooterQuote}
           />
         </Row>

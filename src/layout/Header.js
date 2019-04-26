@@ -3,9 +3,9 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import * as contentful from "contentful";
-import NavItem from "react-bootstrap/NavItem";
 import "./Layout/Layout.css";
-import Logo from "./Layout/Logo.png";
+import Logo from "./Layout/Logo.svg";
+import TranslateButton from "./header/TranslateButton";
 
 class Header extends React.Component {
   constructor(props) {
@@ -17,9 +17,8 @@ class Header extends React.Component {
   };
 
   client = contentful.createClient({
-    space: "1acwuo4zy8aa",
-    accessToken:
-      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
+    space: this.props.space,
+    accessToken: this.props.accessToken
   });
 
   fetchNavBar = () =>
@@ -58,43 +57,37 @@ class Header extends React.Component {
         <Nav href="#home">
           <Link to="/" className="navbar-brand">
             <img src={Logo} />
-            <span className="logo-text">Cialfo</span>
           </Link>
         </Nav>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
-            <Link className="nav-link" to="/clients">
+            {/* <Link className="nav-link" to="/clients">
               {this.state.clientsPage}
-            </Link>
+            </Link> */}
             <Link className="nav-link" to="/features">
               {this.state.featuresPage}
             </Link>
             <Link className="nav-link" to="/about">
               {this.state.aboutUsPage}
             </Link>
-            <Link className="nav-link" to="/resources">
+            {/* <Link className="nav-link" to="/resources">
               {this.state.resourcesPage}
             </Link>
             <Link className="nav-link" to="/solutions">
               {this.state.solutionsPage}
+            </Link> */}
+            {this.props.country_code === "country_code=GB" && (
+              <TranslateButton
+                locale={this.props.locale}
+                space={this.props.space}
+                accessToken={this.props.accessToken}
+                updateLocale={this.updateLocale}
+              />
+            )}
+            <Link className="nav-link demo-page-link" to="/demo">
+              {this.state.demoPage}
             </Link>
-            {this.props.locale !== "zh-CN" && (
-              <Link
-                onClick={() => this.updateLocale("zh-CN")}
-                className="nav-link "
-              >
-                中文
-              </Link>
-            )}
-            {this.props.locale === "zh-CN" && (
-              <Link
-                onClick={() => this.updateLocale("en-US")}
-                className="nav-link "
-              >
-                English
-              </Link>
-            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

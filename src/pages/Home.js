@@ -7,9 +7,13 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import "./home/Home.css";
-import Screen from "./home/Screen.png";
+import Hero from "./home/Hero.svg";
+import Documents from "./home/CDocs.svg";
+import ResearchImage from "./home/SchoolsOverview.svg";
+import Reports from "./home/Reports.svg";
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -17,9 +21,8 @@ class Home extends React.Component {
   }
 
   client = contentful.createClient({
-    space: "1acwuo4zy8aa",
-    accessToken:
-      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
+    space: this.props.space,
+    accessToken: this.props.accessToken
   });
 
   componentDidMount() {
@@ -32,8 +35,9 @@ class Home extends React.Component {
     }
   }
 
-  getDemo = () => {
-    console.log("hey");
+  handleChange = e => {
+    const fieldContent = e.target.value;
+    this.props.sendEmailAddressToGetADemo(fieldContent);
   };
 
   fetchHomeContent = () =>
@@ -62,54 +66,59 @@ class Home extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
-      <Container className="homePageContainer">
+      <div className="homePageContainer">
         <Row className="top_row">
           <Col className="top_row_left_col">
-            <Row>
-              <h1 className="primary_font homePageHeaderTitle">
-                {this.state.homePageHeaderTitle}
-              </h1>
-            </Row>
-            <Row>
-              <h1 className="secondary_font homePageHeaderBlurb">
-                {this.state.homePageHeaderBlurb}
-              </h1>
-            </Row>
-            <Row>
-              <Container>
-                <Form>
-                  <Form.Group>
-                    <Row>
-                      <Col className="homePageHeaderEmailForm" xs={8}>
-                        <Form.Control
-                          className="primary_font homePageHeaderEmailFormText"
-                          type="email"
-                          plaintext
-                          placeholder={
-                            this.state.homePageHeaderEmailPlaceholderText
-                          }
-                        />
-                      </Col>
-                      <Col className="homePageHeaderEmailSubmitButton homePageHeaderEmailForm">
-                        <p
-                          className="primary_font btn-lg homePageHeaderEmailFormText"
-                          variant="link"
-                          type="submit"
-                          onClick={this.getDemo}
-                        >
-                          {this.state.homePageHeaderEmailSubmitButtonText}
-                        </p>
-                      </Col>
-                    </Row>
-                  </Form.Group>
-                </Form>
-              </Container>
-            </Row>
+            <div>
+              <Row>
+                <h1 className="primary_font homePageHeaderTitle">
+                  {this.state.homePageHeaderTitle}
+                </h1>
+              </Row>
+              <Row>
+                <h1 className="secondary_font homePageHeaderBlurb">
+                  {this.state.homePageHeaderBlurb}
+                </h1>
+              </Row>
+              <Row>
+                <Container>
+                  <Form onSubmit={this.handleSubmit}>
+                    <Form.Group>
+                      <Row className="topTestRow">
+                        <Col className="homePageHeaderEmailForm" xs={8}>
+                          <Form.Control
+                            className="primary_font homePageHeaderEmailFormText"
+                            type="email"
+                            onChange={this.handleChange}
+                            plaintext
+                            placeholder={
+                              this.state.homePageHeaderEmailPlaceholderText
+                            }
+                          />
+                        </Col>
+                        <Col className="homePageHeaderEmailSubmitButton homePageHeaderEmailForm">
+                          <button
+                            className=" primary_font homePageButton"
+                            type="submit"
+                          >
+                            <Link
+                              className="primary_font homePageButton"
+                              to="/demo"
+                            >
+                              {this.state.homePageHeaderEmailSubmitButtonText}
+                            </Link>
+                          </button>
+                        </Col>
+                      </Row>
+                    </Form.Group>
+                  </Form>
+                </Container>
+              </Row>
+            </div>
           </Col>
           <Col className="homePageHeaderProductImage">
-            <img src={this.state.homePageHeaderProductImage} />
+            <img className="homePageImg" src={Hero} />
           </Col>
         </Row>
         <Row className="homePageSchoolTestimonialsTitle">
@@ -122,7 +131,7 @@ class Home extends React.Component {
         </Row>
         <Row className="featureRows">
           <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-            <img src={Screen} />
+            <img className="homePageImg" src={Documents} />
           </Col>
           <Col className="homePageFeaturesText">
             <div className="homePageFeaturesRightSideTextObject">
@@ -137,9 +146,12 @@ class Home extends React.Component {
                 </p>
               </Row>
               <Row>
-                <p className="secondary_font homePageFeaturesSendDocumentLinkText">
+                <Link
+                  className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
+                  to="/features/send"
+                >
                   {this.state.homePageFeaturesSendDocumentLinkText}
-                </p>
+                </Link>
               </Row>
             </div>
           </Col>
@@ -158,19 +170,22 @@ class Home extends React.Component {
                 </p>
               </Row>
               <Row>
-                <p className="secondary_font homePageFeaturesLeverageLinkText">
+                <Link
+                  className="homeFeatureLink homePageFeaturesLeverageLinkText"
+                  to="/features/research"
+                >
                   {this.state.homePageFeaturesLeverageLinkText}
-                </p>
+                </Link>
               </Row>
             </div>
           </Col>
           <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
-            <img src={Screen} />
+            <img className="homePageImg" src={ResearchImage} />
           </Col>
         </Row>
         <Row className="featureRows">
           <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-            <img src={Screen} />
+            <img className="homePageImg" src={Reports} />
           </Col>
           <Col className="homePageFeaturesText">
             <div className="homePageFeaturesRightSideTextObject">
@@ -185,9 +200,12 @@ class Home extends React.Component {
                 </p>
               </Row>
               <Row>
-                <p className="secondary_font homePageFeaturesDiscoverLinkText">
+                <Link
+                  className="homeFeatureLink homePageFeaturesDiscoverLinkText"
+                  to="/features/documents"
+                >
                   {this.state.homePageFeaturesDiscoverLinkText}
-                </p>
+                </Link>
               </Row>
             </div>
           </Col>
@@ -211,7 +229,7 @@ class Home extends React.Component {
           className="homePartnerImages"
           partnerImages={this.state.homePagePoweredByOurPartnersPartners}
         />
-      </Container>
+      </div>
     );
   }
 }

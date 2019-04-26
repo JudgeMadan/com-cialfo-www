@@ -52,14 +52,13 @@ class HomePartnerImages extends React.Component {
   };
 
   render() {
-    // console.log(this.state);
     const images = this.state.homePagePoweredByOurPartnersPartners;
     let imageObject;
 
     if (images) {
       imageObject = images.map(image => {
         return (
-          <Col className="homePartnerImages">
+          <Col key={image.sys.id}>
             <img className="homePartnerImages" src={image.fields.file.url} />
           </Col>
         );
@@ -67,7 +66,7 @@ class HomePartnerImages extends React.Component {
     }
 
     return (
-      <div classname="imageObjectContainer">
+      <div>
         <Row className="imageObjectTitle">
           <h1 className="primary_font ">
             {this.state.homePagePoweredByOurPartnersTitle}

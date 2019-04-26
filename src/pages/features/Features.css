@@ -1,19 +1,6 @@
-@font-face {
-  font-family: "domainedisplay_regular";
-  src: url("./DomaineDispNar-Regular.otf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "roboto_regular";
-  src: url("./Roboto-Regular.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-
 .primary_font {
   font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
+  font-size: 42px;
 }
 
 .secondary_font {
@@ -68,7 +55,7 @@
 .subFooterPage {
   background-color: #1886df;
   justify-content: center;
-  height: 420px;
+  height: 20em;
   margin-bottom: 220px;
   align-items: center;
   display: flex;
@@ -86,4 +73,9 @@
 
 .researchBottomRow {
   margin-bottom: 250px;
+}
+
+.subFooterPageImg {
+  max-width: 50%;
+  max-height: auto;
 }
