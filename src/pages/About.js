@@ -18,8 +18,9 @@ class About extends React.Component {
   }
 
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: "1acwuo4zy8aa",
+    accessToken:
+      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
   });
 
   componentDidUpdate(prevProps) {
@@ -58,6 +59,7 @@ class About extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container className="aboutPage">
         <Row className="aboutPageTitle">
@@ -81,7 +83,7 @@ class About extends React.Component {
             </Row>
           </Container>
         </Row>
-        <Row className="contentTitle">
+        <Row className="contentTitle lightBlue">
           <h1 className="primary_font">{this.state.aboutPageNumbersTitle}</h1>
         </Row>
         <Row className="aboutByTheNumbers">
@@ -121,44 +123,44 @@ class About extends React.Component {
                 {this.state.aboutPagePartnersTitle}
               </h1>
             </Row>
+            <Row className="contentTitle partnersTitle pb-5">
+              <h1 className="secondary_font">
+                {this.state.aboutPagePartnersSubtitle}
+              </h1>
+            </Row>
             <Row className="aboutPartners">
               <AboutPartners partners={this.state.aboutPagePartnersPartners} />
             </Row>
           </Container>
         </Row>
-        <Row>
-          <Container className="counselors">
-            <Row className="contentTitle">
-              <h1 className="primary_font">
-                {this.state.aboutPageCounselorsTitle}
-              </h1>
-            </Row>
-            <Row>
-              <Container>
-                <AboutCounselors
-                  counselors={this.state.aboutPageCounselorsCounselors}
-                />
-              </Container>
-            </Row>
+
+        <Row className="contentTitle">
+          <h1 className="primary_font">
+            {this.state.aboutPageCounselorsTitle}
+          </h1>
+        </Row>
+        <Row className="mb-5">
+          <Container>
+            <AboutCounselors
+              counselors={this.state.aboutPageCounselorsCounselors}
+            />
           </Container>
         </Row>
-        <Row className="businessAdvisors">
-          <Container className="businessAdvisorsContainer">
-            <Row className="contentTitle aboutPageBusinessAdvisorsTitle">
-              <h1 className="primary_font">
-                {this.state.aboutPageBusinessAdvisorsTitle}
-              </h1>
-            </Row>
+        <Row className="lightBlue contentTitle pt-15">
+          <h1 className="primary_font">
+            {this.state.aboutPageBusinessAdvisorsTitle}
+          </h1>
+        </Row>
+        <Row className="lightBlue">
+          <Container>
             <AboutBusinessAdvisors
               businessAdvisors={this.state.aboutPageBusinessAdvisorsAdvisors}
             />
           </Container>
         </Row>
-        <Row className="offices_row">
-          <AboutCialfoOffices
-            cialfoOffices={this.state.aboutPageOfficesLocations}
-          />
-        </Row>
+        <AboutCialfoOffices
+          cialfoOffices={this.state.aboutPageOfficesLocations}
+        />
       </Container>
     );
   }

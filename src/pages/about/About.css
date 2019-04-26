@@ -1,20 +1,13 @@
-#testContentRed {
-  background-color: red;
-}
-
-#testContentBlue {
-  background-color: blue;
-}
-
 .primary_font {
   font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
+  font-size: 2em;
 }
 
 .secondary_font {
   font-family: "roboto_regular";
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 1em;
   line-height: 28px;
 }
 
@@ -22,7 +15,7 @@
   font-family: "roboto_regular";
   font-style: medium;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1em;
   line-height: 28px;
 }
 
@@ -44,9 +37,10 @@
   align-content: center;
 }
 
-.byTheNumbersTitle {
-  justify-content: center;
-  margin-bottom: 75px;
+.aboutByTheNumbers {
+  background-color: #ebf9ff;
+  padding-bottom: 5%;
+  margin-bottom: 0px !important;
 }
 
 .byTheNumbersObject {
@@ -62,7 +56,6 @@
 
 .aboutWhoWeAre {
   background-color: #1886df;
-  margin-bottom: 150px;
 }
 
 .aboutPageWhoWeAreImageContainer {
@@ -103,17 +96,12 @@
   margin: 0 20px 0 20px;
 }
 
-.byTheNumbersObject:nth-child(odd) {
-  margin-bottom: 50px;
-}
-
-.byTheNumbersObject:nth-child(even) {
-  margin-top: 50px;
-}
-
 .contentTitle {
   justify-content: center;
-  margin-bottom: 75px;
+}
+
+.lightBlue {
+  background-color: #ebf9ff;
 }
 
 .aboutPageLeadershipTeam {
@@ -138,14 +126,17 @@
 }
 
 .partnersTitle {
-  padding: 0 550px 0 550px;
+  padding: 0 10% 0 10%;
   text-align: center;
   background-color: #ebf9ff;
 }
 
 .aboutPagePartnersImage {
-  max-width: 300px;
-  max-height: auto;
+  display: flex;
+  justify-content: space-around;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
 }
 
 .aboutPartners {
