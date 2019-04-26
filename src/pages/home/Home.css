@@ -85,14 +85,26 @@
   padding-bottom: 3px;
 }
 
+.homePageFeaturesSendDocumentLinkText:hover {
+  border-bottom: 3px solid #1986df;
+}
+
 .homePageFeaturesLeverageLinkText {
   border-bottom: 1px solid #ff6574;
   padding-bottom: 3px;
 }
 
+.homePageFeaturesLeverageLinkText:hover {
+  border-bottom: 3px solid #ff6574;
+}
+
 .homePageFeaturesDiscoverLinkText {
   border-bottom: 1px solid #ffca43;
   padding-bottom: 3px;
+}
+
+.homePageFeaturesDiscoverLinkText:hover {
+  border-bottom: 3px solid #ffca43;
 }
 
 .homePageHeaderEmailSubmitButton {
@@ -205,4 +217,12 @@
   outline: inherit;
   margin-top: 10px;
   padding-bottom: 25px;
+}
+
+.homeFeatureLink {
+  color: #2b1f30 !important;
+}
+
+.homeFeatureLink:hover {
+  text-decoration: none;
 }

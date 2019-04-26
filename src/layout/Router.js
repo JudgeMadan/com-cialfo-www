@@ -12,7 +12,7 @@ import GetInTouch from "../pages/GetInTouch";
 import Privacy from "../pages/Privacy";
 import Security from "../pages/Security";
 import FourOhFour from "../pages/FourOhFour";
-import HomeToFeatures from "../pages/HomeToFeatures";
+import HomeToFeatures from "../pages/Features";
 
 class Router extends React.Component {
   render() {
@@ -43,18 +43,6 @@ class Router extends React.Component {
             />
           )}
         /> */}
-        <Route
-          locale={this.props.locale}
-          exact
-          path="/hometofeatures"
-          render={() => (
-            <HomeToFeatures
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-            />
-          )}
-        />
         <Route
           locale={this.props.locale}
           exact
