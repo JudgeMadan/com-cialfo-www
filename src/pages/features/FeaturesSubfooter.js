@@ -10,13 +10,13 @@ class FeaturesSubfooter extends React.Component {
   }
 
   render() {
-    // console.log(this.props);
+    console.log(this.props);
     return (
       <Container className="featuresSendPage subFooterPage">
         <Container>
           <Row>
             <Col>
-              <img src="https://via.placeholder.com/360x500" />
+              <img src={this.props.img} />
             </Col>
             <Col className="subFooterPageQuote">
               <Row>
