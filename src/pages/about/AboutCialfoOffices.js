@@ -3,7 +3,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./About.css";
 import Container from "react-bootstrap/Container";
-import pin from "../about/Pin.png";
 
 class AboutCialfoOffices extends React.Component {
   constructor(props) {
@@ -17,9 +16,10 @@ class AboutCialfoOffices extends React.Component {
       officesObject = offices.map(office => {
         return (
           <Col key={office.sys.id}>
-            <Container className="officesContainer">
-              <div className="pinContainer">
-                <img src={pin} />
+            <div className="officesContainer">
+              {/* <div> */}
+              <div className="officeImgContainer">
+                <img src={office.fields.icon.fields.file.url} />
               </div>
               <h1 className="secondary_font_bold centeredText">
                 {office.fields.city}
@@ -30,13 +30,14 @@ class AboutCialfoOffices extends React.Component {
               <h2 className="secondary_font centeredText">
                 {office.fields.country}
               </h2>
-            </Container>
+              {/* </div> */}
+            </div>
           </Col>
         );
       });
     }
 
-    return <Row>{officesObject}</Row>;
+    return <Row className="offices_row">{officesObject}</Row>;
   }
 }
 

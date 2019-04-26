@@ -39,7 +39,6 @@ class About extends React.Component {
     });
 
   setAboutContent = response => {
-    console.log(response.items[0].fields);
     const aboutContent = response.items[0].fields;
     for (let key in aboutContent) {
       if (typeof aboutContent[key] === "string") {
@@ -155,12 +154,11 @@ class About extends React.Component {
             />
           </Container>
         </Row>
-        <Row className="contentTitle">
-          <h1 className="primary_font">{this.state.aboutPageOfficesTitle}</h1>
+        <Row className="offices_row">
+          <AboutCialfoOffices
+            cialfoOffices={this.state.aboutPageOfficesLocations}
+          />
         </Row>
-        <AboutCialfoOffices
-          cialfoOffices={this.state.aboutPageOfficesLocations}
-        />
       </Container>
     );
   }

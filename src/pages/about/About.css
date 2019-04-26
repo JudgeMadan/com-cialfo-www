@@ -180,7 +180,6 @@
 
 .businessAdvisors {
   background-color: #ebf9ff;
-  margin-bottom: 150px;
 }
 
 .businessAdvisorsContainer {
@@ -201,11 +200,23 @@
 }
 
 .officesContainer {
-  padding: 40px 40px;
-  background-color: #ebf9ff;
+  padding: 10% 5%;
+  background-color: #2b1f31;
+  color: white;
 }
 
-.pinContainer {
+.officeImgContainer {
   display: flex;
   justify-content: center;
+  margin-bottom: 5%;
+}
+
+.offices_row {
+  background-color: #2b1f31;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.officeTitle {
+  color: white;
 }

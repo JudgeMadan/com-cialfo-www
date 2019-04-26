@@ -46,7 +46,8 @@ class Footer extends React.Component {
   render() {
     return (
       <NavBar
-        className="mt-5 footer-background align-items-start justify-content-between footer"
+        className="pt-3 
+        footer-background align-items-start justify-content-between footer"
         sticky="bottom"
       >
         {/* <Col>
