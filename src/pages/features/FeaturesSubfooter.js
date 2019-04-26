@@ -16,7 +16,7 @@ class FeaturesSubfooter extends React.Component {
         <Container>
           <Row>
             <Col>
-              <img src={this.props.img} />
+              <img className="subFooterPageImg" src={this.props.img} />
             </Col>
             <Col className="subFooterPageQuote">
               <Row>
