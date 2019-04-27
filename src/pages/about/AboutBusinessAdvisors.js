@@ -18,7 +18,7 @@ class AboutBusinessAdvisors extends React.Component {
       businessAdvisorsObject = businessAdvisors.map(businessAdvisor => {
         return (
           <Col xs={4} key={businessAdvisor.sys.id}>
-            <Container className="counselorObject">
+            <Container className="counselor-advisor-container white-background">
               <div className="innerObject">
                 <Row>
                   <p className="secondary_font">

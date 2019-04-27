@@ -17,7 +17,7 @@ class AboutCounselors extends React.Component {
       counselorsObject = counselors.map(counselor => {
         return (
           <Col xs={4} key={counselor.sys.id}>
-            <Container className="counselorObject ">
+            <Container className="counselor-advisor-container light-blue-background">
               <div className="innerObject ">
                 <Row>
                   <div>

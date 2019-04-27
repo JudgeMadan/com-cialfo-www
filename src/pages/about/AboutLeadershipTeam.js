@@ -16,7 +16,7 @@ class AboutLeadershipTeam extends React.Component {
     if (leadershipTeam) {
       leadershipTeamObject = leadershipTeam.map(leader => {
         return (
-          <Col key={leader.sys.id}>
+          <Col key={leader.sys.id} className="mb-5">
             <Container className="leadershipObjectContainer">
               <Row className="leadershipObjectContent leaderImage">
                 <img

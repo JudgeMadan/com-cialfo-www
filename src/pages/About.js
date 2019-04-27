@@ -83,17 +83,17 @@ class About extends React.Component {
             </Row>
           </Container>
         </Row>
-        <Row className="contentTitle lightBlue">
+        <Row className="center-in-row light-blue-background pt-5">
           <h1 className="primary_font">{this.state.aboutPageNumbersTitle}</h1>
         </Row>
-        <Row className="aboutByTheNumbers">
+        <Row className="by-the-numbers light-blue-background">
           <AboutByTheNumbers byTheNumbers={this.state.aboutPageNumbersArray} />
         </Row>
-        <Row className="aboutWhoWeAre">
-          <Col className="aboutPageWhoWeAreImageContainer">
+        <Row className="dark-blue-background">
+          <Col className="who-we-are-image-container">
             <div>
               <img
-                className="aboutPageWhoWeAreImage"
+                className="about-page-who-we-are-image"
                 src={this.state.aboutPageWhoWeAreImage}
               />
             </div>
@@ -106,52 +106,51 @@ class About extends React.Component {
             </Row>
           </Col>
         </Row>
-        <Row className="contentTitle">
+        <Row className="center-in-row pt-5">
           <h1 className="primary_font">
             {this.state.aboutPageLeadershipTitle}
           </h1>
         </Row>
-        <Row className="aboutPageLeadershipTeam">
+        <Row className="center-in-row aboutPageLeadershipTeam">
           <AboutLeadershipTeam
             leadershipTeam={this.state.aboutPageLeadershipLeaders}
           />
         </Row>
-        <Row>
-          <Container className="partners">
-            <Row className="contentTitle partnersTitle">
-              <h1 className="primary_font">
-                {this.state.aboutPagePartnersTitle}
-              </h1>
-            </Row>
-            <Row className="contentTitle partnersTitle pb-5">
+        <Row className="center-in-row light-blue-background pt-5">
+          <Row className="center-in-row  partnersTitle light-blue-background">
+            <h1 className="primary_font light-blue-background">
+              {this.state.aboutPagePartnersTitle}
+            </h1>
+          </Row>
+          <Container className="partners pb-5">
+            <Row className="center-in-row partnersTitle light-blue-background pb-5">
               <h1 className="secondary_font">
                 {this.state.aboutPagePartnersSubtitle}
               </h1>
             </Row>
-            <Row className="aboutPartners">
+            <Row className="aboutPartners light-blue-background">
               <AboutPartners partners={this.state.aboutPagePartnersPartners} />
             </Row>
           </Container>
         </Row>
-
-        <Row className="contentTitle">
+        <Row className="center-in-row pt-5">
           <h1 className="primary_font">
             {this.state.aboutPageCounselorsTitle}
           </h1>
         </Row>
-        <Row className="mb-5">
+        <Row className="pb-5">
           <Container>
             <AboutCounselors
               counselors={this.state.aboutPageCounselorsCounselors}
             />
           </Container>
         </Row>
-        <Row className="lightBlue contentTitle pt-15">
+        <Row className="light-blue-background center-in-row pt-5">
           <h1 className="primary_font">
             {this.state.aboutPageBusinessAdvisorsTitle}
           </h1>
         </Row>
-        <Row className="lightBlue">
+        <Row className="light-blue-background pb-5">
           <Container>
             <AboutBusinessAdvisors
               businessAdvisors={this.state.aboutPageBusinessAdvisorsAdvisors}

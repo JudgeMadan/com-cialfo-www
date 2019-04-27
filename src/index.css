@@ -135,6 +135,31 @@ code {
   }
 }
 
-.test {
-  background-color: red;
+.light-blue-background {
+  background-color: #ebf9ff;
+}
+
+.dark-blue-background {
+  background-color: #1886df;
+}
+
+.white-background {
+  background-color: white;
+}
+
+.near-black-background {
+  background-color: #2b1f31;
+}
+
+.center-in-row {
+  justify-content: center;
+}
+
+.flexible-image-width-100 {
+  height: auto;
+  width: 100%;
+}
+
+.max-width-200px {
+  max-width: 200px;
 }
