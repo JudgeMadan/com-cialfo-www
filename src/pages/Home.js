@@ -67,7 +67,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="homePageContainer">
+      <Container className="homePageContainer">
         <Row className="top_row">
           <Col className="top_row_left_col">
             <div>
@@ -81,14 +81,14 @@ class Home extends React.Component {
                   {this.state.homePageHeaderBlurb}
                 </h1>
               </Row>
-              <Row>
+              <Row className="test">
                 <Container>
                   <Form onSubmit={this.handleSubmit}>
                     <Form.Group>
-                      <Row className="topTestRow">
-                        <Col className="homePageHeaderEmailForm" xs={8}>
+                      <Row>
+                        <Col className="email-form">
                           <Form.Control
-                            className="primary_font homePageHeaderEmailFormText"
+                            className="primary_font email-form-text"
                             type="email"
                             onChange={this.handleChange}
                             plaintext
@@ -97,13 +97,13 @@ class Home extends React.Component {
                             }
                           />
                         </Col>
-                        <Col className="homePageHeaderEmailSubmitButton homePageHeaderEmailForm">
+                        <Col className="homePageHeaderEmailSubmitButton email-form">
                           <button
-                            className=" primary_font homePageButton"
+                            className=" primary_font get-a-demo-button"
                             type="submit"
                           >
                             <Link
-                              className="primary_font homePageButton"
+                              className="primary_font get-a-demo-button"
                               to="/demo"
                             >
                               {this.state.homePageHeaderEmailSubmitButtonText}
@@ -229,7 +229,7 @@ class Home extends React.Component {
           className="homePartnerImages"
           partnerImages={this.state.homePagePoweredByOurPartnersPartners}
         />
-      </div>
+      </Container>
     );
   }
 }
