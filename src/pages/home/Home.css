@@ -26,13 +26,13 @@
   display: flex;
   justify-content: space-around;
   margin: 0 0 150px 0;
-  border: solid red 2px;
 }
 
 .top_row_left_col {
   display: flex;
-  max-width: 30em;
   align-items: flex-end;
+  border: solid blue 2px;
+  margin-left: 10px;
 }
 
 .homePageHeaderBlurb {
@@ -56,7 +56,6 @@
 
 .email-form {
   border-bottom: 4px solid #f4f4f5;
-  width: 1000px;
 }
 
 .homePageHeaderEmailFormText:hover {
@@ -101,8 +100,8 @@
 }
 
 .homePageHeaderEmailSubmitButton {
-  display: flex;
   align-self: center;
+  border: green solid 2px;
 }
 
 .homePageFeaturesImage {
@@ -216,8 +215,4 @@
 
 .homeFeatureLink:hover {
   text-decoration: none;
-}
-
-.test {
-  min-width: 110%;
 }

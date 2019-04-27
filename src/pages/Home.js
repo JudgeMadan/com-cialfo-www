@@ -81,39 +81,33 @@ class Home extends React.Component {
                   {this.state.homePageHeaderBlurb}
                 </h1>
               </Row>
-              <Row className="test">
-                <Container>
-                  <Form onSubmit={this.handleSubmit}>
-                    <Form.Group>
-                      <Row>
-                        <Col className="email-form">
-                          <Form.Control
-                            className="primary_font email-form-text"
-                            type="email"
-                            onChange={this.handleChange}
-                            plaintext
-                            placeholder={
-                              this.state.homePageHeaderEmailPlaceholderText
-                            }
-                          />
-                        </Col>
-                        <Col className="homePageHeaderEmailSubmitButton email-form">
-                          <button
-                            className=" primary_font get-a-demo-button"
-                            type="submit"
-                          >
-                            <Link
-                              className="primary_font get-a-demo-button"
-                              to="/demo"
-                            >
-                              {this.state.homePageHeaderEmailSubmitButtonText}
-                            </Link>
-                          </button>
-                        </Col>
-                      </Row>
-                    </Form.Group>
-                  </Form>
-                </Container>
+              <Row>
+                <Form>
+                  <Form.Row>
+                    <Col xs={8}>
+                      <Form.Control
+                        className="primary_font email-form get-a-demo-button"
+                        placeholder={
+                          this.state.homePageHeaderEmailPlaceholderText
+                        }
+                        plaintext
+                      />
+                    </Col>
+                    <Col>
+                      <button
+                        className=" primary_font get-a-demo-button"
+                        type="submit"
+                      >
+                        <Link
+                          className="primary_font get-a-demo-button"
+                          to="/demo"
+                        >
+                          {this.state.homePageHeaderEmailSubmitButtonText}
+                        </Link>
+                      </button>
+                    </Col>
+                  </Form.Row>
+                </Form>
               </Row>
             </div>
           </Col>
@@ -235,3 +229,36 @@ class Home extends React.Component {
 }
 
 export default Home;
+
+// <Row className="test">
+//                 <Container>
+//                   <Form onSubmit={this.handleSubmit}>
+//                     <Row>
+//                       <Form.Group>
+//                         <Col className="email-form">
+//                           <Form.Control
+//                             className="primary_font email-form-text"
+//                             type="email"
+//                             onChange={this.handleChange}
+//                             plaintext
+//                             placeholder={
+//                               this.state.homePageHeaderEmailPlaceholderText
+//                             }
+//                           />
+//                         </Col>
+//                         <Col className="homePageHeaderEmailSubmitButton email-form">
+//                           <button
+//                             className=" primary_font get-a-demo-button"
+//                             type="submit"
+//                           >
+//                             <Link
+//                               className="primary_font get-a-demo-button"
+//                               to="/demo"
+//                             >
+//                               {this.state.homePageHeaderEmailSubmitButtonText}
+//                             </Link>
+//                           </button>
+//                         </Col>
+//                       </Form.Group>
+//                     </Row>
+//                   </Form>
