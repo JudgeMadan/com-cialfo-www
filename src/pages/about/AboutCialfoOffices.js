@@ -20,13 +20,13 @@ class AboutCialfoOffices extends React.Component {
               <div className="officeImgContainer">
                 <img src={office.fields.icon.fields.file.url} />
               </div>
-              <h1 className="secondary_font_bold centeredText">
+              <h1 className="secondary_font_bold centeredText white-text">
                 {office.fields.city}
               </h1>
-              <h2 className="secondary_font centeredText">
+              <h2 className="secondary_font centeredText white-text">
                 {office.fields.address}
               </h2>
-              <h2 className="secondary_font centeredText">
+              <h2 className="secondary_font centeredText white-text">
                 {office.fields.country}
               </h2>
             </div>
