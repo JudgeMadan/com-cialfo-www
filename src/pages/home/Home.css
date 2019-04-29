@@ -23,21 +23,15 @@
 }
 
 .top_row {
+  display: flex;
+  justify-content: space-around;
   margin: 0 0 150px 0;
-  padding: 0 0 0 150px;
 }
 
 .top_row_left_col {
   display: flex;
-  max-width: 30em;
   align-items: flex-end;
-}
-
-.homePageHeaderTitle {
-  font-size: 60px;
-  line-height: 62px;
-  color: #2b1f30;
-  max-width: 400px;
+  margin-left: 40px;
 }
 
 .homePageHeaderBlurb {
@@ -49,30 +43,18 @@
   max-width: 400px;
 }
 
-.homePageHeaderEmailFormText {
-  font-size: 22px;
-  line-height: 24px;
-  color: #958f97 !important;
-}
-
 .no-border {
   border: 0;
   box-shadow: none;
 }
 
-.homePageHeaderEmailFormText:hover {
-  font-size: 22px;
-  line-height: 24px;
-  color: #2b1f30 !important;
+.email-form {
+  font-size: 1.1em !important;
 }
 
-.homePageHeaderEmailForm {
-  border-bottom: 4px solid #f4f4f5;
-}
-
-.homePageHeaderEmailForm:hover {
+.email-form:hover {
   border-bottom: 4px solid #1981d6;
-  align-content: space-between;
+  cursor: pointer;
 }
 
 .homePageSchoolTestimonialsTitle {
@@ -108,8 +90,8 @@
 }
 
 .homePageHeaderEmailSubmitButton {
-  display: flex;
   align-self: center;
+  border: green solid 2px;
 }
 
 .homePageFeaturesImage {
@@ -166,7 +148,6 @@
 .homePageVideoCaseStudyVideoEmbed {
   justify-content: center;
   margin-bottom: 150px;
-  /* background: linear-gradient(#1886df 50%, white 50%); */
 }
 
 .homePagePoweredByOurPartnersTitle {
@@ -180,7 +161,6 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  margin-left: 30%;
 }
 
 .homePartnerImages {
@@ -207,16 +187,50 @@
   height: auto;
 }
 
-.homePageButton {
-  font-size: 22px;
+.get-a-demo-button {
+  font-size: 1.1em !important;
   background: none;
-  color: #757575;
+  color: #757575 !important;
   border: none;
   padding: 0;
   cursor: pointer;
   outline: inherit;
   margin-top: 10px;
-  padding-bottom: 25px;
+}
+
+.get-a-demo-link {
+  font-size: 1.1em !important;
+  background: none;
+  color: #757575 !important;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  margin-top: 10px;
+}
+
+.get-a-demo-link:hover {
+  font-size: 1.1em !important;
+  background: none;
+  color: #2b1f31 !important;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  margin-top: 10px;
+  text-decoration: none !important;
+}
+
+.get-a-demo-button:hover {
+  font-size: 1.1em !important;
+  background: none;
+  /* color: #757575 !important; */
+  border-bottom: 4px solid #1981d6;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  margin-top: 10px;
+  text-decoration: none !important;
 }
 
 .homeFeatureLink {

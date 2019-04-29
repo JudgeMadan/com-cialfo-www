@@ -17,7 +17,6 @@ class AboutCialfoOffices extends React.Component {
         return (
           <Col key={office.sys.id}>
             <div className="officesContainer">
-              {/* <div> */}
               <div className="officeImgContainer">
                 <img src={office.fields.icon.fields.file.url} />
               </div>
@@ -30,14 +29,15 @@ class AboutCialfoOffices extends React.Component {
               <h2 className="secondary_font centeredText">
                 {office.fields.country}
               </h2>
-              {/* </div> */}
             </div>
           </Col>
         );
       });
     }
 
-    return <Row className="offices_row">{officesObject}</Row>;
+    return (
+      <Row className="offices_row near-black-background">{officesObject}</Row>
+    );
   }
 }
 
