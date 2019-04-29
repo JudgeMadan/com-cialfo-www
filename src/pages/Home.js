@@ -83,10 +83,10 @@ class Home extends React.Component {
               </Row>
               <Row>
                 <Form>
-                  <Form.Row>
-                    <Col xs={8}>
+                  <Form.Row className="email-form-container">
+                    <Col xs={7} className="pt-1">
                       <Form.Control
-                        className="primary_font email-form get-a-demo-button"
+                        className="primary_font email-form"
                         placeholder={
                           this.state.homePageHeaderEmailPlaceholderText
                         }
@@ -99,7 +99,7 @@ class Home extends React.Component {
                         type="submit"
                       >
                         <Link
-                          className="primary_font get-a-demo-button"
+                          className="primary_font get-a-demo-link"
                           to="/demo"
                         >
                           {this.state.homePageHeaderEmailSubmitButtonText}

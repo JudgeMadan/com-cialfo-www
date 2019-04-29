@@ -31,8 +31,7 @@
 .top_row_left_col {
   display: flex;
   align-items: flex-end;
-  border: solid blue 2px;
-  margin-left: 10px;
+  margin-left: 40px;
 }
 
 .homePageHeaderBlurb {
@@ -44,27 +43,18 @@
   max-width: 400px;
 }
 
-.email-form-text {
-  font-size: 1em !important;
-  color: #958f97 !important;
-}
-
 .no-border {
   border: 0;
   box-shadow: none;
 }
 
 .email-form {
-  border-bottom: 4px solid #f4f4f5;
-}
-
-.homePageHeaderEmailFormText:hover {
-  color: #2b1f30 !important;
+  font-size: 1.1em !important;
 }
 
 .email-form:hover {
   border-bottom: 4px solid #1981d6;
-  align-content: space-between;
+  cursor: pointer;
 }
 
 .homePageSchoolTestimonialsTitle {
@@ -171,7 +161,6 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  /* margin-left: 30%; */
 }
 
 .homePartnerImages {
@@ -207,6 +196,41 @@
   cursor: pointer;
   outline: inherit;
   margin-top: 10px;
+}
+
+.get-a-demo-link {
+  font-size: 1.1em !important;
+  background: none;
+  color: #757575 !important;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  margin-top: 10px;
+}
+
+.get-a-demo-link:hover {
+  font-size: 1.1em !important;
+  background: none;
+  color: #2b1f31 !important;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  margin-top: 10px;
+  text-decoration: none !important;
+}
+
+.get-a-demo-button:hover {
+  font-size: 1.1em !important;
+  background: none;
+  /* color: #757575 !important; */
+  border-bottom: 4px solid #1981d6;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  margin-top: 10px;
+  text-decoration: none !important;
 }
 
 .homeFeatureLink {
