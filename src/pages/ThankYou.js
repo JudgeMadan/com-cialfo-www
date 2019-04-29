@@ -5,7 +5,7 @@ import React from "react";
 import "./getADemo/GetADemo.css";
 import "./privacyAndSecurity/privacyAndSecurity.css";
 import * as contentful from "contentful";
-import FourOhFourImg from "./404/404.png";
+import ThankYouImg from "./thankYou/ThankYou.png";
 
 class ThankYou extends React.Component {
   constructor(props) {
@@ -60,7 +60,7 @@ class ThankYou extends React.Component {
           <div>
             <Row className="four_oh_four_content">
               <div>
-                <img src={FourOhFourImg} />
+                <img src={ThankYouImg} />
               </div>
             </Row>
             <Row className="four_oh_four_content">
