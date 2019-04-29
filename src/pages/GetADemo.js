@@ -1,5 +1,4 @@
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import React from "react";
 import Container from "react-bootstrap/Container";
 import "./getADemo/GetADemo.css";
@@ -59,6 +58,17 @@ class GetADemo extends React.Component {
         });
       }
     }
+    this.setState({
+      email: this.props.getADemoEmail
+    });
+  };
+
+  handleChange = e => {
+    const fieldContent = e.target.value;
+    this.setState({
+      email: fieldContent
+    });
+    console.log(this.state.email);
   };
 
   formChange = e => {
@@ -139,11 +149,12 @@ class GetADemo extends React.Component {
                   </label>
                   <div class="_field-wrapper">
                     <input
-                      // value={this.props.getADemoEmail}
-                      type="text"
+                      value={this.state.email}
+                      type="email"
                       name="email"
                       placeholder={this.state.getADemoEmailPlaceholder}
                       className="input_style"
+                      onChange={this.handleChange}
                     />
                   </div>
                 </div>

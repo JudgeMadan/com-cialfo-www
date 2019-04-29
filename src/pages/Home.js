@@ -67,7 +67,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <Container className="homePageContainer">
+      <div className="homePageContainer">
         <Row className="top_row">
           <Col className="top_row_left_col">
             <div>
@@ -91,6 +91,7 @@ class Home extends React.Component {
                           this.state.homePageHeaderEmailPlaceholderText
                         }
                         plaintext
+                        onChange={this.handleChange}
                       />
                     </Col>
                     <Col>
@@ -206,7 +207,7 @@ class Home extends React.Component {
         </Row>
         <div className="homePageVideoCaseStudy">
           <Row className="homePageVideoCaseStudyTitle">
-            <h1 className="primary_font">
+            <h1 className="primary_font white-font">
               {this.state.homePageVideoCaseStudyTitle}
             </h1>
           </Row>
@@ -223,7 +224,7 @@ class Home extends React.Component {
           className="homePartnerImages"
           partnerImages={this.state.homePagePoweredByOurPartnersPartners}
         />
-      </Container>
+      </div>
     );
   }
 }

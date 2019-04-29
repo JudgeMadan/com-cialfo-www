@@ -31,7 +31,7 @@
 .top_row_left_col {
   display: flex;
   align-items: flex-end;
-  margin-left: 40px;
+  margin: 0 100px;
 }
 
 .homePageHeaderBlurb {
@@ -138,7 +138,6 @@
   justify-content: center;
   margin-bottom: 50px;
   padding: 100px 150px 0px 150px;
-  color: white;
 }
 .homePageVideoCaseStudy {
   background: linear-gradient(#1886df 50%, white 50%);
@@ -239,4 +238,8 @@
 
 .homeFeatureLink:hover {
   text-decoration: none;
+}
+
+.white-font {
+  color: white !important;
 }
