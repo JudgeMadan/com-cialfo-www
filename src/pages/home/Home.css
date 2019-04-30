@@ -205,20 +205,6 @@
   z-index: 3;
 }
 
-/* .oval {
-  position: absolute;
-  z-index: 2;
-  margin-top: -50px;
-  margin-left: -50px;
-}
-
-.line {
-  position: absolute;
-  z-index: 2;
-  margin-top: -100px;
-  margin-left: 800px;
-} */
-
 .get-a-demo-button {
   font-size: 1.1em !important;
   background: none;
