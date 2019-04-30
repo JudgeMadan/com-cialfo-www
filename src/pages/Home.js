@@ -2,11 +2,9 @@ import React from "react";
 import HomeMarquee from "./home/HomeMarquee";
 import HomePartnerImages from "./home/HomePartnerImages";
 import * as contentful from "contentful";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import "./home/Home.css";
@@ -14,6 +12,8 @@ import Hero from "./home/Hero.svg";
 import Documents from "./home/CDocs.svg";
 import ResearchImage from "./home/SchoolsOverview.svg";
 import Reports from "./home/Reports.svg";
+import Stroke10 from "./home/Stroke10.png";
+import Oval from "./home/Oval.png";
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -127,7 +127,10 @@ class Home extends React.Component {
         </div>
         <Row className="featureRows">
           <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-            <img className="homePageImg" src={Documents} />
+            <div>
+              <img className="stroke-10" src={Stroke10} />
+              <img className="homePageImg" src={Documents} />
+            </div>
           </Col>
           <Col className="homePageFeaturesText">
             <div className="homePageFeaturesRightSideTextObject">
@@ -213,11 +216,15 @@ class Home extends React.Component {
             </h1>
           </Row>
           <Row className="homePageVideoCaseStudyVideoEmbed">
-            <ReactPlayer
-              width="1000px"
-              height="560px"
-              url={this.state.homePageVideoCaseStudyVideoEmbed}
-            />
+            <div>
+              <img className="oval" src={Oval} />
+              <ReactPlayer
+                className="video"
+                width="1000px"
+                height="560px"
+                url={this.state.homePageVideoCaseStudyVideoEmbed}
+              />
+            </div>
           </Row>
         </div>
         <HomePartnerImages
@@ -231,36 +238,3 @@ class Home extends React.Component {
 }
 
 export default Home;
-
-// <Row className="test">
-//                 <Container>
-//                   <Form onSubmit={this.handleSubmit}>
-//                     <Row>
-//                       <Form.Group>
-//                         <Col className="email-form">
-//                           <Form.Control
-//                             className="primary_font email-form-text"
-//                             type="email"
-//                             onChange={this.handleChange}
-//                             plaintext
-//                             placeholder={
-//                               this.state.homePageHeaderEmailPlaceholderText
-//                             }
-//                           />
-//                         </Col>
-//                         <Col className="homePageHeaderEmailSubmitButton email-form">
-//                           <button
-//                             className=" primary_font get-a-demo-button"
-//                             type="submit"
-//                           >
-//                             <Link
-//                               className="primary_font get-a-demo-button"
-//                               to="/demo"
-//                             >
-//                               {this.state.homePageHeaderEmailSubmitButtonText}
-//                             </Link>
-//                           </button>
-//                         </Col>
-//                       </Form.Group>
-//                     </Row>
-//                   </Form>
