@@ -30,6 +30,7 @@ body {
 
 .primary_font {
   font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
+  color: #2b1f30;
 }
 
 .form_title {
@@ -43,6 +44,7 @@ body {
   font-weight: normal;
   font-size: 1em;
   line-height: 28px;
+  color: #2b1f30;
 }
 
 code {
@@ -70,6 +72,11 @@ code {
   padding-left: 30px;
 }
 
+.orb-image {
+  display: flex;
+  justify-content: center;
+}
+
 .orb:hover {
   transform: scale(1.2);
   opacity: 0.5;
@@ -78,8 +85,7 @@ code {
 
 .marquee {
   height: 500px;
-  width: 1690px;
-  /* border: 2px solid #eee; */
+  width: 1452.92px;
   overflow: hidden;
   position: relative;
   margin: 10px auto;
@@ -135,6 +141,31 @@ code {
   }
 }
 
-.test {
-  background-color: red;
+.light-blue-background {
+  background-color: #ebf9ff;
+}
+
+.dark-blue-background {
+  background-color: #1886df;
+}
+
+.white-background {
+  background-color: white;
+}
+
+.near-black-background {
+  background-color: #2b1f31;
+}
+
+.center-in-row {
+  justify-content: center;
+}
+
+.flexible-image-width-100 {
+  height: auto;
+  width: 100%;
+}
+
+.max-width-200px {
+  max-width: 200px;
 }

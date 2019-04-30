@@ -32,7 +32,7 @@ class App extends Component {
         "ajs_anonymous_id=%22da02155a-24b5-4a2f-975b-57a2d9b11ba7%22;",
         "__distillery=37c1813_175da9d6-de81-42cc-a6bd-df41c410e0ac-7e613e6a1-52e74d9ca234-69d2;",
         "intercom-id-giyujuw5=0732defb-3725-488f-809e-2b74254a709a;",
-        "country_code=GB"
+        "country_code=CN"
       ];
 
       const country_codeArray = cookieArray2.filter(
@@ -40,7 +40,7 @@ class App extends Component {
       );
 
       const country_code = country_codeArray[0];
-      if (country_code === "country_code=GB") {
+      if (country_code === "country_code=CN") {
         this.setState({
           space: this.state.chinaSpace.space,
           accessToken: this.state.chinaSpace.accessToken,

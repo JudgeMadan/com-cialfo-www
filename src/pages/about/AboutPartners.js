@@ -16,7 +16,7 @@ class AboutPartners extends React.Component {
         return (
           <Col key={partner.sys.id}>
             <img
-              className="aboutPagePartnersImage"
+              className="flexible-image-width-100 max-width-200px"
               src={partner.fields.aboutPagePartners[0].fields.file.url}
             />
           </Col>

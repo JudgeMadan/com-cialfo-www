@@ -1,6 +1,6 @@
 .primary_font {
   font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
-  font-size: 2em;
+  /* font-size: 2em; */
 }
 
 .secondary_font {
@@ -37,12 +37,6 @@
   align-content: center;
 }
 
-.aboutByTheNumbers {
-  background-color: #ebf9ff;
-  padding-bottom: 5%;
-  margin-bottom: 0px !important;
-}
-
 .byTheNumbersObject {
   align-content: center;
   justify-content: center;
@@ -54,18 +48,14 @@
   text-align: center;
 }
 
-.aboutWhoWeAre {
-  background-color: #1886df;
-}
-
-.aboutPageWhoWeAreImageContainer {
+.who-we-are-image-container {
   display: flex;
   justify-content: flex-end;
-  padding: 50px 0 50px 0;
+  padding: 5% 0;
 }
 
-.aboutPageWhoWeAreImage {
-  max-width: 500px;
+.about-page-who-we-are-image {
+  max-width: 80%;
   max-height: auto;
   margin-right: 50px;
 }
@@ -80,13 +70,12 @@
   align-items: center;
 }
 
-.aboutByTheNumbers {
-  margin-bottom: 150px;
+.by-the-numbers {
   justify-content: center;
+  padding-bottom: 5%;
 }
 
 .byTheNumbersObjectContainer {
-  background-color: #ebf9ff;
   height: 150px;
   padding-bottom: 150px;
   padding-top: 50px;
@@ -96,16 +85,7 @@
   margin: 0 20px 0 20px;
 }
 
-.contentTitle {
-  justify-content: center;
-}
-
-.lightBlue {
-  background-color: #ebf9ff;
-}
-
 .aboutPageLeadershipTeam {
-  justify-content: center;
   margin-bottom: 200px;
 }
 
@@ -117,6 +97,7 @@
   height: 150px;
   padding-bottom: 150px;
   padding-top: 50px;
+  margin-bottom: 10px;
 }
 
 .leadershipObjectContent {
@@ -128,7 +109,6 @@
 .partnersTitle {
   padding: 0 10% 0 10%;
   text-align: center;
-  background-color: #ebf9ff;
 }
 
 .aboutPagePartnersImage {
@@ -142,24 +122,17 @@
 .aboutPartners {
   margin-bottom: 50px;
   justify-content: center;
-  background-color: #ebf9ff;
 }
 
-.partners {
-  background-color: #ebf9ff;
-  max-width: 100% !important;
-  padding-top: 50px;
-  margin-bottom: 150px;
-}
-
-.counselorObject {
-  background-color: #ebf9ff;
+.counselor-advisor-container {
   margin: 15px 30px;
 }
 
 .innerObject {
   padding: 40px;
 }
+
+/* WORK FROM HERE */
 
 .aboutPageCounselorTitle {
   margin: auto;
@@ -169,18 +142,6 @@
   margin-bottom: 150px;
 }
 
-.businessAdvisors {
-  background-color: #ebf9ff;
-}
-
-.businessAdvisorsContainer {
-  background-color: #ebf9ff;
-  margin-bottom: 150px;
-}
-
-.aboutPageBusinessAdvisorsTitle {
-  margin-top: 150px;
-}
 .advisorObject {
   background-color: white;
   margin: 15px 30px;
@@ -203,11 +164,14 @@
 }
 
 .offices_row {
-  background-color: #2b1f31;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .officeTitle {
   color: white;
+}
+
+.white-text {
+  color: white !important;
 }

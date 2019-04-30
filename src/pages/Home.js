@@ -82,38 +82,33 @@ class Home extends React.Component {
                 </h1>
               </Row>
               <Row>
-                <Container>
-                  <Form onSubmit={this.handleSubmit}>
-                    <Form.Group>
-                      <Row className="topTestRow">
-                        <Col className="homePageHeaderEmailForm" xs={8}>
-                          <Form.Control
-                            className="primary_font homePageHeaderEmailFormText"
-                            type="email"
-                            onChange={this.handleChange}
-                            plaintext
-                            placeholder={
-                              this.state.homePageHeaderEmailPlaceholderText
-                            }
-                          />
-                        </Col>
-                        <Col className="homePageHeaderEmailSubmitButton homePageHeaderEmailForm">
-                          <button
-                            className=" primary_font homePageButton"
-                            type="submit"
-                          >
-                            <Link
-                              className="primary_font homePageButton"
-                              to="/demo"
-                            >
-                              {this.state.homePageHeaderEmailSubmitButtonText}
-                            </Link>
-                          </button>
-                        </Col>
-                      </Row>
-                    </Form.Group>
-                  </Form>
-                </Container>
+                <Form>
+                  <Form.Row className="email-form-container">
+                    <Col xs={7} className="pt-1">
+                      <Form.Control
+                        className="primary_font email-form"
+                        placeholder={
+                          this.state.homePageHeaderEmailPlaceholderText
+                        }
+                        plaintext
+                        onChange={this.handleChange}
+                      />
+                    </Col>
+                    <Col>
+                      <button
+                        className=" primary_font get-a-demo-button"
+                        type="submit"
+                      >
+                        <Link
+                          className="primary_font get-a-demo-link"
+                          to="/demo"
+                        >
+                          {this.state.homePageHeaderEmailSubmitButtonText}
+                        </Link>
+                      </button>
+                    </Col>
+                  </Form.Row>
+                </Form>
               </Row>
             </div>
           </Col>
@@ -126,9 +121,10 @@ class Home extends React.Component {
             {this.state.homePageSchoolTestimonialsTitle}
           </h1>
         </Row>
-        <Row className="homeMarquee">
+        {/* keep div to permit overflow */}
+        <div className="homeMarquee">
           <HomeMarquee />
-        </Row>
+        </div>
         <Row className="featureRows">
           <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
             <img className="homePageImg" src={Documents} />
@@ -212,7 +208,7 @@ class Home extends React.Component {
         </Row>
         <div className="homePageVideoCaseStudy">
           <Row className="homePageVideoCaseStudyTitle">
-            <h1 className="primary_font">
+            <h1 className="primary_font white-font">
               {this.state.homePageVideoCaseStudyTitle}
             </h1>
           </Row>
@@ -235,3 +231,36 @@ class Home extends React.Component {
 }
 
 export default Home;
+
+// <Row className="test">
+//                 <Container>
+//                   <Form onSubmit={this.handleSubmit}>
+//                     <Row>
+//                       <Form.Group>
+//                         <Col className="email-form">
+//                           <Form.Control
+//                             className="primary_font email-form-text"
+//                             type="email"
+//                             onChange={this.handleChange}
+//                             plaintext
+//                             placeholder={
+//                               this.state.homePageHeaderEmailPlaceholderText
+//                             }
+//                           />
+//                         </Col>
+//                         <Col className="homePageHeaderEmailSubmitButton email-form">
+//                           <button
+//                             className=" primary_font get-a-demo-button"
+//                             type="submit"
+//                           >
+//                             <Link
+//                               className="primary_font get-a-demo-button"
+//                               to="/demo"
+//                             >
+//                               {this.state.homePageHeaderEmailSubmitButtonText}
+//                             </Link>
+//                           </button>
+//                         </Col>
+//                       </Form.Group>
+//                     </Row>
+//                   </Form>
