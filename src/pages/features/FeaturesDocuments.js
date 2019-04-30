@@ -7,6 +7,8 @@ import ReactPlayer from "react-player";
 import "./Features.css";
 import FeaturesSubfooter from "./FeaturesSubfooter";
 import FeaturesBullets from "./FeaturesBullets";
+import Oval from "./Oval.png";
+import Line from "./Line.png";
 
 class FeaturesDocuments extends React.Component {
   constructor(props) {
@@ -62,11 +64,16 @@ class FeaturesDocuments extends React.Component {
           <h1 className="primary_font">{this.state.documentsTitle}</h1>
         </Row>
         <Row className="featuresVideoEmbed">
-          <ReactPlayer
-            width="1000px"
-            height="560px"
-            url={this.state.documentsVideo}
-          />
+          <div>
+            <img className="oval" src={Oval} />
+            <img className="line" src={Line} />
+            <ReactPlayer
+              className="video"
+              width="1000px"
+              height="560px"
+              url={this.state.documentsVideo}
+            />
+          </div>
         </Row>
         <Row>
           <Col className="featureImage">

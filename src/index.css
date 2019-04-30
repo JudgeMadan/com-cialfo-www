@@ -169,3 +169,17 @@ code {
 .max-width-200px {
   max-width: 200px;
 }
+
+.oval {
+  position: absolute;
+  z-index: 2;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+
+.line {
+  position: absolute;
+  z-index: 2;
+  margin-top: -100px;
+  margin-left: 800px;
+}

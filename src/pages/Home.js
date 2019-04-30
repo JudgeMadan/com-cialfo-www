@@ -14,6 +14,7 @@ import ResearchImage from "./home/SchoolsOverview.svg";
 import Reports from "./home/Reports.svg";
 import Stroke10 from "./home/Stroke10.png";
 import Oval from "./home/Oval.png";
+import Line from "./home/Line.png";
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -218,6 +219,7 @@ class Home extends React.Component {
           <Row className="homePageVideoCaseStudyVideoEmbed">
             <div>
               <img className="oval" src={Oval} />
+              <img className="line" src={Line} />
               <ReactPlayer
                 className="video"
                 width="1000px"
