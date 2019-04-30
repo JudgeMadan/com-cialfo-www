@@ -39,7 +39,6 @@ class Features extends React.Component {
 
   setFeatures = response => {
     const featureContent = response.items[0].fields;
-    console.log(featureContent);
     for (let key in featureContent) {
       if (typeof featureContent[key] === "string") {
         this.setState({

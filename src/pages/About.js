@@ -59,7 +59,6 @@ class About extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container className="aboutPage">
         <Row className="aboutPageTitle">

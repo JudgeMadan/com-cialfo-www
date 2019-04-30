@@ -1,5 +1,4 @@
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import React from "react";
 import Container from "react-bootstrap/Container";
 import "./getADemo/GetADemo.css";
@@ -45,7 +44,6 @@ class GetInTouch extends React.Component {
 
   setGetADemo = response => {
     const sendingPageContent = response.items[0].fields;
-    console.log(sendingPageContent);
     for (let key in sendingPageContent) {
       if (typeof sendingPageContent[key] === "string") {
         this.setState({
@@ -65,7 +63,6 @@ class GetInTouch extends React.Component {
 
   formChange = e => {
     const { id, value } = e.target;
-    console.log(value);
     this.setState({ [id]: value });
     e.preventDefault();
   };
