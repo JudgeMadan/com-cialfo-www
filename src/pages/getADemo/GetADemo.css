@@ -118,3 +118,7 @@
 .white_font {
   color: white;
 }
+
+.nav-link-no-underline:hover {
+  border-bottom: none !important;
+}

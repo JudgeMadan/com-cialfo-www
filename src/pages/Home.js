@@ -121,9 +121,10 @@ class Home extends React.Component {
             {this.state.homePageSchoolTestimonialsTitle}
           </h1>
         </Row>
-        <Row className="homeMarquee">
+        {/* keep div to permit overflow */}
+        <div className="homeMarquee">
           <HomeMarquee />
-        </Row>
+        </div>
         <Row className="featureRows">
           <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
             <img className="homePageImg" src={Documents} />

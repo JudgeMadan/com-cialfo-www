@@ -72,6 +72,11 @@ code {
   padding-left: 30px;
 }
 
+.orb-image {
+  display: flex;
+  justify-content: center;
+}
+
 .orb:hover {
   transform: scale(1.2);
   opacity: 0.5;
@@ -80,8 +85,7 @@ code {
 
 .marquee {
   height: 500px;
-  width: 1690px;
-  /* border: 2px solid #eee; */
+  width: 1452.92px;
   overflow: hidden;
   position: relative;
   margin: 10px auto;

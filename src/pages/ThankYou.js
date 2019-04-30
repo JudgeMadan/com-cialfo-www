@@ -43,46 +43,32 @@ class ThankYou extends React.Component {
     }
   };
 
-  // const fourOhFourContent = response.items[0].fields;
-  // for (let key in fourOhFourContent) {
-  //   if (typeof fourOhFourContent[key] === "string") {
-  //     this.setState({
-  //       [key]: fourOhFourContent[key]
-  //     });
-  //   }
-  // }
-
   render() {
-    console.log(this.state);
     return (
-      <div className="privacy_security_title">
-        <Container className="four_oh_four_content">
-          <div>
-            <Row className="four_oh_four_content">
-              <div>
-                <img src={ThankYouImg} />
-              </div>
-            </Row>
-            <Row className="four_oh_four_content">
-              <div>
-                <h1 className="primary_font">{this.state.fourOhFourText}</h1>
-              </div>
-            </Row>
-            <Row className="four_oh_four_content">
-              <div>
-                <h2 className="secondary_font">
-                  {this.state.fourOhFourButton}
-                </h2>
-              </div>
-            </Row>
-            <Row className="four_oh_four_content button">
-              <Link className="nav-link" to="">
-                <button className="submit_button">Home</button>
-              </Link>
-            </Row>
-          </div>
-        </Container>
-      </div>
+      <Container className="four_oh_four_content">
+        <div>
+          <Row className="four_oh_four_content">
+            <div>
+              <img src={ThankYouImg} />
+            </div>
+          </Row>
+          <Row className="four_oh_four_content">
+            <div>
+              <h1 className="primary_font">{this.state.fourOhFourText}</h1>
+            </div>
+          </Row>
+          <Row className="four_oh_four_content">
+            <div>
+              <h2 className="secondary_font">{this.state.fourOhFourButton}</h2>
+            </div>
+          </Row>
+          <Row className="four_oh_four_content button">
+            <Link className="nav-link nav-link-no-underline" to="">
+              <button className="submit_button">Home</button>
+            </Link>
+          </Row>
+        </div>
+      </Container>
     );
   }
 }

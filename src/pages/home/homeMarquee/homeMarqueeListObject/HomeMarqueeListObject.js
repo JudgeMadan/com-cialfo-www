@@ -1,6 +1,4 @@
 import React from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 
 class HomeMarqueeListObject extends React.Component {
@@ -11,7 +9,9 @@ class HomeMarqueeListObject extends React.Component {
   render() {
     return (
       <div className="orb marqueeItem">
-        <Image src="https://fillmurray.com/75/50" roundedCircle />
+        <div className="orb-image">
+          <Image src="https://fillmurray.com/50/50" roundedCircle />
+        </div>
         <p>
           Cialfo's international focus, service, <br /> nimble approach to
           product <br /> improvement and reasonable cost <br /> made it the
