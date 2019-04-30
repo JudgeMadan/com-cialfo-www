@@ -272,11 +272,11 @@ class Home extends React.Component {
           </Row>
         </MediaQuery>
         <Row className="featureRows">
-          <Col className=" ">
-            <img className="homePageImg" src={ResearchImage} />
-          </Col>
-          <Col className="homePageFeaturesText">
-            <div className="homePageFeaturesLeftSideTextObject">
+          <Row className="mobile-homePageFeaturesImage">
+            <img className="mobile-homePageImg" src={ResearchImage} />
+          </Row>
+          <Row className="homePageFeaturesText">
+            <div className="homePageFeaturesRightSideTextObject">
               <Row>
                 <h1 className="primary_font">
                   {this.state.homePageFeaturesLeverageTitle}
@@ -290,13 +290,13 @@ class Home extends React.Component {
               <Row>
                 <Link
                   className="homeFeatureLink homePageFeaturesLeverageLinkText"
-                  to="/features/research"
+                  to="/features/send"
                 >
                   {this.state.homePageFeaturesLeverageLinkText}
                 </Link>
               </Row>
             </div>
-          </Col>
+          </Row>
         </Row>
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="featureRows">
@@ -328,10 +328,10 @@ class Home extends React.Component {
           </Row>
         </MediaQuery>
         <Row className="featureRows">
-          <Col className="">
-            <img className="homePageImg" src={Reports} />
-          </Col>
-          <Col className="homePageFeaturesText">
+          <Row className="mobile-homePageFeaturesImage">
+            <img className="mobile-homePageImg" src={Reports} />
+          </Row>
+          <Row className="homePageFeaturesText">
             <div className="homePageFeaturesRightSideTextObject">
               <Row>
                 <h1 className="primary_font">
@@ -346,13 +346,13 @@ class Home extends React.Component {
               <Row>
                 <Link
                   className="homeFeatureLink homePageFeaturesDiscoverLinkText"
-                  to="/features/documents"
+                  to="/features/send"
                 >
                   {this.state.homePageFeaturesDiscoverLinkText}
                 </Link>
               </Row>
             </div>
-          </Col>
+          </Row>
         </Row>
         <MediaQuery query="(min-device-width: 1224px)">
           <div className="homePageVideoCaseStudy">
@@ -376,17 +376,17 @@ class Home extends React.Component {
           </div>
         </MediaQuery>
         <div className="homePageVideoCaseStudy">
-          <Row className="homePageVideoCaseStudyTitle">
+          <Row className="mobile-homePageVideoCaseStudyTitle">
             <h1 className="primary_font white-font">
               {this.state.homePageVideoCaseStudyTitle}
             </h1>
           </Row>
-          <Row className="homePageVideoCaseStudyVideoEmbed">
+          <Row className="mobile-homePageVideoCaseStudyVideoEmbed">
             <div>
               <ReactPlayer
                 className="video"
-                width="500px"
-                height="280px"
+                width="375px"
+                height="210px"
                 url={this.state.homePageVideoCaseStudyVideoEmbed}
               />
             </div>

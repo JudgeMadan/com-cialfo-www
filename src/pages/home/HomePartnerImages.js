@@ -1,6 +1,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import MediaQuery from "react-responsive";
 import * as contentful from "contentful";
 import "./Home.css";
 
@@ -54,21 +55,44 @@ class HomePartnerImages extends React.Component {
     if (images) {
       imageObject = images.map(image => {
         return (
-          <Col key={image.sys.id}>
-            <img className="homePartnerImages" src={image.fields.file.url} />
-          </Col>
+          <div>
+            <MediaQuery query="(min-device-width: 1224px)">
+              <Col key={image.sys.id}>
+                <img
+                  className="homePartnerImages"
+                  src={image.fields.file.url}
+                />
+              </Col>
+            </MediaQuery>
+            <Col key={image.sys.id}>
+              <div className="mobile-homePartnerImagesContainer">
+                <img
+                  className="mobile-homePartnerImages"
+                  src={image.fields.file.url}
+                />
+              </div>
+            </Col>
+          </div>
         );
       });
     }
 
     return (
       <div>
-        <Row className="imageObjectTitle">
-          <h1 className="primary_font ">
+        <MediaQuery query="(min-device-width: 1224px)">
+          <Row className="imageObjectTitle">
+            <h1 className="primary_font ">
+              {this.state.homePagePoweredByOurPartnersTitle}
+            </h1>
+          </Row>
+          <Row className="imageObjectRow">{imageObject}</Row>
+        </MediaQuery>
+        <Row className="mobile-imageObjectTitle">
+          <h1 className="primary_font mobile-imageObjectTitleText">
             {this.state.homePagePoweredByOurPartnersTitle}
           </h1>
         </Row>
-        <Row className="imageObjectRow">{imageObject}</Row>
+        <Col className="mobile-imageObjectCol">{imageObject}</Col>
       </div>
     );
   }
