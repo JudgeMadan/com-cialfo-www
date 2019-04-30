@@ -116,11 +116,13 @@ class About extends React.Component {
           />
         </Row>
         <Row className="center-in-row light-blue-background pt-5">
-          <Row className="center-in-row  partnersTitle light-blue-background">
-            <h1 className="primary_font light-blue-background">
-              {this.state.aboutPagePartnersTitle}
-            </h1>
-          </Row>
+          <Container>
+            <Row className="center-in-row  partnersTitle light-blue-background">
+              <h1 className="primary_font light-blue-background">
+                {this.state.aboutPagePartnersTitle}
+              </h1>
+            </Row>
+          </Container>
           <Container className="partners pb-5">
             <Row className="center-in-row partnersTitle light-blue-background pb-5">
               <h1 className="secondary_font">
