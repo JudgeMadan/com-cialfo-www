@@ -14,12 +14,12 @@ class FeaturesSubfooter extends React.Component {
       <Container className="featuresSendPage subFooterPage">
         <Container>
           <Row>
-            <Col>
+            <Col className="subFooterPageImgContainer">
               <img className="subFooterPageImg" src={this.props.img} />
             </Col>
             <Col className="subFooterPageQuote">
               <Row>
-                <h1 className="primary_font sub_footer_quote">
+                <h1 className="primary_font sub_footer_quote white_font">
                   "{this.props.quote}"
                 </h1>
                 <br />

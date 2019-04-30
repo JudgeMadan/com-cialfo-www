@@ -26,10 +26,6 @@ class HomePartnerImages extends React.Component {
     }
   }
 
-  getDemo = () => {
-    console.log("hey");
-  };
-
   fetchHomeContent = () =>
     this.client.getEntries({
       content_type: "homePageHeaderProductImage",

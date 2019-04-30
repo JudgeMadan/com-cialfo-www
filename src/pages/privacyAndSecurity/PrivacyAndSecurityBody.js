@@ -14,7 +14,6 @@ class PrivacyAndSecurityBody extends React.Component {
 
     if (paragraphs) {
       paragraphsObject = paragraphs.map(paragraph => {
-        console.log(paragraph);
         return (
           <Container key={paragraph.content[0].value} className="bullet_point">
             <h1 className="secondary_font">{paragraph.content[0].value}</h1>
