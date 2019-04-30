@@ -9,6 +9,8 @@ import "./home/Home.css";
 import Documents from "./home/CDocs.svg";
 import ResearchImage from "./home/SchoolsOverview.svg";
 import Reports from "./home/Reports.svg";
+import Oval from "./features/Oval.png";
+import Line from "./features/Line.png";
 class Features extends React.Component {
   constructor(props) {
     super(props);
@@ -63,11 +65,16 @@ class Features extends React.Component {
           <h1 className="primary_font">{this.state.featuresTitle}</h1>
         </Row>
         <Row className="featuresVideoEmbed">
-          <ReactPlayer
-            width="1000px"
-            height="560px"
-            url={this.state.featuresVideo}
-          />
+          <div>
+            <img className="oval" src={Oval} />
+            <img className="line" src={Line} />
+            <ReactPlayer
+              className="video"
+              width="1000px"
+              height="560px"
+              url={this.state.featuresVideo}
+            />
+          </div>
         </Row>
         <Row className="homePageSchoolTestimonialsTitle">
           <h1 className="primary_font">
