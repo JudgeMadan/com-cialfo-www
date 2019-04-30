@@ -11,7 +11,6 @@ class GetInTouchContactArray extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const contactArray = this.props.contactArray;
     let contactArrayObject;
 

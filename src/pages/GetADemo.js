@@ -68,12 +68,10 @@ class GetADemo extends React.Component {
     this.setState({
       email: fieldContent
     });
-    console.log(this.state.email);
   };
 
   formChange = e => {
     const { id, value } = e.target;
-    console.log(value);
     this.setState({ [id]: value });
     e.preventDefault();
   };
@@ -97,7 +95,6 @@ class GetADemo extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <Row className="demoTextImgContainer">

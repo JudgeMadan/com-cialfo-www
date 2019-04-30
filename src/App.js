@@ -35,8 +35,8 @@ class App extends Component {
         "country_code=CN"
       ];
 
-      const country_codeArray = cookieArray2.filter(
-        cookie => cookie.substring(0, 12) == "country_code"
+      const country_codeArray = cookieArray.filter(
+        cookie => cookie.substring(0, 12) === "country_code"
       );
 
       const country_code = country_codeArray[0];
@@ -74,7 +74,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.getADemoEmail);
     const space = this.state.space;
     const accessToken = this.state.accessToken;
 

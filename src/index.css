@@ -85,7 +85,7 @@ code {
 
 .marquee {
   height: 500px;
-  width: 1452.92px;
+  width: 1482.92px;
   overflow: hidden;
   position: relative;
   margin: 10px auto;
@@ -97,7 +97,7 @@ code {
   align-items: center;
   width: 200%;
   position: absolute;
-  animation: marquee 5s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 
 .marquee--inner:hover {

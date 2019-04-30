@@ -37,7 +37,6 @@ class FeaturesDocuments extends React.Component {
   };
 
   setFeaturesResearchPage = response => {
-    console.log(response.items[0].fields);
     const sendingPageContent = response.items[0].fields;
     for (let key in sendingPageContent) {
       if (typeof sendingPageContent[key] === "string") {
@@ -57,7 +56,6 @@ class FeaturesDocuments extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container className="featuresSendPage">
         <Row className="titleContainer">
@@ -143,6 +141,7 @@ class FeaturesDocuments extends React.Component {
           <FeaturesSubfooter
             img={this.state.documentsFooterImg}
             quote={this.state.documentsFooterQuote}
+            quoteAuthor={this.state.documentsFooterAuthor}
           />
         </Row>
       </Container>

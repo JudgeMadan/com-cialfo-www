@@ -34,7 +34,6 @@ class Privacy extends React.Component {
 
   setGetADemo = response => {
     const securityContent = response.items[1].fields;
-    console.log(securityContent);
     for (let key in securityContent) {
       if (typeof securityContent[key] === "string") {
         this.setState({

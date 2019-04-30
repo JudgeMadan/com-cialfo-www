@@ -1,15 +1,9 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import "./Features.css";
 import pointer from "../features/Pointer.png";
 
 class FeaturesBullets extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const bullets = this.props.bullets;
     let bulletsObject;

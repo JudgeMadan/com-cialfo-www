@@ -38,7 +38,6 @@ class FeaturesSend extends React.Component {
   };
 
   setFeaturesSendingPage = response => {
-    // console.log(response.items[0].fields);
     const sendingPageContent = response.items[0].fields;
     for (let key in sendingPageContent) {
       if (typeof sendingPageContent[key] === "string") {
@@ -121,6 +120,7 @@ class FeaturesSend extends React.Component {
           <FeaturesSubfooter
             img={this.state.sendFooterImage}
             quote={this.state.sendFooterQuote}
+            quoteAuthor={this.state.sendingFooterAuthor}
           />
         </Row>
       </Container>
