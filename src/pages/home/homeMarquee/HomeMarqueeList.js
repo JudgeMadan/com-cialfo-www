@@ -9,10 +9,12 @@ class HomeMarqueeList extends React.Component {
   render() {
     return (
       <div>
-        <HomeMarqueeListObject />
-        <HomeMarqueeListObject />
-        <HomeMarqueeListObject />
-        <HomeMarqueeListObject />
+        <div>
+          <HomeMarqueeListObject />
+          <HomeMarqueeListObject />
+          <HomeMarqueeListObject />
+          <HomeMarqueeListObject />
+        </div>
       </div>
     );
   }

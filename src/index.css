@@ -66,7 +66,7 @@ code {
   margin: 0 20px;
   float: left;
   transition: all 0.2s ease-out;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   padding-top: 50px;
   padding-right: 30px;
   padding-left: 30px;
@@ -89,6 +89,7 @@ code {
   overflow: hidden;
   position: relative;
   margin: 10px auto;
+  z-index: 2;
 }
 
 .marquee--inner {
@@ -98,6 +99,7 @@ code {
   width: 200%;
   position: absolute;
   animation: marquee 10s linear infinite;
+  z-index: 2;
 }
 
 .marquee--inner:hover {
@@ -117,6 +119,7 @@ code {
 }
 
 .marquee::after {
+  z-index: 3;
   content: "";
   display: block;
   position: absolute;
@@ -172,9 +175,30 @@ code {
 
 .oval {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   margin-top: -50px;
   margin-left: -50px;
+}
+
+.marquee-oval {
+  position: absolute;
+  z-index: 1;
+  margin-left: 1000px;
+  padding-top: 350px;
+}
+
+.marquee-line {
+  position: absolute;
+  z-index: 1;
+  margin-left: 600px;
+  padding-top: 25px;
+}
+
+.marquee-stroke10 {
+  position: absolute;
+  z-index: 1;
+  margin-left: 200px;
+  margin-top: 300px;
 }
 
 .line {
