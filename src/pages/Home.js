@@ -15,6 +15,7 @@ import Reports from "./home/Reports.svg";
 import Stroke10 from "./home/Stroke10.png";
 import Oval from "./home/Oval.png";
 import Line from "./home/Line.png";
+import Container from "react-bootstrap/Container";
 class Home extends React.Component {
   constructor(props) {
     super(props);
