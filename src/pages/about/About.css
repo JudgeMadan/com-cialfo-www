@@ -136,6 +136,24 @@
   height: auto;
 }
 
+.mobile-homePartnerImagesContainer {
+  display: flex;
+}
+/* 
+.mobile-aboutPartnerImages {
+  width: 50%;
+  height: auto;
+  margin-bottom: 30px;
+} */
+
+.mobile-about-partners-container {
+  border: solid red 2px;
+}
+
+.mobile-aboutPartnerImagesRow {
+  border: solid blue 2px;
+}
+
 .aboutPartners {
   margin-bottom: 50px;
   justify-content: center;

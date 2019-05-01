@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import AboutByTheNumbers from "./about/AboutByTheNumbers";
 import AboutLeadershipTeam from "./about/AboutLeadershipTeam";
 import AboutPartners from "./about/AboutPartners";
+import MobileAboutPartners from "./about/MobileAboutPartners";
 import AboutCounselors from "./about/AboutCounselors";
 import AboutBusinessAdvisors from "./about/AboutBusinessAdvisors";
 import AboutCialfoOffices from "./about/AboutCialfoOffices";
@@ -183,7 +184,18 @@ class About extends React.Component {
               </h1>
             </Row>
             <Row className="aboutPartners light-blue-background">
-              <AboutPartners partners={this.state.aboutPagePartnersPartners} />
+              {/* MOBILE ABOUT PARTNERS  */}
+              <MediaQuery query="(max-device-width: 1223px)">
+                <MobileAboutPartners
+                  partners={this.state.aboutPagePartnersPartners}
+                />
+              </MediaQuery>
+              {/* FULL SCREEN ABOUT PARTNERS */}
+              <MediaQuery query="(min-device-width: 1224px)">
+                <AboutPartners
+                  partners={this.state.aboutPagePartnersPartners}
+                />
+              </MediaQuery>
             </Row>
           </Container>
         </Row>
