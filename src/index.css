@@ -18,7 +18,12 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  outline-width: 0px;
+}
+
 body {
+  overflow-x: hidden;
   margin: 0;
   padding: 0 0 0 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -26,6 +31,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 .primary_font {
@@ -116,6 +122,27 @@ code {
 
 .orb:nth-child(even) {
   margin-bottom: 50px;
+}
+
+.navbar-nav .nav-link {
+  padding-right: 0;
+  padding-left: 0;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+}
+
+.nav-link:hover {
+  border-bottom-color: #1886df;
+}
+
+button {
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+}
+
+button:hover {
+  border-bottom-color: #1886df;
 }
 
 .marquee::after {
