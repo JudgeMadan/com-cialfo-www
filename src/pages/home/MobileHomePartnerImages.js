@@ -5,7 +5,7 @@ import MediaQuery from "react-responsive";
 import * as contentful from "contentful";
 import "./Home.css";
 
-class HomePartnerImages extends React.Component {
+class MobileHomePartnerImages extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -55,9 +55,26 @@ class HomePartnerImages extends React.Component {
     if (images) {
       imageObject = images.map(image => {
         return (
-          <Col key={image.sys.id}>
-            <img className="homePartnerImages" src={image.fields.file.url} />
-          </Col>
+          <div>
+            <MediaQuery query="(min-device-width: 1000px)">
+              <Col key={image.sys.id}>
+                <img
+                  className="homePartnerImages"
+                  src={image.fields.file.url}
+                />
+              </Col>
+            </MediaQuery>
+            <MediaQuery query="(max-device-width: 999px)">
+              <Col key={image.sys.id}>
+                <div className="mobile-homePartnerImagesContainer">
+                  <img
+                    className="mobile-homePartnerImages"
+                    src={image.fields.file.url}
+                  />
+                </div>
+              </Col>
+            </MediaQuery>
+          </div>
         );
       });
     }
@@ -74,4 +91,4 @@ class HomePartnerImages extends React.Component {
     );
   }
 }
-export default HomePartnerImages;
+export default MobileHomePartnerImages;
