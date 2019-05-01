@@ -16,6 +16,10 @@
   justify-content: center;
 }
 
+.four_oh_four_outer_content {
+  min-height: 60vh;
+}
+
 .submit_button {
   background-color: #1886df;
   color: white;

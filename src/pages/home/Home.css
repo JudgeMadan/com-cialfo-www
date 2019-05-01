@@ -85,29 +85,32 @@
 
 .homePageFeaturesSendDocumentLinkText {
   border-bottom: 1px solid #1986df;
-  padding-bottom: 3px;
+  padding-bottom: 1px;
 }
 
 .homePageFeaturesSendDocumentLinkText:hover {
   border-bottom: 3px solid #1986df;
+  margin-bottom: -2px;
 }
 
 .homePageFeaturesLeverageLinkText {
   border-bottom: 1px solid #ff6574;
-  padding-bottom: 3px;
+  padding-bottom: 1px;
 }
 
 .homePageFeaturesLeverageLinkText:hover {
   border-bottom: 3px solid #ff6574;
+  margin-bottom: -2px;
 }
 
 .homePageFeaturesDiscoverLinkText {
   border-bottom: 1px solid #ffca43;
-  padding-bottom: 3px;
+  padding-bottom: 1px;
 }
 
 .homePageFeaturesDiscoverLinkText:hover {
   border-bottom: 3px solid #ffca43;
+  margin-bottom: -2px;
 }
 
 .homePageHeaderEmailSubmitButton {

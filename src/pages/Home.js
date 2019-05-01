@@ -69,6 +69,7 @@ class Home extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="homePageContainer">
         {/* FULL SCREEN TOP ROW */}
