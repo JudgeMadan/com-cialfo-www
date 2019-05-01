@@ -7,6 +7,8 @@ import ReactPlayer from "react-player";
 import "./Features.css";
 import FeaturesSubfooter from "./FeaturesSubfooter";
 import FeaturesBullets from "./FeaturesBullets";
+import Oval from "./Oval.png";
+import Line from "./Line.png";
 class FeaturesResearch extends React.Component {
   constructor(props) {
     super(props);
@@ -62,11 +64,16 @@ class FeaturesResearch extends React.Component {
           <h1 className="primary_font">{this.state.researchTitle}</h1>
         </Row>
         <Row className="featuresVideoEmbed">
-          <ReactPlayer
-            width="1000px"
-            height="560px"
-            url={this.state.researchVideo}
-          />
+          <div>
+            <img className="oval" src={Oval} />
+            <img className="line" src={Line} />
+            <ReactPlayer
+              className="video"
+              width="1000px"
+              height="560px"
+              url={this.state.researchVideo}
+            />
+          </div>
         </Row>
         <Row>
           <Col className="featureImage">

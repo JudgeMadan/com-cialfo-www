@@ -8,6 +8,8 @@ import "./Features.css";
 import FeaturesSubfooter from "./FeaturesSubfooter";
 import "../home/HomePartnerImages";
 import HomePartnerImages from "../home/HomePartnerImages";
+import Oval from "./Oval.png";
+import Line from "./Line.png";
 
 class FeaturesSend extends React.Component {
   constructor(props) {
@@ -63,11 +65,16 @@ class FeaturesSend extends React.Component {
           <h1 className="primary_font">{this.state.sendTitle}</h1>
         </Row>
         <Row className="featuresVideoEmbed">
-          <ReactPlayer
-            width="1000px"
-            height="560px"
-            url={this.state.sendVideo}
-          />
+          <div>
+            <img className="oval" src={Oval} />
+            <img className="line" src={Line} />
+            <ReactPlayer
+              className="video"
+              width="1000px"
+              height="560px"
+              url={this.state.sendVideo}
+            />
+          </div>
         </Row>
         <Row>
           <Col className="featureImage">
