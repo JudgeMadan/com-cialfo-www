@@ -209,6 +209,11 @@
   min-width: 100%;
 }
 
+.mobile-homePageVideoCaseStudy {
+  background: linear-gradient(#1886df 50%, white 50%);
+  min-width: 100%;
+}
+
 .homePageVideoCaseStudyVideoEmbed {
   justify-content: center;
   margin-bottom: 150px;
