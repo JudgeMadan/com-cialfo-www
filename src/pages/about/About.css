@@ -49,18 +49,19 @@
 }
 
 .who-we-are-image-container {
-  display: flex;
   justify-content: flex-end;
   padding: 5% 0;
 }
 
 .mobile-who-we-are-image-container {
-  display: flex;
+  display: block;
 }
 
 .mobile-about-page-who-we-are-image {
-  width: 50%;
-  margin: auto;
+  width: 80%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 37.5px;
 }
 
 .about-page-who-we-are-image {
@@ -72,6 +73,13 @@
 .aboutPageWhoWeAreContent {
   margin: 0 20px 0 20px;
   color: white;
+}
+
+.mobile-aboutPageWhoWeAreContent {
+  margin: 0 30px;
+  color: white;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 .aboutPageWhoWeAreContentContainer {

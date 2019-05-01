@@ -117,12 +117,10 @@ class About extends React.Component {
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="dark-blue-background">
             <Col className="who-we-are-image-container">
-              <div>
-                <img
-                  className="about-page-who-we-are-image"
-                  src={this.state.aboutPageWhoWeAreImage}
-                />
-              </div>
+              <img
+                className="about-page-who-we-are-image"
+                src={this.state.aboutPageWhoWeAreImage}
+              />
             </Col>
             <Col className="aboutPageWhoWeAreContentContainer">
               <Row>
@@ -146,18 +144,29 @@ class About extends React.Component {
             {/* </Col> */}
             {/* <Col className="aboutPageWhoWeAreContentContainer"> */}
             <Row>
-              <p className="aboutPageWhoWeAreContent">
+              <p className="mobile-aboutPageWhoWeAreContent">
                 {this.state.aboutPageWhoWeAreContent}
               </p>
             </Row>
             {/* </Col> */}
           </Row>
         </MediaQuery>
-        <Row className="center-in-row pt-5">
-          <h1 className="primary_font">
-            {this.state.aboutPageLeadershipTitle}
-          </h1>
-        </Row>
+        {/* Full Screen LeadershipTitle */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <Row className="center-in-row pt-5">
+            <h1 className="primary_font">
+              {this.state.aboutPageLeadershipTitle}
+            </h1>
+          </Row>
+        </MediaQuery>
+        {/* Mobile Screen LeadershipTitle */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <Row className="center-in-row pt-5">
+            <h1 className="primary_font mobile_top_row_header">
+              {this.state.aboutPageLeadershipTitle}
+            </h1>
+          </Row>
+        </MediaQuery>
         <Row className="center-in-row aboutPageLeadershipTeam">
           <AboutLeadershipTeam
             leadershipTeam={this.state.aboutPageLeadershipLeaders}
