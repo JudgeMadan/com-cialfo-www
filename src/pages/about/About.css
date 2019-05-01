@@ -54,6 +54,15 @@
   padding: 5% 0;
 }
 
+.mobile-who-we-are-image-container {
+  display: flex;
+}
+
+.mobile-about-page-who-we-are-image {
+  width: 50%;
+  margin: auto;
+}
+
 .about-page-who-we-are-image {
   max-width: 50%;
   max-height: auto;
@@ -174,4 +183,22 @@
 
 .white-text {
   color: white !important;
+}
+
+.mobile-hero-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-header {
+  border: solid blue 2px;
+}
+
+.mobile-hero-image {
+  width: 105%;
+  height: auto;
+}
+
+.mobile-top-row-header-container {
+  padding: 0 20px;
 }
