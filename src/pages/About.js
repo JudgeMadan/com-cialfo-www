@@ -9,6 +9,7 @@ import AboutPartners from "./about/AboutPartners";
 import AboutCounselors from "./about/AboutCounselors";
 import AboutBusinessAdvisors from "./about/AboutBusinessAdvisors";
 import AboutCialfoOffices from "./about/AboutCialfoOffices";
+import MediaQuery from "react-responsive";
 import "./about/About.css";
 
 class About extends React.Component {
@@ -61,50 +62,97 @@ class About extends React.Component {
   render() {
     return (
       <Container className="aboutPage">
-        <Row className="aboutPageTitle">
-          <Container>
-            <Row>
-              <Col className="aboutPageHeaderText">
-                <Row>
-                  <h1 className="primary_font aboutPageHeaderTitle">
-                    {this.state.aboutPageHeaderTitle}
-                  </h1>
-                </Row>
-                <Row>
-                  <h2 className="secondary_font">
-                    {this.state.aboutPageHeaderSubtitle}
-                  </h2>
-                </Row>
-              </Col>
-              <Col>
-                <img src={this.state.aboutPageHeaderImage} />
-              </Col>
-            </Row>
-          </Container>
-        </Row>
+        {/* FULL SCREEN HEADER */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <Row className="aboutPageTitle">
+            <Container>
+              <Row>
+                <Col className="aboutPageHeaderText">
+                  <Row>
+                    <h1 className="primary_font aboutPageHeaderTitle">
+                      {this.state.aboutPageHeaderTitle}
+                    </h1>
+                  </Row>
+                  <Row>
+                    <h2 className="secondary_font">
+                      {this.state.aboutPageHeaderSubtitle}
+                    </h2>
+                  </Row>
+                </Col>
+                <Col>
+                  <img src={this.state.aboutPageHeaderImage} />
+                </Col>
+              </Row>
+            </Container>
+          </Row>
+        </MediaQuery>
+        {/* MOBILE HEADER */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <Row>
+            <Container>
+              <img
+                className="mobile-hero-image"
+                src={this.state.aboutPageHeaderImage}
+              />
+              <Row className="mobile-top-row-header-container">
+                <h1 className="primary_font aboutPageHeaderTitle mobile_top_row_header">
+                  {this.state.aboutPageHeaderTitle}
+                </h1>
+              </Row>
+              <Row className="mobile-top-row-header-container">
+                <h2 className="secondary_font mobile_top_row_header">
+                  {this.state.aboutPageHeaderSubtitle}
+                </h2>
+              </Row>
+            </Container>
+          </Row>
+        </MediaQuery>
         <Row className="center-in-row light-blue-background pt-5">
           <h1 className="primary_font">{this.state.aboutPageNumbersTitle}</h1>
         </Row>
         <Row className="by-the-numbers light-blue-background">
           <AboutByTheNumbers byTheNumbers={this.state.aboutPageNumbersArray} />
         </Row>
-        <Row className="dark-blue-background">
-          <Col className="who-we-are-image-container">
-            <div>
+        {/* FULL SCREEN ABOUT WHO WE ARE */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <Row className="dark-blue-background">
+            <Col className="who-we-are-image-container">
+              <div>
+                <img
+                  className="about-page-who-we-are-image"
+                  src={this.state.aboutPageWhoWeAreImage}
+                />
+              </div>
+            </Col>
+            <Col className="aboutPageWhoWeAreContentContainer">
+              <Row>
+                <p className="aboutPageWhoWeAreContent">
+                  {this.state.aboutPageWhoWeAreContent}
+                </p>
+              </Row>
+            </Col>
+          </Row>
+        </MediaQuery>
+        {/* MOBILE WHO WE ARE */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <Row className="dark-blue-background">
+            {/* <Col className="who-we-are-image-container"> */}
+            <div className="mobile-who-we-are-image-container">
               <img
-                className="about-page-who-we-are-image"
+                className="mobile-about-page-who-we-are-image"
                 src={this.state.aboutPageWhoWeAreImage}
               />
             </div>
-          </Col>
-          <Col className="aboutPageWhoWeAreContentContainer">
+            {/* </Col> */}
+            {/* <Col className="aboutPageWhoWeAreContentContainer"> */}
             <Row>
               <p className="aboutPageWhoWeAreContent">
                 {this.state.aboutPageWhoWeAreContent}
               </p>
             </Row>
-          </Col>
-        </Row>
+            {/* </Col> */}
+          </Row>
+        </MediaQuery>
         <Row className="center-in-row pt-5">
           <h1 className="primary_font">
             {this.state.aboutPageLeadershipTitle}
