@@ -45,7 +45,7 @@ class ThankYou extends React.Component {
 
   render() {
     return (
-      <Container className="four_oh_four_outer_content">
+      <Container className="thank_you_outer_content">
         <div>
           <Row className="four_oh_four_content">
             <div>

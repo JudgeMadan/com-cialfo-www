@@ -49,7 +49,7 @@ class FourOhFour extends React.Component {
   render() {
     return (
       <div className="privacy_security_title">
-        <Container className="four_oh_four_content">
+        <Container className="four_oh_four_outer_content">
           <div>
             <Row className="four_oh_four_content">
               <div>
