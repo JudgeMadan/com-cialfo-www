@@ -31,6 +31,17 @@
   font-size: 20px;
 }
 
+.submit_button:hover {
+  background-color: #2b0fca;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  margin-top: 30px;
+  width: 166px;
+  height: 55px;
+  font-size: 20px;
+}
+
 .button {
   margin-bottom: 100px;
 }

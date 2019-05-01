@@ -62,7 +62,7 @@ class FourOhFour extends React.Component {
               </div>
             </Row>
             <Row className="four_oh_four_content button">
-              <Link className="nav-link" to="">
+              <Link className="nav-link nav-link-no-underline" to="">
                 <button className="submit_button">
                   {this.state.fourOhFourButton}
                 </button>

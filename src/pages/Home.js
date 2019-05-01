@@ -365,7 +365,7 @@ class Home extends React.Component {
         <MediaQuery query="(min-device-width: 1224px)">
           <div className="homePageVideoCaseStudy">
             <Row className="homePageVideoCaseStudyTitle">
-              <h1 className="primary_font white-font">
+              <h1 className="primary_font white-font mobile-home-page-video-case-study-title">
                 {this.state.homePageVideoCaseStudyTitle}
               </h1>
             </Row>
