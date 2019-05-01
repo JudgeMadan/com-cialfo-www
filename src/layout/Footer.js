@@ -122,7 +122,7 @@ class Footer extends React.Component {
             </Col>
           </Row>
         </Col> */}
-        <Col className="justify-content-md-end">
+        <Col className="justify-content-md-end footer-logo">
           <Row className="justify-content-md-end">
             <Link to="/" className="navbar-brand">
               <img src={Logo} />
