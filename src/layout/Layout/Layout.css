@@ -1,7 +1,6 @@
 .logo-text {
   font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
   padding-left: 10px;
-  /* font-weight: bold; */
 }
 
 .header {
@@ -44,4 +43,8 @@
 
 .demo-page-link {
   color: #1886df !important;
+}
+
+.footer-logo {
+  padding-top: 20px;
 }
