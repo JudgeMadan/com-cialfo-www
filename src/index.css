@@ -132,11 +132,22 @@ code {
   border-bottom-color: transparent;
 }
 
+.email-form {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+}
+
+.email-form:hover {
+  border-bottom-color: #1886df;
+}
+
 .nav-link:hover {
   border-bottom-color: #1886df;
 }
 
 button {
+  border-bottom-width: 5px;
   border-bottom-style: solid;
   border-bottom-color: transparent;
 }

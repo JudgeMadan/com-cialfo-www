@@ -16,6 +16,10 @@
   justify-content: center;
 }
 
+.thank_you_outer_content {
+  min-height: 60vh;
+}
+
 .four_oh_four_outer_content {
   min-height: 60vh;
 }

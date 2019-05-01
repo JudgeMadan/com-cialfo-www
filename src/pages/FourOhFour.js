@@ -49,7 +49,7 @@ class FourOhFour extends React.Component {
   render() {
     return (
       <div className="privacy_security_title">
-        <Container className="four_oh_four_content">
+        <Container className="four_oh_four_outer_content">
           <div>
             <Row className="four_oh_four_content">
               <div>
@@ -62,7 +62,7 @@ class FourOhFour extends React.Component {
               </div>
             </Row>
             <Row className="four_oh_four_content button">
-              <Link className="nav-link" to="">
+              <Link className="nav-link nav-link-no-underline" to="">
                 <button className="submit_button">
                   {this.state.fourOhFourButton}
                 </button>
