@@ -13,9 +13,9 @@ import Hero from "./home/Hero.svg";
 import Documents from "./home/CDocs.svg";
 import ResearchImage from "./home/SchoolsOverview.svg";
 import Reports from "./home/Reports.svg";
-import Stroke10 from "./home/Stroke10.png";
-import Oval from "./home/Oval.png";
-import Line from "./home/Line.png";
+import Stroke10 from "./home/Stroke10.svg";
+import Oval from "./home/Oval.svg";
+import Line from "./home/Line.svg";
 import MediaQuery from "react-responsive";
 class Home extends React.Component {
   constructor(props) {

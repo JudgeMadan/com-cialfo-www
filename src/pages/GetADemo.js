@@ -2,7 +2,7 @@ import Row from "react-bootstrap/Row";
 import React from "react";
 import Container from "react-bootstrap/Container";
 import "./getADemo/GetADemo.css";
-import DemoText from "./getADemo/GetADemo.png";
+import DemoText from "./getADemo/GetADemo.svg";
 import FeaturesSubfooter from "./features/FeaturesSubfooter";
 import * as contentful from "contentful";
 

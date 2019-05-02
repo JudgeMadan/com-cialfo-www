@@ -9,8 +9,8 @@ import "./home/Home.css";
 import Documents from "./home/CDocs.svg";
 import ResearchImage from "./home/SchoolsOverview.svg";
 import Reports from "./home/Reports.svg";
-import Oval from "./features/Oval.png";
-import Line from "./features/Line.png";
+import Oval from "./features/Oval.svg";
+import Line from "./features/Line.svg";
 class Features extends React.Component {
   constructor(props) {
     super(props);
