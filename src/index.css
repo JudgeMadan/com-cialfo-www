@@ -104,7 +104,7 @@ code {
   align-items: center;
   width: 200%;
   position: absolute;
-  animation: marquee 10s linear infinite;
+  animation: marquee 5s linear infinite;
   z-index: 2;
 }
 

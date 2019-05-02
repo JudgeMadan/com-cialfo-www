@@ -40,7 +40,6 @@ class FeaturesDocuments extends React.Component {
 
   setFeaturesResearchPage = response => {
     const sendingPageContent = response.items[0].fields;
-    console.log(sendingPageContent);
     for (let key in sendingPageContent) {
       if (typeof sendingPageContent[key] === "string") {
         this.setState({

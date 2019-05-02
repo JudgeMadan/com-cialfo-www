@@ -6,13 +6,17 @@ import Stroke10 from "./Stroke10.svg";
 import MediaQuery from "react-responsive";
 
 class HomeMarquee extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   render() {
     return (
       <MediaQuery query="(min-device-width: 1224px)">
         <div className="marquee">
           <div className="marquee--inner">
-            <HomeMarqueeList />
-            <HomeMarqueeList />
+            <HomeMarqueeList locale={this.props.locale} />
+            <HomeMarqueeList locale={this.props.locale} />
           </div>
           <img className="marquee-oval" src={BlueOval} />
           <img className="marquee-line" src={Line} />

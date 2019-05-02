@@ -179,7 +179,7 @@ class Home extends React.Component {
           </Row>
           {/* keep div to permit overflow */}
           <div className="homeMarquee">
-            <HomeMarquee />
+            <HomeMarquee locale={this.props.locale} />
           </div>
         </MediaQuery>
         {/* FULL SCREEN SEND DOCUMENTS FEATURE */}

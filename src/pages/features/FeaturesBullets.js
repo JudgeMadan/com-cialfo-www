@@ -1,7 +1,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import "./Features.css";
-import pointer from "../features/Pointer.png";
+import Pointer from "./Pointer.svg";
 
 class FeaturesBullets extends React.Component {
   render() {
@@ -12,7 +12,7 @@ class FeaturesBullets extends React.Component {
       bulletsObject = bullets.map(bullet => {
         return (
           <div className="bullet_point">
-            <img src={pointer} />
+            <img src={Pointer} />
             <span className="secondary_font"> {bullet.fields.bulletPoint}</span>
           </div>
         );
