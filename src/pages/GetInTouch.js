@@ -43,6 +43,7 @@ class GetInTouch extends React.Component {
   };
 
   setGetADemo = response => {
+    // console.log(response);
     const sendingPageContent = response.items[0].fields;
     for (let key in sendingPageContent) {
       if (typeof sendingPageContent[key] === "string") {
@@ -201,7 +202,7 @@ class GetInTouch extends React.Component {
         </Container>
         <Row>
           <FeaturesSubfooter
-            img={this.state.getADemoSubfooterImg}
+            img={this.state.getInTouchSubfooterImg}
             quote={this.state.getInTouchSubfooterBlurb}
             quoteAuthor={this.state.getInTouchFooterBlurbAuthor}
           />
