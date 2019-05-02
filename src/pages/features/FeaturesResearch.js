@@ -7,8 +7,8 @@ import ReactPlayer from "react-player";
 import "./Features.css";
 import FeaturesSubfooter from "./FeaturesSubfooter";
 import FeaturesBullets from "./FeaturesBullets";
-import Oval from "./Oval.png";
-import Line from "./Line.png";
+import Oval from "./Oval.svg";
+import Line from "./Line.svg";
 class FeaturesResearch extends React.Component {
   constructor(props) {
     super(props);
