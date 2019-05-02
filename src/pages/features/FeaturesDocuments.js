@@ -40,6 +40,7 @@ class FeaturesDocuments extends React.Component {
 
   setFeaturesResearchPage = response => {
     const sendingPageContent = response.items[0].fields;
+    console.log(sendingPageContent);
     for (let key in sendingPageContent) {
       if (typeof sendingPageContent[key] === "string") {
         this.setState({
@@ -77,22 +78,20 @@ class FeaturesDocuments extends React.Component {
         </Row>
         <Row>
           <Col className="featureImage">
-            <img src={this.state.researchInfoImg} />
+            {/* <img src={this.state.researchInfoImg} /> */}
           </Col>
           <Col className="featureSubSectionTextAlign">
             <Container>
               <Row>
                 <Col md={{ span: 6, offset: 3 }}>
                   <h1 className="primary_font">
-                    {this.state.researchInfoTitle}
+                    {this.state.documentsExploreTitle}
                   </h1>
                 </Col>
               </Row>
               <Row>
                 <Col md={{ span: 6, offset: 3 }}>
-                  <FeaturesBullets
-                    bullets={this.state.researchKnowledgeBlurb}
-                  />
+                  <FeaturesBullets bullets={this.state.documentsExploreBlurb} />
                 </Col>
               </Row>
             </Container>
@@ -104,40 +103,40 @@ class FeaturesDocuments extends React.Component {
               <Row>
                 <Col md={{ span: 6, offset: 3 }}>
                   <h1 className="primary_font">
-                    {this.state.researchTranscriptTitle}
+                    {this.state.documentsTranscriptTitle}
                   </h1>
                 </Col>
               </Row>
               <Row>
                 <Col md={{ span: 6, offset: 3 }}>
                   <FeaturesBullets
-                    bullets={this.state.researchTranscriptBlurb}
+                    bullets={this.state.documentsTranscriptBlurb}
                   />
                 </Col>
               </Row>
             </Container>
           </Col>
           <Col className="featureImage">
-            <img src={this.state.researchTranscriptImg} />
+            {/* <img src={this.state.researchTranscriptImg} /> */}
           </Col>
         </Row>
         <Row className="researchBottomRow">
           <Col className="featureImage">
-            <img src={this.state.researchKnowledgeImg} />
+            {/* <img src={this.state.researchKnowledgeImg} /> */}
           </Col>
           <Col className="featureSubSectionTextAlign">
             <Container>
               <Row>
                 <Col md={{ span: 6, offset: 3 }}>
                   <h1 className="primary_font">
-                    {this.state.researchKnowledgeTitle}
+                    {this.state.documentsPersonalKnowledgeTitle}
                   </h1>
                 </Col>
               </Row>
               <Row>
                 <Col md={{ span: 6, offset: 3 }}>
                   <FeaturesBullets
-                    bullets={this.state.researchKnowledgeBlurb}
+                    bullets={this.state.documentsPersonalKnowledgeBlurb}
                   />
                 </Col>
               </Row>
