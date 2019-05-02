@@ -1,6 +1,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import MediaQuery from "react-responsive";
 import * as contentful from "contentful";
 import "./Home.css";
 

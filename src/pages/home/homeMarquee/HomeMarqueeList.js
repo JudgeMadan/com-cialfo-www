@@ -47,6 +47,7 @@ class HomeMarqueeList extends React.Component {
           <HomeMarqueeListObject
             key={marqueeItemArray.sys.id}
             marqueeItemArray={marqueeItemArray}
+            locale={this.props.locale}
           />
         );
       });
