@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "react-bootstrap/Image";
+import Row from "react-bootstrap/Row";
+import * as contentful from "contentful";
 
 class HomeMarqueeListObject extends React.Component {
   constructor(props) {
@@ -7,18 +9,19 @@ class HomeMarqueeListObject extends React.Component {
   }
 
   render() {
+    const marqueeItem = this.props.marqueeItemArray;
+    const marqueeItemImage = this.props.marqueeItemArray.fields.marqueeImage
+      .fields.file.url;
+    console.log(marqueeItem);
     return (
       <div className="orb marqueeItem">
         <div className="orb-image">
-          <Image src="https://fillmurray.com/50/50" roundedCircle />
+          <Image src={marqueeItemImage} roundedCircle />
+          <Row>{marqueeItem.fields.marqueeContent}</Row>
+
+          <h6>Dale Ford!</h6>
+          <p>British Intl School Phuket</p>
         </div>
-        <p>
-          Cialfo's international focus, service, <br /> nimble approach to
-          product <br /> improvement and reasonable cost <br /> made it the
-          platform for us.
-        </p>
-        <h6>Dale Ford!</h6>
-        <p>British Intl School Phuket</p>
       </div>
     );
   }
