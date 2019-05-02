@@ -89,7 +89,6 @@ class GetInTouch extends React.Component {
   // getADemo
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <Row className="demoTextImgContainer">
