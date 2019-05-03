@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import "./home/Home.css";
 import Hero from "./home/Hero.svg";
-import Documents from "./home/SendDocuments.svg";
+import Documents from "./home/CDocs.svg";
 import ResearchImage from "./home/SchoolsOverview.svg";
 import Reports from "./home/Reports.svg";
 import Stroke10 from "./home/Stroke10.svg";
