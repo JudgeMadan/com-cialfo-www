@@ -228,3 +228,7 @@
 .mobile-top-row-header-container {
   padding: 0 20px;
 }
+
+.reduced-margin-bottom {
+  margin-bottom: 0px;
+}
