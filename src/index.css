@@ -97,7 +97,6 @@ code {
 
 .marquee-image-row {
   justify-content: center;
-  /* background: linear-gradient(transparent 50%, #ebf9ff 50%); */
 }
 
 .marquee-image {
@@ -142,7 +141,7 @@ code {
 }
 
 .marqueeItem {
-  background: linear-gradient(transparent 15%, red 15% 85%);
+  background: linear-gradient(transparent 15%, #ebf9ff 15% 85%);
   /* background-color: #ebf9ff; */
   width: 300px;
   height: 300px;
