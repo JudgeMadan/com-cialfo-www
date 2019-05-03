@@ -72,21 +72,50 @@ code {
   margin: 0 20px;
   float: left;
   transition: all 0.2s ease-out;
+  /* padding-bottom: 50px; */
+  /* padding-top: 50px; */
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* .orb {
+  display: inline-block;
+  margin: 0 20px;
+  float: left;
+  transition: all 0.2s ease-out;
   padding-bottom: 50px;
   padding-top: 50px;
   padding-right: 30px;
   padding-left: 30px;
-}
-
-.orb-image {
-  display: flex;
-  justify-content: center;
-}
+} */
 
 .orb:hover {
   transform: scale(1.2);
   opacity: 0.5;
   cursor: pointer;
+}
+
+.marquee-image-row {
+  justify-content: center;
+  background: linear-gradient(white 50%, #ebf9ff 50%);
+}
+
+.marquee-image {
+  max-height: 100px;
+}
+
+.marquee-content {
+  margin: 0 5px;
+  justify-content: center;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.marquee-footer {
+  margin: 0 5px -15px 0;
+  justify-content: start;
 }
 
 .marquee {
@@ -114,6 +143,8 @@ code {
 
 .marqueeItem {
   background-color: #ebf9ff;
+  width: 300px;
+  height: 300px;
 }
 
 .orb:nth-child(odd) {

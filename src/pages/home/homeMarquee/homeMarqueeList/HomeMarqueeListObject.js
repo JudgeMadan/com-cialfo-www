@@ -11,26 +11,34 @@ class HomeMarqueeListObject extends React.Component {
   render() {
     const marqueeItem = this.props.marqueeItemArray;
     return (
-      <Container className="orb marqueeItem">
-        <Row>
-          <img
+      <div className="orb marqueeItem">
+        <Row className="marquee-image-row">
+          <Image
+            className="marquee-image"
             src={
               this.props.marqueeItemArray.fields.marqueeImage.fields.file.url
             }
+            roundedCircle
           />
         </Row>
-        <Row>
-          <h1 className="primary_text">{marqueeItem.fields.marqueeContent}</h1>
+        <Row className="marquee-content">
+          <div>
+            <h1 className="secondary_font">
+              {marqueeItem.fields.marqueeContent}
+            </h1>
+          </div>
         </Row>
-        <Row>
-          <p className="secondary_text">{marqueeItem.fields.marqueeAuthor}</p>
+        <Row className="marquee-footer">
+          <p className="secondary_font bold">
+            {marqueeItem.fields.marqueeAuthor}
+          </p>
         </Row>
-        <Row>
-          <p className="secondary_text">
+        <Row className="marquee-footer">
+          <p className="secondary_font">
             {marqueeItem.fields.marqueeAuthorSchool}
           </p>
         </Row>
-      </Container>
+      </div>
     );
   }
 }
