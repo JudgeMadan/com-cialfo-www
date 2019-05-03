@@ -69,8 +69,8 @@ class FeaturesResearch extends React.Component {
             <img className="line" src={Line} />
             <ReactPlayer
               className="video"
-              width="1000px"
-              height="560px"
+              width="500px"
+              height="280px"
               url={this.state.researchVideo}
             />
           </div>
