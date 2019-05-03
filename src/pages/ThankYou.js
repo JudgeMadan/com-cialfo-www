@@ -6,6 +6,7 @@ import "./getADemo/GetADemo.css";
 import "./privacyAndSecurity/privacyAndSecurity.css";
 import * as contentful from "contentful";
 import ThankYouImg from "./thankYou/ThankYou.svg";
+import GrayLines from "./thankYou/GrayLines.svg";
 
 class ThankYou extends React.Component {
   constructor(props) {
@@ -49,7 +50,8 @@ class ThankYou extends React.Component {
         <div>
           <Row className="four_oh_four_content">
             <div>
-              <img src={ThankYouImg} />
+              <img className="thank-you-image" src={ThankYouImg} />
+              {/* <img className="thank-you-gray-lines" src={GrayLines} /> */}
             </div>
           </Row>
           <Row className="four_oh_four_content">

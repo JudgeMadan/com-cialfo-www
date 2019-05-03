@@ -82,7 +82,7 @@ class Features extends React.Component {
           </h1>
         </Row>
         <Row className="homeMarquee">
-          <HomeMarquee />
+          <HomeMarquee locale={this.props.locale} />
         </Row>
         <Row className="featureRows">
           <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
