@@ -17,6 +17,7 @@ import Stroke10 from "./home/Stroke10.svg";
 import Oval from "./home/Oval.svg";
 import Line from "./home/Line.svg";
 import MediaQuery from "react-responsive";
+import Container from "react-bootstrap/Container";
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -70,7 +71,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="homePageContainer">
+      <Container className="homePageContainer">
         {/* FULL SCREEN TOP ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="top_row">
@@ -411,7 +412,7 @@ class Home extends React.Component {
             partnerImages={this.state.homePagePoweredByOurPartnersPartners}
           />
         </MediaQuery>
-      </div>
+      </Container>
     );
   }
 }
