@@ -273,6 +273,6 @@ button:hover {
 .line {
   position: absolute;
   z-index: 2;
-  margin-top: -100px;
-  margin-left: 800px;
+  margin-top: -50px;
+  margin-left: 200px;
 }
