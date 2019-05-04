@@ -147,7 +147,6 @@ therefore, total marquee width is about 345 * # of marquee Items */
 therefore, total marquee width is about 345 * # of marquee Items */
 .marqueeItem {
   background: linear-gradient(transparent 15%, #ebf9ff 15% 85%);
-  /* background-color: red; */
   max-width: 300px !important;
   min-width: 300px !important;
   width: 300px !important;
