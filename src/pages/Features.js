@@ -3,6 +3,7 @@ import HomeMarquee from "./home/HomeMarquee";
 import * as contentful from "contentful";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import "./home/Home.css";
@@ -60,7 +61,7 @@ class Features extends React.Component {
 
   render() {
     return (
-      <div className="homePageContainer">
+      <Container className="homePageContainer">
         <Row className="titleContainer">
           <h1 className="primary_font">{this.state.featuresTitle}</h1>
         </Row>
@@ -165,7 +166,7 @@ class Features extends React.Component {
             </div>
           </Col>
         </Row>
-      </div>
+      </Container>
     );
   }
 }

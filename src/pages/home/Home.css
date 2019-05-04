@@ -19,7 +19,7 @@
 }
 
 .homePageContainer {
-  min-width: 100% !important;
+  /* min-width: 100% !important; */
 }
 
 .top_row {
@@ -36,8 +36,9 @@
 
 .top_row_left_col {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   margin: 0 100px;
+  min-width: 250px;
 }
 
 .mobile_top_row_left_col {
@@ -238,9 +239,10 @@
 }
 
 .homePageHeaderProductImage {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 300px;
 }
 
 .homePartnerImages {
@@ -305,10 +307,11 @@
 
 .homePageImg {
   position: relative;
-  display: flex;
   width: 33em;
   height: auto;
   z-index: 3;
+  flex-shrink: 0;
+  min-width: 500px;
 }
 
 .stroke-10 {

@@ -1,7 +1,8 @@
 .demo_form_container {
   border: solid #1886df 2px;
   margin-bottom: 10%;
-  padding: 5%;
+  padding-top: 20px;
+  /* padding: 5%; */
   display: flex;
   justify-content: center;
 }

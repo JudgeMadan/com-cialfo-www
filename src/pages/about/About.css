@@ -20,7 +20,7 @@
 }
 
 .aboutPage {
-  max-width: 100% !important;
+  /* max-width: 100% !important; */
 }
 
 .aboutPageHeaderText {
@@ -161,6 +161,8 @@
 
 .counselor-advisor-container {
   margin: 15px 30px;
+  min-width: 350px;
+  min-height: 635px;
 }
 
 .innerObject {
