@@ -5,7 +5,7 @@ import React from "react";
 import "./getADemo/GetADemo.css";
 import "./privacyAndSecurity/privacyAndSecurity.css";
 import * as contentful from "contentful";
-import FourOhFourImg from "./404/404.svg";
+import FourOhFourImg from "../img/404.svg";
 
 class FourOhFour extends React.Component {
   constructor(props) {

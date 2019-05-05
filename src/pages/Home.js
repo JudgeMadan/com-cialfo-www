@@ -88,7 +88,7 @@ class Home extends React.Component {
                   </h1>
                 </Row>
                 <Row>
-                  <Form>
+                  <Form className="get-a-demo-form">
                     <Form.Row className="email-form-container">
                       <Col xs={7} className="pt-1">
                         <Form.Control

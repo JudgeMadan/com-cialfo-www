@@ -72,26 +72,12 @@ code {
   margin: 0 20px;
   float: left;
   transition: all 0.2s ease-out;
-  /* padding-bottom: 50px; */
-  /* padding-top: 50px; */
   padding-right: 15px;
   padding-left: 15px;
 }
 
-/* .orb {
-  display: inline-block;
-  margin: 0 20px;
-  float: left;
-  transition: all 0.2s ease-out;
-  padding-bottom: 50px;
-  padding-top: 50px;
-  padding-right: 30px;
-  padding-left: 30px;
-} */
-
 .orb:hover {
   transform: scale(1.2);
-  opacity: 0.5;
   cursor: pointer;
 }
 
@@ -123,7 +109,8 @@ therefore, total marquee width is about 345 * # of marquee Items */
   height: 500px;
   /* 1380 is really close */
   min-width: 1380px !important;
-  overflow: hidden;
+  overflow-y: visible;
+  overflow-x: hidden;
   position: relative;
   margin: 10px auto;
   z-index: 2;
@@ -137,6 +124,7 @@ therefore, total marquee width is about 345 * # of marquee Items */
   position: absolute;
   animation: marquee 5s linear infinite;
   z-index: 2;
+  margin-top: 30px;
 }
 
 .marquee--inner:hover {

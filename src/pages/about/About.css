@@ -234,3 +234,10 @@
 .reduced-margin-bottom {
   margin-bottom: 0px;
 }
+
+.full-width-light-blue {
+  margin: 0 -9999rem;
+  /* add back negative margin value */
+  padding: 0.25rem 9999rem;
+  background: #ebf9ff;
+}
