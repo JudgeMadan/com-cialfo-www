@@ -9,13 +9,13 @@ import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import "./home/Home.css";
-import Hero from "./home/iMacMockup.png";
-import Documents from "./home/CDocs.svg";
-import ResearchImage from "./home/SchoolsOverview.svg";
-import Reports from "./home/Reports.svg";
-import Stroke10 from "./home/Stroke10.svg";
-import Oval from "./home/Oval.svg";
-import Line from "./home/Line.svg";
+import Hero from "../img/home/iMacMockup.png";
+import Documents from "../img/home/CDocs.svg";
+import ResearchImage from "../img/home/SchoolsOverview.svg";
+import Reports from "../img/home/Reports.svg";
+import Stroke10 from "../img/home/Stroke10.svg";
+import Oval from "../img/Oval.svg";
+import Line from "../img/Line.svg";
 import MediaQuery from "react-responsive";
 import Container from "react-bootstrap/Container";
 class Home extends React.Component {
@@ -88,7 +88,7 @@ class Home extends React.Component {
                   </h1>
                 </Row>
                 <Row>
-                  <Form>
+                  <Form className="get-a-demo-form">
                     <Form.Row className="email-form-container">
                       <Col xs={7} className="pt-1">
                         <Form.Control

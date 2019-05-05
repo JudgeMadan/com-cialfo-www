@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import NavBar from "react-bootstrap/Navbar";
 import * as contentful from "contentful";
-import Logo from "./Layout/Logo.svg";
+import Logo from "../img/Logo.svg";
 import { Link } from "react-router-dom";
 import "./Layout/Layout.css";
 class Footer extends React.Component {
