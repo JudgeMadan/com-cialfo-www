@@ -8,8 +8,8 @@ import "./Features.css";
 import FeaturesSubfooter from "./FeaturesSubfooter";
 import "../home/HomePartnerImages";
 import HomePartnerImages from "../home/HomePartnerImages";
-import Oval from "./Oval.svg";
-import Line from "./Line.svg";
+import Oval from "../../img/Oval.svg";
+import Line from "../../img/Line.svg";
 
 class FeaturesSend extends React.Component {
   constructor(props) {

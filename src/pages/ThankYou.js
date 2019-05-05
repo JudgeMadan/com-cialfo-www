@@ -5,8 +5,8 @@ import React from "react";
 import "./getADemo/GetADemo.css";
 import "./privacyAndSecurity/privacyAndSecurity.css";
 import * as contentful from "contentful";
-import ThankYouImg from "./thankYou/ThankYou.svg";
-import GrayLines from "./thankYou/GrayLines.svg";
+import ThankYouImg from "../img/ThankYou.svg";
+import GrayLines from "../img/GrayLines.svg";
 
 class ThankYou extends React.Component {
   constructor(props) {

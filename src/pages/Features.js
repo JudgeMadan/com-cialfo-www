@@ -7,11 +7,11 @@ import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import "./home/Home.css";
-import Documents from "./home/CDocs.svg";
-import ResearchImage from "./home/SchoolsOverview.svg";
-import Reports from "./home/Reports.svg";
-import Oval from "./features/Oval.svg";
-import Line from "./features/Line.svg";
+import Documents from "../img/home/CDocs.svg";
+import ResearchImage from "../img/home/SchoolsOverview.svg";
+import Reports from "../img/home/Reports.svg";
+import Oval from "../img/Oval.svg";
+import Line from "../img/Line.svg";
 class Features extends React.Component {
   constructor(props) {
     super(props);

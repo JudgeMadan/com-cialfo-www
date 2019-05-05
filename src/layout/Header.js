@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import * as contentful from "contentful";
 import "./Layout/Layout.css";
-import Logo from "./Layout/Logo.svg";
+import Logo from "../img/Logo.svg";
 import TranslateButton from "./header/TranslateButton";
 
 class Header extends React.Component {
