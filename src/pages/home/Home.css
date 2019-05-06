@@ -198,7 +198,7 @@
   text-align: center;
   justify-content: center;
   margin-bottom: 50px;
-  padding: 100px 150px 0px 150px;
+  padding: 50px 150px 0px 150px;
 }
 
 .mobile-homePageVideoCaseStudyTitle {
@@ -208,12 +208,12 @@
 }
 
 .homePageVideoCaseStudy {
-  background: linear-gradient(#1886df 50%, white 50%);
+  background: linear-gradient(#1886df 70%, white 30%);
   min-width: 100%;
 }
 
 .mobile-homePageVideoCaseStudy {
-  background: linear-gradient(#1886df 50%, white 50%);
+  background: linear-gradient(#1886df 70%, white 30%);
   min-width: 100%;
 }
 

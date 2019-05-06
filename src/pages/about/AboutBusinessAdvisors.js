@@ -26,22 +26,30 @@ class AboutBusinessAdvisors extends React.Component {
                   </p>
                 </Row>
                 <Row>
-                  <Col>
-                    <Image
-                      roundedCircle
-                      src={
-                        businessAdvisor.fields.aboutPageBusinessAdvisorImage
-                          .fields.file.url
-                      }
-                    />
-                  </Col>
-                  <Col>
-                    <div>
-                      <p className="secondary_font_bold">
-                        {businessAdvisor.fields.aboutPageBusinessAdvisorTitle}
-                      </p>
-                    </div>
-                  </Col>
+                  <Image
+                    roundedCircle
+                    src={
+                      businessAdvisor.fields.aboutPageBusinessAdvisorImage
+                        .fields.file.url
+                    }
+                  />
+                </Row>
+                <Row>
+                  <div>
+                    <p className="secondary_font_bold">
+                      {businessAdvisor.fields.aboutPageBusinessAdvisorTitle}
+                    </p>
+                  </div>
+                </Row>
+                <Row>
+                  <p className="secondary_font reduced-margin-bottom">
+                    {businessAdvisor.fields.jobTitle}
+                  </p>
+                </Row>
+                <Row>
+                  <p className="secondary_font">
+                    {businessAdvisor.fields.organization}
+                  </p>
                 </Row>
               </div>
             </Container>

@@ -108,29 +108,35 @@ class About extends React.Component {
             </Container>
           </Row>
         </MediaQuery>
-        <Row className="center-in-row light-blue-background pt-5">
-          <h1 className="primary_font">{this.state.aboutPageNumbersTitle}</h1>
-        </Row>
-        <Row className="by-the-numbers light-blue-background">
-          <AboutByTheNumbers byTheNumbers={this.state.aboutPageNumbersArray} />
-        </Row>
+        <div className="full-width-light-blue">
+          <Row className="center-in-row light-blue-background pt-5">
+            <h1 className="primary_font">{this.state.aboutPageNumbersTitle}</h1>
+          </Row>
+          <Row className="by-the-numbers light-blue-background">
+            <AboutByTheNumbers
+              byTheNumbers={this.state.aboutPageNumbersArray}
+            />
+          </Row>
+        </div>
         {/* FULL SCREEN ABOUT WHO WE ARE */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="dark-blue-background">
-            <Col className="who-we-are-image-container">
-              <img
-                className="about-page-who-we-are-image"
-                src={this.state.aboutPageWhoWeAreImage}
-              />
-            </Col>
-            <Col className="aboutPageWhoWeAreContentContainer">
-              <Row>
-                <p className="aboutPageWhoWeAreContent">
-                  {this.state.aboutPageWhoWeAreContent}
-                </p>
-              </Row>
-            </Col>
-          </Row>
+          <div className="full-width-dark-blue">
+            <Row className="dark-blue-background">
+              <Col className="who-we-are-image-container">
+                <img
+                  className="about-page-who-we-are-image"
+                  src={this.state.aboutPageWhoWeAreImage}
+                />
+              </Col>
+              <Col className="aboutPageWhoWeAreContentContainer">
+                <Row>
+                  <p className="aboutPageWhoWeAreContent">
+                    {this.state.aboutPageWhoWeAreContent}
+                  </p>
+                </Row>
+              </Col>
+            </Row>
+          </div>
         </MediaQuery>
         {/* MOBILE WHO WE ARE */}
         <MediaQuery query="(max-device-width: 1223px)">
@@ -173,32 +179,34 @@ class About extends React.Component {
             leadershipTeam={this.state.aboutPageLeadershipLeaders}
           />
         </Row>
-        <Row className="center-in-row light-blue-background pt-5">
-          <Container className="partners pb-5">
-            <Row className="center-in-row partnersTitle light-blue-background pb-5">
-              <h1 className="primary_font light-blue-background">
-                {this.state.aboutPagePartnersTitle}
-              </h1>
-              <h1 className="secondary_font">
-                {this.state.aboutPagePartnersSubtitle}
-              </h1>
-            </Row>
-            <Row className="aboutPartners light-blue-background">
-              {/* MOBILE ABOUT PARTNERS  */}
-              <MediaQuery query="(max-device-width: 1223px)">
-                <MobileAboutPartners
-                  partners={this.state.aboutPagePartnersPartners}
-                />
-              </MediaQuery>
-              {/* FULL SCREEN ABOUT PARTNERS */}
-              <MediaQuery query="(min-device-width: 1224px)">
-                <AboutPartners
-                  partners={this.state.aboutPagePartnersPartners}
-                />
-              </MediaQuery>
-            </Row>
-          </Container>
-        </Row>
+        <div className="full-width-light-blue">
+          <Row className="center-in-row light-blue-background pt-5">
+            <Container className="partners pb-5">
+              <Row className="center-in-row partnersTitle light-blue-background pb-5">
+                <h1 className="primary_font light-blue-background">
+                  {this.state.aboutPagePartnersTitle}
+                </h1>
+                <h1 className="secondary_font">
+                  {this.state.aboutPagePartnersSubtitle}
+                </h1>
+              </Row>
+              <Row className="aboutPartners light-blue-background">
+                {/* MOBILE ABOUT PARTNERS  */}
+                <MediaQuery query="(max-device-width: 1223px)">
+                  <MobileAboutPartners
+                    partners={this.state.aboutPagePartnersPartners}
+                  />
+                </MediaQuery>
+                {/* FULL SCREEN ABOUT PARTNERS */}
+                <MediaQuery query="(min-device-width: 1224px)">
+                  <AboutPartners
+                    partners={this.state.aboutPagePartnersPartners}
+                  />
+                </MediaQuery>
+              </Row>
+            </Container>
+          </Row>
+        </div>
         <Row className="center-in-row pt-5">
           <h1 className="primary_font">
             {this.state.aboutPageCounselorsTitle}
@@ -225,9 +233,11 @@ class About extends React.Component {
             </Container>
           </Row>
         </div>
-        <AboutCialfoOffices
-          cialfoOffices={this.state.aboutPageOfficesLocations}
-        />
+        <div className="full-width-near-black">
+          <AboutCialfoOffices
+            cialfoOffices={this.state.aboutPageOfficesLocations}
+          />
+        </div>
       </Container>
     );
   }
