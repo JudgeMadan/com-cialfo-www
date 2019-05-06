@@ -19,7 +19,7 @@ class AboutLeadershipTeam extends React.Component {
           <Col key={leader.sys.id} className="mb-5">
             <Container className="leadershipObjectContainer">
               <Row className="leadershipObjectContent leaderImage">
-                <img src="https://via.placeholder.com/100x150/100" />
+                <img src="https://via.placeholder.com/260x370/100" />
               </Row>
               <Row className="leadershipObjectContent">
                 <h1 className="secondary_font_bold">
