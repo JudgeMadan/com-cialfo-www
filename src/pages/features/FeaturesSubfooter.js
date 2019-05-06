@@ -12,26 +12,28 @@ class FeaturesSubfooter extends React.Component {
   render() {
     return (
       <Container className="featuresSendPage subFooterPage">
-        <Container>
-          <Row>
-            <Col className="subFooterPageImgContainer">
-              <img className="subFooterPageImg" src={this.props.img} />
-            </Col>
-            <Col className="subFooterPageQuote">
-              <Row>
-                <h1 className="primary_font sub_footer_quote white_font">
-                  "{this.props.quote}"
-                </h1>
-                <br />
-                <br />
-                <p className="secondary_font white_font">
-                  {this.props.quoteAuthor}
-                </p>
-              </Row>
-              <Row />
-            </Col>
-          </Row>
-        </Container>
+        <div className="full-width-dark-blue-custom-height">
+          <Container>
+            <Row>
+              <Col className="subFooterPageImgContainer">
+                <img className="subFooterPageImg" src={this.props.img} />
+              </Col>
+              <Col className="subFooterPageQuote">
+                <Row>
+                  <h1 className="primary_font sub_footer_quote white_font">
+                    "{this.props.quote}"
+                  </h1>
+                  <br />
+                  <br />
+                  <p className="secondary_font white_font">
+                    {this.props.quoteAuthor}
+                  </p>
+                </Row>
+                <Row />
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </Container>
     );
   }

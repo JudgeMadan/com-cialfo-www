@@ -77,7 +77,7 @@ class FeaturesResearch extends React.Component {
         </Row>
         <Row>
           <Col className="featureImage">
-            <img src={this.state.researchInfoImg} />
+            {/* <img src={this.state.researchInfoImg} /> */}
           </Col>
           <Col className="featureSubSectionTextAlign">
             <Container>
@@ -118,12 +118,12 @@ class FeaturesResearch extends React.Component {
             </Container>
           </Col>
           <Col className="featureImage">
-            <img src={this.state.researchTranscriptImg} />
+            {/* <img src={this.state.researchTranscriptImg} /> */}
           </Col>
         </Row>
         <Row className="researchBottomRow">
           <Col className="featureImage">
-            <img src={this.state.researchKnowledgeImg} />
+            {/* <img src={this.state.researchKnowledgeImg} /> */}
           </Col>
           <Col className="featureSubSectionTextAlign">
             <Container>
