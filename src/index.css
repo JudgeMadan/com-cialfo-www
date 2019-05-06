@@ -67,7 +67,7 @@ code {
   color: white;
 }
 
-.orb {
+.marqueeElement {
   display: inline-block;
   margin: 0 20px;
   float: left;
@@ -76,8 +76,8 @@ code {
   padding-left: 15px;
 }
 
-.orb:hover {
-  transform: scale(1.2);
+.marqueeElement:hover {
+  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -103,12 +103,11 @@ code {
   justify-content: start;
 }
 
-/* Each marquee item is 345 px wide in total, 
-therefore, total marquee width is about 345 * # of marquee Items */
+/* Each marquee item is around 395 px wide in total, 
+therefore, total marquee width is about 395 * # of marquee Items */
 .marquee {
   height: 500px;
-  /* 1380 is really close */
-  min-width: 1380px !important;
+  min-width: 1580px !important;
   overflow-y: visible;
   overflow-x: hidden;
   position: relative;
@@ -122,7 +121,7 @@ therefore, total marquee width is about 345 * # of marquee Items */
   align-items: center;
   width: 200%;
   position: absolute;
-  animation: marquee 5s linear infinite;
+  animation: marquee 15s linear infinite;
   z-index: 2;
   margin-top: 30px;
 }
@@ -131,21 +130,22 @@ therefore, total marquee width is about 345 * # of marquee Items */
   animation-play-state: paused;
 }
 
-/* Each marquee item is 345 px wide in total, 
-therefore, total marquee width is about 345 * # of marquee Items */
+/* Each marquee item is around 395 px wide in total, 
+therefore, total marquee width is about 395 * # of marquee Items */
 .marqueeItem {
   background: linear-gradient(transparent 15%, #ebf9ff 15% 85%);
-  max-width: 300px !important;
-  min-width: 300px !important;
-  width: 300px !important;
-  height: 300px;
+  max-width: 350px !important;
+  min-width: 350px !important;
+  width: 350px !important;
+  height: 275px;
+  font-size: 15px;
 }
 
-.orb:nth-child(odd) {
+.marqueeElement:nth-child(odd) {
   margin-top: 50px;
 }
 
-.orb:nth-child(even) {
+.marqueeElement:nth-child(even) {
   margin-bottom: 50px;
 }
 
