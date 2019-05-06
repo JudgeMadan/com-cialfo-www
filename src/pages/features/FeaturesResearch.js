@@ -82,14 +82,14 @@ class FeaturesResearch extends React.Component {
           <Col className="featureSubSectionTextAlign">
             <Container>
               <Row>
-                <Col md={{ span: 6, offset: 3 }}>
+                <Col>
                   <h1 className="primary_font">
                     {this.state.researchInfoTitle}
                   </h1>
                 </Col>
               </Row>
               <Row>
-                <Col md={{ span: 6, offset: 3 }}>
+                <Col>
                   <FeaturesBullets
                     bullets={this.state.researchKnowledgeBlurb}
                   />
@@ -102,14 +102,14 @@ class FeaturesResearch extends React.Component {
           <Col className="featureSubSectionTextAlign">
             <Container>
               <Row>
-                <Col md={{ span: 6, offset: 3 }}>
+                <Col>
                   <h1 className="primary_font">
                     {this.state.researchTranscriptTitle}
                   </h1>
                 </Col>
               </Row>
               <Row>
-                <Col md={{ span: 6, offset: 3 }}>
+                <Col>
                   <FeaturesBullets
                     bullets={this.state.researchTranscriptBlurb}
                   />
@@ -128,14 +128,14 @@ class FeaturesResearch extends React.Component {
           <Col className="featureSubSectionTextAlign">
             <Container>
               <Row>
-                <Col md={{ span: 6, offset: 3 }}>
+                <Col>
                   <h1 className="primary_font">
                     {this.state.researchKnowledgeTitle}
                   </h1>
                 </Col>
               </Row>
               <Row>
-                <Col md={{ span: 6, offset: 3 }}>
+                <Col>
                   <FeaturesBullets
                     bullets={this.state.researchKnowledgeBlurb}
                   />

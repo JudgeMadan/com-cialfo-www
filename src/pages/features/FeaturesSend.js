@@ -83,12 +83,12 @@ class FeaturesSend extends React.Component {
           <Col className="featureSubSectionTextAlign">
             <Container>
               <Row>
-                <Col md={{ span: 6, offset: 3 }}>
+                <Col>
                   <h1 className="primary_font">{this.state.sendPortalTitle}</h1>
                 </Col>
               </Row>
               <Row>
-                <Col md={{ span: 6, offset: 3 }}>
+                <Col>
                   <h1 className="secondary_font">
                     {this.state.sendPortalBlurb}
                   </h1>
@@ -101,14 +101,14 @@ class FeaturesSend extends React.Component {
           <Col className="featureSubSectionTextAlign">
             <Container>
               <Row>
-                <Col md={{ span: 6, offset: 3 }}>
+                <Col>
                   <h1 className="primary_font">
                     {this.state.sendTranscriptTitle}
                   </h1>
                 </Col>
               </Row>
               <Row>
-                <Col md={{ span: 6, offset: 3 }}>
+                <Col>
                   <h1 className="secondary_font">
                     {this.state.sendTranscriptBlurb}
                   </h1>
