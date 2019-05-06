@@ -120,15 +120,20 @@ class FeaturesSend extends React.Component {
             {/* <img src={this.state.sendTranscriptImage} /> */}
           </Col>
         </Row>
+        <Row />
         <Row className="featureSendPartnersTitle">
-          <HomePartnerImages locale={this.props.locale} />
+          <div className="full-width-light-blue">
+            <HomePartnerImages locale={this.props.locale} />
+          </div>
         </Row>
         <Row>
+          {/* <div className="full-width-dark-blue"> */}
           <FeaturesSubfooter
             img={this.state.sendFooterImage}
             quote={this.state.sendFooterQuote}
             quoteAuthor={this.state.sendingFooterAuthor}
           />
+          {/* </div> */}
         </Row>
       </Container>
     );
