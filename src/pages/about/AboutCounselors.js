@@ -35,7 +35,7 @@ class AboutCounselors extends React.Component {
                   />
                 </Row>
                 <Row>
-                  <p className="secondary_font_bold reduced-margin-bottom">
+                  <p className="secondary_font_bold">
                     {counselor.fields.aboutPageCounselorTitle}
                   </p>
                 </Row>
