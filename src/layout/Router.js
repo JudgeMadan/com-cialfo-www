@@ -13,6 +13,7 @@ import Privacy from "../pages/Privacy";
 import Security from "../pages/Security";
 import FourOhFour from "../pages/FourOhFour";
 import ThankYou from "../pages/ThankYou";
+import Solutions from "../pages/Solutions";
 
 class Router extends React.Component {
   render() {
@@ -158,6 +159,18 @@ class Router extends React.Component {
           path="/thank_you"
           render={() => (
             <ThankYou
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/solutions"
+          render={() => (
+            <Solutions
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}

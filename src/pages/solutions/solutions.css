@@ -1,0 +1,11 @@
+.solutions-title {
+  margin-top: 85px;
+  padding: 0 20%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.solutions-subtitle {
+  justify-content: center;
+}
