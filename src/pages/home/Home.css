@@ -33,7 +33,7 @@
 .top_row_left_col {
   display: flex;
   align-items: center;
-  margin: 0 100px;
+  margin: 0 100px 0 0;
   min-width: 250px;
 }
 
@@ -303,7 +303,7 @@
 
 .homePageImg {
   position: relative;
-  width: 100%;
+  width: 130%;
   height: auto;
   z-index: 3;
   flex-shrink: 0;
@@ -330,7 +330,8 @@
   background: none;
   color: #757575 !important;
   border: none;
-  padding: 0;
+  border-bottom: 2px solid #f4f4f5;
+  padding-bottom: 3.6px;
   cursor: pointer;
   outline: inherit;
   margin-top: 10px;
@@ -351,7 +352,7 @@
 .get-a-demo-link:hover {
   font-size: 1.1em !important;
   background: none;
-  color: #2b1f31 !important;
+  /* color: #2b1f31 !important; */
   border: none;
   padding: 0;
   cursor: pointer;
@@ -364,8 +365,8 @@
   font-size: 1.1em !important;
   background: none;
   /* color: #757575 !important; */
-  border-bottom: 4px solid #1981d6;
-  padding: 0;
+  border-bottom: 2px solid #1981d6;
+  padding-bottom: 3.6px;
   cursor: pointer;
   outline: inherit;
   margin-top: 10px;
