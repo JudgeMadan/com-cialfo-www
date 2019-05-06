@@ -245,7 +245,7 @@
   justify-content: space-around;
   height: auto;
   width: 100%;
-  margin-bottom: 150px;
+  /* margin-bottom: 150px; */
 }
 
 .mobile-homePartnerImagesContainer {
@@ -277,7 +277,6 @@
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
-  padding-top: 50px;
 }
 
 .mobile-imageObjectTitle {
@@ -386,4 +385,12 @@
 
 .get-a-demo-form {
   min-width: 470px;
+}
+
+.home-partners-image-container {
+  display: flex;
+}
+
+.home-partners-image-content {
+  margin: 50px 0;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 import MediaQuery from "react-responsive";
 import * as contentful from "contentful";
 import "./Home.css";
@@ -63,13 +64,17 @@ class HomePartnerImages extends React.Component {
     }
 
     return (
-      <div>
-        <Row className="imageObjectTitle">
-          <h1 className="primary_font ">
-            {this.state.homePagePoweredByOurPartnersTitle}
-          </h1>
-        </Row>
-        <Row className="imageObjectRow">{imageObject}</Row>
+      <div className="home-partners-image-container">
+        <Container className="home-partners-image-content">
+          {/* <div className="home-partners-image-content"> */}
+          <Row className="imageObjectTitle">
+            <h1 className="primary_font ">
+              {this.state.homePagePoweredByOurPartnersTitle}
+            </h1>
+          </Row>
+          <Row className="imageObjectRow">{imageObject}</Row>
+          {/* </div> */}
+        </Container>
       </div>
     );
   }
