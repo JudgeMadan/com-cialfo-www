@@ -303,7 +303,7 @@
 
 .homePageImg {
   position: relative;
-  width: 33em;
+  width: 100%;
   height: auto;
   z-index: 3;
   flex-shrink: 0;
