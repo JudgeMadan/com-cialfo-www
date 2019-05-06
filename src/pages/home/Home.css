@@ -145,7 +145,7 @@
 }
 
 .homePageFeaturesRightSideTextObject {
-  margin: 0 20% 0 20%;
+  margin: 0 10%;
 }
 
 .mobile-homePageFeaturesRightSideTextObject {
@@ -165,7 +165,7 @@
 }
 
 .homePageFeaturesLeftSideTextObject {
-  margin: 0 20% 0 20%;
+  margin: 0 10%;
 }
 
 .homePageFeaturesImageBackground {
@@ -270,13 +270,14 @@
 }
 
 .imageObjectRow {
-  padding: 0 10%;
+  display: flex;
+  align-content: center;
 }
 
 .imageObjectTitle {
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 .mobile-imageObjectTitle {
@@ -392,5 +393,9 @@
 }
 
 .home-partners-image-content {
-  margin: 50px 0;
+  margin: 50px;
+}
+
+.home-page-partner-image {
+  margin: 0 25px;
 }
