@@ -52,7 +52,6 @@
   justify-content: flex-end;
   padding: 5%;
   padding-left: 200px;
-  background-color: red;
 }
 
 .mobile-who-we-are-image-container {
@@ -164,7 +163,7 @@
 .counselor-advisor-container {
   margin: 15px 30px;
   min-width: 350px;
-  min-height: 635px;
+  height: 620px;
 }
 
 .innerObject {
