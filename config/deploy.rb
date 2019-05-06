@@ -7,8 +7,6 @@ set :pty, true
 
 set :linked_dirs, fetch(:linked_dirs, []).push('node_modules')
 
-set :deploy_to, '~/apps/marketing_cialfo_co'
-
 set :keep_releases, 2
 
 namespace :deploy do

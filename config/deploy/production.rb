@@ -21,7 +21,13 @@
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
+set :deploy_to, '~/apps/marketing_cialfo_co_production'
 
+set :branch, 'master'
+
+server '54.92.50.188',
+  user: 'deployer',
+  roles: %w{sudo}
 
 # Configuration
 # =============
