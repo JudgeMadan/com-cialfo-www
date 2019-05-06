@@ -18,7 +18,7 @@ class AboutByTheNumbers extends React.Component {
         return (
           <Col className="byTheNumbersObject" key={number.sys.id}>
             <Container className="byTheNumbersObjectContainer light-blue-background">
-              <Row className="byTheNumbersObjectContent ">
+              <Row className="byTheNumbersObjectContent by-the-numbers-object-image">
                 <img
                   src={number.fields.aboutPageNumbersObjectImg.fields.file.url}
                 />
