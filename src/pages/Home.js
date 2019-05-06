@@ -9,7 +9,7 @@ import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import "./home/Home.css";
-import Hero from "../img/home/iMacMockup.png";
+import Hero from "../img/home/iMacAndMobileMockup.png";
 import Documents from "../img/home/CDocs.svg";
 import ResearchImage from "../img/home/SchoolsOverview.svg";
 import Reports from "../img/home/Reports.svg";

@@ -41,6 +41,16 @@ class MobileAboutCounselors extends React.Component {
                     </div>
                   </Col>
                 </Row>
+                <Row>
+                  <p className="secondary_font reduced-margin-bottom">
+                    {counselor.fields.jobTitle}
+                  </p>
+                </Row>
+                <Row>
+                  <p className="secondary_font">
+                    {counselor.fields.organization}
+                  </p>
+                </Row>
               </div>
             </Container>
           </Col>
