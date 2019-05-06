@@ -11,7 +11,7 @@ class HomeMarqueeListObject extends React.Component {
   render() {
     const marqueeItem = this.props.marqueeItemArray;
     return (
-      <div className="orb marqueeItem">
+      <div className=" marqueeElement marqueeItem">
         <Row className="marquee-image-row">
           <Image
             className="marquee-image"
