@@ -160,7 +160,7 @@ therefore, total marquee width is about 395 * # of marquee Items */
 .email-form {
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  border-bottom-color: transparent;
+  border-bottom-color: #f4f4f5;
 }
 
 .email-form:hover {
@@ -174,7 +174,8 @@ therefore, total marquee width is about 395 * # of marquee Items */
 button {
   border-bottom-width: 5px;
   border-bottom-style: solid;
-  border-bottom-color: transparent;
+  /* border-bottom-color: transparent; */
+  border-bottom-color: #f4f4f5;
 }
 
 button:hover {

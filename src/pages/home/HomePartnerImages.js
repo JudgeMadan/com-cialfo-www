@@ -56,7 +56,7 @@ class HomePartnerImages extends React.Component {
     if (images) {
       imageObject = images.map(image => {
         return (
-          <Col key={image.sys.id}>
+          <Col className="home-page-partner-image" key={image.sys.id}>
             <img className="homePartnerImages" src={image.fields.file.url} />
           </Col>
         );

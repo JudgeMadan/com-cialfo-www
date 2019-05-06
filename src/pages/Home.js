@@ -375,8 +375,8 @@ class Home extends React.Component {
                 <img className="line" src={Line} />
                 <ReactPlayer
                   className="video"
-                  width="500px"
-                  height="280px"
+                  width="800px"
+                  height="448px"
                   url={this.state.homePageVideoCaseStudyVideoEmbed}
                 />
               </div>

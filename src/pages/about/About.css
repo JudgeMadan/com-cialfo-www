@@ -50,7 +50,9 @@
 
 .who-we-are-image-container {
   justify-content: flex-end;
-  padding: 5% 0;
+  padding: 5%;
+  padding-left: 200px;
+  background-color: red;
 }
 
 .mobile-who-we-are-image-container {
@@ -258,4 +260,8 @@
 
 .about-partners-columns {
   margin: 0 75px;
+}
+
+.by-the-numbers-object-image {
+  margin-bottom: 15px;
 }
