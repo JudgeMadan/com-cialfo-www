@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import * as contentful from "contentful";
 import "./Layout/Layout.css";
 import Logo from "../img/Logo.svg";
@@ -55,9 +55,9 @@ class Header extends React.Component {
         expand="lg"
       >
         <Nav href="#home">
-          <Link to="/" className="navbar-brand">
+          <NavLink to="/" className="navbar-brand">
             <img src={Logo} />
-          </Link>
+          </NavLink>
         </Nav>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
@@ -65,12 +65,20 @@ class Header extends React.Component {
             {/* <Link className="nav-link" to="/clients">
               {this.state.clientsPage}
             </Link> */}
-            <Link className="nav-link" to="/features">
+            <NavLink
+              activeClassName="activeStyle"
+              className="nav-link"
+              to="/features"
+            >
               {this.state.featuresPage}
-            </Link>
-            <Link className="nav-link" to="/about">
+            </NavLink>
+            <NavLink
+              activeClassName="activeStyle"
+              className="nav-link"
+              to="/about"
+            >
               {this.state.aboutUsPage}
-            </Link>
+            </NavLink>
             {/* <Link className="nav-link" to="/resources">
               {this.state.resourcesPage}
             </Link>
@@ -85,9 +93,13 @@ class Header extends React.Component {
                 updateLocale={this.updateLocale}
               />
             )}
-            <Link className="nav-link demo-page-link" to="/demo">
+            <NavLink
+              activeClassName="activeStyle"
+              className="nav-link demo-page-link"
+              to="/demo"
+            >
               {this.state.demoPage}
-            </Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

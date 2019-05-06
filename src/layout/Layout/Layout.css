@@ -48,3 +48,7 @@
 .footer-logo {
   padding-top: 20px;
 }
+
+.activeStyle {
+  border-bottom: solid 2px #1886df !important;
+}

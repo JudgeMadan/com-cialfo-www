@@ -14,7 +14,7 @@ class AboutPartners extends React.Component {
     if (partners) {
       partnersObject = partners.map(partner => {
         return (
-          <Col key={partner.sys.id}>
+          <Col className="about-partners-columns" key={partner.sys.id}>
             <img
               className="flexible-image-width-100 max-width-200px"
               src={partner.fields.aboutPagePartners[0].fields.file.url}
