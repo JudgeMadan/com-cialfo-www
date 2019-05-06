@@ -21,8 +21,11 @@
   min-height: 60vh;
 }
 
+/* NOTE IF THE HEADER OR FOOTER HEIGHT CHANGES THIS NEEDS TO BE UPDATED 
+182 is header height + footer height
+*/
 .four_oh_four_outer_content {
-  min-height: 80vh;
+  min-height: calc(100vh - 182px);
 }
 
 .submit_button {
