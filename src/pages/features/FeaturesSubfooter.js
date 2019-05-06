@@ -12,8 +12,8 @@ class FeaturesSubfooter extends React.Component {
   render() {
     return (
       <Container className="featuresSendPage subFooterPage">
-        <div className="full-width-dark-blue-custom-height">
-          <Container>
+        <Container>
+          <div className="full-width-dark-blue-custom-height">
             <Row>
               <Col className="subFooterPageImgContainer">
                 <img className="subFooterPageImg" src={this.props.img} />
@@ -32,8 +32,8 @@ class FeaturesSubfooter extends React.Component {
                 <Row />
               </Col>
             </Row>
-          </Container>
-        </div>
+          </div>
+        </Container>
       </Container>
     );
   }
