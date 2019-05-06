@@ -78,7 +78,7 @@ class FeaturesSend extends React.Component {
         </Row>
         <Row>
           <Col className="featureImage">
-            <img src={this.state.sendPortalImage} />
+            {/* <img src={this.state.sendPortalImage} /> */}
           </Col>
           <Col className="featureSubSectionTextAlign">
             <Container>
@@ -117,7 +117,7 @@ class FeaturesSend extends React.Component {
             </Container>
           </Col>
           <Col className="featureImage">
-            <img src={this.state.sendTranscriptImage} />
+            {/* <img src={this.state.sendTranscriptImage} /> */}
           </Col>
         </Row>
         <Row className="featureSendPartnersTitle">
