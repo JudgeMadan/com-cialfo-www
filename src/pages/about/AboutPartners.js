@@ -9,6 +9,7 @@ class AboutPartners extends React.Component {
 
   render() {
     const partners = this.props.partners;
+    console.log(partners);
     let partnersObject;
 
     if (partners) {
@@ -17,7 +18,7 @@ class AboutPartners extends React.Component {
           <Col className="about-partners-columns" key={partner.sys.id}>
             <img
               className="flexible-image-width-100 max-width-200px"
-              src={partner.fields.aboutPagePartners[0].fields.file.url}
+              src={partner.fields.file.url}
             />
           </Col>
         );
