@@ -81,10 +81,14 @@ class Header extends React.Component {
             </NavLink>
             {/* <Link className="nav-link" to="/resources">
               {this.state.resourcesPage}
-            </Link>
-            <Link className="nav-link" to="/solutions">
-              {this.state.solutionsPage}
             </Link> */}
+            <NavLink
+              activeClassName="activeStyle"
+              className="nav-link"
+              to="/solutions"
+            >
+              {this.state.solutionsPage}
+            </NavLink>
             {this.props.country_code === "country_code=CN" && (
               <TranslateButton
                 locale={this.props.locale}
