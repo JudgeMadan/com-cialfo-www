@@ -9,3 +9,7 @@
 .solutions-subtitle {
   justify-content: center;
 }
+
+.solutions-bottom-spacing {
+  margin-bottom: 100px;
+}

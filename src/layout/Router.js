@@ -14,6 +14,10 @@ import Security from "../pages/Security";
 import FourOhFour from "../pages/FourOhFour";
 import ThankYou from "../pages/ThankYou";
 import Solutions from "../pages/Solutions";
+import SolutionsCounselors from "../pages/SolutionsCounselors";
+import SolutionsIT from "../pages/SolutionsIT";
+import SolutionsPrincipals from "../pages/SolutionsPrincipals";
+import SolutionsSuperintendents from "../pages/SolutionsSuperintendents";
 
 class Router extends React.Component {
   render() {
@@ -171,6 +175,54 @@ class Router extends React.Component {
           path="/solutions"
           render={() => (
             <Solutions
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/solutions/counselors"
+          render={() => (
+            <SolutionsCounselors
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/solutions/it"
+          render={() => (
+            <SolutionsIT
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/solutions/principals"
+          render={() => (
+            <SolutionsPrincipals
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/solutions/superintendents"
+          render={() => (
+            <SolutionsSuperintendents
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}

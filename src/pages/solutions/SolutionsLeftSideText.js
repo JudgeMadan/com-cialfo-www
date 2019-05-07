@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import "./solutions.css";
 import FeaturesBullets from "../features/FeaturesBullets";
 
-class SolutionsRightSideText extends React.Component {
+class SolutionsLeftSideText extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -57,9 +57,6 @@ class SolutionsRightSideText extends React.Component {
     return (
       <div>
         <Row>
-          <Col className="featureImage">
-            {/* <img src={this.state.researchInfoImg} /> */}
-          </Col>
           <Col className="featureSubSectionTextAlign">
             <Container>
               <Row>
@@ -78,10 +75,13 @@ class SolutionsRightSideText extends React.Component {
               </Row>
             </Container>
           </Col>
+          <Col className="featureImage">
+            {/* <img src={this.state.researchInfoImg} /> */}
+          </Col>
         </Row>
       </div>
     );
   }
 }
 
-export default SolutionsRightSideText;
+export default SolutionsLeftSideText;

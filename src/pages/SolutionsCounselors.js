@@ -5,19 +5,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
-import ReactPlayer from "react-player";
-import "./home/Home.css";
-import Documents from "../img/home/CDocs.svg";
-import ResearchImage from "../img/home/SchoolsOverview.svg";
-import Reports from "../img/home/Reports.svg";
-import Oval from "../img/Oval.svg";
-import Line from "../img/Line.svg";
-import SolutionsHeader from "./solutions/SolutionsHeader";
-import SolutionsRightSideText from "./solutions/SolutionsRightSideText";
-import SolutionsLeftSideText from "./solutions/SolutionsLeftSideText";
-import FeaturesSubfooter from "./features/FeaturesSubfooter";
-import HomePartnerImages from "./home/HomePartnerImages";
-class Solutions extends React.Component {
+import SolutionsSubPage from "./solutions/SolutionsSubPage";
+
+class SolutionsCounselors extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -67,17 +57,10 @@ class Solutions extends React.Component {
   render() {
     return (
       <Container className="homePageContainer">
-        <SolutionsHeader />
-        <SolutionsRightSideText />
-        <SolutionsLeftSideText />
-        <SolutionsRightSideText />
-        <div className="solutions-bottom-spacing" />
-        <HomePartnerImages />
-        <div className="solutions-bottom-spacing" />
-        <FeaturesSubfooter />
+        <SolutionsSubPage />
       </Container>
     );
   }
 }
 
-export default Solutions;
+export default SolutionsCounselors;
