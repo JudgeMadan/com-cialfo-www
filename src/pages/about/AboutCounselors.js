@@ -23,20 +23,21 @@ class AboutCounselors extends React.Component {
               <div className="innerObject ">
                 <Row>
                   <div>
-                    <p>{counselor.fields.aboutPageCounselorBlurb}</p>
+                    <p>{counselor.fields.aboutPageBusinessAdvisorBlurb}</p>
                   </div>
                 </Row>
                 <Row>
                   <Image
                     roundedCircle
                     src={
-                      counselor.fields.aboutPageCounselorImage.fields.file.url
+                      counselor.fields.aboutPageBusinessAdvisorImage.fields.file
+                        .url
                     }
                   />
                 </Row>
                 <Row>
                   <p className="secondary_font_bold">
-                    {counselor.fields.aboutPageCounselorTitle}
+                    {counselor.fields.aboutPageBusinessAdvisorTitle}
                   </p>
                 </Row>
                 <Row>

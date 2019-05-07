@@ -43,6 +43,7 @@ class About extends React.Component {
 
   setAboutContent = response => {
     const aboutContent = response.items[0].fields;
+    console.log(aboutContent);
     for (let key in aboutContent) {
       if (typeof aboutContent[key] === "string") {
         this.setState({
