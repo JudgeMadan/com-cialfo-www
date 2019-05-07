@@ -12,7 +12,6 @@ class AboutCounselors extends React.Component {
 
   render() {
     const counselors = this.props.counselors;
-    console.log(counselors);
     let counselorsObject;
 
     if (counselors) {
