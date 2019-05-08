@@ -11,43 +11,44 @@ class AboutCounselors extends React.Component {
   }
 
   render() {
-    const counselors = this.props.counselors;
-    console.log(counselors);
-    let counselorsObject;
+    const counselorsObject = this.props.counselors;
+    let counselorsObjectObject;
 
-    if (counselors) {
-      counselorsObject = counselors.map(counselor => {
+    if (counselorsObject) {
+      counselorsObjectObject = counselorsObject.map(counselorsObject => {
         return (
-          <Col xs={4} key={counselor.sys.id}>
+          <Col xs={4} key={counselorsObject.sys.id}>
             <Container className="counselor-advisor-container light-blue-background">
-              <div className="innerObject ">
+              <div className="counselor-advisor-container-inner-object">
                 <Row>
-                  <div>
-                    <p>{counselor.fields.aboutPageBusinessAdvisorBlurb}</p>
-                  </div>
+                  <p className="secondary_font">
+                    {counselorsObject.fields.aboutPageBusinessAdvisorBlurb}
+                  </p>
                 </Row>
                 <Row>
                   <Image
                     roundedCircle
                     src={
-                      counselor.fields.aboutPageBusinessAdvisorImage.fields.file
-                        .url
+                      counselorsObject.fields.aboutPageBusinessAdvisorImage
+                        .fields.file.url
                     }
                   />
                 </Row>
                 <Row>
-                  <p className="secondary_font_bold">
-                    {counselor.fields.aboutPageBusinessAdvisorTitle}
-                  </p>
+                  <div>
+                    <p className="secondary_font_bold">
+                      {counselorsObject.fields.aboutPageBusinessAdvisorTitle}
+                    </p>
+                  </div>
                 </Row>
                 <Row>
                   <p className="secondary_font reduced-margin-bottom">
-                    {counselor.fields.jobTitle}
+                    {counselorsObject.fields.jobTitle}
                   </p>
                 </Row>
                 <Row>
                   <p className="secondary_font">
-                    {counselor.fields.organization}
+                    {counselorsObject.fields.organization}
                   </p>
                 </Row>
               </div>
@@ -56,7 +57,7 @@ class AboutCounselors extends React.Component {
         );
       });
     }
-    return <Row>{counselorsObject}</Row>;
+    return <Row>{counselorsObjectObject}</Row>;
   }
 }
 

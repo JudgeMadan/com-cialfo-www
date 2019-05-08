@@ -105,10 +105,22 @@
 
 .aboutPageLeadershipTeam {
   margin-bottom: 350px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .leaderImage {
+  display: flex;
   margin-bottom: 75px;
+  flex-shrink: 2;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.leadership-team-container {
+  /* margin: 0 50px !important; */
+  margin: 15px 50px !important;
+  border: solid red 2px;
 }
 
 .leadershipObjectContainer {
@@ -116,12 +128,16 @@
   padding-bottom: 150px;
   padding-top: 50px;
   margin-bottom: 10px;
+  /* border: solid red 2px; */
+  max-width: 300px;
 }
 
 .leadershipObjectContent {
   align-content: center;
   justify-content: center;
   text-align: center;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
 }
 
 .partnersTitle {
@@ -161,13 +177,15 @@
 }
 
 .counselor-advisor-container {
-  margin: 15px 30px;
-  min-width: 350px;
-  height: 620px;
+  margin: 15px 5px;
+  min-height: 620px;
+  display: flex;
+  justify-content: center;
 }
 
-.innerObject {
-  padding: 40px;
+.counselor-advisor-container-inner-object {
+  padding: 20px;
+  font-size: 20px;
 }
 
 /* WORK FROM HERE */

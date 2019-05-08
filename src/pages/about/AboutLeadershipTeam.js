@@ -2,6 +2,7 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
 import "./About.css";
 
 class AboutLeadershipTeam extends React.Component {
@@ -16,10 +17,13 @@ class AboutLeadershipTeam extends React.Component {
     if (leadershipTeam) {
       leadershipTeamObject = leadershipTeam.map(leader => {
         return (
-          <Col key={leader.sys.id} className="mb-5">
-            <Container className="leadershipObjectContainer">
-              <Row className="leadershipObjectContent leaderImage">
-                <img src="https://via.placeholder.com/260x370/100" />
+          <Col xs={4} key={leader.sys.id} className="mb-5">
+            <Container className="leadership-team-container">
+              <Row className="leadershipObjectContent">
+                <Image
+                  className="leaderImage"
+                  src="https://via.placeholder.com/260x370/100"
+                />
               </Row>
               <Row className="leadershipObjectContent">
                 <h1 className="secondary_font_bold">
