@@ -72,7 +72,11 @@ class Solutions extends React.Component {
         <SolutionsLeftSideText />
         <SolutionsRightSideText />
         <div className="solutions-bottom-spacing" />
-        <HomePartnerImages />
+        <HomePartnerImages
+          locale={this.props.locale}
+          accessToken={this.props.accessToken}
+          space={this.props.space}
+        />
         <div className="solutions-bottom-spacing" />
         <FeaturesSubfooter />
       </Container>
