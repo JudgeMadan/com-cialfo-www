@@ -104,7 +104,6 @@
 }
 
 .aboutPageLeadershipTeam {
-  margin-bottom: 350px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -118,9 +117,7 @@
 }
 
 .leadership-team-container {
-  /* margin: 0 50px !important; */
-  margin: 15px 50px !important;
-  border: solid red 2px;
+  margin: 15px 10px !important;
 }
 
 .leadershipObjectContainer {
@@ -133,11 +130,8 @@
 }
 
 .leadershipObjectContent {
-  align-content: center;
   justify-content: center;
   text-align: center;
-  margin-left: 5px !important;
-  margin-right: 5px !important;
 }
 
 .partnersTitle {

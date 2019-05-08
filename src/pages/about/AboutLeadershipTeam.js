@@ -17,12 +17,12 @@ class AboutLeadershipTeam extends React.Component {
     if (leadershipTeam) {
       leadershipTeamObject = leadershipTeam.map(leader => {
         return (
-          <Col xs={4} key={leader.sys.id} className="mb-5">
-            <Container className="leadership-team-container">
+          <Col key={leader.sys.id}>
+            <div className="leadership-team-container">
               <Row className="leadershipObjectContent">
                 <Image
                   className="leaderImage"
-                  src="https://via.placeholder.com/260x370/100"
+                  src="https://picsum.photos/260/370"
                 />
               </Row>
               <Row className="leadershipObjectContent">
@@ -35,7 +35,7 @@ class AboutLeadershipTeam extends React.Component {
                   {leader.fields.aboutPageLeadersObjectSubtitle}
                 </h2>
               </Row>
-            </Container>
+            </div>
           </Col>
         );
       });

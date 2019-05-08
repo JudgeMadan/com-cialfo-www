@@ -103,120 +103,127 @@ class GetADemo extends React.Component {
         <Row className="demoTextTitleContainer secondary_font">
           <h1 className="demoTextTitle">{this.state.getADemoTitle}</h1>
         </Row>
-        <Container className="demo_form_container">
-          <form
-            method="POST"
-            action="https://cialfo51705.activehosted.com/proc.php"
-            id="_form_2_"
-            class="_form _form_2 _inline-form  _dark"
-            novalidate
-          >
-            <input type="hidden" name="u" value="2" />
-            <input type="hidden" name="f" value="2" />
-            <input type="hidden" name="s" />
-            <input type="hidden" name="c" value="0" />
-            <input type="hidden" name="m" value="0" />
-            <input type="hidden" name="act" value="sub" />
-            <input type="hidden" name="v" value="2" />
-            <div class="_form-content">
-              <Row className="title_row">
-                <div className="_form_element _x36013235 _full_width _clear primary_font form_title_container">
-                  <div className="_form-title primary_font form_title">
-                    {this.state.getADemoFormTitle}
+        <Row className="demo-form-object-container">
+          <div className="demo_form_container">
+            <form
+              method="POST"
+              action="https://cialfo51705.activehosted.com/proc.php"
+              id="_form_2_"
+              class="_form _form_2 _inline-form  _dark"
+              novalidate
+            >
+              <input type="hidden" name="u" value="2" />
+              <input type="hidden" name="f" value="2" />
+              <input type="hidden" name="s" />
+              <input type="hidden" name="c" value="0" />
+              <input type="hidden" name="m" value="0" />
+              <input type="hidden" name="act" value="sub" />
+              <input type="hidden" name="v" value="2" />
+              <div class="_form-content">
+                <Row className="title_row">
+                  <div className="_form_element _x36013235 _full_width _clear primary_font form_title_container">
+                    <div className="_form-title primary_font form_title">
+                      {this.state.getADemoFormTitle}
+                    </div>
                   </div>
-                </div>
-              </Row>
-              <Row>
-                <div class="_form_element _x18120362 _full_width left_content_row">
-                  <label className="_form-label secondary_font">
-                    {this.state.getADemoName}
-                  </label>
-                  <div class="_field-wrapper">
-                    <input
-                      type="text"
-                      name="firstname"
-                      placeholder={this.state.getADemoNamePlaceholder}
-                      className="input_style"
-                    />
+                </Row>
+                <Row>
+                  <div class="_form_element _x18120362 _full_width left_content_row">
+                    <label className="_form-label secondary_font">
+                      {this.state.getADemoName}
+                    </label>
+                    <div class="_field-wrapper">
+                      <input
+                        type="text"
+                        name="firstname"
+                        placeholder={this.state.getADemoNamePlaceholder}
+                        className="input_style"
+                        required
+                      />
+                    </div>
                   </div>
-                </div>
-                <div class="_form_element _x44797314 _full_width ">
-                  <label class="_form-label secondary_font">
-                    {this.state.getADemoEmail}
-                  </label>
-                  <div class="_field-wrapper">
-                    <input
-                      value={this.state.email}
-                      type="email"
-                      name="email"
-                      placeholder={this.state.getADemoEmailPlaceholder}
-                      className="input_style"
-                      onChange={this.handleChange}
-                    />
+                  <div class="_form_element _x44797314 _full_width ">
+                    <label class="_form-label secondary_font">
+                      {this.state.getADemoEmail}
+                    </label>
+                    <div class="_field-wrapper">
+                      <input
+                        value={this.state.email}
+                        type="email"
+                        name="email"
+                        placeholder={this.state.getADemoEmailPlaceholder}
+                        className="input_style"
+                        onChange={this.handleChange}
+                        required
+                      />
+                    </div>
                   </div>
-                </div>
-              </Row>
-              <Row>
-                <div class="_form_element _x80848159 _full_width left_content_row">
-                  <label class="_form-label secondary_font">
-                    {this.state.getADemoOrg}
-                  </label>
-                  <div class="_field-wrapper">
-                    <input
-                      type="text"
-                      name="organization"
-                      placeholder={this.state.getADemoOrgPlaceholder}
-                      className="input_style"
-                    />
+                </Row>
+                <Row>
+                  <div class="_form_element _x80848159 _full_width left_content_row">
+                    <label class="_form-label secondary_font">
+                      {this.state.getADemoOrg}
+                    </label>
+                    <div class="_field-wrapper">
+                      <input
+                        type="text"
+                        name="organization"
+                        placeholder={this.state.getADemoOrgPlaceholder}
+                        className="input_style"
+                        required
+                      />
+                    </div>
                   </div>
-                </div>
-                <div class="_form_element _x04697005 _full_width ">
-                  <label class="_form-label secondary_font">
-                    {this.state.getADemoMobile}
-                  </label>
-                  <div class="_field-wrapper">
-                    <input
-                      type="text"
-                      name="phone"
-                      placeholder={this.state.getADemoMobilePlaceholder}
-                      className="input_style"
-                    />
+                  <div class="_form_element _x04697005 _full_width ">
+                    <label class="_form-label secondary_font">
+                      {this.state.getADemoMobile}
+                    </label>
+                    <div class="_field-wrapper">
+                      <input
+                        type="text"
+                        name="phone"
+                        placeholder={this.state.getADemoMobilePlaceholder}
+                        className="input_style"
+                        required
+                      />
+                    </div>
                   </div>
-                </div>
-              </Row>
-              <Row>
-                <div class="_form_element _x98882726 _full_width left_content_row">
-                  <label class="_form-label secondary_font">
-                    {this.state.getADemoNumberOfStudents}
-                  </label>
-                  <div class="_field-wrapper">
-                    <input
-                      type="number"
-                      name="lastname"
-                      placeholder={
-                        this.state.getADemoNumberOfStudentsPlaceholder
-                      }
-                      className="input_style"
-                    />
+                </Row>
+                <Row>
+                  <div class="_form_element _x98882726 _full_width left_content_row">
+                    <label class="_form-label secondary_font">
+                      {this.state.getADemoNumberOfStudents}
+                    </label>
+                    <div class="_field-wrapper">
+                      <input
+                        type="number"
+                        name="lastname"
+                        placeholder={
+                          this.state.getADemoNumberOfStudentsPlaceholder
+                        }
+                        className="input_style"
+                        required
+                      />
+                    </div>
                   </div>
-                </div>
-              </Row>
-              <Row className="title_row">
-                <div class="_button-wrapper _full_width">
-                  <button
-                    id="_form_2_submit"
-                    className="_submit submit_button"
-                    type="submit"
-                  >
-                    {this.state.getAdemoSubmitButtonText}
-                  </button>
-                </div>
-              </Row>
-              <div class="_clear-element" />
-            </div>
-            <div class="_form-thank-you" />
-          </form>
-        </Container>
+                </Row>
+                <Row className="title_row">
+                  <div class="_button-wrapper _full_width">
+                    <button
+                      id="_form_2_submit"
+                      className="_submit submit_button"
+                      type="submit"
+                    >
+                      {this.state.getAdemoSubmitButtonText}
+                    </button>
+                  </div>
+                </Row>
+                <div class="_clear-element" />
+              </div>
+              <div class="_form-thank-you" />
+            </form>
+          </div>
+        </Row>
         <Row>
           <FeaturesSubfooter
             img={this.state.getADemoSubfooterImg}
