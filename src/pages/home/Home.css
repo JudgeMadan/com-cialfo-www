@@ -316,6 +316,26 @@
   margin-left: -50px;
 }
 
+.left-align-light-blue-background {
+  position: absolute;
+  z-index: 1;
+  margin-top: -100px;
+  margin-left: -1250px;
+}
+
+.custom-left-align-light-blue-background {
+  position: absolute;
+  z-index: 1;
+  margin-left: -1000px;
+}
+
+.right-align-light-blue-background {
+  position: absolute;
+  z-index: 1;
+
+  margin-left: 1000px;
+}
+
 .video {
   position: relative;
   display: flex;

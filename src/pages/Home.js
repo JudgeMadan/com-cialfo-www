@@ -14,6 +14,7 @@ import Documents from "../img/home/CDocs.svg";
 import ResearchImage from "../img/home/SchoolsOverview.svg";
 import Reports from "../img/home/Reports.svg";
 import Stroke10 from "../img/home/Stroke10.svg";
+import LightBlueRectangle from "../img/home/LightBlueRectangle.svg";
 import Oval from "../img/Oval.svg";
 import Line from "../img/Line.svg";
 import MediaQuery from "react-responsive";
@@ -193,6 +194,10 @@ class Home extends React.Component {
             <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
               <div>
                 <img className="stroke-10" src={Stroke10} />
+                <img
+                  className="left-align-light-blue-background"
+                  src={LightBlueRectangle}
+                />
                 <img className="homePageImg" src={Documents} />
               </div>
             </Col>
@@ -243,7 +248,7 @@ class Home extends React.Component {
                     className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
                     to="/features/send"
                   >
-                    {this.state.homePageFeaturesSendDocumentLinkText}
+                    <p>{this.state.homePageFeaturesSendDocumentLinkText}</p>
                   </Link>
                 </Row>
               </div>
@@ -276,6 +281,10 @@ class Home extends React.Component {
             </Col>
             <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
               <img className="homePageImg" src={ResearchImage} />
+              <img
+                className="right-align-light-blue-background"
+                src={LightBlueRectangle}
+              />
             </Col>
           </Row>
         </MediaQuery>
@@ -312,6 +321,10 @@ class Home extends React.Component {
           <Row className="featureRows">
             <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
               <img className="homePageImg" src={Reports} />
+              <img
+                className="custom-left-align-light-blue-background"
+                src={LightBlueRectangle}
+              />
             </Col>
             <Col className="homePageFeaturesText">
               <div className="homePageFeaturesRightSideTextObject">
