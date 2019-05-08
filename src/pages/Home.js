@@ -180,7 +180,11 @@ class Home extends React.Component {
           </Row>
           {/* keep div to permit overflow */}
           <div className="homeMarquee">
-            <HomeMarquee locale={this.props.locale} />
+            <HomeMarquee
+              locale={this.props.locale}
+              accessToken={this.props.accessToken}
+              space={this.props.space}
+            />
           </div>
         </MediaQuery>
         {/* FULL SCREEN SEND DOCUMENTS FEATURE */}
@@ -386,6 +390,8 @@ class Home extends React.Component {
             locale={this.props.locale}
             className="homePartnerImages"
             partnerImages={this.state.homePagePoweredByOurPartnersPartners}
+            accessToken={this.props.accessToken}
+            space={this.props.space}
           />
         </MediaQuery>
         <MediaQuery query="(max-device-width: 1223px)">
@@ -410,6 +416,8 @@ class Home extends React.Component {
             locale={this.props.locale}
             className="homePartnerImages"
             partnerImages={this.state.homePagePoweredByOurPartnersPartners}
+            accessToken={this.props.accessToken}
+            space={this.props.space}
           />
         </MediaQuery>
       </Container>

@@ -57,7 +57,6 @@ class AboutBusinessAdvisors extends React.Component {
         );
       });
     }
-
     return <Row>{businessAdvisorsObject}</Row>;
   }
 }

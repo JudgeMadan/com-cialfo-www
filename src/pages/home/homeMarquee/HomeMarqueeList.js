@@ -9,9 +9,8 @@ class HomeMarqueeList extends React.Component {
   }
 
   client = contentful.createClient({
-    space: "1acwuo4zy8aa",
-    accessToken:
-      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
+    space: this.props.space,
+    accessToken: this.props.accessToken
   });
 
   componentDidUpdate(prevProps) {
@@ -31,6 +30,7 @@ class HomeMarqueeList extends React.Component {
     });
 
   setAboutContent = response => {
+    console.log(response);
     const marqueeItemArray = response.items;
     this.setState({
       marqueeItemArray: marqueeItemArray

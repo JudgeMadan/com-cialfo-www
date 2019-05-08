@@ -9,7 +9,7 @@ class AboutPartners extends React.Component {
 
   render() {
     const partners = this.props.partners;
-    console.log(partners);
+    // console.log(partners);
     let partnersObject;
 
     if (partners) {

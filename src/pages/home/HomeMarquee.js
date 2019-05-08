@@ -16,8 +16,16 @@ class HomeMarquee extends React.Component {
       <MediaQuery query="(min-device-width: 1224px)">
         <div className="marquee">
           <div className="marquee--inner">
-            <HomeMarqueeList locale={this.props.locale} />
-            <HomeMarqueeList locale={this.props.locale} />
+            <HomeMarqueeList
+              locale={this.props.locale}
+              accessToken={this.props.accessToken}
+              space={this.props.space}
+            />
+            <HomeMarqueeList
+              locale={this.props.locale}
+              accessToken={this.props.accessToken}
+              space={this.props.space}
+            />
           </div>
           <img className="marquee-oval" src={BlueOval} />
           <img className="marquee-line" src={Line} />
