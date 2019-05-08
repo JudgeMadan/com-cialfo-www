@@ -173,7 +173,7 @@ class About extends React.Component {
             </h1>
           </Row>
         </MediaQuery>
-        <Row className="center-in-row aboutPageLeadershipTeam">
+        <Row className="aboutPageLeadershipTeam">
           <AboutLeadershipTeam
             leadershipTeam={this.state.aboutPageLeadershipLeaders}
           />
