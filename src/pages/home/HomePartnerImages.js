@@ -13,9 +13,8 @@ class HomePartnerImages extends React.Component {
   }
 
   client = contentful.createClient({
-    space: "1acwuo4zy8aa",
-    accessToken:
-      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
+    space: this.props.space,
+    accessToken: this.props.accessToken
   });
 
   componentDidMount() {
@@ -66,14 +65,12 @@ class HomePartnerImages extends React.Component {
     return (
       <div className="home-partners-image-container">
         <Container className="home-partners-image-content">
-          {/* <div className="home-partners-image-content"> */}
           <Row className="imageObjectTitle">
             <h1 className="primary_font ">
               {this.state.homePagePoweredByOurPartnersTitle}
             </h1>
           </Row>
           <Row className="imageObjectRow">{imageObject}</Row>
-          {/* </div> */}
         </Container>
       </div>
     );

@@ -136,7 +136,7 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
-          path="/privacy"
+          path="/security"
           render={() => (
             <Privacy
               locale={this.props.locale}
@@ -148,7 +148,7 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
-          path="/security"
+          path="/privacy"
           render={() => (
             <Security
               locale={this.props.locale}
