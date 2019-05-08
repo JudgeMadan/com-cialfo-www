@@ -123,7 +123,11 @@ class FeaturesSend extends React.Component {
         <Row />
         <Row className="featureSendPartnersTitle">
           <div className="full-width-light-blue">
-            <HomePartnerImages locale={this.props.locale} />
+            <HomePartnerImages
+              locale={this.props.locale}
+              accessToken={this.props.accessToken}
+              space={this.props.space}
+            />
           </div>
         </Row>
         <Row>
