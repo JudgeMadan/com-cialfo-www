@@ -62,25 +62,21 @@ class Features extends React.Component {
   render() {
     return (
       <Container className="homePageContainer">
-        <div className="lower-features-partial-width-dark-blue">
-          <Row className="titleContainer">
-            <h1 className="primary_font">{this.state.featuresTitle}</h1>
-          </Row>
-        </div>
-        <div className="features-partial-width-dark-blue">
-          <Row className="featuresVideoEmbed">
-            <div>
-              <img className="oval" src={Oval} />
-              <img className="line" src={Line} />
-              <ReactPlayer
-                className="video"
-                width="800px"
-                height="488px"
-                url={this.state.featuresVideo}
-              />
-            </div>
-          </Row>
-        </div>
+        <Row className="titleContainer">
+          <h1 className="primary_font">{this.state.featuresTitle}</h1>
+        </Row>
+        <Row className="featuresVideoEmbed">
+          <div>
+            <img className="oval" src={Oval} />
+            <img className="line" src={Line} />
+            <ReactPlayer
+              className="video"
+              width="800px"
+              height="488px"
+              url={this.state.featuresVideo}
+            />
+          </div>
+        </Row>
         <Row className="homePageSchoolTestimonialsTitle">
           <h1 className="primary_font">
             {this.state.homePageSchoolTestimonialsTitle}

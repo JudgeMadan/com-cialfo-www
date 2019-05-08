@@ -202,15 +202,23 @@
 }
 
 .officesContainer {
-  padding: 10% 5%;
   background-color: #2b1f31;
   color: white;
+  height: 375px;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
 }
 
 .officeImgContainer {
   display: flex;
-  justify-content: center;
-  margin-bottom: 5%;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 200px;
+}
+
+.office-image {
+  align-self: center;
 }
 
 .offices_row {
@@ -220,6 +228,10 @@
 }
 .officeTitle {
   color: white;
+}
+
+.office-text-container {
+  height: 140px;
 }
 
 .white-text {
