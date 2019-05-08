@@ -12,6 +12,7 @@ import ResearchImage from "../img/home/SchoolsOverview.svg";
 import Reports from "../img/home/Reports.svg";
 import Oval from "../img/Oval.svg";
 import Line from "../img/Line.svg";
+import LightBlueRectangle from "../img/home/LightBlueRectangle.svg";
 class Features extends React.Component {
   constructor(props) {
     super(props);
@@ -92,6 +93,10 @@ class Features extends React.Component {
         <Row className="featureRows">
           <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
             <img className="homePageImg" src={Documents} />
+            <img
+              className="features-left-align-light-blue-background"
+              src={LightBlueRectangle}
+            />
           </Col>
           <Col className="homePageFeaturesText">
             <div className="homePageFeaturesRightSideTextObject">
@@ -141,11 +146,19 @@ class Features extends React.Component {
           </Col>
           <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
             <img className="homePageImg" src={ResearchImage} />
+            <img
+              className="features-right-align-light-blue-background"
+              src={LightBlueRectangle}
+            />
           </Col>
         </Row>
         <Row className="featureRows">
           <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
             <img className="homePageImg" src={Reports} />
+            <img
+              className="features-left-align-light-blue-background"
+              src={LightBlueRectangle}
+            />
           </Col>
           <Col className="homePageFeaturesText">
             <div className="homePageFeaturesRightSideTextObject">
