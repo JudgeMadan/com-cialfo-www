@@ -1,6 +1,7 @@
 import React from "react";
 import HomeMarqueeListObject from "./homeMarqueeList/HomeMarqueeListObject";
 import * as contentful from "contentful";
+import { LinkExternal } from "@githubprimer/octicons-react";
 
 class HomeMarqueeList extends React.Component {
   constructor(props) {
@@ -30,7 +31,6 @@ class HomeMarqueeList extends React.Component {
     });
 
   setAboutContent = response => {
-    console.log(response);
     const marqueeItemArray = response.items;
     this.setState({
       marqueeItemArray: marqueeItemArray
@@ -42,7 +42,10 @@ class HomeMarqueeList extends React.Component {
     let marqueeItemArray;
 
     if (marqueeItemArrays) {
-      marqueeItemArray = marqueeItemArrays.map(marqueeItemArray => {
+      let filteredmarqueeItemArrays = marqueeItemArrays.filter(
+        marqueeItem => marqueeItem.fields.marqueeType === "testimonial"
+      );
+      marqueeItemArray = filteredmarqueeItemArrays.map(marqueeItemArray => {
         return (
           <HomeMarqueeListObject
             key={marqueeItemArray.sys.id}
