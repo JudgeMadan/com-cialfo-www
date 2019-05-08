@@ -40,31 +40,37 @@ class Solutions extends React.Component {
 
   fetchFeatures = () => {
     return this.client.getEntries({
-      content_type: "featuresPage",
+      content_type: "homePageHeaderProductImage",
       locale: this.props.locale
     });
   };
 
   setFeatures = response => {
-    const featureContent = response.items[0].fields;
-    for (let key in featureContent) {
-      if (typeof featureContent[key] === "string") {
+    const solutionsContent = response.items;
+    let filteredSolutionsContent = solutionsContent.filter(
+      solution => solution.fields.pageType === "solutions"
+    );
+    let filteredSolutionsContentFields = filteredSolutionsContent[0].fields;
+    // console.log(filteredSolutionsContentFields);
+    for (let key in filteredSolutionsContentFields) {
+      if (typeof filteredSolutionsContentFields[key] === "string") {
         this.setState({
-          [key]: featureContent[key]
+          [key]: filteredSolutionsContentFields[key]
         });
-      } else if (Array.isArray(featureContent[key])) {
+      } else if (Array.isArray(filteredSolutionsContentFields[key])) {
         this.setState({
-          [key]: featureContent[key]
+          [key]: filteredSolutionsContentFields[key]
         });
       } else {
         this.setState({
-          [key]: featureContent[key].fields.file.url
+          [key]: filteredSolutionsContentFields[key].fields.file.url
         });
       }
     }
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container className="homePageContainer">
         <SolutionsHeader />
@@ -78,7 +84,11 @@ class Solutions extends React.Component {
           space={this.props.space}
         />
         <div className="solutions-bottom-spacing" />
-        <FeaturesSubfooter />
+        <FeaturesSubfooter
+          img={this.state.solutionsSubfooterImg}
+          quote={this.state.solutionsSubfooterQuote}
+          quoteAuthor={this.state.solutionsSubfooterQuoteAuthor}
+        />
       </Container>
     );
   }
