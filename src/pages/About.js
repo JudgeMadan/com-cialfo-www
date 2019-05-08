@@ -60,6 +60,7 @@ class About extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container className="aboutPage">
         {/* FULL SCREEN HEADER */}
@@ -148,13 +149,13 @@ class About extends React.Component {
               />
             </div>
             {/* </Col> */}
-            {/* <Col className="aboutPageWhoWeAreContentContainer"> */}
-            <Row>
-              <p className="mobile-aboutPageWhoWeAreContent">
-                {this.state.aboutPageWhoWeAreContent}
-              </p>
-            </Row>
-            {/* </Col> */}
+            <Col className="aboutPageWhoWeAreContentContainer">
+              <Row>
+                <p className="mobile-aboutPageWhoWeAreContent">
+                  {this.state.aboutPageWhoWeAreContent}
+                </p>
+              </Row>
+            </Col>
           </Row>
         </MediaQuery>
         {/* Full Screen LeadershipTitle */}
