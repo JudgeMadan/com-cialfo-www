@@ -368,23 +368,25 @@ class Home extends React.Component {
         </MediaQuery>
         <MediaQuery query="(min-device-width: 1224px)">
           <div className="homePageVideoCaseStudy">
-            <Row className="homePageVideoCaseStudyTitle">
-              <h1 className="primary_font white-font mobile-home-page-video-case-study-title">
-                {this.state.homePageVideoCaseStudyTitle}
-              </h1>
-            </Row>
-            <Row className="homePageVideoCaseStudyVideoEmbed">
-              <div>
-                <img className="oval" src={Oval} />
-                <img className="line" src={Line} />
-                <ReactPlayer
-                  className="video"
-                  width="800px"
-                  height="448px"
-                  url={this.state.homePageVideoCaseStudyVideoEmbed}
-                />
-              </div>
-            </Row>
+            <div className="partial-width-dark-blue">
+              <Row className="homePageVideoCaseStudyTitle">
+                <h1 className="primary_font white-font mobile-home-page-video-case-study-title">
+                  {this.state.homePageVideoCaseStudyTitle}
+                </h1>
+              </Row>
+              <Row className="homePageVideoCaseStudyVideoEmbed">
+                <div>
+                  <img className="oval" src={Oval} />
+                  <img className="line" src={Line} />
+                  <ReactPlayer
+                    className="video"
+                    width="800px"
+                    height="448px"
+                    url={this.state.homePageVideoCaseStudyVideoEmbed}
+                  />
+                </div>
+              </Row>
+            </div>
           </div>
           <HomePartnerImages
             locale={this.props.locale}
