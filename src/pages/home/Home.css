@@ -167,13 +167,13 @@
   margin: 0 10%;
 }
 
-.homePageFeaturesImageBackground {
+/* .homePageFeaturesImageBackground {
   background: linear-gradient(90deg, #ebf9ff 50%, white 50%);
-}
+} */
 
-.homePageFeaturesImageBackgroundReverse {
+/* .homePageFeaturesImageBackgroundReverse {
   background: linear-gradient(90deg, white 50%, #ebf9ff 50%);
-}
+} */
 
 .homeMarquee {
   margin-bottom: 100px;
@@ -326,14 +326,13 @@
 .custom-left-align-light-blue-background {
   position: absolute;
   z-index: 1;
-  margin-left: -1000px;
+  margin-left: -800px;
 }
 
 .right-align-light-blue-background {
   position: absolute;
   z-index: 1;
-
-  margin-left: 1000px;
+  margin-left: 750px;
 }
 
 .video {
