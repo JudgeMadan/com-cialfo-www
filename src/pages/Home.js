@@ -52,19 +52,25 @@ class Home extends React.Component {
     });
 
   setHomeContent = response => {
-    const homeContent = response.items[0].fields;
-    for (let key in homeContent) {
-      if (typeof homeContent[key] === "string") {
+    const homeContent = response.items;
+    let filteredhomeContent = homeContent.filter(
+      homeContent => homeContent.fields.pageType === "homePage"
+    );
+    let filteredhomeContentFields = filteredhomeContent[0].fields;
+    for (let key in filteredhomeContentFields) {
+      if (typeof filteredhomeContentFields[key] === "string") {
         this.setState({
-          [key]: homeContent[key]
+          [key]: filteredhomeContentFields[key]
         });
-      } else if (Array.isArray(homeContent[key])) {
+      } else if (Array.isArray(filteredhomeContentFields[key])) {
         this.setState({
-          [key]: homeContent[key].map(test => test.fields.file.url)
+          [key]: filteredhomeContentFields[key].map(
+            test => test.fields.file.url
+          )
         });
       } else {
         this.setState({
-          [key]: homeContent[key].fields.file.url
+          [key]: filteredhomeContentFields[key].fields.file.url
         });
       }
     }
