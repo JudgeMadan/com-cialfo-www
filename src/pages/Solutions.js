@@ -20,7 +20,12 @@ import HomePartnerImages from "./home/HomePartnerImages";
 class Solutions extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      forCounselors: "solutions-counselors-link-text",
+      forIT: "solutions-it-link-text",
+      forPrincipals: "solutions-principals-link-text",
+      forSuperintendents: "solutions-superintendents-link-text"
+    };
   }
 
   client = contentful.createClient({
@@ -82,24 +87,28 @@ class Solutions extends React.Component {
           blurb={this.state.homePageFeaturesSendDocumentBlurb}
           link={this.state.homePageFeaturesSendDocumentLinkText}
           url={this.state.homePageFeaturesSendDocumentLinkUrl}
+          linkStyle={this.state.forCounselors}
         />
         <SolutionsLeftSideText
           title={this.state.homePageFeaturesLeverageTitle}
           blurb={this.state.homePageFeaturesLeverageBlurb}
           link={this.state.homePageFeaturesLeverageLinkText}
           url={this.state.homePageFeaturesLeverageLinkUrl}
+          linkStyle={this.state.forIT}
         />
         <SolutionsRightSideText
           title={this.state.homePageFeaturesDiscoverTitle}
           blurb={this.state.homePageFeaturesDiscoverBlurb}
           link={this.state.homePageFeaturesDiscoverLinkText}
           url={this.state.homePageFeaturesDiscoveryLinkUrl}
+          linkStyle={this.state.forPrincipals}
         />
         <SolutionsLeftSideText
           title={this.state.solutionsExtraTitle}
           blurb={this.state.solutionsExtraBlurb}
           link={this.state.solutionsExtraLinkText}
           url={this.state.solutionsExtraLinkUrl}
+          linkStyle={this.state.forSuperintendents}
         />
         <div className="solutions-bottom-spacing" />
         <HomePartnerImages

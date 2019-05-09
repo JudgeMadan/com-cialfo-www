@@ -10,12 +10,12 @@ class SolutionsHeader extends React.Component {
   render() {
     // console.log(this.props);
     return (
-      <div>
+      <div className="solutions-header">
         <Row className="solutions-title">
           <h1 className="primary_font">{this.props.title}</h1>
         </Row>
         <Row className="solutions-subtitle">
-          <h5>{this.props.subtitle}</h5>
+          <p className="secondary_font">{this.props.subtitle}</p>
         </Row>
       </div>
     );
