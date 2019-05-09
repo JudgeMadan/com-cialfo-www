@@ -41,19 +41,23 @@ class About extends React.Component {
     });
 
   setAboutContent = response => {
-    const aboutContent = response.items[0].fields;
-    for (let key in aboutContent) {
-      if (typeof aboutContent[key] === "string") {
+    const aboutContent = response.items;
+    let filteredaboutContent = aboutContent.filter(
+      aboutContent => aboutContent.fields.pageType === "aboutPage"
+    );
+    let filteredaboutContentFields = filteredaboutContent[0].fields;
+    for (let key in filteredaboutContentFields) {
+      if (typeof filteredaboutContentFields[key] === "string") {
         this.setState({
-          [key]: aboutContent[key]
+          [key]: filteredaboutContentFields[key]
         });
-      } else if (Array.isArray(aboutContent[key])) {
+      } else if (Array.isArray(filteredaboutContentFields[key])) {
         this.setState({
-          [key]: aboutContent[key]
+          [key]: filteredaboutContentFields[key]
         });
       } else {
         this.setState({
-          [key]: aboutContent[key].fields.file.url
+          [key]: filteredaboutContentFields[key].fields.file.url
         });
       }
     }

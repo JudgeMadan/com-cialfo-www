@@ -18,6 +18,7 @@ import SolutionsCounselors from "../pages/SolutionsCounselors";
 import SolutionsIT from "../pages/SolutionsIT";
 import SolutionsPrincipals from "../pages/SolutionsPrincipals";
 import SolutionsSuperintendents from "../pages/SolutionsSuperintendents";
+import Events from "../pages/Events";
 
 class Router extends React.Component {
   render() {
@@ -223,6 +224,18 @@ class Router extends React.Component {
           path="/solutions/superintendents"
           render={() => (
             <SolutionsSuperintendents
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/events"
+          render={() => (
+            <Events
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
