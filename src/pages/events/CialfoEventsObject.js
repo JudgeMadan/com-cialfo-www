@@ -2,6 +2,9 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Pin from "../../img/Pin.svg";
+import Calendar from "../../img/Calendar.svg";
+import "./Events.css";
 const moment = require("moment");
 
 class CialfoEventsObject extends React.Component {
@@ -19,25 +22,39 @@ class CialfoEventsObject extends React.Component {
         return (
           <Col xs={4} key={event.sys.id}>
             <Container className="light-blue-background">
-              <div className="innerObject ">
+              <div className="event-inner-object">
                 <Row>
                   <div>
-                    <h1>{event.fields.aboutPageBusinessAdvisorTitle}</h1>
+                    <h1 className="primary_font">
+                      {event.fields.aboutPageBusinessAdvisorTitle}
+                    </h1>
+                  </div>
+                </Row>
+                <Row className="events-blurb">
+                  <div>
+                    <p className="secondary_font">
+                      {event.fields.aboutPageBusinessAdvisorBlurb}
+                    </p>
                   </div>
                 </Row>
                 <Row>
-                  <div>
-                    <p>{event.fields.aboutPageBusinessAdvisorBlurb}</p>
-                  </div>
+                  <img src={Pin} />
+                  <p className="secondary_font event-remove-margin-bottom event-bold">
+                    &nbsp; &nbsp;
+                    {event.fields.eventsCity}
+                  </p>
+                </Row>
+                <Row className="pb-3">
+                  <img src={Calendar} />
+                  <p className="secondary_font event-remove-margin-bottom event-bold">
+                    &nbsp; &nbsp;
+                    {showDate}
+                  </p>
                 </Row>
                 <Row>
-                  <p>{event.fields.eventsCity}</p>
-                </Row>
-                <Row>
-                  <p>{showDate}</p>
-                </Row>
-                <Row>
-                  <a href={event.fields.eventsRsvpLink}>RSVP</a>
+                  <a className="event-link" href={event.fields.eventsRsvpLink}>
+                    RSVP
+                  </a>
                 </Row>
               </div>
             </Container>
