@@ -12,7 +12,7 @@ import ResearchImage from "../img/home/SchoolsOverview.svg";
 import Reports from "../img/home/Reports.svg";
 import Oval from "../img/Oval.svg";
 import Line from "../img/Line.svg";
-import LightBlueRectangle from "../img/home/LightBlueRectangle.svg";
+import LightBlueRectangle from "../img/LightBlueRectangle.svg";
 class Features extends React.Component {
   constructor(props) {
     super(props);

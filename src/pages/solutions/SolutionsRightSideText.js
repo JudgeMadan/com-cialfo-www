@@ -1,9 +1,8 @@
 import React from "react";
-import * as contentful from "contentful";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
-import Container from "react-bootstrap/Container";
+import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 import "./solutions.css";
 
 class SolutionsRightSideText extends React.Component {
@@ -15,7 +14,12 @@ class SolutionsRightSideText extends React.Component {
     return (
       <div>
         <Row>
-          <Col className="featureImage" />
+          <Col className="featureImage">
+            <img
+              className="left-align-light-blue-background"
+              src={ThinLightBlueRectangle}
+            />
+          </Col>
           <Col className="featureSubSectionTextAlign">
             <div className="homePageFeaturesRightSideTextObject">
               <Row>

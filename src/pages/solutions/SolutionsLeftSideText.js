@@ -3,6 +3,7 @@ import * as contentful from "contentful";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./solutions.css";
+import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 import { Link } from "react-router-dom";
 
 class SolutionsLeftSideText extends React.Component {
@@ -33,7 +34,12 @@ class SolutionsLeftSideText extends React.Component {
               </Row>
             </div>
           </Col>
-          <Col className="featureImage" />
+          <Col className="featureImage">
+            <img
+              className="right-align-light-blue-background"
+              src={ThinLightBlueRectangle}
+            />
+          </Col>
         </Row>
       </div>
     );
