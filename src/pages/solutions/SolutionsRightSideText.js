@@ -29,11 +29,8 @@ class SolutionsRightSideText extends React.Component {
                 <p className="secondary_font">{this.props.blurb}</p>
               </Row>
               <Row>
-                <Link
-                  className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
-                  to={this.props.url}
-                >
-                  {this.props.link}
+                <Link className="homeFeatureLink" to={this.props.url}>
+                  <p className={this.props.linkStyle}>{this.props.link}</p>
                 </Link>
               </Row>
             </div>
