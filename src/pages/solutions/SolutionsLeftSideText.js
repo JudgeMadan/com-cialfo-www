@@ -36,7 +36,7 @@ class SolutionsLeftSideText extends React.Component {
           </Col>
           <Col className="featureImage">
             <img
-              className="right-align-light-blue-background"
+              className="solutions-right-align-light-blue-background"
               src={ThinLightBlueRectangle}
             />
           </Col>
