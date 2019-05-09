@@ -2,9 +2,8 @@ import React from "react";
 import * as contentful from "contentful";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 import "./solutions.css";
-import FeaturesBullets from "../features/FeaturesBullets";
+import { Link } from "react-router-dom";
 
 class SolutionsLeftSideText extends React.Component {
   constructor(props) {
@@ -12,72 +11,29 @@ class SolutionsLeftSideText extends React.Component {
     this.state = {};
   }
 
-  // client = contentful.createClient({
-  //   space: this.props.space,
-  //   accessToken: this.props.accessToken
-  // });
-
-  // componentDidMount() {
-  //   this.fetchFeatures().then(this.setFeatures);
-  // }
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.locale !== this.props.locale) {
-  //     this.fetchFeatures().then(this.setFeatures);
-  //   }
-  // }
-
-  // fetchFeatures = () => {
-  //   return this.client.getEntries({
-  //     content_type: "featuresPage",
-  //     locale: this.props.locale
-  //   });
-  // };
-
-  // setFeatures = response => {
-  //   const featureContent = response.items[0].fields;
-  //   for (let key in featureContent) {
-  //     if (typeof featureContent[key] === "string") {
-  //       this.setState({
-  //         [key]: featureContent[key]
-  //       });
-  //     } else if (Array.isArray(featureContent[key])) {
-  //       this.setState({
-  //         [key]: featureContent[key]
-  //       });
-  //     } else {
-  //       this.setState({
-  //         [key]: featureContent[key].fields.file.url
-  //       });
-  //     }
-  //   }
-  // };
-
   render() {
     return (
       <div>
         <Row>
-          <Col className="featureSubSectionTextAlign">
-            <Container>
+          <Col className="homePageFeaturesText">
+            <div className="homePageFeaturesLeftSideTextObject">
               <Row>
-                <Col>
-                  <h1 className="primary_font">
-                    {this.state.researchInfoTitle}
-                  </h1>
-                </Col>
+                <h1 className="primary_font">{this.props.title}</h1>
               </Row>
               <Row>
-                <Col>
-                  <FeaturesBullets
-                    bullets={this.state.researchKnowledgeBlurb}
-                  />
-                </Col>
+                <p className="secondary_font">{this.props.blurb}</p>
               </Row>
-            </Container>
+              <Row>
+                <Link
+                  className="homeFeatureLink homePageFeaturesLeverageLinkText"
+                  to={this.props.url}
+                >
+                  {this.props.link}
+                </Link>
+              </Row>
+            </div>
           </Col>
-          <Col className="featureImage">
-            {/* <img src={this.state.researchInfoImg} /> */}
-          </Col>
+          <Col className="featureImage" />
         </Row>
       </div>
     );

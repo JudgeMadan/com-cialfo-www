@@ -51,7 +51,6 @@ class Solutions extends React.Component {
       solution => solution.fields.pageType === "solutions"
     );
     let filteredSolutionsContentFields = filteredSolutionsContent[0].fields;
-    // console.log(filteredSolutionsContentFields);
     for (let key in filteredSolutionsContentFields) {
       if (typeof filteredSolutionsContentFields[key] === "string") {
         this.setState({
@@ -73,10 +72,34 @@ class Solutions extends React.Component {
     console.log(this.state);
     return (
       <Container className="homePageContainer">
-        <SolutionsHeader />
-        <SolutionsRightSideText />
-        <SolutionsLeftSideText />
-        <SolutionsRightSideText />
+        <SolutionsHeader
+          title={this.state.homePageHeaderTitle}
+          subtitle={this.state.homePageHeaderBlurb}
+        />
+        <SolutionsRightSideText
+          title={this.state.homePageFeaturesSendDocumentTitle}
+          blurb={this.state.homePageFeaturesSendDocumentBlurb}
+          link={this.state.homePageFeaturesSendDocumentLinkText}
+          url={this.state.homePageFeaturesSendDocumentLinkUrl}
+        />
+        <SolutionsLeftSideText
+          title={this.state.homePageFeaturesLeverageTitle}
+          blurb={this.state.homePageFeaturesLeverageBlurb}
+          link={this.state.homePageFeaturesLeverageLinkText}
+          url={this.state.homePageFeaturesLeverageLinkUrl}
+        />
+        <SolutionsRightSideText
+          title={this.state.homePageFeaturesDiscoverTitle}
+          blurb={this.state.homePageFeaturesDiscoverBlurb}
+          link={this.state.homePageFeaturesDiscoverLinkText}
+          url={this.state.homePageFeaturesDiscoveryLinkUrl}
+        />
+        <SolutionsLeftSideText
+          title={this.state.solutionsExtraTitle}
+          blurb={this.state.solutionsExtraBlurb}
+          link={this.state.solutionsExtraLinkText}
+          url={this.state.solutionsExtraLinkUrl}
+        />
         <div className="solutions-bottom-spacing" />
         <HomePartnerImages
           locale={this.props.locale}
