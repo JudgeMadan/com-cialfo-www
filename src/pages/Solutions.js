@@ -58,7 +58,9 @@ class Solutions extends React.Component {
         });
       } else if (Array.isArray(filteredSolutionsContentFields[key])) {
         this.setState({
-          [key]: filteredSolutionsContentFields[key]
+          [key]: filteredSolutionsContentFields[key].map(
+            img => img.fields.file.url
+          )
         });
       } else {
         this.setState({
@@ -102,9 +104,11 @@ class Solutions extends React.Component {
         <div className="solutions-bottom-spacing" />
         <HomePartnerImages
           locale={this.props.locale}
+          className="homePartnerImages"
+          partnerImages={this.state.homePagePoweredByOurPartnersPartners}
           accessToken={this.props.accessToken}
           space={this.props.space}
-          partnerImages={this.state.homePagePoweredByOurPartnersPartners}
+          title={this.state.homePagePoweredByOurPartnersTitle}
         />
         <div className="solutions-bottom-spacing" />
         <FeaturesSubfooter

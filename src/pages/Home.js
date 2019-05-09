@@ -413,6 +413,7 @@ class Home extends React.Component {
             partnerImages={this.state.homePagePoweredByOurPartnersPartners}
             accessToken={this.props.accessToken}
             space={this.props.space}
+            title={this.state.homePagePoweredByOurPartnersTitle}
           />
         </MediaQuery>
         <MediaQuery query="(max-device-width: 1223px)">
@@ -439,6 +440,7 @@ class Home extends React.Component {
             partnerImages={this.state.homePagePoweredByOurPartnersPartners}
             accessToken={this.props.accessToken}
             space={this.props.space}
+            title={this.state.homePagePoweredByOurPartnersTitle}
           />
         </MediaQuery>
       </Container>
