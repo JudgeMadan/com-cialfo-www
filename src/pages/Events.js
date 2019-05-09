@@ -3,18 +3,11 @@ import * as contentful from "contentful";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import AboutByTheNumbers from "./about/AboutByTheNumbers";
-import AboutLeadershipTeam from "./about/AboutLeadershipTeam";
 import AboutPartners from "./about/AboutPartners";
-import MobileAboutPartners from "./about/MobileAboutPartners";
-import AboutCounselors from "./about/AboutCounselors";
-import AboutBusinessAdvisors from "./about/AboutBusinessAdvisors";
-import AboutCialfoOffices from "./about/AboutCialfoOffices";
-import MediaQuery from "react-responsive";
 import EventsSubfooter from "./events/EventsSubfooter";
 import CialfoEventsObject from "./events/CialfoEventsObject";
 import CialfoSessionsObject from "./events/CialfoSessionsObject";
-import "./about/About.css";
+import "./events/Events.css";
 
 class Events extends React.Component {
   constructor(props) {
@@ -73,9 +66,9 @@ class Events extends React.Component {
         <Row className="aboutPageTitle">
           <Container>
             <Row>
-              <Col className="aboutPageHeaderText">
+              <Col className="events-header-text">
                 <Row>
-                  <h1 className="primary_font aboutPageHeaderTitle">
+                  <h1 className="primary_font events-header-title">
                     {this.state.aboutPageHeaderTitle}
                   </h1>
                 </Row>
@@ -97,11 +90,15 @@ class Events extends React.Component {
           quote={this.state.eventsSubfooterQuote}
         />
         <div>
-          <Row className=" center-in-row pt-5">
+          <Row className="center-in-row">
             <h1 className="primary_font">
               {this.state.eventsCialfoEventsTitle}
             </h1>
-            <p className="primary_font">{this.state.eventsCialfoEventsBlurb}</p>
+          </Row>
+          <Row className="events-subtitle center-in-row pb-5">
+            <p className="secondary_font">
+              {this.state.eventsCialfoEventsBlurb}
+            </p>
           </Row>
           <Row className=" pb-5">
             <Container>
@@ -116,7 +113,9 @@ class Events extends React.Component {
             <h1 className="primary_font">
               {this.state.eventsCialfoSessionsTitle}
             </h1>
-            <p className="primary_font">
+          </Row>
+          <Row className="events-subtitle center-in-row pb-5">
+            <p className="secondary_font">
               {this.state.eventsCialfoSessionsBlurb}
             </p>
           </Row>
@@ -128,10 +127,8 @@ class Events extends React.Component {
             </Container>
           </Row>
         </div>
-        <Row className="center-in-row partnersTitle light-blue-background pb-5">
-          <h1 className="primary_font light-blue-background">
-            {this.state.aboutPagePartnersTitle}
-          </h1>
+        <Row className="center-in-row events-partners-title pt-5 pb-5">
+          <h1 className="primary_font ">{this.state.aboutPagePartnersTitle}</h1>
           <AboutPartners partners={this.state.aboutPagePartnersPartners} />
         </Row>
       </Container>

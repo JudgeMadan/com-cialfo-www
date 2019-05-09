@@ -11,7 +11,7 @@ class EventsSubfooter extends React.Component {
 
   render() {
     return (
-      <Container className="featuresSendPage subFooterPage">
+      <Container className="events-subfooter-page">
         <div className="full-width-dark-blue-custom-height">
           <div className="feature-sub-footer-inner-div">
             <Row className="sub-footer-content-row">
