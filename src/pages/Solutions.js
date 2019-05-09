@@ -69,7 +69,6 @@ class Solutions extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container className="homePageContainer">
         <SolutionsHeader
@@ -105,6 +104,7 @@ class Solutions extends React.Component {
           locale={this.props.locale}
           accessToken={this.props.accessToken}
           space={this.props.space}
+          partnerImages={this.state.homePagePoweredByOurPartnersPartners}
         />
         <div className="solutions-bottom-spacing" />
         <FeaturesSubfooter
