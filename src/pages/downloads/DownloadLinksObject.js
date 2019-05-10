@@ -9,7 +9,6 @@ class DownloadLinksObject extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const downloadLinks = this.props.downloadLinks;
     const downloadLinksUrls = this.props.downloadLinksUrls;
     let downloadLinksObject;
