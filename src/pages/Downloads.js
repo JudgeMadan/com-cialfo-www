@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 import "./home/Home.css";
 import Oval from "../img/Oval.svg";
 import Line from "../img/Line.svg";
+import PlaceholderQR from "../img/PlaceholderQR.svg";
 import DownloadLinksObject from "./downloads/DownloadLinksObject";
 import HomePartnerImages from "./home/HomePartnerImages";
 class Downloads extends React.Component {
@@ -116,7 +117,7 @@ class Downloads extends React.Component {
             <h1 className="secondary_font white-text">{this.state.vpnBlurb}</h1>
           </Row>
           <Row className="center-in-row pt-3 pb-5">
-            <button className="vpn_button">{this.state.vpnButtonText}</button>
+            <img src={PlaceholderQR} />
           </Row>
         </div>
         <Row className="center-in-row edi-title">
