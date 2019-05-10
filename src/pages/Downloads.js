@@ -1,18 +1,13 @@
 import React from "react";
-import HomeMarquee from "./home/HomeMarquee";
 import * as contentful from "contentful";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import { Link } from "react-router-dom";
-import ReactPlayer from "react-player";
 import "./home/Home.css";
-import Documents from "../img/home/CDocs.svg";
-import ResearchImage from "../img/home/SchoolsOverview.svg";
-import Reports from "../img/home/Reports.svg";
 import Oval from "../img/Oval.svg";
 import Line from "../img/Line.svg";
 import DownloadLinksObject from "./downloads/DownloadLinksObject";
+import HomePartnerImages from "./home/HomePartnerImages";
 class Downloads extends React.Component {
   constructor(props) {
     super(props);
@@ -89,7 +84,7 @@ class Downloads extends React.Component {
                   </h1>
                 </Row>
                 <Row>
-                  <h2 className="secondary_font">{this.state.headerBlurb}</h2>
+                  <p className="secondary_font">{this.state.headerBlurb}</p>
                 </Row>
                 <DownloadLinksObject
                   downloadLinks={this.state.headerDownloadLinks}
@@ -102,11 +97,32 @@ class Downloads extends React.Component {
             </Row>
           </Container>
         </Row>
-        {/* <EventsSubfooter
-          img={this.state.eventsSubfooterImg}
-          title={this.state.eventsSubfooterQuoteTitle}
-          quote={this.state.eventsSubfooterQuote}
-        /> */}
+        <div className="full-width-light-blue">
+          <Row className="center-in-row edi-title download-text">
+            <h1 className="primary_font">{this.state.editTitle}</h1>
+          </Row>
+          <Row className="center-in-row download-text">
+            <h1 className="secondary_font">{this.state.ediBlurb}</h1>
+          </Row>
+          <Row className="center-in-row pt-3 pb-5 download-text5">
+            <button className="edi_button">{this.state.ediButtonText}</button>
+          </Row>
+        </div>
+        <div className="full-width-dark-blue ">
+          <Row className="center-in-row edi-title download-text">
+            <h1 className="primary_font white-text">{this.state.vpnTitle}</h1>
+          </Row>
+          <Row className="center-in-row download-text">
+            <h1 className="secondary_font white-text">{this.state.vpnBlurb}</h1>
+          </Row>
+          <Row className="center-in-row pt-3 pb-5">
+            <button className="vpn_button">{this.state.vpnButtonText}</button>
+          </Row>
+        </div>
+        <Row className="center-in-row edi-title">
+          <h1 className="primary_font">{this.state.partnersTitle}</h1>
+        </Row>
+        <HomePartnerImages partnerImages={this.state.partnersImages} />
       </Container>
     );
   }
