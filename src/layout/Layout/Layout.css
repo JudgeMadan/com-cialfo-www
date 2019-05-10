@@ -52,3 +52,7 @@
 .activeStyle {
   border-bottom: solid 2px #1886df !important;
 }
+
+.footer-nav-link {
+  padding: 0px !important;
+}
