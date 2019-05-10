@@ -99,7 +99,7 @@ class Downloads extends React.Component {
         </Row>
         <div className="full-width-light-blue">
           <Row className="center-in-row edi-title download-text">
-            <h1 className="primary_font">{this.state.editTitle}</h1>
+            <h1 className="primary_font">{this.state.ediTitle}</h1>
           </Row>
           <Row className="center-in-row download-text">
             <h1 className="secondary_font">{this.state.ediBlurb}</h1>
