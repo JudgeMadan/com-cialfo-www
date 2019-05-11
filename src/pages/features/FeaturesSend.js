@@ -10,6 +10,7 @@ import "../home/HomePartnerImages";
 import HomePartnerImages from "../home/HomePartnerImages";
 import Oval from "../../img/Oval.svg";
 import Line from "../../img/Line.svg";
+import PartnerImages from "../PartnerImages";
 
 class FeaturesSend extends React.Component {
   constructor(props) {
@@ -47,8 +48,11 @@ class FeaturesSend extends React.Component {
           [key]: sendingPageContent[key]
         });
       } else if (Array.isArray(sendingPageContent[key])) {
+        // this.setState({
+        //   [key]: sendingPageContent[key]
+        // });
         this.setState({
-          [key]: sendingPageContent[key]
+          [key]: sendingPageContent[key].map(test => test.fields.file.url)
         });
       } else {
         this.setState({
@@ -59,6 +63,7 @@ class FeaturesSend extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container className="featuresSendPage">
         <Row className="titleContainer">
@@ -123,21 +128,22 @@ class FeaturesSend extends React.Component {
         <Row />
         <Row className="featureSendPartnersTitle">
           <div className="full-width-light-blue">
-            <HomePartnerImages
+            <PartnerImages
               locale={this.props.locale}
+              className="partnerImages"
+              partnerImages={this.state.sendPartnersArray}
               accessToken={this.props.accessToken}
               space={this.props.space}
+              title={this.state.sendPartnersTitle}
             />
           </div>
         </Row>
         <Row>
-          {/* <div className="full-width-dark-blue"> */}
           <FeaturesSubfooter
             img={this.state.sendFooterImage}
             quote={this.state.sendFooterQuote}
             quoteAuthor={this.state.sendingFooterAuthor}
           />
-          {/* </div> */}
         </Row>
       </Container>
     );

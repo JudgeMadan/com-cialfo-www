@@ -17,6 +17,7 @@ import SolutionsRightSideText from "./solutions/SolutionsRightSideText";
 import SolutionsLeftSideText from "./solutions/SolutionsLeftSideText";
 import FeaturesSubfooter from "./features/FeaturesSubfooter";
 import HomePartnerImages from "./home/HomePartnerImages";
+import PartnerImages from "./PartnerImages";
 class Solutions extends React.Component {
   constructor(props) {
     super(props);
@@ -76,6 +77,7 @@ class Solutions extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container className="homePageContainer">
         <SolutionsHeader
@@ -104,16 +106,16 @@ class Solutions extends React.Component {
           linkStyle={this.state.forPrincipals}
         />
         <SolutionsLeftSideText
-          title={this.state.solutionsExtraTitle}
+          title={this.state.solutionsExtraText}
           blurb={this.state.solutionsExtraBlurb}
           link={this.state.solutionsExtraLinkText}
           url={this.state.solutionsExtraLinkUrl}
           linkStyle={this.state.forSuperintendents}
         />
         <div className="solutions-bottom-spacing" />
-        <HomePartnerImages
+        <PartnerImages
           locale={this.props.locale}
-          className="homePartnerImages"
+          className="partnerImages"
           partnerImages={this.state.homePagePoweredByOurPartnersPartners}
           accessToken={this.props.accessToken}
           space={this.props.space}
