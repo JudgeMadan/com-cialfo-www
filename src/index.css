@@ -278,3 +278,9 @@ button:hover {
   height: auto;
   width: 100%;
 }
+
+.imageObjectTitle {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
