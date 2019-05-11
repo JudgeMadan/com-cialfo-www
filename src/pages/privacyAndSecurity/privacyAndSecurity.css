@@ -49,3 +49,43 @@
   margin-bottom: -20px;
   z-index: 1;
 }
+
+.security-object-row {
+  width: 450px;
+}
+
+.security-object-col-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.white-font {
+  color: white;
+}
+
+.security-button {
+  background-color: white;
+  color: #1886df;
+  padding: 5px 10px;
+  border: none;
+  font-size: 20px;
+}
+.security-button:hover {
+  background-color: #2b0fca;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  font-size: 20px;
+}
+
+.subheader-font-size {
+  font-size: 30px;
+}
+
+.security-title-font-size {
+  font-size: 60px;
+}
+
+.security-title-row {
+  margin-bottom: 100px;
+}
