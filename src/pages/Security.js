@@ -2,9 +2,10 @@ import Row from "react-bootstrap/Row";
 import React from "react";
 import "./getADemo/GetADemo.css";
 import "./privacyAndSecurity/privacyAndSecurity.css";
+import Container from "react-bootstrap/Container";
 import * as contentful from "contentful";
-import PrivacyAndSecurityBody from "./privacyAndSecurity/PrivacyAndSecurityBody";
-class Privacy extends React.Component {
+import SecurityFeatureObject from "./privacyAndSecurity/SecurityFeatureObject";
+class Security extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -16,32 +17,45 @@ class Privacy extends React.Component {
   });
 
   componentDidMount() {
-    this.fetchGetADemo().then(this.setGetADemo);
+    this.fetchHomeContent().then(this.setHomeContent);
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.locale !== this.props.locale) {
-      this.fetchGetADemo().then(this.setGetADemo);
+      this.fetchHomeContent().then(this.setHomeContent);
     }
   }
 
-  fetchGetADemo = () => {
-    return this.client.getEntries({
-      content_type: "privacyAndSecurity",
-      locale: this.props.locale
-    });
+  handleChange = e => {
+    const fieldContent = e.target.value;
+    this.props.sendEmailAddressToGetADemo(fieldContent);
   };
 
-  setGetADemo = response => {
-    const securityContent = response.items[1].fields;
-    for (let key in securityContent) {
-      if (typeof securityContent[key] === "string") {
+  fetchHomeContent = () =>
+    this.client.getEntries({
+      content_type: "securityPage",
+      locale: this.props.locale
+    });
+
+  setHomeContent = response => {
+    const homeContent = response.items;
+    console.log(homeContent);
+    let filteredhomeContent = homeContent.filter(
+      homeContent => homeContent.fields.pageType === "securityPage"
+    );
+    let filteredhomeContentFields = filteredhomeContent[0].fields;
+    for (let key in filteredhomeContentFields) {
+      if (typeof filteredhomeContentFields[key] === "string") {
         this.setState({
-          [key]: securityContent[key]
+          [key]: filteredhomeContentFields[key]
+        });
+      } else if (Array.isArray(filteredhomeContentFields[key])) {
+        this.setState({
+          [key]: filteredhomeContentFields[key]
         });
       } else {
         this.setState({
-          [key]: securityContent[key].content
+          [key]: filteredhomeContentFields[key].fields.file.url
         });
       }
     }
@@ -49,30 +63,22 @@ class Privacy extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="privacy_security_title title_top">
-          <Row>
-            <h5 className="primary_font">
-              {this.state.privacyAndSecuritySubtitle}
-            </h5>
-          </Row>
-        </div>
-        <div className="privacy_security_title title_bottom">
-          <Row>
-            <h1 className="primary_font">
-              {this.state.privacyAndSecurityTitle}
-            </h1>
-          </Row>
-        </div>
-        <PrivacyAndSecurityBody
-          paragraphs={this.state.privacyAndSecurityBody}
-        />
-        <Row className="privacy_security_title">
-          <h1>...</h1>
+      <Container>
+        <Row className="center-in-row">
+          <h1 className="primary_font">{this.state.securityTitle}</h1>
         </Row>
-      </div>
+        <Row className="center-in-row pb-5">
+          <p className="secondary_font">{this.state.securitySubtitle}</p>
+        </Row>
+        <Row className="center-in-row light-blue-background">
+          <h1 className="primary_font">{this.state.securityFeaturesTitle}</h1>
+        </Row>
+        <SecurityFeatureObject
+          securityFeatures={this.state.securityFeaturesItems}
+        />
+      </Container>
     );
   }
 }
 
-export default Privacy;
+export default Security;
