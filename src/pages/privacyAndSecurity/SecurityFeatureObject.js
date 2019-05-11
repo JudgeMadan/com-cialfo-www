@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import SecurityEllipse from "../../img/SecurityEllipse.svg";
+import "./privacyAndSecurity.css";
 
 class SecurityFeatureObject extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class SecurityFeatureObject extends React.Component {
       securityFeaturesObjectLeftRow = securityFeatures.map((feature, index) => {
         if (index < 4) {
           return (
-            <Row>
+            <Row className="security-object-row pb-2">
               <img src={SecurityEllipse} />
               &nbsp; &nbsp;
               {feature}
@@ -31,7 +32,7 @@ class SecurityFeatureObject extends React.Component {
         (feature, index) => {
           if (index > 3) {
             return (
-              <Row>
+              <Row className="security-object-row pb-2">
                 <img src={SecurityEllipse} />
                 &nbsp; &nbsp;
                 {feature}
@@ -43,9 +44,9 @@ class SecurityFeatureObject extends React.Component {
     }
 
     return (
-      <Row>
-        <Col>{securityFeaturesObjectLeftRow}</Col>
-        <Col>{securityFeaturesObjectRightRow}</Col>
+      <Row className="security-object-col-container pb-5">
+        <div>{securityFeaturesObjectLeftRow}</div>
+        <div>{securityFeaturesObjectRightRow}</div>
       </Row>
     );
   }

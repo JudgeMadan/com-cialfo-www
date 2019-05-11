@@ -39,7 +39,6 @@ class Security extends React.Component {
 
   setHomeContent = response => {
     const homeContent = response.items;
-    console.log(homeContent);
     let filteredhomeContent = homeContent.filter(
       homeContent => homeContent.fields.pageType === "securityPage"
     );
@@ -62,20 +61,58 @@ class Security extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container>
-        <Row className="center-in-row">
-          <h1 className="primary_font">{this.state.securityTitle}</h1>
+        <Row className="center-in-row ">
+          <h1 className="primary_font security-title-font-size">
+            {this.state.securityTitle}
+          </h1>
         </Row>
-        <Row className="center-in-row pb-5">
+        <Row className="center-in-row pb-5 security-title-row">
           <p className="secondary_font">{this.state.securitySubtitle}</p>
         </Row>
-        <Row className="center-in-row light-blue-background">
-          <h1 className="primary_font">{this.state.securityFeaturesTitle}</h1>
+        <div className="full-width-light-blue mt-5">
+          <Row className="center-in-row light-blue-background pt-5">
+            <h1 className="primary_font subheader-font-size ">
+              {this.state.securityFeaturesTitle}
+            </h1>
+          </Row>
+          <SecurityFeatureObject
+            securityFeatures={this.state.securityFeaturesItems}
+          />
+        </div>
+        <div className="full-width-dark-blue">
+          <Row className="center-in-row  pt-5">
+            <h1 className="primary_font white-font subheader-font-size ">
+              {this.state.securityQuestionTitle}
+            </h1>
+          </Row>
+          <Row className="center-in-row">
+            <p className="secondary_font white-font">
+              {this.state.securityQuestionBlurb}
+            </p>
+          </Row>
+          <Row className="center-in-row pb-5">
+            <button className="security-button">
+              {this.state.securityQuestionButtonText}
+            </button>
+          </Row>
+        </div>
+        <Row className="center-in-row pt-5 pb-5">
+          {this.props.locale !== "zh-CN" && (
+            <p className="secondary_font">
+              Read more about our <a href="#">Privacy Policy</a> and&nbsp;
+              <a href="#">Terms of Service</a>
+            </p>
+          )}
+          {this.props.locale === "zh-CN" && (
+            <p className="secondary_font">
+              中文中文中文 <a href="#">Privacy Policy</a> 中文&nbsp;
+              <a href="#">Terms of Service</a>
+            </p>
+          )}
         </Row>
-        <SecurityFeatureObject
-          securityFeatures={this.state.securityFeaturesItems}
-        />
       </Container>
     );
   }

@@ -228,6 +228,10 @@ button:hover {
   justify-content: center;
 }
 
+.text-align-left {
+  text-align: start;
+}
+
 .flexible-image-width-100 {
   height: auto;
   width: 100%;
@@ -283,4 +287,10 @@ button:hover {
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+.security-test {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
 }
