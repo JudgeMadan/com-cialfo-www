@@ -19,6 +19,7 @@ import Oval from "../img/Oval.svg";
 import Line from "../img/Line.svg";
 import MediaQuery from "react-responsive";
 import Container from "react-bootstrap/Container";
+import PartnerImages from "./PartnerImages";
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -407,9 +408,9 @@ class Home extends React.Component {
               </Row>
             </div>
           </div>
-          <HomePartnerImages
+          <PartnerImages
             locale={this.props.locale}
-            className="homePartnerImages"
+            className="partnerImages"
             partnerImages={this.state.homePagePoweredByOurPartnersPartners}
             accessToken={this.props.accessToken}
             space={this.props.space}

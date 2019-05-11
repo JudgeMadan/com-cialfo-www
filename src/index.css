@@ -271,3 +271,10 @@ button:hover {
   margin-top: -50px;
   margin-left: 200px;
 }
+
+.partnerImages {
+  display: flex;
+  justify-content: space-around;
+  height: auto;
+  width: 100%;
+}

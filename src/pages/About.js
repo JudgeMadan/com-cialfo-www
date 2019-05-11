@@ -11,6 +11,7 @@ import AboutCounselors from "./about/AboutCounselors";
 import AboutBusinessAdvisors from "./about/AboutBusinessAdvisors";
 import AboutCialfoOffices from "./about/AboutCialfoOffices";
 import MediaQuery from "react-responsive";
+import PartnerImages from "./PartnerImages";
 import "./about/About.css";
 
 class About extends React.Component {
@@ -184,8 +185,8 @@ class About extends React.Component {
         </Row>
         <div className="full-width-light-blue">
           <Row className="center-in-row light-blue-background pt-5">
-            <Container className="partners pb-5">
-              <Row className="center-in-row partnersTitle light-blue-background pb-5">
+            <Container className="partners">
+              <Row className="center-in-row partnersTitle light-blue-background">
                 <h1 className="primary_font light-blue-background">
                   {this.state.aboutPagePartnersTitle}
                 </h1>

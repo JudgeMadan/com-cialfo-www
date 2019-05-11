@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import MediaQuery from "react-responsive";
 import * as contentful from "contentful";
-import "./Home.css";
+import "./home/Home.css";
 
 class HomePartnerImages extends React.Component {
   constructor(props) {
@@ -13,6 +13,7 @@ class HomePartnerImages extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     const images = this.props.partnerImages;
     let imageObject;
 
@@ -29,7 +30,7 @@ class HomePartnerImages extends React.Component {
     return (
       <div className="home-partners-image-container">
         <Container className="home-partners-image-content">
-          <Row className="imageObjectTitle">
+          <Row className="imageObjectTitle pb-5">
             <h1 className="primary_font ">{this.props.title}</h1>
           </Row>
           <Row className="imageObjectRow">{imageObject}</Row>
