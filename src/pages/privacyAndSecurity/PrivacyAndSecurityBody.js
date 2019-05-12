@@ -9,6 +9,7 @@ class PrivacyAndSecurityBody extends React.Component {
   }
 
   render() {
+    console.log(this.props.paragraphs);
     const paragraphs = this.props.paragraphs;
     let paragraphsObject;
 
