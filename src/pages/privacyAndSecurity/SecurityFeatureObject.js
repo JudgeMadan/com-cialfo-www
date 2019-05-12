@@ -11,14 +11,13 @@ class SecurityFeatureObject extends React.Component {
   }
 
   render() {
-    console.log(this.props.securityFeatures);
     const securityFeatures = this.props.securityFeatures;
     let securityFeaturesObjectLeftRow;
     let securityFeaturesObjectRightRow;
 
     if (securityFeatures) {
       securityFeaturesObjectLeftRow = securityFeatures.map((feature, index) => {
-        if (index < 4) {
+        if (index < securityFeatures.length / 2) {
           return (
             <Row className="security-object-row pb-2">
               <img src={SecurityEllipse} />
@@ -30,7 +29,7 @@ class SecurityFeatureObject extends React.Component {
       });
       securityFeaturesObjectRightRow = securityFeatures.map(
         (feature, index) => {
-          if (index > 3) {
+          if (index > securityFeatures.length / 2 - 1) {
             return (
               <Row className="security-object-row pb-2">
                 <img src={SecurityEllipse} />
