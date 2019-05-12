@@ -53,11 +53,16 @@ class Privacy extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <Row className="center-in-row pt-5 pb-5">
-        {this.props.locale !== "zh-CN" && <PrivacyEnglish />}
-        <PrivacyChinese />
-        )}
-      </Row>
+      <div>
+        <Row className="center-in-row pt-5">
+          {this.props.locale !== "zh-CN" && <PrivacyEnglish />}
+          <PrivacyChinese />
+          )}
+        </Row>
+        <Row className="center-in-row pb-5">
+          <h1>···</h1>
+        </Row>
+      </div>
     );
   }
 }
