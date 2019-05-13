@@ -241,9 +241,9 @@
 
 .homePartnerImages {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   height: auto;
-  width: 100%;
+  width: 250px;
   /* margin-bottom: 150px; */
 }
 
@@ -432,5 +432,4 @@
   /* add back negative margin value */
   padding: 0.25rem 9999rem;
   /* background: #ebf9ff; */
-  background: red;
 }
