@@ -7,6 +7,9 @@ import AboutPartners from "./about/AboutPartners";
 import EventsSubfooter from "./events/EventsSubfooter";
 import CialfoEventsObject from "./events/CialfoEventsObject";
 import CialfoSessionsObject from "./events/CialfoSessionsObject";
+import Line from "../img/Line.svg";
+import BlueStroke10 from "../img/BlueStroke10.svg";
+import Oval from "../img/Oval.svg";
 import "./events/Events.css";
 
 class Events extends React.Component {
@@ -121,6 +124,8 @@ class Events extends React.Component {
           </Row>
           <Row className="light-blue-background pb-5">
             <Container>
+              <img className="events-oval" src={Oval} />
+              <img className="events-blue-stroke-10" src={BlueStroke10} />
               <CialfoSessionsObject
                 events={this.state.aboutPageCounselorsCounselors}
               />
