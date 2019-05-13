@@ -9,6 +9,7 @@ import FeaturesSubfooter from "./FeaturesSubfooter";
 import FeaturesBullets from "./FeaturesBullets";
 import Oval from "../../img/Oval.svg";
 import Line from "../../img/Line.svg";
+import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 
 class FeaturesDocuments extends React.Component {
   constructor(props) {
@@ -77,6 +78,10 @@ class FeaturesDocuments extends React.Component {
         </Row>
         <Row>
           <Col className="featureImage">
+            <img
+              className="feature-send-portal-left-align-light-blue-rectangle"
+              src={ThinLightBlueRectangle}
+            />
             {/* <img src={this.state.researchInfoImg} /> */}
           </Col>
           <Col className="featureSubSectionTextAlign">
@@ -116,11 +121,19 @@ class FeaturesDocuments extends React.Component {
             </Container>
           </Col>
           <Col className="featureImage">
+            <img
+              className="feature-send-portal-right-align-light-blue-rectangle"
+              src={ThinLightBlueRectangle}
+            />
             {/* <img src={this.state.researchTranscriptImg} /> */}
           </Col>
         </Row>
         <Row className="researchBottomRow">
           <Col className="featureImage">
+            <img
+              className="feature-send-portal-left-align-light-blue-rectangle"
+              src={ThinLightBlueRectangle}
+            />
             {/* <img src={this.state.researchKnowledgeImg} /> */}
           </Col>
           <Col className="featureSubSectionTextAlign">
