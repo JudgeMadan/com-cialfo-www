@@ -61,17 +61,13 @@
 .events-blue-stroke-10 {
   position: absolute;
   z-index: 1;
-  width: 50px;
-  margin-top: -260px;
-  margin-left: 1100px;
-  height: auto;
+  margin-top: -300px;
+  margin-left: 1050px;
 }
 
 .events-oval {
   position: absolute;
   z-index: 1;
-  margin-top: -252px;
+  margin-top: -275px;
   margin-left: -120px;
-  width: 50px;
-  height: auto;
 }
