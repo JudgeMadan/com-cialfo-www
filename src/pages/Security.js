@@ -5,6 +5,10 @@ import "./privacyAndSecurity/privacyAndSecurity.css";
 import Container from "react-bootstrap/Container";
 import * as contentful from "contentful";
 import SecurityFeatureObject from "./privacyAndSecurity/SecurityFeatureObject";
+import Line from "../img/Line.svg";
+import BlueStroke10 from "../img/BlueStroke10.svg";
+import Oval from "../img/Oval.svg";
+import "./privacyAndSecurity/privacyAndSecurity.css";
 class Security extends React.Component {
   constructor(props) {
     super(props);
@@ -65,16 +69,21 @@ class Security extends React.Component {
     return (
       <Container>
         <Row className="center-in-row ">
-          <h1 className="primary_font security-title-font-size">
+          <img className="security-line" src={Line} />
+          <h1 className="primary_font security-title-font-size security-header-text">
             {this.state.securityTitle}
           </h1>
         </Row>
         <Row className="center-in-row pb-5 security-title-row">
-          <p className="secondary_font">{this.state.securitySubtitle}</p>
+          <p className="secondary_font security-header-text">
+            {this.state.securitySubtitle}
+          </p>
         </Row>
         <div className="full-width-light-blue mt-5">
           <Row className="center-in-row light-blue-background pt-5">
-            <h1 className="primary_font subheader-font-size ">
+            <img className="security-oval" src={Oval} />
+            <img className="security-blue-stroke-10" src={BlueStroke10} />
+            <h1 className="primary_font subheader-font-size security-header-text">
               {this.state.securityFeaturesTitle}
             </h1>
           </Row>

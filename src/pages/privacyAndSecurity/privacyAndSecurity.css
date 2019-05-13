@@ -89,3 +89,32 @@
 .security-title-row {
   margin-bottom: 100px;
 }
+
+.security-line {
+  position: absolute;
+  z-index: 1;
+  margin-top: -50px;
+  margin-left: 600px;
+}
+
+.security-blue-stroke-10 {
+  position: absolute;
+  z-index: 1;
+  margin-top: -85px;
+  margin-left: 550px;
+  width: 50px;
+  height: auto;
+}
+
+.security-oval {
+  position: absolute;
+  z-index: 1;
+  margin-top: -75px;
+  margin-left: -650px;
+  width: 50px;
+  height: auto;
+}
+
+.security-header-text {
+  z-index: 2;
+}
