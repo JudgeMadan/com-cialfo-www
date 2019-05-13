@@ -48,7 +48,7 @@ class Footer extends React.Component {
   render() {
     return (
       <NavBar
-        className="pt-5 
+        className="
         footer-background align-items-start justify-content-between footer"
         sticky="bottom"
       >
