@@ -7,10 +7,10 @@ import ReactPlayer from "react-player";
 import "./Features.css";
 import FeaturesSubfooter from "./FeaturesSubfooter";
 import "../home/HomePartnerImages";
-import HomePartnerImages from "../home/HomePartnerImages";
 import Oval from "../../img/Oval.svg";
 import Line from "../../img/Line.svg";
 import PartnerImages from "../PartnerImages";
+import Pointer from "../../img/Pointer.svg";
 
 class FeaturesSend extends React.Component {
   constructor(props) {
@@ -95,6 +95,8 @@ class FeaturesSend extends React.Component {
               <Row>
                 <Col>
                   <h1 className="secondary_font">
+                    <img src={Pointer} />
+                    &nbsp;
                     {this.state.sendPortalBlurb}
                   </h1>
                 </Col>
@@ -115,6 +117,8 @@ class FeaturesSend extends React.Component {
               <Row>
                 <Col>
                   <h1 className="secondary_font">
+                    <img src={Pointer} />
+                    &nbsp;
                     {this.state.sendTranscriptBlurb}
                   </h1>
                 </Col>

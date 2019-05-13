@@ -2,8 +2,6 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import MediaQuery from "react-responsive";
-import * as contentful from "contentful";
 import "./home/Home.css";
 
 class HomePartnerImages extends React.Component {
@@ -13,7 +11,6 @@ class HomePartnerImages extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const images = this.props.partnerImages;
     let imageObject;
 
