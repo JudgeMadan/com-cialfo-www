@@ -1,11 +1,8 @@
 import React from "react";
-import HomeMarquee from "./home/HomeMarquee";
 import * as contentful from "contentful";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import { Link } from "react-router-dom";
-import ReactPlayer from "react-player";
 import "./home/Home.css";
 import Documents from "../img/home/CDocs.svg";
 import ResearchImage from "../img/home/SchoolsOverview.svg";
@@ -16,7 +13,6 @@ import SolutionsHeader from "./solutions/SolutionsHeader";
 import SolutionsRightSideText from "./solutions/SolutionsRightSideText";
 import SolutionsLeftSideText from "./solutions/SolutionsLeftSideText";
 import FeaturesSubfooter from "./features/FeaturesSubfooter";
-import HomePartnerImages from "./home/HomePartnerImages";
 import PartnerImages from "./PartnerImages";
 class Solutions extends React.Component {
   constructor(props) {
@@ -113,14 +109,16 @@ class Solutions extends React.Component {
           linkStyle={this.state.forSuperintendents}
         />
         <div className="solutions-bottom-spacing" />
-        <PartnerImages
-          locale={this.props.locale}
-          className="partnerImages"
-          partnerImages={this.state.homePagePoweredByOurPartnersPartners}
-          accessToken={this.props.accessToken}
-          space={this.props.space}
-          title={this.state.homePagePoweredByOurPartnersTitle}
-        />
+        <div className="full-width-light-blue">
+          <PartnerImages
+            locale={this.props.locale}
+            className="partnerImages"
+            partnerImages={this.state.homePagePoweredByOurPartnersPartners}
+            accessToken={this.props.accessToken}
+            space={this.props.space}
+            title={this.state.homePagePoweredByOurPartnersTitle}
+          />
+        </div>
         <div className="solutions-bottom-spacing" />
         <FeaturesSubfooter
           img={this.state.solutionsSubfooterImg}
