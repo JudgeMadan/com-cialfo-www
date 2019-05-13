@@ -48,8 +48,19 @@
   padding-top: 20px;
 }
 
+.small_sub_footer_quote {
+  color: white !important;
+  font-size: 3vw !important;
+  padding-top: 20px;
+}
+
+.small_sub_footer_quote_author {
+  color: white !important;
+  font-size: 1.25vw !important;
+  line-height: 1.5vw !important;
+}
+
 .subFooterPage {
-  background-color: #1886df;
   justify-content: center;
   height: 20em;
   margin-bottom: 220px;
@@ -130,4 +141,12 @@
   position: absolute;
   z-index: 1;
   margin-left: 750px;
+}
+
+.events_small_sub_footer_quote {
+  color: white !important;
+  font-size: 1.5vw !important;
+  padding-top: 20px;
+  line-height: 1.5vw !important;
+  padding-bottom: 10px;
 }

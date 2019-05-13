@@ -7,32 +7,60 @@ import "./Features.css";
 class FeaturesSubfooter extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      height: window.innerHeight,
+      width: window.innerWidth
+    };
   }
+
+  componentDidMount() {
+    console.log(this.state.height);
+    window.addEventListener("resize", this.updateDimensions);
+  }
+  updateDimensions = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    });
+  };
 
   render() {
     return (
       <Container className="featuresSendPage subFooterPage">
         <div className="full-width-dark-blue-custom-height">
-          <div className="feature-sub-footer-inner-div">
-            <Row className="sub-footer-content-row">
-              <Col className="subFooterPageImgContainer">
-                <img className="subFooterPageImg" src={this.props.img} />
-              </Col>
-              <Col className="subFooterPageQuote">
-                <Row>
-                  <h1 className="primary_font sub_footer_quote white_font">
-                    "{this.props.quote}"
-                  </h1>
-                  <br />
-                  <br />
-                  <p className="secondary_font white_font">
-                    {this.props.quoteAuthor}
-                  </p>
-                </Row>
-                <Row />
-              </Col>
-            </Row>
-          </div>
+          <Row>
+            <Col className="subFooterPageImgContainer">
+              <img className="subFooterPageImg" src={this.props.img} />
+            </Col>
+            <Col className="subFooterPageQuote">
+              <Row className="sub-footer-content-row">
+                {this.state.width > 1210 && (
+                  <div>
+                    <h1 className="primary_font sub_footer_quote white_font">
+                      "{this.props.quote}"
+                    </h1>
+                    <p className="secondary_font white_font">
+                      {this.props.quoteAuthor} <br />
+                      {this.props.quoteAuthorCredit}
+                    </p>
+                  </div>
+                )}
+
+                {this.state.width < 1210 && (
+                  <div>
+                    <h1 className="primary_font small_sub_footer_quote ">
+                      "{this.props.quote}"
+                    </h1>
+                    <p className="secondary_font small_sub_footer_quote_author ">
+                      {this.props.quoteAuthor} <br />
+                      {this.props.quoteAuthorCredit}
+                    </p>
+                  </div>
+                )}
+              </Row>
+              <Row />
+            </Col>
+          </Row>
         </div>
       </Container>
     );
