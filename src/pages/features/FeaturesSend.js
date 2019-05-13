@@ -11,6 +11,7 @@ import Oval from "../../img/Oval.svg";
 import Line from "../../img/Line.svg";
 import PartnerImages from "../PartnerImages";
 import Pointer from "../../img/Pointer.svg";
+import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 
 class FeaturesSend extends React.Component {
   constructor(props) {
@@ -48,9 +49,6 @@ class FeaturesSend extends React.Component {
           [key]: sendingPageContent[key]
         });
       } else if (Array.isArray(sendingPageContent[key])) {
-        // this.setState({
-        //   [key]: sendingPageContent[key]
-        // });
         this.setState({
           [key]: sendingPageContent[key].map(test => test.fields.file.url)
         });
@@ -63,7 +61,6 @@ class FeaturesSend extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container className="featuresSendPage">
         <Row className="titleContainer">
@@ -83,7 +80,10 @@ class FeaturesSend extends React.Component {
         </Row>
         <Row>
           <Col className="featureImage">
-            {/* <img src={this.state.sendPortalImage} /> */}
+            <img
+              className="feature-send-portal-left-align-light-blue-rectangle"
+              src={ThinLightBlueRectangle}
+            />
           </Col>
           <Col className="featureSubSectionTextAlign">
             <Container>
@@ -126,7 +126,10 @@ class FeaturesSend extends React.Component {
             </Container>
           </Col>
           <Col className="featureImage">
-            {/* <img src={this.state.sendTranscriptImage} /> */}
+            <img
+              className="feature-send-portal-right-align-light-blue-rectangle"
+              src={ThinLightBlueRectangle}
+            />
           </Col>
         </Row>
         <Row />
