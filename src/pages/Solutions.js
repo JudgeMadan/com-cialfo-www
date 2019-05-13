@@ -79,6 +79,7 @@ class Solutions extends React.Component {
         <SolutionsHeader
           title={this.state.homePageHeaderTitle}
           subtitle={this.state.homePageHeaderBlurb}
+          isSolutionsPage="true"
         />
         <SolutionsRightSideText
           title={this.state.homePageFeaturesSendDocumentTitle}

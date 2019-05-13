@@ -2,8 +2,7 @@ import React from "react";
 import HomeMarqueeList from "././homeMarquee/HomeMarqueeList";
 import BlueOval from "../../img/home/BlueOval.svg";
 import Line from "../../img/Line.svg";
-import Stroke10 from "../../img/home/Stroke10.svg";
-// import Stroke10 from "./Stroke10.svg";
+import Stroke10 from "../../img/Stroke10.svg";
 import MediaQuery from "react-responsive";
 
 class HomeMarquee extends React.Component {
