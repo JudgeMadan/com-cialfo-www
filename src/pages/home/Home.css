@@ -426,3 +426,11 @@
   background: #1786df;
   background: linear-gradient(white 3%, #1786df 3% 55%, white 55%);
 }
+
+.full-width-light-blue {
+  margin: 0 -9999rem;
+  /* add back negative margin value */
+  padding: 0.25rem 9999rem;
+  /* background: #ebf9ff; */
+  background: red;
+}

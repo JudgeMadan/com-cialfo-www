@@ -1,6 +1,7 @@
 .app-store-image {
-  width: 160px;
-  height: auto;
+  width: auto;
+  height: 46px;
+  padding: 0px !important;
 }
 
 .app-store-image-col {
