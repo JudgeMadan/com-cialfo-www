@@ -72,3 +72,32 @@
 .solutions-superintendents-link-text:hover {
   border-bottom: 3px solid #1886df;
 }
+
+.solutions-line {
+  position: absolute;
+  z-index: 1;
+  margin-top: -150px;
+  margin-left: 600px;
+}
+
+.solutions-blue-stroke-10 {
+  position: absolute;
+  z-index: 1;
+  margin-top: -75px;
+  margin-left: -205px;
+  width: 50px;
+  height: auto;
+}
+
+.solutions-oval {
+  position: absolute;
+  z-index: 1;
+  margin-top: 200px;
+  margin-left: -650px;
+  width: 50px;
+  height: auto;
+}
+
+.solutions-header-text {
+  z-index: 2;
+}

@@ -13,7 +13,7 @@ import Hero from "../img/home/iMacAndMobileMockup.png";
 import Documents from "../img/home/CDocs.svg";
 import ResearchImage from "../img/home/SchoolsOverview.svg";
 import Reports from "../img/home/Reports.svg";
-import Stroke10 from "../img/home/Stroke10.svg";
+import Stroke10 from "../img/Stroke10.svg";
 import LightBlueRectangle from "../img/LightBlueRectangle.svg";
 import Oval from "../img/Oval.svg";
 import Line from "../img/Line.svg";
