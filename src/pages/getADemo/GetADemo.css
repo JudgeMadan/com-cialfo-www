@@ -7,6 +7,20 @@
   width: 900px;
 }
 
+.get_in_touch_container {
+  border: solid #1886df 2px;
+  margin-bottom: 10%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 1000px !important;
+}
+
+.get_in_touch_object {
+  width: 900px;
+  margin: 0px;
+}
+
 .demo-form-object-container {
   display: flex;
   justify-content: center;
@@ -80,6 +94,29 @@
   margin-right: 80px;
 }
 
+.upper_left_content_row {
+  margin-bottom: 20px;
+  margin-right: 40px;
+  width: 300px;
+  margin-left: -82px;
+}
+
+.upper_right_content_row {
+  margin-bottom: 20px;
+  margin-left: 40px;
+}
+
+.lower_left_content_row {
+  margin-bottom: 20px;
+  margin-right: 80px;
+  width: 300px;
+}
+
+.lower_right_content_row {
+  margin-bottom: 20px;
+  margin-right: 80px;
+}
+
 .input_style {
   border: none;
   border-bottom: solid #1886df 2px;
@@ -140,4 +177,19 @@
 
 .nav-link-no-underline:hover {
   border-bottom: none !important;
+}
+
+.your-message-title {
+  margin-bottom: 30px;
+}
+
+.get-in-touch-email {
+  width: 364px !important;
+}
+
+.get-in-touch-title_row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 50px;
 }

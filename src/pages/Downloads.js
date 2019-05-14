@@ -123,10 +123,6 @@ class Downloads extends React.Component {
             <img src={PlaceholderQR} />
           </Row>
         </div>
-        <Row className="center-in-row edi-title">
-          <h1 className="primary_font">{this.state.partnersTitle}</h1>
-        </Row>
-        <HomePartnerImages partnerImages={this.state.partnersImages} />
       </Container>
     );
   }
