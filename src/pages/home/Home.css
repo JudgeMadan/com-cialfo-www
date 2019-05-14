@@ -436,3 +436,32 @@
   display: flex;
   height: 100px;
 }
+
+.edi-title-text {
+  width: 500px;
+}
+
+.downloads-oval {
+  margin-top: 200px;
+  margin-left: -650px;
+  position: absolute;
+  z-index: 0;
+}
+
+.downloads-yellow-stroke-10 {
+  margin-top: 200px;
+  margin-left: 475px;
+  position: absolute;
+  z-index: 0;
+}
+
+.downloads-qr-code {
+  z-index: 1;
+}
+
+.downloads-full-width-dark-blue {
+  margin: 0 -9999rem;
+  /* add back negative margin value */
+  padding: 0.25rem 9999rem;
+  background: #1786df;
+}
