@@ -76,6 +76,7 @@
 .demoTextImg {
   max-height: 175px;
   max-width: auto;
+  z-index: 2;
 }
 
 .formContainer {
@@ -192,4 +193,22 @@
   flex-direction: column;
   justify-content: center;
   margin-bottom: 50px;
+}
+
+.demo-gray-lines {
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 170px;
+  z-index: 1;
+  height: auto;
+  width: 120px;
+}
+
+.get-in-touch-gray-lines {
+  position: absolute;
+  margin-top: 90px;
+  margin-left: 160px;
+  z-index: 1;
+  height: auto;
+  width: 120px;
 }

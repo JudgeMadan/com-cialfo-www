@@ -5,6 +5,7 @@ import "./getADemo/GetADemo.css";
 import DemoText from "../img/GetADemo.svg";
 import FeaturesSubfooter from "./features/FeaturesSubfooter";
 import * as contentful from "contentful";
+import GrayLines from "../img/GrayLines.svg";
 
 class GetADemo extends React.Component {
   constructor(props) {
@@ -99,6 +100,7 @@ class GetADemo extends React.Component {
       <div>
         <Row className="demoTextImgContainer">
           <img className="demoTextImg" src={DemoText} />
+          <img className="demo-gray-lines" src={GrayLines} />
         </Row>
         <Row className="demoTextTitleContainer secondary_font">
           <h1 className="demoTextTitle">{this.state.getADemoTitle}</h1>
