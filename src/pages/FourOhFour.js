@@ -54,7 +54,7 @@ class FourOhFour extends React.Component {
           <div>
             <Row className="four_oh_four_content">
               <div>
-                <img src={FourOhFourImg} />
+                <img className="thank-you-image" src={FourOhFourImg} />
                 <img className="thank-you-gray-lines" src={GrayLines} />
               </div>
             </Row>

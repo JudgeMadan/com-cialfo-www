@@ -6,6 +6,7 @@ import GetInTouchImg from "../img/GetInTouch.svg";
 import FeaturesSubfooter from "./features/FeaturesSubfooter";
 import * as contentful from "contentful";
 import GetInTouchContactArray from "./getInTouch/GetInTouchContactArray";
+import GrayLines from "../img/GrayLines.svg";
 
 class GetInTouch extends React.Component {
   constructor(props) {
@@ -92,6 +93,7 @@ class GetInTouch extends React.Component {
     return (
       <div>
         <Row className="demoTextImgContainer">
+          <img className="get-in-touch-gray-lines" src={GrayLines} />
           <img className="demoTextImg" src={GetInTouchImg} />
         </Row>
         <Row className="getInTouchContactArrayContainer">
