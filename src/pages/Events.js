@@ -92,8 +92,8 @@ class Events extends React.Component {
           title={this.state.eventsSubfooterQuoteTitle}
           quote={this.state.eventsSubfooterQuote}
         />
-        <div>
-          <Row className="center-in-row">
+        <div className="full-width-light-blue">
+          <Row className="center-in-row events-cialfo-events-sessions-top-row">
             <h1 className="primary_font">
               {this.state.eventsCialfoEventsTitle}
             </h1>
@@ -103,7 +103,7 @@ class Events extends React.Component {
               {this.state.eventsCialfoEventsBlurb}
             </p>
           </Row>
-          <Row className=" pb-5">
+          <Row className="events-cialfo-events-sessions-bottom-row ">
             <Container>
               <CialfoEventsObject
                 events={this.state.aboutPageLeadershipLeaders}
@@ -111,8 +111,8 @@ class Events extends React.Component {
             </Container>
           </Row>
         </div>
-        <div className="full-width-light-blue">
-          <Row className="light-blue-background center-in-row pt-5">
+        <div>
+          <Row className="center-in-row events-cialfo-events-sessions-top-row">
             <h1 className="primary_font">
               {this.state.eventsCialfoSessionsTitle}
             </h1>
@@ -122,7 +122,7 @@ class Events extends React.Component {
               {this.state.eventsCialfoSessionsBlurb}
             </p>
           </Row>
-          <Row className="light-blue-background pb-5">
+          <Row className="events-cialfo-events-sessions-bottom-row ">
             <Container>
               <img className="events-oval" src={Oval} />
               <img className="events-blue-stroke-10" src={BlueStroke10} />
