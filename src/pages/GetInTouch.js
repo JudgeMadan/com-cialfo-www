@@ -102,12 +102,12 @@ class GetInTouch extends React.Component {
         <Row className="demoTextTitleContainer secondary_font">
           <h1 className="demoTextTitle">{this.state.getADemoTitle}</h1>
         </Row>
-        <Container className="demo_form_container">
+        <Container className="get_in_touch_container">
           <form
             method="POST"
             action="https://cialfo51705.activehosted.com/proc.php"
             id="_form_3_"
-            class="_form _form_3 _inline-form  _dark"
+            class="_form _form_3 _inline-form  _dark get_in_touch_object"
             novalidate
           >
             <input type="hidden" name="u" value="3" />
@@ -117,7 +117,7 @@ class GetInTouch extends React.Component {
             <input type="hidden" name="m" value="0" />
             <input type="hidden" name="act" value="sub" />
             <input type="hidden" name="v" value="2" />
-            <div class="_form-content">
+            <div class="_form-content get-in-touch-title_row">
               <Row className="title_row">
                 <div className="_form_element _x36013235 _full_width _clear primary_font form_title_container">
                   <div className="_form-title primary_font form_title">
@@ -126,7 +126,7 @@ class GetInTouch extends React.Component {
                 </div>
               </Row>
               <Row className="title_row">
-                <div class="_form_element _x11005730 _full_width left_content_row middle_row">
+                <div class="_form_element _x11005730 _full_width upper_left_content_row">
                   <label class="_form-label secondary_font">
                     {this.state.getInTouchFullName}
                   </label>
@@ -139,7 +139,7 @@ class GetInTouch extends React.Component {
                     />
                   </div>
                 </div>
-                <div class="_form_element _x78348353 _full_width ">
+                <div class="_form_element _x78348353 _full_width upper_right_content_row">
                   <label class="_form-label secondary_font">
                     {this.state.getInTouchEmail}
                   </label>
@@ -148,13 +148,13 @@ class GetInTouch extends React.Component {
                       type="text"
                       name="email"
                       placeholder={this.state.getInTouchEmailPlaceholder}
-                      className="input_style"
+                      className="input_style get-in-touch-email"
                     />
                   </div>
                 </div>
               </Row>
               <Row className="title_row">
-                <div class="_form_element _x11676591 _full_width left_content_row middle_row">
+                <div class="_form_element _x11676591 _full_width lower_left_content_row ">
                   <label class="_form-label secondary_font">
                     {this.state.getInTouchPhone}
                   </label>
@@ -167,8 +167,8 @@ class GetInTouch extends React.Component {
                     />
                   </div>
                 </div>
-                <div class="_form_element _x99841330 _full_width">
-                  <label class="_form-label secondary_font">
+                <div class="_form_element _x99841330 _full_width lower_right_content_row">
+                  <label class="_form-label secondary_font your-message-title">
                     {this.state.getInTouchMessage}
                   </label>
                   <div class="_field-wrapper">
@@ -199,13 +199,6 @@ class GetInTouch extends React.Component {
             <div class="_form-thank-you" />
           </form>
         </Container>
-        <Row>
-          <FeaturesSubfooter
-            img={this.state.getInTouchSubfooterImg}
-            quote={this.state.getInTouchSubfooterBlurb}
-            quoteAuthor={this.state.getInTouchFooterBlurbAuthor}
-          />
-        </Row>
       </div>
     );
   }
