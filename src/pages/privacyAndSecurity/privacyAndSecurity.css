@@ -46,7 +46,8 @@
 
 .thank-you-gray-lines {
   position: absolute;
-  margin-bottom: -20px;
+  margin-top: 50px;
+  margin-left: -100px;
   z-index: 1;
 }
 
@@ -122,4 +123,13 @@
 
 .security-content-row-footer {
   margin-bottom: 100px;
+}
+
+.thank-you-title-text {
+  font-size: 60px;
+  text-align: center;
+}
+
+.four-oh-four-title-text {
+  width: 700px;
 }

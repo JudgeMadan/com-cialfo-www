@@ -6,6 +6,7 @@ import "./getADemo/GetADemo.css";
 import "./privacyAndSecurity/privacyAndSecurity.css";
 import * as contentful from "contentful";
 import FourOhFourImg from "../img/404.svg";
+import GrayLines from "../img/GrayLines.svg";
 
 class FourOhFour extends React.Component {
   constructor(props) {
@@ -54,12 +55,13 @@ class FourOhFour extends React.Component {
             <Row className="four_oh_four_content">
               <div>
                 <img src={FourOhFourImg} />
+                <img className="thank-you-gray-lines" src={GrayLines} />
               </div>
             </Row>
-            <Row className="four_oh_four_content">
-              <div>
-                <h1 className="primary_font">{this.state.fourOhFourText}</h1>
-              </div>
+            <Row className="four_oh_four_content center-in-row">
+              <h1 className="primary_font thank-you-title-text four-oh-four-title-text">
+                {this.state.fourOhFourText}
+              </h1>
             </Row>
             <Row className="four_oh_four_content button">
               <Link className="nav-link nav-link-no-underline" to="">
