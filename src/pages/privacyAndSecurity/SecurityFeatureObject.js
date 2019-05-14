@@ -43,7 +43,7 @@ class SecurityFeatureObject extends React.Component {
     }
 
     return (
-      <Row className="security-object-col-container pb-5">
+      <Row className="security-object-col-container security-content-row-footer pb-5">
         <div>{securityFeaturesObjectLeftRow}</div>
         <div>{securityFeaturesObjectRightRow}</div>
       </Row>

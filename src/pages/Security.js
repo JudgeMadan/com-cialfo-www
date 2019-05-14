@@ -80,10 +80,10 @@ class Security extends React.Component {
           </p>
         </Row>
         <div className="full-width-light-blue mt-5">
-          <Row className="center-in-row light-blue-background pt-5">
+          <Row className="center-in-row light-blue-background security-content-row-header">
             <img className="security-oval" src={Oval} />
             <img className="security-blue-stroke-10" src={BlueStroke10} />
-            <h1 className="primary_font subheader-font-size security-header-text">
+            <h1 className="primary_font security-subheader security-header-text">
               {this.state.securityFeaturesTitle}
             </h1>
           </Row>
@@ -92,8 +92,8 @@ class Security extends React.Component {
           />
         </div>
         <div className="full-width-dark-blue">
-          <Row className="center-in-row  pt-5">
-            <h1 className="primary_font white-font subheader-font-size ">
+          <Row className="center-in-row security-content-row-header">
+            <h1 className="primary_font white-font security-subheader ">
               {this.state.securityQuestionTitle}
             </h1>
           </Row>
@@ -102,7 +102,7 @@ class Security extends React.Component {
               {this.state.securityQuestionBlurb}
             </p>
           </Row>
-          <Row className="center-in-row pb-5">
+          <Row className="center-in-row pb-5 security-content-row-footer">
             <button className="security-button">
               {this.state.securityQuestionButtonText}
             </button>
