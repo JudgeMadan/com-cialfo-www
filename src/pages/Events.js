@@ -135,7 +135,7 @@ class Events extends React.Component {
         <Row className="center-in-row events-partners-title pt-5">
           <h1 className="primary_font ">{this.state.aboutPagePartnersTitle}</h1>
         </Row>
-        <Row>
+        <Row className="center-in-row">
           <AboutPartners partners={this.state.aboutPagePartnersPartners} />
         </Row>
       </Container>

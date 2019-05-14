@@ -110,7 +110,7 @@ class Solutions extends React.Component {
           linkStyle={this.state.forSuperintendents}
         />
         <div className="solutions-bottom-spacing" />
-        <div className="full-width-light-blue">
+        <div className="full-width-light-blue center-in-row">
           <PartnerImages
             locale={this.props.locale}
             className="partnerImages"

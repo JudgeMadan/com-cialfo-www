@@ -18,7 +18,9 @@ class HomePartnerImages extends React.Component {
       imageObject = images.map(image => {
         return (
           <Col className="home-page-partner-image">
-            <img className="homePartnerImages" src={image} />
+            <div className="partner-object-image-container">
+              <img className="homePartnerImages" src={image} />
+            </div>
           </Col>
         );
       });
