@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import "./home/Home.css";
 import Oval from "../img/Oval.svg";
-import Line from "../img/Line.svg";
+import YellowStroke10 from "../img/YellowStroke10.svg";
 import PlaceholderQR from "../img/PlaceholderQR.svg";
 import DownloadLinksObject from "./downloads/DownloadLinksObject";
 import HomePartnerImages from "./home/HomePartnerImages";
@@ -101,9 +101,11 @@ class Downloads extends React.Component {
             </Row>
           </Container>
         </Row>
-        <div className="full-width-light-blue">
+        <div className="full-width-light-blue pb-5">
           <Row className="center-in-row edi-title download-text">
-            <h1 className="primary_font">{this.state.ediTitle}</h1>
+            <h1 className="primary_font edi-title-text">
+              {this.state.ediTitle}
+            </h1>
           </Row>
           <Row className="center-in-row download-text">
             <h1 className="secondary_font">{this.state.ediBlurb}</h1>
@@ -112,7 +114,7 @@ class Downloads extends React.Component {
             <button className="edi_button">{this.state.ediButtonText}</button>
           </Row>
         </div>
-        <div className="full-width-dark-blue ">
+        <div className="downloads-full-width-dark-blue downloads-vpn-dark-blue mb-5">
           <Row className="center-in-row edi-title download-text">
             <h1 className="primary_font white-text">{this.state.vpnTitle}</h1>
           </Row>
@@ -120,9 +122,12 @@ class Downloads extends React.Component {
             <h1 className="secondary_font white-text">{this.state.vpnBlurb}</h1>
           </Row>
           <Row className="center-in-row pt-3 pb-5">
-            <img src={PlaceholderQR} />
+            <img className="downloads-oval" src={Oval} />
+            <img className="downloads-yellow-stroke-10" src={YellowStroke10} />
+            <img className="downloads-qr-code" src={PlaceholderQR} />
           </Row>
         </div>
+        <Row className="mb-5" />
       </Container>
     );
   }
