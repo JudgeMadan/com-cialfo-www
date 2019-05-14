@@ -78,7 +78,7 @@ class Downloads extends React.Component {
         <Row className="aboutPageTitle">
           <Container>
             <Row>
-              <Col className="events-header-text">
+              <Col className="downloads-header-text">
                 <Row>
                   <h1 className="primary_font events-header-title">
                     {this.state.headerTitle}
@@ -93,7 +93,10 @@ class Downloads extends React.Component {
                 />
               </Col>
               <Col>
-                <img src={this.state.headerHeroImage} />
+                <img
+                  className="downloads-header-img"
+                  src={this.state.headerHeroImage}
+                />
               </Col>
             </Row>
           </Container>
