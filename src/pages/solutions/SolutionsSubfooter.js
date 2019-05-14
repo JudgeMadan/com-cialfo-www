@@ -40,9 +40,10 @@ class SolutionsSubfooter extends React.Component {
                     <h1 className="primary_font sub_footer_quote white_font">
                       "{this.props.quote}"
                     </h1>
-
+                    <p className="secondary_font white_font solutions-bold">
+                      {this.props.quoteAuthor}
+                    </p>
                     <p className="secondary_font white_font">
-                      {this.props.quoteAuthor} <br />
                       {this.props.quoteAuthorCredit}
                     </p>
                   </div>

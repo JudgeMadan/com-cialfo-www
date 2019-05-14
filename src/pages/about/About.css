@@ -225,6 +225,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 475px;
 }
 .officeTitle {
   color: white;
@@ -287,4 +288,12 @@
 
 .by-the-numbers-object-image {
   margin-bottom: 15px;
+}
+
+.about-page-counselor-advisor-header {
+  margin-top: 100px;
+}
+
+.about-page-counselor-advisor-footer {
+  margin-bottom: 100px;
 }

@@ -211,12 +211,12 @@ class About extends React.Component {
             </Container>
           </Row>
         </div>
-        <Row className="center-in-row pt-5">
+        <Row className="center-in-row about-page-counselor-advisor-header">
           <h1 className="primary_font">
             {this.state.aboutPageCounselorsTitle}
           </h1>
         </Row>
-        <Row className="pb-5">
+        <Row className=" about-page-counselor-advisor-footer">
           <Container>
             <AboutCounselors
               counselors={this.state.aboutPageCounselorsCounselors}
@@ -224,12 +224,12 @@ class About extends React.Component {
           </Container>
         </Row>
         <div className="full-width-light-blue">
-          <Row className="light-blue-background center-in-row pt-5">
+          <Row className="light-blue-background about-page-counselor-advisor-header center-in-row ">
             <h1 className="primary_font">
               {this.state.aboutPageBusinessAdvisorsTitle}
             </h1>
           </Row>
-          <Row className="light-blue-background pb-5">
+          <Row className="light-blue-background about-page-counselor-advisor-footer">
             <Container>
               <AboutBusinessAdvisors
                 businessAdvisors={this.state.aboutPageBusinessAdvisorsAdvisors}
