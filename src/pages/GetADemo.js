@@ -99,8 +99,8 @@ class GetADemo extends React.Component {
     return (
       <div>
         <Row className="demoTextImgContainer">
-          <img className="demoTextImg" src={DemoText} />
-          <img className="demo-gray-lines" src={GrayLines} />
+          <img className="blue-header-svg" src={DemoText} />
+          <img className="demo-get-in-touch-gray-lines " src={GrayLines} />
         </Row>
         <Row className="demoTextTitleContainer secondary_font">
           <h1 className="demoTextTitle">{this.state.getADemoTitle}</h1>

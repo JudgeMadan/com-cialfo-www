@@ -93,8 +93,8 @@ class GetInTouch extends React.Component {
     return (
       <div>
         <Row className="demoTextImgContainer">
-          <img className="get-in-touch-gray-lines" src={GrayLines} />
-          <img className="demoTextImg" src={GetInTouchImg} />
+          <img className="demo-get-in-touch-gray-lines" src={GrayLines} />
+          <img className="blue-header-svg" src={GetInTouchImg} />
         </Row>
         <Row className="getInTouchContactArrayContainer">
           <GetInTouchContactArray
