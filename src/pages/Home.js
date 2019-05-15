@@ -1,6 +1,5 @@
 import React from "react";
 import HomeMarquee from "./home/HomeMarquee";
-import HomePartnerImages from "./home/HomePartnerImages";
 import MobileHomePartnerImages from "./home/MobileHomePartnerImages";
 import * as contentful from "contentful";
 import Row from "react-bootstrap/Row";

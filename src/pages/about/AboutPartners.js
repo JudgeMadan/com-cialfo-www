@@ -17,7 +17,12 @@ class AboutPartners extends React.Component {
       partnersObject = partners.map(partner => {
         return (
           <Col className="home-page-partner-image" key={partner.sys.id}>
-            <img className="homePartnerImages" src={partner.fields.file.url} />
+            <div className="partner-object-image-container">
+              <img
+                className="homePartnerImages"
+                src={partner.fields.file.url}
+              />
+            </div>
           </Col>
         );
       });
@@ -35,32 +40,5 @@ class AboutPartners extends React.Component {
     );
   }
 }
-
-// render() {
-//   console.log(this.props);
-//   const images = this.props.partnerImages;
-//   let imageObject;
-
-//   if (images) {
-//     imageObject = images.map(image => {
-//       return (
-//         <Col className="home-page-partner-image">
-//           <img className="homePartnerImages" src={image} />
-//         </Col>
-//       );
-//     });
-//   }
-
-//   return (
-//     <div className="home-partners-image-container">
-//       <Container className="home-partners-image-content">
-//         <Row className="imageObjectTitle">
-//           <h1 className="primary_font ">{this.props.title}</h1>
-//         </Row>
-//         <Row className="imageObjectRow">{imageObject}</Row>
-//       </Container>
-//     </div>
-//   );
-// }
 
 export default AboutPartners;

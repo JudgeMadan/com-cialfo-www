@@ -6,7 +6,6 @@ import Col from "react-bootstrap/Col";
 import ReactPlayer from "react-player";
 import "./Features.css";
 import FeaturesSubfooter from "./FeaturesSubfooter";
-import "../home/HomePartnerImages";
 import Oval from "../../img/Oval.svg";
 import Line from "../../img/Line.svg";
 import PartnerImages from "../PartnerImages";
