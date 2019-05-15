@@ -1,7 +1,6 @@
 import Row from "react-bootstrap/Row";
 import React from "react";
 import "./getADemo/GetADemo.css";
-import "./privacyAndSecurity/privacyAndSecurity.css";
 import Container from "react-bootstrap/Container";
 import * as contentful from "contentful";
 import SecurityFeatureObject from "./privacyAndSecurity/SecurityFeatureObject";
@@ -9,6 +8,7 @@ import Line from "../img/Line.svg";
 import BlueStroke10 from "../img/BlueStroke10.svg";
 import Oval from "../img/Oval.svg";
 import "./privacyAndSecurity/privacyAndSecurity.css";
+import { NavLink } from "react-router-dom";
 class Security extends React.Component {
   constructor(props) {
     super(props);
@@ -75,11 +75,11 @@ class Security extends React.Component {
           </h1>
         </Row>
         <Row className="center-in-row pb-5 security-title-row">
-          <p className="secondary_font security-header-text">
+          <p className="secondary_font security-header-subtitle security-header-text">
             {this.state.securitySubtitle}
           </p>
         </Row>
-        <div className="full-width-light-blue mt-5">
+        <div className="full-width-light-blue center-in-row mt-5">
           <Row className="center-in-row light-blue-background security-content-row-header">
             <img className="security-oval" src={Oval} />
             <img className="security-blue-stroke-10" src={BlueStroke10} />
@@ -87,9 +87,11 @@ class Security extends React.Component {
               {this.state.securityFeaturesTitle}
             </h1>
           </Row>
-          <SecurityFeatureObject
-            securityFeatures={this.state.securityFeaturesItems}
-          />
+          <Row className="center-in-row">
+            <SecurityFeatureObject
+              securityFeatures={this.state.securityFeaturesItems}
+            />
+          </Row>
         </div>
         <div className="full-width-dark-blue">
           <Row className="center-in-row security-content-row-header">
@@ -98,26 +100,30 @@ class Security extends React.Component {
             </h1>
           </Row>
           <Row className="center-in-row">
-            <p className="secondary_font white-font">
+            <p className="secondary_font white-font security-questions-blurb">
               {this.state.securityQuestionBlurb}
             </p>
           </Row>
           <Row className="center-in-row pb-5 security-content-row-footer">
-            <button className="security-button">
-              {this.state.securityQuestionButtonText}
-            </button>
+            <NavLink to="/get-in-touch">
+              <button className="security-button">
+                {this.state.securityQuestionButtonText}
+              </button>
+            </NavLink>
           </Row>
         </div>
         <Row className="center-in-row pt-5 pb-5">
           {this.props.locale !== "zh-CN" && (
             <p className="secondary_font">
-              Read more about our <a href="#">Privacy Policy</a> and&nbsp;
+              Read more about our{" "}
+              <NavLink to="/privacy">Privacy Policy</NavLink> and&nbsp;
               <a href="#">Terms of Service</a>
             </p>
           )}
           {this.props.locale === "zh-CN" && (
             <p className="secondary_font">
-              中文中文中文 <a href="#">Privacy Policy</a> 中文&nbsp;
+              中文中文中文 <NavLink to="/privacy">Privacy Policy</NavLink>{" "}
+              and&nbsp;
               <a href="#">Terms of Service</a>
             </p>
           )}

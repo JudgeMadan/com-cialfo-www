@@ -41,9 +41,12 @@ class PrivacyEnglish extends React.Component {
         <p>
           We’ve tried to keep this simple, but if you’re not familiar with terms
           like “cookies”, “IP addresses” or “API”, then feel free to email us at{" "}
-          <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>. Your privacy is
-          really important to us, so whether you’re new to Cialfo or a long-time
-          user, please take the time to get to know our practices.
+          <a className="privacy-link" href="mailto:hello@cialfo.co">
+            hello@cialfo.co
+          </a>
+          . Your privacy is really important to us, so whether you’re new to
+          Cialfo or a long-time user, please take the time to get to know our
+          practices.
         </p>
         <p class="text-uppercase privacy-subtitle">
           Personal Information We Collect
@@ -162,7 +165,11 @@ class PrivacyEnglish extends React.Component {
           It’s important that the personal information we hold about you is
           accurate and current. Please let us know if your personal information
           changes during your relationship with us by updating your account or
-          emailing us at <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>.
+          emailing us at{" "}
+          <a className="privacy-link" href="mailto:hello@cialfo.co">
+            hello@cialfo.co
+          </a>
+          .
         </p>
         <p class="text-uppercase privacy-subtitle">
           How We Use Your Personal Information
@@ -404,7 +411,10 @@ class PrivacyEnglish extends React.Component {
         <p>
           If you believe that we might have any personal information from a
           child under 13, please contact us at{" "}
-          <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>.
+          <a className="privacy-link" href="mailto:hello@cialfo.co">
+            hello@cialfo.co
+          </a>
+          .
         </p>
         <p className="privacy-subtitle">Changes to this Privacy Policy</p>
         <p>
@@ -440,8 +450,11 @@ class PrivacyEnglish extends React.Component {
         </p>
         <p>
           Cialfo account holders may also contact us at{" "}
-          <a href="mailto:hello@cialfo.co">hello@cialfo.co</a> to accomplish the
-          foregoing or if you have additional requests or questions.
+          <a className="privacy-link" href="mailto:hello@cialfo.co">
+            hello@cialfo.co
+          </a>{" "}
+          to accomplish the foregoing or if you have additional requests or
+          questions.
         </p>
         <p className="privacy-subtitle">
           Access to Data Controlled by our Clients
@@ -452,8 +465,10 @@ class PrivacyEnglish extends React.Component {
           service. An individual who seeks access, or who seeks to correct,
           amend, or delete personal information provided by our Clients should
           direct their request to the Client. You may also contact us at{" "}
-          <a href="mailto:hello@cialfo.co">hello@cialfo.co</a> if you have
-          additional questions or concerns.
+          <a className="privacy-link" href="mailto:hello@cialfo.co">
+            hello@cialfo.co
+          </a>{" "}
+          if you have additional questions or concerns.
         </p>
         <p className="privacy-subtitle">Marketing Communications</p>
         <p>
@@ -480,7 +495,11 @@ class PrivacyEnglish extends React.Component {
           Some Internet browsers may be configured to send “Do Not Track”
           signals to the online services that you visit. Cialfo honors “Do Not
           Track” signals. To find out more about “Do Not Track,” please visit{" "}
-          <a href=" http://www.allaboutdnt.com." target="_blank">
+          <a
+            className="privacy-link"
+            href=" http://www.allaboutdnt.com."
+            target="_blank"
+          >
             http://www.allaboutdnt.com.
           </a>
         </p>
@@ -505,8 +524,10 @@ class PrivacyEnglish extends React.Component {
         <p>
           If you have any questions or concerns at all about our Privacy Policy,
           please feel free to email us at{" "}
-          <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>. Or, if you’re
-          feeling old fashioned, use snail mail:
+          <a className="privacy-link" href="mailto:hello@cialfo.co">
+            hello@cialfo.co
+          </a>
+          . Or, if you’re feeling old fashioned, use snail mail:
         </p>
         <p>
           Cialfo
@@ -533,7 +554,7 @@ class PrivacyEnglish extends React.Component {
           Cialfo is the controller of your personal information for purposes of
           European data protection legislation. Our Data Protection Officer can
           be reached at{" "}
-          <a className="hello-cialfo-email" href="mailto:hello@cialfo.co">
+          <a className="privacy-link" href="mailto:hello@cialfo.co">
             hello@cialfo.co
           </a>
           .
