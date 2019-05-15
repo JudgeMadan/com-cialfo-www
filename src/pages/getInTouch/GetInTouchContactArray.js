@@ -21,6 +21,7 @@ class GetInTouchContactArray extends React.Component {
             <Row className="contactArrayRow secondary_font">
               {contact.fields.header}
             </Row>
+            <br />
             <Row className="contactArrayRow secondary_font">
               {contact.fields.content}
             </Row>
