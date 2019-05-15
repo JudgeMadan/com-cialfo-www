@@ -198,14 +198,12 @@ class Home extends React.Component {
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="featureRows">
             <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-              <div>
-                <img className="stroke-10" src={Stroke10} />
-                <img
-                  className="left-align-light-blue-background"
-                  src={LightBlueRectangle}
-                />
-                <img className="homePageImg" src={Documents} />
-              </div>
+              <img className="stroke-10" src={Stroke10} />
+              <img
+                className="custom-left-align-light-blue-background"
+                src={LightBlueRectangle}
+              />
+              <img className="homePageImg" src={Documents} />
             </Col>
             <Col className="homePageFeaturesText">
               <div className="homePageFeaturesRightSideTextObject">
