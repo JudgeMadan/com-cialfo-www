@@ -133,3 +133,20 @@
 .four-oh-four-title-text {
   width: 700px;
 }
+
+.privacy-title {
+  font-size: 60px !important;
+  font-size: 22px;
+}
+
+.privacy-upper-title {
+  font-size: 22px;
+}
+
+.privacy-subtitle {
+  margin-bottom: 0;
+}
+
+p a {
+  color: #2a1f2f;
+}
