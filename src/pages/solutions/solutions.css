@@ -104,3 +104,8 @@
   font-weight: bold !important;
   margin-bottom: 0px;
 }
+
+.solutions-marquee-container {
+  display: flex;
+  justify-content: center;
+}
