@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import "./home/Home.css";
 
-class HomePartnerImages extends React.Component {
+class PartnerImages extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -38,4 +38,4 @@ class HomePartnerImages extends React.Component {
     );
   }
 }
-export default HomePartnerImages;
+export default PartnerImages;

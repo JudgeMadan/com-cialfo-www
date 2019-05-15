@@ -9,7 +9,6 @@ class AboutCialfoOffices extends React.Component {
 
   render() {
     const offices = this.props.cialfoOffices;
-    console.log(offices);
     let officesObject;
     if (offices) {
       officesObject = offices.map(office => {

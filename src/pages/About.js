@@ -12,6 +12,7 @@ import AboutBusinessAdvisors from "./about/AboutBusinessAdvisors";
 import AboutCialfoOffices from "./about/AboutCialfoOffices";
 import MediaQuery from "react-responsive";
 import PartnerImages from "./PartnerImages";
+
 import "./about/About.css";
 
 class About extends React.Component {
@@ -65,6 +66,7 @@ class About extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container className="aboutPage">
         {/* FULL SCREEN HEADER */}

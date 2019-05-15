@@ -8,7 +8,6 @@ import Oval from "../img/Oval.svg";
 import YellowStroke10 from "../img/YellowStroke10.svg";
 import PlaceholderQR from "../img/PlaceholderQR.svg";
 import DownloadLinksObject from "./downloads/DownloadLinksObject";
-import HomePartnerImages from "./home/HomePartnerImages";
 class Downloads extends React.Component {
   constructor(props) {
     super(props);

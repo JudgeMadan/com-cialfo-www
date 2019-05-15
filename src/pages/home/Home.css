@@ -251,11 +251,6 @@
   justify-content: center;
 }
 
-.imageObjectRow {
-  /* display: flex;
-  align-content: center; */
-}
-
 .imageObjectTitle {
   display: flex;
   justify-content: center;
