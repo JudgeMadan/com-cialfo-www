@@ -105,7 +105,7 @@ class GetADemo extends React.Component {
         <Row className="demoTextTitleContainer secondary_font">
           <h1 className="demoTextTitle">{this.state.getADemoTitle}</h1>
         </Row>
-        <Row className="demo-form-object-container">
+        <Container className="demo-form-object-container">
           <div className="demo_form_container">
             <form
               method="POST"
@@ -129,7 +129,7 @@ class GetADemo extends React.Component {
                     </div>
                   </div>
                 </Row>
-                <Row>
+                <Row className="get-in-touch-row">
                   <div class="_form_element _x18120362 _full_width left_content_row">
                     <label className="_form-label secondary_font">
                       {this.state.getADemoName}
@@ -161,7 +161,7 @@ class GetADemo extends React.Component {
                     </div>
                   </div>
                 </Row>
-                <Row>
+                <Row className="get-in-touch-row">
                   <div class="_form_element _x80848159 _full_width left_content_row">
                     <label class="_form-label secondary_font">
                       {this.state.getADemoOrg}
@@ -191,7 +191,7 @@ class GetADemo extends React.Component {
                     </div>
                   </div>
                 </Row>
-                <Row>
+                <Row className="get-in-touch-last-row">
                   <div class="_form_element _x98882726 _full_width left_content_row">
                     <label class="_form-label secondary_font">
                       {this.state.getADemoNumberOfStudents}
@@ -225,7 +225,7 @@ class GetADemo extends React.Component {
               <div class="_form-thank-you" />
             </form>
           </div>
-        </Row>
+        </Container>
         <Row>
           <FeaturesSubfooter
             img={this.state.getADemoSubfooterImg}
