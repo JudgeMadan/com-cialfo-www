@@ -11,9 +11,11 @@ class PrivacyChinese extends React.Component {
     return (
       <Container className="secondary_font pb-5">
         <div class="text-lg-center text-md-center text-sm-center text-xs-center">
-          <p className="hidden-xs-down text-uppercase primary_font">Cialfo</p>
-          <div class="h2 hidden-sm-up text-uppercase primary_font">
-            PRIVACY POLICY CHINESE
+          <p className="hidden-xs-down privacy-upper-title primary_font">
+            Cialfo
+          </p>
+          <div class="h2 hidden-sm-up privacy-title primary_font">
+            Privacy Policy
           </div>
           <br />
         </div>
