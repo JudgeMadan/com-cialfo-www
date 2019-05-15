@@ -69,17 +69,19 @@ class Events extends React.Component {
         <Row className="aboutPageTitle">
           <Container>
             <Row>
-              <Col className="events-header-text">
-                <Row>
-                  <h1 className="primary_font events-header-title">
-                    {this.state.aboutPageHeaderTitle}
-                  </h1>
-                </Row>
-                <Row>
-                  <h2 className="secondary_font">
-                    {this.state.aboutPageHeaderSubtitle}
-                  </h2>
-                </Row>
+              <Col className="top_row_left_col events-header-text">
+                <div>
+                  <Row>
+                    <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
+                      {this.state.aboutPageHeaderTitle}
+                    </h1>
+                  </Row>
+                  <Row>
+                    <h2 className="secondary_font left-side-header-blurb">
+                      {this.state.aboutPageHeaderSubtitle}
+                    </h2>
+                  </Row>
+                </div>
               </Col>
               <Col>
                 <img src={this.state.aboutPageHeaderImage} />

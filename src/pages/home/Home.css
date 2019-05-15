@@ -30,12 +30,6 @@
   margin: 30px 0 30px 0;
 }
 
-.top_row_left_col {
-  display: flex;
-  align-items: center;
-  margin-right: 100px;
-}
-
 .mobile_top_row_left_col {
   display: flex;
   align-items: flex-end;
@@ -44,15 +38,6 @@
 
 .mobile_top_row_header {
   text-align: center;
-}
-
-.homePageHeaderBlurb {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 28px;
-  color: #2b1f30;
-  max-width: 400px;
 }
 
 .no-border {
