@@ -72,17 +72,19 @@ class About extends React.Component {
           <Row className="aboutPageTitle">
             <Container>
               <Row>
-                <Col className="aboutPageHeaderText">
-                  <Row>
-                    <h1 className="primary_font aboutPageHeaderTitle">
-                      {this.state.aboutPageHeaderTitle}
-                    </h1>
-                  </Row>
-                  <Row>
-                    <h2 className="secondary_font">
-                      {this.state.aboutPageHeaderSubtitle}
-                    </h2>
-                  </Row>
+                <Col className="top_row_left_col ">
+                  <div>
+                    <Row>
+                      <h1 className="primary_font left-side-header-title">
+                        {this.state.aboutPageHeaderTitle}
+                      </h1>
+                    </Row>
+                    <Row>
+                      <h2 className="secondary_font left-side-header-blurb">
+                        {this.state.aboutPageHeaderSubtitle}
+                      </h2>
+                    </Row>
+                  </div>
                 </Col>
                 <Col>
                   <img src={this.state.aboutPageHeaderImage} />

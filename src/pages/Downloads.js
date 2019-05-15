@@ -79,18 +79,22 @@ class Downloads extends React.Component {
           <Container>
             <Row>
               <Col className="downloads-header-text">
-                <Row>
-                  <h1 className="primary_font events-header-title">
-                    {this.state.headerTitle}
-                  </h1>
-                </Row>
-                <Row>
-                  <p className="secondary_font">{this.state.headerBlurb}</p>
-                </Row>
-                <DownloadLinksObject
-                  downloadLinks={this.state.headerDownloadLinks}
-                  downloadLinksUrls={this.state.headerDownloadLinksUrls}
-                />
+                <div>
+                  <Row>
+                    <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
+                      {this.state.headerTitle}
+                    </h1>
+                  </Row>
+                  <Row>
+                    <p className="secondary_font left-side-header-blurb">
+                      {this.state.headerBlurb}
+                    </p>
+                  </Row>
+                  <DownloadLinksObject
+                    downloadLinks={this.state.headerDownloadLinks}
+                    downloadLinksUrls={this.state.headerDownloadLinksUrls}
+                  />
+                </div>
               </Col>
               <Col>
                 <img

@@ -86,12 +86,12 @@ class Home extends React.Component {
             <Col className="top_row_left_col">
               <div>
                 <Row>
-                  <h1 className="primary_font homePageHeaderTitle">
+                  <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
                     {this.state.homePageHeaderTitle}
                   </h1>
                 </Row>
                 <Row>
-                  <h1 className="secondary_font homePageHeaderBlurb">
+                  <h1 className="secondary_font left-side-header-blurb">
                     {this.state.homePageHeaderBlurb}
                   </h1>
                 </Row>
