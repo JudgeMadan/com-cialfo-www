@@ -39,11 +39,13 @@ class SolutionsSubPage extends React.Component {
           blurb={this.props.bottomRowBlurb}
         />
         <div className="solutions-bottom-spacing" />
-        <HomeMarquee
-          locale={this.props.locale}
-          accessToken={this.props.accessToken}
-          space={this.props.space}
-        />
+        <div className="solutions-marquee-container">
+          <HomeMarquee
+            locale={this.props.locale}
+            accessToken={this.props.accessToken}
+            space={this.props.space}
+          />
+        </div>
       </Container>
     );
   }
