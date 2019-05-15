@@ -129,7 +129,7 @@
 }
 
 .homePageFeaturesRightSideTextObject {
-  margin: 0 10%;
+  margin: 0 15%;
 }
 
 .mobile-homePageFeaturesRightSideTextObject {
@@ -290,8 +290,8 @@
 .stroke-10 {
   position: absolute;
   z-index: 2;
-  margin-top: -100px;
-  margin-left: -50px;
+  margin-top: -200px;
+  margin-left: -270px;
 }
 
 .left-align-light-blue-background {
