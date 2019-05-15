@@ -2,7 +2,6 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import React from "react";
-import "./getADemo/GetADemo.css";
 import "./privacyAndSecurity/privacyAndSecurity.css";
 import * as contentful from "contentful";
 import FourOhFourImg from "../img/404.svg";
@@ -52,11 +51,9 @@ class FourOhFour extends React.Component {
       <div className="privacy_security_title four_oh_four_outer_content">
         <Container>
           <div>
-            <Row className="four_oh_four_content">
-              <div>
-                <img className="thank-you-image" src={FourOhFourImg} />
-                <img className="thank-you-gray-lines" src={GrayLines} />
-              </div>
+            <Row className="four_oh_four_content pb-5">
+              <img className="blue-header-svg" src={FourOhFourImg} />
+              <img className="four-oh-four-gray-lines" src={GrayLines} />
             </Row>
             <Row className="four_oh_four_content center-in-row">
               <h1 className="primary_font thank-you-title-text four-oh-four-title-text">

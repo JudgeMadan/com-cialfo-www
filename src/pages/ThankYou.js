@@ -2,7 +2,6 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import React from "react";
-import "./getADemo/GetADemo.css";
 import "./privacyAndSecurity/privacyAndSecurity.css";
 import * as contentful from "contentful";
 import ThankYouImg from "../img/ThankYou.svg";
@@ -51,7 +50,7 @@ class ThankYou extends React.Component {
         <div>
           <Row className="four_oh_four_content pb-5">
             <div>
-              <img className="thank-you-image" src={ThankYouImg} />
+              <img className="blue-header-svg" src={ThankYouImg} />
               <img className="thank-you-gray-lines" src={GrayLines} />
             </div>
           </Row>

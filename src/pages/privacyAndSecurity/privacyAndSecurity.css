@@ -39,15 +39,17 @@
   font-size: 20px;
 }
 
-.thank-you-image {
-  position: relative;
-  z-index: 2;
+.four-oh-four-gray-lines {
+  position: absolute;
+  margin-top: 90px;
+  margin-left: 190px;
+  z-index: 1;
 }
 
 .thank-you-gray-lines {
   position: absolute;
-  margin-top: 50px;
-  margin-left: -100px;
+  margin-top: 90px;
+  margin-left: -20px;
   z-index: 1;
 }
 

@@ -14,6 +14,7 @@
   display: flex;
   justify-content: center;
   width: 1000px !important;
+  height: 630px !important;
 }
 
 .get_in_touch_object {
@@ -70,13 +71,7 @@
   background-color: #ebf9ff;
   display: flex;
   justify-content: center;
-  padding: 50px 0;
-}
-
-.demoTextImg {
-  max-height: 175px;
-  max-width: auto;
-  z-index: 2;
+  padding: 100px 0;
 }
 
 .formContainer {
@@ -194,19 +189,10 @@
   margin-bottom: 50px;
 }
 
-.demo-gray-lines {
+.demo-get-in-touch-gray-lines {
   position: absolute;
-  margin-top: 80px;
-  margin-left: 170px;
-  z-index: 1;
-  height: auto;
-  width: 120px;
-}
-
-.get-in-touch-gray-lines {
-  position: absolute;
-  margin-top: 90px;
-  margin-left: 160px;
+  margin-top: 130px;
+  margin-left: 200px;
   z-index: 1;
   height: auto;
   width: 120px;
