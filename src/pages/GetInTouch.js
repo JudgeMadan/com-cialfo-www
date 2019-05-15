@@ -127,7 +127,7 @@ class GetInTouch extends React.Component {
                   </div>
                 </div>
               </Row>
-              <Row className="title_row">
+              <Row className="get-in-touch-row ">
                 <div class="_form_element _x11005730 _full_width upper_left_content_row">
                   <label class="_form-label secondary_font">
                     {this.state.getInTouchFullName}
@@ -155,7 +155,7 @@ class GetInTouch extends React.Component {
                   </div>
                 </div>
               </Row>
-              <Row className="title_row">
+              <Row className="get-in-touch-row">
                 <div class="_form_element _x11676591 _full_width lower_left_content_row ">
                   <label class="_form-label secondary_font">
                     {this.state.getInTouchPhone}
@@ -185,11 +185,11 @@ class GetInTouch extends React.Component {
                   </div>
                 </div>
               </Row>
-              <Row className="title_row">
+              <Row className="get-in-touch-row">
                 <div class="_button-wrapper _full_width">
                   <button
                     id="_form_3_submit"
-                    className="_submit submit_button"
+                    className="_submit home_button"
                     type="submit"
                   >
                     Submit
