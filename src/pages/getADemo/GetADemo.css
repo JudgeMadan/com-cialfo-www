@@ -13,8 +13,8 @@
   padding-top: 20px;
   display: flex;
   justify-content: center;
-  width: 1000px !important;
-  height: 630px !important;
+  width: 900px !important;
+  min-height: 530px !important;
 }
 
 .get_in_touch_object {
@@ -63,6 +63,28 @@
   font-size: 20px;
 }
 
+.home_button {
+  background-color: #1886df;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  margin-top: 30px;
+  width: 166px;
+  height: 55px;
+  font-size: 20px;
+}
+
+.home_button:hover {
+  background-color: #2b0fca;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  margin-top: 30px;
+  width: 166px;
+  height: 55px;
+  font-size: 20px;
+}
+
 .button {
   margin-bottom: 100px;
 }
@@ -85,6 +107,11 @@
   margin-bottom: 50px;
 }
 
+.get-in-touch-row {
+  display: flex;
+  justify-content: center;
+}
+
 .left_content_row {
   margin-bottom: 20px;
   margin-right: 80px;
@@ -94,7 +121,7 @@
   margin-bottom: 20px;
   margin-right: 40px;
   width: 300px;
-  margin-left: -82px;
+  /* margin-left: -82px; */
 }
 
 .upper_right_content_row {
@@ -104,13 +131,13 @@
 
 .lower_left_content_row {
   margin-bottom: 20px;
-  margin-right: 80px;
+  margin-right: 40px;
   width: 300px;
 }
 
 .lower_right_content_row {
   margin-bottom: 20px;
-  margin-right: 80px;
+  margin-left: 40px;
 }
 
 .input_style {
