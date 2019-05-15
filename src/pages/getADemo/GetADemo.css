@@ -4,7 +4,8 @@
   padding-top: 20px;
   display: flex;
   justify-content: center;
-  width: 900px;
+  width: 900px !important;
+  min-height: 530px !important;
 }
 
 .get_in_touch_container {
@@ -112,6 +113,11 @@
   justify-content: center;
 }
 
+.get-in-touch-last-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .left_content_row {
   margin-bottom: 20px;
   margin-right: 80px;
@@ -121,7 +127,6 @@
   margin-bottom: 20px;
   margin-right: 40px;
   width: 300px;
-  /* margin-left: -82px; */
 }
 
 .upper_right_content_row {
