@@ -1,13 +1,13 @@
 import React from "react";
 import ClientStoriesMarqueeListObject from "./clientStoriesMarqueeList/ClientStoriesMarqueeListObject";
 import * as contentful from "contentful";
-import { LinkExternal } from "@githubprimer/octicons-react";
+import Row from "react-bootstrap/Row";
 
 class ClientStoriesMarqueeList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      schoolInfo: { schoolBlurbArray: [], schoolLogoArray: [] }
+      schoolInfo: []
     };
   }
 
@@ -34,42 +34,38 @@ class ClientStoriesMarqueeList extends React.Component {
 
   setContent = response => {
     const pageContent = response.items;
-
     for (let key in pageContent) {
-      let schoolBlurbArray = this.state.schoolInfo.schoolBlurbArray.slice();
-      let schoolLogoArray = this.state.schoolInfo.schoolLogoArray.slice();
+      let schoolObject = {
+        blurb: pageContent[key].fields.clientStoryStoryBlurb,
+        logo: pageContent[key].fields.clientStoryLogo.fields.file.url,
+        route: pageContent[key].fields.pageRoute,
+        id: pageContent[key].sys.id
+      };
 
-      schoolBlurbArray.push(pageContent[key].fields.clientStoryStoryBlurb);
-      schoolLogoArray.push(
-        pageContent[key].fields.clientStoryLogo.fields.file.url
-      );
-
-      // console.log(newSchoolBlurbArray);
-      let updatedSchoolInfo = { schoolBlurbArray, schoolLogoArray };
-      // console.log(schoolInfo2);
-      this.setState({
-        schoolInfo: updatedSchoolInfo
-      });
+      let schoolInfo = this.state.schoolInfo.slice();
+      schoolInfo.push(schoolObject);
+      this.setState({ schoolInfo: schoolInfo });
     }
   };
 
   render() {
     const schoolInfo = this.state.schoolInfo;
-    console.log(schoolInfo);
+    let schoolInfoArray;
     if (schoolInfo) {
-      for (let key in schoolInfo) {
+      schoolInfoArray = schoolInfo.map(schoolItem => {
         return (
-          <h1>HEY</h1>
-          // <ClientStoriesMarqueeListObject
-          // // key={marqueeItemArray.sys.id}
-          // // marqueeItemArray={marqueeItemArray}
-          // // locale={this.props.locale}
-          // />
+          <ClientStoriesMarqueeListObject
+            id={schoolItem.id}
+            blurb={schoolItem.blurb}
+            logo={schoolItem.logo}
+            route={schoolItem.route}
+            locale={this.props.locale}
+          />
         );
-      }
+      });
     }
 
-    return <div>HEY</div>;
+    return <Row>{schoolInfoArray}</Row>;
   }
 }
 export default ClientStoriesMarqueeList;

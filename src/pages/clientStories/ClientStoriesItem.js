@@ -82,6 +82,9 @@ class ClientStoriesItem extends React.Component {
             />
           </Col>
         </Row>
+        <Row className="center-in-row my-5">
+          <h1 className="primary_font">More Client Stories</h1>
+        </Row>
         <Row>
           <ClientStoriesMarquee
             locale={this.props.locale}
