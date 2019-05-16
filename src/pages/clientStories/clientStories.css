@@ -1,0 +1,47 @@
+.client-top-row-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 25px;
+}
+
+.client-top-row-blurb {
+  /* max-width: 350px; */
+}
+
+.client-story-hero-image {
+  height: auto;
+  width: 590px;
+}
+
+.client-school-card {
+  border: solid #3386df 2px;
+  height: 620px;
+  max-width: 380px !important;
+  margin-right: 5rem !important;
+}
+
+.client-sales-button {
+  background-color: #1886df;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  font-size: 20px;
+}
+
+.client-sales-button:hover {
+  background-color: #2b0fca;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  font-size: 20px;
+}
+
+.justify-text {
+  text-align: justify;
+}
+
+.client-video-row {
+  display: flex;
+  justify-content: center;
+}

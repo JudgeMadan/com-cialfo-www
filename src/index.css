@@ -62,11 +62,6 @@ code {
   border: none;
 }
 
-.schoolCard {
-  background-color: #3386df;
-  color: white;
-}
-
 .marqueeElement {
   display: inline-block;
   margin: 0 20px;
