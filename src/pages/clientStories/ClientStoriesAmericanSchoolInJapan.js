@@ -82,6 +82,9 @@ class ClientStoriesAmericanSchoolInJapan extends React.Component {
         testimonialPullQuote_1={this.state.clientStoryTestimonialPullQuote1}
         testimonialPullQuote_2={this.state.clientStoryTestimonialPullQuote2}
         testimonialVideo={this.state.clientStoryTestimonialVideoEmbedLink}
+        locale={this.props.locale}
+        space={this.props.space}
+        accessToken={this.props.accessToken}
       />
     );
   }

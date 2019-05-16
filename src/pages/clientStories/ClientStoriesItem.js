@@ -5,13 +5,13 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Octicon, { Location, TriangleUp } from "@githubprimer/octicons-react";
 import ClientStoriesItemTestimonialType1 from "./clientStoriesItem/ClientStoriesItemTestimonialType1";
+import ClientStoriesMarquee from "./ClientStoriesMarquee";
 
 class ClientStoriesItem extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
-    console.log(this.props);
     return (
       <Container>
         <Row>
@@ -81,6 +81,13 @@ class ClientStoriesItem extends React.Component {
               testimonialVideo={this.props.testimonialVideo}
             />
           </Col>
+        </Row>
+        <Row>
+          <ClientStoriesMarquee
+            locale={this.props.locale}
+            space={this.props.space}
+            accessToken={this.props.accessToken}
+          />
         </Row>
       </Container>
     );

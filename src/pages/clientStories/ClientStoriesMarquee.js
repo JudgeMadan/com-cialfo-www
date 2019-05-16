@@ -1,18 +1,26 @@
 import React from "react";
-import ClientStoriesMarqueeItem from "./clientStoriesMarquee/ClientStoriesMarqueeItem";
+import MediaQuery from "react-responsive";
+import ClientStoriesMarqueeList from "./clientStoriesMarquee/ClientStoriesMarqueeList";
 
 class ClientStoriesMarquee extends React.Component {
   render() {
     return (
-      <h1 className="marquee">
-        <div className="marquee--inner">
-          <ClientStoriesMarqueeItem
-            updateClientStoryApiKey={this.props.updateClientStoryApiKey}
-            space={this.props.space}
-            accessToken={this.props.accessToken}
-          />
+      <MediaQuery query="(min-device-width: 1224px)">
+        <div className="marquee">
+          <div className="marquee--inner">
+            {/* <ClientStoriesMarqueeList
+              locale={this.props.locale}
+              accessToken={this.props.accessToken}
+              space={this.props.space}
+            /> */}
+            <ClientStoriesMarqueeList
+              locale={this.props.locale}
+              accessToken={this.props.accessToken}
+              space={this.props.space}
+            />
+          </div>
         </div>
-      </h1>
+      </MediaQuery>
     );
   }
 }

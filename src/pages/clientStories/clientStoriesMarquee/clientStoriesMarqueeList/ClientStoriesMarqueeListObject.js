@@ -1,7 +1,7 @@
 import React from "react";
 import * as contentful from "contentful";
 
-class ClientStoriesMarqueeItem extends React.Component {
+class ClientStoriesMarqueeListObject extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -60,4 +60,4 @@ class ClientStoriesMarqueeItem extends React.Component {
     );
   }
 }
-export default ClientStoriesMarqueeItem;
+export default ClientStoriesMarqueeListObject;
