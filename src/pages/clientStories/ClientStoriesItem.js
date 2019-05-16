@@ -1,131 +1,85 @@
-import * as contentful from "contentful";
 import React from "react";
+import "./clientStories.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Octicon, { Location, TriangleUp } from "@githubprimer/octicons-react";
+import ClientStoriesItemTestimonialType1 from "./clientStoriesItem/ClientStoriesItemTestimonialType1";
 
 class ClientStoriesItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      clientStoryApiKey: "7BLnyQxFOezaog26iqOZ7"
-    };
   }
-
-  client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
-  });
-
-  componentDidMount() {
-    this.setState(
-      {
-        clientStoryApiKey: this.props.clientStoryApiKey
-      },
-      () => {
-        this.fetchClientStory().then(this.setClients);
-      }
-    );
-  }
-
-  componentDidUpdate(prevProps) {
-    if (
-      prevProps.clientStoryApiKey !== this.props.clientStoryApiKey ||
-      prevProps.locale !== this.props.locale
-    ) {
-      this.setState(
-        {
-          clientStoryApiKey: this.props.clientStoryApiKey
-        },
-        () => {
-          this.fetchClientStory().then(this.setClients);
-        }
-      );
-    }
-  }
-
-  fetchClientStory = () =>
-    this.client.getEntries({
-      content_type: "clientStory",
-      locale: this.props.locale
-    });
-
-  setClients = response => {
-    const filteredResponse = response.items.filter(
-      item => item.sys.id === this.state.clientStoryApiKey
-    );
-    const clientStoryPageStory = filteredResponse[0].fields;
-    for (let key in clientStoryPageStory) {
-      this.setState({
-        [key]: clientStoryPageStory[key]
-      });
-    }
-  };
-
   render() {
+    console.log(this.props);
     return (
-      <Container className="py-5">
+      <Container>
         <Row>
-          <Col>
-            <Row>
-              <p className="font-weight-bold">
-                {this.state.clientStorySchoolName}
-              </p>
-            </Row>
-            <Row>{this.state.clientStoryStoryBlurb}</Row>
+          <Col className="client-top-row-left-col">
+            <div>
+              <Row>
+                <p className="primary_font">{this.props.schoolName}</p>
+              </Row>
+              <Row>
+                <h1 className="primary_font client-top-row-blurb left-side-header-title-large-font">
+                  {this.props.schoolBlurb}
+                </h1>
+              </Row>
+            </div>
           </Col>
           <Col>
-            <Row className="justify-content-md-end">
-              <img src={this.state.clientStorySchoolImage} />
-            </Row>
+            <img
+              className="client-story-hero-image"
+              src={this.props.schoolImage}
+            />
           </Col>
         </Row>
         <Row className="mt-5">
-          <Col>
-            <Container className="schoolCard font-weight-bold px-5 mr-5">
-              <Row>
-                <Octicon size="large" icon={TriangleUp} />
-              </Row>
-              <Row>
-                <p> "{this.state.clientStoryShortTestimonial}"</p>
-              </Row>
-              <Row>
-                <p>
-                  Number of Seniors:
-                  <span> {this.state.clientStoryNumberOfSeniors}</span>
-                </p>
-              </Row>
-              <Row>
-                <p>
-                  Counseling Team:
-                  <span> {this.state.clientStoryConsultingTeam}</span>
-                </p>
-              </Row>
-              <Row>
-                <p>
-                  Curriculum:
-                  <span> {this.state.clientStoryCurriculum}</span>
-                </p>
-              </Row>
-              <Row>
-                <p>
-                  <Octicon size="small" icon={Location} />
-                  <span> {this.state.clientStorySchoolLocation}</span>
-                </p>
-              </Row>
-            </Container>
+          <Col className="client-school-card px-5 pt-5">
+            <Row className="mb-5">
+              <img src={this.props.schoolLogo} />
+            </Row>
+            <Row className="mb-5">
+              <p> "{this.props.shortTestimonial}"</p>
+            </Row>
+            <Row>
+              <p className="bold">
+                <Octicon size="small" icon={Location} />
+                <span> {this.props.location}</span>
+              </p>
+            </Row>
+            <Row>
+              <p className="bold">
+                Number of Seniors:
+                <span> {this.props.seniorNumbers}</span>
+              </p>
+            </Row>
+            <Row>
+              <p className="bold">
+                Counseling Team:
+                <span> {this.props.counselorNumbers}</span>
+              </p>
+            </Row>
+            <Row>
+              <p className="bold">
+                Curriculum:
+                <span> {this.props.curriculum}</span>
+              </p>
+            </Row>
+            <Row>
+              <button className="mt-5 client-sales-button">
+                {this.props.buttonText}
+              </button>
+            </Row>
           </Col>
           <Col>
-            <Row>
-              <p>{this.state.clientStoryClientStoryDetail1}</p>
-            </Row>
-            <Row>
-              <img src="https://via.placeholder.com/150" />
-            </Row>
-            <Row>
-              <p>{this.state.clientStoryClientStoryDetail2A}</p>
-            </Row>
+            <ClientStoriesItemTestimonialType1
+              testimonialBlurb_1={this.props.testimonialBlurb_1}
+              testimonialBlurb_2={this.props.testimonialBlurb_2}
+              testimonialBlurb_3={this.props.testimonialBlurb_3}
+              testimonialPullQuote_1={this.props.testimonialPullQuote_1}
+              testimonialVideo={this.props.testimonialVideo}
+            />
           </Col>
         </Row>
       </Container>
