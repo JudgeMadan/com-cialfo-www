@@ -18,51 +18,7 @@ class ClientStories extends React.Component {
     accessToken: this.props.accessToken
   });
 
-  componentDidMount() {
-    this.fetchContent().then(this.setContent);
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
-      this.fetchContent().then(this.setContent);
-    }
-  }
-
-  fetchContent = () =>
-    this.client.getEntries({
-      content_type: "clientStory",
-      locale: this.props.locale
-    });
-
-  // setContent = response => {
-  //   const pageContent = response.items;
-  //   let filteredpageContent = pageContent.filter(
-  //     pageContent => pageContent.fields.pageType === "americanSchoolInJapan"
-  //   );
-  //   let filteredpageContentFields = filteredpageContent[0].fields;
-  //   for (let key in filteredpageContentFields) {
-  //     if (typeof filteredpageContentFields[key] === "string") {
-  //       this.setState({
-  //         [key]: filteredpageContentFields[key]
-  //       });
-  //     } else if (filteredpageContentFields[key].fields) {
-  //       this.setState({
-  //         [key]: filteredpageContentFields[key].fields.file.url
-  //       });
-  //     } else if (typeof filteredpageContentFields[key] === "number") {
-  //       this.setState({
-  //         [key]: filteredpageContentFields[key]
-  //       });
-  //     } else {
-  //       this.setState({
-  //         [key]: filteredpageContentFields[key].content
-  //       });
-  //     }
-  //   }
-  // };
-
   render() {
-    console.log(this.props);
     return (
       <Container>
         {this.props.locale === "en-US" && (

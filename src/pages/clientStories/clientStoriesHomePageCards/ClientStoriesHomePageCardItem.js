@@ -11,7 +11,6 @@ class ClientStoriesHomePageCardItem extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <Col className="client-stories-home-page-card m-5 px-5 pt-5 pb-3">
         <Row>
