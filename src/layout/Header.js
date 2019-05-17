@@ -62,9 +62,13 @@ class Header extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
-            {/* <Link className="nav-link" to="/clients">
+            <NavLink
+              activeClassName="activeStyle"
+              className="nav-link"
+              to="/clients"
+            >
               {this.state.clientsPage}
-            </Link> */}
+            </NavLink>
             <NavLink
               activeClassName="activeStyle"
               className="nav-link"
