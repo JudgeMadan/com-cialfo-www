@@ -9,6 +9,7 @@ import Logo from "../img/Logo.svg";
 import { Link } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup";
 import "./Layout/Layout.css";
+import MediaQuery from "react-responsive";
 class Footer extends React.Component {
   constructor(props) {
     super(props);
@@ -47,112 +48,230 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <NavBar
-        className="
+      <div>
+        <MediaQuery query="(min-device-width: 1224px)">
+          <NavBar
+            className="
         footer-background align-items-start justify-content-between footer"
-        sticky="bottom"
-      >
-        <Col>
-          <Row className="small">
+            sticky="bottom"
+          >
             <Col>
-              <Nav>
-                <ListGroup variant="flush">
-                  <ListGroup.Item className="pb-1 pt-1 font-weight-bold footerListGroupItem">
-                    {this.state.platform}
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                    {this.state.whyCialfo}
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                    <NavLink
-                      className="footer-nav-link nav-link"
-                      to="/solutions/principals"
-                    >
-                      {this.state.forPrincipals}
-                    </NavLink>
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                    <NavLink
-                      className="footer-nav-link nav-link"
-                      to="/solutions/counselors"
-                    >
-                      {this.state.forCounselors}
-                    </NavLink>
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
-                    {this.state.forITTeams}
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                    {this.state.cialfoVsBridgeU}
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                    {this.state.cialfoVsNaviance}
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                    {this.state.cialfoVsMaia}
-                  </ListGroup.Item>
-                </ListGroup>
-              </Nav>
+              <Row className="small">
+                <Col>
+                  <Nav>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item className="pb-1 pt-1 font-weight-bold footerListGroupItem">
+                        {this.state.platform}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.whyCialfo}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/solutions/principals"
+                        >
+                          {this.state.forPrincipals}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/solutions/counselors"
+                        >
+                          {this.state.forCounselors}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
+                        {this.state.forITTeams}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.cialfoVsBridgeU}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.cialfoVsNaviance}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.cialfoVsMaia}
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </Nav>
+                </Col>
+                <Col>
+                  <Nav>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item className="font-weight-bold pt-1 pb-1 footerListGroupItem">
+                        {this.state.resources}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.knowledgeBase}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.community}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.cialfoTips}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/events"
+                        >
+                          {this.state.events}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.partners}
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </Nav>
+                </Col>
+                <Col>
+                  <Nav>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item className="pb-1 pt-1 font-weight-bold footerListGroupItem">
+                        {this.state.team}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/about"
+                        >
+                          {this.state.aboutUs}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.blog}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.mediaKit}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.careers}
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </Nav>
+                </Col>
+              </Row>
             </Col>
+            <Col className="justify-content-md-end footer-logo">
+              <Row className="justify-content-md-end">
+                <Link to="/" className="navbar-brand">
+                  <img src={Logo} />
+                </Link>
+              </Row>
+            </Col>
+          </NavBar>
+        </MediaQuery>
+        {/* MOBILE FOOTER */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <NavBar
+            className="
+            footer-background align-items-start justify-content-between footer"
+            sticky="bottom"
+          >
             <Col>
-              <Nav>
-                <ListGroup variant="flush">
-                  <ListGroup.Item className="font-weight-bold pt-1 pb-1 footerListGroupItem">
-                    {this.state.resources}
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                    {this.state.knowledgeBase}
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                    {this.state.community}
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                    {this.state.cialfoTips}
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                    <NavLink className="footer-nav-link nav-link" to="/events">
-                      {this.state.events}
-                    </NavLink>
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                    {this.state.partners}
-                  </ListGroup.Item>
-                </ListGroup>
-              </Nav>
+              <Row className="small">
+                <Col>
+                  <Nav>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item className="pb-1 pt-1 font-weight-bold footerListGroupItem">
+                        {this.state.platform}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.whyCialfo}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/solutions/principals"
+                        >
+                          {this.state.forPrincipals}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/solutions/counselors"
+                        >
+                          {this.state.forCounselors}
+                        </NavLink>
+                      </ListGroup.Item>
+                      {/* <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.forITTeams}
+                      </ListGroup.Item> */}
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.cialfoVsBridgeU}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.cialfoVsNaviance}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.cialfoVsMaia}
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </Nav>
+                </Col>
+                <Col>
+                  <Nav>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item className="font-weight-bold pt-1 pb-1 footerListGroupItem">
+                        {this.state.resources}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.knowledgeBase}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.community}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.cialfoTips}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/events"
+                        >
+                          {this.state.events}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.partners}
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </Nav>
+                </Col>
+                <Col>
+                  <Nav>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item className="pb-1 pt-3 font-weight-bold footerListGroupItem">
+                        {this.state.team}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/about"
+                        >
+                          {this.state.aboutUs}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.blog}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.mediaKit}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        {this.state.careers}
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </Nav>
+                </Col>
+              </Row>
             </Col>
-            <Col>
-              <Nav>
-                <ListGroup variant="flush">
-                  <ListGroup.Item className="pb-1 pt-1 font-weight-bold footerListGroupItem">
-                    {this.state.team}
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                    <NavLink className="footer-nav-link nav-link" to="/about">
-                      {this.state.aboutUs}
-                    </NavLink>
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                    {this.state.blog}
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                    {this.state.mediaKit}
-                  </ListGroup.Item>
-                  <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                    {this.state.careers}
-                  </ListGroup.Item>
-                </ListGroup>
-              </Nav>
-            </Col>
-          </Row>
-        </Col>
-        <Col className="justify-content-md-end footer-logo">
-          <Row className="justify-content-md-end">
-            <Link to="/" className="navbar-brand">
-              <img src={Logo} />
-            </Link>
-          </Row>
-        </Col>
-      </NavBar>
+          </NavBar>
+        </MediaQuery>
+      </div>
     );
   }
 }
