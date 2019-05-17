@@ -7,7 +7,7 @@ import ReactPlayer from "react-player";
 import ClientStoriesItem from "./ClientStoriesItem";
 
 import Container from "react-bootstrap/Container";
-class ClientStoriesAmericanSchoolInJapan extends React.Component {
+class ClientStoriesAmericanSchoolInChina extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -37,7 +37,7 @@ class ClientStoriesAmericanSchoolInJapan extends React.Component {
   setContent = response => {
     const pageContent = response.items;
     let filteredpageContent = pageContent.filter(
-      pageContent => pageContent.fields.pageType === "americanSchoolInJapan"
+      pageContent => pageContent.fields.pageType === "americanSchoolInChina"
     );
     let filteredpageContentFields = filteredpageContent[0].fields;
     for (let key in filteredpageContentFields) {
@@ -62,6 +62,7 @@ class ClientStoriesAmericanSchoolInJapan extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <ClientStoriesItem
         schoolName={this.state.clientStorySchoolName}
@@ -91,4 +92,4 @@ class ClientStoriesAmericanSchoolInJapan extends React.Component {
   }
 }
 
-export default ClientStoriesAmericanSchoolInJapan;
+export default ClientStoriesAmericanSchoolInChina;
