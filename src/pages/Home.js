@@ -132,8 +132,8 @@ class Home extends React.Component {
         </MediaQuery>
         {/* MOBILE TOP ROW */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Row className="mobile_top_row">
-            <Col className="mobile_top_row_left_col">
+          <Container className="mobile_top_row mobile-bottom-border">
+            <Row className="mobile_top_row_left_col">
               <div>
                 <Row>
                   <h1 className="primary_font mobile_top_row_header">
@@ -145,38 +145,9 @@ class Home extends React.Component {
                     {this.state.homePageHeaderBlurb}
                   </h1>
                 </Row>
-                <Row className="mobile-email-form-container">
-                  <Form>
-                    <Form.Row>
-                      <Col xs={7} className="pt-1">
-                        <Form.Control
-                          className="primary_font email-form"
-                          placeholder={
-                            this.state.homePageHeaderEmailPlaceholderText
-                          }
-                          plaintext
-                          onChange={this.handleChange}
-                        />
-                      </Col>
-                      <Col>
-                        <button
-                          className=" primary_font get-a-demo-button"
-                          type="submit"
-                        >
-                          <Link
-                            className="primary_font get-a-demo-link"
-                            to="/demo"
-                          >
-                            {this.state.homePageHeaderEmailSubmitButtonText}
-                          </Link>
-                        </button>
-                      </Col>
-                    </Form.Row>
-                  </Form>
-                </Row>
               </div>
-            </Col>
-          </Row>
+            </Row>
+          </Container>
         </MediaQuery>
         {/* FULL SCREEN MARQUEE | NO MARQUEE ON MOBILE */}
         <MediaQuery query="(min-device-width: 1224px)">
@@ -231,14 +202,14 @@ class Home extends React.Component {
         </MediaQuery>
         {/* MOBILE SEND DOCUMENTS FEATURES */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Row className="featureRows">
-            <Row className="mobile-homePageFeaturesImage">
+          <Container className="mobile-bottom-border">
+            <Row className="mobile-homePageFeaturesImage mt-5">
               <img className="mobile-homePageImg" src={Documents} />
             </Row>
-            <Row className="homePageFeaturesText">
-              <div className="homePageFeaturesRightSideTextObject">
+            <Row className="mobile-homePageFeaturesText">
+              <div className="homePageFeaturesRightSideTextObject mt-3">
                 <Row>
-                  <h1 className="primary_font">
+                  <h1 className="primary_font center-in-row">
                     {this.state.homePageFeaturesSendDocumentTitle}
                   </h1>
                 </Row>
@@ -247,17 +218,17 @@ class Home extends React.Component {
                     {this.state.homePageFeaturesSendDocumentBlurb}
                   </p>
                 </Row>
-                <Row>
+                <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
                     to="/features/send"
                   >
-                    <p>{this.state.homePageFeaturesSendDocumentLinkText}</p>
+                    {this.state.homePageFeaturesSendDocumentLinkText}
                   </Link>
                 </Row>
               </div>
             </Row>
-          </Row>
+          </Container>
         </MediaQuery>
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="featureRows">
@@ -292,13 +263,14 @@ class Home extends React.Component {
             </Col>
           </Row>
         </MediaQuery>
+        {/* MOBILE RESEARCHING COLLEGE */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Row className="featureRows">
-            <Row className="mobile-homePageFeaturesImage">
+          <Container className="mobile-bottom-border">
+            <Row className="mobile-homePageFeaturesImage mt-5">
               <img className="mobile-homePageImg" src={ResearchImage} />
             </Row>
             <Row className="homePageFeaturesText">
-              <div className="homePageFeaturesRightSideTextObject">
+              <div className="homePageFeaturesRightSideTextObject mt-3">
                 <Row>
                   <h1 className="primary_font">
                     {this.state.homePageFeaturesLeverageTitle}
@@ -309,7 +281,7 @@ class Home extends React.Component {
                     {this.state.homePageFeaturesLeverageBlurb}
                   </p>
                 </Row>
-                <Row>
+                <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesLeverageLinkText"
                     to="/features/send"
@@ -319,7 +291,7 @@ class Home extends React.Component {
                 </Row>
               </div>
             </Row>
-          </Row>
+          </Container>
         </MediaQuery>
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="featureRows">
@@ -354,13 +326,14 @@ class Home extends React.Component {
             </Col>
           </Row>
         </MediaQuery>
+        {/* MOBILE DISCOVER INSIGHTS */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Row className="featureRows">
-            <Row className="mobile-homePageFeaturesImage">
+          <Container className="mobile-border-bottom">
+            <Row className="mobile-homePageFeaturesImage mt-5">
               <img className="mobile-homePageImg" src={Reports} />
             </Row>
             <Row className="homePageFeaturesText">
-              <div className="homePageFeaturesRightSideTextObject">
+              <div className="homePageFeaturesRightSideTextObject mt-3">
                 <Row>
                   <h1 className="primary_font">
                     {this.state.homePageFeaturesDiscoverTitle}
@@ -371,7 +344,7 @@ class Home extends React.Component {
                     {this.state.homePageFeaturesDiscoverBlurb}
                   </p>
                 </Row>
-                <Row>
+                <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesDiscoverLinkText"
                     to="/features/send"
@@ -381,7 +354,7 @@ class Home extends React.Component {
                 </Row>
               </div>
             </Row>
-          </Row>
+          </Container>
         </MediaQuery>
         <MediaQuery query="(min-device-width: 1224px)">
           <div className="homePageVideoCaseStudy">
@@ -414,32 +387,25 @@ class Home extends React.Component {
             title={this.state.homePagePoweredByOurPartnersTitle}
           />
         </MediaQuery>
+        {/* MOBILE VIDEO CONTENT */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <div className="mobile-homePageVideoCaseStudy">
-            <Row className="mobile-homePageVideoCaseStudyTitle">
+          <Container className="mobile-homePageVideoCaseStudy mobile-top-border pt-5">
+            <Row className=" mobile-homePageVideoCaseStudyTitle">
               <h1 className="primary_font white-font">
                 {this.state.homePageVideoCaseStudyTitle}
               </h1>
             </Row>
-            <Row className="mobile-homePageVideoCaseStudyVideoEmbed">
+            <Row className="mobile-homePageVideoCaseStudyVideoEmbed mb-5">
               <div>
                 <ReactPlayer
                   className="video"
-                  width="375px"
-                  height="210px"
+                  width="345px"
+                  height="194px"
                   url={this.state.homePageVideoCaseStudyVideoEmbed}
                 />
               </div>
             </Row>
-          </div>
-          <MobileHomePartnerImages
-            locale={this.props.locale}
-            className="homePartnerImages"
-            partnerImages={this.state.homePagePoweredByOurPartnersPartners}
-            accessToken={this.props.accessToken}
-            space={this.props.space}
-            title={this.state.homePagePoweredByOurPartnersTitle}
-          />
+          </Container>
         </MediaQuery>
       </Container>
     );

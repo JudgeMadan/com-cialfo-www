@@ -1,7 +1,6 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import * as contentful from "contentful";
-import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./clientStories/clientStories.css";
 import ClientStoriesHomePageCards from "./clientStories/ClientStoriesHomePageCards";
