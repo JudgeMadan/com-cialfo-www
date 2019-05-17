@@ -35,6 +35,8 @@ class ClientStoriesHomePageCards extends React.Component {
 
   setContent = response => {
     const pageContent = response.items;
+    console.log(pageContent);
+    this.setState({ schoolInfo: [] });
     for (let key in pageContent) {
       let schoolObject = {
         title: pageContent[key].fields.clientStoryStoryBlurb,
