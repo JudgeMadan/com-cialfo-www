@@ -13,6 +13,7 @@ import AboutBusinessAdvisors from "./about/AboutBusinessAdvisors";
 import MobileAboutBusinessAdvisors from "./about/MobileAboutBusinessAdvisors";
 import AboutCialfoOffices from "./about/AboutCialfoOffices";
 import MobileAboutCialfoOffices from "./about/MobileAboutCialfoOffices";
+import MobileAboutByTheNumbers from "./about/MobileAboutByTheNumbers";
 import MediaQuery from "react-responsive";
 import PartnerImages from "./PartnerImages";
 
@@ -136,20 +137,20 @@ class About extends React.Component {
         </MediaQuery>
         {/* MOBILE BY THE NUMBERS */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <div className="full-width-light-blue">
-            <Container className="full-width-light-blue mb-5">
+          <Row className="light-blue-background">
+            <Container className="m-3">
               <Row className="center-in-row light-blue-background pt-5">
                 <h1 className="primary_font">
                   {this.state.aboutPageNumbersTitle}
                 </h1>
               </Row>
               <Row className="by-the-numbers light-blue-background">
-                <AboutByTheNumbers
+                <MobileAboutByTheNumbers
                   byTheNumbers={this.state.aboutPageNumbersArray}
                 />
               </Row>
             </Container>
-          </div>
+          </Row>
         </MediaQuery>
         {/* FULL SCREEN ABOUT WHO WE ARE */}
         <MediaQuery query="(min-device-width: 1224px)">
@@ -260,44 +261,60 @@ class About extends React.Component {
             </MediaQuery>
           </Container>
         </Row>
-        <div className="full-width-light-blue">
-          <Row className="light-blue-background about-page-counselor-advisor-header center-in-row ">
-            <h1 className="primary_font">
-              {this.state.aboutPageBusinessAdvisorsTitle}
-            </h1>
-          </Row>
-          <Row className="light-blue-background about-page-counselor-advisor-footer">
-            <Container>
-              <MediaQuery query="(min-device-width: 1223px)">
+        {/* FULL SCREEN BUSINESS ADVISORS */}
+        <MediaQuery query="(min-device-width: 1223px)">
+          <div className="full-width-light-blue">
+            <Row className="light-blue-background about-page-counselor-advisor-header center-in-row ">
+              <h1 className="primary_font">
+                {this.state.aboutPageBusinessAdvisorsTitle}
+              </h1>
+            </Row>
+            <Row className="light-blue-background about-page-counselor-advisor-footer">
+              <Container>
                 <AboutBusinessAdvisors
                   businessAdvisors={
                     this.state.aboutPageBusinessAdvisorsAdvisors
                   }
                 />
-              </MediaQuery>
-              {/* MOBILE BUSINESS ADVISORS */}
-              <MediaQuery query="(max-device-width: 1223px)">
+              </Container>
+            </Row>
+          </div>
+        </MediaQuery>
+        {/* MOBILE BUSINESS ADVISORS */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <div>
+            <Row className="light-blue-background about-page-counselor-advisor-header center-in-row py-5">
+              <h1 className="primary_font">
+                {this.state.aboutPageBusinessAdvisorsTitle}
+              </h1>
+            </Row>
+            <Row className="light-blue-background about-page-counselor-advisor-footer">
+              <Container>
                 <MobileAboutBusinessAdvisors
                   businessAdvisors={
                     this.state.aboutPageBusinessAdvisorsAdvisors
                   }
                 />
-              </MediaQuery>
-            </Container>
-          </Row>
-        </div>
-        <div className="full-width-near-black">
-          <MediaQuery query="(min-device-width: 1223px)">
+              </Container>
+            </Row>
+          </div>
+        </MediaQuery>
+        {/* FULL SCREEN ABOUT OFFICES */}
+        <MediaQuery query="(min-device-width: 1223px)">
+          <div className="full-width-near-black">
             <AboutCialfoOffices
               cialfoOffices={this.state.aboutPageOfficesLocations}
             />
-          </MediaQuery>
-          <MediaQuery query="(max-device-width: 1224px)">
-            <MobileAboutCialfoOffices
-              cialfoOffices={this.state.aboutPageOfficesLocations}
-            />
-          </MediaQuery>
-        </div>
+          </div>
+        </MediaQuery>
+        {/* MOBILE ABOUT OFFICES */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          {/* <div className="full-width-near-black"> */}
+          <MobileAboutCialfoOffices
+            cialfoOffices={this.state.aboutPageOfficesLocations}
+          />
+          {/* </div> */}
+        </MediaQuery>
       </Container>
     );
   }

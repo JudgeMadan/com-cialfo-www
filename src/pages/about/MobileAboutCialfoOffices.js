@@ -13,7 +13,7 @@ class MobileAboutCialfoOffices extends React.Component {
     if (offices) {
       officesObject = offices.map(office => {
         return (
-          <Col className="officesContainer" key={office.sys.id}>
+          <Col className="officesContainer mb-5" key={office.sys.id}>
             <div className="officeImgContainer">
               <img
                 className="office-image"
