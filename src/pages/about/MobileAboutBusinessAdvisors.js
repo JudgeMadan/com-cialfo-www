@@ -1,34 +1,35 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
+import "./About.css";
+import Container from "react-bootstrap/Container";
 
-class MobileAboutCounselors extends React.Component {
+class MobileAboutBusinessAdvisors extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    const counselorsObject = this.props.counselors;
-    let counselorsObjectObject;
+    const businessAdvisors = this.props.businessAdvisors;
+    let businessAdvisorsObject;
 
-    if (counselorsObject) {
-      counselorsObjectObject = counselorsObject.map(counselorsObject => {
+    if (businessAdvisors) {
+      businessAdvisorsObject = businessAdvisors.map(businessAdvisor => {
         return (
-          <Col key={counselorsObject.sys.id}>
-            <Container className="counselor-advisor-container light-blue-background">
+          <Col key={businessAdvisor.sys.id}>
+            <Container className="counselor-advisor-container white-background">
               <div className="counselor-advisor-container-inner-object">
                 <Row>
                   <p className="secondary_font">
-                    {counselorsObject.fields.aboutPageBusinessAdvisorBlurb}
+                    {businessAdvisor.fields.aboutPageBusinessAdvisorBlurb}
                   </p>
                 </Row>
                 <Row>
                   <Image
                     roundedCircle
                     src={
-                      counselorsObject.fields.aboutPageBusinessAdvisorImage
+                      businessAdvisor.fields.aboutPageBusinessAdvisorImage
                         .fields.file.url
                     }
                   />
@@ -36,18 +37,18 @@ class MobileAboutCounselors extends React.Component {
                 <Row>
                   <div>
                     <p className="secondary_font_bold">
-                      {counselorsObject.fields.aboutPageBusinessAdvisorTitle}
+                      {businessAdvisor.fields.aboutPageBusinessAdvisorTitle}
                     </p>
                   </div>
                 </Row>
                 <Row>
                   <p className="secondary_font reduced-margin-bottom">
-                    {counselorsObject.fields.jobTitle}
+                    {businessAdvisor.fields.jobTitle}
                   </p>
                 </Row>
                 <Row>
                   <p className="secondary_font">
-                    {counselorsObject.fields.organization}
+                    {businessAdvisor.fields.organization}
                   </p>
                 </Row>
               </div>
@@ -56,8 +57,8 @@ class MobileAboutCounselors extends React.Component {
         );
       });
     }
-    return <Row>{counselorsObjectObject}</Row>;
+    return <Row>{businessAdvisorsObject}</Row>;
   }
 }
 
-export default MobileAboutCounselors;
+export default MobileAboutBusinessAdvisors;
