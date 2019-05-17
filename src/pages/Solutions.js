@@ -103,7 +103,7 @@ class Solutions extends React.Component {
           linkStyle={this.state.forPrincipals}
         />
         <SolutionsLeftSideText
-          title={this.state.solutionsExtraText}
+          title={this.state.solutionsExtraTitle}
           blurb={this.state.solutionsExtraBlurb}
           link={this.state.solutionsExtraLinkText}
           url={this.state.solutionsExtraLinkUrl}
