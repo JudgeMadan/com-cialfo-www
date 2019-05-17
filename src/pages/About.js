@@ -8,8 +8,11 @@ import AboutLeadershipTeam from "./about/AboutLeadershipTeam";
 import AboutPartners from "./about/AboutPartners";
 import MobileAboutPartners from "./about/MobileAboutPartners";
 import AboutCounselors from "./about/AboutCounselors";
+import MobileAboutCounselors from "./about/MobileAboutCounselors";
 import AboutBusinessAdvisors from "./about/AboutBusinessAdvisors";
+import MobileAboutBusinessAdvisors from "./about/MobileAboutBusinessAdvisors";
 import AboutCialfoOffices from "./about/AboutCialfoOffices";
+import MobileAboutCialfoOffices from "./about/MobileAboutCialfoOffices";
 import MediaQuery from "react-responsive";
 import PartnerImages from "./PartnerImages";
 
@@ -103,12 +106,12 @@ class About extends React.Component {
                 className="mobile-hero-image"
                 src={this.state.aboutPageHeaderImage}
               />
-              <Row className="mobile-top-row-header-container">
+              <Row className="mobile-top-row-header-container center-in-row">
                 <h1 className="primary_font aboutPageHeaderTitle mobile_top_row_header">
                   {this.state.aboutPageHeaderTitle}
                 </h1>
               </Row>
-              <Row className="mobile-top-row-header-container">
+              <Row className="mobile-top-row-header-container center-in-row my-3">
                 <h2 className="secondary_font mobile_top_row_header">
                   {this.state.aboutPageHeaderSubtitle}
                 </h2>
@@ -116,16 +119,38 @@ class About extends React.Component {
             </Container>
           </Row>
         </MediaQuery>
-        <div className="full-width-light-blue">
-          <Row className="center-in-row light-blue-background pt-5">
-            <h1 className="primary_font">{this.state.aboutPageNumbersTitle}</h1>
-          </Row>
-          <Row className="by-the-numbers light-blue-background">
-            <AboutByTheNumbers
-              byTheNumbers={this.state.aboutPageNumbersArray}
-            />
-          </Row>
-        </div>
+        {/* FULL SCREEN BY THE NUMBERS */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <div className="full-width-light-blue">
+            <Row className="center-in-row light-blue-background pt-5">
+              <h1 className="primary_font">
+                {this.state.aboutPageNumbersTitle}
+              </h1>
+            </Row>
+            <Row className="by-the-numbers light-blue-background">
+              <AboutByTheNumbers
+                byTheNumbers={this.state.aboutPageNumbersArray}
+              />
+            </Row>
+          </div>
+        </MediaQuery>
+        {/* MOBILE BY THE NUMBERS */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <div className="full-width-light-blue">
+            <Container className="full-width-light-blue mb-5">
+              <Row className="center-in-row light-blue-background pt-5">
+                <h1 className="primary_font">
+                  {this.state.aboutPageNumbersTitle}
+                </h1>
+              </Row>
+              <Row className="by-the-numbers light-blue-background">
+                <AboutByTheNumbers
+                  byTheNumbers={this.state.aboutPageNumbersArray}
+                />
+              </Row>
+            </Container>
+          </div>
+        </MediaQuery>
         {/* FULL SCREEN ABOUT WHO WE ARE */}
         <MediaQuery query="(min-device-width: 1224px)">
           <div className="full-width-dark-blue">
@@ -222,9 +247,17 @@ class About extends React.Component {
         </Row>
         <Row className=" about-page-counselor-advisor-footer">
           <Container>
-            <AboutCounselors
-              counselors={this.state.aboutPageCounselorsCounselors}
-            />
+            <MediaQuery query="(min-device-width: 1223px)">
+              <AboutCounselors
+                counselors={this.state.aboutPageCounselorsCounselors}
+              />
+            </MediaQuery>
+            {/* MOBILE COUNSELORS */}
+            <MediaQuery query="(max-device-width: 1223px)">
+              <MobileAboutCounselors
+                counselors={this.state.aboutPageCounselorsCounselors}
+              />
+            </MediaQuery>
           </Container>
         </Row>
         <div className="full-width-light-blue">
@@ -235,16 +268,35 @@ class About extends React.Component {
           </Row>
           <Row className="light-blue-background about-page-counselor-advisor-footer">
             <Container>
-              <AboutBusinessAdvisors
-                businessAdvisors={this.state.aboutPageBusinessAdvisorsAdvisors}
-              />
+              <MediaQuery query="(min-device-width: 1223px)">
+                <AboutBusinessAdvisors
+                  businessAdvisors={
+                    this.state.aboutPageBusinessAdvisorsAdvisors
+                  }
+                />
+              </MediaQuery>
+              {/* MOBILE BUSINESS ADVISORS */}
+              <MediaQuery query="(max-device-width: 1223px)">
+                <MobileAboutBusinessAdvisors
+                  businessAdvisors={
+                    this.state.aboutPageBusinessAdvisorsAdvisors
+                  }
+                />
+              </MediaQuery>
             </Container>
           </Row>
         </div>
         <div className="full-width-near-black">
-          <AboutCialfoOffices
-            cialfoOffices={this.state.aboutPageOfficesLocations}
-          />
+          <MediaQuery query="(min-device-width: 1223px)">
+            <AboutCialfoOffices
+              cialfoOffices={this.state.aboutPageOfficesLocations}
+            />
+          </MediaQuery>
+          <MediaQuery query="(max-device-width: 1224px)">
+            <MobileAboutCialfoOffices
+              cialfoOffices={this.state.aboutPageOfficesLocations}
+            />
+          </MediaQuery>
         </div>
       </Container>
     );

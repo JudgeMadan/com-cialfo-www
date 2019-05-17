@@ -15,22 +15,27 @@ class MobileAboutPartners extends React.Component {
     if (partners) {
       partnersObject = partners.map(partner => {
         return (
-          <Row className="mobile-aboutPartnerImagesRow" key={partner.sys.id}>
-            <div classname="mobile-homePartnerImagesContainer">
+          <Col className="home-page-partner-image" key={partner.sys.id}>
+            <div className="partner-object-image-container">
               <img
-                className="mobile-aboutPartnerImages"
-                src={partner.fields.aboutPagePartners[0].fields.file.url}
+                className="homePartnerImages"
+                src={partner.fields.file.url}
               />
             </div>
-          </Row>
+          </Col>
         );
       });
     }
 
     return (
-      <Container className="mobile-about-partners-container">
-        {partnersObject}
-      </Container>
+      <div className="home-partners-image-container">
+        <Container className="home-partners-image-content">
+          <Row className="imageObjectTitle">
+            <h1 className="primary_font ">{this.props.title}</h1>
+          </Row>
+          <Row className="imageObjectRow">{partnersObject}</Row>
+        </Container>
+      </div>
     );
   }
 }
