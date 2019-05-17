@@ -213,34 +213,50 @@ class About extends React.Component {
             leadershipTeam={this.state.aboutPageLeadershipLeaders}
           />
         </Row>
-        <div className="full-width-light-blue">
-          <Row className="center-in-row light-blue-background pt-5">
-            <Container className="partners">
-              <Row className="center-in-row partnersTitle light-blue-background">
-                <h1 className="primary_font light-blue-background">
-                  {this.state.aboutPagePartnersTitle}
-                </h1>
-                <h1 className="secondary_font">
-                  {this.state.aboutPagePartnersSubtitle}
-                </h1>
-              </Row>
-              <Row className="aboutPartners light-blue-background">
-                {/* MOBILE ABOUT PARTNERS  */}
-                <MediaQuery query="(max-device-width: 1223px)">
-                  <MobileAboutPartners
-                    partners={this.state.aboutPagePartnersPartners}
-                  />
-                </MediaQuery>
-                {/* FULL SCREEN ABOUT PARTNERS */}
-                <MediaQuery query="(min-device-width: 1224px)">
+        {/* FULL SCREEN ABOUT PARTNERS */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <div className="full-width-light-blue">
+            <Row className="center-in-row light-blue-background pt-5">
+              <Container className="partners">
+                <Row className="center-in-row partnersTitle light-blue-background">
+                  <h1 className="primary_font light-blue-background">
+                    {this.state.aboutPagePartnersTitle}
+                  </h1>
+                  <h1 className="secondary_font">
+                    {this.state.aboutPagePartnersSubtitle}
+                  </h1>
+                </Row>
+                <Row className="aboutPartners light-blue-background">
                   <AboutPartners
                     partners={this.state.aboutPagePartnersPartners}
                   />
-                </MediaQuery>
-              </Row>
-            </Container>
-          </Row>
-        </div>
+                </Row>
+              </Container>
+            </Row>
+          </div>
+        </MediaQuery>
+
+        {/* MOBILE ABOUT PARTNERS  */}
+        <MediaQuery query="(max-device-width: 1223px)">
+            <Row className="center-in-row light-blue-background pt-5">
+              <Container className="partners">
+                <Row className="center-in-row partnersTitle light-blue-background">
+                  <h1 className="primary_font light-blue-background">
+                    {this.state.aboutPagePartnersTitle}
+                  </h1>
+                  <h1 className="secondary_font">
+                    {this.state.aboutPagePartnersSubtitle}
+                  </h1>
+                </Row>
+                <Row className="aboutPartners light-blue-background">
+                  {/* MOBILE ABOUT PARTNERS  */}
+                  <MobileAboutPartners
+                    partners={this.state.aboutPagePartnersPartners}
+                  />
+                </Row>
+              </Container>
+            </Row>
+        </MediaQuery>
         <Row className="center-in-row about-page-counselor-advisor-header">
           <h1 className="primary_font">
             {this.state.aboutPageCounselorsTitle}
