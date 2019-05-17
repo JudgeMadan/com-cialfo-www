@@ -19,6 +19,7 @@ import SolutionsIT from "../pages/SolutionsIT";
 import SolutionsPrincipals from "../pages/SolutionsPrincipals";
 import SolutionsSuperintendents from "../pages/SolutionsSuperintendents";
 import ClientStoriesAmericanSchoolInJapan from "../pages/clientStories/ClientStoriesAmericanSchoolInJapan";
+import ClientStoriesAmericanSchoolInChina from "../pages/clientStories/ClientStoriesAmericanSchoolInChina";
 import Events from "../pages/Events";
 import Downloads from "../pages/Downloads";
 
@@ -57,6 +58,18 @@ class Router extends React.Component {
           path="/clients/american-school-japan"
           render={() => (
             <ClientStoriesAmericanSchoolInJapan
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/clients/american-school-china"
+          render={() => (
+            <ClientStoriesAmericanSchoolInChina
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}

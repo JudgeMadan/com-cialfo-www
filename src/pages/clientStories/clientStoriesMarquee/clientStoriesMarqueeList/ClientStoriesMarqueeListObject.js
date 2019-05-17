@@ -10,7 +10,6 @@ class ClientStoriesMarqueeListObject extends React.Component {
   }
 
   render() {
-    console.log(this.props.route);
     return (
       <div className="client-marqueeElement client-marqueeItem ">
         <Col className="client-marquee-object px-5 mx-2 py-3 my-2">

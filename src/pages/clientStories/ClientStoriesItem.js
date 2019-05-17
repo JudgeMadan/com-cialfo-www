@@ -3,8 +3,9 @@ import "./clientStories.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Octicon, { Location, TriangleUp } from "@githubprimer/octicons-react";
+import Octicon, { Location } from "@githubprimer/octicons-react";
 import ClientStoriesItemTestimonialType1 from "./clientStoriesItem/ClientStoriesItemTestimonialType1";
+import ClientStoriesItemTestimonialType2 from "./clientStoriesItem/ClientStoriesItemTestimonialType2";
 import ClientStoriesMarquee from "./ClientStoriesMarquee";
 
 class ClientStoriesItem extends React.Component {
@@ -12,6 +13,7 @@ class ClientStoriesItem extends React.Component {
     super(props);
   }
   render() {
+    console.log(this.props);
     return (
       <Container>
         <Row>
@@ -73,13 +75,24 @@ class ClientStoriesItem extends React.Component {
             </Row>
           </Col>
           <Col>
-            <ClientStoriesItemTestimonialType1
-              testimonialBlurb_1={this.props.testimonialBlurb_1}
-              testimonialBlurb_2={this.props.testimonialBlurb_2}
-              testimonialBlurb_3={this.props.testimonialBlurb_3}
-              testimonialPullQuote_1={this.props.testimonialPullQuote_1}
-              testimonialVideo={this.props.testimonialVideo}
-            />
+            {this.props.testimonialType === 1 && (
+              <ClientStoriesItemTestimonialType1
+                testimonialBlurb_1={this.props.testimonialBlurb_1}
+                testimonialBlurb_2={this.props.testimonialBlurb_2}
+                testimonialBlurb_3={this.props.testimonialBlurb_3}
+                testimonialPullQuote_1={this.props.testimonialPullQuote_1}
+                testimonialVideo={this.props.testimonialVideo}
+              />
+            )}
+            {this.props.testimonialType === 2 && (
+              <ClientStoriesItemTestimonialType2
+                testimonialBlurb_1={this.props.testimonialBlurb_1}
+                testimonialBlurb_2={this.props.testimonialBlurb_2}
+                testimonialBlurb_3={this.props.testimonialBlurb_3}
+                testimonialPullQuote_1={this.props.testimonialPullQuote_1}
+                testimonialVideo={this.props.testimonialVideo}
+              />
+            )}
           </Col>
         </Row>
         <Row className="center-in-row my-5">
@@ -97,3 +110,5 @@ class ClientStoriesItem extends React.Component {
   }
 }
 export default ClientStoriesItem;
+
+// this.props.testimonialType

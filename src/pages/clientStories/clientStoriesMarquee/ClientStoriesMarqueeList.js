@@ -34,6 +34,7 @@ class ClientStoriesMarqueeList extends React.Component {
 
   setContent = response => {
     const pageContent = response.items;
+    console.log(pageContent);
     for (let key in pageContent) {
       let schoolObject = {
         blurb: pageContent[key].fields.clientStoryStoryBlurb,
