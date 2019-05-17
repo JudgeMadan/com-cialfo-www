@@ -1,12 +1,8 @@
 import React from "react";
 import * as contentful from "contentful";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { Link } from "react-router-dom";
-import ReactPlayer from "react-player";
+
 import ClientStoriesItem from "./ClientStoriesItem";
 
-import Container from "react-bootstrap/Container";
 class ClientStoriesAmericanSchoolInJapan extends React.Component {
   constructor(props) {
     super(props);
