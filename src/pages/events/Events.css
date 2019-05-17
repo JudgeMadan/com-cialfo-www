@@ -74,3 +74,12 @@
 .events-cialfo-events-sessions-top-row {
   padding-top: 100px;
 }
+
+.mobile-events-hero-image {
+  width: auto;
+  height: 250px;
+}
+
+.mobile-events-header-text {
+  text-align: center;
+}
