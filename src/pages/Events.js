@@ -99,7 +99,7 @@ class Events extends React.Component {
         {/* MOBILE TOP ROW */}
         <MediaQuery query="(max-device-width: 1223px)">
           {/* <Row className="aboutPageTitle"> */}
-          <Container className="center-in-row">
+          <Container className="center-in-row mobile-events-bottom-border pb-5 mb-5">
             <Row className="center-in-row">
               <img
                 className="mobile-events-hero-image"
@@ -112,7 +112,7 @@ class Events extends React.Component {
               </h1>
             </Row>
             <Row className="center-in-row">
-              <h2 className="secondary_font left-side-header-blurb mobile-events-header-text">
+              <h2 className="mx-3 secondary_font left-side-header-blurb mobile-events-header-text">
                 {this.state.aboutPageHeaderSubtitle}
               </h2>
             </Row>
@@ -165,7 +165,7 @@ class Events extends React.Component {
                 {this.state.eventsCialfoEventsTitle}
               </h1>
             </Row>
-            <Row className="events-subtitle center-in-row light-blue-background">
+            <Row className="events-subtitle center-in-row px-3 light-blue-background">
               <p className="secondary_font">
                 {this.state.eventsCialfoEventsBlurb}
               </p>
@@ -179,27 +179,52 @@ class Events extends React.Component {
             </Row>
           </Container>
         </MediaQuery>
-        <div>
-          <Row className="center-in-row events-cialfo-events-sessions-top-row">
-            <h1 className="primary_font">
-              {this.state.eventsCialfoSessionsTitle}
-            </h1>
-          </Row>
-          <Row className="events-subtitle center-in-row pb-5">
-            <p className="secondary_font">
-              {this.state.eventsCialfoSessionsBlurb}
-            </p>
-          </Row>
-          <Row className="events-cialfo-events-sessions-bottom-row ">
-            <Container>
-              <img className="events-oval" src={Oval} />
-              <img className="events-blue-stroke-10" src={BlueStroke10} />
-              <CialfoSessionsObject
-                events={this.state.aboutPageCounselorsCounselors}
-              />
-            </Container>
-          </Row>
-        </div>
+        {/* FULL SCREEN CIALFO SESSIONS */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <div>
+            <Row className="center-in-row events-cialfo-events-sessions-top-row">
+              <h1 className="primary_font">
+                {this.state.eventsCialfoSessionsTitle}
+              </h1>
+            </Row>
+            <Row className="events-subtitle center-in-row pb-5">
+              <p className="secondary_font">
+                {this.state.eventsCialfoSessionsBlurb}
+              </p>
+            </Row>
+            <Row className="events-cialfo-events-sessions-bottom-row ">
+              <Container>
+                <img className="events-oval" src={Oval} />
+                <img className="events-blue-stroke-10" src={BlueStroke10} />
+                <CialfoSessionsObject
+                  events={this.state.aboutPageCounselorsCounselors}
+                />
+              </Container>
+            </Row>
+          </div>
+        </MediaQuery>
+        {/* MOBILE CIALFO SESSIONS */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <Container className="mobile-events-bottom-border mobile-events-top-border my-5">
+            <Row className="center-in-row mt-5">
+              <h1 className="primary_font">
+                {this.state.eventsCialfoSessionsTitle}
+              </h1>
+            </Row>
+            <Row className="events-subtitle center-in-row px-3">
+              <p className="secondary_font">
+                {this.state.eventsCialfoSessionsBlurb}
+              </p>
+            </Row>
+            <Row className="pb-5">
+              <Container>
+                <MobileCialfoSessionsObject
+                  events={this.state.aboutPageCounselorsCounselors}
+                />
+              </Container>
+            </Row>
+          </Container>
+        </MediaQuery>
       </Container>
     );
   }

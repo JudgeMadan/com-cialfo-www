@@ -83,3 +83,11 @@
 .mobile-events-header-text {
   text-align: center;
 }
+
+.mobile-events-bottom-border {
+  border-bottom: solid #f5f5f5 1px;
+}
+
+.mobile-events-top-border {
+  border-top: solid #f5f5f5 1px;
+}
