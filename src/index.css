@@ -102,7 +102,7 @@ code {
 therefore, total marquee width is about 395 * # of marquee Items */
 .marquee {
   height: 500px;
-  min-width: 1580px !important;
+  /* min-width: 1580px !important; */
   overflow-y: hidden;
   overflow-x: hidden;
   position: relative;
