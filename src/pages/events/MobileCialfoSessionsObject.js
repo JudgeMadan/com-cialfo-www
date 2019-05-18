@@ -19,7 +19,7 @@ class MobileCialfoSessionsObject extends React.Component {
       eventsObject = events.map(event => {
         const showDate = moment(event.fields.eventsDate).format("Do MMMM YYYY");
         return (
-          <Col className="py-5" key={event.sys.id}>
+          <Col className="pt-5" key={event.sys.id}>
             <Container className="light-blue-background">
               <div className="event-inner-object">
                 <Row>
