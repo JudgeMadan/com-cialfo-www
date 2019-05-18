@@ -13,6 +13,7 @@ import Reports from "../img/home/Reports.svg";
 import Oval from "../img/Oval.svg";
 import Line from "../img/Line.svg";
 import LightBlueRectangle from "../img/LightBlueRectangle.svg";
+import MediaQuery from "react-responsive";
 class Features extends React.Component {
   constructor(props) {
     super(props);
@@ -63,33 +64,59 @@ class Features extends React.Component {
   render() {
     return (
       <Container className="homePageContainer">
-        <Row className="titleContainer">
-          <h1 className="primary_font">{this.state.featuresTitle}</h1>
-        </Row>
-        <Row className="featuresVideoEmbed">
-          <div>
-            <img className="oval" src={Oval} />
-            <img className="line" src={Line} />
-            <ReactPlayer
-              className="video"
-              width="800px"
-              height="488px"
-              url={this.state.featuresVideo}
+        {/* FULL SCREEN TOP ROW */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <Row className="titleContainer">
+            <h1 className="primary_font">{this.state.featuresTitle}</h1>
+          </Row>
+          <Row className="featuresVideoEmbed">
+            <div>
+              <img className="oval" src={Oval} />
+              <img className="line" src={Line} />
+              <ReactPlayer
+                className="video"
+                width="800px"
+                height="488px"
+                url={this.state.featuresVideo}
+              />
+            </div>
+          </Row>
+          <Row className="homePageSchoolTestimonialsTitle">
+            <h1 className="primary_font">
+              {this.state.homePageSchoolTestimonialsTitle}
+            </h1>
+          </Row>
+          <Row className="homeMarquee">
+            <HomeMarquee
+              locale={this.props.locale}
+              accessToken={this.props.accessToken}
+              space={this.props.space}
             />
-          </div>
-        </Row>
-        <Row className="homePageSchoolTestimonialsTitle">
-          <h1 className="primary_font">
-            {this.state.homePageSchoolTestimonialsTitle}
-          </h1>
-        </Row>
-        <Row className="homeMarquee">
-          <HomeMarquee
-            locale={this.props.locale}
-            accessToken={this.props.accessToken}
-            space={this.props.space}
-          />
-        </Row>
+          </Row>
+        </MediaQuery>
+        {/* MOBILE TOP ROW */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <Row className="titleContainer">
+            <h1 className="primary_font">{this.state.featuresTitle}</h1>
+          </Row>
+          <Row className="featuresVideoEmbed">
+            <div>
+              <img className="oval" src={Oval} />
+              <img className="line" src={Line} />
+              <ReactPlayer
+                className="video"
+                width="345px"
+                height="194px"
+                url={this.state.featuresVideo}
+              />
+            </div>
+          </Row>
+          <Row className="homePageSchoolTestimonialsTitle">
+            <h1 className="primary_font">
+              {this.state.homePageSchoolTestimonialsTitle}
+            </h1>
+          </Row>
+        </MediaQuery>
         <Row className="featureRows">
           <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
             <img className="homePageImg" src={Documents} />
