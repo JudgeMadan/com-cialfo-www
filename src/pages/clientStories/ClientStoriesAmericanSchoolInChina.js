@@ -62,7 +62,6 @@ class ClientStoriesAmericanSchoolInChina extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <ClientStoriesItem
         schoolName={this.state.clientStorySchoolName}

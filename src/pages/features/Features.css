@@ -162,3 +162,36 @@
   z-index: 1;
   margin-left: 0px;
 }
+
+.mobile-feature-page-img {
+  position: relative;
+  width: 80%;
+  height: auto;
+  z-index: 3;
+}
+
+.mobile-feature-page-img-row {
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-features-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0 10px 0;
+}
+
+.mobile-featuresVideoEmbed {
+  justify-content: center;
+}
+
+.mobile-featuresFeaturesText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-features-page-content-text {
+  margin: 0 15%;
+}
