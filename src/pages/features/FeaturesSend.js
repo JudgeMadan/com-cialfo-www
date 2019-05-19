@@ -10,6 +10,7 @@ import MediaQuery from "react-responsive";
 import Oval from "../../img/Oval.svg";
 import Line from "../../img/Line.svg";
 import PartnerImages from "../PartnerImages";
+import MobilePartnerImages from "../MobilePartnerImages";
 import Pointer from "../../img/Pointer.svg";
 import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 
@@ -89,7 +90,6 @@ class FeaturesSend extends React.Component {
           <Row className="mobile-featuresVideoEmbed">
             <div>
               <img className="oval" src={Oval} />
-              <img className="line" src={Line} />
               <ReactPlayer
                 className="video"
                 width="345px"
@@ -210,7 +210,7 @@ class FeaturesSend extends React.Component {
         {/* MOBILE PARTNERS */}
         <MediaQuery query="(max-device-width: 1223px)">
           <Container className="mobile-bottom-border mb-5">
-            <PartnerImages
+            <MobilePartnerImages
               locale={this.props.locale}
               className="partnerImages"
               partnerImages={this.state.sendPartnersArray}
