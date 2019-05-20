@@ -7,6 +7,7 @@ import PrivacyAndSecurityBody from "./privacyAndSecurity/PrivacyAndSecurityBody"
 import PrivacyEnglish from "./privacyAndSecurity/PrivacyEnglish";
 import PrivacyChinese from "./privacyAndSecurity/PrivacyChinese";
 import Container from "react-bootstrap/Container";
+
 class Privacy extends React.Component {
   constructor(props) {
     super(props);
