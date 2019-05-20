@@ -354,7 +354,7 @@ class GetADemo extends React.Component {
                       />
                     </div>
                   </div>
-                  <div class="_button-wrapper _full_width mobile-demo-form-field-label">
+                  <div class="_button-wrapper _full_width mobile-demo-form-field-label mobile-demo-form-submit-button">
                     <button
                       id="_form_2_submit"
                       className="_submit submit_button"
