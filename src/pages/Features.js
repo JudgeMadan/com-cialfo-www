@@ -102,7 +102,6 @@ class Features extends React.Component {
           <Row className="mobile-featuresVideoEmbed">
             <div>
               <img className="oval" src={Oval} />
-              <img className="line" src={Line} />
               <ReactPlayer
                 className="video"
                 width="345px"
