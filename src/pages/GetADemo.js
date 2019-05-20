@@ -271,12 +271,10 @@ class GetADemo extends React.Component {
                     </div>
                   </div>
                   <div class="_form_element _x18120362 _full_width">
-                    <div className="mobile-demo-form-field-label">
-                      <label className="_form-label secondary_font">
-                        {this.state.getADemoName}
-                      </label>
-                    </div>
-                    <div className="_field-wrapper mobile-demo-form-field-label">
+                    <label className="_form-label secondary_font mobile-get-in-touch-form-header">
+                      {this.state.getADemoName}
+                    </label>
+                    <div className="_field-wrapper">
                       <input
                         type="text"
                         name="firstname"
@@ -287,11 +285,9 @@ class GetADemo extends React.Component {
                     </div>
                   </div>
                   <div class="_form_element _x44797314 _full_width ">
-                    <div className="mobile-demo-form-field-label">
-                      <label class="_form-label secondary_font">
-                        {this.state.getADemoEmail}
-                      </label>
-                    </div>
+                    <label class="_form-label secondary_font mobile-get-in-touch-form-header">
+                      {this.state.getADemoEmail}
+                    </label>
                     <div class="_field-wrapper mobile-demo-form-field-label">
                       <input
                         value={this.state.email}
@@ -305,11 +301,9 @@ class GetADemo extends React.Component {
                     </div>
                   </div>
                   <div class="_form_element _x80848159 _full_width">
-                    <div className="mobile-demo-form-field-label">
-                      <label class="_form-label secondary_font">
-                        {this.state.getADemoOrg}
-                      </label>
-                    </div>
+                    <label class="_form-label secondary_font mobile-get-in-touch-form-header">
+                      {this.state.getADemoOrg}
+                    </label>
                     <div class="_field-wrapper mobile-demo-form-field-label">
                       <input
                         type="text"
@@ -321,11 +315,9 @@ class GetADemo extends React.Component {
                     </div>
                   </div>
                   <div class="_form_element _x04697005 _full_width ">
-                    <div className="mobile-demo-form-field-label">
-                      <label class="_form-label secondary_font ">
-                        {this.state.getADemoMobile}
-                      </label>
-                    </div>
+                    <label class="_form-label secondary_font mobile-get-in-touch-form-header">
+                      {this.state.getADemoMobile}
+                    </label>
                     <div class="_field-wrapper mobile-demo-form-field-label">
                       <input
                         type="text"
@@ -337,11 +329,9 @@ class GetADemo extends React.Component {
                     </div>
                   </div>
                   <div class="_form_element _x98882726 _full_width">
-                    <div className="mobile-demo-form-field-label">
-                      <label class="_form-label secondary_font">
-                        {this.state.getADemoNumberOfStudents}
-                      </label>
-                    </div>
+                    <label class="_form-label secondary_font mobile-get-in-touch-form-header">
+                      {this.state.getADemoNumberOfStudents}
+                    </label>
                     <div class="_field-wrapper mobile-demo-form-field-label">
                       <input
                         type="number"
