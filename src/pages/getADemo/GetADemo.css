@@ -28,6 +28,16 @@
   min-height: 530px !important;
 }
 
+.mobile-get_in_touch_container {
+  border: solid #1886df 2px;
+  margin-bottom: 10%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 90vw !important;
+  min-height: 530px !important;
+}
+
 .get_in_touch_object {
   width: 900px;
   margin: 0px;
@@ -195,11 +205,15 @@
 .textarea_style {
   border: solid #ebf9ff 2px;
 }
+.mobile-textarea_style {
+  border: solid #ebf9ff 2px;
+  width: 300px;
+}
 
 .demoTextTitleContainer {
   display: flex;
   justify-content: center;
-  padding: 50px 0;
+  margin: 50px 0;
 }
 
 .demoTextTitle {
@@ -217,14 +231,12 @@
   margin-bottom: 50px;
 }
 
-.contactArray {
-  margin-top: 50px;
-  min-width: 72%;
+.getInTouchContactArrayContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.getInTouchContactArrayContainer {
+.mobile-getInTouchContactArrayContainer {
   display: flex;
   justify-content: center;
 }
@@ -232,6 +244,14 @@
 .contactArrayRow {
   display: inline-flex;
   justify-content: left;
+}
+
+.mobile-contactArrayRow {
+  display: flex;
+}
+
+.mobile-get-in-touch-array-values {
+  width: 500px !important;
 }
 
 .white_font {
@@ -294,4 +314,12 @@
 
 .mobile-demo-form-submit-button {
   margin-bottom: 30px;
+}
+
+.mobile-get-in-touch-form-header {
+  margin-top: 10px;
+}
+
+.contactArray {
+  width: 850px !important;
 }
