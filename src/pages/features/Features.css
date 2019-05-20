@@ -96,12 +96,11 @@
   justify-content: center;
 }
 
-.full-width-light-blue {
+/* .full-width-light-blue {
   margin: 0 -9999rem;
-  /* add back negative margin value */
   padding: 0.25rem 9999rem;
   background: #ebf9ff;
-}
+} */
 
 .full-width-near-black {
   margin: 0 -9999rem;
@@ -110,12 +109,11 @@
   background: #2b1f31;
 }
 
-.full-width-dark-blue {
+/* .full-width-dark-blue {
   margin: 0 -9999rem;
-  /* add back negative margin value */
   padding: 0.25rem 9999rem;
   background: #1786df;
-}
+} */
 
 .full-width-dark-blue-custom-height {
   margin: 0 -9999rem;
