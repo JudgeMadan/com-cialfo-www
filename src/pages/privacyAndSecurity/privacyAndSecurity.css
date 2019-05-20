@@ -46,6 +46,13 @@
   z-index: 1;
 }
 
+.mobile-four-oh-four-gray-lines {
+  position: absolute;
+  margin-top: 120px;
+  margin-left: 100px;
+  z-index: 1;
+}
+
 .thank-you-gray-lines {
   position: absolute;
   margin-top: 90px;
