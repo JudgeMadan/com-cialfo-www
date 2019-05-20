@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 // import "../getADemo/GetADemo.css";
 import "../getADemo/GetADemo.css";
 
-class GetInTouchContactArray extends React.Component {
+class MobileGetInTouchContactArray extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -17,22 +17,23 @@ class GetInTouchContactArray extends React.Component {
     if (contactArray) {
       contactArrayObject = contactArray.map(contact => {
         return (
-          <Col className="contactArrayCol" key={contact.sys.id}>
-            <Row className="contactArrayRow secondary_font">
-              {contact.fields.header}
-            </Row>
+          <Row key={contact.sys.id}>
+            <Col className=" secondary_font">{contact.fields.header}</Col>
             {/* The <br /> looks weird on local but is needed on staging */}
-            <br />
-            <Row className="contactArrayRow secondary_font">
+            <Col xs={8} className=" secondary_font">
               {contact.fields.content}
-            </Row>
-          </Col>
+            </Col>
+          </Row>
         );
       });
     }
 
-    return <Row className="contactArray mt-5">{contactArrayObject}</Row>;
+    return (
+      <Container className="mobile-contactArray">
+        {contactArrayObject}
+      </Container>
+    );
   }
 }
 
-export default GetInTouchContactArray;
+export default MobileGetInTouchContactArray;
