@@ -51,7 +51,6 @@ class FourOhFour extends React.Component {
     return (
       <div className="privacy_security_title four_oh_four_outer_content">
         <Container>
-          {/* FULL SCREEN 404 */}
           <MediaQuery query="(min-device-width: 1224px)">
             <div>
               <Row className="four_oh_four_content pb-5">
@@ -72,7 +71,6 @@ class FourOhFour extends React.Component {
               </Row>
             </div>
           </MediaQuery>
-          {/* MOBILE 404 */}
           <MediaQuery query="(max-device-width: 1223px)">
             <div>
               <Row className="four_oh_four_content pb-5 my-3">

@@ -8,6 +8,16 @@
   min-height: 530px !important;
 }
 
+.mobile-demo_form_container {
+  border: solid #1886df 2px;
+  margin-bottom: 10%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 90vw !important;
+  min-height: 530px !important;
+}
+
 .get_in_touch_container {
   border: solid #1886df 2px;
   margin-bottom: 10%;
@@ -123,6 +133,10 @@
   margin-right: 80px;
 }
 
+.mobile-content_row {
+  margin-bottom: 20px;
+}
+
 .upper_left_content_row {
   margin-bottom: 20px;
   margin-right: 40px;
@@ -143,6 +157,22 @@
 .lower_right_content_row {
   margin-bottom: 20px;
   margin-left: 40px;
+}
+
+.mobile-input_style {
+  border: none;
+  border-bottom: solid #1886df 2px;
+  width: 60vw;
+}
+
+.mobile-input_style:hover {
+  border: none;
+  border-bottom: solid #1886df 2px;
+}
+
+.mobile-input_style:placeholder-shown {
+  border: none;
+  border-bottom: solid #ebf9ff 2px;
 }
 
 .input_style {
@@ -175,6 +205,12 @@
 .demoTextTitle {
   margin: 0 30%;
   font-size: 25px;
+}
+
+.mobile-demoTextTitle {
+  margin: 0 30%;
+  font-size: 25px;
+  text-align: center;
 }
 
 .middle_row {
@@ -228,4 +264,30 @@
   z-index: 1;
   height: auto;
   width: 120px;
+}
+
+.mobile-demo-get-in-touch-gray-lines {
+  position: absolute;
+  margin-top: 170px;
+  margin-left: 120px;
+  z-index: 1;
+  height: auto;
+  width: 120px;
+}
+.demo-center-in-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mobile-demo-label-test {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.mobile-demo-form-field-label {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }

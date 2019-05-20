@@ -317,3 +317,9 @@ button:hover {
   height: auto;
   width: 400px;
 }
+
+.mobile-get-a-demo-blue-header-svg {
+  z-index: 2;
+  height: auto;
+  width: 350px;
+}

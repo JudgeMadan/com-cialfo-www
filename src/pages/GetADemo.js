@@ -6,6 +6,7 @@ import DemoText from "../img/GetADemo.svg";
 import FeaturesSubfooter from "./features/FeaturesSubfooter";
 import * as contentful from "contentful";
 import GrayLines from "../img/GrayLines.svg";
+import MediaQuery from "react-responsive";
 
 class GetADemo extends React.Component {
   constructor(props) {
@@ -98,119 +99,262 @@ class GetADemo extends React.Component {
   render() {
     return (
       <div>
-        <Row className="demoTextImgContainer">
-          <img className="blue-header-svg" src={DemoText} />
-          <img className="demo-get-in-touch-gray-lines " src={GrayLines} />
-        </Row>
-        <Row className="demoTextTitleContainer secondary_font">
-          <h1 className="demoTextTitle">{this.state.getADemoTitle}</h1>
-        </Row>
-        <Container className="demo-form-object-container">
-          <div className="demo_form_container">
-            <form
-              method="POST"
-              action="https://cialfo51705.activehosted.com/proc.php"
-              id="_form_2_"
-              class="_form _form_2 _inline-form  _dark"
-              novalidate
-            >
-              <input type="hidden" name="u" value="2" />
-              <input type="hidden" name="f" value="2" />
-              <input type="hidden" name="s" />
-              <input type="hidden" name="c" value="0" />
-              <input type="hidden" name="m" value="0" />
-              <input type="hidden" name="act" value="sub" />
-              <input type="hidden" name="v" value="2" />
-              <div class="_form-content">
-                <Row className="title_row">
+        {/* FULL WIDTH GET A DEMO HEADER */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <Row className="demoTextImgContainer">
+            <img className="blue-header-svg" src={DemoText} />
+            <img className="demo-get-in-touch-gray-lines " src={GrayLines} />
+          </Row>
+          <Row className="demoTextTitleContainer secondary_font">
+            <h1 className="demoTextTitle">{this.state.getADemoTitle}</h1>
+          </Row>
+        </MediaQuery>
+        {/* MOBILE GET A DEMO HEADER */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <Row className="demoTextImgContainer">
+            <img className="mobile-get-a-demo-blue-header-svg" src={DemoText} />
+            <img
+              className="mobile-demo-get-in-touch-gray-lines "
+              src={GrayLines}
+            />
+          </Row>
+          <Row className="demoTextTitleContainer secondary_font">
+            <h1 className="mobile-demoTextTitle">{this.state.getADemoTitle}</h1>
+          </Row>
+        </MediaQuery>
+        {/* FULL WIDTH GET A DEMO FORM */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <Container className="demo-form-object-container">
+            <div className="demo_form_container">
+              <form
+                method="POST"
+                action="https://cialfo51705.activehosted.com/proc.php"
+                id="_form_2_"
+                class="_form _form_2 _inline-form  _dark"
+                novalidate
+              >
+                <input type="hidden" name="u" value="2" />
+                <input type="hidden" name="f" value="2" />
+                <input type="hidden" name="s" />
+                <input type="hidden" name="c" value="0" />
+                <input type="hidden" name="m" value="0" />
+                <input type="hidden" name="act" value="sub" />
+                <input type="hidden" name="v" value="2" />
+                <div class="_form-content">
+                  <Row className="title_row">
+                    <div className="_form_element _x36013235 _full_width _clear primary_font form_title_container">
+                      <div className="_form-title primary_font form_title">
+                        {this.state.getADemoFormTitle}
+                      </div>
+                    </div>
+                  </Row>
+                  <Row className="get-in-touch-row">
+                    <div class="_form_element _x18120362 _full_width left_content_row">
+                      <label className="_form-label secondary_font">
+                        {this.state.getADemoName}
+                      </label>
+                      <div class="_field-wrapper demo-center-in-row">
+                        <input
+                          type="text"
+                          name="firstname"
+                          placeholder={this.state.getADemoNamePlaceholder}
+                          className="input_style"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="_form_element _x44797314 _full_width ">
+                      <label class="_form-label secondary_font">
+                        {this.state.getADemoEmail}
+                      </label>
+                      <div class="_field-wrapper">
+                        <input
+                          value={this.state.email}
+                          type="email"
+                          name="email"
+                          placeholder={this.state.getADemoEmailPlaceholder}
+                          className="input_style"
+                          onChange={this.handleChange}
+                          required
+                        />
+                      </div>
+                    </div>
+                  </Row>
+                  <Row className="get-in-touch-row">
+                    <div class="_form_element _x80848159 _full_width left_content_row">
+                      <label class="_form-label secondary_font">
+                        {this.state.getADemoOrg}
+                      </label>
+                      <div class="_field-wrapper">
+                        <input
+                          type="text"
+                          name="organization"
+                          placeholder={this.state.getADemoOrgPlaceholder}
+                          className="input_style"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="_form_element _x04697005 _full_width ">
+                      <label class="_form-label secondary_font">
+                        {this.state.getADemoMobile}
+                      </label>
+                      <div class="_field-wrapper">
+                        <input
+                          type="text"
+                          name="phone"
+                          placeholder={this.state.getADemoMobilePlaceholder}
+                          className="input_style"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </Row>
+                  <Row className="get-in-touch-last-row">
+                    <div class="_form_element _x98882726 _full_width left_content_row">
+                      <label class="_form-label secondary_font">
+                        {this.state.getADemoNumberOfStudents}
+                      </label>
+                      <div class="_field-wrapper">
+                        <input
+                          type="number"
+                          name="lastname"
+                          placeholder={
+                            this.state.getADemoNumberOfStudentsPlaceholder
+                          }
+                          className="input_style"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </Row>
+                  <Row className="title_row">
+                    <div class="_button-wrapper _full_width">
+                      <button
+                        id="_form_2_submit"
+                        className="_submit submit_button"
+                        type="submit"
+                      >
+                        {this.state.getAdemoSubmitButtonText}
+                      </button>
+                    </div>
+                  </Row>
+                  <div class="_clear-element" />
+                </div>
+                <div class="_form-thank-you" />
+              </form>
+            </div>
+          </Container>
+        </MediaQuery>
+        {/* MOBILE GET A DEMO FORM */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <Container className="demo-form-object-container">
+            <div className="mobile-demo_form_container demo-center-in-row">
+              <form
+                method="POST"
+                action="https://cialfo51705.activehosted.com/proc.php"
+                id="_form_2_"
+                class="_form _form_2 _inline-form  _dark"
+                novalidate
+              >
+                <input type="hidden" name="u" value="2" />
+                <input type="hidden" name="f" value="2" />
+                <input type="hidden" name="s" />
+                <input type="hidden" name="c" value="0" />
+                <input type="hidden" name="m" value="0" />
+                <input type="hidden" name="act" value="sub" />
+                <input type="hidden" name="v" value="2" />
+                <Container class="_form-content demo-center-in-row">
                   <div className="_form_element _x36013235 _full_width _clear primary_font form_title_container">
                     <div className="_form-title primary_font form_title">
                       {this.state.getADemoFormTitle}
                     </div>
                   </div>
-                </Row>
-                <Row className="get-in-touch-row">
-                  <div class="_form_element _x18120362 _full_width left_content_row">
-                    <label className="_form-label secondary_font">
-                      {this.state.getADemoName}
-                    </label>
-                    <div class="_field-wrapper">
+                  <div class="_form_element _x18120362 _full_width">
+                    <div className="mobile-demo-form-field-label">
+                      <label className="_form-label secondary_font">
+                        {this.state.getADemoName}
+                      </label>
+                    </div>
+                    <div className="_field-wrapper mobile-demo-form-field-label">
                       <input
                         type="text"
                         name="firstname"
                         placeholder={this.state.getADemoNamePlaceholder}
-                        className="input_style"
+                        className="mobile-input_style"
                         required
                       />
                     </div>
                   </div>
                   <div class="_form_element _x44797314 _full_width ">
-                    <label class="_form-label secondary_font">
-                      {this.state.getADemoEmail}
-                    </label>
-                    <div class="_field-wrapper">
+                    <div className="mobile-demo-form-field-label">
+                      <label class="_form-label secondary_font">
+                        {this.state.getADemoEmail}
+                      </label>
+                    </div>
+                    <div class="_field-wrapper mobile-demo-form-field-label">
                       <input
                         value={this.state.email}
                         type="email"
                         name="email"
                         placeholder={this.state.getADemoEmailPlaceholder}
-                        className="input_style"
+                        className="mobile-input_style"
                         onChange={this.handleChange}
                         required
                       />
                     </div>
                   </div>
-                </Row>
-                <Row className="get-in-touch-row">
-                  <div class="_form_element _x80848159 _full_width left_content_row">
-                    <label class="_form-label secondary_font">
-                      {this.state.getADemoOrg}
-                    </label>
-                    <div class="_field-wrapper">
+                  <div class="_form_element _x80848159 _full_width">
+                    <div className="mobile-demo-form-field-label">
+                      <label class="_form-label secondary_font">
+                        {this.state.getADemoOrg}
+                      </label>
+                    </div>
+                    <div class="_field-wrapper mobile-demo-form-field-label">
                       <input
                         type="text"
                         name="organization"
                         placeholder={this.state.getADemoOrgPlaceholder}
-                        className="input_style"
+                        className="mobile-input_style"
                         required
                       />
                     </div>
                   </div>
                   <div class="_form_element _x04697005 _full_width ">
-                    <label class="_form-label secondary_font">
-                      {this.state.getADemoMobile}
-                    </label>
-                    <div class="_field-wrapper">
+                    <div className="mobile-demo-form-field-label">
+                      <label class="_form-label secondary_font ">
+                        {this.state.getADemoMobile}
+                      </label>
+                    </div>
+                    <div class="_field-wrapper mobile-demo-form-field-label">
                       <input
                         type="text"
                         name="phone"
                         placeholder={this.state.getADemoMobilePlaceholder}
-                        className="input_style"
+                        className="mobile-input_style"
                         required
                       />
                     </div>
                   </div>
-                </Row>
-                <Row className="get-in-touch-last-row">
-                  <div class="_form_element _x98882726 _full_width left_content_row">
-                    <label class="_form-label secondary_font">
-                      {this.state.getADemoNumberOfStudents}
-                    </label>
-                    <div class="_field-wrapper">
+                  <div class="_form_element _x98882726 _full_width">
+                    <div className="mobile-demo-form-field-label">
+                      <label class="_form-label secondary_font">
+                        {this.state.getADemoNumberOfStudents}
+                      </label>
+                    </div>
+                    <div class="_field-wrapper mobile-demo-form-field-label">
                       <input
                         type="number"
                         name="lastname"
                         placeholder={
                           this.state.getADemoNumberOfStudentsPlaceholder
                         }
-                        className="input_style"
+                        className="mobile-input_style"
                         required
                       />
                     </div>
                   </div>
-                </Row>
-                <Row className="title_row">
-                  <div class="_button-wrapper _full_width">
+                  <div class="_button-wrapper _full_width mobile-demo-form-field-label">
                     <button
                       id="_form_2_submit"
                       className="_submit submit_button"
@@ -219,20 +363,23 @@ class GetADemo extends React.Component {
                       {this.state.getAdemoSubmitButtonText}
                     </button>
                   </div>
-                </Row>
-                <div class="_clear-element" />
-              </div>
-              <div class="_form-thank-you" />
-            </form>
-          </div>
-        </Container>
-        <Row>
-          <FeaturesSubfooter
-            img={this.state.getADemoSubfooterImg}
-            quote={this.state.getADemoSubfooterQuote}
-            quoteAuthor={this.state.getAdemoSubfooterQuoteAuthor}
-          />
-        </Row>
+                  <div class="_clear-element" />
+                </Container>
+                <div class="_form-thank-you" />
+              </form>
+            </div>
+          </Container>
+        </MediaQuery>
+        {/* FULL WIDTH FEATURE SUBFOOTER */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <Row>
+            <FeaturesSubfooter
+              img={this.state.getADemoSubfooterImg}
+              quote={this.state.getADemoSubfooterQuote}
+              quoteAuthor={this.state.getAdemoSubfooterQuoteAuthor}
+            />
+          </Row>
+        </MediaQuery>
       </div>
     );
   }
