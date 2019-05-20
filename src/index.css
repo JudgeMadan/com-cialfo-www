@@ -311,3 +311,9 @@ button:hover {
 .blue-header-svg {
   z-index: 2;
 }
+
+.mobile-blue-header-svg {
+  z-index: 2;
+  height: auto;
+  width: 400px;
+}
