@@ -209,16 +209,16 @@ class FeaturesSend extends React.Component {
         </MediaQuery>
         {/* MOBILE PARTNERS */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Container className="mobile-bottom-border mb-5">
-            <MobilePartnerImages
-              locale={this.props.locale}
-              className="partnerImages"
-              partnerImages={this.state.sendPartnersArray}
-              accessToken={this.props.accessToken}
-              space={this.props.space}
-              title={this.state.sendPartnersTitle}
-            />
-          </Container>
+          {/* <Container className="mb-5"> */}
+          <MobilePartnerImages
+            locale={this.props.locale}
+            className="partnerImages"
+            partnerImages={this.state.sendPartnersArray}
+            accessToken={this.props.accessToken}
+            space={this.props.space}
+            title={this.state.sendPartnersTitle}
+          />
+          {/* </Container> */}
         </MediaQuery>
         {/* FEATURES SUBFOOTER ONLY ON FULL SCREEN */}
         <MediaQuery query="(min-device-width: 1224px)">
