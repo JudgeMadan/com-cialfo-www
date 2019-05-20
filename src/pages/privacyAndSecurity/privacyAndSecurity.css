@@ -64,6 +64,10 @@
   width: 450px;
 }
 
+.mobile-security-object-row {
+  width: 325px;
+}
+
 .security-object-col-container {
   display: flex;
   justify-content: space-evenly;
@@ -91,12 +95,25 @@
   margin-bottom: 30px;
 }
 
+.mobile-security-subheader {
+  font-size: 40px;
+}
+
 .security-title-font-size {
   font-size: 60px;
 }
 
+.mobile-security-title-font-size {
+  font-size: 60px;
+  text-align: center;
+}
+
 .security-title-row {
   margin-bottom: 100px;
+}
+
+.mobile-security-title-row {
+  margin-bottom: 5px;
 }
 
 .security-line {
@@ -128,8 +145,16 @@
   margin-top: 100px;
 }
 
+.mobile-security-content-row-header {
+  padding-top: 50px;
+}
+
 .security-content-row-footer {
   margin-bottom: 100px;
+}
+
+.mobile-security-content-row-footer {
+  margin: 50px 0px;
 }
 
 .thank-you-title-text {
@@ -165,6 +190,9 @@
 
 .security-header-subtitle {
   width: 550px;
+  text-align: center;
+}
+.mobile-security-header-subtitle {
   text-align: center;
 }
 
