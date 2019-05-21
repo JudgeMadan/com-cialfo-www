@@ -99,7 +99,7 @@ class Security extends React.Component {
             </Row>
           </Container>
         </MediaQuery>
-        {/* DESK TOP */}
+        {/* DESK TOP CONTENT */}
         <MediaQuery query="(min-device-width: 1224px)">
           <div className="full-width-light-blue center-in-row mt-5">
             <Row className="center-in-row light-blue-background security-content-row-header">
@@ -163,8 +163,8 @@ class Security extends React.Component {
               securityFeatures={this.state.securityFeaturesItems}
             />
           </Row>
-          <Row className="center-in-row security-content-row-header dark-blue-background">
-            <h1 className="primary_font white-font security-subheader">
+          <Row className="center-in-row dark-blue-background">
+            <h1 className="primary_font white-font mobile-security-subheader pt-5">
               {this.state.securityQuestionTitle}
             </h1>
           </Row>
@@ -173,14 +173,14 @@ class Security extends React.Component {
               {this.state.securityQuestionBlurb}
             </p>
           </Row>
-          <Row className="center-in-row pb-5 security-content-row-footer dark-blue-background">
+          <Row className="center-in-row pb-5 mobile-security-content-button dark-blue-background">
             <NavLink to="/get-in-touch">
               <button className="security-button">
                 {this.state.securityQuestionButtonText}
               </button>
             </NavLink>
           </Row>
-          <Row className="center-in-row pt-5 pb-5">
+          <Row className="center-in-row mobile-security-read-more pb-5">
             {this.props.locale !== "zh-CN" && (
               <p className="secondary_font">
                 Read more about our{" "}
