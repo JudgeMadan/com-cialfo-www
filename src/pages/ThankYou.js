@@ -115,7 +115,7 @@ class ThankYou extends React.Component {
               </div>
             </Row>
             {this.props.locale !== "zh-CN" && (
-              <Row className="four_oh_four_content">
+              <Row className="four_oh_four_content mx-3">
                 <div>
                   <h1 className="primary_font thank-you-title-text text-align-center">
                     Thank you for getting in touch!
@@ -124,7 +124,7 @@ class ThankYou extends React.Component {
               </Row>
             )}
             {this.props.locale !== "zh-CN" && (
-              <Row className="four_oh_four_content">
+              <Row className="four_oh_four_content mx-3">
                 <div>
                   <h1 className="secondary_font text-align-center">
                     Your request has been successful, lorem ipsum dolor sit amet
@@ -134,7 +134,7 @@ class ThankYou extends React.Component {
               </Row>
             )}
             {this.props.locale === "zh-CN" && (
-              <Row className="four_oh_four_content">
+              <Row className="four_oh_four_content mx-3">
                 <div>
                   <h1 className="primary_font thank-you-title-text text-align-center">
                     中文中文中文中文中文中文中文中文
@@ -143,7 +143,7 @@ class ThankYou extends React.Component {
               </Row>
             )}
             {this.props.locale === "zh-CN" && (
-              <Row className="four_oh_four_content text-align-center">
+              <Row className="four_oh_four_content text-align-center mx-3">
                 <div>
                   <h1 className="secondary_font">
                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
@@ -151,7 +151,7 @@ class ThankYou extends React.Component {
                 </div>
               </Row>
             )}
-            <Row className="four_oh_four_content button">
+            <Row className="four_oh_four_content button ">
               <Link className="nav-link nav-link-no-underline" to="">
                 {this.props.locale === "zh-CN" && (
                   <button className="submit_button">回家</button>
