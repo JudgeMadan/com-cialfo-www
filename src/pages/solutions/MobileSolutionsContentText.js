@@ -17,7 +17,7 @@ class MobileSolutionsContentText extends React.Component {
         <Row className="mobile-bottom-border mb-5 pb-5">
           <Col className="featureSubSectionTextAlign ">
             <div>
-              <Row className="center-in-row">
+              <Row className="center-in-row mobile-solutions-content-title">
                 <h1 className="primary_font">{this.props.title}</h1>
               </Row>
               <Row className="center-in-row mx-3">

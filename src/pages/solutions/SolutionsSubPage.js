@@ -8,6 +8,9 @@ import SolutionsHeader from "./SolutionsHeader";
 import SolutionsRightSideText from "./SolutionsRightSideText";
 import SolutionsLeftSideText from "./SolutionsLeftSideText";
 import SolutionsSubfooter from "./SolutionsSubfooter";
+import MobileSolutionsContentText from "./MobileSolutionsContentText";
+import MobileSolutionsHeader from "./MobileSolutionsHeader";
+import MediaQuery from "react-responsive";
 class SolutionsSubPage extends React.Component {
   constructor(props) {
     super(props);
@@ -17,35 +20,56 @@ class SolutionsSubPage extends React.Component {
     console.log(this.props);
     return (
       <Container className="homePageContainer">
-        <SolutionsHeader
-          title={this.props.pageTitle}
-          subtitle={this.props.pageSubtitle}
-        />
-        <div className="solutions-bottom-spacing" />
-        <SolutionsRightSideText
-          title={this.props.topRowTitle}
-          blurb={this.props.topRowBlurb}
-        />
-        <div className="solutions-bottom-spacing" />
-        <SolutionsSubfooter
-          img={this.props.subFooterImg}
-          quote={this.props.subFooterQuote}
-          quoteAuthor={this.props.subFooterQuoteAuthor}
-          quoteAuthorCredit={this.props.subFooterQuoteCredit}
-        />
-        <div className="solutions-bottom-spacing" />
-        <SolutionsLeftSideText
-          title={this.props.bottomRowTitle}
-          blurb={this.props.bottomRowBlurb}
-        />
-        <div className="solutions-bottom-spacing" />
-        <div className="solutions-marquee-container">
-          <HomeMarquee
-            locale={this.props.locale}
-            accessToken={this.props.accessToken}
-            space={this.props.space}
+        {/* FULL SCREEN SOLUTIONS SUBPAGE */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <SolutionsHeader
+            title={this.props.pageTitle}
+            subtitle={this.props.pageSubtitle}
           />
-        </div>
+          <div className="solutions-bottom-spacing" />
+          <SolutionsRightSideText
+            title={this.props.topRowTitle}
+            blurb={this.props.topRowBlurb}
+          />
+          <div className="solutions-bottom-spacing" />
+          <SolutionsSubfooter
+            img={this.props.subFooterImg}
+            quote={this.props.subFooterQuote}
+            quoteAuthor={this.props.subFooterQuoteAuthor}
+            quoteAuthorCredit={this.props.subFooterQuoteCredit}
+          />
+          <div className="solutions-bottom-spacing" />
+          <SolutionsLeftSideText
+            title={this.props.bottomRowTitle}
+            blurb={this.props.bottomRowBlurb}
+          />
+          <div className="solutions-bottom-spacing" />
+          <div className="solutions-marquee-container">
+            <HomeMarquee
+              locale={this.props.locale}
+              accessToken={this.props.accessToken}
+              space={this.props.space}
+            />
+          </div>
+        </MediaQuery>
+        {/* MOBILE SOLUTIONS SUBPAGE */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <MobileSolutionsHeader
+            title={this.props.pageTitle}
+            subtitle={this.props.pageSubtitle}
+          />
+          <div className="solutions-bottom-spacing" />
+          <MobileSolutionsContentText
+            title={this.props.topRowTitle}
+            blurb={this.props.topRowBlurb}
+          />
+          <div className="solutions-bottom-spacing" />
+          <MobileSolutionsContentText
+            title={this.props.bottomRowTitle}
+            blurb={this.props.bottomRowBlurb}
+          />
+          <div className="solutions-bottom-spacing" />
+        </MediaQuery>
       </Container>
     );
   }
