@@ -16,43 +16,44 @@ class MobileAboutCounselors extends React.Component {
     if (counselorsObject) {
       counselorsObjectObject = counselorsObject.map(counselorsObject => {
         return (
-          <Col key={counselorsObject.sys.id}>
-            <Container className="counselor-advisor-container light-blue-background">
-              <div className="counselor-advisor-container-inner-object">
-                <Row>
-                  <p className="secondary_font">
-                    {counselorsObject.fields.aboutPageBusinessAdvisorBlurb}
+          <Container
+            key={counselorsObject.sys.id}
+            className="counselor-advisor-container light-blue-background mx-4"
+          >
+            <div className="counselor-advisor-container-inner-object">
+              <Row>
+                <p className="secondary_font">
+                  {counselorsObject.fields.aboutPageBusinessAdvisorBlurb}
+                </p>
+              </Row>
+              <Row>
+                <Image
+                  roundedCircle
+                  src={
+                    counselorsObject.fields.aboutPageBusinessAdvisorImage.fields
+                      .file.url
+                  }
+                />
+              </Row>
+              <Row>
+                <div>
+                  <p className="secondary_font_bold">
+                    {counselorsObject.fields.aboutPageBusinessAdvisorTitle}
                   </p>
-                </Row>
-                <Row>
-                  <Image
-                    roundedCircle
-                    src={
-                      counselorsObject.fields.aboutPageBusinessAdvisorImage
-                        .fields.file.url
-                    }
-                  />
-                </Row>
-                <Row>
-                  <div>
-                    <p className="secondary_font_bold">
-                      {counselorsObject.fields.aboutPageBusinessAdvisorTitle}
-                    </p>
-                  </div>
-                </Row>
-                <Row>
-                  <p className="secondary_font reduced-margin-bottom">
-                    {counselorsObject.fields.jobTitle}
-                  </p>
-                </Row>
-                <Row>
-                  <p className="secondary_font">
-                    {counselorsObject.fields.organization}
-                  </p>
-                </Row>
-              </div>
-            </Container>
-          </Col>
+                </div>
+              </Row>
+              <Row>
+                <p className="secondary_font reduced-margin-bottom">
+                  {counselorsObject.fields.jobTitle}
+                </p>
+              </Row>
+              <Row>
+                <p className="secondary_font">
+                  {counselorsObject.fields.organization}
+                </p>
+              </Row>
+            </div>
+          </Container>
         );
       });
     }

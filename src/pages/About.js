@@ -238,27 +238,27 @@ class About extends React.Component {
 
         {/* MOBILE ABOUT PARTNERS  */}
         <MediaQuery query="(max-device-width: 1223px)">
-            <Row className="center-in-row light-blue-background pt-5">
-              <Container className="partners">
-                <Row className="center-in-row partnersTitle light-blue-background">
-                  <h1 className="primary_font light-blue-background">
-                    {this.state.aboutPagePartnersTitle}
-                  </h1>
-                  <h1 className="secondary_font">
-                    {this.state.aboutPagePartnersSubtitle}
-                  </h1>
-                </Row>
-                <Row className="aboutPartners light-blue-background">
-                  {/* MOBILE ABOUT PARTNERS  */}
-                  <MobileAboutPartners
-                    partners={this.state.aboutPagePartnersPartners}
-                  />
-                </Row>
-              </Container>
-            </Row>
+          <Row className="center-in-row light-blue-background pt-5">
+            <Container className="partners">
+              <Row className="center-in-row partnersTitle light-blue-background">
+                <h1 className="primary_font light-blue-background">
+                  {this.state.aboutPagePartnersTitle}
+                </h1>
+                <h1 className="secondary_font">
+                  {this.state.aboutPagePartnersSubtitle}
+                </h1>
+              </Row>
+              <Row className="aboutPartners light-blue-background">
+                {/* MOBILE ABOUT PARTNERS  */}
+                <MobileAboutPartners
+                  partners={this.state.aboutPagePartnersPartners}
+                />
+              </Row>
+            </Container>
+          </Row>
         </MediaQuery>
-        <Row className="center-in-row about-page-counselor-advisor-header">
-          <h1 className="primary_font">
+        <Row className="center-in-row about-page-counselor-advisor-header mx-3">
+          <h1 className="primary_font text-align-center">
             {this.state.aboutPageCounselorsTitle}
           </h1>
         </Row>
@@ -298,13 +298,15 @@ class About extends React.Component {
         </MediaQuery>
         {/* MOBILE BUSINESS ADVISORS */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <div>
-            <Row className="light-blue-background about-page-counselor-advisor-header center-in-row py-5">
-              <h1 className="primary_font">
-                {this.state.aboutPageBusinessAdvisorsTitle}
-              </h1>
+          <div className="light-blue-background">
+            <Row className="light-blue-background about-page-counselor-advisor-header center-in-row pt-5">
+              <Container className="mx-5">
+                <h1 className="primary_font text-align-center">
+                  {this.state.aboutPageBusinessAdvisorsTitle}
+                </h1>
+              </Container>
             </Row>
-            <Row className="light-blue-background about-page-counselor-advisor-footer">
+            <Row className="light-blue-background pb-5">
               <Container>
                 <MobileAboutBusinessAdvisors
                   businessAdvisors={
