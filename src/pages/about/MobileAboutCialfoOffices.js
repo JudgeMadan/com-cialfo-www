@@ -37,9 +37,7 @@ class MobileAboutCialfoOffices extends React.Component {
     }
 
     return (
-      <Row className="offices_row near-black-background mb-5">
-        {officesObject}
-      </Row>
+      <Row className="offices_row near-black-background">{officesObject}</Row>
     );
   }
 }

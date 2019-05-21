@@ -177,6 +177,7 @@ therefore, total marquee width is about 395 * # of marquee Items */
 .client-header-title-large-font {
   font-size: 50px;
   width: 400px;
+  text-align: center;
 }
 
 .client-stories-home-page-card {
@@ -186,4 +187,8 @@ therefore, total marquee width is about 395 * # of marquee Items */
 
 .client-stories-home-page-card-blurb {
   height: 150px;
+}
+
+.client-header-subtitle {
+  font-size: 20px;
 }

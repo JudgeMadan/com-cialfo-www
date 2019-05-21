@@ -17,43 +17,44 @@ class MobileAboutBusinessAdvisors extends React.Component {
     if (businessAdvisors) {
       businessAdvisorsObject = businessAdvisors.map(businessAdvisor => {
         return (
-          <Col key={businessAdvisor.sys.id}>
-            <Container className="counselor-advisor-container white-background">
-              <div className="counselor-advisor-container-inner-object">
-                <Row>
-                  <p className="secondary_font">
-                    {businessAdvisor.fields.aboutPageBusinessAdvisorBlurb}
+          <Container
+            key={businessAdvisor.sys.id}
+            className="counselor-advisor-container white-background mx-4"
+          >
+            <div className="counselor-advisor-container-inner-object">
+              <Row>
+                <p className="secondary_font">
+                  {businessAdvisor.fields.aboutPageBusinessAdvisorBlurb}
+                </p>
+              </Row>
+              <Row>
+                <Image
+                  roundedCircle
+                  src={
+                    businessAdvisor.fields.aboutPageBusinessAdvisorImage.fields
+                      .file.url
+                  }
+                />
+              </Row>
+              <Row>
+                <div>
+                  <p className="secondary_font_bold">
+                    {businessAdvisor.fields.aboutPageBusinessAdvisorTitle}
                   </p>
-                </Row>
-                <Row>
-                  <Image
-                    roundedCircle
-                    src={
-                      businessAdvisor.fields.aboutPageBusinessAdvisorImage
-                        .fields.file.url
-                    }
-                  />
-                </Row>
-                <Row>
-                  <div>
-                    <p className="secondary_font_bold">
-                      {businessAdvisor.fields.aboutPageBusinessAdvisorTitle}
-                    </p>
-                  </div>
-                </Row>
-                <Row>
-                  <p className="secondary_font reduced-margin-bottom">
-                    {businessAdvisor.fields.jobTitle}
-                  </p>
-                </Row>
-                <Row>
-                  <p className="secondary_font">
-                    {businessAdvisor.fields.organization}
-                  </p>
-                </Row>
-              </div>
-            </Container>
-          </Col>
+                </div>
+              </Row>
+              <Row>
+                <p className="secondary_font reduced-margin-bottom">
+                  {businessAdvisor.fields.jobTitle}
+                </p>
+              </Row>
+              <Row>
+                <p className="secondary_font">
+                  {businessAdvisor.fields.organization}
+                </p>
+              </Row>
+            </div>
+          </Container>
         );
       });
     }
