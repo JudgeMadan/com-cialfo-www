@@ -58,17 +58,14 @@ class SolutionsSubPage extends React.Component {
             title={this.props.pageTitle}
             subtitle={this.props.pageSubtitle}
           />
-          <div className="solutions-bottom-spacing" />
           <MobileSolutionsContentText
             title={this.props.topRowTitle}
             blurb={this.props.topRowBlurb}
           />
-          <div className="solutions-bottom-spacing" />
           <MobileSolutionsContentText
             title={this.props.bottomRowTitle}
             blurb={this.props.bottomRowBlurb}
           />
-          <div className="solutions-bottom-spacing" />
         </MediaQuery>
       </Container>
     );
