@@ -27,7 +27,7 @@ class MobilePartnerImages extends React.Component {
     }
 
     return (
-      <Container className="center-in-row">
+      <Container className="center-in-row mb-3">
         <Row className="imageObjectTitle pb-5">
           <h1 className="primary_font ">{this.props.title}</h1>
         </Row>
