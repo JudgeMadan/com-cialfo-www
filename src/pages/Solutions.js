@@ -10,10 +10,14 @@ import Reports from "../img/home/Reports.svg";
 import Oval from "../img/Oval.svg";
 import Line from "../img/Line.svg";
 import SolutionsHeader from "./solutions/SolutionsHeader";
+import MobileSolutionsHeader from "./solutions/MobileSolutionsHeader";
 import SolutionsRightSideText from "./solutions/SolutionsRightSideText";
+import MobileSolutionsContentText from "./solutions/MobileSolutionsContentText";
 import SolutionsLeftSideText from "./solutions/SolutionsLeftSideText";
 import FeaturesSubfooter from "./features/FeaturesSubfooter";
 import PartnerImages from "./PartnerImages";
+import MobilePartnerImages from "./MobilePartnerImages";
+import MediaQuery from "react-responsive";
 class Solutions extends React.Component {
   constructor(props) {
     super(props);
@@ -76,56 +80,135 @@ class Solutions extends React.Component {
     console.log(this.state);
     return (
       <Container className="homePageContainer">
-        <SolutionsHeader
-          title={this.state.homePageHeaderTitle}
-          subtitle={this.state.homePageHeaderBlurb}
-          isSolutionsPage="true"
-        />
-        <SolutionsRightSideText
-          title={this.state.homePageFeaturesSendDocumentTitle}
-          blurb={this.state.homePageFeaturesSendDocumentBlurb}
-          link={this.state.homePageFeaturesSendDocumentLinkText}
-          url={this.state.homePageFeaturesSendDocumentLinkUrl}
-          linkStyle={this.state.forCounselors}
-        />
-        <SolutionsLeftSideText
-          title={this.state.homePageFeaturesLeverageTitle}
-          blurb={this.state.homePageFeaturesLeverageBlurb}
-          link={this.state.homePageFeaturesLeverageLinkText}
-          url={this.state.homePageFeaturesLeverageLinkUrl}
-          linkStyle={this.state.forIT}
-        />
-        <SolutionsRightSideText
-          title={this.state.homePageFeaturesDiscoverTitle}
-          blurb={this.state.homePageFeaturesDiscoverBlurb}
-          link={this.state.homePageFeaturesDiscoverLinkText}
-          url={this.state.homePageFeaturesDiscoveryLinkUrl}
-          linkStyle={this.state.forPrincipals}
-        />
-        <SolutionsLeftSideText
-          title={this.state.solutionsExtraTitle}
-          blurb={this.state.solutionsExtraBlurb}
-          link={this.state.solutionsExtraLinkText}
-          url={this.state.solutionsExtraLinkUrl}
-          linkStyle={this.state.forSuperintendents}
-        />
+        {/* FULL PAGE HEADER */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <SolutionsHeader
+            title={this.state.homePageHeaderTitle}
+            subtitle={this.state.homePageHeaderBlurb}
+            isSolutionsPage="true"
+          />
+        </MediaQuery>
+        {/* MOBILE HEADER */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <MobileSolutionsHeader
+            title={this.state.homePageHeaderTitle}
+            subtitle={this.state.homePageHeaderBlurb}
+            isSolutionsPage="true"
+          />
+        </MediaQuery>
+        {/* FULL PAGE RIGHT SIDE COUNSELORS */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <SolutionsRightSideText
+            title={this.state.homePageFeaturesSendDocumentTitle}
+            blurb={this.state.homePageFeaturesSendDocumentBlurb}
+            link={this.state.homePageFeaturesSendDocumentLinkText}
+            url={this.state.homePageFeaturesSendDocumentLinkUrl}
+            linkStyle={this.state.forCounselors}
+          />
+        </MediaQuery>
+        {/* MOBILE RIGHT SIDE COUNSELORS */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <MobileSolutionsContentText
+            title={this.state.homePageFeaturesSendDocumentTitle}
+            blurb={this.state.homePageFeaturesSendDocumentBlurb}
+            link={this.state.homePageFeaturesSendDocumentLinkText}
+            url={this.state.homePageFeaturesSendDocumentLinkUrl}
+            linkStyle={this.state.forCounselors}
+          />
+        </MediaQuery>
+        {/* FULL PAGE LEFT SIDE IT TEAM */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <SolutionsLeftSideText
+            title={this.state.homePageFeaturesLeverageTitle}
+            blurb={this.state.homePageFeaturesLeverageBlurb}
+            link={this.state.homePageFeaturesLeverageLinkText}
+            url={this.state.homePageFeaturesLeverageLinkUrl}
+            linkStyle={this.state.forIT}
+          />
+        </MediaQuery>
+        {/* MOBILE IT TEAM */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <MobileSolutionsContentText
+            title={this.state.homePageFeaturesLeverageTitle}
+            blurb={this.state.homePageFeaturesLeverageBlurb}
+            link={this.state.homePageFeaturesLeverageLinkText}
+            url={this.state.homePageFeaturesLeverageLinkUrl}
+            linkStyle={this.state.forIT}
+          />
+        </MediaQuery>
+        {/* FULL SCREEN FOR PRINCIPALS */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <SolutionsRightSideText
+            title={this.state.homePageFeaturesDiscoverTitle}
+            blurb={this.state.homePageFeaturesDiscoverBlurb}
+            link={this.state.homePageFeaturesDiscoverLinkText}
+            url={this.state.homePageFeaturesDiscoveryLinkUrl}
+            linkStyle={this.state.forPrincipals}
+          />
+        </MediaQuery>
+        {/* MOBILE FOR PRINCIPALS */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <MobileSolutionsContentText
+            title={this.state.homePageFeaturesDiscoverTitle}
+            blurb={this.state.homePageFeaturesDiscoverBlurb}
+            link={this.state.homePageFeaturesDiscoverLinkText}
+            url={this.state.homePageFeaturesDiscoveryLinkUrl}
+            linkStyle={this.state.forPrincipals}
+          />
+        </MediaQuery>
+        {/* FULL SCREEN FOR SUPERINTENDENTS */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <SolutionsLeftSideText
+            title={this.state.solutionsExtraTitle}
+            blurb={this.state.solutionsExtraBlurb}
+            link={this.state.solutionsExtraLinkText}
+            url={this.state.solutionsExtraLinkUrl}
+            linkStyle={this.state.forSuperintendents}
+          />
+        </MediaQuery>
+        {/* MOBILE FOR SUPERINTENDENTS */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <MobileSolutionsContentText
+            title={this.state.solutionsExtraTitle}
+            blurb={this.state.solutionsExtraBlurb}
+            link={this.state.solutionsExtraLinkText}
+            url={this.state.solutionsExtraLinkUrl}
+            linkStyle={this.state.forSuperintendents}
+          />
+        </MediaQuery>
         <div className="solutions-bottom-spacing" />
-        <div className="full-width-light-blue center-in-row">
-          <PartnerImages
+        {/* FULL SCREEN PARTNERS IMAGES */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <div className="full-width-light-blue center-in-row">
+            <PartnerImages
+              locale={this.props.locale}
+              className="partnerImages"
+              partnerImages={this.state.homePagePoweredByOurPartnersPartners}
+              accessToken={this.props.accessToken}
+              space={this.props.space}
+              title={this.state.homePagePoweredByOurPartnersTitle}
+            />
+          </div>
+        </MediaQuery>
+        {/* MOBILE PARTNERS IMAGES */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <MobilePartnerImages
             locale={this.props.locale}
-            className="partnerImages"
+            className="partnerImages "
             partnerImages={this.state.homePagePoweredByOurPartnersPartners}
             accessToken={this.props.accessToken}
             space={this.props.space}
             title={this.state.homePagePoweredByOurPartnersTitle}
           />
-        </div>
+        </MediaQuery>
         <div className="solutions-bottom-spacing" />
-        <FeaturesSubfooter
-          img={this.state.solutionsSubfooterImg}
-          quote={this.state.solutionsSubfooterQuote}
-          quoteAuthor={this.state.solutionsSubfooterQuoteAuthor}
-        />
+        <MediaQuery query="(min-device-width: 1224px)">
+          <FeaturesSubfooter
+            img={this.state.solutionsSubfooterImg}
+            quote={this.state.solutionsSubfooterQuote}
+            quoteAuthor={this.state.solutionsSubfooterQuoteAuthor}
+          />
+        </MediaQuery>
       </Container>
     );
   }
