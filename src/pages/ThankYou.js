@@ -117,7 +117,7 @@ class ThankYou extends React.Component {
             {this.props.locale !== "zh-CN" && (
               <Row className="four_oh_four_content">
                 <div>
-                  <h1 className="primary_font thank-you-title-text">
+                  <h1 className="primary_font thank-you-title-text text-align-center">
                     Thank you for getting in touch!
                   </h1>
                 </div>
@@ -136,7 +136,7 @@ class ThankYou extends React.Component {
             {this.props.locale === "zh-CN" && (
               <Row className="four_oh_four_content">
                 <div>
-                  <h1 className="primary_font">
+                  <h1 className="primary_font thank-you-title-text text-align-center">
                     中文中文中文中文中文中文中文中文
                   </h1>
                 </div>
