@@ -81,6 +81,8 @@ class ClientStoriesItem extends React.Component {
                 testimonialBlurb_3={this.props.testimonialBlurb_3}
                 testimonialPullQuote_1={this.props.testimonialPullQuote_1}
                 testimonialVideo={this.props.testimonialVideo}
+                videoWidth="600px"
+                videoHeight="336px"
               />
             )}
             {this.props.testimonialType === 2 && (
@@ -90,6 +92,8 @@ class ClientStoriesItem extends React.Component {
                 testimonialBlurb_3={this.props.testimonialBlurb_3}
                 testimonialPullQuote_1={this.props.testimonialPullQuote_1}
                 testimonialVideo={this.props.testimonialVideo}
+                videoWidth="600px"
+                videoHeight="336px"
               />
             )}
           </Col>

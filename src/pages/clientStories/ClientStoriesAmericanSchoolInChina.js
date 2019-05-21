@@ -1,12 +1,8 @@
 import React from "react";
 import * as contentful from "contentful";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { Link } from "react-router-dom";
-import ReactPlayer from "react-player";
 import ClientStoriesItem from "./ClientStoriesItem";
-
-import Container from "react-bootstrap/Container";
+import MobileClientStoriesItem from "./MobileClientStoriesItem";
+import MediaQuery from "react-responsive";
 class ClientStoriesAmericanSchoolInChina extends React.Component {
   constructor(props) {
     super(props);
@@ -63,30 +59,62 @@ class ClientStoriesAmericanSchoolInChina extends React.Component {
 
   render() {
     return (
-      <ClientStoriesItem
-        schoolName={this.state.clientStorySchoolName}
-        schoolBlurb={this.state.clientStoryStoryBlurb}
-        schoolImage={this.state.clientStorySchoolImage}
-        schoolLogo={this.state.clientStoryLogo}
-        shortTestimonial={this.state.clientStoryShortTestimonial}
-        seniorNumbers={this.state.clientStoryNumberOfSeniors}
-        counselorNumbers={this.state.clientStoryConsultingTeam}
-        curriculum={this.state.clientStoryCurriculum}
-        location={this.state.clientStorySchoolLocation}
-        buttonText={this.state.clientStoryContactSalesText}
-        testimonialBlurb_1={this.state.clientStoryTestimonialBlurb1}
-        testimonialBlurb_2={this.state.clientStoryTestimonialBlurb2}
-        testimonialBlurb_3={this.state.clientStoryTestimonialBlurb3}
-        testimonialBlurb_4={this.state.clientStoryTestimonialBlurb4}
-        testimonialBlurb_5={this.state.clientStoryTestimonialBlurb5}
-        testimonialPullQuote_1={this.state.clientStoryTestimonialPullQuote1}
-        testimonialPullQuote_2={this.state.clientStoryTestimonialPullQuote2}
-        testimonialVideo={this.state.clientStoryTestimonialVideoEmbedLink}
-        testimonialType={this.state.testimonialType}
-        locale={this.props.locale}
-        space={this.props.space}
-        accessToken={this.props.accessToken}
-      />
+      <div>
+        {/* FULL SCREEN CLIENT STORY PAGE */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <ClientStoriesItem
+            schoolName={this.state.clientStorySchoolName}
+            schoolBlurb={this.state.clientStoryStoryBlurb}
+            schoolImage={this.state.clientStorySchoolImage}
+            schoolLogo={this.state.clientStoryLogo}
+            shortTestimonial={this.state.clientStoryShortTestimonial}
+            seniorNumbers={this.state.clientStoryNumberOfSeniors}
+            counselorNumbers={this.state.clientStoryConsultingTeam}
+            curriculum={this.state.clientStoryCurriculum}
+            location={this.state.clientStorySchoolLocation}
+            buttonText={this.state.clientStoryContactSalesText}
+            testimonialBlurb_1={this.state.clientStoryTestimonialBlurb1}
+            testimonialBlurb_2={this.state.clientStoryTestimonialBlurb2}
+            testimonialBlurb_3={this.state.clientStoryTestimonialBlurb3}
+            testimonialBlurb_4={this.state.clientStoryTestimonialBlurb4}
+            testimonialBlurb_5={this.state.clientStoryTestimonialBlurb5}
+            testimonialPullQuote_1={this.state.clientStoryTestimonialPullQuote1}
+            testimonialPullQuote_2={this.state.clientStoryTestimonialPullQuote2}
+            testimonialVideo={this.state.clientStoryTestimonialVideoEmbedLink}
+            testimonialType={this.state.testimonialType}
+            locale={this.props.locale}
+            space={this.props.space}
+            accessToken={this.props.accessToken}
+          />
+        </MediaQuery>
+        {/* MOBILE CLIENT STORY PAGE */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <MobileClientStoriesItem
+            schoolName={this.state.clientStorySchoolName}
+            schoolBlurb={this.state.clientStoryStoryBlurb}
+            schoolImage={this.state.clientStorySchoolImage}
+            schoolLogo={this.state.clientStoryLogo}
+            shortTestimonial={this.state.clientStoryShortTestimonial}
+            seniorNumbers={this.state.clientStoryNumberOfSeniors}
+            counselorNumbers={this.state.clientStoryConsultingTeam}
+            curriculum={this.state.clientStoryCurriculum}
+            location={this.state.clientStorySchoolLocation}
+            buttonText={this.state.clientStoryContactSalesText}
+            testimonialBlurb_1={this.state.clientStoryTestimonialBlurb1}
+            testimonialBlurb_2={this.state.clientStoryTestimonialBlurb2}
+            testimonialBlurb_3={this.state.clientStoryTestimonialBlurb3}
+            testimonialBlurb_4={this.state.clientStoryTestimonialBlurb4}
+            testimonialBlurb_5={this.state.clientStoryTestimonialBlurb5}
+            testimonialPullQuote_1={this.state.clientStoryTestimonialPullQuote1}
+            testimonialPullQuote_2={this.state.clientStoryTestimonialPullQuote2}
+            testimonialVideo={this.state.clientStoryTestimonialVideoEmbedLink}
+            testimonialType={this.state.testimonialType}
+            locale={this.props.locale}
+            space={this.props.space}
+            accessToken={this.props.accessToken}
+          />
+        </MediaQuery>
+      </div>
     );
   }
 }

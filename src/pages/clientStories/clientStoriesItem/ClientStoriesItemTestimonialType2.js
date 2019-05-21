@@ -30,8 +30,8 @@ class ClientStoriesItemTestimonialType2 extends React.Component {
           <Row className="mt-5 mb-5 client-video-row">
             <ReactPlayer
               className="video"
-              width="600px"
-              height="336px"
+              width={this.props.videoWidth}
+              height={this.props.videoHeight}
               url={video}
             />
           </Row>
