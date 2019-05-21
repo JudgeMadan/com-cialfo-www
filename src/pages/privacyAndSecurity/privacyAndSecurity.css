@@ -97,6 +97,7 @@
 
 .mobile-security-subheader {
   font-size: 40px;
+  text-align: center;
 }
 
 .security-title-font-size {
@@ -157,6 +158,10 @@
   margin: 50px 0px;
 }
 
+.mobile-security-content-button {
+  margin-bottom: 50px;
+}
+
 .thank-you-title-text {
   font-size: 60px;
   text-align: center;
@@ -198,5 +203,9 @@
 
 .security-questions-blurb {
   width: 600px;
+  text-align: center;
+}
+
+.mobile-security-read-more {
   text-align: center;
 }
