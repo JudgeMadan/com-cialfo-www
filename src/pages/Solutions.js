@@ -1,14 +1,7 @@
 import React from "react";
 import * as contentful from "contentful";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import "./home/Home.css";
-import Documents from "../img/home/CDocs.svg";
-import ResearchImage from "../img/home/SchoolsOverview.svg";
-import Reports from "../img/home/Reports.svg";
-import Oval from "../img/Oval.svg";
-import Line from "../img/Line.svg";
 import SolutionsHeader from "./solutions/SolutionsHeader";
 import MobileSolutionsHeader from "./solutions/MobileSolutionsHeader";
 import SolutionsRightSideText from "./solutions/SolutionsRightSideText";

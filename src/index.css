@@ -323,6 +323,12 @@ button:hover {
   width: 350px;
 }
 
+.mobile-thank-you-svg {
+  z-index: 3;
+  height: auto;
+  width: 350px;
+}
+
 .full-width-light-blue {
   margin: 0 -9999rem;
   /* add back negative margin value */
@@ -342,4 +348,8 @@ button:hover {
   /* add back negative margin value */
   padding: 0.25rem 9999rem;
   background: #1786df;
+}
+
+.text-align-center {
+  text-align: center;
 }
