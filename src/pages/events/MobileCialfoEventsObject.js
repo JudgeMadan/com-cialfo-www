@@ -20,45 +20,43 @@ class MobileCialfoEventsObject extends React.Component {
       eventsObject = events.map(event => {
         const showDate = moment(event.fields.eventsDate).format("Do MMMM YYYY");
         return (
-          <Col className="my-5" key={event.sys.id}>
-            <Container className="white-background">
-              <div className="event-inner-object">
-                <Row>
-                  <div>
-                    <h1 className="primary_font">
-                      {event.fields.aboutPageBusinessAdvisorTitle}
-                    </h1>
-                  </div>
-                </Row>
-                <Row className="events-blurb">
-                  <div>
-                    <p className="secondary_font">
-                      {event.fields.aboutPageBusinessAdvisorBlurb}
-                    </p>
-                  </div>
-                </Row>
-                <Row>
-                  <img src={Pin} />
-                  <p className="secondary_font event-remove-margin-bottom event-bold">
-                    &nbsp; &nbsp;
-                    {event.fields.eventsCity}
+          <Container className="my-5" key={event.sys.id}>
+            <div className="event-inner-object white-background">
+              <Row>
+                <div>
+                  <h1 className="primary_font">
+                    {event.fields.aboutPageBusinessAdvisorTitle}
+                  </h1>
+                </div>
+              </Row>
+              <Row className="events-blurb">
+                <div>
+                  <p className="secondary_font">
+                    {event.fields.aboutPageBusinessAdvisorBlurb}
                   </p>
-                </Row>
-                <Row className="pb-3">
-                  <img src={Calendar} />
-                  <p className="secondary_font event-remove-margin-bottom event-bold">
-                    &nbsp; &nbsp;
-                    {showDate}
-                  </p>
-                </Row>
-                <Row>
-                  <a className="event-link" href={event.fields.eventsRsvpLink}>
-                    RSVP
-                  </a>
-                </Row>
-              </div>
-            </Container>
-          </Col>
+                </div>
+              </Row>
+              <Row>
+                <img src={Pin} />
+                <p className="secondary_font event-remove-margin-bottom event-bold">
+                  &nbsp; &nbsp;
+                  {event.fields.eventsCity}
+                </p>
+              </Row>
+              <Row className="pb-3">
+                <img src={Calendar} />
+                <p className="secondary_font event-remove-margin-bottom event-bold">
+                  &nbsp; &nbsp;
+                  {showDate}
+                </p>
+              </Row>
+              <Row>
+                <a className="event-link" href={event.fields.eventsRsvpLink}>
+                  RSVP
+                </a>
+              </Row>
+            </div>
+          </Container>
         );
       });
     }
