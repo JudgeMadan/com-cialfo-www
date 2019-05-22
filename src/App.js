@@ -12,12 +12,14 @@ class App extends Component {
       chinaSpace: {
         space: "1acwuo4zy8aa",
         accessToken:
-          "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
+          "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2",
+        spaceName: "China"
       },
       internationalSpace: {
         space: "qlwyndleu3of",
         accessToken:
-          "2eb1abe530767fecfa2bbc4505a44fb7a4a205df1275e863807c2d9c4470e1fe"
+          "2eb1abe530767fecfa2bbc4505a44fb7a4a205df1275e863807c2d9c4470e1fe",
+        spaceName: "International"
       }
     };
   }
@@ -35,7 +37,7 @@ class App extends Component {
         "country_code=CN"
       ];
 
-      const country_codeArray = cookieArray.filter(
+      const country_codeArray = cookieArray2.filter(
         cookie => cookie.substring(0, 12) === "country_code"
       );
 
@@ -44,19 +46,22 @@ class App extends Component {
         this.setState({
           space: this.state.chinaSpace.space,
           accessToken: this.state.chinaSpace.accessToken,
-          country_code: country_code
+          country_code: country_code,
+          spaceName: this.state.chinaSpace.spaceName
         });
       } else {
         this.setState({
           space: this.state.internationalSpace.space,
           accessToken: this.state.internationalSpace.accessToken,
-          country_code: country_code
+          country_code: country_code,
+          spaceName: this.state.internationalSpace.spaceName
         });
       }
     } else {
       this.setState({
         space: this.state.internationalSpace.space,
-        accessToken: this.state.internationalSpace.accessToken
+        accessToken: this.state.internationalSpace.accessToken,
+        spaceName: this.state.internationalSpace.spaceName
       });
     }
   }
@@ -86,6 +91,7 @@ class App extends Component {
             accessToken={this.state.accessToken}
             updateLocale={this.updateLocale}
             country_code={this.state.country_code}
+            spaceName={this.state.spaceName}
           />
           <Router
             locale={this.state.locale}

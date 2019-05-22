@@ -6,6 +6,8 @@ import * as contentful from "contentful";
 import "./Layout/Layout.css";
 import Logo from "../img/Logo.svg";
 import TranslateButton from "./header/TranslateButton";
+import NavItem from "react-bootstrap/NavItem";
+import MediaQuery from "react-responsive";
 
 class Header extends React.Component {
   constructor(props) {
@@ -58,6 +60,12 @@ class Header extends React.Component {
           <NavLink to="/" className="navbar-brand">
             <img src={Logo} />
           </NavLink>
+          {/* FULL SCREEN ONLY */}
+          <MediaQuery query="(min-device-width: 1224px)">
+            <NavItem className="nav-link blue-header-locale-text">
+              | &nbsp;&nbsp; {this.props.spaceName}
+            </NavItem>
+          </MediaQuery>
         </Nav>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">

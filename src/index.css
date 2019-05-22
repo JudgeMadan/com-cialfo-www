@@ -353,3 +353,10 @@ button:hover {
 .text-align-center {
   text-align: center;
 }
+
+.blue-header-locale-text {
+  margin-top: -2px;
+  color: #1786df !important;
+  font-size: 23px;
+  font-weight: bold;
+}
