@@ -12,14 +12,12 @@ class App extends Component {
       chinaSpace: {
         space: "1acwuo4zy8aa",
         accessToken:
-          "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2",
-        spaceName: "cn"
+          "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
       },
       internationalSpace: {
         space: "qlwyndleu3of",
         accessToken:
-          "2eb1abe530767fecfa2bbc4505a44fb7a4a205df1275e863807c2d9c4470e1fe",
-        spaceName: "intl"
+          "2eb1abe530767fecfa2bbc4505a44fb7a4a205df1275e863807c2d9c4470e1fe"
       }
     };
   }
@@ -37,7 +35,7 @@ class App extends Component {
         "country_code=CN"
       ];
 
-      const country_codeArray = cookieArray2.filter(
+      const country_codeArray = cookieArray.filter(
         cookie => cookie.substring(0, 12) === "country_code"
       );
 
@@ -45,7 +43,6 @@ class App extends Component {
       if (country_code === "country_code=CN") {
         this.setState({
           space: this.state.chinaSpace.space,
-          spaceName: this.state.chinaSpace.spaceName,
           accessToken: this.state.chinaSpace.accessToken,
           country_code: country_code
         });
@@ -53,15 +50,13 @@ class App extends Component {
         this.setState({
           space: this.state.internationalSpace.space,
           accessToken: this.state.internationalSpace.accessToken,
-          spaceName: this.state.internationalSpace.spaceName,
           country_code: country_code
         });
       }
     } else {
       this.setState({
         space: this.state.internationalSpace.space,
-        accessToken: this.state.internationalSpace.accessToken,
-        spaceName: this.state.internationalSpace.spaceName
+        accessToken: this.state.internationalSpace.accessToken
       });
     }
   }
@@ -72,14 +67,7 @@ class App extends Component {
     });
   };
 
-  // updateLocale = locale => {
-  //   this.setState({
-  //     locale: locale
-  //   });
-  // };
-
-  updateLocale = (locale, space) => {
-    console.log(locale);
+  updateLocale = locale => {
     this.setState({
       locale: locale
     });
@@ -88,6 +76,7 @@ class App extends Component {
   render() {
     const space = this.state.space;
     const accessToken = this.state.accessToken;
+
     if (space && accessToken) {
       return (
         <div>
@@ -97,7 +86,6 @@ class App extends Component {
             accessToken={this.state.accessToken}
             updateLocale={this.updateLocale}
             country_code={this.state.country_code}
-            spaceName={this.state.spaceName}
           />
           <Router
             locale={this.state.locale}
@@ -105,7 +93,6 @@ class App extends Component {
             accessToken={this.state.accessToken}
             getADemoEmail={this.state.getADemoEmail}
             sendEmailAddressToGetADemo={this.sendEmailAddressToGetADemo}
-            spaceName={this.state.spaceName}
           />
           <Footer
             locale={this.state.locale}
