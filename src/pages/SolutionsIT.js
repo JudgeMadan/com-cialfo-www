@@ -75,7 +75,7 @@ class SolutionsIT extends React.Component {
           subFooterQuoteAuthor={this.state.solutionsSubfooterQuoteAuthor}
           subFooterQuoteCredit={this.state.solutionsSubfooterQuoteAuthorCredit}
           bottomRowTitle={this.state.homePageFeaturesLeverageTitle}
-          bottomRowBlurb={this.state.homePageFeaturesSendDocumentBlurb}
+          bottomRowBlurb={this.state.homePageFeaturesLeverageBlurb}
         />
       </Container>
     );

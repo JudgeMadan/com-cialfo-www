@@ -60,6 +60,7 @@ class FeaturesResearch extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container className="featuresSendPage">
         {/* FULL SCREEN PAGE HEADER */}
@@ -119,9 +120,7 @@ class FeaturesResearch extends React.Component {
                 </Row>
                 <Row>
                   <Col>
-                    <FeaturesBullets
-                      bullets={this.state.researchKnowledgeBlurb}
-                    />
+                    <FeaturesBullets bullets={this.state.researchInfoBlurb} />
                   </Col>
                 </Row>
               </Container>
@@ -142,7 +141,7 @@ class FeaturesResearch extends React.Component {
               <h1 className="primary_font">{this.state.researchInfoTitle}</h1>
             </Row>
             <Row className="mb-5 px-3">
-              <FeaturesBullets bullets={this.state.researchKnowledgeBlurb} />
+              <FeaturesBullets bullets={this.state.researchInfoBlurb} />
             </Row>
           </Container>
         </MediaQuery>
