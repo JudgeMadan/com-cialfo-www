@@ -70,7 +70,7 @@ class ClientStoriesItem extends React.Component {
             {this.props.schoolBlurb}
           </h1>
         </Row>
-        <Row>
+        <Row className="mb-5">
           {this.props.testimonialType === 1 && (
             <Container>
               <ClientStoriesItemTestimonialType1
