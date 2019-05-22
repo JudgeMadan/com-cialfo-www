@@ -14,7 +14,6 @@ class SolutionsSubfooter extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.state.height);
     window.addEventListener("resize", this.updateDimensions);
   }
   updateDimensions = () => {
@@ -25,7 +24,6 @@ class SolutionsSubfooter extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container className="featuresSendPage subFooterPage">
         <div className="full-width-dark-blue-custom-height">

@@ -17,7 +17,6 @@ class SolutionsSubPage extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <Container className="homePageContainer">
         {/* FULL SCREEN SOLUTIONS SUBPAGE */}
@@ -44,6 +43,16 @@ class SolutionsSubPage extends React.Component {
             blurb={this.props.bottomRowBlurb}
           />
           <div className="solutions-bottom-spacing" />
+          <Row className="center-in-row">
+            {this.props.locale !== "zh-CN" && (
+              <h1 className="primary_font">
+                The top international schools trust Cialfo
+              </h1>
+            )}
+            {this.props.locale === "zh-CN" && (
+              <h1 className="primary_font">中文中文中文</h1>
+            )}
+          </Row>
           <div className="solutions-marquee-container">
             <HomeMarquee
               locale={this.props.locale}
