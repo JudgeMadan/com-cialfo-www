@@ -1,14 +1,11 @@
 import React from "react";
 import * as contentful from "contentful";
 import NavItem from "react-bootstrap/NavItem";
-import { NavLink } from "react-router-dom";
 
 class TranslateButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      updatedRoute: ""
-    };
+    this.state = {};
   }
   updateLocale = locale => {
     this.props.updateLocale(locale);
@@ -26,20 +23,10 @@ class TranslateButton extends React.Component {
     });
 
   setNavBar = response => {
-    let updatedRoute = "";
     const navBarContent = response.items[0].fields;
-    const hashArray = window.location.hash.split("/");
-    const filteredHashArray = hashArray.filter(
-      element => element !== "#" && element !== "cn"
-    );
-    const localeIndex = filteredHashArray.indexOf("en-US");
-    filteredHashArray[localeIndex] = "zh-CN";
-    updatedRoute = filteredHashArray.join("/");
     for (let key in navBarContent) {
       this.setState({
-        [key]: navBarContent[key],
-        hashArray: hashArray,
-        updatedRoute: updatedRoute
+        [key]: navBarContent[key]
       });
     }
   };
@@ -55,38 +42,24 @@ class TranslateButton extends React.Component {
   }
 
   render() {
-    console.log(this.state.updatedRoute);
     return (
       <div>
         {this.props.locale !== "zh-CN" && (
-          // <NavItem
-          //   onClick={() => this.updateLocale("zh-CN")}
-          //   className="nav-link translator"
-          // >
-          //   <NavLink to={"/" + this.props.spaceName + "/zh-CN"}>中文</NavLink>
-          // </NavItem>
-          <NavLink
-            className="nav-link translator"
+          <NavItem
             onClick={() => this.updateLocale("zh-CN")}
-            to={this.state.updatedRoute}
+            className="nav-link translator"
+            to="/"
           >
             中文
-          </NavLink>
+          </NavItem>
         )}
         {this.props.locale === "zh-CN" && (
-          <NavLink
+          <NavItem
             onClick={() => this.updateLocale("en-US")}
             className="nav-link translator"
-            to={"/" + this.props.spaceName + "/en-US/clients"}
           >
             English
-          </NavLink>
-          //   <NavItem
-          //   onClick={() => this.updateLocale("en-US")}
-          //   className="nav-link translator"
-          // >
-          //   English
-          // </NavItem>
+          </NavItem>
         )}
       </div>
     );
