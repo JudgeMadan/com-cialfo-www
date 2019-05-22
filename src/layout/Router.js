@@ -23,13 +23,17 @@ import ClientStoriesAmericanSchoolInChina from "../pages/clientStories/ClientSto
 import Events from "../pages/Events";
 import Downloads from "../pages/Downloads";
 
+// `${process.env.PUBLIC_URL}/service-worker.js`;
+
 class Router extends React.Component {
   render() {
+    console.log(this.props);
     return (
       <Switch>
         <Route
           exact
-          path="/"
+          // path="/"
+          path={"/" + this.props.spaceName + "/" + this.props.locale}
           render={() => (
             <Home
               locale={this.props.locale}
@@ -43,7 +47,10 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
-          path="/clients"
+          // path="/clients"
+          path={
+            "/" + this.props.spaceName + "/" + this.props.locale + "/clients"
+          }
           render={() => (
             <ClientStories
               locale={this.props.locale}

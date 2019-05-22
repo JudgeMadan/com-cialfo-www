@@ -39,7 +39,6 @@ class HomeMarquee extends React.Component {
   };
 
   render() {
-    console.log(this.state.marqueeCount);
     return (
       <MediaQuery query="(min-device-width: 1224px)">
         <div

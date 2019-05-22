@@ -55,9 +55,15 @@ class Header extends React.Component {
         expand="lg"
       >
         <Nav href="#home">
-          <NavLink to="/" className="navbar-brand">
+          <NavLink
+            to={"/" + this.props.spaceName + "/" + this.props.locale}
+            className="navbar-brand"
+          >
             <img src={Logo} />
           </NavLink>
+          {/* <NavLink to="/" className="navbar-brand">
+            <img src={Logo} />
+          </NavLink> */}
         </Nav>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
@@ -65,7 +71,14 @@ class Header extends React.Component {
             <NavLink
               activeClassName="activeStyle"
               className="nav-link"
-              to="/clients"
+              // to="/clients"
+              to={
+                "/" +
+                this.props.spaceName +
+                "/" +
+                this.props.locale +
+                "/clients"
+              }
             >
               {this.state.clientsPage}
             </NavLink>
@@ -99,6 +112,7 @@ class Header extends React.Component {
                 space={this.props.space}
                 accessToken={this.props.accessToken}
                 updateLocale={this.updateLocale}
+                spaceName={this.props.spaceName}
               />
             )}
             <NavLink
