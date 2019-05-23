@@ -13,7 +13,7 @@ class App extends Component {
         space: "1acwuo4zy8aa",
         accessToken:
           "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2",
-        spaceName: "China"
+        spaceName: "中国"
       },
       internationalSpace: {
         space: "qlwyndleu3of",
@@ -104,6 +104,7 @@ class App extends Component {
             locale={this.state.locale}
             space={this.state.space}
             accessToken={this.state.accessToken}
+            spaceName={this.state.spaceName}
           />
         </div>
       );

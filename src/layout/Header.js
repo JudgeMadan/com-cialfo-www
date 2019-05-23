@@ -61,11 +61,11 @@ class Header extends React.Component {
             <img src={Logo} />
           </NavLink>
           {/* FULL SCREEN ONLY */}
-          <MediaQuery query="(min-device-width: 1224px)">
+          {/* <MediaQuery query="(min-device-width: 1224px)">
             <NavItem className="nav-link blue-header-locale-text">
               | &nbsp;&nbsp; {this.props.spaceName}
             </NavItem>
-          </MediaQuery>
+          </MediaQuery> */}
         </Nav>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
@@ -116,6 +116,12 @@ class Header extends React.Component {
             >
               {this.state.demoPage}
             </NavLink>
+            {/* FULL SCREEN ONLY */}
+            <MediaQuery query="(min-device-width: 1224px)">
+              <NavItem className="header-locale-text">
+                {/* | &nbsp; {this.props.spaceName} */} {this.props.spaceName}
+              </NavItem>
+            </MediaQuery>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

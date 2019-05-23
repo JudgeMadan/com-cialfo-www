@@ -354,9 +354,7 @@ button:hover {
   text-align: center;
 }
 
-.blue-header-locale-text {
-  margin-top: -2px;
-  color: #1786df !important;
-  font-size: 23px;
+.header-locale-text {
+  margin-top: 8px;
   font-weight: bold;
 }
