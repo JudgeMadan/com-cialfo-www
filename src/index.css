@@ -358,3 +358,18 @@ button:hover {
   margin-top: 8px;
   font-weight: bold;
 }
+
+.mobile-nav-link {
+  padding-right: 0;
+  padding-left: 0;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  color: #2a1f2f;
+  text-decoration: none !important;
+}
+
+.mobile-nav-link:hover {
+  color: #2a1f2f;
+  font-weight: bold;
+}

@@ -53,6 +53,10 @@
   border-bottom: solid 2px #1886df !important;
 }
 
+.mobile-activeStyle {
+  font-weight: bold;
+}
+
 .footer-nav-link {
   padding: 0px !important;
 }
