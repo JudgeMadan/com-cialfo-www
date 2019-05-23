@@ -20,7 +20,7 @@ class App extends Component {
         space: "qlwyndleu3of",
         accessToken:
           "2eb1abe530767fecfa2bbc4505a44fb7a4a205df1275e863807c2d9c4470e1fe",
-        spaceName: "International"
+        spaceName: "Intl"
       }
     };
   }
@@ -38,7 +38,7 @@ class App extends Component {
         "country_code=CN"
       ];
 
-      const country_codeArray = cookieArray2.filter(
+      const country_codeArray = cookieArray.filter(
         cookie => cookie.substring(0, 12) === "country_code"
       );
 

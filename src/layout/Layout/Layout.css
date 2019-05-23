@@ -60,3 +60,17 @@
 .footer-nav-link {
   padding: 0px !important;
 }
+
+.blue-header-locale-text {
+  margin-left: -15px;
+  margin-top: 5px;
+  color: #1886df !important;
+  font-size: 12px;
+}
+
+.mobile-blue-header-locale-text {
+  margin-left: -150px;
+  margin-top: -30px;
+  color: #1886df !important;
+  font-size: 12px;
+}
