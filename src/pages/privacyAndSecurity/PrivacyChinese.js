@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import MediaQuery from "react-responsive";
-import Row from "react-bootstrap/Row";;
+import Row from "react-bootstrap/Row";
 class PrivacyChinese extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +9,6 @@ class PrivacyChinese extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <Container className="secondary_font pb-5">
         {/* FULL WIDTH CHINESE PRIVACY */}

@@ -127,7 +127,7 @@ class Security extends React.Component {
               </p>
             </Row>
             <Row className="center-in-row pb-5 security-content-row-footer">
-              <NavLink to="/get-in-touch">
+              <NavLink to="/contact">
                 <button className="security-button">
                   {this.state.securityQuestionButtonText}
                 </button>
@@ -174,7 +174,7 @@ class Security extends React.Component {
             </p>
           </Row>
           <Row className="center-in-row pb-5 mobile-security-content-button dark-blue-background">
-            <NavLink to="/get-in-touch">
+            <NavLink to="/contact">
               <button className="security-button">
                 {this.state.securityQuestionButtonText}
               </button>

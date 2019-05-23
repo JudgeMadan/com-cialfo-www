@@ -52,7 +52,6 @@ class Privacy extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <Row className="center-in-row pt-5">

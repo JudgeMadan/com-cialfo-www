@@ -152,7 +152,7 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
-          path="/get-in-touch"
+          path="/contact"
           render={() => (
             <GetInTouch
               locale={this.props.locale}
