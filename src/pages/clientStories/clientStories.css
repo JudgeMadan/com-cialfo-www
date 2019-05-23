@@ -166,8 +166,8 @@ therefore, total marquee width is about 395 * # of marquee Items */
   background: linear-gradient(
     to right,
     #fff 0,
-    rgba(255, 255, 255, 0) 25%,
-    rgba(255, 255, 255, 0) 75%,
+    rgba(255, 255, 255, 0) 15%,
+    rgba(255, 255, 255, 0) 85%,
     #fff 100%
   );
   height: 510px;
