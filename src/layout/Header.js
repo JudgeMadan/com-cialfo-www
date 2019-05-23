@@ -62,16 +62,22 @@ class Header extends React.Component {
           <NavLink to="/" className="navbar-brand">
             <img src={Logo} />
           </NavLink>
-          {/* FULL SCREEN ONLY */}
-          {/* <MediaQuery query="(min-device-width: 1224px)">
-            <NavItem className="nav-link blue-header-locale-text">
-              | &nbsp;&nbsp; {this.props.spaceName}
+          {/* FULL SCREEN COUNTRY TEXT */}
+          <MediaQuery query="(min-device-width: 1224px)">
+            <NavItem className="blue-header-locale-text">
+              {this.props.spaceName}
             </NavItem>
-          </MediaQuery> */}
+          </MediaQuery>
         </Nav>
+        {/* MOBILE COUNTRY TEXT */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <NavItem className="mobile-blue-header-locale-text">
+            {this.props.spaceName}
+          </NavItem>
+        </MediaQuery>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-          {/* FULL WIDTH NAVBAR */}
+          {/* FULL SCREEN NAVBAR */}
           <MediaQuery query="(min-device-width: 1224px)">
             <FullScreenHeaderLinks
               aboutUsPage={this.state.aboutUsPage}

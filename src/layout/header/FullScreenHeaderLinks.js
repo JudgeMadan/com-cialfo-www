@@ -64,12 +64,6 @@ class FullScreenHeaderLinks extends React.Component {
         >
           {this.props.demoPage}
         </NavLink>
-        {/* FULL SCREEN ONLY */}
-        <MediaQuery query="(min-device-width: 1224px)">
-          <NavItem className="header-locale-text">
-            {/* | &nbsp; {this.props.spaceName} */} {this.props.spaceName}
-          </NavItem>
-        </MediaQuery>
       </Nav>
     );
   }
