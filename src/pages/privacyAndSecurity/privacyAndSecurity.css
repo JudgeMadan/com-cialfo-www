@@ -60,6 +60,13 @@
   z-index: 1;
 }
 
+.mobile-thank-you-gray-lines {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: -350px;
+  z-index: 1;
+}
+
 .security-object-row {
   width: 450px;
 }

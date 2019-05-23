@@ -111,7 +111,7 @@ class ThankYou extends React.Component {
             <Row className="four_oh_four_content my-5 pb-5">
               <div>
                 <img className="mobile-thank-you-svg" src={ThankYouImg} />
-                <img className="thank-you-gray-lines" src={GrayLines} />
+                <img className="mobile-thank-you-gray-lines" src={GrayLines} />
               </div>
             </Row>
             {this.props.locale !== "zh-CN" && (
