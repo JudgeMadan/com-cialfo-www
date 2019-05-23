@@ -159,6 +159,7 @@ class Footer extends React.Component {
                 <Link to="/" className="navbar-brand">
                   <img src={Logo} />
                 </Link>
+                {/* <p className="footer-country-id">{this.props.spaceName}</p> */}
               </Row>
             </Col>
           </NavBar>
