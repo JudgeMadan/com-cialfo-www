@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
+import OptionalFooter from "./layout/OptionalFooter";
 import Router from "./layout/Router";
 
 class App extends Component {
@@ -106,6 +107,12 @@ class App extends Component {
             accessToken={this.state.accessToken}
             spaceName={this.state.spaceName}
           />
+          {/* <OptionalFooter
+            locale={this.state.locale}
+            space={this.state.space}
+            accessToken={this.state.accessToken}
+            spaceName={this.state.spaceName}
+          /> */}
         </div>
       );
     } else {

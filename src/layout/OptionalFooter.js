@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup";
 import "./Layout/Layout.css";
 import MediaQuery from "react-responsive";
-class Footer extends React.Component {
+class OptionalFooter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -65,9 +65,6 @@ class Footer extends React.Component {
                         {this.state.platform}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.whyCialfo}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
                           to="/solutions/principals"
@@ -83,7 +80,7 @@ class Footer extends React.Component {
                           {this.state.forCounselors}
                         </NavLink>
                       </ListGroup.Item>
-                      <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
                           to="/solutions/it"
@@ -91,14 +88,13 @@ class Footer extends React.Component {
                           {this.state.forItTeams}
                         </NavLink>
                       </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoVsBridgeU}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoVsNaviance}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoVsMaia}
+                      <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/solutions/superintendents"
+                        >
+                          {this.state.forSuperintendents}
+                        </NavLink>
                       </ListGroup.Item>
                     </ListGroup>
                   </Nav>
@@ -110,15 +106,6 @@ class Footer extends React.Component {
                         {this.state.resources}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.knowledgeBase}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.community}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoTips}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
                           to="/events"
@@ -127,7 +114,28 @@ class Footer extends React.Component {
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.partners}
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/downloads"
+                        >
+                          {this.state.downloads}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/security"
+                        >
+                          {this.state.security}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/privacy"
+                        >
+                          {this.state.privacy}
+                        </NavLink>
                       </ListGroup.Item>
                     </ListGroup>
                   </Nav>
@@ -145,15 +153,6 @@ class Footer extends React.Component {
                         >
                           {this.state.aboutUs}
                         </NavLink>
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.blog}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.mediaKit}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.careers}
                       </ListGroup.Item>
                     </ListGroup>
                   </Nav>
@@ -186,9 +185,6 @@ class Footer extends React.Component {
                         {this.state.platform}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.whyCialfo}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
                           to="/solutions/principals"
@@ -212,14 +208,13 @@ class Footer extends React.Component {
                           {this.state.forItTeams}
                         </NavLink>
                       </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoVsBridgeU}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoVsNaviance}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoVsMaia}
+                      <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/solutions/superintendents"
+                        >
+                          {this.state.forSuperintendents}
+                        </NavLink>
                       </ListGroup.Item>
                     </ListGroup>
                   </Nav>
@@ -231,15 +226,6 @@ class Footer extends React.Component {
                         {this.state.resources}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.knowledgeBase}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.community}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoTips}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
                           to="/events"
@@ -248,7 +234,28 @@ class Footer extends React.Component {
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.partners}
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/downloads"
+                        >
+                          {this.state.downloads}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/security"
+                        >
+                          {this.state.security}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/privacy"
+                        >
+                          {this.state.privacy}
+                        </NavLink>
                       </ListGroup.Item>
                     </ListGroup>
                   </Nav>
@@ -267,15 +274,6 @@ class Footer extends React.Component {
                           {this.state.aboutUs}
                         </NavLink>
                       </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.blog}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.mediaKit}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.careers}
-                      </ListGroup.Item>
                     </ListGroup>
                   </Nav>
                 </Col>
@@ -288,4 +286,4 @@ class Footer extends React.Component {
   }
 }
 
-export default Footer;
+export default OptionalFooter;
