@@ -19,10 +19,10 @@ class AboutLeadershipTeam extends React.Component {
         return (
           <Col key={leader.sys.id}>
             <div className="leadership-team-container">
-              <Row className="leadershipObjectContent">
+              <Row className="leadershipObjectContent mx-3">
                 <Image
                   className="leaderImage"
-                  src="https://picsum.photos/260/370"
+                  src="https://picsum.photos/174/247"
                 />
               </Row>
               <Row className="leadershipObjectContent">
@@ -41,7 +41,9 @@ class AboutLeadershipTeam extends React.Component {
       });
     }
 
-    return <Row>{leadershipTeamObject}</Row>;
+    return (
+      <Row className="about-leadership-team-row">{leadershipTeamObject}</Row>
+    );
   }
 }
 

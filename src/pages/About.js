@@ -208,6 +208,7 @@ class About extends React.Component {
             </h1>
           </Row>
         </MediaQuery>
+        {/* ABOUT LEADERSHIP TEAM OBJECT IS THe SAME ON MOBILE AND DESKTOP */}
         <Row className="aboutPageLeadershipTeam">
           <AboutLeadershipTeam
             leadershipTeam={this.state.aboutPageLeadershipLeaders}
