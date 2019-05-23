@@ -101,11 +101,13 @@
 .homePageFeaturesDiscoverLinkText {
   border-bottom: 1px solid #ffca43;
   padding-bottom: 1px;
+  font-weight: bold;
 }
 
 .homePageFeaturesDiscoverLinkText:hover {
   border-bottom: 3px solid #ffca43;
   margin-bottom: -2px;
+  font-weight: bold;
 }
 
 .homePageHeaderEmailSubmitButton {
@@ -377,6 +379,7 @@
 
 .homeFeatureLink {
   color: #2b1f30 !important;
+  font-weight: bold;
 }
 
 .homeFeatureLink:hover {
