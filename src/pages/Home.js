@@ -389,23 +389,25 @@ class Home extends React.Component {
         </MediaQuery>
         {/* MOBILE VIDEO CONTENT */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Container className="mobile-homePageVideoCaseStudy mobile-top-border pt-5">
-            <Row className=" mobile-homePageVideoCaseStudyTitle">
-              <h1 className="primary_font white-font">
-                {this.state.homePageVideoCaseStudyTitle}
-              </h1>
-            </Row>
-            <Row className="mobile-homePageVideoCaseStudyVideoEmbed mb-5">
-              <div>
-                <ReactPlayer
-                  className="video"
-                  width="345px"
-                  height="194px"
-                  url={this.state.homePageVideoCaseStudyVideoEmbed}
-                />
-              </div>
-            </Row>
-          </Container>
+          <Row>
+            <Container className="mobile-homePageVideoCaseStudy mobile-top-border py-3">
+              <Row className=" mobile-homePageVideoCaseStudyTitle">
+                <h1 className="primary_font white-font">
+                  {this.state.homePageVideoCaseStudyTitle}
+                </h1>
+              </Row>
+              <Row className="mobile-homePageVideoCaseStudyVideoEmbed mb-4">
+                <div>
+                  <ReactPlayer
+                    className="video"
+                    width="345px"
+                    height="194px"
+                    url={this.state.homePageVideoCaseStudyVideoEmbed}
+                  />
+                </div>
+              </Row>
+            </Container>
+          </Row>
         </MediaQuery>
       </Container>
     );
