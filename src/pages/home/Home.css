@@ -205,8 +205,9 @@
 }
 
 .mobile-homePageVideoCaseStudy {
-  background: linear-gradient(white 10%, #1886df 10% 55%, white 55%);
+  /* background: linear-gradient(white 10%, #1886df 10% 55%, white 55%); */
   min-width: 100%;
+  background: #1886df;
 }
 
 .homePageVideoCaseStudyVideoEmbed {
