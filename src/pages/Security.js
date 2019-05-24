@@ -72,9 +72,9 @@ class Security extends React.Component {
       <Container>
         {/* FULL SCREEN PAGE HEADER */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="center-in-row ">
+          <Row className="center-in-row security-header-row">
             <img className="security-line" src={Line} />
-            <h1 className="primary_font security-title-font-size security-header-text">
+            <h1 className="primary_font security-header-text">
               {this.state.securityTitle}
             </h1>
           </Row>
@@ -86,9 +86,9 @@ class Security extends React.Component {
         </MediaQuery>
         {/* MOBILE HEADER */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Container className="center-in-row ">
+          <Container className="center-in-row security-header-row">
             <Row className="center-in-row ">
-              <h1 className="primary_font mobile-security-title-font-size security-header-text">
+              <h1 className="primary_font security-header-text">
                 {this.state.securityTitle}
               </h1>
             </Row>

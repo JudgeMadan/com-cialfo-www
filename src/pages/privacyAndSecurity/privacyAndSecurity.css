@@ -98,12 +98,12 @@
 }
 
 .security-subheader {
-  font-size: 40px;
+  font-size: 30px;
   margin-bottom: 30px;
 }
 
 .mobile-security-subheader {
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
 }
 
@@ -215,4 +215,8 @@
 
 .mobile-security-read-more {
   text-align: center;
+}
+
+.security-header-row {
+  margin-top: 85px;
 }
