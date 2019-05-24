@@ -107,12 +107,6 @@ class App extends Component {
             accessToken={this.state.accessToken}
             spaceName={this.state.spaceName}
           />
-          {/* <OptionalFooter
-            locale={this.state.locale}
-            space={this.state.space}
-            accessToken={this.state.accessToken}
-            spaceName={this.state.spaceName}
-          /> */}
         </div>
       );
     } else {
