@@ -64,7 +64,12 @@ class Footer extends React.Component {
                         {this.state.platform}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.whyCialfo}
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/features"
+                        >
+                          {this.state.whyCialfo}
+                        </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
@@ -91,13 +96,28 @@ class Footer extends React.Component {
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoVsBridgeU}
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/cialfo-vs-bridge-u"
+                        >
+                          {this.state.cialfoVsBridgeU}
+                        </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoVsNaviance}
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/cialfo-vs-naviance"
+                        >
+                          {this.state.cialfoVsNaviance}
+                        </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoVsMaia}
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/cialfo-vs-maia"
+                        >
+                          {this.state.cialfoVsMaia}
+                        </NavLink>
                       </ListGroup.Item>
                     </ListGroup>
                   </Nav>
@@ -185,7 +205,12 @@ class Footer extends React.Component {
                         {this.state.platform}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.whyCialfo}
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/features"
+                        >
+                          {this.state.whyCialfo}
+                        </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
@@ -212,13 +237,28 @@ class Footer extends React.Component {
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoVsBridgeU}
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/cialfo-vs-bridge-u"
+                        >
+                          {this.state.cialfoVsBridgeU}
+                        </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoVsNaviance}
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/cialfo-vs-naviance"
+                        >
+                          {this.state.cialfoVsNaviance}
+                        </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoVsMaia}
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/cialfo-vs-maia"
+                        >
+                          {this.state.cialfoVsMaia}
+                        </NavLink>
                       </ListGroup.Item>
                     </ListGroup>
                   </Nav>

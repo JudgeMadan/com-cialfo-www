@@ -23,6 +23,9 @@ import ClientStoriesAmericanSchoolInChina from "../pages/clientStories/ClientSto
 import Events from "../pages/Events";
 import Downloads from "../pages/Downloads";
 import TermsOfService from "../pages/TermsOfService";
+import CialfoVSNaviance from "../pages/CialfoVSNaviance";
+import CialfoVSBridgeU from "../pages/CialfoVSBridgeU";
+import CialfoVSMaia from "../pages/CialfoVSMaia";
 
 class Router extends React.Component {
   render() {
@@ -288,6 +291,42 @@ class Router extends React.Component {
           path="/terms-of-service"
           render={() => (
             <TermsOfService
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/cialfo-vs-naviance"
+          render={() => (
+            <CialfoVSNaviance
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/cialfo-vs-bridge-u"
+          render={() => (
+            <CialfoVSBridgeU
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/cialfo-vs-maia"
+          render={() => (
+            <CialfoVSMaia
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
