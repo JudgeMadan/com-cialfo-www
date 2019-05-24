@@ -22,6 +22,7 @@ import ClientStoriesAmericanSchoolInJapan from "../pages/clientStories/ClientSto
 import ClientStoriesAmericanSchoolInChina from "../pages/clientStories/ClientStoriesAmericanSchoolInChina";
 import Events from "../pages/Events";
 import Downloads from "../pages/Downloads";
+import TermsOfService from "../pages/TermsOfService";
 
 class Router extends React.Component {
   render() {
@@ -275,6 +276,18 @@ class Router extends React.Component {
           path="/downloads"
           render={() => (
             <Downloads
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/terms-of-service"
+          render={() => (
+            <TermsOfService
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
