@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
-import OptionalFooter from "./layout/OptionalFooter";
 import Router from "./layout/Router";
 
 class App extends Component {
