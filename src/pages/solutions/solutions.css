@@ -44,37 +44,53 @@
 .solutions-counselors-link-text {
   border-bottom: 1px solid #1886df;
   padding-bottom: 1px;
+  color: #2b1f30 !important;
+  font-weight: bold;
 }
 
 .solutions-counselors-link-text:hover {
   border-bottom: 3px solid #1886df;
+  text-decoration: none;
+  margin-bottom: -2px;
 }
 
 .solutions-it-link-text {
   border-bottom: 1px solid #ff6575;
   padding-bottom: 1px;
+  color: #2b1f30 !important;
+  font-weight: bold;
 }
 
 .solutions-it-link-text:hover {
   border-bottom: 3px solid #ff6575;
+  text-decoration: none;
+  margin-bottom: -2px;
 }
 
 .solutions-principals-link-text {
   border-bottom: 1px solid #dfff4a;
   padding-bottom: 1px;
+  color: #2b1f30 !important;
+  font-weight: bold;
 }
 
 .solutions-principals-link-text:hover {
   border-bottom: 3px solid #dfff4a;
+  text-decoration: none;
+  margin-bottom: -2px;
 }
 
 .solutions-superintendents-link-text {
   border-bottom: 1px solid #1886df;
   padding-bottom: 1px;
+  color: #2b1f30 !important;
+  font-weight: bold;
 }
 
 .solutions-superintendents-link-text:hover {
   border-bottom: 3px solid #1886df;
+  text-decoration: none;
+  margin-bottom: -2px;
 }
 
 .solutions-line {
@@ -120,4 +136,13 @@
 
 .mobile-solutions-content-title {
   text-align: center;
+}
+
+.solutions-link-text {
+  padding-bottom: 1px;
+}
+
+.solutions-link-text:hover {
+  padding-bottom: 1px;
+  margin-bottom: -2px;
 }
