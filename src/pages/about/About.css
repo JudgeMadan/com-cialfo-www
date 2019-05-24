@@ -110,6 +110,15 @@
   flex-shrink: 2;
   margin-left: 10px;
   margin-right: 10px;
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+}
+
+.oddNumberLeaderImage {
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+}
+
+.evenNumberLeaderImage {
+  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
 }
 
 .leadership-team-container {
