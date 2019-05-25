@@ -27,6 +27,7 @@ class AboutCounselors extends React.Component {
                 </Row>
                 <Row>
                   <Image
+                    className="mb-3"
                     roundedCircle
                     src={
                       counselorsObject.fields.aboutPageBusinessAdvisorImage

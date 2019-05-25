@@ -59,6 +59,7 @@
 
 .footer-nav-link {
   padding: 0px !important;
+  display: inline-block;
 }
 
 .blue-header-locale-text {

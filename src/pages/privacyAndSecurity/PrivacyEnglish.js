@@ -1,6 +1,5 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import "./privacyAndSecurity.css";
 import MediaQuery from "react-responsive";
 import Row from "react-bootstrap/Row";
 class PrivacyEnglish extends React.Component {
@@ -10,16 +9,15 @@ class PrivacyEnglish extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <Container className="secondary_font pb-5">
         {/* FULL WIDTH ENGLISH PRIVACY */}
         <MediaQuery query="(min-device-width: 1224px)">
           <div class="text-lg-center text-md-center text-sm-center text-xs-center">
-            <p className="hidden-xs-down primary_font privacy-upper-title">
+            <p className="hidden-xs-down privacy-upper-title primary_font">
               Cialfo
             </p>
-            <div class="h1 hidden-sm-up primary_font privacy-title">
+            <div class="h2 hidden-sm-up privacy-title primary_font">
               Privacy Policy
             </div>
             <br />
@@ -46,114 +44,114 @@ class PrivacyEnglish extends React.Component {
           <p>
             We’ve tried to keep this simple, but if you’re not familiar with
             terms like “cookies”, “IP addresses” or “API”, then feel free to
-            email us at{" "}
-            <a className="privacy-link" href="mailto:hello@cialfo.co">
-              hello@cialfo.co
-            </a>
-            . Your privacy is really important to us, so whether you’re new to
+            email us at <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>.
+            Your privacy is really important to us, so whether you’re new to
             Cialfo or a long-time user, please take the time to get to know our
             practices.
           </p>
-          <p class="text-uppercase privacy-subtitle">
-            Personal Information We Collect
-          </p>
+          <h3 class="text-uppercase">Personal Information We Collect</h3>
           We collect personal information about you in the following ways:
-          <p className="privacy-subtitle">Information that you give us</p>
+          <h5>Information that you give us</h5>
           <p>
-            Account and profile information: We collect information about you
-            when you register for an account, create or modify your profile, set
-            preferences, or sign up for our Service. You also have the option to
-            add your phone number, job title, country of residence, and other
-            details to your profile information. We keep track of your
-            preferences when you select settings within our Service.
-          </p>
-          <p>
-            Content you provide through our products: When you use our Service,
-            we collect and store content that you post, send, receive, or share.
-            This content includes any information about you that you may choose
-            to include. We collect feedback you provide directly to us through
-            the product and; we collect content using analytics techniques that
-            hash, filter or otherwise scrub the information to exclude
-            information that might identify you or your organization; and we
-            collect clickstream data about how you interact with and use
-            features in our Service.
+            <strong>Account and profile information</strong>: We collect
+            information about you when you register for an account, create or
+            modify your profile, set preferences, or sign up for our Service.
+            You also have the option to add your phone number, job title,
+            country of residence, and other details to your profile information.
+            We keep track of your preferences when you select settings within
+            our Service.
           </p>
           <p>
-            Content you provide through our website: This policy also includes
-            websites owned by or operated by Cialfo. We collect other content
-            that you submit to these websites, like your email address, social
-            media information, and job title and description.
+            <strong>Content you provide through our products</strong>: When you
+            use our Service, we collect and store content that you post, send,
+            receive, or share. This content includes any information about you
+            that you may choose to include. We collect feedback you provide
+            directly to us through the product and; we collect content using
+            analytics techniques that hash, filter or otherwise scrub the
+            information to exclude information that might identify you or your
+            organization; and we collect clickstream data about how you interact
+            with and use features in our Service.
           </p>
           <p>
-            Information you provide through our support channels: You may choose
-            to submit information to our customer support channels about a
-            problem you’re experiencing with our Service. Whether you designate
-            yourself as a technical contact, open a support ticket, speak to one
-            of our representatives directly, or otherwise engage with our
-            support team, you will be asked to provide a summary of the problem
-            you’re experiencing and other documentation, screenshots, or other
-            information that would be helpful in resolving the issue.
-          </p>
-          <p className="privacy-subtitle">
-            Information we collect automatically
+            <strong>Content you provide through our website</strong>: This
+            policy also includes websites owned by or operated by Cialfo. We
+            collect other content that you submit to these websites, like your
+            email address, social media information, and job title and
+            description.
           </p>
           <p>
-            Your use of Cialfo: We keep track of certain information about you
-            when you use our Service. This information includes: the features
-            you use; the links you click on; the type, size, and file names of
-            attachments you upload to Cialfo; and how you interact with others
-            on our Service.
+            <strong>
+              Information you provide through our support channels
+            </strong>
+            : You may choose to submit information to our customer support
+            channels about a problem you’re experiencing with our Service.
+            Whether you designate yourself as a technical contact, open a
+            support ticket, speak to one of our representatives directly, or
+            otherwise engage with our support team, you will be asked to provide
+            a summary of the problem you’re experiencing and other
+            documentation, screenshots, or other information that would be
+            helpful in resolving the issue.
+          </p>
+          <h5>Information we collect automatically</h5>
+          <p>
+            <strong>Your use of Cialfo</strong>: We keep track of certain
+            information about you when you use our Service. This information
+            includes: the features you use; the links you click on; the type,
+            size, and file names of attachments you upload to Cialfo; and how
+            you interact with others on our Service.
           </p>
           <p>
-            Your device information: We collect information about your computer,
-            phone, tablet, or other devices you use to access our Service. This
-            device information includes your connection type and settings when
-            you install, access, update, or use our Service. We also collect
-            information through your device about your operating system, browser
-            type, Internet Protocol (IP) address, URLs of referring/exit pages,
-            device identifiers, and crash data. We use your IP address and/or
-            country preference in order to approximate your location to provide
-            you with a better experience. How much of this information we
-            collect depends on the type and settings of the device you use to
-            access the Service.
+            <strong>Your device information</strong>: We collect information
+            about your computer, phone, tablet, or other devices you use to
+            access our Service. This device information includes your connection
+            type and settings when you install, access, update, or use our
+            Service. We also collect information through your device about your
+            operating system, browser type, Internet Protocol (IP) address, URLs
+            of referring/exit pages, device identifiers, and crash data. We use
+            your IP address and/or country preference in order to approximate
+            your location to provide you with a better experience. How much of
+            this information we collect depends on the type and settings of the
+            device you use to access the Service.
           </p>
           <p>
-            Cookies and similar third-party tracking technologies : Cialfo and
-            our third-party partners, such as our advertising and analytics
-            partners, use cookies and other similar tracking technologies to
-            provide functionality, analyze trends, track users’ movements around
-            the website, and to recognize you across different devices. Most Web
-            browsers are set to accept cookies by default. If you prefer, you
-            can choose to set your browser to remove cookies and to reject
-            cookies. If you choose to remove cookies or reject cookies, this
-            could affect certain features or services of our Sites.
+            <strong>
+              Cookies and similar third-party tracking technologies
+            </strong>
+            : Cialfo and our third-party partners, such as our advertising and
+            analytics partners, use cookies and other similar tracking
+            technologies to provide functionality, analyze trends, track users’
+            movements around the website, and to recognize you across different
+            devices. Most Web browsers are set to accept cookies by default. If
+            you prefer, you can choose to set your browser to remove cookies and
+            to reject cookies. If you choose to remove cookies or reject
+            cookies, this could affect certain features or services of our
+            Sites.
           </p>
           <p>
-            Pixel tags: In addition, we also use ‘pixel tags’, also referred to
-            as clear gifs, web beacons, or web bugs. Pixel tags are tiny graphic
-            images with a unique identifier, similar in function to Cookies,
-            that are used to track online movements of Web users. In contrast to
-            Cookies, which are stored on a user’s computer hard drive, Pixel
-            Tags are embedded invisibly in Web pages. Pixel Tags also allow us
-            to send e-mail messages and determine whether those e-mails have
-            been opened, to ensure that we are sending only messages that are of
-            interest to our users. We may use this information to reduce or
-            eliminate messages sent to a user.
+            <strong>Pixel tags</strong>: In addition, we also use ‘pixel tags’,
+            also referred to as clear gifs, web beacons, or web bugs. Pixel tags
+            are tiny graphic images with a unique identifier, similar in
+            function to Cookies, that are used to track online movements of Web
+            users. In contrast to Cookies, which are stored on a user’s computer
+            hard drive, Pixel Tags are embedded invisibly in Web pages. Pixel
+            Tags also allow us to send e-mail messages and determine whether
+            those e-mails have been opened, to ensure that we are sending only
+            messages that are of interest to our users. We may use this
+            information to reduce or eliminate messages sent to a user.
           </p>
-          <p className="privacy-subtitle">
-            Information we receive from other sources
+          <h5>Information we receive from other sources</h5>
+          <p>
+            <strong>Other users of Cialfo</strong>: Other users may provide
+            information about you when they use our Service. For example, we
+            receive your email address from other users when they invite you to
+            join Cialfo.
           </p>
           <p>
-            Other users of Cialfo: Other users may provide information about you
-            when they use our Service. For example, we receive your email
-            address from other users when they invite you to join Cialfo.
+            <strong>Integrations and partners of Cialfo</strong>: We may obtain
+            additional information about you from our third party partners, such
+            as AchieveWorks, to enrich your experience on our Service.
           </p>
-          <p>
-            Integrations and partners of Cialfo: We may obtain additional
-            information about you from our third party partners, such as
-            AchieveWorks, to enrich your experience on our Service.
-          </p>
-          <p className="privacy-subtitle">Sensitive personal information</p>
+          <h5>Sensitive personal information</h5>
           <p>
             We ask that you do not send or disclose to us any sensitive personal
             information (e.g., social security numbers, information related to
@@ -169,21 +167,16 @@ class PrivacyEnglish extends React.Component {
             do not consent to our processing and use of such sensitive personal
             information, you must not provide it.
           </p>
-          <p className="privacy-subtitle">Update your personal information</p>
+          <h5>Update your personal information</h5>
           <p>
             It’s important that the personal information we hold about you is
             accurate and current. Please let us know if your personal
             information changes during your relationship with us by updating
             your account or emailing us at{" "}
-            <a className="privacy-link" href="mailto:hello@cialfo.co">
-              hello@cialfo.co
-            </a>
-            .
+            <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>.
           </p>
-          <p class="text-uppercase privacy-subtitle">
-            How We Use Your Personal Information
-          </p>
-          <p className="privacy-subtitle">To provide the service</p>
+          <h3 class="text-uppercase">How We Use Your Personal Information</h3>
+          <h5>To provide the service</h5>
           <p>
             If you have a Cialfo account, we use your personal information to:
           </p>
@@ -221,21 +214,21 @@ class PrivacyEnglish extends React.Component {
             </li>
             <li>Respond to your requests, questions and feedback.</li>
           </ul>
-          <p className="privacy-subtitle">To communicate with you</p>
+          <h5>To communicate with you</h5>
           <p>
             If you request information from us, sign up for Cialfo or
             participate in our surveys, promotions or events, we may send you
             Cialfo-related marketing communications if permitted by law but will
             provide you with the ability to opt out.
           </p>
-          <p className="privacy-subtitle">To comply with law</p>
+          <h5>To comply with law</h5>
           <p>
             We use your personal information as we believe necessary or
             appropriate to comply with applicable laws, lawful requests and
             legal process, such as to respond to subpoenas or requests from
             government authorities.
           </p>
-          <p className="privacy-subtitle">With your consent</p>
+          <h5>With your consent</h5>
           <p>
             We may use or share your personal information with your consent,
             such as when you consent to let us post your testimonials or
@@ -243,16 +236,14 @@ class PrivacyEnglish extends React.Component {
             with respect to your personal information or you opt into third
             party integrations.
           </p>
-          <p className="privacy-subtitle">To create data for analytics</p>
+          <h5>To create data for analytics</h5>
           <p>
             We may create data from your personal information and other
             individuals whose personal information we collect. This data is used
             to improve our Service and to conduct research, statistical and
             behavioral analysis.
           </p>
-          <p className="privacy-subtitle">
-            To create anonymized data for certain features
-          </p>
+          <h5>To create anonymized data for certain features</h5>
           <p>
             We may create anonymized data records from personal information by
             excluding information (such as your name) that makes the data
@@ -261,9 +252,7 @@ class PrivacyEnglish extends React.Component {
             to use anonymous data for any purpose and disclose anonymous data to
             third parties in our sole discretion.
           </p>
-          <p className="privacy-subtitle">
-            For compliance, fraud prevention and safety
-          </p>
+          <h5>For compliance, fraud prevention and safety</h5>
           <p>
             We use your personal information as we believe necessary or
             appropriate to (a) enforce the terms and conditions that govern our
@@ -272,9 +261,7 @@ class PrivacyEnglish extends React.Component {
             against fraudulent, harmful, unauthorized, unethical or illegal
             activity.
           </p>
-          <p class="text-uppercase privacy-subtitle">
-            How We Share your Personal Information
-          </p>
+          <h3 class="text-uppercase">How We Share your Personal Information</h3>
           <p>
             Our Policy does not cover any third party services. To learn about
             those third parties’ privacy practices, please read their privacy
@@ -288,43 +275,43 @@ class PrivacyEnglish extends React.Component {
           </p>
           <ul>
             <li>
-              Service Providers. We may employ third party companies and
-              individuals to administer and provide the service on our behalf
-              (such as customer support, hosting, email delivery and database
-              management services). These third parties are permitted to use
-              your personal information only to perform these tasks in a manner
-              consistent with this Privacy Policy and are obligated not to
-              disclose or use it for any other purpose.
+              <strong>Service Providers</strong>. We may employ third party
+              companies and individuals to administer and provide the service on
+              our behalf (such as customer support, hosting, email delivery and
+              database management services). These third parties are permitted
+              to use your personal information only to perform these tasks in a
+              manner consistent with this Privacy Policy and are obligated not
+              to disclose or use it for any other purpose.
             </li>
             <li>
-              Professional advisors. We may disclose your personal information
-              to professional advisors, such as lawyers, bankers, auditors and
-              insurers, where necessary in the course of the professional
-              services that they render to us.
+              <strong>Professional advisors</strong>. We may disclose your
+              personal information to professional advisors, such as lawyers,
+              bankers, auditors and insurers, where necessary in the course of
+              the professional services that they render to us.
             </li>
             <li>
-              Lawful requests. Cialfo may disclose information about you to
-              government or law enforcement officials or private parties as
-              required by law, and disclose and use such information as we
-              believe necessary or appropriate to (a) comply with applicable
-              laws and lawful requests and legal process, such as to respond to
-              subpoenas or requests from government authorities; (b) enforce the
-              terms and conditions that govern the service; (d) protect our
-              rights, privacy, safety or property, and/or that of you or others;
-              and (e) protect, investigate and deter against fraudulent,
-              harmful, unauthorized, unethical or illegal activity.
+              <strong>Lawful requests</strong>. Cialfo may disclose information
+              about you to government or law enforcement officials or private
+              parties as required by law, and disclose and use such information
+              as we believe necessary or appropriate to (a) comply with
+              applicable laws and lawful requests and legal process, such as to
+              respond to subpoenas or requests from government authorities; (b)
+              enforce the terms and conditions that govern the service; (d)
+              protect our rights, privacy, safety or property, and/or that of
+              you or others; and (e) protect, investigate and deter against
+              fraudulent, harmful, unauthorized, unethical or illegal activity.
             </li>
             <li>
-              Business Transfers. Cialfo may sell, transfer or otherwise share
-              some or all of its business or assets, including your personal
-              information, in connection with a business deal (or potential
-              business deal) such as a merger, consolidation, acquisition,
-              reorganization or sale of assets or in the event of bankruptcy, in
-              which case we will make reasonable efforts to require the
-              recipient to honor this Privacy Policy.
+              <strong>Business Transfers</strong>. Cialfo may sell, transfer or
+              otherwise share some or all of its business or assets, including
+              your personal information, in connection with a business deal (or
+              potential business deal) such as a merger, consolidation,
+              acquisition, reorganization or sale of assets or in the event of
+              bankruptcy, in which case we will make reasonable efforts to
+              require the recipient to honor this Privacy Policy.
             </li>
           </ul>
-          <p class="text-uppercase privacy-subtitle">Platform Activities</p>
+          <h3 class="text-uppercase">Platform Activities</h3>
           <p>
             With respects to our Service, Cialfo collects information under the
             direction of its customers (the data controller), and has no direct
@@ -352,7 +339,7 @@ class PrivacyEnglish extends React.Component {
             with our legal obligations, resolve disputes, and enforce our
             agreements.
           </p>
-          <p class="text-uppercase privacy-subtitle">Security</p>
+          <h3 class="text-uppercase">Security</h3>
           <p>
             The security of your personal information important to us. We take a
             number of commercially reasonable organizational, technical and
@@ -366,7 +353,7 @@ class PrivacyEnglish extends React.Component {
             You should not use or reuse the same passwords you use with other
             accounts as your password for our Service.
           </p>
-          <p class="text-uppercase privacy-subtitle">International Transfer</p>
+          <h3 class="text-uppercase">International Transfer</h3>
           <p>
             Cialfo is headquartered in Singapore and has affiliates and service
             providers in other countries. Your personal information may be
@@ -377,9 +364,7 @@ class PrivacyEnglish extends React.Component {
             EU from a non-EU country (e.g., U.S, Singapore, China or India) for
             technical and support related reasons.
           </p>
-          <p class="text-uppercase privacy-subtitle">
-            Other sites and services
-          </p>
+          <h3 class="text-uppercase">Other sites and services</h3>
           <p>
             The service may contain links to other websites and services. These
             links are not an endorsement, authorization or representation that
@@ -390,7 +375,7 @@ class PrivacyEnglish extends React.Component {
             submit to them. We encourage you to read the privacy policies of the
             other websites you visit and services you use.
           </p>
-          <p class="text-uppercase privacy-subtitle">Social Media Widgets</p>
+          <h3 class="text-uppercase">Social Media Widgets</h3>
           <p>
             Our site may include social media features, such as the Facebook
             “like” button and widgets, such as the “share this” button. These
@@ -400,7 +385,7 @@ class PrivacyEnglish extends React.Component {
             features are governed by the privacy policy of the company providing
             such functionality.
           </p>
-          <p class="text-uppercase privacy-subtitle">User Generated Content</p>
+          <h3 class="text-uppercase">User Generated Content</h3>
           <p>
             We may make available on our site, or link to, features that allow
             you to share information online (e.g., on message boards, in chat
@@ -412,7 +397,7 @@ class PrivacyEnglish extends React.Component {
             information. By posting personal information online in public
             forums, you may receive unsolicited messages from other parties.
           </p>
-          <p class="text-uppercase privacy-subtitle">Children</p>
+          <h3 class="text-uppercase">Children</h3>
           <p>
             We do not knowingly acquire or receive personal information from
             children under the age of 13. If you are under the age of 13, you
@@ -425,12 +410,9 @@ class PrivacyEnglish extends React.Component {
           <p>
             If you believe that we might have any personal information from a
             child under 13, please contact us at{" "}
-            <a className="privacy-link" href="mailto:hello@cialfo.co">
-              hello@cialfo.co
-            </a>
-            .
+            <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>.
           </p>
-          <p className="privacy-subtitle">Changes to this Privacy Policy</p>
+          <h5>Changes to this Privacy Policy</h5>
           <p>
             We reserve the right to modify this Privacy Policy at any time. We
             encourage you to periodically review this page for the latest
@@ -449,10 +431,8 @@ class PrivacyEnglish extends React.Component {
             posting of any modified Privacy Policy indicates your acceptance of
             the terms of the modified Privacy Policy.
           </p>
-          <p class="text-uppercase privacy-subtitle">Your Choices</p>
-          <p className="privacy-subtitle">
-            Access, Update, Correct or Delete Your Information
-          </p>
+          <h3 class="text-uppercase">Your Choices</h3>
+          <h5>Access, Update, Correct or Delete Your Information</h5>
           <p>
             All Cialfo account holders may review, update, correct or delete the
             personal information in their registration profile by logging into
@@ -464,39 +444,31 @@ class PrivacyEnglish extends React.Component {
           </p>
           <p>
             Cialfo account holders may also contact us at{" "}
-            <a className="privacy-link" href="mailto:hello@cialfo.co">
-              hello@cialfo.co
-            </a>{" "}
-            to accomplish the foregoing or if you have additional requests or
-            questions.
+            <a href="mailto:hello@cialfo.co">hello@cialfo.co</a> to accomplish
+            the foregoing or if you have additional requests or questions.
           </p>
-          <p className="privacy-subtitle">
-            Access to Data Controlled by our Clients
-          </p>
+          <h5>Access to Data Controlled by our Clients</h5>
           <p>
             Cialfo has no direct relationship with the individuals whose
             personal information is contained within the Client User Data
             processed by our service. An individual who seeks access, or who
             seeks to correct, amend, or delete personal information provided by
             our Clients should direct their request to the Client. You may also
-            contact us at{" "}
-            <a className="privacy-link" href="mailto:hello@cialfo.co">
-              hello@cialfo.co
-            </a>{" "}
+            contact us at <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>{" "}
             if you have additional questions or concerns.
           </p>
-          <p className="privacy-subtitle">Marketing Communications</p>
+          <h5>Marketing Communications</h5>
           <p>
             You may opt out of marketing-related emails by clicking on a link at
             the bottom of each such email. You may continue to receive
             service-related and other non-marketing emails.
           </p>
-          <p className="privacy-subtitle">Testimonials</p>
+          <h5>Testimonials</h5>
           <p>
             If you gave us consent to post a testimonial to our site, but wish
             to update or delete it, please contact us.
           </p>
-          <p className="privacy-subtitle">Tracking and Targeted Advertising</p>
+          <h5>Tracking and Targeted Advertising</h5>
           <p>
             We may allow service providers and other third parties to use
             cookies and other tracking technologies to track your browsing
@@ -510,11 +482,7 @@ class PrivacyEnglish extends React.Component {
             Some Internet browsers may be configured to send “Do Not Track”
             signals to the online services that you visit. Cialfo honors “Do Not
             Track” signals. To find out more about “Do Not Track,” please visit{" "}
-            <a
-              className="privacy-link"
-              href=" http://www.allaboutdnt.com."
-              target="_blank"
-            >
+            <a href=" http://www.allaboutdnt.com." target="_blank">
               http://www.allaboutdnt.com.
             </a>
           </p>
@@ -524,9 +492,7 @@ class PrivacyEnglish extends React.Component {
             data to help us measure the effectiveness of our customer
             communications.
           </p>
-          <p className="privacy-subtitle">
-            Choosing not to share your personal information
-          </p>
+          <h5>Choosing not to share your personal information</h5>
           <p>
             Where we need to collect your personal information by law, or to be
             able to provide the service to you and you do not provide that
@@ -536,14 +502,12 @@ class PrivacyEnglish extends React.Component {
             receive the service by designating it as required in the service or
             through other appropriate means.
           </p>
-          <p class="text-uppercase privacy-subtitle">Questions?</p>
+          <h3 class="text-uppercase">Questions?</h3>
           <p>
             If you have any questions or concerns at all about our Privacy
             Policy, please feel free to email us at{" "}
-            <a className="privacy-link" href="mailto:hello@cialfo.co">
-              hello@cialfo.co
-            </a>
-            . Or, if you’re feeling old fashioned, use snail mail:
+            <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>. Or, if you’re
+            feeling old fashioned, use snail mail:
           </p>
           <p>
             Cialfo
@@ -554,26 +518,21 @@ class PrivacyEnglish extends React.Component {
             <br />
             Attention: Data Protection Officer
           </p>
-          <p class="text-uppercase privacy-subtitle">
+          <h3 class="text-uppercase">
             Additional Information for European Union Users
-          </p>
-          <p className="privacy-subtitle">Personal information</p>
+          </h3>
+          <h5>Personal information</h5>
           <p>
             References to “personal information” in this Privacy Policy are
             equivalent to “personal data” governed by European data protection
             legislation.
           </p>
-          <p className="privacy-subtitle">
-            Controller and Data Protection Officer
-          </p>
+          <h5>Controller and Data Protection Officer</h5>
           <p>
             Cialfo is the controller of your personal information for purposes
             of European data protection legislation. Our Data Protection Officer
             can be reached at{" "}
-            <a className="privacy-link" href="mailto:hello@cialfo.co">
-              hello@cialfo.co
-            </a>
-            .
+            <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>.
           </p>
         </MediaQuery>
         {/* MOBILE ENGLISH PRIVACY */}
@@ -616,34 +575,29 @@ class PrivacyEnglish extends React.Component {
               <p>
                 We’ve tried to keep this simple, but if you’re not familiar with
                 terms like “cookies”, “IP addresses” or “API”, then feel free to
-                email us at{" "}
-                <a className="privacy-link" href="mailto:hello@cialfo.co">
-                  hello@cialfo.co
-                </a>
+                email us at <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>
                 . Your privacy is really important to us, so whether you’re new
                 to Cialfo or a long-time user, please take the time to get to
                 know our practices.
               </p>
-              <p class="text-uppercase privacy-subtitle">
-                Personal Information We Collect
-              </p>
+              <h3 class="text-uppercase">Personal Information We Collect</h3>
               We collect personal information about you in the following ways:
-              <p className="privacy-subtitle">Information that you give us</p>
+              <h5>Information that you give us</h5>
               <p>
-                Account and profile information: We collect information about
-                you when you register for an account, create or modify your
-                profile, set preferences, or sign up for our Service. You also
-                have the option to add your phone number, job title, country of
-                residence, and other details to your profile information. We
-                keep track of your preferences when you select settings within
-                our Service.
+                <strong>Account and profile information</strong>: We collect
+                information about you when you register for an account, create
+                or modify your profile, set preferences, or sign up for our
+                Service. You also have the option to add your phone number, job
+                title, country of residence, and other details to your profile
+                information. We keep track of your preferences when you select
+                settings within our Service.
               </p>
               <p>
-                Content you provide through our products: When you use our
-                Service, we collect and store content that you post, send,
-                receive, or share. This content includes any information about
-                you that you may choose to include. We collect feedback you
-                provide directly to us through the product and; we collect
+                <strong>Content you provide through our products</strong>: When
+                you use our Service, we collect and store content that you post,
+                send, receive, or share. This content includes any information
+                about you that you may choose to include. We collect feedback
+                you provide directly to us through the product and; we collect
                 content using analytics techniques that hash, filter or
                 otherwise scrub the information to exclude information that
                 might identify you or your organization; and we collect
@@ -651,51 +605,53 @@ class PrivacyEnglish extends React.Component {
                 our Service.
               </p>
               <p>
-                Content you provide through our website: This policy also
-                includes websites owned by or operated by Cialfo. We collect
-                other content that you submit to these websites, like your email
-                address, social media information, and job title and
+                <strong>Content you provide through our website</strong>: This
+                policy also includes websites owned by or operated by Cialfo. We
+                collect other content that you submit to these websites, like
+                your email address, social media information, and job title and
                 description.
               </p>
               <p>
-                Information you provide through our support channels: You may
-                choose to submit information to our customer support channels
-                about a problem you’re experiencing with our Service. Whether
-                you designate yourself as a technical contact, open a support
-                ticket, speak to one of our representatives directly, or
+                <strong>
+                  Information you provide through our support channels
+                </strong>
+                : You may choose to submit information to our customer support
+                channels about a problem you’re experiencing with our Service.
+                Whether you designate yourself as a technical contact, open a
+                support ticket, speak to one of our representatives directly, or
                 otherwise engage with our support team, you will be asked to
                 provide a summary of the problem you’re experiencing and other
                 documentation, screenshots, or other information that would be
                 helpful in resolving the issue.
               </p>
-              <p className="privacy-subtitle">
-                Information we collect automatically
+              <h5>Information we collect automatically</h5>
+              <p>
+                <strong>Your use of Cialfo</strong>: We keep track of certain
+                information about you when you use our Service. This information
+                includes: the features you use; the links you click on; the
+                type, size, and file names of attachments you upload to Cialfo;
+                and how you interact with others on our Service.
               </p>
               <p>
-                Your use of Cialfo: We keep track of certain information about
-                you when you use our Service. This information includes: the
-                features you use; the links you click on; the type, size, and
-                file names of attachments you upload to Cialfo; and how you
-                interact with others on our Service.
+                <strong>Your device information</strong>: We collect information
+                about your computer, phone, tablet, or other devices you use to
+                access our Service. This device information includes your
+                connection type and settings when you install, access, update,
+                or use our Service. We also collect information through your
+                device about your operating system, browser type, Internet
+                Protocol (IP) address, URLs of referring/exit pages, device
+                identifiers, and crash data. We use your IP address and/or
+                country preference in order to approximate your location to
+                provide you with a better experience. How much of this
+                information we collect depends on the type and settings of the
+                device you use to access the Service.
               </p>
               <p>
-                Your device information: We collect information about your
-                computer, phone, tablet, or other devices you use to access our
-                Service. This device information includes your connection type
-                and settings when you install, access, update, or use our
-                Service. We also collect information through your device about
-                your operating system, browser type, Internet Protocol (IP)
-                address, URLs of referring/exit pages, device identifiers, and
-                crash data. We use your IP address and/or country preference in
-                order to approximate your location to provide you with a better
-                experience. How much of this information we collect depends on
-                the type and settings of the device you use to access the
-                Service.
-              </p>
-              <p>
-                Cookies and similar third-party tracking technologies : Cialfo
-                and our third-party partners, such as our advertising and
-                analytics partners, use cookies and other similar tracking
+                <strong>
+                  Cookies and similar third-party tracking technologies
+                </strong>
+                : Cialfo and our third-party partners, such as our advertising
+                and analytics partners, use cookies and other similar tracking
                 technologies to provide functionality, analyze trends, track
                 users’ movements around the website, and to recognize you across
                 different devices. Most Web browsers are set to accept cookies
@@ -705,33 +661,32 @@ class PrivacyEnglish extends React.Component {
                 services of our Sites.
               </p>
               <p>
-                Pixel tags: In addition, we also use ‘pixel tags’, also referred
-                to as clear gifs, web beacons, or web bugs. Pixel tags are tiny
-                graphic images with a unique identifier, similar in function to
-                Cookies, that are used to track online movements of Web users.
-                In contrast to Cookies, which are stored on a user’s computer
-                hard drive, Pixel Tags are embedded invisibly in Web pages.
-                Pixel Tags also allow us to send e-mail messages and determine
-                whether those e-mails have been opened, to ensure that we are
-                sending only messages that are of interest to our users. We may
-                use this information to reduce or eliminate messages sent to a
-                user.
+                <strong>Pixel tags</strong>: In addition, we also use ‘pixel
+                tags’, also referred to as clear gifs, web beacons, or web bugs.
+                Pixel tags are tiny graphic images with a unique identifier,
+                similar in function to Cookies, that are used to track online
+                movements of Web users. In contrast to Cookies, which are stored
+                on a user’s computer hard drive, Pixel Tags are embedded
+                invisibly in Web pages. Pixel Tags also allow us to send e-mail
+                messages and determine whether those e-mails have been opened,
+                to ensure that we are sending only messages that are of interest
+                to our users. We may use this information to reduce or eliminate
+                messages sent to a user.
               </p>
-              <p className="privacy-subtitle">
-                Information we receive from other sources
+              <h5>Information we receive from other sources</h5>
+              <p>
+                <strong>Other users of Cialfo</strong>: Other users may provide
+                information about you when they use our Service. For example, we
+                receive your email address from other users when they invite you
+                to join Cialfo.
               </p>
               <p>
-                Other users of Cialfo: Other users may provide information about
-                you when they use our Service. For example, we receive your
-                email address from other users when they invite you to join
-                Cialfo.
+                <strong>Integrations and partners of Cialfo</strong>: We may
+                obtain additional information about you from our third party
+                partners, such as AchieveWorks, to enrich your experience on our
+                Service.
               </p>
-              <p>
-                Integrations and partners of Cialfo: We may obtain additional
-                information about you from our third party partners, such as
-                AchieveWorks, to enrich your experience on our Service.
-              </p>
-              <p className="privacy-subtitle">Sensitive personal information</p>
+              <h5>Sensitive personal information</h5>
               <p>
                 We ask that you do not send or disclose to us any sensitive
                 personal information (e.g., social security numbers, information
@@ -747,82 +702,71 @@ class PrivacyEnglish extends React.Component {
                 you do not consent to our processing and use of such sensitive
                 personal information, you must not provide it.
               </p>
-              <p className="privacy-subtitle">
-                Update your personal information
-              </p>
+              <h5>Update your personal information</h5>
               <p>
                 It’s important that the personal information we hold about you
                 is accurate and current. Please let us know if your personal
                 information changes during your relationship with us by updating
                 your account or emailing us at{" "}
-                <a className="privacy-link" href="mailto:hello@cialfo.co">
-                  hello@cialfo.co
-                </a>
-                .
+                <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>.
               </p>
-              <p class="text-uppercase privacy-subtitle">
+              <h3 class="text-uppercase">
                 How We Use Your Personal Information
-              </p>
-              <p className="privacy-subtitle">To provide the service</p>
+              </h3>
+              <h5>To provide the service</h5>
               <p>
                 If you have a Cialfo account, we use your personal information
                 to:
               </p>
-              <Container>
-                <ul>
-                  <li>
-                    Facilitate the creation of and securing of your Account on
-                    our network;
-                  </li>
-                  <li>Identify you as a user in our system;</li>
-                  <li>
-                    Operate, maintain, administer and improve the Service;
-                  </li>
-                  <li>
-                    Provide and deliver products and services you request;
-                  </li>
-                  <li>
-                    Manage and communicate with you regarding your Cialfo
-                    account, if you have one, including by sending you service
-                    announcements, technical notices, updates, security alerts,
-                    and support and administrative messages;
-                  </li>
-                  <li>
-                    Communicate with you about promotions, upcoming events, and
-                    news about products and services offered by Cialfo, and for
-                    other marketing purposes of Cialfo;
-                  </li>
-                  <li>
-                    Better understand your needs and interests, and personalize
-                    your experience with our Service;
-                  </li>
-                  <li>
-                    Link or combine it with other information we get from third
-                    parties, to help understand your needs and provide you with
-                    better service;
-                  </li>
-                  <li>
-                    Protect, investigate, and deter against fraudulent,
-                    unauthorized, or illegal activity; and
-                  </li>
-                  <li>Respond to your requests, questions and feedback.</li>
-                </ul>
-              </Container>
-              <p className="privacy-subtitle">To communicate with you</p>
+              <ul>
+                <li>
+                  Facilitate the creation of and securing of your Account on our
+                  network;
+                </li>
+                <li>Identify you as a user in our system;</li>
+                <li>Operate, maintain, administer and improve the Service;</li>
+                <li>Provide and deliver products and services you request;</li>
+                <li>
+                  Manage and communicate with you regarding your Cialfo account,
+                  if you have one, including by sending you service
+                  announcements, technical notices, updates, security alerts,
+                  and support and administrative messages;
+                </li>
+                <li>
+                  Communicate with you about promotions, upcoming events, and
+                  news about products and services offered by Cialfo, and for
+                  other marketing purposes of Cialfo;
+                </li>
+                <li>
+                  Better understand your needs and interests, and personalize
+                  your experience with our Service;
+                </li>
+                <li>
+                  Link or combine it with other information we get from third
+                  parties, to help understand your needs and provide you with
+                  better service;
+                </li>
+                <li>
+                  Protect, investigate, and deter against fraudulent,
+                  unauthorized, or illegal activity; and
+                </li>
+                <li>Respond to your requests, questions and feedback.</li>
+              </ul>
+              <h5>To communicate with you</h5>
               <p>
                 If you request information from us, sign up for Cialfo or
                 participate in our surveys, promotions or events, we may send
                 you Cialfo-related marketing communications if permitted by law
                 but will provide you with the ability to opt out.
               </p>
-              <p className="privacy-subtitle">To comply with law</p>
+              <h5>To comply with law</h5>
               <p>
                 We use your personal information as we believe necessary or
                 appropriate to comply with applicable laws, lawful requests and
                 legal process, such as to respond to subpoenas or requests from
                 government authorities.
               </p>
-              <p className="privacy-subtitle">With your consent</p>
+              <h5>With your consent</h5>
               <p>
                 We may use or share your personal information with your consent,
                 such as when you consent to let us post your testimonials or
@@ -830,16 +774,14 @@ class PrivacyEnglish extends React.Component {
                 action with respect to your personal information or you opt into
                 third party integrations.
               </p>
-              <p className="privacy-subtitle">To create data for analytics</p>
+              <h5>To create data for analytics</h5>
               <p>
                 We may create data from your personal information and other
                 individuals whose personal information we collect. This data is
                 used to improve our Service and to conduct research, statistical
                 and behavioral analysis.
               </p>
-              <p className="privacy-subtitle">
-                To create anonymized data for certain features
-              </p>
+              <h5>To create anonymized data for certain features</h5>
               <p>
                 We may create anonymized data records from personal information
                 by excluding information (such as your name) that makes the data
@@ -848,9 +790,7 @@ class PrivacyEnglish extends React.Component {
                 the right to use anonymous data for any purpose and disclose
                 anonymous data to third parties in our sole discretion.
               </p>
-              <p className="privacy-subtitle">
-                For compliance, fraud prevention and safety
-              </p>
+              <h5>For compliance, fraud prevention and safety</h5>
               <p>
                 We use your personal information as we believe necessary or
                 appropriate to (a) enforce the terms and conditions that govern
@@ -859,9 +799,9 @@ class PrivacyEnglish extends React.Component {
                 investigate and deter against fraudulent, harmful, unauthorized,
                 unethical or illegal activity.
               </p>
-              <p class="text-uppercase privacy-subtitle">
+              <h3 class="text-uppercase">
                 How We Share your Personal Information
-              </p>
+              </h3>
               <p>
                 Our Policy does not cover any third party services. To learn
                 about those third parties’ privacy practices, please read their
@@ -874,50 +814,50 @@ class PrivacyEnglish extends React.Component {
                 personal information to third parties under the following
                 circumstances:
               </p>
-              <Container>
-                <ul>
-                  <li>
-                    Service Providers. We may employ third party companies and
-                    individuals to administer and provide the service on our
-                    behalf (such as customer support, hosting, email delivery
-                    and database management services). These third parties are
-                    permitted to use your personal information only to perform
-                    these tasks in a manner consistent with this Privacy Policy
-                    and are obligated not to disclose or use it for any other
-                    purpose.
-                  </li>
-                  <li>
-                    Professional advisors. We may disclose your personal
-                    information to professional advisors, such as lawyers,
-                    bankers, auditors and insurers, where necessary in the
-                    course of the professional services that they render to us.
-                  </li>
-                  <li>
-                    Lawful requests. Cialfo may disclose information about you
-                    to government or law enforcement officials or private
-                    parties as required by law, and disclose and use such
-                    information as we believe necessary or appropriate to (a)
-                    comply with applicable laws and lawful requests and legal
-                    process, such as to respond to subpoenas or requests from
-                    government authorities; (b) enforce the terms and conditions
-                    that govern the service; (d) protect our rights, privacy,
-                    safety or property, and/or that of you or others; and (e)
-                    protect, investigate and deter against fraudulent, harmful,
-                    unauthorized, unethical or illegal activity.
-                  </li>
-                  <li>
-                    Business Transfers. Cialfo may sell, transfer or otherwise
-                    share some or all of its business or assets, including your
-                    personal information, in connection with a business deal (or
-                    potential business deal) such as a merger, consolidation,
-                    acquisition, reorganization or sale of assets or in the
-                    event of bankruptcy, in which case we will make reasonable
-                    efforts to require the recipient to honor this Privacy
-                    Policy.
-                  </li>
-                </ul>
-              </Container>
-              <p class="text-uppercase privacy-subtitle">Platform Activities</p>
+              <ul>
+                <li>
+                  <strong>Service Providers</strong>. We may employ third party
+                  companies and individuals to administer and provide the
+                  service on our behalf (such as customer support, hosting,
+                  email delivery and database management services). These third
+                  parties are permitted to use your personal information only to
+                  perform these tasks in a manner consistent with this Privacy
+                  Policy and are obligated not to disclose or use it for any
+                  other purpose.
+                </li>
+                <li>
+                  <strong>Professional advisors</strong>. We may disclose your
+                  personal information to professional advisors, such as
+                  lawyers, bankers, auditors and insurers, where necessary in
+                  the course of the professional services that they render to
+                  us.
+                </li>
+                <li>
+                  <strong>Lawful requests</strong>. Cialfo may disclose
+                  information about you to government or law enforcement
+                  officials or private parties as required by law, and disclose
+                  and use such information as we believe necessary or
+                  appropriate to (a) comply with applicable laws and lawful
+                  requests and legal process, such as to respond to subpoenas or
+                  requests from government authorities; (b) enforce the terms
+                  and conditions that govern the service; (d) protect our
+                  rights, privacy, safety or property, and/or that of you or
+                  others; and (e) protect, investigate and deter against
+                  fraudulent, harmful, unauthorized, unethical or illegal
+                  activity.
+                </li>
+                <li>
+                  <strong>Business Transfers</strong>. Cialfo may sell, transfer
+                  or otherwise share some or all of its business or assets,
+                  including your personal information, in connection with a
+                  business deal (or potential business deal) such as a merger,
+                  consolidation, acquisition, reorganization or sale of assets
+                  or in the event of bankruptcy, in which case we will make
+                  reasonable efforts to require the recipient to honor this
+                  Privacy Policy.
+                </li>
+              </ul>
+              <h3 class="text-uppercase">Platform Activities</h3>
               <p>
                 With respects to our Service, Cialfo collects information under
                 the direction of its customers (the data controller), and has no
@@ -946,7 +886,7 @@ class PrivacyEnglish extends React.Component {
                 necessary to comply with our legal obligations, resolve
                 disputes, and enforce our agreements.
               </p>
-              <p class="text-uppercase privacy-subtitle">Security</p>
+              <h3 class="text-uppercase">Security</h3>
               <p>
                 The security of your personal information important to us. We
                 take a number of commercially reasonable organizational,
@@ -961,9 +901,7 @@ class PrivacyEnglish extends React.Component {
                 services. You should not use or reuse the same passwords you use
                 with other accounts as your password for our Service.
               </p>
-              <p class="text-uppercase privacy-subtitle">
-                International Transfer
-              </p>
+              <h3 class="text-uppercase">International Transfer</h3>
               <p>
                 Cialfo is headquartered in Singapore and has affiliates and
                 service providers in other countries. Your personal information
@@ -975,9 +913,7 @@ class PrivacyEnglish extends React.Component {
                 (e.g., U.S, Singapore, China or India) for technical and support
                 related reasons.
               </p>
-              <p class="text-uppercase privacy-subtitle">
-                Other sites and services
-              </p>
+              <h3 class="text-uppercase">Other sites and services</h3>
               <p>
                 The service may contain links to other websites and services.
                 These links are not an endorsement, authorization or
@@ -989,9 +925,7 @@ class PrivacyEnglish extends React.Component {
                 to read the privacy policies of the other websites you visit and
                 services you use.
               </p>
-              <p class="text-uppercase privacy-subtitle">
-                Social Media Widgets
-              </p>
+              <h3 class="text-uppercase">Social Media Widgets</h3>
               <p>
                 Our site may include social media features, such as the Facebook
                 “like” button and widgets, such as the “share this” button.
@@ -1001,9 +935,7 @@ class PrivacyEnglish extends React.Component {
                 interactions with these features are governed by the privacy
                 policy of the company providing such functionality.
               </p>
-              <p class="text-uppercase privacy-subtitle">
-                User Generated Content
-              </p>
+              <h3 class="text-uppercase">User Generated Content</h3>
               <p>
                 We may make available on our site, or link to, features that
                 allow you to share information online (e.g., on message boards,
@@ -1016,7 +948,7 @@ class PrivacyEnglish extends React.Component {
                 information online in public forums, you may receive unsolicited
                 messages from other parties.
               </p>
-              <p class="text-uppercase privacy-subtitle">Children</p>
+              <h3 class="text-uppercase">Children</h3>
               <p>
                 We do not knowingly acquire or receive personal information from
                 children under the age of 13. If you are under the age of 13,
@@ -1029,12 +961,9 @@ class PrivacyEnglish extends React.Component {
               <p>
                 If you believe that we might have any personal information from
                 a child under 13, please contact us at{" "}
-                <a className="privacy-link" href="mailto:hello@cialfo.co">
-                  hello@cialfo.co
-                </a>
-                .
+                <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>.
               </p>
-              <p className="privacy-subtitle">Changes to this Privacy Policy</p>
+              <h5>Changes to this Privacy Policy</h5>
               <p>
                 We reserve the right to modify this Privacy Policy at any time.
                 We encourage you to periodically review this page for the latest
@@ -1055,10 +984,8 @@ class PrivacyEnglish extends React.Component {
                 indicates your acceptance of the terms of the modified Privacy
                 Policy.
               </p>
-              <p class="text-uppercase privacy-subtitle">Your Choices</p>
-              <p className="privacy-subtitle">
-                Access, Update, Correct or Delete Your Information
-              </p>
+              <h3 class="text-uppercase">Your Choices</h3>
+              <h5>Access, Update, Correct or Delete Your Information</h5>
               <p>
                 All Cialfo account holders may review, update, correct or delete
                 the personal information in their registration profile by
@@ -1070,15 +997,11 @@ class PrivacyEnglish extends React.Component {
               </p>
               <p>
                 Cialfo account holders may also contact us at{" "}
-                <a className="privacy-link" href="mailto:hello@cialfo.co">
-                  hello@cialfo.co
-                </a>{" "}
-                to accomplish the foregoing or if you have additional requests
-                or questions.
+                <a href="mailto:hello@cialfo.co">hello@cialfo.co</a> to
+                accomplish the foregoing or if you have additional requests or
+                questions.
               </p>
-              <p className="privacy-subtitle">
-                Access to Data Controlled by our Clients
-              </p>
+              <h5>Access to Data Controlled by our Clients</h5>
               <p>
                 Cialfo has no direct relationship with the individuals whose
                 personal information is contained within the Client User Data
@@ -1086,25 +1009,21 @@ class PrivacyEnglish extends React.Component {
                 seeks to correct, amend, or delete personal information provided
                 by our Clients should direct their request to the Client. You
                 may also contact us at{" "}
-                <a className="privacy-link" href="mailto:hello@cialfo.co">
-                  hello@cialfo.co
-                </a>{" "}
-                if you have additional questions or concerns.
+                <a href="mailto:hello@cialfo.co">hello@cialfo.co</a> if you have
+                additional questions or concerns.
               </p>
-              <p className="privacy-subtitle">Marketing Communications</p>
+              <h5>Marketing Communications</h5>
               <p>
                 You may opt out of marketing-related emails by clicking on a
                 link at the bottom of each such email. You may continue to
                 receive service-related and other non-marketing emails.
               </p>
-              <p className="privacy-subtitle">Testimonials</p>
+              <h5>Testimonials</h5>
               <p>
                 If you gave us consent to post a testimonial to our site, but
                 wish to update or delete it, please contact us.
               </p>
-              <p className="privacy-subtitle">
-                Tracking and Targeted Advertising
-              </p>
+              <h5>Tracking and Targeted Advertising</h5>
               <p>
                 We may allow service providers and other third parties to use
                 cookies and other tracking technologies to track your browsing
@@ -1119,11 +1038,7 @@ class PrivacyEnglish extends React.Component {
                 signals to the online services that you visit. Cialfo honors “Do
                 Not Track” signals. To find out more about “Do Not Track,”
                 please visit{" "}
-                <a
-                  className="privacy-link"
-                  href=" http://www.allaboutdnt.com."
-                  target="_blank"
-                >
+                <a href=" http://www.allaboutdnt.com." target="_blank">
                   http://www.allaboutdnt.com.
                 </a>
               </p>
@@ -1133,9 +1048,7 @@ class PrivacyEnglish extends React.Component {
                 data to help us measure the effectiveness of our customer
                 communications.
               </p>
-              <p className="privacy-subtitle">
-                Choosing not to share your personal information
-              </p>
+              <h5>Choosing not to share your personal information</h5>
               <p>
                 Where we need to collect your personal information by law, or to
                 be able to provide the service to you and you do not provide
@@ -1145,14 +1058,12 @@ class PrivacyEnglish extends React.Component {
                 must provide to receive the service by designating it as
                 required in the service or through other appropriate means.
               </p>
-              <p class="text-uppercase privacy-subtitle">Questions?</p>
+              <h3 class="text-uppercase">Questions?</h3>
               <p>
                 If you have any questions or concerns at all about our Privacy
                 Policy, please feel free to email us at{" "}
-                <a className="privacy-link" href="mailto:hello@cialfo.co">
-                  hello@cialfo.co
-                </a>
-                . Or, if you’re feeling old fashioned, use snail mail:
+                <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>. Or, if
+                you’re feeling old fashioned, use snail mail:
               </p>
               <p>
                 Cialfo
@@ -1163,26 +1074,21 @@ class PrivacyEnglish extends React.Component {
                 <br />
                 Attention: Data Protection Officer
               </p>
-              <p class="text-uppercase privacy-subtitle">
+              <h3 class="text-uppercase">
                 Additional Information for European Union Users
-              </p>
-              <p className="privacy-subtitle">Personal information</p>
+              </h3>
+              <h5>Personal information</h5>
               <p>
                 References to “personal information” in this Privacy Policy are
                 equivalent to “personal data” governed by European data
                 protection legislation.
               </p>
-              <p className="privacy-subtitle">
-                Controller and Data Protection Officer
-              </p>
+              <h5>Controller and Data Protection Officer</h5>
               <p>
                 Cialfo is the controller of your personal information for
                 purposes of European data protection legislation. Our Data
                 Protection Officer can be reached at{" "}
-                <a className="privacy-link" href="mailto:hello@cialfo.co">
-                  hello@cialfo.co
-                </a>
-                .
+                <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>.
               </p>
             </Container>
           </Container>
