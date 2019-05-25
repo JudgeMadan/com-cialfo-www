@@ -48,7 +48,7 @@ body {
   font-family: "roboto_regular";
   font-style: normal;
   font-weight: normal;
-  font-size: 1em;
+  font-size: 18px;
   line-height: 28px;
   color: #2b1f30;
 }
@@ -150,6 +150,7 @@ therefore, total marquee width is about 395 * # of marquee Items */
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: transparent;
+  width: in;
 }
 
 .email-form {
@@ -163,6 +164,7 @@ therefore, total marquee width is about 395 * # of marquee Items */
 }
 
 .nav-link:hover {
+  display: inline-block;
   border-bottom-color: #1886df;
 }
 
