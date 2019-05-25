@@ -139,14 +139,14 @@ class Security extends React.Component {
               <p className="secondary_font">
                 Read more about our{" "}
                 <NavLink to="/privacy">Privacy Policy</NavLink> and&nbsp;
-                <a href="#">Terms of Service</a>
+                <NavLink to="/terms-of-service">Terms of Service</NavLink>
               </p>
             )}
             {this.props.locale === "zh-CN" && (
               <p className="secondary_font">
                 中文中文中文 <NavLink to="/privacy">Privacy Policy</NavLink>{" "}
                 and&nbsp;
-                <a href="#">Terms of Service</a>
+                <NavLink to="/terms-of-service">Terms of Service</NavLink>
               </p>
             )}
           </Row>
@@ -190,7 +190,7 @@ class Security extends React.Component {
             )}
             {this.props.locale === "zh-CN" && (
               <p className="secondary_font">
-                中文中文中文 <NavLink to="/privacy">Privacy Policy</NavLink>{" "}
+                中文中文中文 <NavLink to="/privacy">Privacy Policy</NavLink>
                 and&nbsp;
                 <NavLink to="/terms-of-service">Terms of Service</NavLink>
               </p>
