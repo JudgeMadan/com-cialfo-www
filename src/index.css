@@ -151,6 +151,7 @@ therefore, total marquee width is about 395 * # of marquee Items */
   border-bottom-style: solid;
   border-bottom-color: transparent;
   width: in;
+  display: inline-block;
 }
 
 .email-form {

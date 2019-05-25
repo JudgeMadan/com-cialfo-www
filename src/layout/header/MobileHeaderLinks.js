@@ -1,13 +1,8 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { NavLink } from "react-router-dom";
-import * as contentful from "contentful";
 import "../Layout/Layout.css";
-import Logo from "../../img/Logo.svg";
 import MobileTranslateButton from "./MobileTranslateButton";
-import NavItem from "react-bootstrap/NavItem";
-import MediaQuery from "react-responsive";
 
 class FullScreenHeaderLinks extends React.Component {
   constructor(props) {
@@ -19,7 +14,6 @@ class FullScreenHeaderLinks extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <Nav>
         <NavLink
