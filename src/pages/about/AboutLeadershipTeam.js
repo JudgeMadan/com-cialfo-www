@@ -15,15 +15,24 @@ class AboutLeadershipTeam extends React.Component {
     let leadershipTeamObject;
 
     if (leadershipTeam) {
-      leadershipTeamObject = leadershipTeam.map(leader => {
+      leadershipTeamObject = leadershipTeam.map((leader, index) => {
+        const number = index + 1;
         return (
           <Col key={leader.sys.id}>
             <div className="leadership-team-container">
               <Row className="leadershipObjectContent mx-3">
-                <Image
-                  className="leaderImage"
-                  src="https://picsum.photos/174/247"
-                />
+                {number % 2 !== 0 && (
+                  <Image
+                    className="leaderImage oddNumberLeaderImage"
+                    src="https://picsum.photos/174/247"
+                  />
+                )}
+                {number % 2 === 0 && (
+                  <Image
+                    className="leaderImage evenNumberLeaderImage"
+                    src="https://picsum.photos/174/247"
+                  />
+                )}
               </Row>
               <Row className="leadershipObjectContent">
                 <h1 className="secondary_font_bold">

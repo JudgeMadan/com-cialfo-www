@@ -112,6 +112,14 @@
   margin-right: 10px;
 }
 
+.oddNumberLeaderImage {
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+}
+
+.evenNumberLeaderImage {
+  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+}
+
 .leadership-team-container {
   margin: 15px 10px !important;
 }
