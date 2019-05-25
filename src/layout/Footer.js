@@ -87,12 +87,20 @@ class Footer extends React.Component {
                           {this.state.forCounselors}
                         </NavLink>
                       </ListGroup.Item>
-                      <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
                           to="/solutions/it"
                         >
                           {this.state.forItTeams}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/solutions/superintendents"
+                        >
+                          {this.state.forSuperintendents}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
@@ -234,6 +242,14 @@ class Footer extends React.Component {
                           to="/solutions/it"
                         >
                           {this.state.forItTeams}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link nav-link"
+                          to="/solutions/superintendents"
+                        >
+                          {this.state.forSuperintendents}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
