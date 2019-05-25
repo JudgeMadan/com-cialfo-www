@@ -65,7 +65,7 @@ class Footer extends React.Component {
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
-                          className="footer-nav-link nav-link footer-test"
+                          className="footer-nav-link nav-link"
                           to="/features"
                         >
                           {this.state.whyCialfo}
