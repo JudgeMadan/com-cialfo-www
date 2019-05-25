@@ -39,9 +39,6 @@ class AboutLeadershipTeam extends React.Component {
                   {leader.fields.aboutPageLeadersObjectTitle}
                 </h1>
               </Row>
-              <Row>
-                <p>{number}</p>
-              </Row>
               <Row className="leadershipObjectContent">
                 <h2 className="secondary_font">
                   {leader.fields.aboutPageLeadersObjectSubtitle}
