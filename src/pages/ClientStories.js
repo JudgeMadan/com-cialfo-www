@@ -6,6 +6,7 @@ import "./clientStories/clientStories.css";
 import ClientStoriesHomePageCards from "./clientStories/ClientStoriesHomePageCards";
 import HomeMarquee from "../pages/home/HomeMarquee";
 import MediaQuery from "react-responsive";
+import { withRouter } from "react-router-dom";
 class ClientStories extends React.Component {
   constructor(props) {
     super(props);
@@ -18,6 +19,7 @@ class ClientStories extends React.Component {
   });
 
   render() {
+    console.log(this.props);
     return (
       <Container>
         {this.props.locale === "en-US" && (
@@ -77,4 +79,4 @@ class ClientStories extends React.Component {
   }
 }
 
-export default ClientStories;
+export default withRouter(ClientStories);

@@ -19,6 +19,7 @@ import Line from "../img/Line.svg";
 import MediaQuery from "react-responsive";
 import Container from "react-bootstrap/Container";
 import PartnerImages from "./PartnerImages";
+import { withRouter } from "react-router-dom";
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +27,8 @@ class Home extends React.Component {
   }
 
   client = contentful.createClient({
-    space: this.props.space,
+    // space: this.props.space,
+    space: this.props.match.params.space,
     accessToken: this.props.accessToken
   });
 
@@ -48,7 +50,8 @@ class Home extends React.Component {
   fetchHomeContent = () =>
     this.client.getEntries({
       content_type: "homePageHeaderProductImage",
-      locale: this.props.locale
+      // locale: this.props.locale
+      locale: this.props.match.params.locale
     });
 
   setHomeContent = response => {
@@ -77,6 +80,8 @@ class Home extends React.Component {
   };
 
   render() {
+    console.log("locale: " + this.props.match.params.locale);
+    console.log("space: " + this.props.match.params.space);
     return (
       <Container className="homePageContainer">
         {/* FULL SCREEN TOP ROW */}
@@ -414,4 +419,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default withRouter(Home);

@@ -8,6 +8,7 @@ import Logo from "../../img/Logo.svg";
 import TranslateButton from "./TranslateButton";
 import NavItem from "react-bootstrap/NavItem";
 import MediaQuery from "react-responsive";
+import { withRouter } from "react-router-dom";
 
 class FullScreenHeaderLinks extends React.Component {
   constructor(props) {
@@ -69,4 +70,4 @@ class FullScreenHeaderLinks extends React.Component {
   }
 }
 
-export default FullScreenHeaderLinks;
+export default withRouter(FullScreenHeaderLinks);

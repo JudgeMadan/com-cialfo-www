@@ -26,14 +26,29 @@ import TermsOfService from "../pages/TermsOfService";
 import CialfoVSNaviance from "../pages/CialfoVSNaviance";
 import CialfoVSBridgeU from "../pages/CialfoVSBridgeU";
 import CialfoVSMaia from "../pages/CialfoVSMaia";
+import { withRouter } from "react-router-dom";
 
 class Router extends React.Component {
   render() {
+    console.log(this.props.match);
     return (
       <Switch>
-        <Route
+        {/* <Route
           exact
           path="/"
+          render={() => (
+            <Home
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+              getADemoEmail={this.props.getADemoEmail}
+              sendEmailAddressToGetADemo={this.props.sendEmailAddressToGetADemo}
+            />
+          )}
+        /> */}
+        <Route
+          exact
+          path={this.props.match.url + ":space" + "/" + ":locale"}
           render={() => (
             <Home
               locale={this.props.locale}
@@ -47,7 +62,7 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
-          path="/clients"
+          path={this.props.match.url + ":space" + "/" + ":locale" + "/clients"}
           render={() => (
             <ClientStories
               locale={this.props.locale}
@@ -348,4 +363,4 @@ class Router extends React.Component {
     );
   }
 }
-export default Router;
+export default withRouter(Router);

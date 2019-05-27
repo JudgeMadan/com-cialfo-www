@@ -1,6 +1,9 @@
 import React from "react";
 import * as contentful from "contentful";
 import NavItem from "react-bootstrap/NavItem";
+import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+import PathToRegexp, { compile, parse } from "path-to-regexp";
 
 class TranslateButton extends React.Component {
   constructor(props) {
@@ -41,12 +44,30 @@ class TranslateButton extends React.Component {
     }
   }
 
+  generateUrl = (locale, location) => {
+    console.log(location);
+    const ROUTE = "/:locale(zh-CN|en-US)/:path*";
+    console.log(ROUTE);
+    const definePath = compile(ROUTE);
+
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+
+    let subPaths = null;
+    if (routeComponents && routeComponents[2]) {
+      subPaths = routeComponents[2].split("/");
+    }
+    return definePath({
+      locale,
+      path: subPaths
+    });
+  };
+
   render() {
     return (
       <div>
         {this.props.locale !== "zh-CN" && (
           <NavItem
-            onClick={() => this.updateLocale("zh-CN")}
+            onClick={() => this.generateUrl("zh-CN", this.props.location)}
             className="nav-link translator"
             to="/"
           >
@@ -55,7 +76,7 @@ class TranslateButton extends React.Component {
         )}
         {this.props.locale === "zh-CN" && (
           <NavItem
-            onClick={() => this.updateLocale("en-US")}
+            onClick={() => this.updateLocale("zh-CN", this.props.location)}
             className="nav-link translator"
           >
             English
@@ -66,4 +87,4 @@ class TranslateButton extends React.Component {
   }
 }
 
-export default TranslateButton;
+export default withRouter(TranslateButton);
