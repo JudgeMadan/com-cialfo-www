@@ -20,7 +20,7 @@ class AboutBusinessAdvisors extends React.Component {
           <Col xs={4} key={businessAdvisor.sys.id}>
             <Container className="counselor-advisor-container white-background">
               <div className="counselor-advisor-container-inner-object">
-                <Row>
+                <Row className="counselor-advisor-blurb">
                   <p className="secondary_font">
                     {businessAdvisor.fields.aboutPageBusinessAdvisorBlurb}
                   </p>

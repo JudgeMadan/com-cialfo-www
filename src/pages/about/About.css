@@ -19,10 +19,6 @@
   line-height: 28px;
 }
 
-.aboutPage {
-  /* max-width: 100% !important; */
-}
-
 .aboutPageHeaderText {
   margin-right: 100px;
 }
@@ -129,7 +125,6 @@
   padding-bottom: 150px;
   padding-top: 50px;
   margin-bottom: 10px;
-  /* border: solid red 2px; */
   max-width: 300px;
 }
 
@@ -298,4 +293,15 @@
 
 .about-page-counselor-advisor-footer {
   margin-bottom: 100px;
+}
+
+.counselor-test {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end !important;
+}
+
+.counselor-advisor-blurb {
+  min-height: 65%;
 }

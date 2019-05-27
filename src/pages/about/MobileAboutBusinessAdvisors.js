@@ -22,7 +22,7 @@ class MobileAboutBusinessAdvisors extends React.Component {
             className="counselor-advisor-container white-background mx-4"
           >
             <div className="counselor-advisor-container-inner-object">
-              <Row>
+              <Row className="counselor-advisor-blurb">
                 <p className="secondary_font">
                   {businessAdvisor.fields.aboutPageBusinessAdvisorBlurb}
                 </p>
