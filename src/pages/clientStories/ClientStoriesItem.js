@@ -14,6 +14,7 @@ class ClientStoriesItem extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <Container>
         <Row>
