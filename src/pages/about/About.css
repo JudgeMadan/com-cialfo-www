@@ -294,3 +294,14 @@
 .about-page-counselor-advisor-footer {
   margin-bottom: 100px;
 }
+
+.counselor-test {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end !important;
+}
+
+.counselor-advisor-blurb {
+  min-height: 65%;
+}
