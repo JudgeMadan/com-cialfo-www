@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { NavLink } from "react-router-dom";
 import "../clientStories.css";
+import MediaQuery from "react-responsive";
 
 class ClientStoriesHomePageCardItem extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class ClientStoriesHomePageCardItem extends React.Component {
 
   render() {
     return (
-      <Col className="client-stories-home-page-card m-5 px-5 pt-5 pb-3">
+      <Col className="client-stories-home-page-card px-5 pt-5 pb-3 m-3">
         <Row>
           <img src={this.props.logo} />
         </Row>

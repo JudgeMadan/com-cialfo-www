@@ -192,6 +192,14 @@ therefore, total marquee width is about 395 * # of marquee Items */
 
 .client-stories-home-page-card {
   background: #ebf9ff;
+  /* min-width: 400px !important;
+  max-width: 400px !important; */
+  min-width: 340px !important;
+  max-width: 340px !important;
+}
+
+.mobile-client-stories-home-page-card {
+  background: #ebf9ff;
   max-width: 340px !important;
 }
 
