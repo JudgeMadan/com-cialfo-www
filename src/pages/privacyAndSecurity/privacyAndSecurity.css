@@ -39,13 +39,184 @@
   font-size: 20px;
 }
 
-.thank-you-image {
-  position: relative;
-  z-index: 2;
+.four-oh-four-gray-lines {
+  position: absolute;
+  margin-top: 90px;
+  margin-left: 190px;
+  z-index: 1;
+}
+
+.mobile-four-oh-four-gray-lines {
+  position: absolute;
+  margin-top: 120px;
+  margin-left: 100px;
+  z-index: 1;
 }
 
 .thank-you-gray-lines {
   position: absolute;
-  margin-bottom: -20px;
+  margin-top: 90px;
+  margin-left: -20px;
   z-index: 1;
+}
+
+.mobile-thank-you-gray-lines {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: -350px;
+  z-index: 1;
+}
+
+.security-object-row {
+  width: 450px;
+}
+
+.mobile-security-object-row {
+  width: 325px;
+}
+
+.security-object-col-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 900px;
+}
+
+.white-font {
+  color: white;
+}
+
+.security-button {
+  background-color: white;
+  color: #1886df;
+  padding: 15px 30px;
+  border: none;
+  font-size: 20px;
+}
+.security-button:hover {
+  background-color: #2b0fca;
+  color: white;
+}
+
+.security-subheader {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.mobile-security-subheader {
+  font-size: 30px;
+  text-align: center;
+}
+
+.security-title-font-size {
+  font-size: 60px;
+}
+
+.mobile-security-title-font-size {
+  font-size: 60px;
+  text-align: center;
+}
+
+.security-title-row {
+  margin-bottom: 100px;
+}
+
+.mobile-security-title-row {
+  margin-bottom: 5px;
+}
+
+.security-line {
+  position: absolute;
+  z-index: 1;
+  margin-top: -50px;
+  margin-left: 600px;
+}
+
+.security-blue-stroke-10 {
+  position: absolute;
+  z-index: 1;
+  margin-top: -180px;
+  margin-left: 550px;
+}
+
+.security-oval {
+  position: absolute;
+  z-index: 1;
+  margin-top: -150px;
+  margin-left: -650px;
+}
+
+.security-header-text {
+  z-index: 2;
+}
+
+.security-content-row-header {
+  margin-top: 100px;
+}
+
+.mobile-security-content-row-header {
+  padding-top: 50px;
+}
+
+.security-content-row-footer {
+  margin-bottom: 100px;
+}
+
+.mobile-security-content-row-footer {
+  margin: 50px 0px;
+}
+
+.mobile-security-content-button {
+  margin-bottom: 50px;
+}
+
+.thank-you-title-text {
+  font-size: 60px;
+  text-align: center;
+}
+
+.four-oh-four-title-text {
+  width: 700px;
+}
+
+.privacy-title {
+  font-size: 60px !important;
+  font-size: 22px;
+}
+
+.mobile-privacy-title {
+  font-size: 55px !important;
+  font-size: 22px;
+}
+
+.privacy-upper-title {
+  font-size: 22px;
+}
+
+.privacy-subtitle {
+  margin-bottom: 0;
+}
+
+.privacy-link {
+  color: #2a1f2f;
+}
+
+.security-header-subtitle {
+  width: 550px;
+  text-align: center;
+}
+.mobile-security-header-subtitle {
+  text-align: center;
+}
+
+.security-questions-blurb {
+  width: 600px;
+  text-align: center;
+}
+
+.mobile-security-read-more {
+  text-align: center;
+}
+
+.security-header-row {
+  margin-top: 85px;
 }

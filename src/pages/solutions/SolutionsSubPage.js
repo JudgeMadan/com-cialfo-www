@@ -1,74 +1,81 @@
 import React from "react";
 import HomeMarquee from "../home/HomeMarquee";
-import * as contentful from "contentful";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import { Link } from "react-router-dom";
 
 import SolutionsHeader from "./SolutionsHeader";
 import SolutionsRightSideText from "./SolutionsRightSideText";
 import SolutionsLeftSideText from "./SolutionsLeftSideText";
-import FeaturesSubfooter from "../features/FeaturesSubfooter";
+import SolutionsSubfooter from "./SolutionsSubfooter";
+import MobileSolutionsContentText from "./MobileSolutionsContentText";
+import MobileSolutionsHeader from "./MobileSolutionsHeader";
+import MediaQuery from "react-responsive";
 class SolutionsSubPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
-
-  // client = contentful.createClient({
-  //   space: this.props.space,
-  //   accessToken: this.props.accessToken
-  // });
-
-  // componentDidMount() {
-  //   this.fetchFeatures().then(this.setFeatures);
-  // }
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.locale !== this.props.locale) {
-  //     this.fetchFeatures().then(this.setFeatures);
-  //   }
-  // }
-
-  // fetchFeatures = () => {
-  //   return this.client.getEntries({
-  //     content_type: "featuresPage",
-  //     locale: this.props.locale
-  //   });
-  // };
-
-  // setFeatures = response => {
-  //   const featureContent = response.items[0].fields;
-  //   for (let key in featureContent) {
-  //     if (typeof featureContent[key] === "string") {
-  //       this.setState({
-  //         [key]: featureContent[key]
-  //       });
-  //     } else if (Array.isArray(featureContent[key])) {
-  //       this.setState({
-  //         [key]: featureContent[key]
-  //       });
-  //     } else {
-  //       this.setState({
-  //         [key]: featureContent[key].fields.file.url
-  //       });
-  //     }
-  //   }
-  // };
 
   render() {
     return (
       <Container className="homePageContainer">
-        <SolutionsHeader />
-        <div className="solutions-bottom-spacing" />
-        <SolutionsRightSideText />
-        <div className="solutions-bottom-spacing" />
-        <FeaturesSubfooter />
-        <div className="solutions-bottom-spacing" />
-        <SolutionsLeftSideText />
-        <div className="solutions-bottom-spacing" />
-        <HomeMarquee />
+        {/* FULL SCREEN SOLUTIONS SUBPAGE */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <SolutionsHeader
+            title={this.props.pageTitle}
+            subtitle={this.props.pageSubtitle}
+          />
+          <div className="solutions-bottom-spacing" />
+          <SolutionsRightSideText
+            title={this.props.topRowTitle}
+            blurb={this.props.topRowBlurb}
+          />
+          <div className="solutions-bottom-spacing" />
+          <SolutionsSubfooter
+            img={this.props.subFooterImg}
+            quote={this.props.subFooterQuote}
+            quoteAuthor={this.props.subFooterQuoteAuthor}
+            quoteAuthorCredit={this.props.subFooterQuoteCredit}
+          />
+          <div className="solutions-bottom-spacing" />
+          <SolutionsLeftSideText
+            title={this.props.bottomRowTitle}
+            blurb={this.props.bottomRowBlurb}
+          />
+          <div className="solutions-bottom-spacing" />
+          <Row className="center-in-row">
+            {this.props.locale !== "zh-CN" && (
+              <h1 className="primary_font">
+                The top international schools trust Cialfo
+              </h1>
+            )}
+            {this.props.locale === "zh-CN" && (
+              <h1 className="primary_font">中文中文中文</h1>
+            )}
+          </Row>
+          <div className="solutions-marquee-container">
+            <HomeMarquee
+              locale={this.props.locale}
+              accessToken={this.props.accessToken}
+              space={this.props.space}
+            />
+          </div>
+        </MediaQuery>
+        {/* MOBILE SOLUTIONS SUBPAGE */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <MobileSolutionsHeader
+            title={this.props.pageTitle}
+            subtitle={this.props.pageSubtitle}
+          />
+          <MobileSolutionsContentText
+            title={this.props.topRowTitle}
+            blurb={this.props.topRowBlurb}
+          />
+          <MobileSolutionsContentText
+            title={this.props.bottomRowTitle}
+            blurb={this.props.bottomRowBlurb}
+          />
+        </MediaQuery>
       </Container>
     );
   }

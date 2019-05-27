@@ -1,0 +1,85 @@
+.app-store-image {
+  width: auto;
+  height: 46px;
+  padding: 0px !important;
+}
+
+.app-store-image-col {
+  padding-left: 0px !important;
+}
+
+.edi_button {
+  background-color: #1886df;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  font-size: 20px;
+}
+
+.edi_button:hover {
+  background-color: #2b0fca;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  font-size: 20px;
+}
+
+.vpn_button {
+  background-color: white;
+  color: #1886df;
+  padding: 5px 10px;
+  border: none;
+  font-size: 20px;
+}
+
+.vpn_button:hover {
+  background-color: #2b0fca;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  font-size: 20px;
+}
+
+.edi-title {
+  margin-top: 50px;
+}
+
+/* .full-width-light-blue {
+  margin: 0 -9999rem;
+  padding: 0.25rem 9999rem;
+  background: #ebf9ff;
+} */
+
+/* .full-width-dark-blue {
+  margin: 0 -9999rem;
+  padding: 0.25rem 9999rem;
+  background: #1786df;
+} */
+
+.white-text {
+  color: white;
+}
+
+.download-text h1 {
+  max-width: 700px;
+  text-align: center;
+}
+
+.downloads-header-img {
+  width: 500px;
+  height: auto;
+}
+
+.mobile-downloads-header-img {
+  width: 350px;
+}
+
+.downloads-header-text {
+  margin-right: 200px;
+  margin-top: 100px;
+}
+
+.mobile-download-button-row {
+  display: flex;
+  justify-content: center;
+}

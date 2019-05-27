@@ -30,7 +30,7 @@
 }
 
 .footer {
-  padding: 0 0 30px 0 !important;
+  padding: 15px 0 !important;
 }
 
 .test {
@@ -51,4 +51,27 @@
 
 .activeStyle {
   border-bottom: solid 2px #1886df !important;
+}
+
+.mobile-activeStyle {
+  font-weight: bold;
+}
+
+.footer-nav-link {
+  padding: 0px !important;
+  display: inline-block;
+}
+
+.blue-header-locale-text {
+  margin-left: -15px;
+  margin-top: 5px;
+  color: #1886df !important;
+  font-size: 12px;
+}
+
+.mobile-blue-header-locale-text {
+  margin-left: -150px;
+  margin-top: -30px;
+  color: #1886df !important;
+  font-size: 12px;
 }

@@ -1,0 +1,212 @@
+.client-top-row-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 25px;
+}
+
+.client-story-hero-image {
+  height: auto;
+  width: 590px;
+}
+
+.mobile-client-story-hero-image {
+  width: 350px;
+  height: auto;
+}
+
+.mobile-client-story-school-title {
+  font-size: 40px;
+  text-align: center;
+}
+
+.client-school-card {
+  border: solid #3386df 2px;
+  height: 620px;
+  max-width: 380px !important;
+  margin-right: 5rem !important;
+}
+
+.client-sales-button {
+  background-color: #1886df;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  font-size: 20px;
+}
+
+.client-sales-button:hover {
+  background-color: #2b0fca;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  font-size: 20px;
+}
+
+.justify-text {
+  text-align: justify;
+}
+
+.client-video-row {
+  display: flex;
+  justify-content: center;
+}
+
+.client-marquee-object {
+  background-color: #ebf9ff;
+}
+
+.client-marquee-object h1 {
+  font-size: 34px;
+}
+
+.client-marquee-object-title {
+  max-width: 300px;
+}
+
+.client-marquee-object-link-nav-link {
+  width: 200px !important;
+  display: flex;
+  align-content: flex-end;
+}
+
+.client-marquee-object-link-nav-link:hover {
+  width: 200px !important;
+  display: flex;
+  align-content: flex-end;
+  text-decoration: none;
+}
+
+.client-marquee-object-link-text {
+  padding-top: 25px;
+  margin-bottom: 10px;
+  font-weight: bold !important;
+  border-bottom: #1886df 2px solid;
+}
+
+.client-marquee-object-link-text:hover {
+  border-bottom: #2b0fca 2px solid;
+}
+
+.client-marquee-object-link-text-col {
+  display: flex;
+  align-content: flex-end;
+  padding: 0px !important;
+}
+
+.client-marquee-object-bottom-row {
+  display: flex;
+  justify-content: center;
+}
+
+.client-marquee-image-div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.client-marquee-image {
+  height: auto;
+  width: 50px;
+}
+
+/* Each marquee item is around 395 px wide in total, 
+therefore, total marquee width is about 395 * # of marquee Items */
+.client-marquee {
+  height: 500px;
+  /* min-width: 875px !important; */
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+  margin: 10px auto;
+  z-index: 2;
+}
+
+.client-marquee--inner {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  width: 200%;
+  position: absolute;
+  animation: marquee 15s linear infinite;
+  z-index: 2;
+  margin-top: 30px;
+}
+
+.client-marquee--inner:hover {
+  animation-play-state: paused;
+}
+
+.client-marqueeElement {
+  display: inline-block;
+  margin: 0 20px;
+  float: left;
+  transition: all 0.2s ease-out;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.client-marqueeElement:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.client-marqueeElement:nth-child(odd) {
+  margin-top: 50px;
+}
+
+.client-marqueeElement:nth-child(even) {
+  margin-bottom: 50px;
+}
+
+.client-marquee::after {
+  z-index: 3;
+  content: "";
+  display: block;
+  position: absolute;
+  background: linear-gradient(
+    to right,
+    #fff 0,
+    rgba(255, 255, 255, 0) 15%,
+    rgba(255, 255, 255, 0) 85%,
+    #fff 100%
+  );
+  height: 510px;
+  width: 100%;
+  pointer-events: none;
+}
+
+@keyframes marquee {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+.client-header-title-large-font {
+  font-size: 50px;
+  width: 400px;
+  text-align: center;
+}
+
+.client-stories-home-page-card {
+  background: #ebf9ff;
+  /* min-width: 400px !important;
+  max-width: 400px !important; */
+  min-width: 340px !important;
+  max-width: 340px !important;
+}
+
+.mobile-client-stories-home-page-card {
+  background: #ebf9ff;
+  max-width: 340px !important;
+}
+
+.client-stories-home-page-card-blurb {
+  height: 150px;
+}
+
+.client-header-subtitle {
+  font-size: 20px;
+}

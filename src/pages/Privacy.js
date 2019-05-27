@@ -4,6 +4,10 @@ import "./getADemo/GetADemo.css";
 import "./privacyAndSecurity/privacyAndSecurity.css";
 import * as contentful from "contentful";
 import PrivacyAndSecurityBody from "./privacyAndSecurity/PrivacyAndSecurityBody";
+import PrivacyEnglish from "./privacyAndSecurity/PrivacyEnglish";
+import PrivacyChinese from "./privacyAndSecurity/PrivacyChinese";
+import Container from "react-bootstrap/Container";
+
 class Privacy extends React.Component {
   constructor(props) {
     super(props);
@@ -50,25 +54,12 @@ class Privacy extends React.Component {
   render() {
     return (
       <div>
-        <div className="privacy_security_title title_top">
-          <Row>
-            <h5 className="primary_font">
-              {this.state.privacyAndSecuritySubtitle}
-            </h5>
-          </Row>
-        </div>
-        <div className="privacy_security_title title_bottom">
-          <Row>
-            <h1 className="primary_font">
-              {this.state.privacyAndSecurityTitle}
-            </h1>
-          </Row>
-        </div>
-        <PrivacyAndSecurityBody
-          paragraphs={this.state.privacyAndSecurityBody}
-        />
-        <Row className="privacy_security_title">
-          <h1>...</h1>
+        <Row className="center-in-row pt-5">
+          {this.props.locale !== "zh-CN" && <PrivacyEnglish />}
+          {this.props.locale === "zh-CN" && <PrivacyChinese />}
+        </Row>
+        <Row className="center-in-row pb-5">
+          <h1>···</h1>
         </Row>
       </div>
     );

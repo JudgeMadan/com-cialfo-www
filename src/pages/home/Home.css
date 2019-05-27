@@ -28,13 +28,15 @@
   display: flex;
   justify-content: center;
   margin: 30px 0 30px 0;
+  border-bottom: solid #d1d3d4 1px;
 }
 
-.top_row_left_col {
-  display: flex;
-  align-items: center;
-  margin: 0 100px 0 0;
-  min-width: 250px;
+.mobile-bottom-border {
+  border-bottom: solid #f5f5f5 1px;
+}
+
+.mobile-top-border {
+  border-top: solid #f5f5f5 1px;
 }
 
 .mobile_top_row_left_col {
@@ -45,25 +47,12 @@
 
 .mobile_top_row_header {
   text-align: center;
-}
-
-.homePageHeaderBlurb {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 28px;
-  color: #2b1f30;
-  max-width: 400px;
+  width: 250px;
 }
 
 .no-border {
   border: 0;
   box-shadow: none;
-}
-
-.mobile-email-form-container {
-  display: flex;
-  justify-content: flex-end;
 }
 
 .email-form {
@@ -84,6 +73,16 @@
   padding-bottom: 1px;
 }
 
+.mobile-homePageFeaturesSendDocumentLinkText {
+  border-bottom: 1px solid #1986df;
+  padding-bottom: 1px;
+}
+
+.mobile-homePageFeaturesSendDocumentLinkText:hover {
+  border-bottom: 3px solid #1986df;
+  margin-bottom: -2px;
+}
+
 .homePageFeaturesSendDocumentLinkText:hover {
   border-bottom: 3px solid #1986df;
   margin-bottom: -2px;
@@ -102,11 +101,13 @@
 .homePageFeaturesDiscoverLinkText {
   border-bottom: 1px solid #ffca43;
   padding-bottom: 1px;
+  font-weight: bold;
 }
 
 .homePageFeaturesDiscoverLinkText:hover {
   border-bottom: 3px solid #ffca43;
   margin-bottom: -2px;
+  font-weight: bold;
 }
 
 .homePageHeaderEmailSubmitButton {
@@ -145,7 +146,7 @@
 }
 
 .homePageFeaturesRightSideTextObject {
-  margin: 0 10%;
+  margin: 0 15%;
 }
 
 .mobile-homePageFeaturesRightSideTextObject {
@@ -155,26 +156,17 @@
   justify-content: center;
 }
 
-.mobile_feature_title {
-}
-
-.mobile-test {
-  display: flex;
-  justify-content: center;
-  border: solid red 2px;
-}
-
 .homePageFeaturesLeftSideTextObject {
   margin: 0 10%;
 }
 
-.homePageFeaturesImageBackground {
+/* .homePageFeaturesImageBackground {
   background: linear-gradient(90deg, #ebf9ff 50%, white 50%);
-}
+} */
 
-.homePageFeaturesImageBackgroundReverse {
+/* .homePageFeaturesImageBackgroundReverse {
   background: linear-gradient(90deg, white 50%, #ebf9ff 50%);
-}
+} */
 
 .homeMarquee {
   margin-bottom: 100px;
@@ -213,8 +205,8 @@
 }
 
 .mobile-homePageVideoCaseStudy {
-  background: linear-gradient(#1886df 70%, white 30%);
   min-width: 100%;
+  background: #1886df;
 }
 
 .homePageVideoCaseStudyVideoEmbed {
@@ -241,11 +233,9 @@
 }
 
 .homePartnerImages {
-  display: flex;
-  justify-content: space-around;
   height: auto;
-  width: 100%;
-  /* margin-bottom: 150px; */
+  width: 250px;
+  margin: auto;
 }
 
 .mobile-homePartnerImagesContainer {
@@ -269,11 +259,6 @@
   justify-content: center;
 }
 
-.imageObjectRow {
-  display: flex;
-  align-content: center;
-}
-
 .imageObjectTitle {
   display: flex;
   justify-content: center;
@@ -291,14 +276,14 @@
 
 .mobile-homePageImg {
   position: relative;
-  display: flex;
-  width: 70%;
+  width: 80%;
   height: auto;
   z-index: 3;
 }
 
 .mobile-homePageImg-row {
-  margin: 0 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .homePageImg {
@@ -313,8 +298,27 @@
 .stroke-10 {
   position: absolute;
   z-index: 2;
+  margin-top: -200px;
+  margin-left: -270px;
+}
+
+.left-align-light-blue-background {
+  position: absolute;
+  z-index: 1;
   margin-top: -100px;
-  margin-left: -50px;
+  margin-left: -1250px;
+}
+
+.custom-left-align-light-blue-background {
+  position: absolute;
+  z-index: 1;
+  margin-left: -800px;
+}
+
+.right-align-light-blue-background {
+  position: absolute;
+  z-index: 1;
+  margin-left: 750px;
 }
 
 .video {
@@ -375,6 +379,7 @@
 
 .homeFeatureLink {
   color: #2b1f30 !important;
+  font-weight: bold;
 }
 
 .homeFeatureLink:hover {
@@ -398,5 +403,49 @@
 }
 
 .home-page-partner-image {
-  margin: 0 25px;
+  margin: 0 10px;
+}
+
+.partial-width-dark-blue {
+  margin: 0 -9999rem;
+  /* add back negative margin value */
+  padding: 0.25rem 9999rem;
+  background: #1786df;
+  background: linear-gradient(white 3%, #1786df 3% 55%, white 55%);
+}
+
+.partner-object-image-container {
+  display: flex;
+  height: 100px;
+}
+
+.edi-title-text {
+  width: 500px;
+}
+
+.mobile-edi-title-text {
+}
+
+.downloads-oval {
+  margin-top: 200px;
+  margin-left: -650px;
+  position: absolute;
+  z-index: 0;
+}
+
+.downloads-yellow-stroke-10 {
+  margin-top: 200px;
+  margin-left: 475px;
+  position: absolute;
+  z-index: 0;
+}
+
+.downloads-qr-code {
+  z-index: 1;
+}
+
+.downloads-full-width-dark-blue {
+  margin: 0 -9999rem;
+  padding: 0.25rem 9999rem;
+  background: #1786df;
 }

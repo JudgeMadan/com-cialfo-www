@@ -19,14 +19,15 @@ class AboutBusinessAdvisors extends React.Component {
         return (
           <Col xs={4} key={businessAdvisor.sys.id}>
             <Container className="counselor-advisor-container white-background">
-              <div className="innerObject">
-                <Row>
+              <div className="counselor-advisor-container-inner-object">
+                <Row className="counselor-advisor-blurb">
                   <p className="secondary_font">
                     {businessAdvisor.fields.aboutPageBusinessAdvisorBlurb}
                   </p>
                 </Row>
                 <Row>
                   <Image
+                    className="mb-3"
                     roundedCircle
                     src={
                       businessAdvisor.fields.aboutPageBusinessAdvisorImage
@@ -57,7 +58,6 @@ class AboutBusinessAdvisors extends React.Component {
         );
       });
     }
-
     return <Row>{businessAdvisorsObject}</Row>;
   }
 }

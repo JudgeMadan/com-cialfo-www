@@ -18,6 +18,14 @@ import SolutionsCounselors from "../pages/SolutionsCounselors";
 import SolutionsIT from "../pages/SolutionsIT";
 import SolutionsPrincipals from "../pages/SolutionsPrincipals";
 import SolutionsSuperintendents from "../pages/SolutionsSuperintendents";
+import ClientStoriesAmericanSchoolInJapan from "../pages/clientStories/ClientStoriesAmericanSchoolInJapan";
+import ClientStoriesAmericanSchoolInChina from "../pages/clientStories/ClientStoriesAmericanSchoolInChina";
+import Events from "../pages/Events";
+import Downloads from "../pages/Downloads";
+import TermsOfService from "../pages/TermsOfService";
+import CialfoVSNaviance from "../pages/CialfoVSNaviance";
+import CialfoVSBridgeU from "../pages/CialfoVSBridgeU";
+import CialfoVSMaia from "../pages/CialfoVSMaia";
 
 class Router extends React.Component {
   render() {
@@ -36,7 +44,7 @@ class Router extends React.Component {
             />
           )}
         />
-        {/* <Route
+        <Route
           locale={this.props.locale}
           exact
           path="/clients"
@@ -47,7 +55,31 @@ class Router extends React.Component {
               accessToken={this.props.accessToken}
             />
           )}
-        /> */}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/clients/american-school-japan"
+          render={() => (
+            <ClientStoriesAmericanSchoolInJapan
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/clients/american-school-china"
+          render={() => (
+            <ClientStoriesAmericanSchoolInChina
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
         <Route
           locale={this.props.locale}
           exact
@@ -124,7 +156,7 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
-          path="/get_in_touch"
+          path="/contact"
           render={() => (
             <GetInTouch
               locale={this.props.locale}
@@ -160,7 +192,7 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
-          path="/thank_you"
+          path="/thank-you"
           render={() => (
             <ThankYou
               locale={this.props.locale}
@@ -223,6 +255,78 @@ class Router extends React.Component {
           path="/solutions/superintendents"
           render={() => (
             <SolutionsSuperintendents
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/events"
+          render={() => (
+            <Events
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/downloads"
+          render={() => (
+            <Downloads
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/terms-of-service"
+          render={() => (
+            <TermsOfService
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/cialfo-vs-naviance"
+          render={() => (
+            <CialfoVSNaviance
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/cialfo-vs-bridge-u"
+          render={() => (
+            <CialfoVSBridgeU
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path="/cialfo-vs-maia"
+          render={() => (
+            <CialfoVSMaia
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}

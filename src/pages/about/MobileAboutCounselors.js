@@ -10,55 +10,54 @@ class MobileAboutCounselors extends React.Component {
   }
 
   render() {
-    const counselors = this.props.counselors;
-    let counselorsObject;
+    const counselorsObject = this.props.counselors;
+    let counselorsObjectObject;
 
-    if (counselors) {
-      counselorsObject = counselors.map(counselor => {
+    if (counselorsObject) {
+      counselorsObjectObject = counselorsObject.map(counselorsObject => {
         return (
-          <Col xs={4} key={counselor.sys.id}>
-            <Container className="counselor-advisor-container light-blue-background">
-              <div className="innerObject ">
-                <Row>
-                  <div>
-                    <p>{counselor.fields.aboutPageCounselorBlurb}</p>
-                  </div>
-                </Row>
-                <Row>
-                  <Col>
-                    <Image
-                      roundedCircle
-                      src={
-                        counselor.fields.aboutPageCounselorImage.fields.file.url
-                      }
-                    />
-                  </Col>
-                  <Col className="aboutPageCounselorTitle">
-                    <div>
-                      <p className="secondary_font_bold text-center">
-                        {counselor.fields.aboutPageCounselorTitle}
-                      </p>
-                    </div>
-                  </Col>
-                </Row>
-                <Row>
-                  <p className="secondary_font reduced-margin-bottom">
-                    {counselor.fields.jobTitle}
+          <Container
+            key={counselorsObject.sys.id}
+            className="counselor-advisor-container light-blue-background mx-4"
+          >
+            <div className="counselor-advisor-container-inner-object">
+              <Row className="counselor-advisor-blurb">
+                <p className="secondary_font">
+                  {counselorsObject.fields.aboutPageBusinessAdvisorBlurb}
+                </p>
+              </Row>
+              <Row>
+                <Image
+                  roundedCircle
+                  src={
+                    counselorsObject.fields.aboutPageBusinessAdvisorImage.fields
+                      .file.url
+                  }
+                />
+              </Row>
+              <Row>
+                <div>
+                  <p className="secondary_font_bold">
+                    {counselorsObject.fields.aboutPageBusinessAdvisorTitle}
                   </p>
-                </Row>
-                <Row>
-                  <p className="secondary_font">
-                    {counselor.fields.organization}
-                  </p>
-                </Row>
-              </div>
-            </Container>
-          </Col>
+                </div>
+              </Row>
+              <Row>
+                <p className="secondary_font reduced-margin-bottom">
+                  {counselorsObject.fields.jobTitle}
+                </p>
+              </Row>
+              <Row>
+                <p className="secondary_font">
+                  {counselorsObject.fields.organization}
+                </p>
+              </Row>
+            </div>
+          </Container>
         );
       });
     }
-
-    return <Row>{counselorsObject}</Row>;
+    return <Row>{counselorsObjectObject}</Row>;
   }
 }
 

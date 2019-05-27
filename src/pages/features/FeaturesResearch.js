@@ -9,6 +9,8 @@ import FeaturesSubfooter from "./FeaturesSubfooter";
 import FeaturesBullets from "./FeaturesBullets";
 import Oval from "../../img/Oval.svg";
 import Line from "../../img/Line.svg";
+import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
+import MediaQuery from "react-responsive";
 class FeaturesResearch extends React.Component {
   constructor(props) {
     super(props);
@@ -58,99 +60,187 @@ class FeaturesResearch extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container className="featuresSendPage">
-        <Row className="titleContainer">
-          <h1 className="primary_font">{this.state.researchTitle}</h1>
-        </Row>
-        <Row className="featuresVideoEmbed">
-          <div>
-            <img className="oval" src={Oval} />
-            <img className="line" src={Line} />
-            <ReactPlayer
-              className="video"
-              width="800px"
-              height="488px"
-              url={this.state.researchVideo}
+        {/* FULL SCREEN PAGE HEADER */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <Row className="titleContainer">
+            <h1 className="primary_font">{this.state.researchTitle}</h1>
+          </Row>
+          <Row className="featuresVideoEmbed">
+            <div>
+              <img className="oval" src={Oval} />
+              <img className="line" src={Line} />
+              <ReactPlayer
+                className="video"
+                width="800px"
+                height="488px"
+                url={this.state.researchVideo}
+              />
+            </div>
+          </Row>
+        </MediaQuery>
+        {/* MOBILE HEADER */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <Row className="titleContainer">
+            <h1 className="primary_font">{this.state.researchTitle}</h1>
+          </Row>
+          <Row className="mobile-featuresVideoEmbed">
+            <div>
+              <img className="oval" src={Oval} />
+              <img className="line" src={Line} />
+              <ReactPlayer
+                className="video"
+                width="345px"
+                height="194px"
+                url={this.state.researchVideo}
+              />
+            </div>
+          </Row>
+        </MediaQuery>
+        {/* FULL SCREEN Knowledge */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <Row>
+            <Col className="featureImage">
+              <img
+                className="feature-send-portal-left-align-light-blue-rectangle"
+                src={ThinLightBlueRectangle}
+              />
+              {/* <img src={this.state.researchInfoImg} /> */}
+            </Col>
+            <Col className="featureSubSectionTextAlign">
+              <Container>
+                <Row>
+                  <Col>
+                    <h1 className="primary_font">
+                      {this.state.researchInfoTitle}
+                    </h1>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <FeaturesBullets bullets={this.state.researchInfoBlurb} />
+                  </Col>
+                </Row>
+              </Container>
+            </Col>
+          </Row>
+        </MediaQuery>
+        {/* MOBILE SCREEN Knowledge */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          {/* <Col className="featureImage">
+              <img
+                className="feature-send-portal-left-align-light-blue-rectangle"
+                src={ThinLightBlueRectangle}
+              />
+              <img src={this.state.researchInfoImg} />
+            </Col> */}
+          <Container className="mobile-bottom-border my-5 px-4">
+            <Row className="center-in-row px-3 mb-3">
+              <h1 className="primary_font">{this.state.researchInfoTitle}</h1>
+            </Row>
+            <Row className="mb-5 px-3">
+              <FeaturesBullets bullets={this.state.researchInfoBlurb} />
+            </Row>
+          </Container>
+        </MediaQuery>
+        {/* FULL WIDTH TRANSCRIPT */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <Row>
+            <Col className="featureSubSectionTextAlign">
+              <Container>
+                <Row>
+                  <Col>
+                    <h1 className="primary_font">
+                      {this.state.researchTranscriptTitle}
+                    </h1>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <FeaturesBullets
+                      bullets={this.state.researchTranscriptBlurb}
+                    />
+                  </Col>
+                </Row>
+              </Container>
+            </Col>
+            <Col className="featureImage">
+              <img
+                className="feature-send-portal-right-align-light-blue-rectangle"
+                src={ThinLightBlueRectangle}
+              />
+              {/* <img src={this.state.researchTranscriptImg} /> */}
+            </Col>
+          </Row>
+        </MediaQuery>
+        {/* MOBILE TRANSCRIPT */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <Container className="mobile-bottom-border my-5 px-4">
+            <Row className="center-in-row px-3 mb-3">
+              <h1 className="primary_font">
+                {this.state.researchTranscriptTitle}
+              </h1>
+            </Row>
+            <Row className="mb-5 px-3">
+              <FeaturesBullets bullets={this.state.researchTranscriptBlurb} />
+            </Row>
+          </Container>
+        </MediaQuery>
+        {/* FULL WIDTH KNOWLEDGE */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <Row className="researchBottomRow">
+            <Col className="featureImage">
+              <img
+                className="feature-send-portal-left-align-light-blue-rectangle"
+                src={ThinLightBlueRectangle}
+              />
+              {/* <img src={this.state.researchKnowledgeImg} /> */}
+            </Col>
+            <Col className="featureSubSectionTextAlign">
+              <Container>
+                <Row>
+                  <Col>
+                    <h1 className="primary_font">
+                      {this.state.researchKnowledgeTitle}
+                    </h1>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <FeaturesBullets
+                      bullets={this.state.researchKnowledgeBlurb}
+                    />
+                  </Col>
+                </Row>
+              </Container>
+            </Col>
+          </Row>
+        </MediaQuery>
+        {/* MOBILE KNOWLEDGE */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <Container className="my-5 px-4">
+            <Row className="center-in-row px-3 mb-3">
+              <h1 className="primary_font">
+                {this.state.researchKnowledgeTitle}
+              </h1>
+            </Row>
+            <Row className="mb-5 px-3">
+              <FeaturesBullets bullets={this.state.researchKnowledgeBlurb} />
+            </Row>
+          </Container>
+        </MediaQuery>
+        {/* FULL WIDTH FEATURES SUBFOOTER */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <Row>
+            <FeaturesSubfooter
+              img={this.state.researchFooterImg}
+              quote={this.state.researchFooterQuote}
+              quoteAuthor={this.state.researchFooterAuthor}
             />
-          </div>
-        </Row>
-        <Row>
-          <Col className="featureImage">
-            {/* <img src={this.state.researchInfoImg} /> */}
-          </Col>
-          <Col className="featureSubSectionTextAlign">
-            <Container>
-              <Row>
-                <Col>
-                  <h1 className="primary_font">
-                    {this.state.researchInfoTitle}
-                  </h1>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <FeaturesBullets
-                    bullets={this.state.researchKnowledgeBlurb}
-                  />
-                </Col>
-              </Row>
-            </Container>
-          </Col>
-        </Row>
-        <Row>
-          <Col className="featureSubSectionTextAlign">
-            <Container>
-              <Row>
-                <Col>
-                  <h1 className="primary_font">
-                    {this.state.researchTranscriptTitle}
-                  </h1>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <FeaturesBullets
-                    bullets={this.state.researchTranscriptBlurb}
-                  />
-                </Col>
-              </Row>
-            </Container>
-          </Col>
-          <Col className="featureImage">
-            {/* <img src={this.state.researchTranscriptImg} /> */}
-          </Col>
-        </Row>
-        <Row className="researchBottomRow">
-          <Col className="featureImage">
-            {/* <img src={this.state.researchKnowledgeImg} /> */}
-          </Col>
-          <Col className="featureSubSectionTextAlign">
-            <Container>
-              <Row>
-                <Col>
-                  <h1 className="primary_font">
-                    {this.state.researchKnowledgeTitle}
-                  </h1>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <FeaturesBullets
-                    bullets={this.state.researchKnowledgeBlurb}
-                  />
-                </Col>
-              </Row>
-            </Container>
-          </Col>
-        </Row>
-        <Row>
-          <FeaturesSubfooter
-            img={this.state.researchFooterImg}
-            quote={this.state.researchFooterQuote}
-            quoteAuthor={this.state.researchFooterAuthor}
-          />
-        </Row>
+          </Row>
+        </MediaQuery>
       </Container>
     );
   }

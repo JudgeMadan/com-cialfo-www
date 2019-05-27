@@ -1,6 +1,7 @@
 import React from "react";
 import HomeMarqueeListObject from "./homeMarqueeList/HomeMarqueeListObject";
 import * as contentful from "contentful";
+import { LinkExternal } from "@githubprimer/octicons-react";
 
 class HomeMarqueeList extends React.Component {
   constructor(props) {
@@ -9,9 +10,8 @@ class HomeMarqueeList extends React.Component {
   }
 
   client = contentful.createClient({
-    space: "1acwuo4zy8aa",
-    accessToken:
-      "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
+    space: this.props.space,
+    accessToken: this.props.accessToken
   });
 
   componentDidUpdate(prevProps) {
@@ -42,7 +42,10 @@ class HomeMarqueeList extends React.Component {
     let marqueeItemArray;
 
     if (marqueeItemArrays) {
-      marqueeItemArray = marqueeItemArrays.map(marqueeItemArray => {
+      let filteredmarqueeItemArrays = marqueeItemArrays.filter(
+        marqueeItem => marqueeItem.fields.marqueeType === "testimonial"
+      );
+      marqueeItemArray = filteredmarqueeItemArrays.map(marqueeItemArray => {
         return (
           <HomeMarqueeListObject
             key={marqueeItemArray.sys.id}

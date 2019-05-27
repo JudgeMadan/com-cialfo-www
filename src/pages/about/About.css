@@ -3,13 +3,13 @@
   /* font-size: 2em; */
 }
 
-.secondary_font {
+/* .secondary_font {
   font-family: "roboto_regular";
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
   line-height: 28px;
-}
+} */
 
 .secondary_font_bold {
   font-family: "roboto_regular";
@@ -19,16 +19,8 @@
   line-height: 28px;
 }
 
-.aboutPage {
-  /* max-width: 100% !important; */
-}
-
 .aboutPageHeaderText {
   margin-right: 100px;
-}
-
-.aboutPageHeaderTitle {
-  margin-bottom: 20px;
 }
 
 .aboutPageTitle {
@@ -104,11 +96,28 @@
 }
 
 .aboutPageLeadershipTeam {
-  margin-bottom: 350px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .leaderImage {
+  display: flex;
   margin-bottom: 75px;
+  flex-shrink: 2;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.oddNumberLeaderImage {
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+}
+
+.evenNumberLeaderImage {
+  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+}
+
+.leadership-team-container {
+  margin: 15px 10px !important;
 }
 
 .leadershipObjectContainer {
@@ -116,10 +125,10 @@
   padding-bottom: 150px;
   padding-top: 50px;
   margin-bottom: 10px;
+  max-width: 300px;
 }
 
 .leadershipObjectContent {
-  align-content: center;
   justify-content: center;
   text-align: center;
 }
@@ -161,13 +170,15 @@
 }
 
 .counselor-advisor-container {
-  margin: 15px 30px;
-  min-width: 350px;
-  height: 620px;
+  margin: 15px 5px;
+  min-height: 620px;
+  display: flex;
+  justify-content: center;
 }
 
-.innerObject {
-  padding: 40px;
+.counselor-advisor-container-inner-object {
+  padding: 20px;
+  font-size: 20px;
 }
 
 /* WORK FROM HERE */
@@ -190,24 +201,37 @@
 }
 
 .officesContainer {
-  padding: 10% 5%;
   background-color: #2b1f31;
   color: white;
+  height: 375px;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
 }
 
 .officeImgContainer {
   display: flex;
-  justify-content: center;
-  margin-bottom: 5%;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 200px;
+}
+
+.office-image {
+  align-self: center;
 }
 
 .offices_row {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 475px;
 }
 .officeTitle {
   color: white;
+}
+
+.office-text-container {
+  height: 140px;
 }
 
 .white-text {
@@ -236,12 +260,11 @@
   margin-bottom: 0px;
 }
 
-.full-width-light-blue {
+/* .full-width-light-blue {
   margin: 0 -9999rem;
-  /* add back negative margin value */
   padding: 0.25rem 9999rem;
   background: #ebf9ff;
-}
+} */
 
 .full-width-near-black {
   margin: 0 -9999rem;
@@ -250,12 +273,11 @@
   background: #2b1f31;
 }
 
-.full-width-dark-blue {
+/* .full-width-dark-blue {
   margin: 0 -9999rem;
-  /* add back negative margin value */
   padding: 0.25rem 9999rem;
   background: #1786df;
-}
+} */
 
 .about-partners-columns {
   margin: 0 75px;
@@ -263,4 +285,23 @@
 
 .by-the-numbers-object-image {
   margin-bottom: 15px;
+}
+
+.about-page-counselor-advisor-header {
+  margin-top: 100px;
+}
+
+.about-page-counselor-advisor-footer {
+  margin-bottom: 100px;
+}
+
+.counselor-test {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end !important;
+}
+
+.counselor-advisor-blurb {
+  min-height: 65%;
 }

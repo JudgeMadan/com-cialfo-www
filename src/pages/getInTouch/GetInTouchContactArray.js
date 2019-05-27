@@ -21,6 +21,7 @@ class GetInTouchContactArray extends React.Component {
             <Row className="contactArrayRow secondary_font">
               {contact.fields.header}
             </Row>
+            {/* The <br /> looks weird on local but is needed on staging */}
             <br />
             <Row className="contactArrayRow secondary_font">
               {contact.fields.content}
@@ -30,7 +31,7 @@ class GetInTouchContactArray extends React.Component {
       });
     }
 
-    return <Row className="contactArray">{contactArrayObject}</Row>;
+    return <Row className="contactArray mt-5">{contactArrayObject}</Row>;
   }
 }
 

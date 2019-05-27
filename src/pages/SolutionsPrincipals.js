@@ -7,7 +7,7 @@ import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import SolutionsSubPage from "./solutions/SolutionsSubPage";
 
-class SolutionsPrincipals extends React.Component {
+class SolutionsCounselors extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -30,25 +30,29 @@ class SolutionsPrincipals extends React.Component {
 
   fetchFeatures = () => {
     return this.client.getEntries({
-      content_type: "featuresPage",
+      content_type: "homePageHeaderProductImage",
       locale: this.props.locale
     });
   };
 
   setFeatures = response => {
-    const featureContent = response.items[0].fields;
-    for (let key in featureContent) {
-      if (typeof featureContent[key] === "string") {
+    const solutionsContent = response.items;
+    let filteredSolutionsContent = solutionsContent.filter(
+      solution => solution.fields.pageType === "solutionsPrincipals"
+    );
+    let filteredSolutionsContentFields = filteredSolutionsContent[0].fields;
+    for (let key in filteredSolutionsContentFields) {
+      if (typeof filteredSolutionsContentFields[key] === "string") {
         this.setState({
-          [key]: featureContent[key]
+          [key]: filteredSolutionsContentFields[key]
         });
-      } else if (Array.isArray(featureContent[key])) {
+      } else if (Array.isArray(filteredSolutionsContentFields[key])) {
         this.setState({
-          [key]: featureContent[key]
+          [key]: filteredSolutionsContentFields[key]
         });
       } else {
         this.setState({
-          [key]: featureContent[key].fields.file.url
+          [key]: filteredSolutionsContentFields[key].fields.file.url
         });
       }
     }
@@ -57,10 +61,24 @@ class SolutionsPrincipals extends React.Component {
   render() {
     return (
       <Container className="homePageContainer">
-        <SolutionsSubPage />
+        <SolutionsSubPage
+          locale={this.props.locale}
+          accessToken={this.props.accessToken}
+          space={this.props.space}
+          pageTitle={this.state.homePageHeaderTitle}
+          pageSubtitle={this.state.homePageHeaderBlurb}
+          topRowTitle={this.state.homePageFeaturesSendDocumentTitle}
+          topRowBlurb={this.state.homePageFeaturesSendDocumentBlurb}
+          subFooterImg={this.state.solutionsSubfooterImg}
+          subFooterQuote={this.state.solutionsSubfooterQuote}
+          subFooterQuoteAuthor={this.state.solutionsSubfooterQuoteAuthor}
+          subFooterQuoteCredit={this.state.solutionsSubfooterQuoteAuthorCredit}
+          bottomRowTitle={this.state.homePageFeaturesLeverageTitle}
+          bottomRowBlurb={this.state.homePageFeaturesLeverageBlurb}
+        />
       </Container>
     );
   }
 }
 
-export default SolutionsPrincipals;
+export default SolutionsCounselors;

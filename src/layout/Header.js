@@ -6,6 +6,10 @@ import * as contentful from "contentful";
 import "./Layout/Layout.css";
 import Logo from "../img/Logo.svg";
 import TranslateButton from "./header/TranslateButton";
+import NavItem from "react-bootstrap/NavItem";
+import MediaQuery from "react-responsive";
+import FullScreenHeaderLinks from "./header/FullScreenHeaderLinks";
+import MobileHeaderLinks from "./header/MobileHeaderLinks";
 
 class Header extends React.Component {
   constructor(props) {
@@ -58,53 +62,55 @@ class Header extends React.Component {
           <NavLink to="/" className="navbar-brand">
             <img src={Logo} />
           </NavLink>
+          {/* FULL SCREEN COUNTRY TEXT */}
+          <MediaQuery query="(min-device-width: 1224px)">
+            <NavItem className="blue-header-locale-text">
+              {this.props.spaceName}
+            </NavItem>
+          </MediaQuery>
         </Nav>
+        {/* MOBILE COUNTRY TEXT */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <NavItem className="mobile-blue-header-locale-text">
+            {this.props.spaceName}
+          </NavItem>
+        </MediaQuery>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-          <Nav>
-            {/* <Link className="nav-link" to="/clients">
-              {this.state.clientsPage}
-            </Link> */}
-            <NavLink
-              activeClassName="activeStyle"
-              className="nav-link"
-              to="/features"
-            >
-              {this.state.featuresPage}
-            </NavLink>
-            <NavLink
-              activeClassName="activeStyle"
-              className="nav-link"
-              to="/about"
-            >
-              {this.state.aboutUsPage}
-            </NavLink>
-            {/* <Link className="nav-link" to="/resources">
-              {this.state.resourcesPage}
-            </Link> */}
-            <NavLink
-              activeClassName="activeStyle"
-              className="nav-link"
-              to="/solutions"
-            >
-              {this.state.solutionsPage}
-            </NavLink>
-            {this.props.country_code === "country_code=CN" && (
-              <TranslateButton
-                locale={this.props.locale}
-                space={this.props.space}
-                accessToken={this.props.accessToken}
-                updateLocale={this.updateLocale}
-              />
-            )}
-            <NavLink
-              activeClassName="activeStyle"
-              className="nav-link demo-page-link"
-              to="/demo"
-            >
-              {this.state.demoPage}
-            </NavLink>
-          </Nav>
+          {/* FULL SCREEN NAVBAR */}
+          <MediaQuery query="(min-device-width: 1224px)">
+            <FullScreenHeaderLinks
+              aboutUsPage={this.state.aboutUsPage}
+              clientsPage={this.state.clientsPage}
+              demoPage={this.state.demoPage}
+              featuresPage={this.state.featuresPage}
+              resourcePage={this.state.resourcePage}
+              solutionsPage={this.state.solutionsPage}
+              country_code={this.props.country_code}
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+              updateLocale={this.updateLocale}
+              spaceName={this.props.spaceName}
+            />
+          </MediaQuery>
+          {/* MOBILE NAV BAR */}
+          <MediaQuery query="(max-device-width: 1223px)">
+            <MobileHeaderLinks
+              aboutUsPage={this.state.aboutUsPage}
+              clientsPage={this.state.clientsPage}
+              demoPage={this.state.demoPage}
+              featuresPage={this.state.featuresPage}
+              resourcePage={this.state.resourcePage}
+              solutionsPage={this.state.solutionsPage}
+              country_code={this.props.country_code}
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+              updateLocale={this.updateLocale}
+              spaceName={this.props.spaceName}
+            />
+          </MediaQuery>
         </Navbar.Collapse>
       </Navbar>
     );
