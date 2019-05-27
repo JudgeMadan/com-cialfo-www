@@ -19,10 +19,6 @@
   line-height: 28px;
 }
 
-.aboutPage {
-  /* max-width: 100% !important; */
-}
-
 .aboutPageHeaderText {
   margin-right: 100px;
 }
@@ -129,7 +125,6 @@
   padding-bottom: 150px;
   padding-top: 50px;
   margin-bottom: 10px;
-  /* border: solid red 2px; */
   max-width: 300px;
 }
 
