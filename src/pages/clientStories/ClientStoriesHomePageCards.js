@@ -70,7 +70,7 @@ class ClientStoriesHomePageCards extends React.Component {
       });
     }
 
-    return <Row>{schoolInfoArray}</Row>;
+    return <Row className="center-in-row">{schoolInfoArray}</Row>;
   }
 }
 
