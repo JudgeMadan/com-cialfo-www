@@ -5,6 +5,7 @@ import Line from "../../img/Line.svg";
 import Stroke10 from "../../img/Stroke10.svg";
 import MediaQuery from "react-responsive";
 import * as contentful from "contentful";
+import { withRouter } from "react-router-dom";
 
 class HomeMarquee extends React.Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class HomeMarquee extends React.Component {
   fetchContent = () =>
     this.client.getEntries({
       content_type: "marqueeItem",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
 
   setContent = response => {
@@ -50,11 +51,13 @@ class HomeMarquee extends React.Component {
               locale={this.props.locale}
               accessToken={this.props.accessToken}
               space={this.props.space}
+              spaces={this.props.spaces}
             />
             <HomeMarqueeList
               locale={this.props.locale}
               accessToken={this.props.accessToken}
               space={this.props.space}
+              spaces={this.props.spaces}
             />
           </div>
           <img className="marquee-oval" src={BlueOval} />
@@ -65,4 +68,4 @@ class HomeMarquee extends React.Component {
     );
   }
 }
-export default HomeMarquee;
+export default withRouter(HomeMarquee);

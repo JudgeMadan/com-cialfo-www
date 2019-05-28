@@ -3,6 +3,7 @@ import * as contentful from "contentful";
 import ClientStoriesItem from "./ClientStoriesItem";
 import MobileClientStoriesItem from "./MobileClientStoriesItem";
 import MediaQuery from "react-responsive";
+import { withRouter } from "react-router-dom";
 class ClientStoriesAmericanSchoolInChina extends React.Component {
   constructor(props) {
     super(props);
@@ -27,7 +28,7 @@ class ClientStoriesAmericanSchoolInChina extends React.Component {
   fetchContent = () =>
     this.client.getEntries({
       content_type: "clientStory",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
 
   setContent = response => {
@@ -85,6 +86,7 @@ class ClientStoriesAmericanSchoolInChina extends React.Component {
             locale={this.props.locale}
             space={this.props.space}
             accessToken={this.props.accessToken}
+            spaces={this.props.spaces}
           />
         </MediaQuery>
         {/* MOBILE CLIENT STORY PAGE */}
@@ -112,6 +114,7 @@ class ClientStoriesAmericanSchoolInChina extends React.Component {
             locale={this.props.locale}
             space={this.props.space}
             accessToken={this.props.accessToken}
+            spaces={this.props.spaces}
           />
         </MediaQuery>
       </div>
@@ -119,4 +122,4 @@ class ClientStoriesAmericanSchoolInChina extends React.Component {
   }
 }
 
-export default ClientStoriesAmericanSchoolInChina;
+export default withRouter(ClientStoriesAmericanSchoolInChina);

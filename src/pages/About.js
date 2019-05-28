@@ -16,7 +16,7 @@ import MobileAboutCialfoOffices from "./about/MobileAboutCialfoOffices";
 import MobileAboutByTheNumbers from "./about/MobileAboutByTheNumbers";
 import MediaQuery from "react-responsive";
 import PartnerImages from "./PartnerImages";
-
+import { withRouter } from "react-router-dom";
 import "./about/About.css";
 
 class About extends React.Component {
@@ -25,9 +25,27 @@ class About extends React.Component {
     this.state = {};
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidUpdate(prevProps) {
@@ -43,7 +61,7 @@ class About extends React.Component {
   fetchAboutContent = () =>
     this.client.getEntries({
       content_type: "about",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
 
   setAboutContent = response => {
@@ -339,4 +357,4 @@ class About extends React.Component {
   }
 }
 
-export default About;
+export default withRouter(About);

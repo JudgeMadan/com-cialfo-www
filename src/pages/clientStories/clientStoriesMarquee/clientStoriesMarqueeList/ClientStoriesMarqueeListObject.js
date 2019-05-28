@@ -2,11 +2,22 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class ClientStoriesMarqueeListObject extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      trimmedRoute: ""
+    };
+  }
+
+  componentDidMount() {
+    let route = this.props.route;
+    let trimmedRoute = route.substring(1);
+    this.setState({
+      trimmedRoute: trimmedRoute
+    });
   }
 
   render() {
@@ -20,7 +31,7 @@ class ClientStoriesMarqueeListObject extends React.Component {
             <Col className="client-marquee-object-link-text-col">
               <NavLink
                 className="client-marquee-object-link-nav-link"
-                to={this.props.route}
+                to={this.state.trimmedRoute}
               >
                 <p className="secondary_font client-marquee-object-link-text">
                   Read the story
@@ -38,4 +49,4 @@ class ClientStoriesMarqueeListObject extends React.Component {
     );
   }
 }
-export default ClientStoriesMarqueeListObject;
+export default withRouter(ClientStoriesMarqueeListObject);

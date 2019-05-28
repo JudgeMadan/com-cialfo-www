@@ -10,15 +10,34 @@ import PlaceholderQR from "../img/PlaceholderQR.svg";
 import DownloadLinksObject from "./downloads/DownloadLinksObject";
 import MobileDownloadLinksObject from "./downloads/MobileDownloadLinksObject";
 import MediaQuery from "react-responsive";
+import { withRouter } from "react-router-dom";
 class Downloads extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidMount() {
@@ -39,7 +58,7 @@ class Downloads extends React.Component {
   fetchHomeContent = () =>
     this.client.getEntries({
       content_type: "downloads",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
 
   setHomeContent = response => {
@@ -211,4 +230,4 @@ class Downloads extends React.Component {
   }
 }
 
-export default Downloads;
+export default withRouter(Downloads);

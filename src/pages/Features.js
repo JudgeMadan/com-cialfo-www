@@ -14,15 +14,34 @@ import Oval from "../img/Oval.svg";
 import Line from "../img/Line.svg";
 import LightBlueRectangle from "../img/LightBlueRectangle.svg";
 import MediaQuery from "react-responsive";
+import { withRouter } from "react-router-dom";
 class Features extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidMount() {
@@ -38,7 +57,7 @@ class Features extends React.Component {
   fetchFeatures = () => {
     return this.client.getEntries({
       content_type: "featuresPage",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
   };
 
@@ -62,6 +81,7 @@ class Features extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <Container className="homePageContainer">
         {/* FULL SCREEN TOP ROW */}
@@ -141,7 +161,7 @@ class Features extends React.Component {
                 <Row>
                   <Link
                     className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
-                    to="/features/send"
+                    to={this.props.location.pathname + "/send"}
                   >
                     {this.state.featurePageFeaturesSendDocumentLinkText}
                   </Link>
@@ -171,7 +191,7 @@ class Features extends React.Component {
                 <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
-                    to="/features/send"
+                    to={this.props.location.pathname + "/send"}
                   >
                     {this.state.featurePageFeaturesSendDocumentLinkText}
                   </Link>
@@ -198,7 +218,7 @@ class Features extends React.Component {
                 <Row>
                   <Link
                     className="homeFeatureLink homePageFeaturesLeverageLinkText"
-                    to="/features/research"
+                    to={this.props.location.pathname + "/research"}
                   >
                     {this.state.featurePageFeaturesLeverageLinkText}
                   </Link>
@@ -235,7 +255,7 @@ class Features extends React.Component {
                 <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesLeverageLinkText"
-                    to="/features/research"
+                    to={this.props.location.pathname + "/research"}
                   >
                     {this.state.featurePageFeaturesLeverageLinkText}
                   </Link>
@@ -269,7 +289,7 @@ class Features extends React.Component {
                 <Row>
                   <Link
                     className="homeFeatureLink homePageFeaturesDiscoverLinkText"
-                    to="/features/documents"
+                    to={this.props.location.pathname + "/documents"}
                   >
                     {this.state.featurePageFeaturesDiscoverLinkText}
                   </Link>
@@ -299,7 +319,7 @@ class Features extends React.Component {
                 <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesDiscoverLinkText"
-                    to="/features/documents"
+                    to={this.props.location.pathname + "/documents"}
                   >
                     {this.state.featurePageFeaturesDiscoverLinkText}
                   </Link>
@@ -313,4 +333,4 @@ class Features extends React.Component {
   }
 }
 
-export default Features;
+export default withRouter(Features);

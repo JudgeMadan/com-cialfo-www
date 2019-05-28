@@ -26,10 +26,27 @@ class Home extends React.Component {
     this.state = {};
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    // space: this.props.space,
-    space: this.props.match.params.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidMount() {
@@ -50,7 +67,6 @@ class Home extends React.Component {
   fetchHomeContent = () =>
     this.client.getEntries({
       content_type: "homePageHeaderProductImage",
-      // locale: this.props.locale
       locale: this.props.match.params.locale
     });
 
@@ -80,8 +96,9 @@ class Home extends React.Component {
   };
 
   render() {
-    console.log("locale: " + this.props.match.params.locale);
-    console.log("space: " + this.props.match.params.space);
+    console.log(this.props);
+    // console.log("locale: " + this.props.match.params.locale);
+    // console.log("space: " + this.props.match.params.space);
     return (
       <Container className="homePageContainer">
         {/* FULL SCREEN TOP ROW */}
@@ -167,6 +184,7 @@ class Home extends React.Component {
               locale={this.props.locale}
               accessToken={this.props.accessToken}
               space={this.props.space}
+              spaces={this.props.spaces}
             />
           </div>
         </MediaQuery>

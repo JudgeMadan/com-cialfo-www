@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { NavLink } from "react-router-dom";
 import "../clientStories.css";
+import { withRouter } from "react-router-dom";
 
 class ClientStoriesHomePageCardItem extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class ClientStoriesHomePageCardItem extends React.Component {
         <Row>
           <NavLink
             className="client-marquee-object-link-nav-link"
-            to={this.props.route}
+            to={this.props.match.url + this.props.route}
           >
             <p className="secondary_font client-marquee-object-link-text">
               Read the story
@@ -36,4 +37,4 @@ class ClientStoriesHomePageCardItem extends React.Component {
     );
   }
 }
-export default ClientStoriesHomePageCardItem;
+export default withRouter(ClientStoriesHomePageCardItem);

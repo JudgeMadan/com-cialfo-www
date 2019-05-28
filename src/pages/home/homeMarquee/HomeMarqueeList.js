@@ -1,7 +1,7 @@
 import React from "react";
 import HomeMarqueeListObject from "./homeMarqueeList/HomeMarqueeListObject";
 import * as contentful from "contentful";
-import { LinkExternal } from "@githubprimer/octicons-react";
+import { withRouter } from "react-router-dom";
 
 class HomeMarqueeList extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class HomeMarqueeList extends React.Component {
   fetchAboutContent = () =>
     this.client.getEntries({
       content_type: "marqueeItem",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
 
   setAboutContent = response => {
@@ -59,4 +59,4 @@ class HomeMarqueeList extends React.Component {
     return <div>{marqueeItemArray}</div>;
   }
 }
-export default HomeMarqueeList;
+export default withRouter(HomeMarqueeList);

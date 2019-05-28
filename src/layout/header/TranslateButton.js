@@ -46,19 +46,26 @@ class TranslateButton extends React.Component {
 
   generateUrl = (locale, location) => {
     console.log(location);
-    const ROUTE = "/:locale(zh-CN|en-US)/:path*";
+    // const ROUTE = "/:locale(en|fr)/:path*";
+    const ROUTE = "/:space/:locale/:path*";
+    // const ROUTE = "/:locale(zh-CN|en-US)/:space/:path*";
+
     console.log(ROUTE);
     const definePath = compile(ROUTE);
 
+    // const routeComponents = PathToRegexp(ROUTE).exec("/en/about");
     const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    console.log(routeComponents);
 
     let subPaths = null;
     if (routeComponents && routeComponents[2]) {
       subPaths = routeComponents[2].split("/");
+      console.log(subPaths);
     }
+
     return definePath({
       locale,
-      path: subPaths
+      path: routeComponents
     });
   };
 

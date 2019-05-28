@@ -56,6 +56,7 @@ class Router extends React.Component {
               accessToken={this.props.accessToken}
               getADemoEmail={this.props.getADemoEmail}
               sendEmailAddressToGetADemo={this.props.sendEmailAddressToGetADemo}
+              spaces={this.props.spaces}
             />
           )}
         />
@@ -68,90 +69,124 @@ class Router extends React.Component {
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/clients/american-school-japan"
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
+            "/clients/american-school-japan"
+          }
           render={() => (
             <ClientStoriesAmericanSchoolInJapan
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/clients/american-school-china"
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
+            "/clients/american-school-china"
+          }
           render={() => (
             <ClientStoriesAmericanSchoolInChina
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/features"
+          path={this.props.match.url + ":space" + "/" + ":locale" + "/features"}
           render={() => (
             <Features
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/about"
+          path={this.props.match.url + ":space" + "/" + ":locale" + "/about"}
           render={() => (
             <About
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/features/send"
+          path={
+            this.props.match.url + ":space" + "/" + ":locale" + "/features/send"
+          }
           render={() => (
             <FeaturesSend
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/features/research"
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
+            "/features/research"
+          }
           render={() => (
             <FeaturesResearch
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/features/documents"
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
+            "/features/documents"
+          }
           render={() => (
             <FeaturesDocuments
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
@@ -219,84 +254,115 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
-          path="/solutions"
+          path={
+            this.props.match.url + ":space" + "/" + ":locale" + "/solutions"
+          }
           render={() => (
             <Solutions
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/solutions/counselors"
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
+            "/solutions/counselors"
+          }
           render={() => (
             <SolutionsCounselors
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/solutions/it"
+          path={
+            this.props.match.url + ":space" + "/" + ":locale" + "/solutions/it"
+          }
           render={() => (
             <SolutionsIT
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/solutions/principals"
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
+            "/solutions/principals"
+          }
           render={() => (
             <SolutionsPrincipals
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/solutions/superintendents"
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
+            "/solutions/superintendents"
+          }
           render={() => (
             <SolutionsSuperintendents
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/events"
+          path={this.props.match.url + ":space" + "/" + ":locale" + "/events"}
           render={() => (
             <Events
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/downloads"
+          path={
+            this.props.match.url + ":space" + "/" + ":locale" + "/downloads"
+          }
           render={() => (
             <Downloads
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
@@ -309,42 +375,64 @@ class Router extends React.Component {
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/cialfo-vs-naviance"
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
+            "/cialfo-vs-naviance"
+          }
           render={() => (
             <CialfoVSNaviance
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/cialfo-vs-bridge-u"
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
+            "/cialfo-vs-bridge-u"
+          }
           render={() => (
             <CialfoVSBridgeU
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/cialfo-vs-maia"
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
+            "/cialfo-vs-maia"
+          }
           render={() => (
             <CialfoVSMaia
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
@@ -356,6 +444,7 @@ class Router extends React.Component {
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />

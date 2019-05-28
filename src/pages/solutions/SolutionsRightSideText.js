@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 import "./solutions.css";
+import { withRouter } from "react-router-dom";
 
 class SolutionsRightSideText extends React.Component {
   constructor(props) {
@@ -11,6 +12,8 @@ class SolutionsRightSideText extends React.Component {
   }
 
   render() {
+    console.log(this.props.url);
+
     return (
       <div>
         <Row>
@@ -29,7 +32,10 @@ class SolutionsRightSideText extends React.Component {
                 <p className="secondary_font">{this.props.blurb}</p>
               </Row>
               <Row>
-                <Link className={this.props.linkStyle} to={this.props.url}>
+                <Link
+                  className={this.props.linkStyle}
+                  to={this.props.match.url + this.props.url}
+                >
                   {this.props.link}
                 </Link>
               </Row>
@@ -41,4 +47,4 @@ class SolutionsRightSideText extends React.Component {
   }
 }
 
-export default SolutionsRightSideText;
+export default withRouter(SolutionsRightSideText);

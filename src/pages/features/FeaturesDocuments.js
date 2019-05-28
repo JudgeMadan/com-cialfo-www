@@ -11,6 +11,7 @@ import Oval from "../../img/Oval.svg";
 import Line from "../../img/Line.svg";
 import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 import MediaQuery from "react-responsive";
+import { withRouter } from "react-router-dom";
 
 class FeaturesDocuments extends React.Component {
   constructor(props) {
@@ -18,9 +19,27 @@ class FeaturesDocuments extends React.Component {
     this.state = {};
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidMount() {
@@ -36,7 +55,7 @@ class FeaturesDocuments extends React.Component {
   fetchFeaturesResearchPage = () => {
     return this.client.getEntries({
       content_type: "featuresDocuments",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
   };
 
@@ -243,4 +262,4 @@ class FeaturesDocuments extends React.Component {
     );
   }
 }
-export default FeaturesDocuments;
+export default withRouter(FeaturesDocuments);

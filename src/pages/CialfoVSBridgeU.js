@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import SolutionsSubPage from "./solutions/SolutionsSubPage";
+import { withRouter } from "react-router-dom";
 
 class CialfoVSBridgeU extends React.Component {
   constructor(props) {
@@ -13,9 +14,27 @@ class CialfoVSBridgeU extends React.Component {
     this.state = {};
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidMount() {
@@ -31,7 +50,7 @@ class CialfoVSBridgeU extends React.Component {
   fetchFeatures = () => {
     return this.client.getEntries({
       content_type: "homePageHeaderProductImage",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
   };
 
@@ -81,4 +100,4 @@ class CialfoVSBridgeU extends React.Component {
   }
 }
 
-export default CialfoVSBridgeU;
+export default withRouter(CialfoVSBridgeU);

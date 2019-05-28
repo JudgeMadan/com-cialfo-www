@@ -106,6 +106,7 @@ class ClientStoriesItem extends React.Component {
             locale={this.props.locale}
             space={this.props.space}
             accessToken={this.props.accessToken}
+            spaces={this.props.spaces}
           />
         </Row>
       </Container>

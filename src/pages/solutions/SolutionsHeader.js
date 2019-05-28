@@ -11,7 +11,6 @@ class SolutionsHeader extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="solutions-header">
         <Row className="solutions-title">

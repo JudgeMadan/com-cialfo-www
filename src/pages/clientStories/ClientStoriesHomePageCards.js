@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import ClientStoriesHomePageCardItem from "./clientStoriesHomePageCards/ClientStoriesHomePageCardItem";
 import "./clientStories.css";
+import { withRouter } from "react-router-dom";
 
 class ClientStoriesHomePageCards extends React.Component {
   constructor(props) {
@@ -12,9 +13,27 @@ class ClientStoriesHomePageCards extends React.Component {
     this.state = { schoolInfo: [] };
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidMount() {
@@ -30,7 +49,7 @@ class ClientStoriesHomePageCards extends React.Component {
   fetchContent = () =>
     this.client.getEntries({
       content_type: "clientStory",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
 
   setContent = response => {
@@ -65,6 +84,7 @@ class ClientStoriesHomePageCards extends React.Component {
             logo={schoolItem.logo}
             route={schoolItem.route}
             locale={this.props.locale}
+            spaces={this.props.spaces}
           />
         );
       });
@@ -74,4 +94,4 @@ class ClientStoriesHomePageCards extends React.Component {
   }
 }
 
-export default ClientStoriesHomePageCards;
+export default withRouter(ClientStoriesHomePageCards);
