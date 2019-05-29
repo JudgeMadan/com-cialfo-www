@@ -12,11 +12,18 @@ import "./privacyAndSecurity/privacyAndSecurity.css";
 import { NavLink } from "react-router-dom";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
+import PathToRegexp from "path-to-regexp";
 class Security extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
+  identifyLocale = location => {
+    const ROUTE = "/:space/:locale/:path+";
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    return routeComponents[2];
+  };
 
   setSpace = () => {
     if (this.props.match.params.space === "cn") {
@@ -146,7 +153,7 @@ class Security extends React.Component {
               </p>
             </Row>
             <Row className="center-in-row pb-5 security-content-row-footer">
-              <NavLink to="/contact">
+              <NavLink to="contact">
                 <button className="security-button">
                   {this.state.securityQuestionButtonText}
                 </button>
@@ -154,18 +161,18 @@ class Security extends React.Component {
             </Row>
           </div>
           <Row className="center-in-row pt-5 pb-5">
-            {this.props.locale !== "zh-CN" && (
+            {this.identifyLocale(this.props.location) !== "zh-CN" && (
               <p className="secondary_font">
                 Read more about our{" "}
-                <NavLink to="/privacy">Privacy Policy</NavLink> and&nbsp;
-                <NavLink to="/terms-of-service">Terms of Service</NavLink>
+                <NavLink to="privacy">Privacy Policy</NavLink> and&nbsp;
+                <NavLink to="terms-of-service">Terms of Service</NavLink>
               </p>
             )}
-            {this.props.locale === "zh-CN" && (
+            {this.identifyLocale(this.props.location) === "zh-CN" && (
               <p className="secondary_font">
-                中文中文中文 <NavLink to="/privacy">Privacy Policy</NavLink>{" "}
+                中文中文中文 <NavLink to="privacy">Privacy Policy</NavLink>{" "}
                 and&nbsp;
-                <NavLink to="/terms-of-service">Terms of Service</NavLink>
+                <NavLink to="terms-of-service">Terms of Service</NavLink>
               </p>
             )}
           </Row>
@@ -193,25 +200,25 @@ class Security extends React.Component {
             </p>
           </Row>
           <Row className="center-in-row pb-5 mobile-security-content-button dark-blue-background">
-            <NavLink to="/contact">
+            <NavLink to="contact">
               <button className="security-button">
                 {this.state.securityQuestionButtonText}
               </button>
             </NavLink>
           </Row>
           <Row className="center-in-row mobile-security-read-more pb-5">
-            {this.props.locale !== "zh-CN" && (
+            {this.identifyLocale(this.props.location) !== "zh-CN" && (
               <p className="secondary_font">
                 Read more about our{" "}
-                <NavLink to="/privacy">Privacy Policy</NavLink> and&nbsp;
-                <NavLink to="/terms-of-service">Terms of Service</NavLink>
+                <NavLink to="privacy">Privacy Policy</NavLink> and&nbsp;
+                <NavLink to="terms-of-service">Terms of Service</NavLink>
               </p>
             )}
-            {this.props.locale === "zh-CN" && (
+            {this.identifyLocale(this.props.location) === "zh-CN" && (
               <p className="secondary_font">
-                中文中文中文 <NavLink to="/privacy">Privacy Policy</NavLink>
+                中文中文中文 <NavLink to="privacy">Privacy Policy</NavLink>
                 and&nbsp;
-                <NavLink to="/terms-of-service">Terms of Service</NavLink>
+                <NavLink to="terms-of-service">Terms of Service</NavLink>
               </p>
             )}
           </Row>

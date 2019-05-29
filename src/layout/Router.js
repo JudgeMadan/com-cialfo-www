@@ -26,25 +26,27 @@ import TermsOfService from "../pages/TermsOfService";
 import CialfoVSNaviance from "../pages/CialfoVSNaviance";
 import CialfoVSBridgeU from "../pages/CialfoVSBridgeU";
 import CialfoVSMaia from "../pages/CialfoVSMaia";
+import Redirect from "../pages/Redirect";
 import { withRouter } from "react-router-dom";
 
 class Router extends React.Component {
   render() {
     return (
       <Switch>
-        {/* <Route
+        <Route
           exact
           path="/"
           render={() => (
-            <Home
+            <Redirect
               locale={this.props.locale}
               space={this.props.space}
+              spaceName={this.props.spaceName}
               accessToken={this.props.accessToken}
               getADemoEmail={this.props.getADemoEmail}
               sendEmailAddressToGetADemo={this.props.sendEmailAddressToGetADemo}
             />
           )}
-        /> */}
+        />
         <Route
           exact
           path={this.props.match.url + ":space" + "/" + ":locale"}

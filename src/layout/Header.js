@@ -25,13 +25,18 @@ class Header extends React.Component {
   generateLocale = location => {
     const ROUTE = "/:space/:locale/:path*";
     const routeComponents = PathToRegexp(ROUTE).exec(location);
-    return routeComponents[2];
+    // return routeComponents[2];
+    if (routeComponents) {
+      return routeComponents[2];
+    } else return;
   };
 
   generateSpace = location => {
     const ROUTE = "/:space/:locale/:path*";
     const routeComponents = PathToRegexp(ROUTE).exec(location);
-    return routeComponents[1];
+    if (routeComponents) {
+      return routeComponents[1];
+    } else return;
   };
 
   setSpace = () => {
@@ -40,7 +45,7 @@ class Header extends React.Component {
     }
     if (this.generateSpace(this.props.location.pathname) === "intl") {
       return this.props.spaces.intl.space;
-    }
+    } else return "12345";
   };
 
   setAccessToken = () => {
@@ -49,7 +54,7 @@ class Header extends React.Component {
     }
     if (this.generateSpace(this.props.location.pathname) === "intl") {
       return this.props.spaces.intl.accessToken;
-    }
+    } else return "12345";
   };
 
   client = contentful.createClient({
@@ -83,7 +88,7 @@ class Header extends React.Component {
   }
 
   render() {
-    console.log(this.props.match.params.locale);
+    console.log(this.props.location.pathname);
     return (
       <Navbar
         className="justify-content-between header"
@@ -95,19 +100,7 @@ class Header extends React.Component {
           <NavLink to="/" className="navbar-brand">
             <img src={Logo} />
           </NavLink>
-          {/* FULL SCREEN COUNTRY TEXT */}
-          <MediaQuery query="(min-device-width: 1224px)">
-            <NavItem className="blue-header-locale-text">
-              {this.props.spaceName}
-            </NavItem>
-          </MediaQuery>
         </Nav>
-        {/* MOBILE COUNTRY TEXT */}
-        <MediaQuery query="(max-device-width: 1223px)">
-          <NavItem className="mobile-blue-header-locale-text">
-            {this.props.spaceName}
-          </NavItem>
-        </MediaQuery>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           {/* FULL SCREEN NAVBAR */}

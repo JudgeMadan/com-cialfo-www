@@ -1,13 +1,9 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { NavLink } from "react-router-dom";
-import * as contentful from "contentful";
 import "../Layout/Layout.css";
-import Logo from "../../img/Logo.svg";
 import TranslateButton from "./TranslateButton";
-import NavItem from "react-bootstrap/NavItem";
-import MediaQuery from "react-responsive";
+import PathToRegexp from "path-to-regexp";
 import { withRouter } from "react-router-dom";
 
 class FullScreenHeaderLinks extends React.Component {
@@ -19,13 +15,22 @@ class FullScreenHeaderLinks extends React.Component {
     this.props.updateLocale(locale);
   };
 
+  identifySpace = location => {
+    const ROUTE = "/:space/:locale/:path+";
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    if (routeComponents) {
+      return routeComponents[1];
+    } else return;
+  };
+
   render() {
+    console.log(this.props.location.pathname);
     return (
       <Nav>
         <NavLink
           activeClassName="activeStyle"
           className="nav-link"
-          to="/clients"
+          to="clients"
         >
           {this.props.clientsPage}
         </NavLink>
@@ -33,24 +38,21 @@ class FullScreenHeaderLinks extends React.Component {
         <NavLink
           activeClassName="activeStyle"
           className="nav-link"
-          to="/features"
+          to="features"
         >
           {this.props.featuresPage}
         </NavLink>
         <NavLink activeClassName="activeStyle" className="nav-link" to="/about">
           {this.props.aboutUsPage}
         </NavLink>
-        {/* <Link className="nav-link" to="/resources">
-              {this.state.resourcesPage}
-            </Link> */}
         <NavLink
           activeClassName="activeStyle"
           className="nav-link"
-          to="/solutions"
+          to="solutions"
         >
           {this.props.solutionsPage}
         </NavLink>
-        {this.props.country_code === "country_code=CN" && (
+        {this.identifySpace(this.props.location) === "cn" && (
           <TranslateButton
             locale={this.props.locale}
             space={this.props.space}
@@ -61,7 +63,7 @@ class FullScreenHeaderLinks extends React.Component {
         <NavLink
           activeClassName="activeStyle"
           className="nav-link demo-page-link"
-          to="/demo"
+          to="demo"
         >
           {this.props.demoPage}
         </NavLink>

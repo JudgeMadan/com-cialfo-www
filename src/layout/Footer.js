@@ -98,7 +98,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/features"
+                          to="features"
                         >
                           {this.state.whyCialfo}
                         </NavLink>
@@ -106,7 +106,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/solutions/principals"
+                          to="solutions/principals"
                         >
                           {this.state.forPrincipals}
                         </NavLink>
@@ -114,7 +114,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/solutions/counselors"
+                          to="solutions/counselors"
                         >
                           {this.state.forCounselors}
                         </NavLink>
@@ -122,7 +122,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/solutions/it"
+                          to="solutions/it"
                         >
                           {this.state.forItTeams}
                         </NavLink>
@@ -130,7 +130,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/solutions/superintendents"
+                          to="solutions/superintendents"
                         >
                           {this.state.forSuperintendents}
                         </NavLink>
@@ -138,7 +138,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/cialfo-vs-bridge-u"
+                          to="cialfo-vs-bridge-u"
                         >
                           {this.state.cialfoVsBridgeU}
                         </NavLink>
@@ -146,7 +146,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/cialfo-vs-naviance"
+                          to="cialfo-vs-naviance"
                         >
                           {this.state.cialfoVsNaviance}
                         </NavLink>
@@ -154,7 +154,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/cialfo-vs-maia"
+                          to="cialfo-vs-maia"
                         >
                           {this.state.cialfoVsMaia}
                         </NavLink>
@@ -180,7 +180,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/events"
+                          to="events"
                         >
                           {this.state.events}
                         </NavLink>
@@ -200,7 +200,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/about"
+                          to="about"
                         >
                           {this.state.aboutUs}
                         </NavLink>
@@ -247,7 +247,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/features"
+                          to="features"
                         >
                           {this.state.whyCialfo}
                         </NavLink>
@@ -255,7 +255,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/solutions/principals"
+                          to="solutions/principals"
                         >
                           {this.state.forPrincipals}
                         </NavLink>
@@ -263,7 +263,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/solutions/counselors"
+                          to="solutions/counselors"
                         >
                           {this.state.forCounselors}
                         </NavLink>
@@ -271,7 +271,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/solutions/it"
+                          to="solutions/it"
                         >
                           {this.state.forItTeams}
                         </NavLink>
@@ -279,7 +279,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/solutions/superintendents"
+                          to="solutions/superintendents"
                         >
                           {this.state.forSuperintendents}
                         </NavLink>
@@ -287,7 +287,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/cialfo-vs-bridge-u"
+                          to="cialfo-vs-bridge-u"
                         >
                           {this.state.cialfoVsBridgeU}
                         </NavLink>
@@ -295,7 +295,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/cialfo-vs-naviance"
+                          to="cialfo-vs-naviance"
                         >
                           {this.state.cialfoVsNaviance}
                         </NavLink>
@@ -303,7 +303,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/cialfo-vs-maia"
+                          to="cialfo-vs-maia"
                         >
                           {this.state.cialfoVsMaia}
                         </NavLink>
@@ -329,7 +329,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/events"
+                          to="events"
                         >
                           {this.state.events}
                         </NavLink>
@@ -349,7 +349,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="/about"
+                          to="about"
                         >
                           {this.state.aboutUs}
                         </NavLink>

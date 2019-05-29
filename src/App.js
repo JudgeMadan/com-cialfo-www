@@ -13,13 +13,13 @@ class App extends Component {
         space: "1acwuo4zy8aa",
         accessToken:
           "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2",
-        spaceName: "中国"
+        spaceName: "china"
       },
       internationalSpace: {
         space: "qlwyndleu3of",
         accessToken:
           "2eb1abe530767fecfa2bbc4505a44fb7a4a205df1275e863807c2d9c4470e1fe",
-        spaceName: "Intl"
+        spaceName: "intl"
       },
       spaces: {
         cn: {
@@ -108,19 +108,19 @@ class App extends Component {
           />
           <Router
             // locale={this.state.locale}
-            // space={this.state.space}
+            spaceName={this.state.spaceName}
             // accessToken={this.state.accessToken}
             getADemoEmail={this.state.getADemoEmail}
             sendEmailAddressToGetADemo={this.sendEmailAddressToGetADemo}
             spaces={this.state.spaces}
           />
-          <Footer
+          {/* <Footer
             locale={this.state.locale}
             space={this.state.space}
             accessToken={this.state.accessToken}
             spaceName={this.state.spaceName}
             spaces={this.state.spaces}
-          />
+          /> */}
         </div>
       );
     } else {
