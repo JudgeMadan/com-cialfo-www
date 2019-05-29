@@ -11,15 +11,34 @@ import Oval from "../img/Oval.svg";
 import "./privacyAndSecurity/privacyAndSecurity.css";
 import { NavLink } from "react-router-dom";
 import MediaQuery from "react-responsive";
+import { withRouter } from "react-router-dom";
 class Security extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidMount() {
@@ -27,7 +46,7 @@ class Security extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.match.params.locale !== this.props.match.params.locale) {
       this.fetchHomeContent().then(this.setHomeContent);
     }
   }
@@ -40,7 +59,7 @@ class Security extends React.Component {
   fetchHomeContent = () =>
     this.client.getEntries({
       content_type: "securityPage",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
 
   setHomeContent = response => {
@@ -202,4 +221,4 @@ class Security extends React.Component {
   }
 }
 
-export default Security;
+export default withRouter(Security);

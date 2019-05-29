@@ -48,14 +48,14 @@ class FullScreenHeaderLinks extends React.Component {
         >
           {this.props.solutionsPage}
         </NavLink>
-        {this.props.country_code === "country_code=CN" && (
+        {/* {this.props.country_code === "country_code=CN" && (
           <MobileTranslateButton
             locale={this.props.locale}
             space={this.props.space}
             accessToken={this.props.accessToken}
             updateLocale={this.updateLocale}
           />
-        )}
+        )} */}
         <NavLink
           activeClassName="mobile-activeStyle"
           className="mobile-nav-link demo-page-link"

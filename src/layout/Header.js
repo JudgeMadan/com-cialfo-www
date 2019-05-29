@@ -10,6 +10,8 @@ import NavItem from "react-bootstrap/NavItem";
 import MediaQuery from "react-responsive";
 import FullScreenHeaderLinks from "./header/FullScreenHeaderLinks";
 import MobileHeaderLinks from "./header/MobileHeaderLinks";
+import PathToRegexp from "path-to-regexp";
+import { withRouter } from "react-router-dom";
 
 class Header extends React.Component {
   constructor(props) {
@@ -20,15 +22,45 @@ class Header extends React.Component {
     this.props.updateLocale(locale);
   };
 
+  generateLocale = location => {
+    const ROUTE = "/:space/:locale/:path*";
+    const routeComponents = PathToRegexp(ROUTE).exec(location);
+    return routeComponents[2];
+  };
+
+  generateSpace = location => {
+    const ROUTE = "/:space/:locale/:path*";
+    const routeComponents = PathToRegexp(ROUTE).exec(location);
+    return routeComponents[1];
+  };
+
+  setSpace = () => {
+    if (this.generateSpace(this.props.location.pathname) === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.generateSpace(this.props.location.pathname) === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.generateSpace(this.props.location.pathname) === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.generateSpace(this.props.location.pathname) === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   fetchNavBar = () =>
     this.client.getEntries({
       content_type: "navBar",
-      locale: this.props.locale
+      locale: this.generateLocale(this.props.location.pathname)
     });
 
   setNavBar = response => {
@@ -45,12 +77,13 @@ class Header extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.location.pathname !== this.props.location.pathname) {
       this.fetchNavBar().then(this.setNavBar);
     }
   }
 
   render() {
+    console.log(this.props.match.params.locale);
     return (
       <Navbar
         className="justify-content-between header"
@@ -92,6 +125,7 @@ class Header extends React.Component {
               accessToken={this.props.accessToken}
               updateLocale={this.updateLocale}
               spaceName={this.props.spaceName}
+              spaces={this.props.spaces}
             />
           </MediaQuery>
           {/* MOBILE NAV BAR */}
@@ -109,6 +143,7 @@ class Header extends React.Component {
               accessToken={this.props.accessToken}
               updateLocale={this.updateLocale}
               spaceName={this.props.spaceName}
+              spaces={this.props.spaces}
             />
           </MediaQuery>
         </Navbar.Collapse>
@@ -117,4 +152,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);

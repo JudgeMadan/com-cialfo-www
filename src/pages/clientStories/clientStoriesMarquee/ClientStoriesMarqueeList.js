@@ -40,7 +40,7 @@ class ClientStoriesMarqueeList extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.match.params.locale !== this.props.match.params.locale) {
       this.fetchContent().then(this.setContent);
     }
   }

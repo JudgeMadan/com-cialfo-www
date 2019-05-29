@@ -4,6 +4,7 @@ import "./getADemo/GetADemo.css";
 import "./privacyAndSecurity/privacyAndSecurity.css";
 import * as contentful from "contentful";
 import Container from "react-bootstrap/Container";
+import { withRouter } from "react-router-dom";
 
 class TermsOfService extends React.Component {
   constructor(props) {
@@ -11,9 +12,27 @@ class TermsOfService extends React.Component {
     this.state = {};
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidMount() {
@@ -21,7 +40,7 @@ class TermsOfService extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.match.params.locale !== this.props.match.params.locale) {
       this.fetchGetADemo().then(this.setGetADemo);
     }
   }
@@ -29,7 +48,7 @@ class TermsOfService extends React.Component {
   fetchGetADemo = () => {
     return this.client.getEntries({
       content_type: "privacyAndSecurity",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
   };
 
@@ -300,4 +319,4 @@ class TermsOfService extends React.Component {
   }
 }
 
-export default TermsOfService;
+export default withRouter(TermsOfService);

@@ -107,9 +107,9 @@ class App extends Component {
             spaces={this.state.spaces}
           />
           <Router
-            locale={this.state.locale}
-            space={this.state.space}
-            accessToken={this.state.accessToken}
+            // locale={this.state.locale}
+            // space={this.state.space}
+            // accessToken={this.state.accessToken}
             getADemoEmail={this.state.getADemoEmail}
             sendEmailAddressToGetADemo={this.sendEmailAddressToGetADemo}
             spaces={this.state.spaces}

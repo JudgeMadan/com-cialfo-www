@@ -51,7 +51,7 @@ class Solutions extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.match.params.locale !== this.props.match.params.locale) {
       this.fetchFeatures().then(this.setFeatures);
     }
   }

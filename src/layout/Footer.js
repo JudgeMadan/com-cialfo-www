@@ -10,21 +10,53 @@ import { Link } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup";
 import "./Layout/Layout.css";
 import MediaQuery from "react-responsive";
+import PathToRegexp from "path-to-regexp";
+import { withRouter } from "react-router-dom";
 class Footer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
+  generateLocale = location => {
+    const ROUTE = "/:space/:locale/:path*";
+    const routeComponents = PathToRegexp(ROUTE).exec(location);
+    return routeComponents[2];
+  };
+
+  generateSpace = location => {
+    const ROUTE = "/:space/:locale/:path*";
+    const routeComponents = PathToRegexp(ROUTE).exec(location);
+    return routeComponents[1];
+  };
+
+  setSpace = () => {
+    if (this.generateSpace(this.props.location.pathname) === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.generateSpace(this.props.location.pathname) === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.generateSpace(this.props.location.pathname) === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.generateSpace(this.props.location.pathname) === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   fetchNavBar = () =>
     this.client.getEntries({
       content_type: "footer",
-      locale: this.props.locale
+      locale: this.generateLocale(this.props.location.pathname)
     });
 
   setNavBar = response => {
@@ -41,7 +73,7 @@ class Footer extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.location.pathname !== this.props.location.pathname) {
       this.fetchNavBar().then(this.setNavBar);
     }
   }
@@ -343,4 +375,4 @@ class Footer extends React.Component {
   }
 }
 
-export default Footer;
+export default withRouter(Footer);

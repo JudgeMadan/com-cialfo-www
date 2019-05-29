@@ -49,7 +49,7 @@ class Features extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.match.params.locale !== this.props.match.params.locale) {
       this.fetchFeatures().then(this.setFeatures);
     }
   }
@@ -111,6 +111,7 @@ class Features extends React.Component {
               locale={this.props.locale}
               accessToken={this.props.accessToken}
               space={this.props.space}
+              spaces={this.props.spaces}
             />
           </Row>
         </MediaQuery>

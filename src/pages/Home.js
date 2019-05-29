@@ -54,7 +54,7 @@ class Home extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.match.params.locale !== this.props.match.params.locale) {
       this.fetchHomeContent().then(this.setHomeContent);
     }
   }
@@ -96,9 +96,6 @@ class Home extends React.Component {
   };
 
   render() {
-    console.log(this.props);
-    // console.log("locale: " + this.props.match.params.locale);
-    // console.log("space: " + this.props.match.params.space);
     return (
       <Container className="homePageContainer">
         {/* FULL SCREEN TOP ROW */}

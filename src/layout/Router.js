@@ -30,7 +30,6 @@ import { withRouter } from "react-router-dom";
 
 class Router extends React.Component {
   render() {
-    console.log(this.props.match);
     return (
       <Switch>
         {/* <Route
@@ -117,9 +116,9 @@ class Router extends React.Component {
           path={this.props.match.url + ":space" + "/" + ":locale" + "/features"}
           render={() => (
             <Features
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
+              // locale={this.props.locale}
+              // space={this.props.space}
+              // accessToken={this.props.accessToken}
               spaces={this.props.spaces}
             />
           )}
@@ -193,61 +192,69 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
-          path="/demo"
+          path={this.props.match.url + ":space" + "/" + ":locale" + "/demo"}
           render={() => (
             <GetADemo
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
               getADemoEmail={this.props.getADemoEmail}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/contact"
+          path={this.props.match.url + ":space" + "/" + ":locale" + "/contact"}
           render={() => (
             <GetInTouch
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              path={this.props.match.url + ":space" + "/" + ":locale" + "/demo"}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/privacy"
+          path={this.props.match.url + ":space" + "/" + ":locale" + "/privacy"}
           render={() => (
             <Privacy
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/security"
+          path={this.props.match.url + ":space" + "/" + ":locale" + "/security"}
           render={() => (
             <Security
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
         <Route
           locale={this.props.locale}
           exact
-          path="/thank-you"
+          path={
+            this.props.match.url + ":space" + "/" + ":locale" + "/thank-you"
+          }
           render={() => (
             <ThankYou
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           )}
         />
@@ -369,7 +376,13 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
-          path="/terms-of-service"
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
+            "/terms-of-service"
+          }
           render={() => (
             <TermsOfService
               locale={this.props.locale}

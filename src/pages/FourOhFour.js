@@ -7,6 +7,7 @@ import * as contentful from "contentful";
 import FourOhFourImg from "../img/404.svg";
 import GrayLines from "../img/GrayLines.svg";
 import MediaQuery from "react-responsive";
+import { withRouter } from "react-router-dom";
 
 class FourOhFour extends React.Component {
   constructor(props) {
@@ -14,9 +15,31 @@ class FourOhFour extends React.Component {
     this.state = {};
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    } else {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    } else {
+      return this.props.spaces.intl.space;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidMount() {
@@ -24,7 +47,7 @@ class FourOhFour extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.match.params.locale !== this.props.match.params.locale) {
       this.fetchGetADemo().then(this.setGetADemo);
     }
   }
@@ -32,7 +55,7 @@ class FourOhFour extends React.Component {
   fetchGetADemo = () => {
     return this.client.getEntries({
       content_type: "fourOhFour",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
   };
 
@@ -100,4 +123,4 @@ class FourOhFour extends React.Component {
   }
 }
 
-export default FourOhFour;
+export default withRouter(FourOhFour);

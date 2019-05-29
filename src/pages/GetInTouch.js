@@ -9,6 +9,7 @@ import GetInTouchContactArray from "./getInTouch/GetInTouchContactArray";
 import MobileGetInTouchContactArray from "./getInTouch/MobileGetInTouchContactArray";
 import GrayLines from "../img/GrayLines.svg";
 import MediaQuery from "react-responsive";
+import { withRouter } from "react-router-dom";
 
 class GetInTouch extends React.Component {
   constructor(props) {
@@ -23,9 +24,27 @@ class GetInTouch extends React.Component {
     };
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidMount() {
@@ -33,7 +52,7 @@ class GetInTouch extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.match.params.locale !== this.props.match.params.locale) {
       this.fetchGetADemo().then(this.setGetADemo);
     }
   }
@@ -41,12 +60,11 @@ class GetInTouch extends React.Component {
   fetchGetADemo = () => {
     return this.client.getEntries({
       content_type: "getInTouch",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
   };
 
   setGetADemo = response => {
-    // console.log(response);
     const sendingPageContent = response.items[0].fields;
     for (let key in sendingPageContent) {
       if (typeof sendingPageContent[key] === "string") {
@@ -331,4 +349,4 @@ class GetInTouch extends React.Component {
   }
 }
 
-export default GetInTouch;
+export default withRouter(GetInTouch);
