@@ -45,7 +45,7 @@ class Footer extends React.Component {
       if (this.props.spaceName === "china") {
         return this.props.spaces.cn.space;
       } else if (this.props.spaceName === "intl") {
-        return this.props.spaces.intl.intl;
+        return this.props.spaces.intl.space;
       }
     }
   };
@@ -106,9 +106,9 @@ class Footer extends React.Component {
     }
   };
 
-  // componentDidMount() {
-  //   this.fetchNavBar().then(this.setNavBar);
-  // }
+  componentDidMount() {
+    this.fetchNavBar().then(this.setNavBar);
+  }
 
   componentDidUpdate(prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
