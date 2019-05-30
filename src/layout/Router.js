@@ -83,7 +83,7 @@ class Router extends React.Component {
             ":space" +
             "/" +
             ":locale" +
-            "/clients/american-school-japan"
+            "/clients-american-school-japan"
           }
           render={() => (
             <ClientStoriesAmericanSchoolInJapan
@@ -102,7 +102,7 @@ class Router extends React.Component {
             ":space" +
             "/" +
             ":locale" +
-            "/clients/american-school-china"
+            "/clients-american-school-china"
           }
           render={() => (
             <ClientStoriesAmericanSchoolInChina
