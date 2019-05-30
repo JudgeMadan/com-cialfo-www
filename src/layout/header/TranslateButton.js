@@ -13,28 +13,34 @@ class TranslateButton extends React.Component {
   };
 
   identifyLocale = location => {
-    const ROUTE = "/:space/:locale/:path+";
+    const ROUTE = "/:space/:locale/:path*";
     const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
     return routeComponents[2];
   };
 
   generateUrl = (locale, location) => {
-    const ROUTE = "/:space/:locale/:path+";
+    const ROUTE = "/:space/:locale/:path*";
     const definePath = compile(ROUTE);
     const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
     let subPaths = null;
     if (routeComponents && routeComponents[3]) {
       subPaths = routeComponents[3].split("/");
+      return definePath({
+        space: routeComponents[1],
+        locale: locale,
+        path: subPaths
+      });
+    } else if (routeComponents && routeComponents[3] == undefined) {
+      return definePath({
+        space: routeComponents[1],
+        locale: locale,
+        path: "a"
+      });
     }
-    return definePath({
-      space: routeComponents[1],
-      locale: locale,
-      path: subPaths
-    });
   };
 
   componentDidMount() {
-    this.identifyLocale(this.props.location);
+    this.generateUrl("zh-CN", this.props.location);
   }
 
   render() {

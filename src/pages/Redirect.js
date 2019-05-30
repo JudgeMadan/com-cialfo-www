@@ -10,10 +10,10 @@ class Redirect extends React.Component {
 
   redirect = () => {
     if (this.props.spaceName == "china") {
-      this.props.history.push("/cn/en-US/");
+      this.props.history.push("/cn/en-US/home");
     }
     if (this.props.spaceName === "intl") {
-      this.props.history.push("/intl/en-US/");
+      this.props.history.push("/intl/en-US/home");
     }
   };
 

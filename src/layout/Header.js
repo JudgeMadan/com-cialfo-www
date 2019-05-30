@@ -39,34 +39,67 @@ class Header extends React.Component {
     } else return;
   };
 
+  // setSpace = () => {
+  //   if (this.generateSpace(this.props.location.pathname) === "cn") {
+  //     return this.props.spaces.cn.space;
+  //   }
+  //   if (this.generateSpace(this.props.location.pathname) === "intl") {
+  //     return this.props.spaces.intl.space;
+  //   } else return "12345";
+  // };
+
+  // setAccessToken = () => {
+  //   if (this.generateSpace(this.props.location.pathname) === "cn") {
+  //     return this.props.spaces.cn.accessToken;
+  //   }
+  //   if (this.generateSpace(this.props.location.pathname) === "intl") {
+  //     return this.props.spaces.intl.accessToken;
+  //   } else return "12345";
+  // };
+
   setSpace = () => {
-    if (this.generateSpace(this.props.location.pathname) === "cn") {
-      return this.props.spaces.cn.space;
+    if (this.generateSpace(this.props.location.pathname)) {
+      if (this.generateSpace(this.props.location.pathname) === "cn") {
+        return this.props.spaces.cn.space;
+      } else if (this.generateSpace(this.props.location.pathname) === "intl") {
+        return this.props.spaces.intl.space;
+      }
+    } else {
+      if (this.props.spaceName === "china") {
+        return this.props.spaces.cn.space;
+      } else if (this.props.spaceName === "intl") {
+        return this.props.spaces.intl.intl;
+      }
     }
-    if (this.generateSpace(this.props.location.pathname) === "intl") {
-      return this.props.spaces.intl.space;
-    } else return "12345";
   };
 
   setAccessToken = () => {
-    if (this.generateSpace(this.props.location.pathname) === "cn") {
-      return this.props.spaces.cn.accessToken;
+    if (this.generateSpace(this.props.location.pathname)) {
+      if (this.generateSpace(this.props.location.pathname) === "cn") {
+        return this.props.spaces.cn.accessToken;
+      }
+      if (this.generateSpace(this.props.location.pathname) === "intl") {
+        return this.props.spaces.intl.accessToken;
+      }
+    } else {
+      if (this.props.spaceName === "china") {
+        return this.props.spaces.cn.accessToken;
+      } else if (this.props.spaceName === "intl") {
+        return this.props.spaces.intl.accessToken;
+      }
     }
-    if (this.generateSpace(this.props.location.pathname) === "intl") {
-      return this.props.spaces.intl.accessToken;
-    } else return "12345";
   };
 
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken()
-  });
-
   fetchNavBar = () =>
-    this.client.getEntries({
-      content_type: "navBar",
-      locale: this.generateLocale(this.props.location.pathname)
-    });
+    contentful
+      .createClient({
+        space: this.setSpace(),
+        accessToken: this.setAccessToken()
+      })
+      .getEntries({
+        content_type: "navBar",
+        locale: this.generateLocale(this.props.location.pathname)
+      });
 
   setNavBar = response => {
     const navBarContent = response.items[0].fields;
@@ -88,7 +121,6 @@ class Header extends React.Component {
   }
 
   render() {
-    console.log(this.props.location.pathname);
     return (
       <Navbar
         className="justify-content-between header"

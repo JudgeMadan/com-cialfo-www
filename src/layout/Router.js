@@ -27,6 +27,7 @@ import CialfoVSNaviance from "../pages/CialfoVSNaviance";
 import CialfoVSBridgeU from "../pages/CialfoVSBridgeU";
 import CialfoVSMaia from "../pages/CialfoVSMaia";
 import Redirect from "../pages/Redirect";
+import FourOhFourRedirect from "../pages/FourOhFourRedirect";
 import { withRouter } from "react-router-dom";
 
 class Router extends React.Component {
@@ -49,7 +50,7 @@ class Router extends React.Component {
         />
         <Route
           exact
-          path={this.props.match.url + ":space" + "/" + ":locale"}
+          path={this.props.match.url + ":space" + "/" + ":locale" + "/home"}
           render={() => (
             <Home
               locale={this.props.locale}
@@ -454,12 +455,24 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
+          path={this.props.match.url + ":space" + "/" + ":locale" + "/404"}
           render={() => (
             <FourOhFour
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
               spaces={this.props.spaces}
+            />
+          )}
+        />
+        <Route
+          exact
+          render={() => (
+            <FourOhFourRedirect
+              locale={this.props.locale}
+              space={this.props.space}
+              spaceName={this.props.spaceName}
+              accessToken={this.props.accessToken}
             />
           )}
         />

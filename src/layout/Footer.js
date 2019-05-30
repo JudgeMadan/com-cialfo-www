@@ -21,43 +21,91 @@ class Footer extends React.Component {
   generateLocale = location => {
     const ROUTE = "/:space/:locale/:path*";
     const routeComponents = PathToRegexp(ROUTE).exec(location);
-    return routeComponents[2];
+    if (routeComponents) {
+      return routeComponents[2];
+    } else return;
   };
 
   generateSpace = location => {
     const ROUTE = "/:space/:locale/:path*";
     const routeComponents = PathToRegexp(ROUTE).exec(location);
-    return routeComponents[1];
+    if (routeComponents) {
+      return routeComponents[1];
+    } else return;
   };
 
+  // setSpace = () => {
+  //   if (this.generateSpace(this.props.location.pathname) === "cn") {
+  //     return this.props.spaces.cn.space;
+  //   }
+  //   if (this.generateSpace(this.props.location.pathname) === "intl") {
+  //     return this.props.spaces.intl.space;
+  //   }
+  // };
+
+  // setAccessToken = () => {
+  //   if (this.generateSpace(this.props.location.pathname) === "cn") {
+  //     return this.props.spaces.cn.accessToken;
+  //   }
+  //   if (this.generateSpace(this.props.location.pathname) === "intl") {
+  //     return this.props.spaces.intl.accessToken;
+  //   }
+  // };
+
   setSpace = () => {
-    if (this.generateSpace(this.props.location.pathname) === "cn") {
-      return this.props.spaces.cn.space;
-    }
-    if (this.generateSpace(this.props.location.pathname) === "intl") {
-      return this.props.spaces.intl.space;
+    if (this.generateSpace(this.props.location.pathname)) {
+      if (this.generateSpace(this.props.location.pathname) === "cn") {
+        return this.props.spaces.cn.space;
+      } else if (this.generateSpace(this.props.location.pathname) === "intl") {
+        return this.props.spaces.intl.space;
+      }
+    } else {
+      if (this.props.spaceName === "china") {
+        return this.props.spaces.cn.space;
+      } else if (this.props.spaceName === "intl") {
+        return this.props.spaces.intl.intl;
+      }
     }
   };
 
   setAccessToken = () => {
-    if (this.generateSpace(this.props.location.pathname) === "cn") {
-      return this.props.spaces.cn.accessToken;
-    }
-    if (this.generateSpace(this.props.location.pathname) === "intl") {
-      return this.props.spaces.intl.accessToken;
+    if (this.generateSpace(this.props.location.pathname)) {
+      if (this.generateSpace(this.props.location.pathname) === "cn") {
+        return this.props.spaces.cn.accessToken;
+      }
+      if (this.generateSpace(this.props.location.pathname) === "intl") {
+        return this.props.spaces.intl.accessToken;
+      }
+    } else {
+      if (this.props.spaceName === "china") {
+        return this.props.spaces.cn.accessToken;
+      } else if (this.props.spaceName === "intl") {
+        return this.props.spaces.intl.accessToken;
+      }
     }
   };
 
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken()
-  });
+  // client = contentful.createClient({
+  //   space: this.setSpace(),
+  //   accessToken: this.setAccessToken()
+  // });
+
+  // fetchNavBar = () =>
+  //   this.client.getEntries({
+  //     content_type: "footer",
+  //     locale: this.generateLocale(this.props.location.pathname)
+  //   });
 
   fetchNavBar = () =>
-    this.client.getEntries({
-      content_type: "footer",
-      locale: this.generateLocale(this.props.location.pathname)
-    });
+    contentful
+      .createClient({
+        space: this.setSpace(),
+        accessToken: this.setAccessToken()
+      })
+      .getEntries({
+        content_type: "footer",
+        locale: this.generateLocale(this.props.location.pathname)
+      });
 
   setNavBar = response => {
     const footerContent = response.items[0].fields;

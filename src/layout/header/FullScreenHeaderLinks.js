@@ -16,15 +16,26 @@ class FullScreenHeaderLinks extends React.Component {
   };
 
   identifySpace = location => {
-    const ROUTE = "/:space/:locale/:path+";
+    const ROUTE = "/:space/:locale/:path*";
     const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
     if (routeComponents) {
       return routeComponents[1];
-    } else return;
+    } else return "hey";
   };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.location !== this.props.location) {
+      this.setState({
+        space: this.identifySpace(this.props.location)
+      });
+    }
+  }
+
+  componentDidMount() {
+    this.identifySpace(this.props.location);
+  }
+
   render() {
-    console.log(this.props.location.pathname);
     return (
       <Nav>
         <NavLink
@@ -42,7 +53,7 @@ class FullScreenHeaderLinks extends React.Component {
         >
           {this.props.featuresPage}
         </NavLink>
-        <NavLink activeClassName="activeStyle" className="nav-link" to="/about">
+        <NavLink activeClassName="activeStyle" className="nav-link" to="about">
           {this.props.aboutUsPage}
         </NavLink>
         <NavLink

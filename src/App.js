@@ -113,14 +113,15 @@ class App extends Component {
             getADemoEmail={this.state.getADemoEmail}
             sendEmailAddressToGetADemo={this.sendEmailAddressToGetADemo}
             spaces={this.state.spaces}
+            space={this.state.space}
           />
-          {/* <Footer
+          <Footer
             locale={this.state.locale}
             space={this.state.space}
             accessToken={this.state.accessToken}
             spaceName={this.state.spaceName}
             spaces={this.state.spaces}
-          /> */}
+          />
         </div>
       );
     } else {
