@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { NavLink } from "react-router-dom";
 import "../clientStories.css";
+import PathToRegexp, { compile, parse } from "path-to-regexp";
 import { withRouter } from "react-router-dom";
 
 class ClientStoriesHomePageCardItem extends React.Component {
@@ -10,6 +11,25 @@ class ClientStoriesHomePageCardItem extends React.Component {
     super(props);
     this.state = {};
   }
+
+  generateUrl = (path, location) => {
+    const ROUTE = "/:space/:locale/:path*";
+    const definePath = compile(ROUTE);
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    if (routeComponents && routeComponents[3]) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: path
+      });
+    } else if (routeComponents && routeComponents[3] == undefined) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: "a"
+      });
+    }
+  };
 
   render() {
     return (
@@ -26,7 +46,7 @@ class ClientStoriesHomePageCardItem extends React.Component {
         <Row>
           <NavLink
             className="client-marquee-object-link-nav-link"
-            to={this.props.match.url + this.props.route}
+            to={this.generateUrl(this.props.route, this.props.location)}
           >
             <p className="secondary_font client-marquee-object-link-text">
               Read the story

@@ -21,6 +21,7 @@ class ClientStoriesMarqueeListObject extends React.Component {
   }
 
   render() {
+    console.log(this.state.trimmedRoute);
     return (
       <div className="client-marqueeElement client-marqueeItem ">
         <Col className="client-marquee-object px-5 mx-2 py-3 my-2">
@@ -31,7 +32,7 @@ class ClientStoriesMarqueeListObject extends React.Component {
             <Col className="client-marquee-object-link-text-col">
               <NavLink
                 className="client-marquee-object-link-nav-link"
-                to={this.state.trimmedRoute}
+                to={this.props.route}
               >
                 <p className="secondary_font client-marquee-object-link-text">
                   Read the story
