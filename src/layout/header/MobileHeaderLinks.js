@@ -3,6 +3,8 @@ import Nav from "react-bootstrap/Nav";
 import { NavLink } from "react-router-dom";
 import "../Layout/Layout.css";
 import MobileTranslateButton from "./MobileTranslateButton";
+import PathToRegexp from "path-to-regexp";
+import { withRouter } from "react-router-dom";
 
 class FullScreenHeaderLinks extends React.Component {
   constructor(props) {
@@ -13,13 +15,20 @@ class FullScreenHeaderLinks extends React.Component {
     this.props.updateLocale(locale);
   };
 
+  identifySpace = location => {
+    const ROUTE = "/:space/:locale/:path+";
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    console.log(routeComponents[1]);
+    return routeComponents[1];
+  };
+
   render() {
     return (
       <Nav>
         <NavLink
           activeClassName="mobile-activeStyle"
           className="mobile-nav-link"
-          to="/clients"
+          to="clients"
         >
           {this.props.clientsPage}
         </NavLink>
@@ -27,14 +36,14 @@ class FullScreenHeaderLinks extends React.Component {
         <NavLink
           activeClassName="mobile-activeStyle"
           className="mobile-nav-link"
-          to="/features"
+          to="features"
         >
           {this.props.featuresPage}
         </NavLink>
         <NavLink
           activeClassName="mobile-activeStyle"
           className="mobile-nav-link"
-          to="/about"
+          to="about"
         >
           {this.props.aboutUsPage}
         </NavLink>
@@ -44,11 +53,11 @@ class FullScreenHeaderLinks extends React.Component {
         <NavLink
           activeClassName="mobile-activeStyle"
           className="mobile-nav-link"
-          to="/solutions"
+          to="solutions"
         >
           {this.props.solutionsPage}
         </NavLink>
-        {this.props.country_code === "country_code=CN" && (
+        {this.identifySpace(this.props.location) === "cn" && (
           <MobileTranslateButton
             locale={this.props.locale}
             space={this.props.space}
@@ -59,7 +68,7 @@ class FullScreenHeaderLinks extends React.Component {
         <NavLink
           activeClassName="mobile-activeStyle"
           className="mobile-nav-link demo-page-link"
-          to="/demo"
+          to="demo"
         >
           {this.props.demoPage}
         </NavLink>
@@ -68,4 +77,4 @@ class FullScreenHeaderLinks extends React.Component {
   }
 }
 
-export default FullScreenHeaderLinks;
+export default withRouter(FullScreenHeaderLinks);

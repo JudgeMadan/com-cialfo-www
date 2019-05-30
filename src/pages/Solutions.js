@@ -11,6 +11,7 @@ import FeaturesSubfooter from "./features/FeaturesSubfooter";
 import PartnerImages from "./PartnerImages";
 import MobilePartnerImages from "./MobilePartnerImages";
 import MediaQuery from "react-responsive";
+import { withRouter } from "react-router-dom";
 class Solutions extends React.Component {
   constructor(props) {
     super(props);
@@ -22,9 +23,27 @@ class Solutions extends React.Component {
     };
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidMount() {
@@ -32,7 +51,7 @@ class Solutions extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.match.params.locale !== this.props.match.params.locale) {
       this.fetchFeatures().then(this.setFeatures);
     }
   }
@@ -40,7 +59,7 @@ class Solutions extends React.Component {
   fetchFeatures = () => {
     return this.client.getEntries({
       content_type: "homePageHeaderProductImage",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
   };
 
@@ -70,7 +89,6 @@ class Solutions extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container className="homePageContainer">
         {/* FULL PAGE HEADER */}
@@ -207,4 +225,4 @@ class Solutions extends React.Component {
   }
 }
 
-export default Solutions;
+export default withRouter(Solutions);

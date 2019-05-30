@@ -14,6 +14,7 @@ import Line from "../img/Line.svg";
 import BlueStroke10 from "../img/BlueStroke10.svg";
 import Oval from "../img/Oval.svg";
 import MediaQuery from "react-responsive";
+import { withRouter } from "react-router-dom";
 import "./events/Events.css";
 
 class Events extends React.Component {
@@ -22,13 +23,31 @@ class Events extends React.Component {
     this.state = {};
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.match.params.locale !== this.props.match.params.locale) {
       this.fetchAboutContent().then(this.setAboutContent);
     }
   }
@@ -40,7 +59,7 @@ class Events extends React.Component {
   fetchAboutContent = () =>
     this.client.getEntries({
       content_type: "about",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
 
   setAboutContent = response => {
@@ -230,4 +249,4 @@ class Events extends React.Component {
   }
 }
 
-export default Events;
+export default withRouter(Events);

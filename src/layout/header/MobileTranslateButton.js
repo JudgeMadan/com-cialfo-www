@@ -1,6 +1,9 @@
 import React from "react";
 import * as contentful from "contentful";
 import NavItem from "react-bootstrap/NavItem";
+import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+import PathToRegexp, { compile, parse } from "path-to-regexp";
 
 class MobileTranslateButton extends React.Component {
   constructor(props) {
@@ -11,59 +14,53 @@ class MobileTranslateButton extends React.Component {
     this.props.updateLocale(locale);
   };
 
-  client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
-  });
+  identifyLocale = location => {
+    const ROUTE = "/:space/:locale/:path+";
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    return routeComponents[2];
+  };
 
-  fetchNavBar = () =>
-    this.client.getEntries({
-      content_type: "navBar",
-      locale: this.props.locale
-    });
-
-  setNavBar = response => {
-    const navBarContent = response.items[0].fields;
-    for (let key in navBarContent) {
-      this.setState({
-        [key]: navBarContent[key]
-      });
+  generateUrl = (locale, location) => {
+    const ROUTE = "/:space/:locale/:path+";
+    const definePath = compile(ROUTE);
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    let subPaths = null;
+    if (routeComponents && routeComponents[3]) {
+      subPaths = routeComponents[3].split("/");
     }
+    return definePath({
+      space: routeComponents[1],
+      locale: locale,
+      path: subPaths
+    });
   };
 
   componentDidMount() {
-    this.fetchNavBar().then(this.setNavBar);
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
-      this.fetchNavBar().then(this.setNavBar);
-    }
+    this.identifyLocale(this.props.location);
   }
 
   render() {
     return (
       <div>
-        {this.props.locale !== "zh-CN" && (
-          <NavItem
-            onClick={() => this.updateLocale("zh-CN")}
-            className="mobile-nav-link translator"
-            to="/"
+        {this.identifyLocale(this.props.location) !== "zh-CN" && (
+          <NavLink
+            className="nav-link translator"
+            to={this.generateUrl("zh-CN", this.props.location)}
           >
             中文
-          </NavItem>
+          </NavLink>
         )}
-        {this.props.locale === "zh-CN" && (
-          <NavItem
-            onClick={() => this.updateLocale("en-US")}
-            className="mobile-nav-link translator"
+        {this.identifyLocale(this.props.location) === "zh-CN" && (
+          <NavLink
+            className="nav-link translator"
+            to={this.generateUrl("en-US", this.props.location)}
           >
             English
-          </NavItem>
+          </NavLink>
         )}
       </div>
     );
   }
 }
 
-export default MobileTranslateButton;
+export default withRouter(MobileTranslateButton);

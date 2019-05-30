@@ -4,11 +4,32 @@ import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 import "./solutions.css";
+import { withRouter } from "react-router-dom";
+import PathToRegexp, { compile, parse } from "path-to-regexp";
 
 class SolutionsRightSideText extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  generateUrl = (path, location) => {
+    const ROUTE = "/:space/:locale/:path*";
+    const definePath = compile(ROUTE);
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    if (routeComponents && routeComponents[3]) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: path
+      });
+    } else if (routeComponents && routeComponents[3] == undefined) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: "a"
+      });
+    }
+  };
 
   render() {
     return (
@@ -29,7 +50,10 @@ class SolutionsRightSideText extends React.Component {
                 <p className="secondary_font">{this.props.blurb}</p>
               </Row>
               <Row>
-                <Link className={this.props.linkStyle} to={this.props.url}>
+                <Link
+                  className={this.props.linkStyle}
+                  to={this.generateUrl(this.props.url, this.props.location)}
+                >
                   {this.props.link}
                 </Link>
               </Row>
@@ -41,4 +65,4 @@ class SolutionsRightSideText extends React.Component {
   }
 }
 
-export default SolutionsRightSideText;
+export default withRouter(SolutionsRightSideText);

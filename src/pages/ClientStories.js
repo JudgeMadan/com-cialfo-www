@@ -6,21 +6,41 @@ import "./clientStories/clientStories.css";
 import ClientStoriesHomePageCards from "./clientStories/ClientStoriesHomePageCards";
 import HomeMarquee from "../pages/home/HomeMarquee";
 import MediaQuery from "react-responsive";
+import { withRouter } from "react-router-dom";
 class ClientStories extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   render() {
+    console.log(this.props);
     return (
       <Container>
-        {this.props.locale === "en-US" && (
+        {this.props.match.params.locale === "en-US" && (
           <div>
             <Row className="center-in-row">
               <p className="primary_font client-header-subtitle">
@@ -34,7 +54,7 @@ class ClientStories extends React.Component {
             </Row>
           </div>
         )}
-        {this.props.locale === "zh-CN" && (
+        {this.props.match.params.locale === "zh-CN" && (
           <div>
             <Row className="center-in-row">
               <p className="primary_font">中文</p>
@@ -51,6 +71,7 @@ class ClientStories extends React.Component {
             locale={this.props.locale}
             space={this.props.space}
             accessToken={this.props.accessToken}
+            spaces={this.props.spaces}
           />
         </Row>
         <MediaQuery query="(min-device-width: 1224px)">
@@ -69,6 +90,7 @@ class ClientStories extends React.Component {
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
             />
           </Row>
         </MediaQuery>
@@ -77,4 +99,4 @@ class ClientStories extends React.Component {
   }
 }
 
-export default ClientStories;
+export default withRouter(ClientStories);

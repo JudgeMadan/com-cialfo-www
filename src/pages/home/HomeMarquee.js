@@ -5,6 +5,7 @@ import Line from "../../img/Line.svg";
 import Stroke10 from "../../img/Stroke10.svg";
 import MediaQuery from "react-responsive";
 import * as contentful from "contentful";
+import { withRouter } from "react-router-dom";
 
 class HomeMarquee extends React.Component {
   constructor(props) {
@@ -12,9 +13,27 @@ class HomeMarquee extends React.Component {
     this.state = {};
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidMount() {
@@ -22,7 +41,7 @@ class HomeMarquee extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.match.params.locale !== this.props.match.params.locale) {
       this.fetchContent().then(this.setContent);
     }
   }
@@ -30,7 +49,7 @@ class HomeMarquee extends React.Component {
   fetchContent = () =>
     this.client.getEntries({
       content_type: "marqueeItem",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
 
   setContent = response => {
@@ -50,11 +69,13 @@ class HomeMarquee extends React.Component {
               locale={this.props.locale}
               accessToken={this.props.accessToken}
               space={this.props.space}
+              spaces={this.props.spaces}
             />
             <HomeMarqueeList
               locale={this.props.locale}
               accessToken={this.props.accessToken}
               space={this.props.space}
+              spaces={this.props.spaces}
             />
           </div>
           <img className="marquee-oval" src={BlueOval} />
@@ -65,4 +86,4 @@ class HomeMarquee extends React.Component {
     );
   }
 }
-export default HomeMarquee;
+export default withRouter(HomeMarquee);

@@ -1,7 +1,7 @@
 import React from "react";
 import HomeMarqueeListObject from "./homeMarqueeList/HomeMarqueeListObject";
 import * as contentful from "contentful";
-import { LinkExternal } from "@githubprimer/octicons-react";
+import { withRouter } from "react-router-dom";
 
 class HomeMarqueeList extends React.Component {
   constructor(props) {
@@ -9,13 +9,31 @@ class HomeMarqueeList extends React.Component {
     this.state = {};
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.match.params.locale !== this.props.match.params.locale) {
       this.fetchAboutContent().then(this.setAboutContent);
     }
   }
@@ -27,7 +45,7 @@ class HomeMarqueeList extends React.Component {
   fetchAboutContent = () =>
     this.client.getEntries({
       content_type: "marqueeItem",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
 
   setAboutContent = response => {
@@ -59,4 +77,4 @@ class HomeMarqueeList extends React.Component {
     return <div>{marqueeItemArray}</div>;
   }
 }
-export default HomeMarqueeList;
+export default withRouter(HomeMarqueeList);

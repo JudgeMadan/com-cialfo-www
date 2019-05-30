@@ -2,14 +2,26 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class ClientStoriesMarqueeListObject extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      trimmedRoute: ""
+    };
+  }
+
+  componentDidMount() {
+    let route = this.props.route;
+    let trimmedRoute = route.substring(1);
+    this.setState({
+      trimmedRoute: trimmedRoute
+    });
   }
 
   render() {
+    console.log(this.state.trimmedRoute);
     return (
       <div className="client-marqueeElement client-marqueeItem ">
         <Col className="client-marquee-object px-5 mx-2 py-3 my-2">
@@ -38,4 +50,4 @@ class ClientStoriesMarqueeListObject extends React.Component {
     );
   }
 }
-export default ClientStoriesMarqueeListObject;
+export default withRouter(ClientStoriesMarqueeListObject);

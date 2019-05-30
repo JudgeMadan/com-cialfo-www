@@ -1,7 +1,7 @@
 import React from "react";
-import MediaQuery from "react-responsive";
 import * as contentful from "contentful";
 import ClientStoriesMarqueeList from "./clientStoriesMarquee/ClientStoriesMarqueeList";
+import { withRouter } from "react-router-dom";
 
 class ClientStoriesMarquee extends React.Component {
   constructor(props) {
@@ -9,9 +9,27 @@ class ClientStoriesMarquee extends React.Component {
     this.state = {};
   }
 
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidMount() {
@@ -19,7 +37,7 @@ class ClientStoriesMarquee extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.match.params.locale !== this.props.match.params.locale) {
       this.fetchContent().then(this.setContent);
     }
   }
@@ -27,7 +45,7 @@ class ClientStoriesMarquee extends React.Component {
   fetchContent = () =>
     this.client.getEntries({
       content_type: "clientStory",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
 
   setContent = response => {
@@ -47,18 +65,18 @@ class ClientStoriesMarquee extends React.Component {
             accessToken={this.props.accessToken}
             space={this.props.space}
             clientStoriesMarqueeCheck={this.clientStoriesMarqueeCheck}
+            spaces={this.props.spaces}
           />
           <ClientStoriesMarqueeList
             locale={this.props.locale}
             accessToken={this.props.accessToken}
             space={this.props.space}
             clientStoriesMarqueeCheck={this.clientStoriesMarqueeCheck}
+            spaces={this.props.spaces}
           />
         </div>
       </div>
     );
   }
 }
-export default ClientStoriesMarquee;
-
-// width = marquee.length * 300px;
+export default withRouter(ClientStoriesMarquee);

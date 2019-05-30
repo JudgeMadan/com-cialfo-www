@@ -10,6 +10,8 @@ import NavItem from "react-bootstrap/NavItem";
 import MediaQuery from "react-responsive";
 import FullScreenHeaderLinks from "./header/FullScreenHeaderLinks";
 import MobileHeaderLinks from "./header/MobileHeaderLinks";
+import { withRouter } from "react-router-dom";
+import PathToRegexp, { compile, parse } from "path-to-regexp";
 
 class Header extends React.Component {
   constructor(props) {
@@ -20,16 +22,85 @@ class Header extends React.Component {
     this.props.updateLocale(locale);
   };
 
-  client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
-  });
+  generateLocale = location => {
+    const ROUTE = "/:space/:locale/:path*";
+    const routeComponents = PathToRegexp(ROUTE).exec(location);
+    // return routeComponents[2];
+    if (routeComponents) {
+      return routeComponents[2];
+    } else return;
+  };
+
+  generateSpace = location => {
+    const ROUTE = "/:space/:locale/:path*";
+    const routeComponents = PathToRegexp(ROUTE).exec(location);
+    if (routeComponents) {
+      return routeComponents[1];
+    } else return;
+  };
+
+  generateUrl = (path, location) => {
+    const ROUTE = "/:space/:locale/:path*";
+    const definePath = compile(ROUTE);
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    if (routeComponents && routeComponents[3]) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: path
+      });
+    } else if (routeComponents && routeComponents[3] == undefined) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: "a"
+      });
+    }
+  };
+
+  setSpace = () => {
+    if (this.generateSpace(this.props.location.pathname)) {
+      if (this.generateSpace(this.props.location.pathname) === "cn") {
+        return this.props.spaces.cn.space;
+      } else if (this.generateSpace(this.props.location.pathname) === "intl") {
+        return this.props.spaces.intl.space;
+      }
+    } else {
+      if (this.props.spaceName === "china") {
+        return this.props.spaces.cn.space;
+      } else if (this.props.spaceName === "intl") {
+        return this.props.spaces.intl.intl;
+      }
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.generateSpace(this.props.location.pathname)) {
+      if (this.generateSpace(this.props.location.pathname) === "cn") {
+        return this.props.spaces.cn.accessToken;
+      }
+      if (this.generateSpace(this.props.location.pathname) === "intl") {
+        return this.props.spaces.intl.accessToken;
+      }
+    } else {
+      if (this.props.spaceName === "china") {
+        return this.props.spaces.cn.accessToken;
+      } else if (this.props.spaceName === "intl") {
+        return this.props.spaces.intl.accessToken;
+      }
+    }
+  };
 
   fetchNavBar = () =>
-    this.client.getEntries({
-      content_type: "navBar",
-      locale: this.props.locale
-    });
+    contentful
+      .createClient({
+        space: this.setSpace(),
+        accessToken: this.setAccessToken()
+      })
+      .getEntries({
+        content_type: "navBar",
+        locale: this.generateLocale(this.props.location.pathname)
+      });
 
   setNavBar = response => {
     const navBarContent = response.items[0].fields;
@@ -45,12 +116,13 @@ class Header extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.location.pathname !== this.props.location.pathname) {
       this.fetchNavBar().then(this.setNavBar);
     }
   }
 
   render() {
+    console.log(this.props);
     return (
       <Navbar
         className="justify-content-between header"
@@ -59,22 +131,13 @@ class Header extends React.Component {
         expand="lg"
       >
         <Nav href="#home">
-          <NavLink to="/" className="navbar-brand">
+          <NavLink
+            to={this.generateUrl("home", this.props.location)}
+            className="navbar-brand"
+          >
             <img src={Logo} />
           </NavLink>
-          {/* FULL SCREEN COUNTRY TEXT */}
-          <MediaQuery query="(min-device-width: 1224px)">
-            <NavItem className="blue-header-locale-text">
-              {this.props.spaceName}
-            </NavItem>
-          </MediaQuery>
         </Nav>
-        {/* MOBILE COUNTRY TEXT */}
-        <MediaQuery query="(max-device-width: 1223px)">
-          <NavItem className="mobile-blue-header-locale-text">
-            {this.props.spaceName}
-          </NavItem>
-        </MediaQuery>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           {/* FULL SCREEN NAVBAR */}
@@ -92,6 +155,7 @@ class Header extends React.Component {
               accessToken={this.props.accessToken}
               updateLocale={this.updateLocale}
               spaceName={this.props.spaceName}
+              spaces={this.props.spaces}
             />
           </MediaQuery>
           {/* MOBILE NAV BAR */}
@@ -109,6 +173,7 @@ class Header extends React.Component {
               accessToken={this.props.accessToken}
               updateLocale={this.updateLocale}
               spaceName={this.props.spaceName}
+              spaces={this.props.spaces}
             />
           </MediaQuery>
         </Navbar.Collapse>
@@ -117,4 +182,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);

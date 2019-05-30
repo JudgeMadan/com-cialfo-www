@@ -14,15 +14,54 @@ import Oval from "../img/Oval.svg";
 import Line from "../img/Line.svg";
 import LightBlueRectangle from "../img/LightBlueRectangle.svg";
 import MediaQuery from "react-responsive";
+import { withRouter } from "react-router-dom";
+import PathToRegexp, { compile } from "path-to-regexp";
 class Features extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
+  generateUrl = (path, location) => {
+    const ROUTE = "/:space/:locale/:path*";
+    const definePath = compile(ROUTE);
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    if (routeComponents && routeComponents[3]) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: path
+      });
+    } else if (routeComponents && routeComponents[3] == undefined) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: "a"
+      });
+    }
+  };
+
+  setSpace = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.space;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.space;
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.props.match.params.space === "cn") {
+      return this.props.spaces.cn.accessToken;
+    }
+    if (this.props.match.params.space === "intl") {
+      return this.props.spaces.intl.accessToken;
+    }
+  };
+
   client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
+    space: this.setSpace(),
+    accessToken: this.setAccessToken()
   });
 
   componentDidMount() {
@@ -30,7 +69,7 @@ class Features extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.match.params.locale !== this.props.match.params.locale) {
       this.fetchFeatures().then(this.setFeatures);
     }
   }
@@ -38,7 +77,7 @@ class Features extends React.Component {
   fetchFeatures = () => {
     return this.client.getEntries({
       content_type: "featuresPage",
-      locale: this.props.locale
+      locale: this.props.match.params.locale
     });
   };
 
@@ -62,6 +101,7 @@ class Features extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <Container className="homePageContainer">
         {/* FULL SCREEN TOP ROW */}
@@ -91,6 +131,7 @@ class Features extends React.Component {
               locale={this.props.locale}
               accessToken={this.props.accessToken}
               space={this.props.space}
+              spaces={this.props.spaces}
             />
           </Row>
         </MediaQuery>
@@ -141,7 +182,7 @@ class Features extends React.Component {
                 <Row>
                   <Link
                     className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
-                    to="/features/send"
+                    to={this.generateUrl("features-send", this.props.location)}
                   >
                     {this.state.featurePageFeaturesSendDocumentLinkText}
                   </Link>
@@ -171,7 +212,7 @@ class Features extends React.Component {
                 <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
-                    to="/features/send"
+                    to={this.generateUrl("features-send", this.props.location)}
                   >
                     {this.state.featurePageFeaturesSendDocumentLinkText}
                   </Link>
@@ -198,7 +239,10 @@ class Features extends React.Component {
                 <Row>
                   <Link
                     className="homeFeatureLink homePageFeaturesLeverageLinkText"
-                    to="/features/research"
+                    to={this.generateUrl(
+                      "features-research",
+                      this.props.location
+                    )}
                   >
                     {this.state.featurePageFeaturesLeverageLinkText}
                   </Link>
@@ -235,7 +279,10 @@ class Features extends React.Component {
                 <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesLeverageLinkText"
-                    to="/features/research"
+                    to={this.generateUrl(
+                      "features-research",
+                      this.props.location
+                    )}
                   >
                     {this.state.featurePageFeaturesLeverageLinkText}
                   </Link>
@@ -269,7 +316,10 @@ class Features extends React.Component {
                 <Row>
                   <Link
                     className="homeFeatureLink homePageFeaturesDiscoverLinkText"
-                    to="/features/documents"
+                    to={this.generateUrl(
+                      "features-documents",
+                      this.props.location
+                    )}
                   >
                     {this.state.featurePageFeaturesDiscoverLinkText}
                   </Link>
@@ -299,7 +349,10 @@ class Features extends React.Component {
                 <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesDiscoverLinkText"
-                    to="/features/documents"
+                    to={this.generateUrl(
+                      "features-documents",
+                      this.props.location
+                    )}
                   >
                     {this.state.featurePageFeaturesDiscoverLinkText}
                   </Link>
@@ -313,4 +366,4 @@ class Features extends React.Component {
   }
 }
 
-export default Features;
+export default withRouter(Features);
