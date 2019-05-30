@@ -75,7 +75,10 @@ class Header extends React.Component {
   };
 
   setAccessToken = () => {
-    if (this.generateSpace(this.props.location.pathname)) {
+    if (
+      this.generateSpace(this.props.location.pathname) &&
+      this.props.location.pathname !== "/"
+    ) {
       if (this.generateSpace(this.props.location.pathname) === "cn") {
         return this.props.spaces.cn.accessToken;
       }
@@ -84,6 +87,7 @@ class Header extends React.Component {
       }
     } else {
       if (this.props.spaceName === "china") {
+        console.log("hey!");
         return this.props.spaces.cn.accessToken;
       } else if (this.props.spaceName === "intl") {
         return this.props.spaces.intl.accessToken;
@@ -112,6 +116,7 @@ class Header extends React.Component {
   };
 
   componentDidMount() {
+    // console.log(this.setSpace());
     this.fetchNavBar().then(this.setNavBar);
   }
 
@@ -122,7 +127,7 @@ class Header extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log(this.props.location.pathname);
     return (
       <Navbar
         className="justify-content-between header"

@@ -106,9 +106,9 @@ class Footer extends React.Component {
     }
   };
 
-  componentDidMount() {
-    this.fetchNavBar().then(this.setNavBar);
-  }
+  // componentDidMount() {
+  //   this.fetchNavBar().then(this.setNavBar);
+  // }
 
   componentDidUpdate(prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
