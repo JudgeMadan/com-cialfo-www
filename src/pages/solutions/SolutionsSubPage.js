@@ -58,6 +58,7 @@ class SolutionsSubPage extends React.Component {
               locale={this.props.locale}
               accessToken={this.props.accessToken}
               space={this.props.space}
+              spaces={this.props.spaces}
             />
           </div>
         </MediaQuery>

@@ -15,11 +15,31 @@ import Line from "../img/Line.svg";
 import LightBlueRectangle from "../img/LightBlueRectangle.svg";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
+import PathToRegexp, { compile } from "path-to-regexp";
 class Features extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
+  generateUrl = (path, location) => {
+    const ROUTE = "/:space/:locale/:path*";
+    const definePath = compile(ROUTE);
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    if (routeComponents && routeComponents[3]) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: path
+      });
+    } else if (routeComponents && routeComponents[3] == undefined) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: "a"
+      });
+    }
+  };
 
   setSpace = () => {
     if (this.props.match.params.space === "cn") {
@@ -162,7 +182,7 @@ class Features extends React.Component {
                 <Row>
                   <Link
                     className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
-                    to={this.props.location.pathname + "/send"}
+                    to={this.generateUrl("features-send", this.props.location)}
                   >
                     {this.state.featurePageFeaturesSendDocumentLinkText}
                   </Link>
@@ -192,7 +212,7 @@ class Features extends React.Component {
                 <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
-                    to={this.props.location.pathname + "/send"}
+                    to={this.generateUrl("features-send", this.props.location)}
                   >
                     {this.state.featurePageFeaturesSendDocumentLinkText}
                   </Link>
@@ -219,7 +239,10 @@ class Features extends React.Component {
                 <Row>
                   <Link
                     className="homeFeatureLink homePageFeaturesLeverageLinkText"
-                    to={this.props.location.pathname + "/research"}
+                    to={this.generateUrl(
+                      "features-research",
+                      this.props.location
+                    )}
                   >
                     {this.state.featurePageFeaturesLeverageLinkText}
                   </Link>
@@ -256,7 +279,10 @@ class Features extends React.Component {
                 <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesLeverageLinkText"
-                    to={this.props.location.pathname + "/research"}
+                    to={this.generateUrl(
+                      "features-research",
+                      this.props.location
+                    )}
                   >
                     {this.state.featurePageFeaturesLeverageLinkText}
                   </Link>
@@ -290,7 +316,10 @@ class Features extends React.Component {
                 <Row>
                   <Link
                     className="homeFeatureLink homePageFeaturesDiscoverLinkText"
-                    to={this.props.location.pathname + "/documents"}
+                    to={this.generateUrl(
+                      "features-documents",
+                      this.props.location
+                    )}
                   >
                     {this.state.featurePageFeaturesDiscoverLinkText}
                   </Link>
@@ -320,7 +349,10 @@ class Features extends React.Component {
                 <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesDiscoverLinkText"
-                    to={this.props.location.pathname + "/documents"}
+                    to={this.generateUrl(
+                      "features-documents",
+                      this.props.location
+                    )}
                   >
                     {this.state.featurePageFeaturesDiscoverLinkText}
                   </Link>

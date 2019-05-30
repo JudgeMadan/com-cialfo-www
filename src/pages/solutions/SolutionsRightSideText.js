@@ -5,15 +5,33 @@ import { Link } from "react-router-dom";
 import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 import "./solutions.css";
 import { withRouter } from "react-router-dom";
+import PathToRegexp, { compile, parse } from "path-to-regexp";
 
 class SolutionsRightSideText extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  render() {
-    console.log(this.props.url);
+  generateUrl = (path, location) => {
+    const ROUTE = "/:space/:locale/:path*";
+    const definePath = compile(ROUTE);
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    if (routeComponents && routeComponents[3]) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: path
+      });
+    } else if (routeComponents && routeComponents[3] == undefined) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: "a"
+      });
+    }
+  };
 
+  render() {
     return (
       <div>
         <Row>
@@ -34,7 +52,7 @@ class SolutionsRightSideText extends React.Component {
               <Row>
                 <Link
                   className={this.props.linkStyle}
-                  to={this.props.match.url + this.props.url}
+                  to={this.generateUrl(this.props.url, this.props.location)}
                 >
                   {this.props.link}
                 </Link>

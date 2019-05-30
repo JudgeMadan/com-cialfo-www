@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup";
 import "./Layout/Layout.css";
 import MediaQuery from "react-responsive";
-import PathToRegexp from "path-to-regexp";
+import PathToRegexp, { compile, parse } from "path-to-regexp";
 import { withRouter } from "react-router-dom";
 class Footer extends React.Component {
   constructor(props) {
@@ -33,24 +33,6 @@ class Footer extends React.Component {
       return routeComponents[1];
     } else return;
   };
-
-  // setSpace = () => {
-  //   if (this.generateSpace(this.props.location.pathname) === "cn") {
-  //     return this.props.spaces.cn.space;
-  //   }
-  //   if (this.generateSpace(this.props.location.pathname) === "intl") {
-  //     return this.props.spaces.intl.space;
-  //   }
-  // };
-
-  // setAccessToken = () => {
-  //   if (this.generateSpace(this.props.location.pathname) === "cn") {
-  //     return this.props.spaces.cn.accessToken;
-  //   }
-  //   if (this.generateSpace(this.props.location.pathname) === "intl") {
-  //     return this.props.spaces.intl.accessToken;
-  //   }
-  // };
 
   setSpace = () => {
     if (this.generateSpace(this.props.location.pathname)) {
@@ -85,16 +67,24 @@ class Footer extends React.Component {
     }
   };
 
-  // client = contentful.createClient({
-  //   space: this.setSpace(),
-  //   accessToken: this.setAccessToken()
-  // });
-
-  // fetchNavBar = () =>
-  //   this.client.getEntries({
-  //     content_type: "footer",
-  //     locale: this.generateLocale(this.props.location.pathname)
-  //   });
+  generateUrl = (path, location) => {
+    const ROUTE = "/:space/:locale/:path*";
+    const definePath = compile(ROUTE);
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    if (routeComponents && routeComponents[3]) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: path
+      });
+    } else if (routeComponents && routeComponents[3] == undefined) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: "a"
+      });
+    }
+  };
 
   fetchNavBar = () =>
     contentful
@@ -154,7 +144,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="solutions/principals"
+                          to="solutions-principals"
                         >
                           {this.state.forPrincipals}
                         </NavLink>
@@ -162,7 +152,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="solutions/counselors"
+                          to="solutions-counselors"
                         >
                           {this.state.forCounselors}
                         </NavLink>
@@ -170,7 +160,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="solutions/it"
+                          to="solutions-it"
                         >
                           {this.state.forItTeams}
                         </NavLink>
@@ -178,7 +168,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="solutions/superintendents"
+                          to="solutions-superintendents"
                         >
                           {this.state.forSuperintendents}
                         </NavLink>
@@ -269,7 +259,10 @@ class Footer extends React.Component {
             </Col>
             <Col className="justify-content-md-end footer-logo">
               <Row className="justify-content-md-end">
-                <Link to="/" className="navbar-brand">
+                <Link
+                  to={this.generateUrl("home", this.props.location)}
+                  className="navbar-brand"
+                >
                   <img src={Logo} />
                 </Link>
                 {/* <p className="footer-country-id">{this.props.spaceName}</p> */}
@@ -303,7 +296,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="solutions/principals"
+                          to="solutions-principals"
                         >
                           {this.state.forPrincipals}
                         </NavLink>
@@ -311,7 +304,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="solutions/counselors"
+                          to="solutions-counselors"
                         >
                           {this.state.forCounselors}
                         </NavLink>
@@ -319,7 +312,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="solutions/it"
+                          to="solutions-it"
                         >
                           {this.state.forItTeams}
                         </NavLink>
@@ -327,7 +320,7 @@ class Footer extends React.Component {
                       <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
-                          to="solutions/superintendents"
+                          to="solutions-superintendents"
                         >
                           {this.state.forSuperintendents}
                         </NavLink>

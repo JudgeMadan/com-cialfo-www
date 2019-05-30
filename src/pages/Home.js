@@ -20,11 +20,31 @@ import MediaQuery from "react-responsive";
 import Container from "react-bootstrap/Container";
 import PartnerImages from "./PartnerImages";
 import { withRouter } from "react-router-dom";
+import PathToRegexp, { compile } from "path-to-regexp";
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
+  generateUrl = (path, location) => {
+    const ROUTE = "/:space/:locale/:path*";
+    const definePath = compile(ROUTE);
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    if (routeComponents && routeComponents[3]) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: path
+      });
+    } else if (routeComponents && routeComponents[3] == undefined) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: "a"
+      });
+    }
+  };
 
   setSpace = () => {
     if (this.props.match.params.space === "cn") {
@@ -133,7 +153,7 @@ class Home extends React.Component {
                         >
                           <Link
                             className="primary_font get-a-demo-link"
-                            to="/demo"
+                            to={this.generateUrl("demo", this.props.location)}
                           >
                             {this.state.homePageHeaderEmailSubmitButtonText}
                           </Link>
@@ -211,7 +231,7 @@ class Home extends React.Component {
                 <Row>
                   <Link
                     className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
-                    to="/features/send"
+                    to={this.generateUrl("features-send", this.props.location)}
                   >
                     {this.state.homePageFeaturesSendDocumentLinkText}
                   </Link>
@@ -241,7 +261,7 @@ class Home extends React.Component {
                 <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
-                    to="/features/send"
+                    to={this.generateUrl("features-send", this.props.location)}
                   >
                     {this.state.homePageFeaturesSendDocumentLinkText}
                   </Link>
@@ -267,7 +287,10 @@ class Home extends React.Component {
                 <Row>
                   <Link
                     className="homeFeatureLink homePageFeaturesLeverageLinkText"
-                    to="/features/research"
+                    to={this.generateUrl(
+                      "features-research",
+                      this.props.location
+                    )}
                   >
                     {this.state.homePageFeaturesLeverageLinkText}
                   </Link>
@@ -304,7 +327,7 @@ class Home extends React.Component {
                 <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesLeverageLinkText"
-                    to="/features/send"
+                    to={this.generateUrl("features-send", this.props.location)}
                   >
                     {this.state.homePageFeaturesLeverageLinkText}
                   </Link>
@@ -337,7 +360,10 @@ class Home extends React.Component {
                 <Row>
                   <Link
                     className="homeFeatureLink homePageFeaturesDiscoverLinkText"
-                    to="/features/documents"
+                    to={this.generateUrl(
+                      "features-documents",
+                      this.props.location
+                    )}
                   >
                     {this.state.homePageFeaturesDiscoverLinkText}
                   </Link>
@@ -367,7 +393,7 @@ class Home extends React.Component {
                 <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesDiscoverLinkText"
-                    to="/features/send"
+                    to={this.generateUrl("features-send", this.props.location)}
                   >
                     {this.state.homePageFeaturesDiscoverLinkText}
                   </Link>

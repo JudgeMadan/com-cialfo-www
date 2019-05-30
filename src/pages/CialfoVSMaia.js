@@ -94,6 +94,7 @@ class CialfoVSMaia extends React.Component {
           subFooterQuoteCredit={this.state.solutionsSubfooterQuoteAuthorCredit}
           bottomRowTitle={this.state.homePageFeaturesLeverageTitle}
           bottomRowBlurb={this.state.homePageFeaturesLeverageBlurb}
+          spaces={this.props.spaces}
         />
       </Container>
     );

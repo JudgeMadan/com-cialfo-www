@@ -10,8 +10,8 @@ import NavItem from "react-bootstrap/NavItem";
 import MediaQuery from "react-responsive";
 import FullScreenHeaderLinks from "./header/FullScreenHeaderLinks";
 import MobileHeaderLinks from "./header/MobileHeaderLinks";
-import PathToRegexp from "path-to-regexp";
 import { withRouter } from "react-router-dom";
+import PathToRegexp, { compile, parse } from "path-to-regexp";
 
 class Header extends React.Component {
   constructor(props) {
@@ -39,23 +39,24 @@ class Header extends React.Component {
     } else return;
   };
 
-  // setSpace = () => {
-  //   if (this.generateSpace(this.props.location.pathname) === "cn") {
-  //     return this.props.spaces.cn.space;
-  //   }
-  //   if (this.generateSpace(this.props.location.pathname) === "intl") {
-  //     return this.props.spaces.intl.space;
-  //   } else return "12345";
-  // };
-
-  // setAccessToken = () => {
-  //   if (this.generateSpace(this.props.location.pathname) === "cn") {
-  //     return this.props.spaces.cn.accessToken;
-  //   }
-  //   if (this.generateSpace(this.props.location.pathname) === "intl") {
-  //     return this.props.spaces.intl.accessToken;
-  //   } else return "12345";
-  // };
+  generateUrl = (path, location) => {
+    const ROUTE = "/:space/:locale/:path*";
+    const definePath = compile(ROUTE);
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    if (routeComponents && routeComponents[3]) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: path
+      });
+    } else if (routeComponents && routeComponents[3] == undefined) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: "a"
+      });
+    }
+  };
 
   setSpace = () => {
     if (this.generateSpace(this.props.location.pathname)) {
@@ -121,6 +122,7 @@ class Header extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <Navbar
         className="justify-content-between header"
@@ -129,7 +131,10 @@ class Header extends React.Component {
         expand="lg"
       >
         <Nav href="#home">
-          <NavLink to="/" className="navbar-brand">
+          <NavLink
+            to={this.generateUrl("home", this.props.location)}
+            className="navbar-brand"
+          >
             <img src={Logo} />
           </NavLink>
         </Nav>

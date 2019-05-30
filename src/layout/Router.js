@@ -143,7 +143,7 @@ class Router extends React.Component {
           locale={this.props.locale}
           exact
           path={
-            this.props.match.url + ":space" + "/" + ":locale" + "/features/send"
+            this.props.match.url + ":space" + "/" + ":locale" + "/features-send"
           }
           render={() => (
             <FeaturesSend
@@ -162,7 +162,7 @@ class Router extends React.Component {
             ":space" +
             "/" +
             ":locale" +
-            "/features/research"
+            "/features-research"
           }
           render={() => (
             <FeaturesResearch
@@ -181,7 +181,7 @@ class Router extends React.Component {
             ":space" +
             "/" +
             ":locale" +
-            "/features/documents"
+            "/features-documents"
           }
           render={() => (
             <FeaturesDocuments
@@ -284,7 +284,7 @@ class Router extends React.Component {
             ":space" +
             "/" +
             ":locale" +
-            "/solutions/counselors"
+            "/solutions-counselors"
           }
           render={() => (
             <SolutionsCounselors
@@ -299,7 +299,7 @@ class Router extends React.Component {
           locale={this.props.locale}
           exact
           path={
-            this.props.match.url + ":space" + "/" + ":locale" + "/solutions/it"
+            this.props.match.url + ":space" + "/" + ":locale" + "/solutions-it"
           }
           render={() => (
             <SolutionsIT
@@ -310,6 +310,7 @@ class Router extends React.Component {
             />
           )}
         />
+
         <Route
           locale={this.props.locale}
           exact
@@ -318,7 +319,7 @@ class Router extends React.Component {
             ":space" +
             "/" +
             ":locale" +
-            "/solutions/principals"
+            "/solutions-principals"
           }
           render={() => (
             <SolutionsPrincipals
@@ -329,6 +330,7 @@ class Router extends React.Component {
             />
           )}
         />
+
         <Route
           locale={this.props.locale}
           exact
@@ -337,7 +339,7 @@ class Router extends React.Component {
             ":space" +
             "/" +
             ":locale" +
-            "/solutions/superintendents"
+            "/solutions-superintendents"
           }
           render={() => (
             <SolutionsSuperintendents
@@ -348,6 +350,7 @@ class Router extends React.Component {
             />
           )}
         />
+
         <Route
           locale={this.props.locale}
           exact
