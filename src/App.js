@@ -67,7 +67,7 @@ class App extends Component {
         "country_code=IN"
       ];
 
-      const country_codeArray = cookieArray.filter(
+      const country_codeArray = cookieArrayIndia.filter(
         cookie => cookie.substring(0, 12) === "country_code"
       );
 
@@ -115,6 +115,26 @@ class App extends Component {
     });
   };
 
+  setSpace = url => {
+    if (url === "cn") {
+      return this.state.spaces.cn.space;
+    } else if (url === "intl") {
+      return this.state.spaces.intl.space;
+    } else if (url === "in") {
+      return this.state.spaces.india.space;
+    }
+  };
+
+  setAccessToken = url => {
+    if (url === "cn") {
+      return this.state.spaces.cn.accessToken;
+    } else if (url === "intl") {
+      return this.state.spaces.intl.accessToken;
+    } else if (url === "in") {
+      return this.state.spaces.india.accessToken;
+    }
+  };
+
   render() {
     const space = this.state.space;
     const accessToken = this.state.accessToken;
@@ -130,15 +150,17 @@ class App extends Component {
             country_code={this.state.country_code}
             spaceName={this.state.spaceName}
             spaces={this.state.spaces}
+            setSpace={this.setSpace}
+            setAccessToken={this.setAccessToken}
           />
           <Router
-            // locale={this.state.locale}
             spaceName={this.state.spaceName}
-            // accessToken={this.state.accessToken}
             getADemoEmail={this.state.getADemoEmail}
             sendEmailAddressToGetADemo={this.sendEmailAddressToGetADemo}
             spaces={this.state.spaces}
             space={this.state.space}
+            setSpace={this.setSpace}
+            setAccessToken={this.setAccessToken}
           />
           <Footer
             locale={this.state.locale}
@@ -146,6 +168,8 @@ class App extends Component {
             accessToken={this.state.accessToken}
             spaceName={this.state.spaceName}
             spaces={this.state.spaces}
+            setSpace={this.setSpace}
+            setAccessToken={this.setAccessToken}
           />
         </div>
       );

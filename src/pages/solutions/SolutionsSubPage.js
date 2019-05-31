@@ -59,6 +59,8 @@ class SolutionsSubPage extends React.Component {
               accessToken={this.props.accessToken}
               space={this.props.space}
               spaces={this.props.spaces}
+              setSpace={this.props.setSpace}
+              setAccessToken={this.props.setAccessToken}
             />
           </div>
         </MediaQuery>
