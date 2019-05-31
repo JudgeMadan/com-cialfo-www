@@ -14,23 +14,11 @@ class HomeMarquee extends React.Component {
   }
 
   setSpace = () => {
-    if (this.props.match.params.space === "cn") {
-      return this.props.spaces.cn.space;
-    } else if (this.props.match.params.space === "intl") {
-      return this.props.spaces.intl.space;
-    } else if (this.props.match.params.space === "in") {
-      return this.props.spaces.india.space;
-    }
+    return this.props.setSpace(this.props.match.params.space);
   };
 
   setAccessToken = () => {
-    if (this.props.match.params.space === "cn") {
-      return this.props.spaces.cn.accessToken;
-    } else if (this.props.match.params.space === "intl") {
-      return this.props.spaces.intl.accessToken;
-    } else if (this.props.match.params.space === "in") {
-      return this.props.spaces.india.accessToken;
-    }
+    return this.props.setAccessToken(this.props.match.params.space);
   };
 
   client = contentful.createClient({
@@ -72,12 +60,16 @@ class HomeMarquee extends React.Component {
               accessToken={this.props.accessToken}
               space={this.props.space}
               spaces={this.props.spaces}
+              setSpace={this.props.setSpace}
+              setAccessToken={this.props.setAccessToken}
             />
             <HomeMarqueeList
               locale={this.props.locale}
               accessToken={this.props.accessToken}
               space={this.props.space}
               spaces={this.props.spaces}
+              setSpace={this.props.setSpace}
+              setAccessToken={this.props.setAccessToken}
             />
           </div>
           <img className="marquee-oval" src={BlueOval} />

@@ -18,21 +18,11 @@ class Downloads extends React.Component {
   }
 
   setSpace = () => {
-    if (this.props.match.params.space === "cn") {
-      return this.props.spaces.cn.space;
-    }
-    if (this.props.match.params.space === "intl") {
-      return this.props.spaces.intl.space;
-    }
+    return this.props.setSpace(this.props.match.params.space);
   };
 
   setAccessToken = () => {
-    if (this.props.match.params.space === "cn") {
-      return this.props.spaces.cn.accessToken;
-    }
-    if (this.props.match.params.space === "intl") {
-      return this.props.spaces.intl.accessToken;
-    }
+    return this.props.setAccessToken(this.props.match.params.space);
   };
 
   client = contentful.createClient({

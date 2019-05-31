@@ -10,23 +10,11 @@ class ClientStoriesMarquee extends React.Component {
   }
 
   setSpace = () => {
-    if (this.props.match.params.space === "cn") {
-      return this.props.spaces.cn.space;
-    } else if (this.props.match.params.space === "intl") {
-      return this.props.spaces.intl.space;
-    } else if (this.props.match.params.space === "in") {
-      return this.props.spaces.india.space;
-    }
+    return this.props.setSpace(this.props.match.params.space);
   };
 
   setAccessToken = () => {
-    if (this.props.match.params.space === "cn") {
-      return this.props.spaces.cn.accessToken;
-    } else if (this.props.match.params.space === "intl") {
-      return this.props.spaces.intl.accessToken;
-    } else if (this.props.match.params.space === "in") {
-      return this.props.spaces.india.accessToken;
-    }
+    return this.props.setAccessToken(this.props.match.params.space);
   };
 
   client = contentful.createClient({
@@ -68,6 +56,8 @@ class ClientStoriesMarquee extends React.Component {
             space={this.props.space}
             clientStoriesMarqueeCheck={this.clientStoriesMarqueeCheck}
             spaces={this.props.spaces}
+            setSpace={this.props.setSpace}
+            setAccessToken={this.props.setAccessToken}
           />
           <ClientStoriesMarqueeList
             locale={this.props.locale}
@@ -75,6 +65,8 @@ class ClientStoriesMarquee extends React.Component {
             space={this.props.space}
             clientStoriesMarqueeCheck={this.clientStoriesMarqueeCheck}
             spaces={this.props.spaces}
+            setSpace={this.props.setSpace}
+            setAccessToken={this.props.setAccessToken}
           />
         </div>
       </div>

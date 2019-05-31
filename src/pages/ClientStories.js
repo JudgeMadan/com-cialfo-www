@@ -14,23 +14,11 @@ class ClientStories extends React.Component {
   }
 
   setSpace = () => {
-    if (this.props.match.params.space === "cn") {
-      return this.props.spaces.cn.space;
-    } else if (this.props.match.params.space === "intl") {
-      return this.props.spaces.intl.space;
-    } else if (this.props.match.params.space === "in") {
-      return this.props.spaces.india.space;
-    }
+    return this.props.setSpace(this.props.match.params.space);
   };
 
   setAccessToken = () => {
-    if (this.props.match.params.space === "cn") {
-      return this.props.spaces.cn.accessToken;
-    } else if (this.props.match.params.space === "intl") {
-      return this.props.spaces.intl.accessToken;
-    } else if (this.props.match.params.space === "in") {
-      return this.props.spaces.india.accessToken;
-    }
+    return this.props.setAccessToken(this.props.match.params.space);
   };
 
   client = contentful.createClient({
@@ -74,6 +62,8 @@ class ClientStories extends React.Component {
             space={this.props.space}
             accessToken={this.props.accessToken}
             spaces={this.props.spaces}
+            setSpace={this.props.setSpace}
+            setAccessToken={this.props.setAccessToken}
           />
         </Row>
         <MediaQuery query="(min-device-width: 1224px)">
@@ -93,6 +83,8 @@ class ClientStories extends React.Component {
               space={this.props.space}
               accessToken={this.props.accessToken}
               spaces={this.props.spaces}
+              setSpace={this.props.setSpace}
+              setAccessToken={this.props.setAccessToken}
             />
           </Row>
         </MediaQuery>
