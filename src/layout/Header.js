@@ -64,10 +64,14 @@ class Header extends React.Component {
         return this.props.spaces.cn.space;
       } else if (this.generateSpace(this.props.location.pathname) === "intl") {
         return this.props.spaces.intl.space;
+      } else if (this.generateSpace(this.props.location.pathname) === "in") {
+        return this.props.spaces.india.space;
       }
     } else {
       if (this.props.spaceName === "china") {
         return this.props.spaces.cn.space;
+      } else if (this.props.spaceName === "india") {
+        return this.props.spaces.india.space;
       } else if (this.props.spaceName === "intl") {
         return this.props.spaces.intl.space;
       }
@@ -78,15 +82,18 @@ class Header extends React.Component {
     if (this.generateSpace(this.props.location.pathname)) {
       if (this.generateSpace(this.props.location.pathname) === "cn") {
         return this.props.spaces.cn.accessToken;
-      }
-      if (this.generateSpace(this.props.location.pathname) === "intl") {
+      } else if (this.generateSpace(this.props.location.pathname) === "intl") {
         return this.props.spaces.intl.accessToken;
+      } else if (this.generateSpace(this.props.location.pathname) === "in") {
+        return this.props.spaces.india.accessToken;
       }
     } else {
       if (this.props.spaceName === "china") {
         return this.props.spaces.cn.accessToken;
       } else if (this.props.spaceName === "intl") {
         return this.props.spaces.intl.accessToken;
+      } else if (this.props.spaceName === "india") {
+        return this.props.spaces.india.accessToken;
       }
     }
   };

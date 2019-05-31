@@ -25,6 +25,15 @@ class FourOhFourRedirect extends React.Component {
       } else {
         this.props.history.push("/cn/en-US/404");
       }
+    }
+    if (this.props.spaceName == "india") {
+      if (this.identifyLocale(this.props.location)) {
+        this.props.history.push(
+          "/in/" + this.identifyLocale(this.props.location) + "/404"
+        );
+      } else {
+        this.props.history.push("/in/en-US/404");
+      }
     } else {
       if (this.identifyLocale(this.props.location)) {
         this.props.history.push(

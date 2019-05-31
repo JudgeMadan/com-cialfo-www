@@ -15,6 +15,11 @@ class App extends Component {
           "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2",
         spaceName: "china"
       },
+      indiaSpace: {
+        space: "ez9go2p7jf7w",
+        accessToken: "Q3_oIZQNF9DINUYgr8qNU3EsaRtT1bIu-k-d6x3O8Xw",
+        spaceName: "india"
+      },
       internationalSpace: {
         space: "qlwyndleu3of",
         accessToken:
@@ -31,6 +36,10 @@ class App extends Component {
           space: "qlwyndleu3of",
           accessToken:
             "2eb1abe530767fecfa2bbc4505a44fb7a4a205df1275e863807c2d9c4470e1fe"
+        },
+        india: {
+          space: "ez9go2p7jf7w",
+          accessToken: "Q3_oIZQNF9DINUYgr8qNU3EsaRtT1bIu-k-d6x3O8Xw"
         }
       }
     };
@@ -39,8 +48,8 @@ class App extends Component {
   componentDidMount() {
     if (document.cookie) {
       const cookieArray = document.cookie.split(" ");
-      // KEEP cookieArray2 for now for testing purposes
-      const cookieArray2 = [
+      // KEEP cookieArrays for now for testing purposes
+      const cookieArrayChina = [
         "ajs_user_id=null;",
         "ajs_group_id=null;",
         "ajs_anonymous_id=%22da02155a-24b5-4a2f-975b-57a2d9b11ba7%22;",
@@ -49,7 +58,16 @@ class App extends Component {
         "country_code=CN"
       ];
 
-      const country_codeArray = cookieArray.filter(
+      const cookieArrayIndia = [
+        "ajs_user_id=null;",
+        "ajs_group_id=null;",
+        "ajs_anonymous_id=%22da02155a-24b5-4a2f-975b-57a2d9b11ba7%22;",
+        "__distillery=37c1813_175da9d6-de81-42cc-a6bd-df41c410e0ac-7e613e6a1-52e74d9ca234-69d2;",
+        "intercom-id-giyujuw5=0732defb-3725-488f-809e-2b74254a709a;",
+        "country_code=IN"
+      ];
+
+      const country_codeArray = cookieArrayIndia.filter(
         cookie => cookie.substring(0, 12) === "country_code"
       );
 
@@ -60,6 +78,13 @@ class App extends Component {
           accessToken: this.state.chinaSpace.accessToken,
           country_code: country_code,
           spaceName: this.state.chinaSpace.spaceName
+        });
+      } else if (country_code === "country_code=IN") {
+        this.setState({
+          space: this.state.indiaSpace.space,
+          accessToken: this.state.indiaSpace.accessToken,
+          country_code: country_code,
+          spaceName: this.state.indiaSpace.spaceName
         });
       } else {
         this.setState({

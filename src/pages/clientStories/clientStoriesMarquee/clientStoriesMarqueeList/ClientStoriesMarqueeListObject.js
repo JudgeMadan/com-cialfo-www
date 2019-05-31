@@ -7,21 +7,10 @@ import { withRouter } from "react-router-dom";
 class ClientStoriesMarqueeListObject extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      trimmedRoute: ""
-    };
-  }
-
-  componentDidMount() {
-    let route = this.props.route;
-    let trimmedRoute = route.substring(1);
-    this.setState({
-      trimmedRoute: trimmedRoute
-    });
+    this.state = {};
   }
 
   render() {
-    console.log(this.state.trimmedRoute);
     return (
       <div className="client-marqueeElement client-marqueeItem ">
         <Col className="client-marquee-object px-5 mx-2 py-3 my-2">
