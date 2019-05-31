@@ -67,7 +67,7 @@ class App extends Component {
         "country_code=IN"
       ];
 
-      const country_codeArray = cookieArrayIndia.filter(
+      const country_codeArray = cookieArray.filter(
         cookie => cookie.substring(0, 12) === "country_code"
       );
 
