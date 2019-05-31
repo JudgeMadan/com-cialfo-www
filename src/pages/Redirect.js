@@ -18,6 +18,9 @@ class Redirect extends React.Component {
     if (this.props.spaceName === "india") {
       this.props.history.push("/in/en-US/home");
     }
+    if (this.props.spaceName === "us") {
+      this.props.history.push("/us/en-US/home");
+    }
   };
 
   componentDidMount() {
