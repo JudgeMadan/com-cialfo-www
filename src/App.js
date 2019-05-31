@@ -26,6 +26,11 @@ class App extends Component {
           "2eb1abe530767fecfa2bbc4505a44fb7a4a205df1275e863807c2d9c4470e1fe",
         spaceName: "intl"
       },
+      usaSpace: {
+        space: "o04ly23snu5p",
+        accessToken: "FKo0MkSEOkz5qYJ4OTWzddgv2FdGyzk8zaEwgRbwYuw",
+        spaceName: "us"
+      },
       spaces: {
         cn: {
           space: "1acwuo4zy8aa",
@@ -40,6 +45,10 @@ class App extends Component {
         india: {
           space: "ez9go2p7jf7w",
           accessToken: "Q3_oIZQNF9DINUYgr8qNU3EsaRtT1bIu-k-d6x3O8Xw"
+        },
+        us: {
+          space: "o04ly23snu5p",
+          accessToken: "FKo0MkSEOkz5qYJ4OTWzddgv2FdGyzk8zaEwgRbwYuw"
         }
       }
     };
@@ -67,6 +76,15 @@ class App extends Component {
         "country_code=IN"
       ];
 
+      const cookieArrayUSA = [
+        "ajs_user_id=null;",
+        "ajs_group_id=null;",
+        "ajs_anonymous_id=%22da02155a-24b5-4a2f-975b-57a2d9b11ba7%22;",
+        "__distillery=37c1813_175da9d6-de81-42cc-a6bd-df41c410e0ac-7e613e6a1-52e74d9ca234-69d2;",
+        "intercom-id-giyujuw5=0732defb-3725-488f-809e-2b74254a709a;",
+        "country_code=US"
+      ];
+
       const country_codeArray = cookieArray.filter(
         cookie => cookie.substring(0, 12) === "country_code"
       );
@@ -85,6 +103,13 @@ class App extends Component {
           accessToken: this.state.indiaSpace.accessToken,
           country_code: country_code,
           spaceName: this.state.indiaSpace.spaceName
+        });
+      } else if (country_code === "country_code=US") {
+        this.setState({
+          space: this.state.usaSpace.space,
+          accessToken: this.state.usaSpace.accessToken,
+          country_code: country_code,
+          spaceName: this.state.usaSpace.spaceName
         });
       } else {
         this.setState({
@@ -122,6 +147,8 @@ class App extends Component {
       return this.state.spaces.intl.space;
     } else if (url === "in") {
       return this.state.spaces.india.space;
+    } else if (url === "us") {
+      return this.state.spaces.us.space;
     }
   };
 
@@ -132,6 +159,8 @@ class App extends Component {
       return this.state.spaces.intl.accessToken;
     } else if (url === "in") {
       return this.state.spaces.india.accessToken;
+    } else if (url === "us") {
+      return this.state.spaces.us.accessToken;
     }
   };
 

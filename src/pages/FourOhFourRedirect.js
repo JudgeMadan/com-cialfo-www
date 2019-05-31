@@ -27,8 +27,7 @@ class FourOhFourRedirect extends React.Component {
         this.props.history.push("/cn/en-US/404");
         return;
       }
-    }
-    if (this.props.spaceName == "india") {
+    } else if (this.props.spaceName == "india") {
       if (this.identifyLocale(this.props.location)) {
         this.props.history.push(
           "/in/" + this.identifyLocale(this.props.location) + "/404"
@@ -36,6 +35,16 @@ class FourOhFourRedirect extends React.Component {
         return;
       } else {
         this.props.history.push("/in/en-US/404");
+        return;
+      }
+    } else if (this.props.spaceName == "us") {
+      if (this.identifyLocale(this.props.location)) {
+        this.props.history.push(
+          "/us/" + this.identifyLocale(this.props.location) + "/404"
+        );
+        return;
+      } else {
+        this.props.history.push("/us/en-US/404");
         return;
       }
     } else {

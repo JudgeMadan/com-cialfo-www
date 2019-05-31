@@ -16,10 +16,11 @@ class FullScreenHeaderLinks extends React.Component {
   };
 
   identifySpace = location => {
-    const ROUTE = "/:space/:locale/:path+";
+    const ROUTE = "/:space/:locale/:path*";
     const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
-    console.log(routeComponents[1]);
-    return routeComponents[1];
+    if (routeComponents) {
+      return routeComponents[1];
+    } else return "hey";
   };
 
   render() {
