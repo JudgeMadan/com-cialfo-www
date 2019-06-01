@@ -28,7 +28,6 @@ class EventsSubfooter extends React.Component {
   }
 
   render() {
-    console.log(this.state.width);
     return (
       <Container className="events-subfooter-page">
         <div className="full-width-dark-blue-custom-height">
