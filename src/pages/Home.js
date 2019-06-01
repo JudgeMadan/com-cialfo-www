@@ -24,7 +24,10 @@ import PathToRegexp, { compile } from "path-to-regexp";
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      height: window.innerHeight,
+      width: window.innerWidth
+    };
   }
 
   generateUrl = (path, location) => {
@@ -60,8 +63,20 @@ class Home extends React.Component {
   });
 
   componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
     this.fetchHomeContent().then(this.setHomeContent);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
+  updateDimensions = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    });
+  };
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
@@ -106,6 +121,7 @@ class Home extends React.Component {
   };
 
   render() {
+    console.log(this.state.width);
     return (
       <Container className="homePageContainer">
         {/* FULL SCREEN TOP ROW */}
@@ -200,36 +216,80 @@ class Home extends React.Component {
         {/* FULL SCREEN SEND DOCUMENTS FEATURE */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="featureRows">
-            <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-              <img className="stroke-10" src={Stroke10} />
-              <img
-                className="custom-left-align-light-blue-background"
-                src={LightBlueRectangle}
-              />
-              <img className="homePageImg" src={Documents} />
-            </Col>
-            <Col className="homePageFeaturesText">
-              <div className="homePageFeaturesRightSideTextObject">
-                <Row>
-                  <h1 className="primary_font">
-                    {this.state.homePageFeaturesSendDocumentTitle}
-                  </h1>
-                </Row>
-                <Row>
-                  <p className="secondary_font">
-                    {this.state.homePageFeaturesSendDocumentBlurb}
-                  </p>
-                </Row>
-                <Row>
-                  <Link
-                    className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
-                    to={this.generateUrl("features-send", this.props.location)}
-                  >
-                    {this.state.homePageFeaturesSendDocumentLinkText}
-                  </Link>
-                </Row>
-              </div>
-            </Col>
+            {this.state.width > 1000 && (
+              <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
+                <img className="stroke-10" src={Stroke10} />
+                <img
+                  className="custom-left-align-light-blue-background"
+                  src={LightBlueRectangle}
+                />
+                <img className="homePageImg" src={Documents} />
+              </Col>
+            )}
+            {this.state.width < 1000 && (
+              <Row className="homePageFeaturesImage homePageFeaturesImageBackground">
+                <img className="stroke-10" src={Stroke10} />
+                <img
+                  className="custom-left-align-light-blue-background"
+                  src={LightBlueRectangle}
+                />
+                <img className="homePageImg" src={Documents} />
+              </Row>
+            )}
+            {this.state.width > 1000 && (
+              <Col className="homePageFeaturesText">
+                <div className="homePageFeaturesRightSideTextObject">
+                  <Row>
+                    <h1 className="primary_font">
+                      {this.state.homePageFeaturesSendDocumentTitle}
+                    </h1>
+                  </Row>
+                  <Row>
+                    <p className="secondary_font">
+                      {this.state.homePageFeaturesSendDocumentBlurb}
+                    </p>
+                  </Row>
+                  <Row>
+                    <Link
+                      className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
+                      to={this.generateUrl(
+                        "features-send",
+                        this.props.location
+                      )}
+                    >
+                      {this.state.homePageFeaturesSendDocumentLinkText}
+                    </Link>
+                  </Row>
+                </div>
+              </Col>
+            )}
+            {this.state.width < 1000 && (
+              <Row className="homePageFeaturesText">
+                <div className="homePageFeaturesRightSideTextObject">
+                  <Row>
+                    <h1 className="primary_font">
+                      {this.state.homePageFeaturesSendDocumentTitle}
+                    </h1>
+                  </Row>
+                  <Row>
+                    <p className="secondary_font">
+                      {this.state.homePageFeaturesSendDocumentBlurb}
+                    </p>
+                  </Row>
+                  <Row>
+                    <Link
+                      className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
+                      to={this.generateUrl(
+                        "features-send",
+                        this.props.location
+                      )}
+                    >
+                      {this.state.homePageFeaturesSendDocumentLinkText}
+                    </Link>
+                  </Row>
+                </div>
+              </Row>
+            )}
           </Row>
         </MediaQuery>
         {/* MOBILE SEND DOCUMENTS FEATURES */}
@@ -262,43 +322,84 @@ class Home extends React.Component {
             </Row>
           </Container>
         </MediaQuery>
+        {/* FULL SCREEN LEVERAGE TEXT */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="featureRows">
-            <Col className="homePageFeaturesText">
-              <div className="homePageFeaturesLeftSideTextObject">
-                <Row>
-                  <h1 className="primary_font">
-                    {this.state.homePageFeaturesLeverageTitle}
-                  </h1>
-                </Row>
-                <Row>
-                  <p className="secondary_font">
-                    {this.state.homePageFeaturesLeverageBlurb}
-                  </p>
-                </Row>
-                <Row>
-                  <Link
-                    className="homeFeatureLink homePageFeaturesLeverageLinkText"
-                    to={this.generateUrl(
-                      "features-research",
-                      this.props.location
-                    )}
-                  >
-                    {this.state.homePageFeaturesLeverageLinkText}
-                  </Link>
-                </Row>
-              </div>
-            </Col>
-            <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
-              <img className="homePageImg" src={ResearchImage} />
-              <img
-                className="right-align-light-blue-background"
-                src={LightBlueRectangle}
-              />
-            </Col>
+            {this.state.width > 1000 && (
+              <Col className="homePageFeaturesText">
+                <div className="homePageFeaturesLeftSideTextObject">
+                  <Row>
+                    <h1 className="primary_font">
+                      {this.state.homePageFeaturesLeverageTitle}
+                    </h1>
+                  </Row>
+                  <Row>
+                    <p className="secondary_font">
+                      {this.state.homePageFeaturesLeverageBlurb}
+                    </p>
+                  </Row>
+                  <Row>
+                    <Link
+                      className="homeFeatureLink homePageFeaturesLeverageLinkText"
+                      to={this.generateUrl(
+                        "features-research",
+                        this.props.location
+                      )}
+                    >
+                      {this.state.homePageFeaturesLeverageLinkText}
+                    </Link>
+                  </Row>
+                </div>
+              </Col>
+            )}
+            {this.state.width < 1000 && (
+              <Row className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
+                <img className="homePageImg" src={ResearchImage} />
+                <img
+                  className="right-align-light-blue-background"
+                  src={LightBlueRectangle}
+                />
+              </Row>
+            )}
+            {this.state.width > 1000 && (
+              <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
+                <img className="homePageImg" src={ResearchImage} />
+                <img
+                  className="right-align-light-blue-background"
+                  src={LightBlueRectangle}
+                />
+              </Col>
+            )}
+            {this.state.width < 1000 && (
+              <Row className="homePageFeaturesText">
+                <div className="homePageFeaturesLeftSideTextObject">
+                  <Row>
+                    <h1 className="primary_font">
+                      {this.state.homePageFeaturesLeverageTitle}
+                    </h1>
+                  </Row>
+                  <Row>
+                    <p className="secondary_font">
+                      {this.state.homePageFeaturesLeverageBlurb}
+                    </p>
+                  </Row>
+                  <Row>
+                    <Link
+                      className="homeFeatureLink homePageFeaturesLeverageLinkText"
+                      to={this.generateUrl(
+                        "features-research",
+                        this.props.location
+                      )}
+                    >
+                      {this.state.homePageFeaturesLeverageLinkText}
+                    </Link>
+                  </Row>
+                </div>
+              </Row>
+            )}
           </Row>
         </MediaQuery>
-        {/* MOBILE RESEARCHING COLLEGE */}
+        {/* MOBILE LEVERAGE TEXT COLLEGE */}
         <MediaQuery query="(max-device-width: 1223px)">
           <Container className="mobile-bottom-border">
             <Row className="mobile-homePageFeaturesImage mt-5">
@@ -328,40 +429,82 @@ class Home extends React.Component {
             </Row>
           </Container>
         </MediaQuery>
+        {/* FULL SCREEN INSIGHTS */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="featureRows">
-            <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-              <img className="homePageImg" src={Reports} />
-              <img
-                className="custom-left-align-light-blue-background"
-                src={LightBlueRectangle}
-              />
-            </Col>
-            <Col className="homePageFeaturesText">
-              <div className="homePageFeaturesRightSideTextObject">
-                <Row>
-                  <h1 className="primary_font">
-                    {this.state.homePageFeaturesDiscoverTitle}
-                  </h1>
-                </Row>
-                <Row>
-                  <p className="secondary_font">
-                    {this.state.homePageFeaturesDiscoverBlurb}
-                  </p>
-                </Row>
-                <Row>
-                  <Link
-                    className="homeFeatureLink homePageFeaturesDiscoverLinkText"
-                    to={this.generateUrl(
-                      "features-documents",
-                      this.props.location
-                    )}
-                  >
-                    {this.state.homePageFeaturesDiscoverLinkText}
-                  </Link>
-                </Row>
-              </div>
-            </Col>
+            {this.state.width > 1000 && (
+              <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
+                <img className="homePageImg" src={Reports} />
+                <img
+                  className="custom-left-align-light-blue-background"
+                  src={LightBlueRectangle}
+                />
+              </Col>
+            )}
+            {this.state.width < 1000 && (
+              <Row className="homePageFeaturesImage homePageFeaturesImageBackground">
+                <img className="homePageImg" src={Reports} />
+                <img
+                  className="custom-left-align-light-blue-background"
+                  src={LightBlueRectangle}
+                />
+              </Row>
+            )}
+            {this.state.width > 1000 && (
+              <Col className="homePageFeaturesText">
+                <div className="homePageFeaturesRightSideTextObject">
+                  <Row>
+                    <h1 className="primary_font">
+                      {this.state.homePageFeaturesDiscoverTitle}
+                    </h1>
+                  </Row>
+                  <Row>
+                    <p className="secondary_font">
+                      {this.state.homePageFeaturesDiscoverBlurb}
+                    </p>
+                  </Row>
+                  <Row>
+                    <Link
+                      className="homeFeatureLink homePageFeaturesDiscoverLinkText"
+                      to={this.generateUrl(
+                        "features-documents",
+                        this.props.location
+                      )}
+                    >
+                      {this.state.homePageFeaturesDiscoverLinkText}
+                    </Link>
+                  </Row>
+                </div>
+              </Col>
+            )}
+
+            {this.state.width < 1000 && (
+              <Row className="homePageFeaturesText">
+                <div className="homePageFeaturesRightSideTextObject">
+                  <Row>
+                    <h1 className="primary_font">
+                      {this.state.homePageFeaturesDiscoverTitle}
+                    </h1>
+                  </Row>
+                  <Row>
+                    <p className="secondary_font">
+                      {this.state.homePageFeaturesDiscoverBlurb}
+                    </p>
+                  </Row>
+                  <Row>
+                    <Link
+                      className="homeFeatureLink homePageFeaturesDiscoverLinkText"
+                      to={this.generateUrl(
+                        "features-documents",
+                        this.props.location
+                      )}
+                    >
+                      {this.state.homePageFeaturesDiscoverLinkText}
+                    </Link>
+                  </Row>
+                </div>
+              </Row>
+            )}
           </Row>
         </MediaQuery>
         {/* MOBILE DISCOVER INSIGHTS */}

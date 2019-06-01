@@ -23,18 +23,28 @@ class SolutionsSubfooter extends React.Component {
     });
   };
 
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
   render() {
+    console.log(this.state);
     return (
       <Container className="featuresSendPage subFooterPage">
         <div className="full-width-dark-blue-custom-height">
           <Row>
             <Col className="subFooterPageImgContainer">
-              <img className="subFooterPageImg" src={this.props.img} />
+              {this.state.width > 768 && (
+                <img className="subFooterPageImg" src={this.props.img} />
+              )}
+              {this.state.width < 769 && (
+                <img className="small-subFooterPageImg" src={this.props.img} />
+              )}
             </Col>
             <Col className="subFooterPageQuote">
               <Row>
-                {this.state.width > 1210 && (
-                  <div>
+                {this.state.width > 1200 && (
+                  <Container>
                     <h1 className="primary_font sub_footer_quote white_font">
                       "{this.props.quote}"
                     </h1>
@@ -44,18 +54,46 @@ class SolutionsSubfooter extends React.Component {
                     <p className="secondary_font white_font">
                       {this.props.quoteAuthorCredit}
                     </p>
-                  </div>
+                  </Container>
                 )}
-                {this.state.width < 1210 && (
-                  <div>
-                    <h1 className="primary_font small_sub_footer_quote ">
+                {992 < this.state.width && this.state.width < 1200 && (
+                  <Container>
+                    <h1 className="primary_font medium-sub_footer_quote white_font">
                       "{this.props.quote}"
                     </h1>
-                    <p className="secondary_font small_sub_footer_quote_author ">
-                      {this.props.quoteAuthor} <br />
+                    <p className="secondary_font white_font solutions-bold">
+                      {this.props.quoteAuthor}
+                    </p>
+                    <p className="secondary_font white_font">
                       {this.props.quoteAuthorCredit}
                     </p>
-                  </div>
+                  </Container>
+                )}
+                {770 < this.state.width && this.state.width < 992 && (
+                  <Container>
+                    <h1 className="primary_font tiny-sub_footer_quote white_font">
+                      "{this.props.quote}"
+                    </h1>
+                    <p className="secondary_font white_font tiny-sub-footer-quote-author-credit solutions-bold">
+                      {this.props.quoteAuthor}
+                    </p>
+                    <p className="secondary_font tiny-sub-footer-quote-author-credit white_font">
+                      {this.props.quoteAuthorCredit}
+                    </p>
+                  </Container>
+                )}
+                {this.state.width < 770 && (
+                  <Container className="tiny-solutions-sub-footer-container">
+                    <h1 className="primary_font  extra-tiny-sub_footer_quote white_font ">
+                      "{this.props.quote}"
+                    </h1>
+                    <p className="secondary_font extra-tiny-sub-footer-quote-author-credit white_font solutions-bold">
+                      {this.props.quoteAuthor}
+                    </p>
+                    <p className="secondary_font extra-tiny-sub-footer-quote-author-credit white_font">
+                      {this.props.quoteAuthorCredit}
+                    </p>
+                  </Container>
                 )}
               </Row>
             </Col>

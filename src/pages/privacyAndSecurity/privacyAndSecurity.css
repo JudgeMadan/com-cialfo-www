@@ -73,6 +73,7 @@
 
 .mobile-security-object-row {
   width: 325px;
+  display: flex;
 }
 
 .security-object-col-container {

@@ -1,8 +1,9 @@
 import React from "react";
-import * as contentful from "contentful";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 import "./solutions.css";
+
 import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
@@ -54,12 +55,7 @@ class SolutionsLeftSideText extends React.Component {
               </Row>
             </div>
           </Col>
-          <Col className="featureImage">
-            <img
-              className="solutions-right-align-light-blue-background"
-              src={ThinLightBlueRectangle}
-            />
-          </Col>
+          <Col className="feature-image-col" />
         </Row>
       </div>
     );

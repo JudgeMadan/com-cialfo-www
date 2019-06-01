@@ -25,14 +25,30 @@
   margin-bottom: 220px;
 }
 
+.test-row {
+  background-color: white;
+  /* padding: 0 100px; */
+}
+
 .featureImage {
   background-color: #ebf9ff;
-  height: 420px;
+  height: auto;
+}
+
+.feature-image-col {
+  background-color: #ebf9ff;
+  height: auto;
+  min-height: 420px;
 }
 
 .featureSubSectionTextAlign {
   display: flex;
   align-items: center;
+}
+
+.inner-test-div {
+  max-width: 90% !important;
+  padding: 10px 0;
 }
 
 .featureSendPartnersTitle {
@@ -43,21 +59,63 @@
   margin-bottom: 220px;
 }
 
+/* .sub_footer_quote {
+  color: white;
+  margin-top: 50px !important;
+  font-size: 3vw !important;
+}  */
+
 .sub_footer_quote {
   color: white;
-  padding-top: 20px;
+  font-size: 35px;
+}
+
+.medium-sub_footer_quote {
+  color: white;
+  font-size: 30px;
+}
+
+.small-sub_footer_quote {
+  color: white;
+  font-size: 23px;
+}
+
+.tiny-sub_footer_quote {
+  color: white !important;
+  font-size: 20px !important;
+}
+
+.tiny-sub-footer-quote-author-credit {
+  color: white !important;
+  font-size: 15px !important;
+  margin-bottom: 0px !important;
+}
+
+.extra-tiny-sub_footer_quote {
+  color: white !important;
+  font-size: 15px !important;
+}
+
+.extra-tiny-sub-footer-quote-author-credit {
+  color: white !important;
+  font-size: 12.5px !important;
+  margin-bottom: 0px !important;
+}
+
+.tiny-sub_footer_quote-margin {
+  margin-top: 10px;
 }
 
 .small_sub_footer_quote {
   color: white !important;
-  font-size: 3vw !important;
-  padding-top: 20px;
+  font-size: 20px;
 }
 
 .small_sub_footer_quote_author {
   color: white !important;
   font-size: 1.25vw !important;
   line-height: 1.5vw !important;
+  padding-bottom: 20px;
 }
 
 .subFooterPage {
@@ -79,11 +137,21 @@
 }
 
 .researchBottomRow {
-  margin-bottom: 250px;
+  margin-bottom: 200px;
 }
 
 .subFooterPageImg {
   width: 50%;
+  height: auto;
+}
+
+.event-small-subFooterPageImg {
+  width: 80%;
+  height: auto;
+}
+
+.small-subFooterPageImg {
+  width: 80%;
   height: auto;
 }
 
@@ -95,12 +163,6 @@
   align-items: center;
   justify-content: center;
 }
-
-/* .full-width-light-blue {
-  margin: 0 -9999rem;
-  padding: 0.25rem 9999rem;
-  background: #ebf9ff;
-} */
 
 .full-width-near-black {
   margin: 0 -9999rem;
@@ -141,12 +203,16 @@
   margin-left: 750px;
 }
 
-.events_small_sub_footer_quote {
+.events_small_sub_footer_blurb {
   color: white !important;
-  font-size: 1.5vw !important;
-  padding-top: 20px;
-  line-height: 1.5vw !important;
+  font-size: 15px !important;
+  line-height: 17px !important;
   padding-bottom: 10px;
+}
+
+.event-small_sub_footer_quote {
+  color: white !important;
+  font-size: 20px;
 }
 
 .feature-send-portal-left-align-light-blue-rectangle {
@@ -192,4 +258,8 @@
 
 .mobile-features-page-content-text {
   margin: 0 15%;
+}
+
+.tiny-solutions-sub-footer-container {
+  min-width: 300px !important;
 }

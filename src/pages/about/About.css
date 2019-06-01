@@ -58,9 +58,10 @@
 }
 
 .about-page-who-we-are-image {
-  max-width: 50%;
-  max-height: auto;
+  /* max-width: 50%; */
+  height: auto;
   margin-right: 50px;
+  width: 270px;
 }
 
 .aboutPageWhoWeAreContent {
@@ -304,4 +305,8 @@
 
 .counselor-advisor-blurb {
   min-height: 65%;
+}
+
+.about-leadership-team-row {
+  justify-content: space-around;
 }

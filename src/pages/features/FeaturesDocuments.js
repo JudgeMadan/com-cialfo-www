@@ -16,7 +16,10 @@ import { withRouter } from "react-router-dom";
 class FeaturesDocuments extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      height: window.innerHeight,
+      width: window.innerWidth
+    };
   }
 
   setSpace = () => {
@@ -33,8 +36,19 @@ class FeaturesDocuments extends React.Component {
   });
 
   componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
     this.fetchFeaturesResearchPage().then(this.setFeaturesResearchPage);
   }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
+  updateDimensions = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    });
+  };
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
@@ -70,7 +84,7 @@ class FeaturesDocuments extends React.Component {
 
   render() {
     return (
-      <Container className="featuresSendPage">
+      <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="titleContainer">
@@ -80,12 +94,22 @@ class FeaturesDocuments extends React.Component {
             <div>
               <img className="oval" src={Oval} />
               <img className="line" src={Line} />
-              <ReactPlayer
-                className="video"
-                width="800px"
-                height="448px"
-                url={this.state.documentsVideo}
-              />
+              {this.state.width > 850 && (
+                <ReactPlayer
+                  className="video"
+                  width="800px"
+                  height="448px"
+                  url={this.state.documentsVideo}
+                />
+              )}
+              {this.state.width < 850 && (
+                <ReactPlayer
+                  className="video"
+                  width="600px"
+                  height="366px"
+                  url={this.state.documentsVideo}
+                />
+              )}
             </div>
           </Row>
         </MediaQuery>
@@ -110,13 +134,7 @@ class FeaturesDocuments extends React.Component {
         {/* FULL WIDTH EXPLORE */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row>
-            <Col className="featureImage">
-              <img
-                className="feature-send-portal-left-align-light-blue-rectangle"
-                src={ThinLightBlueRectangle}
-              />
-              {/* <img src={this.state.researchInfoImg} /> */}
-            </Col>
+            <Col className="feature-image-col" />
             <Col className="featureSubSectionTextAlign">
               <Container>
                 <Row>
@@ -171,13 +189,7 @@ class FeaturesDocuments extends React.Component {
                 </Row>
               </Container>
             </Col>
-            <Col className="featureImage">
-              <img
-                className="feature-send-portal-right-align-light-blue-rectangle"
-                src={ThinLightBlueRectangle}
-              />
-              {/* <img src={this.state.researchTranscriptImg} /> */}
-            </Col>
+            <Col className="feature-image-col" />
           </Row>
         </MediaQuery>
         {/* MOBILE TRANSCRIPT */}
@@ -196,13 +208,7 @@ class FeaturesDocuments extends React.Component {
         {/* FULL WIDTH PERSONAL KNOWLEDGE */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="researchBottomRow">
-            <Col className="featureImage">
-              <img
-                className="feature-send-portal-left-align-light-blue-rectangle"
-                src={ThinLightBlueRectangle}
-              />
-              {/* <img src={this.state.researchKnowledgeImg} /> */}
-            </Col>
+            <Col className="feature-image-col" />
             <Col className="featureSubSectionTextAlign">
               <Container>
                 <Row>

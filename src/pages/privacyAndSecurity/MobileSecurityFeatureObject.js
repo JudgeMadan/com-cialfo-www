@@ -18,9 +18,13 @@ class MobileSecurityFeatureObject extends React.Component {
       securityFeaturesObjectRow = securityFeatures.map((feature, index) => {
         return (
           <Container className="mobile-security-object-row pb-2">
-            <img src={SecurityEllipse} />
+            <div>
+              <img src={SecurityEllipse} />
+            </div>
             &nbsp; &nbsp;
-            {feature}
+            <div>
+              <span>{feature}</span>
+            </div>
           </Container>
         );
       });
