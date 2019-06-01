@@ -23,11 +23,16 @@ class SolutionsSubfooter extends React.Component {
     });
   };
 
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
   render() {
+    console.log(this.state);
     return (
       <Container className="featuresSendPage subFooterPage">
         <div className="full-width-dark-blue-custom-height">
-          <Row>
+          <div>
             <Col className="subFooterPageImgContainer">
               <img className="subFooterPageImg" src={this.props.img} />
             </Col>
@@ -59,7 +64,7 @@ class SolutionsSubfooter extends React.Component {
                 )}
               </Row>
             </Col>
-          </Row>
+          </div>
         </div>
       </Container>
     );
