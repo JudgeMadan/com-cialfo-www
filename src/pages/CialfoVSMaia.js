@@ -68,7 +68,7 @@ class CialfoVSMaia extends React.Component {
 
   render() {
     return (
-      <Container className="homePageContainer">
+      <Container fluid={true}>
         <SolutionsSubPage
           locale={this.props.locale}
           accessToken={this.props.accessToken}

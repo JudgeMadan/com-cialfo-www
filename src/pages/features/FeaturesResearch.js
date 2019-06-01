@@ -85,7 +85,7 @@ class FeaturesResearch extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <Container className="featuresSendPage">
+      <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="titleContainer">
@@ -134,15 +134,15 @@ class FeaturesResearch extends React.Component {
         </MediaQuery>
         {/* FULL SCREEN Knowledge */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row>
-            <Col className="featureImage">
-              <img
+          <Row className="test-row" no-gutters>
+            <Col className="feature-image-col">
+              {/* <img
                 className="feature-send-portal-left-align-light-blue-rectangle"
                 src={ThinLightBlueRectangle}
-              />
+              /> */}
             </Col>
-            <Col className="featureSubSectionTextAlign">
-              <Container>
+            <Col className="featureSubSectionTextAlign ">
+              <Container className="inner-test-div">
                 <Row>
                   <Col>
                     <h1 className="primary_font">
@@ -179,12 +179,12 @@ class FeaturesResearch extends React.Component {
         </MediaQuery>
         {/* FULL WIDTH TRANSCRIPT */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row>
+          <Row className="test-row">
             <Col
               className="featureSubSectionTextAlign"
               ref={divElement => (this.divElement = divElement)}
             >
-              <Container>
+              <Container className="inner-test-div ">
                 <Row>
                   <Col>
                     <h1 className="primary_font">
@@ -201,11 +201,11 @@ class FeaturesResearch extends React.Component {
                 </Row>
               </Container>
             </Col>
-            <Col className="featureImage">
-              <img
+            <Col className="feature-image-col">
+              {/* <img
                 className="feature-send-portal-right-align-light-blue-rectangle"
                 src={ThinLightBlueRectangle}
-              />
+              /> */}
               {/* <img src={this.state.researchTranscriptImg} /> */}
             </Col>
           </Row>
@@ -225,16 +225,10 @@ class FeaturesResearch extends React.Component {
         </MediaQuery>
         {/* FULL WIDTH KNOWLEDGE */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="researchBottomRow">
-            <Col className="featureImage">
-              <img
-                className="feature-send-portal-left-align-light-blue-rectangle"
-                src={ThinLightBlueRectangle}
-              />
-              {/* <img src={this.state.researchKnowledgeImg} /> */}
-            </Col>
+          <Row className="researchBottomRow test-row">
+            <Col className="feature-image-col" />
             <Col className="featureSubSectionTextAlign">
-              <Container>
+              <Container className="inner-test-div">
                 <Row>
                   <Col>
                     <h1 className="primary_font">

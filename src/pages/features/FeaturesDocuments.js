@@ -84,7 +84,7 @@ class FeaturesDocuments extends React.Component {
 
   render() {
     return (
-      <Container className="featuresSendPage">
+      <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="titleContainer">
@@ -134,13 +134,7 @@ class FeaturesDocuments extends React.Component {
         {/* FULL WIDTH EXPLORE */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row>
-            <Col className="featureImage">
-              <img
-                className="feature-send-portal-left-align-light-blue-rectangle"
-                src={ThinLightBlueRectangle}
-              />
-              {/* <img src={this.state.researchInfoImg} /> */}
-            </Col>
+            <Col className="feature-image-col" />
             <Col className="featureSubSectionTextAlign">
               <Container>
                 <Row>
@@ -195,13 +189,7 @@ class FeaturesDocuments extends React.Component {
                 </Row>
               </Container>
             </Col>
-            <Col className="featureImage">
-              <img
-                className="feature-send-portal-right-align-light-blue-rectangle"
-                src={ThinLightBlueRectangle}
-              />
-              {/* <img src={this.state.researchTranscriptImg} /> */}
-            </Col>
+            <Col className="feature-image-col" />
           </Row>
         </MediaQuery>
         {/* MOBILE TRANSCRIPT */}
@@ -220,13 +208,7 @@ class FeaturesDocuments extends React.Component {
         {/* FULL WIDTH PERSONAL KNOWLEDGE */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="researchBottomRow">
-            <Col className="featureImage">
-              <img
-                className="feature-send-portal-left-align-light-blue-rectangle"
-                src={ThinLightBlueRectangle}
-              />
-              {/* <img src={this.state.researchKnowledgeImg} /> */}
-            </Col>
+            <Col className="feature-image-col" />
             <Col className="featureSubSectionTextAlign">
               <Container>
                 <Row>

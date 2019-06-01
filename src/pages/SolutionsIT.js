@@ -67,9 +67,8 @@ class SolutionsIT extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
-      <Container className="homePageContainer">
+      <Container fluid={true}>
         <SolutionsSubPage
           locale={this.props.locale}
           accessToken={this.props.accessToken}

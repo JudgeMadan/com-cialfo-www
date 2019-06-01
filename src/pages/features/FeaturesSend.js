@@ -87,7 +87,7 @@ class FeaturesSend extends React.Component {
 
   render() {
     return (
-      <Container className="featuresSendPage">
+      <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="titleContainer">
@@ -136,12 +136,7 @@ class FeaturesSend extends React.Component {
         {/* FULL SCREEN FEATURE ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row>
-            <Col className="featureImage">
-              <img
-                className="feature-send-portal-left-align-light-blue-rectangle"
-                src={ThinLightBlueRectangle}
-              />
-            </Col>
+            <Col className="feature-image-col" />
             <Col className="featureSubSectionTextAlign">
               <Container>
                 <Row>
@@ -202,12 +197,7 @@ class FeaturesSend extends React.Component {
                 </Row>
               </Container>
             </Col>
-            <Col className="featureImage">
-              <img
-                className="feature-send-portal-right-align-light-blue-rectangle"
-                src={ThinLightBlueRectangle}
-              />
-            </Col>
+            <Col className="feature-image-col" />
           </Row>
         </MediaQuery>
         {/* MOBILE TRANSCRIPT ROW */}

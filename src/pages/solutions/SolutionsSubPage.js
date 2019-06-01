@@ -18,7 +18,7 @@ class SolutionsSubPage extends React.Component {
 
   render() {
     return (
-      <Container className="homePageContainer">
+      <Container fluid={true}>
         {/* FULL SCREEN SOLUTIONS SUBPAGE */}
         <MediaQuery query="(min-device-width: 1224px)">
           <SolutionsHeader

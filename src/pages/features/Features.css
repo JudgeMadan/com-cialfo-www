@@ -25,14 +25,30 @@
   margin-bottom: 220px;
 }
 
+.test-row {
+  background-color: white;
+  /* padding: 0 100px; */
+}
+
 .featureImage {
   background-color: #ebf9ff;
-  height: 420px;
+  height: auto;
+}
+
+.feature-image-col {
+  background-color: #ebf9ff;
+  height: auto;
+  min-height: 420px;
 }
 
 .featureSubSectionTextAlign {
   display: flex;
   align-items: center;
+}
+
+.inner-test-div {
+  max-width: 90% !important;
+  padding: 10px 0;
 }
 
 .featureSendPartnersTitle {
@@ -121,7 +137,7 @@
 }
 
 .researchBottomRow {
-  margin-bottom: 250px;
+  margin-bottom: 200px;
 }
 
 .subFooterPageImg {

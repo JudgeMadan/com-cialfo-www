@@ -18,7 +18,7 @@ class AboutLeadershipTeam extends React.Component {
       leadershipTeamObject = leadershipTeam.map((leader, index) => {
         const number = index + 1;
         return (
-          <Col key={leader.sys.id}>
+          <Col key={leader.sys.id} xl={3} md={6}>
             <div className="leadership-team-container">
               <Row className="leadershipObjectContent mx-3">
                 {number % 2 !== 0 && (

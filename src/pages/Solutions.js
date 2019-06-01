@@ -80,7 +80,7 @@ class Solutions extends React.Component {
 
   render() {
     return (
-      <Container className="homePageContainer">
+      <Container className="homePageContainer" fluid={true}>
         {/* FULL PAGE HEADER */}
         <MediaQuery query="(min-device-width: 1224px)">
           <SolutionsHeader
