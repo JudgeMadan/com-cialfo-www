@@ -35,12 +35,12 @@ class FeaturesSubfooter extends React.Component {
         <div className="full-width-dark-blue-custom-height">
           <Row className="feature-sub-footer-row">
             <Col className="subFooterPageImgContainer">
-              {this.state.width > 768 && (
-                <img className="subFooterPageImg" src={this.props.img} />
-              )}
-              {this.state.width < 769 && (
-                <img className="small-subFooterPageImg" src={this.props.img} />
-              )}
+              {/* {this.state.width > 768 && ( */}
+              <img className="subFooterPageImg" src={this.props.img} />
+
+              {/* {this.state.width < 769 && ( */}
+              {/* //   <img className="small-subFooterPageImg" src={this.props.img} /> */}
+              {/* // )} */}
             </Col>
             <Col className="subFooterPageQuote">
               <Row className="sub-footer-content-row">
