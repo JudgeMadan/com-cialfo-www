@@ -18,7 +18,10 @@ import { withRouter } from "react-router-dom";
 class FeaturesSend extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      height: window.innerHeight,
+      width: window.innerWidth
+    };
   }
 
   setSpace = () => {
@@ -35,8 +38,20 @@ class FeaturesSend extends React.Component {
   });
 
   componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
     this.fetchFeaturesSendingPage().then(this.setFeaturesSendingPage);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
+  updateDimensions = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    });
+  };
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
@@ -82,12 +97,22 @@ class FeaturesSend extends React.Component {
             <div>
               <img className="oval" src={Oval} />
               <img className="line" src={Line} />
-              <ReactPlayer
-                className="video"
-                width="800px"
-                height="488px"
-                url={this.state.sendVideo}
-              />
+              {this.state.width > 850 && (
+                <ReactPlayer
+                  className="video"
+                  width="800px"
+                  height="448px"
+                  url={this.state.sendVideo}
+                />
+              )}
+              {this.state.width < 850 && (
+                <ReactPlayer
+                  className="video"
+                  width="600px"
+                  height="366px"
+                  url={this.state.sendVideo}
+                />
+              )}
             </div>
           </Row>
         </MediaQuery>

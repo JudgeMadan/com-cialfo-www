@@ -15,7 +15,10 @@ import { withRouter } from "react-router-dom";
 class FeaturesResearch extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      height: window.innerHeight,
+      width: window.innerWidth
+    };
   }
 
   setSpace = () => {
@@ -32,8 +35,20 @@ class FeaturesResearch extends React.Component {
   });
 
   componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
     this.fetchFeaturesResearchPage().then(this.setFeaturesResearchPage);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
+  updateDimensions = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    });
+  };
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
@@ -80,12 +95,22 @@ class FeaturesResearch extends React.Component {
             <div>
               <img className="oval" src={Oval} />
               <img className="line" src={Line} />
-              <ReactPlayer
-                className="video"
-                width="800px"
-                height="488px"
-                url={this.state.researchVideo}
-              />
+              {this.state.width > 850 && (
+                <ReactPlayer
+                  className="video"
+                  width="800px"
+                  height="448px"
+                  url={this.state.researchVideo}
+                />
+              )}
+              {this.state.width < 850 && (
+                <ReactPlayer
+                  className="video"
+                  width="600px"
+                  height="366px"
+                  url={this.state.researchVideo}
+                />
+              )}
             </div>
           </Row>
         </MediaQuery>
@@ -115,7 +140,6 @@ class FeaturesResearch extends React.Component {
                 className="feature-send-portal-left-align-light-blue-rectangle"
                 src={ThinLightBlueRectangle}
               />
-              {/* <img src={this.state.researchInfoImg} /> */}
             </Col>
             <Col className="featureSubSectionTextAlign">
               <Container>
@@ -156,7 +180,10 @@ class FeaturesResearch extends React.Component {
         {/* FULL WIDTH TRANSCRIPT */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row>
-            <Col className="featureSubSectionTextAlign">
+            <Col
+              className="featureSubSectionTextAlign"
+              ref={divElement => (this.divElement = divElement)}
+            >
               <Container>
                 <Row>
                   <Col>
