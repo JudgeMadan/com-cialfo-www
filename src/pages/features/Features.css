@@ -129,6 +129,11 @@
   height: auto;
 }
 
+.event-small-subFooterPageImg {
+  width: 80%;
+  height: auto;
+}
+
 .small-subFooterPageImg {
   width: 80%;
   height: auto;
@@ -182,12 +187,16 @@
   margin-left: 750px;
 }
 
-.events_small_sub_footer_quote {
+.events_small_sub_footer_blurb {
   color: white !important;
-  font-size: 1.5vw !important;
-  padding-top: 20px;
-  line-height: 1.5vw !important;
+  font-size: 15px !important;
+  line-height: 17px !important;
   padding-bottom: 10px;
+}
+
+.event-small_sub_footer_quote {
+  color: white !important;
+  font-size: 20px;
 }
 
 .feature-send-portal-left-align-light-blue-rectangle {

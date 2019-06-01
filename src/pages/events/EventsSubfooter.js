@@ -14,7 +14,6 @@ class EventsSubfooter extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.state.height);
     window.addEventListener("resize", this.updateDimensions);
   }
   updateDimensions = () => {
@@ -24,17 +23,30 @@ class EventsSubfooter extends React.Component {
     });
   };
 
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
   render() {
+    console.log(this.state.width);
     return (
       <Container className="events-subfooter-page">
         <div className="full-width-dark-blue-custom-height">
           <Row>
             <Col className="subFooterPageImgContainer">
-              <img className="subFooterPageImg" src={this.props.img} />
+              {this.state.width > 992 && (
+                <img className="subFooterPageImg" src={this.props.img} />
+              )}
+              {this.state.width < 993 && (
+                <img
+                  className="event-small-subFooterPageImg"
+                  src={this.props.img}
+                />
+              )}
             </Col>
             <Col className="subFooterPageQuote">
               <Row>
-                {this.state.width > 1210 && (
+                {this.state.width > 768 && (
                   <div>
                     <h1 className="primary_font sub_footer_quote white_font">
                       {this.props.title}
@@ -44,13 +56,12 @@ class EventsSubfooter extends React.Component {
                     </h5>
                   </div>
                 )}
-
-                {this.state.width < 1210 && (
+                {this.state.width < 767 && (
                   <div>
-                    <h1 className="primary_font small_sub_footer_quote white_font">
+                    <h1 className="primary_font event-small_sub_footer_quote white_font">
                       {this.props.title}
                     </h1>
-                    <h5 className="secondary_font events_small_sub_footer_quote white_font">
+                    <h5 className="secondary_font events_small_sub_footer_blurb white_font">
                       {this.props.quote}
                     </h5>
                   </div>
