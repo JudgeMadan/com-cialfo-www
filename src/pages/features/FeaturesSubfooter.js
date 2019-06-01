@@ -80,7 +80,7 @@ class FeaturesSubfooter extends React.Component {
                 )}
                 {this.state.width < 770 && (
                   <Container>
-                    <h1 className="primary_font tiny-sub_footer_quote white_font tiny-sub_footer_quote-margin">
+                    <h1 className="primary_font tiny-sub_footer_quote white_font ">
                       "{this.props.quote}"
                     </h1>
                     <p className="secondary_font white_font tiny-sub_footer_quote">
