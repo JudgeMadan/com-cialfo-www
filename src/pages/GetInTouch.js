@@ -114,7 +114,6 @@ class GetInTouch extends React.Component {
   // getADemo
 
   render() {
-    console.log(this.state.width);
     return (
       <div>
         {/* FULL WIDTH HEADER */}
@@ -353,7 +352,7 @@ class GetInTouch extends React.Component {
             </Container>
           )}
           {this.state.width < 1000 && (
-            <Container className="get_in_touch_container">
+            <Container className="small-get_in_touch_container">
               <form
                 method="POST"
                 action="https://cialfo51705.activehosted.com/proc.php"
