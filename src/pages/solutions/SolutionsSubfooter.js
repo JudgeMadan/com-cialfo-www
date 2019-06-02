@@ -37,13 +37,13 @@ class SolutionsSubfooter extends React.Component {
               {this.state.width > 768 && (
                 <img className="subFooterPageImg" src={this.props.img} />
               )}
-              {this.state.width < 769 && (
+              {this.state.width <= 768 && (
                 <img className="small-subFooterPageImg" src={this.props.img} />
               )}
             </Col>
             <Col className="subFooterPageQuote">
               <Row>
-                {this.state.width >= 1200 && (
+                {this.state.width > 1200 && (
                   <Container>
                     <h1 className="primary_font sub_footer_quote white_font">
                       "{this.props.quote}"
@@ -56,7 +56,7 @@ class SolutionsSubfooter extends React.Component {
                     </p>
                   </Container>
                 )}
-                {992 < this.state.width && this.state.width < 1200 && (
+                {992 <= this.state.width && this.state.width <= 1200 && (
                   <Container>
                     <h1 className="primary_font medium-sub_footer_quote white_font">
                       "{this.props.quote}"

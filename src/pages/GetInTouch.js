@@ -351,7 +351,7 @@ class GetInTouch extends React.Component {
               </form>
             </Container>
           )}
-          {this.state.width < 1000 && (
+          {this.state.width <= 1000 && (
             <Container className="small-get_in_touch_container demo-form-object-container">
               <div>
                 <form
