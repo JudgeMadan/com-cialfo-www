@@ -22,7 +22,10 @@ import "./about/About.css";
 class About extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      height: window.innerHeight,
+      width: window.innerWidth
+    };
   }
 
   setSpace = () => {
@@ -45,8 +48,20 @@ class About extends React.Component {
   }
 
   componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
     this.fetchAboutContent().then(this.setAboutContent);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
+  updateDimensions = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    });
+  };
 
   fetchAboutContent = () =>
     this.client.getEntries({
@@ -78,34 +93,55 @@ class About extends React.Component {
   };
 
   render() {
-    console.log(this.state);
+    console.log(this.state.width);
     return (
       <Container className="aboutPage">
         {/* FULL SCREEN HEADER */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="aboutPageTitle">
-            <Container>
-              <Row>
-                <Col className="top_row_left_col ">
-                  <div>
-                    <Row>
-                      <h1 className="primary_font left-side-header-title">
-                        {this.state.aboutPageHeaderTitle}
-                      </h1>
-                    </Row>
-                    <Row>
-                      <h2 className="secondary_font left-side-header-blurb">
-                        {this.state.aboutPageHeaderSubtitle}
-                      </h2>
-                    </Row>
-                  </div>
-                </Col>
-                <Col>
+          {this.state.width >= 992 && (
+            <Row className="aboutPageTitle">
+              <Container>
+                <Row>
+                  <Col className="top_row_left_col ">
+                    <div>
+                      <Row>
+                        <h1 className="primary_font left-side-header-title">
+                          {this.state.aboutPageHeaderTitle}
+                        </h1>
+                      </Row>
+                      <Row>
+                        <h2 className="secondary_font left-side-header-blurb">
+                          {this.state.aboutPageHeaderSubtitle}
+                        </h2>
+                      </Row>
+                    </div>
+                  </Col>
+                  <Col>
+                    <img src={this.state.aboutPageHeaderImage} />
+                  </Col>
+                </Row>
+              </Container>
+            </Row>
+          )}
+          {this.state.width < 992 && (
+            <Row className="aboutPageTitle">
+              <Container>
+                <Row className="center-in-row">
                   <img src={this.state.aboutPageHeaderImage} />
-                </Col>
-              </Row>
-            </Container>
-          </Row>
+                </Row>
+                <Row className="center-in-row mt-5 mb-3">
+                  <h1 className="primary_font left-side-header-title">
+                    {this.state.aboutPageHeaderTitle}
+                  </h1>
+                </Row>
+                <Row className="center-in-row">
+                  <h2 className="secondary_font">
+                    {this.state.aboutPageHeaderSubtitle}
+                  </h2>
+                </Row>
+              </Container>
+            </Row>
+          )}
         </MediaQuery>
         {/* MOBILE HEADER */}
         <MediaQuery query="(max-device-width: 1223px)">
@@ -163,21 +199,42 @@ class About extends React.Component {
         {/* FULL SCREEN ABOUT WHO WE ARE */}
         <MediaQuery query="(min-device-width: 1224px)">
           <div className="full-width-dark-blue">
-            <Row className="dark-blue-background">
-              <Col className="who-we-are-image-container">
-                <img
-                  className="about-page-who-we-are-image"
-                  src={this.state.aboutPageWhoWeAreImage}
-                />
-              </Col>
-              <Col className="aboutPageWhoWeAreContentContainer">
-                <Row>
-                  <p className="aboutPageWhoWeAreContent">
-                    {this.state.aboutPageWhoWeAreContent}
-                  </p>
+            {this.state.width >= 996 && (
+              <Row className="dark-blue-background">
+                <Col className="who-we-are-image-container">
+                  <img
+                    className="about-page-who-we-are-image"
+                    src={this.state.aboutPageWhoWeAreImage}
+                  />
+                </Col>
+                <Col className="aboutPageWhoWeAreContentContainer">
+                  <Row>
+                    <p className="aboutPageWhoWeAreContent">
+                      {this.state.aboutPageWhoWeAreContent}
+                    </p>
+                  </Row>
+                </Col>
+              </Row>
+            )}
+            {this.state.width < 996 && (
+              <Row className="dark-blue-background center-in-row">
+                <Row className="small-who-we-are-image-container my-5">
+                  <Container className="center-in-row">
+                    <img
+                      className="about-page-who-we-are-image"
+                      src={this.state.aboutPageWhoWeAreImage}
+                    />
+                  </Container>
                 </Row>
-              </Col>
-            </Row>
+                <Row className="aboutPageWhoWeAreContentContainer mb-5 px-5">
+                  <Row>
+                    <p className="aboutPageWhoWeAreContent">
+                      {this.state.aboutPageWhoWeAreContent}
+                    </p>
+                  </Row>
+                </Row>
+              </Row>
+            )}
           </div>
         </MediaQuery>
         {/* MOBILE WHO WE ARE */}
