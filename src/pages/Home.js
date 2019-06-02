@@ -226,7 +226,7 @@ class Home extends React.Component {
                 <img className="homePageImg" src={Documents} />
               </Col>
             )}
-            {this.state.width < 1000 && (
+            {this.state.width <= 1000 && (
               <Row className="homePageFeaturesImage homePageFeaturesImageBackground">
                 <img className="stroke-10" src={Stroke10} />
                 <img

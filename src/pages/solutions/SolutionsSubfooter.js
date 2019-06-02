@@ -28,7 +28,7 @@ class SolutionsSubfooter extends React.Component {
   }
 
   render() {
-    console.log(this.state);
+    console.log(this.state.width);
     return (
       <Container className="featuresSendPage subFooterPage">
         <div className="full-width-dark-blue-custom-height">
@@ -43,7 +43,7 @@ class SolutionsSubfooter extends React.Component {
             </Col>
             <Col className="subFooterPageQuote">
               <Row>
-                {this.state.width > 1200 && (
+                {this.state.width >= 1200 && (
                   <Container>
                     <h1 className="primary_font sub_footer_quote white_font">
                       "{this.props.quote}"
@@ -69,7 +69,7 @@ class SolutionsSubfooter extends React.Component {
                     </p>
                   </Container>
                 )}
-                {770 < this.state.width && this.state.width < 992 && (
+                {770 < this.state.width && this.state.width <= 992 && (
                   <Container>
                     <h1 className="primary_font tiny-sub_footer_quote white_font">
                       "{this.props.quote}"
@@ -82,7 +82,7 @@ class SolutionsSubfooter extends React.Component {
                     </p>
                   </Container>
                 )}
-                {this.state.width < 770 && (
+                {530 < this.state.width && this.state.width <= 770 && (
                   <Container className="tiny-solutions-sub-footer-container">
                     <h1 className="primary_font  extra-tiny-sub_footer_quote white_font ">
                       "{this.props.quote}"
@@ -91,6 +91,19 @@ class SolutionsSubfooter extends React.Component {
                       {this.props.quoteAuthor}
                     </p>
                     <p className="secondary_font extra-tiny-sub-footer-quote-author-credit white_font">
+                      {this.props.quoteAuthorCredit}
+                    </p>
+                  </Container>
+                )}
+                {this.state.width <= 530 && (
+                  <Container className="tiny-solutions-sub-footer-container">
+                    <h1 className="primary_font  extra-extra-tiny-sub_footer_quote white_font ">
+                      "{this.props.quote}"
+                    </h1>
+                    <p className="secondary_font extra-extra-tiny-sub-footer-quote-author-credit white_font solutions-bold">
+                      {this.props.quoteAuthor}
+                    </p>
+                    <p className="secondary_font extra-extra-tiny-sub-footer-quote-author-credit white_font">
                       {this.props.quoteAuthorCredit}
                     </p>
                   </Container>

@@ -13,7 +13,13 @@ class AboutCialfoOffices extends React.Component {
     if (offices) {
       officesObject = offices.map(office => {
         return (
-          <Col className="officesContainer" key={office.sys.id}>
+          <Col
+            xs={6}
+            md={3}
+            xl={3}
+            className="officesContainer"
+            key={office.sys.id}
+          >
             <div className="officeImgContainer">
               <img
                 className="office-image"
