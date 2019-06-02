@@ -121,7 +121,6 @@ class Home extends React.Component {
   };
 
   render() {
-    console.log(this.state.width);
     return (
       <Container className="homePageContainer">
         {/* FULL SCREEN TOP ROW */}
@@ -601,12 +600,22 @@ class Home extends React.Component {
                 <div>
                   <img className="oval" src={Oval} />
                   <img className="line" src={Line} />
-                  <ReactPlayer
-                    className="video"
-                    width="800px"
-                    height="448px"
-                    url={this.state.homePageVideoCaseStudyVideoEmbed}
-                  />
+                  {this.state.width > 850 && (
+                    <ReactPlayer
+                      className="video"
+                      width="800px"
+                      height="448px"
+                      url={this.state.homePageVideoCaseStudyVideoEmbed}
+                    />
+                  )}
+                  {this.state.width < 850 && (
+                    <ReactPlayer
+                      className="video"
+                      width="600px"
+                      height="366px"
+                      url={this.state.homePageVideoCaseStudyVideoEmbed}
+                    />
+                  )}
                 </div>
               </Row>
             </div>

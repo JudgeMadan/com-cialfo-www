@@ -15,8 +15,26 @@ import { withRouter } from "react-router-dom";
 class Footer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      height: window.innerHeight,
+      width: window.innerWidth
+    };
   }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
+  updateDimensions = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    });
+  };
 
   generateLocale = location => {
     const ROUTE = "/:space/:locale/:path*";
@@ -132,6 +150,7 @@ class Footer extends React.Component {
   }
 
   render() {
+    console.log(this.state.width);
     return (
       <div>
         <MediaQuery query="(min-device-width: 1224px)">
@@ -272,6 +291,16 @@ class Footer extends React.Component {
                 </Col>
               </Row>
             </Col>
+            {/* <Col className="footer-logo">
+              <Row className="">
+                <Link
+                  to={this.generateUrl("home", this.props.location)}
+                  className="navbar-brand"
+                >
+                  <img src={Logo} />
+                </Link>
+              </Row>
+            </Col> */}
             <Col className="justify-content-md-end footer-logo">
               <Row className="justify-content-md-end">
                 <Link
@@ -280,7 +309,6 @@ class Footer extends React.Component {
                 >
                   <img src={Logo} />
                 </Link>
-                {/* <p className="footer-country-id">{this.props.spaceName}</p> */}
               </Row>
             </Col>
           </NavBar>
