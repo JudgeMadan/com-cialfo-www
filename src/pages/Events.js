@@ -20,7 +20,10 @@ import "./events/Events.css";
 class Events extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      height: window.innerHeight,
+      width: window.innerWidth
+    };
   }
 
   setSpace = () => {
@@ -43,8 +46,20 @@ class Events extends React.Component {
   }
 
   componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
     this.fetchAboutContent().then(this.setAboutContent);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
+  updateDimensions = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    });
+  };
 
   fetchAboutContent = () =>
     this.client.getEntries({
@@ -76,16 +91,44 @@ class Events extends React.Component {
   };
 
   render() {
-    console.log(this.state);
+    console.log(this.state.width);
     return (
       <Container>
         {/* FULL SCREEN TOP ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="aboutPageTitle">
-            <Container>
-              <Row>
-                <Col className="top_row_left_col events-header-text">
-                  <div>
+          {this.state.width > 1000 && (
+            <Row className="aboutPageTitle">
+              <Container>
+                <Row>
+                  <Col className="top_row_left_col events-header-text">
+                    <div>
+                      <Row>
+                        <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
+                          {this.state.aboutPageHeaderTitle}
+                        </h1>
+                      </Row>
+                      <Row>
+                        <h2 className="secondary_font left-side-header-blurb">
+                          {this.state.aboutPageHeaderSubtitle}
+                        </h2>
+                      </Row>
+                    </div>
+                  </Col>
+                  <Col>
+                    <img src={this.state.aboutPageHeaderImage} />
+                  </Col>
+                </Row>
+              </Container>
+            </Row>
+          )}
+          {this.state.width <= 1000 && (
+            <Row className="small-eventPageTitle">
+              <Container>
+                <Row>
+                  <img src={this.state.aboutPageHeaderImage} />
+                </Row>
+                <Row className="top_row_left_col events-header-text">
+                  <Container className="mx-3">
                     <Row>
                       <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
                         {this.state.aboutPageHeaderTitle}
@@ -96,14 +139,11 @@ class Events extends React.Component {
                         {this.state.aboutPageHeaderSubtitle}
                       </h2>
                     </Row>
-                  </div>
-                </Col>
-                <Col>
-                  <img src={this.state.aboutPageHeaderImage} />
-                </Col>
-              </Row>
-            </Container>
-          </Row>
+                  </Container>
+                </Row>
+              </Container>
+            </Row>
+          )}
         </MediaQuery>
         {/* MOBILE TOP ROW */}
         <MediaQuery query="(max-device-width: 1223px)">

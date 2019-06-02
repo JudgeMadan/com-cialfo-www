@@ -14,7 +14,10 @@ import { withRouter } from "react-router-dom";
 class Downloads extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      height: window.innerHeight,
+      width: window.innerWidth
+    };
   }
 
   setSpace = () => {
@@ -31,8 +34,20 @@ class Downloads extends React.Component {
   });
 
   componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
     this.fetchHomeContent().then(this.setHomeContent);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
+  updateDimensions = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    });
+  };
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
@@ -83,15 +98,56 @@ class Downloads extends React.Component {
   };
 
   render() {
+    console.log(this.state.width);
     return (
       <Container>
         {/* FULL SCREEN DOWNLOADS */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="aboutPageTitle">
-            <Container>
-              <Row>
-                <Col className="downloads-header-text">
+          {this.state.width > 1000 && (
+            <Row className="aboutPageTitle">
+              <Container>
+                <Row>
+                  <Col className="downloads-header-text">
+                    <div>
+                      <Row>
+                        <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
+                          {this.state.headerTitle}
+                        </h1>
+                      </Row>
+                      <Row>
+                        <p className="secondary_font left-side-header-blurb">
+                          {this.state.headerBlurb}
+                        </p>
+                      </Row>
+                      <DownloadLinksObject
+                        downloadLinks={this.state.headerDownloadLinks}
+                        downloadLinksUrls={this.state.headerDownloadLinksUrls}
+                      />
+                    </div>
+                  </Col>
+                  <Col>
+                    <img
+                      className="downloads-header-img"
+                      src={this.state.headerHeroImage}
+                    />
+                  </Col>
+                </Row>
+              </Container>
+            </Row>
+          )}
+          {this.state.width <= 1000 && (
+            <Row className="small-aboutPageTitle mb-5">
+              <Container>
+                <Row className="center-in-row">
                   <div>
+                    <img
+                      className="small-downloads-header-img"
+                      src={this.state.headerHeroImage}
+                    />
+                  </div>
+                </Row>
+                <Row className="downloads-header-text center-in-row">
+                  <Container className="mx-3">
                     <Row>
                       <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
                         {this.state.headerTitle}
@@ -106,17 +162,11 @@ class Downloads extends React.Component {
                       downloadLinks={this.state.headerDownloadLinks}
                       downloadLinksUrls={this.state.headerDownloadLinksUrls}
                     />
-                  </div>
-                </Col>
-                <Col>
-                  <img
-                    className="downloads-header-img"
-                    src={this.state.headerHeroImage}
-                  />
-                </Col>
-              </Row>
-            </Container>
-          </Row>
+                  </Container>
+                </Row>
+              </Container>
+            </Row>
+          )}
           <div className="full-width-light-blue pb-5">
             <Row className="center-in-row edi-title download-text">
               <h1 className="primary_font edi-title-text">
