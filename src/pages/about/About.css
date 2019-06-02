@@ -46,6 +46,10 @@
   padding-left: 200px;
 }
 
+.small-who-we-are-image-container {
+  justify-content: center;
+}
+
 .mobile-who-we-are-image-container {
   display: block;
 }
