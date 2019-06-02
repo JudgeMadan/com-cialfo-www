@@ -18,7 +18,7 @@ class SolutionsSubPage extends React.Component {
 
   render() {
     return (
-      <Container fluid={true}>
+      <Container fluid={true} className="no-padding">
         {/* FULL SCREEN SOLUTIONS SUBPAGE */}
         <MediaQuery query="(min-device-width: 1224px)">
           <SolutionsHeader

@@ -8,6 +8,15 @@
   min-height: 530px !important;
 }
 
+.contact-demo_form_container {
+  border: solid #1886df 2px;
+  margin-bottom: 10%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  min-height: 530px !important;
+}
+
 .mobile-demo_form_container {
   border: solid #1886df 2px;
   margin-bottom: 10%;

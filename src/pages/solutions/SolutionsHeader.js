@@ -8,9 +8,29 @@ import Oval from "../../img/Oval.svg";
 class SolutionsHeader extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      height: window.innerHeight,
+      width: window.innerWidth
+    };
   }
 
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
+  updateDimensions = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    });
+  };
+
   render() {
+    console.log(this.state.height);
     return (
       <div className="solutions-header">
         <Row className="solutions-title">

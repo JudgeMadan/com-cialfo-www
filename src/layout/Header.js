@@ -141,7 +141,7 @@ class Header extends React.Component {
         className="justify-content-between header"
         fixed="top"
         sticky="top"
-        expand="lg"
+        expand="md"
       >
         <Nav href="#home">
           <NavLink

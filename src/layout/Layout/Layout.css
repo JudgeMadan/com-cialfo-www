@@ -75,3 +75,19 @@
   color: #1886df !important;
   font-size: 12px;
 }
+
+@media (max-width: 850px) {
+  .footer-logo {
+    display: none;
+  }
+}
+
+.navbar-nav {
+  align-items: flex-end !important;
+  margin-right: 10px;
+}
+
+.navbar-toggler {
+  margin-right: 10px;
+  border: none !important;
+}
