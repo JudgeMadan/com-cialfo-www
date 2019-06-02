@@ -324,3 +324,7 @@
 .contactArray {
   width: 850px !important;
 }
+
+.get-in-touch-array-container {
+  display: flex;
+}

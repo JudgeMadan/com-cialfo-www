@@ -17,7 +17,13 @@ class GetInTouchContactArray extends React.Component {
     if (contactArray) {
       contactArrayObject = contactArray.map(contact => {
         return (
-          <Col className="contactArrayCol" key={contact.sys.id}>
+          <Col
+            xl={3}
+            md={4}
+            xs={6}
+            className="contactArrayCol mb-5 px-3"
+            key={contact.sys.id}
+          >
             <Row className="contactArrayRow secondary_font">
               {contact.fields.header}
             </Row>
@@ -31,7 +37,11 @@ class GetInTouchContactArray extends React.Component {
       });
     }
 
-    return <Row className="contactArray mt-5">{contactArrayObject}</Row>;
+    return (
+      <Container className="contactArray mx-5 mt-5">
+        <Row>{contactArrayObject}</Row>
+      </Container>
+    );
   }
 }
 

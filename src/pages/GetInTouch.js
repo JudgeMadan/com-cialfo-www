@@ -123,10 +123,12 @@ class GetInTouch extends React.Component {
             <img className="demo-get-in-touch-gray-lines" src={GrayLines} />
             <img className="blue-header-svg" src={GetInTouchImg} />
           </Row>
-          <Row className="getInTouchContactArrayContainer">
-            <GetInTouchContactArray
-              contactArray={this.state.getInTouchContactInfo}
-            />
+          <Row className="center-in-row">
+            <Container className="center-in-row get-in-touch-array-container">
+              <GetInTouchContactArray
+                contactArray={this.state.getInTouchContactInfo}
+              />
+            </Container>
           </Row>
           <Row className="demoTextTitleContainer secondary_font">
             <h1 className="demoTextTitle">{this.state.getADemoTitle}</h1>
