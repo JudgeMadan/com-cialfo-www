@@ -314,7 +314,7 @@ class Home extends React.Component {
                 </div>
               </Col>
             )}
-            {this.state.width < 1000 && (
+            {this.state.width <= 1000 && (
               <Row className="homePageFeaturesText">
                 <div className="homePageFeaturesRightSideTextObject">
                   <Row>
@@ -403,7 +403,7 @@ class Home extends React.Component {
                 </div>
               </Col>
             )}
-            {this.state.width < 1000 && (
+            {this.state.width <= 1000 && (
               <Row className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
                 <img className="homePageImg" src={ResearchImage} />
                 <img
@@ -421,7 +421,7 @@ class Home extends React.Component {
                 />
               </Col>
             )}
-            {this.state.width < 1000 && (
+            {this.state.width <= 1000 && (
               <Row className="homePageFeaturesText">
                 <div className="homePageFeaturesLeftSideTextObject">
                   <Row>
@@ -492,7 +492,7 @@ class Home extends React.Component {
                 />
               </Col>
             )}
-            {this.state.width < 1000 && (
+            {this.state.width <= 1000 && (
               <Row className="homePageFeaturesImage homePageFeaturesImageBackground">
                 <img className="homePageImg" src={Reports} />
                 <img
@@ -529,7 +529,7 @@ class Home extends React.Component {
               </Col>
             )}
 
-            {this.state.width < 1000 && (
+            {this.state.width <= 1000 && (
               <Row className="homePageFeaturesText">
                 <div className="homePageFeaturesRightSideTextObject">
                   <Row>
@@ -608,7 +608,7 @@ class Home extends React.Component {
                       url={this.state.homePageVideoCaseStudyVideoEmbed}
                     />
                   )}
-                  {this.state.width < 850 && (
+                  {this.state.width <= 850 && (
                     <ReactPlayer
                       className="video"
                       width="600px"

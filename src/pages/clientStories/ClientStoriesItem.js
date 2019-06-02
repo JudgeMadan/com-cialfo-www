@@ -58,7 +58,7 @@ class ClientStoriesItem extends React.Component {
             </Col>
           </Row>
         )}
-        {this.state.width < 1000 && (
+        {this.state.width <= 1000 && (
           <Container>
             <Row className="center-in-row">
               <img
@@ -119,7 +119,7 @@ class ClientStoriesItem extends React.Component {
               </Row>
             </Col>
           )}
-          {this.state.width < 1000 && (
+          {this.state.width <= 1000 && (
             <Container className="client-school-card-medium p-5 mb-5">
               <Row className="mb-5 center-in-row">
                 <img src={this.props.schoolLogo} />

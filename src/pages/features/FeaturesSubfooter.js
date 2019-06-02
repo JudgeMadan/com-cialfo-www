@@ -38,7 +38,7 @@ class FeaturesSubfooter extends React.Component {
               {this.state.width > 768 && (
                 <img className="subFooterPageImg" src={this.props.img} />
               )}
-              {this.state.width < 769 && (
+              {this.state.width <= 768 && (
                 <img className="small-subFooterPageImg" src={this.props.img} />
               )}
             </Col>
@@ -56,7 +56,7 @@ class FeaturesSubfooter extends React.Component {
                   </Container>
                 )}
 
-                {1000 < this.state.width && this.state.width < 1200 && (
+                {1000 <= this.state.width && this.state.width <= 1200 && (
                   <Container>
                     <h1 className="primary_font medium-sub_footer_quote white_font">
                       "{this.props.quote}"
@@ -78,7 +78,7 @@ class FeaturesSubfooter extends React.Component {
                     </p>
                   </Container>
                 )}
-                {this.state.width < 770 && (
+                {this.state.width <= 770 && (
                   <Container>
                     <h1 className="primary_font tiny-sub_footer_quote white_font ">
                       "{this.props.quote}"

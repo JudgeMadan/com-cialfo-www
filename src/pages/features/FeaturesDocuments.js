@@ -102,7 +102,7 @@ class FeaturesDocuments extends React.Component {
                   url={this.state.documentsVideo}
                 />
               )}
-              {this.state.width < 850 && (
+              {this.state.width <= 850 && (
                 <ReactPlayer
                   className="video"
                   width="600px"

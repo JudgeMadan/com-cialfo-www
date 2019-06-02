@@ -36,7 +36,7 @@ class EventsSubfooter extends React.Component {
               {this.state.width > 992 && (
                 <img className="subFooterPageImg" src={this.props.img} />
               )}
-              {this.state.width < 993 && (
+              {this.state.width <= 993 && (
                 <img
                   className="event-small-subFooterPageImg"
                   src={this.props.img}
@@ -55,7 +55,7 @@ class EventsSubfooter extends React.Component {
                     </h5>
                   </div>
                 )}
-                {this.state.width < 767 && (
+                {this.state.width <= 767 && (
                   <div>
                     <h1 className="primary_font event-small_sub_footer_quote white_font">
                       {this.props.title}
