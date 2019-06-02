@@ -301,13 +301,13 @@ class Footer extends React.Component {
                 </Link>
               </Row>
             </Col> */}
-            <Col className="justify-content-md-end footer-logo">
-              <Row className="justify-content-md-end">
+            <Col className="justify-content-sm-end justify-content-md-end  footer-logo">
+              <Row className="justify-content-sm-end justify-content-md-end">
                 <Link
                   to={this.generateUrl("home", this.props.location)}
                   className="navbar-brand"
                 >
-                  <img src={Logo} />
+                  <img className="footer-logo-image" src={Logo} />
                 </Link>
               </Row>
             </Col>

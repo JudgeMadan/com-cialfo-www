@@ -376,3 +376,8 @@ button:hover {
   color: #2a1f2f;
   font-weight: bold;
 }
+
+.no-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

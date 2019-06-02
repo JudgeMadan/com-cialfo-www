@@ -352,8 +352,9 @@ class GetInTouch extends React.Component {
             </Container>
           )}
           {this.state.width <= 1000 && (
-            <Container className="small-get_in_touch_container demo-form-object-container">
-              <div>
+            <Container className="contact-demo-form-object-container">
+              {/* <Container className="small-get_in_touch_container demo-form-object-container"></Container> */}
+              <div className="contact-demo_form_container">
                 <form
                   method="POST"
                   action="https://cialfo51705.activehosted.com/proc.php"
