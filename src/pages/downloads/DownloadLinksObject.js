@@ -16,7 +16,7 @@ class DownloadLinksObject extends React.Component {
     if (downloadLinks && downloadLinksUrls) {
       downloadLinksObject = downloadLinks.map((downloadLink, index) => {
         return (
-          <Col className="app-store-image-col" key={downloadLink}>
+          <Col className="app-store-image-col mb-3" key={downloadLink}>
             <a href={downloadLinksUrls[index]}>
               <img className="app-store-image" src={downloadLink} />{" "}
             </a>
