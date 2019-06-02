@@ -60,20 +60,19 @@ class ClientStoriesItem extends React.Component {
         )}
         {this.state.width < 1000 && (
           <Container>
-            <Row>
+            <Row className="center-in-row">
+              <img
+                className="client-story-hero-image"
+                src={this.props.schoolImage}
+              />
+            </Row>
+            <Row className="center-in-row">
               <p className="primary_font">{this.props.schoolName}</p>
             </Row>
             <Row>
               <h1 className="primary_font client-top-row-blurb left-side-header-title-large-font">
                 {this.props.schoolBlurb}
               </h1>
-            </Row>
-
-            <Row className="center-in-row">
-              <img
-                className="client-story-hero-image"
-                src={this.props.schoolImage}
-              />
             </Row>
           </Container>
         )}
