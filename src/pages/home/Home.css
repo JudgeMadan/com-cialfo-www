@@ -295,6 +295,15 @@
   min-width: 500px;
 }
 
+.small-homePageImg {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 3;
+  flex-shrink: 0;
+  /* min-width: 500px; */
+}
+
 .stroke-10 {
   position: absolute;
   z-index: 2;

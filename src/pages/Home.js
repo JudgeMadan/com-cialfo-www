@@ -126,54 +126,106 @@ class Home extends React.Component {
       <Container className="homePageContainer">
         {/* FULL SCREEN TOP ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="top_row">
-            <Col className="top_row_left_col">
-              <div>
-                <Row>
-                  <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
-                    {this.state.homePageHeaderTitle}
-                  </h1>
-                </Row>
-                <Row>
-                  <h1 className="secondary_font left-side-header-blurb">
-                    {this.state.homePageHeaderBlurb}
-                  </h1>
-                </Row>
-                <Row>
-                  <Form className="get-a-demo-form">
-                    <Form.Row className="email-form-container">
-                      <Col xs={7} className="pt-1">
-                        <Form.Control
-                          className="primary_font email-form"
-                          placeholder={
-                            this.state.homePageHeaderEmailPlaceholderText
-                          }
-                          plaintext
-                          onChange={this.handleChange}
-                        />
-                      </Col>
-                      <Col>
-                        <button
-                          className=" primary_font get-a-demo-button"
-                          type="submit"
-                        >
-                          <Link
-                            className="primary_font get-a-demo-link"
-                            to={this.generateUrl("demo", this.props.location)}
+          {this.state.width > 1000 && (
+            <Row className="top_row">
+              <Col className="top_row_left_col">
+                <div>
+                  <Row>
+                    <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
+                      {this.state.homePageHeaderTitle}
+                    </h1>
+                  </Row>
+                  <Row>
+                    <h1 className="secondary_font left-side-header-blurb">
+                      {this.state.homePageHeaderBlurb}
+                    </h1>
+                  </Row>
+                  <Row>
+                    <Form className="get-a-demo-form">
+                      <Form.Row className="email-form-container">
+                        <Col xs={7} className="pt-1">
+                          <Form.Control
+                            className="primary_font email-form"
+                            placeholder={
+                              this.state.homePageHeaderEmailPlaceholderText
+                            }
+                            plaintext
+                            onChange={this.handleChange}
+                          />
+                        </Col>
+                        <Col>
+                          <button
+                            className=" primary_font get-a-demo-button"
+                            type="submit"
                           >
-                            {this.state.homePageHeaderEmailSubmitButtonText}
-                          </Link>
-                        </button>
-                      </Col>
-                    </Form.Row>
-                  </Form>
-                </Row>
-              </div>
-            </Col>
-            <Col className="homePageHeaderProductImage">
-              <img className="homePageImg" src={Hero} />
-            </Col>
-          </Row>
+                            <Link
+                              className="primary_font get-a-demo-link"
+                              to={this.generateUrl("demo", this.props.location)}
+                            >
+                              {this.state.homePageHeaderEmailSubmitButtonText}
+                            </Link>
+                          </button>
+                        </Col>
+                      </Form.Row>
+                    </Form>
+                  </Row>
+                </div>
+              </Col>
+              <Col className="homePageHeaderProductImage">
+                <img className="homePageImg" src={Hero} />
+              </Col>
+            </Row>
+          )}
+          {this.state.width <= 1000 && (
+            <Row className="top_row">
+              <Row className="homePageHeaderProductImage">
+                <img className="small-homePageImg" src={Hero} />
+              </Row>
+              <Container className="center-in-row">
+                <div>
+                  <Row className="mt-3">
+                    <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
+                      {this.state.homePageHeaderTitle}
+                    </h1>
+                  </Row>
+                  <Row className="mt-3">
+                    <h1 className="secondary_font left-side-header-blurb">
+                      {this.state.homePageHeaderBlurb}
+                    </h1>
+                  </Row>
+                  <Row>
+                    <Form className="get-a-demo-form">
+                      <Form.Row className="email-form-container">
+                        <Col xs={7} className="pt-1">
+                          <Form.Control
+                            className="primary_font email-form"
+                            placeholder={
+                              this.state.homePageHeaderEmailPlaceholderText
+                            }
+                            plaintext
+                            onChange={this.handleChange}
+                          />
+                        </Col>
+                        <Col>
+                          <button
+                            className=" primary_font get-a-demo-button"
+                            type="submit"
+                          >
+                            <Link
+                              className="primary_font get-a-demo-link"
+                              to={this.generateUrl("demo", this.props.location)}
+                            >
+                              {this.state.homePageHeaderEmailSubmitButtonText}
+                            </Link>
+                          </button>
+                        </Col>
+                      </Form.Row>
+                    </Form>
+                  </Row>
+                </div>
+              </Container>
+            </Row>
+          )}
         </MediaQuery>
         {/* MOBILE TOP ROW */}
         <MediaQuery query="(max-device-width: 1223px)">

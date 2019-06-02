@@ -9,7 +9,6 @@ import TranslateButton from "./header/TranslateButton";
 import NavItem from "react-bootstrap/NavItem";
 import MediaQuery from "react-responsive";
 import FullScreenHeaderLinks from "./header/FullScreenHeaderLinks";
-import MobileHeaderLinks from "./header/MobileHeaderLinks";
 import { withRouter } from "react-router-dom";
 import PathToRegexp, { compile, parse } from "path-to-regexp";
 
@@ -154,42 +153,21 @@ class Header extends React.Component {
         </Nav>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-          {/* FULL SCREEN NAVBAR */}
-          <MediaQuery query="(min-device-width: 1224px)">
-            <FullScreenHeaderLinks
-              aboutUsPage={this.state.aboutUsPage}
-              clientsPage={this.state.clientsPage}
-              demoPage={this.state.demoPage}
-              featuresPage={this.state.featuresPage}
-              resourcePage={this.state.resourcePage}
-              solutionsPage={this.state.solutionsPage}
-              country_code={this.props.country_code}
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              updateLocale={this.updateLocale}
-              spaceName={this.props.spaceName}
-              spaces={this.props.spaces}
-            />
-          </MediaQuery>
-          {/* MOBILE NAV BAR */}
-          <MediaQuery query="(max-device-width: 1223px)">
-            <MobileHeaderLinks
-              aboutUsPage={this.state.aboutUsPage}
-              clientsPage={this.state.clientsPage}
-              demoPage={this.state.demoPage}
-              featuresPage={this.state.featuresPage}
-              resourcePage={this.state.resourcePage}
-              solutionsPage={this.state.solutionsPage}
-              country_code={this.props.country_code}
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              updateLocale={this.updateLocale}
-              spaceName={this.props.spaceName}
-              spaces={this.props.spaces}
-            />
-          </MediaQuery>
+          <FullScreenHeaderLinks
+            aboutUsPage={this.state.aboutUsPage}
+            clientsPage={this.state.clientsPage}
+            demoPage={this.state.demoPage}
+            featuresPage={this.state.featuresPage}
+            resourcePage={this.state.resourcePage}
+            solutionsPage={this.state.solutionsPage}
+            country_code={this.props.country_code}
+            locale={this.props.locale}
+            space={this.props.space}
+            accessToken={this.props.accessToken}
+            updateLocale={this.updateLocale}
+            spaceName={this.props.spaceName}
+            spaces={this.props.spaces}
+          />
         </Navbar.Collapse>
       </Navbar>
     );
