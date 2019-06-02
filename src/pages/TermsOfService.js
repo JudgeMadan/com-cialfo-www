@@ -59,7 +59,7 @@ class TermsOfService extends React.Component {
 
   render() {
     return (
-<Container>
+<Container className="secondary_font">
               <div class="text-lg-center text-md-center text-sm-center text-xs-center">
                 <Row className="center-in-row">
             <p className="hidden-xs-down primary_font privacy-upper-title">
@@ -67,7 +67,7 @@ class TermsOfService extends React.Component {
             </p>
             </Row>
             <Row className="center-in-row">
-              <h1 className="primary_font">Terms of Service</h1>
+              <h1 className="primary_font privacy-title">Terms of Service</h1>
             </Row>
             <br />
           </div>
@@ -102,7 +102,7 @@ class TermsOfService extends React.Component {
           <p>(b) The Parties wish to enter into this Agreement to govern the usage of the System and related services to be provided by Cialfo to the Customer.</p>
           <p>
             <strong>NOW IT IS AGREED</strong>
-            <span>as follows:</span>
+            <span> as follows:</span>
           </p>
           <h5 class="text-uppercase">
             <strong>1. DEFINITIONS</strong>

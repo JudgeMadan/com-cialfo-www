@@ -38,31 +38,42 @@ class FullScreenHeaderLinks extends React.Component {
   render() {
     return (
       <Nav>
-        <NavLink
-          activeClassName="activeStyle"
-          className="nav-link"
-          to="clients"
-        >
-          {this.props.clientsPage}
-        </NavLink>
-
-        <NavLink
-          activeClassName="activeStyle"
-          className="nav-link"
-          to="features"
-        >
-          {this.props.featuresPage}
-        </NavLink>
-        <NavLink activeClassName="activeStyle" className="nav-link" to="about">
-          {this.props.aboutUsPage}
-        </NavLink>
-        <NavLink
-          activeClassName="activeStyle"
-          className="nav-link"
-          to="solutions"
-        >
-          {this.props.solutionsPage}
-        </NavLink>
+        <div>
+          <NavLink
+            activeClassName="activeStyle"
+            className="nav-link"
+            to="clients"
+          >
+            {this.props.clientsPage}
+          </NavLink>
+        </div>
+        <div>
+          <NavLink
+            activeClassName="activeStyle"
+            className="nav-link"
+            to="features"
+          >
+            {this.props.featuresPage}
+          </NavLink>
+        </div>
+        <div>
+          <NavLink
+            activeClassName="activeStyle"
+            className="nav-link"
+            to="about"
+          >
+            {this.props.aboutUsPage}
+          </NavLink>
+        </div>
+        <div>
+          <NavLink
+            activeClassName="activeStyle"
+            className="nav-link"
+            to="solutions"
+          >
+            {this.props.solutionsPage}
+          </NavLink>
+        </div>
         {this.identifySpace(this.props.location) === "cn" && (
           <TranslateButton
             locale={this.props.locale}
@@ -71,13 +82,15 @@ class FullScreenHeaderLinks extends React.Component {
             updateLocale={this.updateLocale}
           />
         )}
-        <NavLink
-          activeClassName="activeStyle"
-          className="nav-link demo-page-link"
-          to="demo"
-        >
-          {this.props.demoPage}
-        </NavLink>
+        <div>
+          <NavLink
+            activeClassName="activeStyle"
+            className="nav-link demo-page-link"
+            to="demo"
+          >
+            {this.props.demoPage}
+          </NavLink>
+        </div>
       </Nav>
     );
   }
