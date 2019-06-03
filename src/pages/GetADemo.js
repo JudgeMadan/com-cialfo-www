@@ -120,7 +120,7 @@ class GetADemo extends React.Component {
   };
 
   render() {
-    console.log(this.state.width);
+    console.log(this.state);
     return (
       <div>
         {/* FULL WIDTH GET A DEMO HEADER */}
@@ -190,13 +190,13 @@ class GetADemo extends React.Component {
                       </div>
                       <div class="_form_element _x98882726 _full_width ">
                         <label class="_form-label">
-                          {this.state.getADemoName}
+                          {this.state.getADemoLastName}
                         </label>
                         <div class="_field-wrapper">
                           <input
                             type="text"
                             name="lastname"
-                            placeholder={this.state.getADemoNamePlaceholder}
+                            placeholder={this.state.getADemoLastNamePlaceholder}
                             className="input_style"
                             required
                           />
@@ -326,13 +326,13 @@ class GetADemo extends React.Component {
                     <Row className="get-in-touch-row mt-3 center-in-row">
                       <div class="_form_element _x98882726 _full_width ">
                         <label class="_form-label secondary_font">
-                          {this.state.getADemoName}
+                          {this.state.getADemoLastName}
                         </label>
                         <div class="_field-wrapper">
                           <input
                             type="text"
                             name="lastname"
-                            placeholder={this.state.getADemoName}
+                            placeholder={this.state.getADemoLastNamePlaceholder}
                             className="input_style"
                             required
                           />
@@ -465,13 +465,13 @@ class GetADemo extends React.Component {
                   </div>
                   <div class="_form_element _x98882726 _full_width ">
                     <label className="_form-label secondary_font mobile-get-in-touch-form-header">
-                      {this.state.getADemoName}
+                      {this.state.getADemoLastName}
                     </label>
                     <div class="_field-wrapper">
                       <input
                         type="text"
                         name="firstname"
-                        placeholder={this.state.getADemoNamePlaceholder}
+                        placeholder={this.state.getADemoLastNamePlaceholder}
                         className="mobile-input_style"
                         required
                       />

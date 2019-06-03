@@ -111,9 +111,8 @@ class GetInTouch extends React.Component {
     console.log(e.target.u.value);
   };
 
-  // getADemo
-
   render() {
+    console.log(this.state);
     return (
       <div>
         {/* FULL WIDTH HEADER */}
@@ -185,8 +184,9 @@ class GetInTouch extends React.Component {
                       <input
                         type="text"
                         name="firstname"
-                        placeholder="Type your first name"
+                        placeholder={this.state.getInTouchFullNamePlaceholder}
                         className="input_style"
+                        required
                       />
                     </div>
                   </div>
@@ -194,14 +194,15 @@ class GetInTouch extends React.Component {
                 <Row className="get-in-touch-row ">
                   <div class="_form_element _x01777496 _full_width mobile-get-in-touch-form-header center-in-row">
                     <label class="_form-label">
-                      {this.state.getInTouchFullName}
+                      {this.state.getInTouchLastName}
                     </label>
                     <div class="_field-wrapper">
                       <input
                         type="text"
                         name="lastname"
-                        placeholder="Type your last name"
+                        placeholder={this.state.getInTouchLastNamePlaceholder}
                         className="input_style"
+                        required
                       />
                     </div>
                   </div>
@@ -218,6 +219,7 @@ class GetInTouch extends React.Component {
                         placeholder={this.state.getInTouchEmailPlaceholder}
                         required
                         className="input_style"
+                        required
                       />
                     </div>
                   </div>
@@ -233,6 +235,7 @@ class GetInTouch extends React.Component {
                         name="phone"
                         placeholder={this.state.getInTouchPhonePlaceholder}
                         className="input_style"
+                        required
                       />
                     </div>
                   </div>
@@ -249,6 +252,7 @@ class GetInTouch extends React.Component {
                         className="mobile-textarea_style"
                         rows="5"
                         cols="43"
+                        required
                       />
                     </div>
                   </div>
@@ -303,21 +307,23 @@ class GetInTouch extends React.Component {
                         <input
                           type="text"
                           name="firstname"
-                          placeholder="Type your first name"
+                          placeholder={this.state.getInTouchFullNamePlaceholder}
                           className="input_style"
+                          required
                         />
                       </div>
                     </div>
                     <div class="_form_element _x01777496 _full_width lower_left_content_row">
                       <label class="_form-label">
-                        {this.state.getInTouchFullName}
+                        {this.state.getInTouchLastName}
                       </label>
                       <div class="_field-wrapper">
                         <input
                           type="text"
                           name="lastname"
-                          placeholder="Type your last name"
+                          placeholder={this.state.getInTouchLastNamePlaceholder}
                           className="input_style"
+                          required
                         />
                       </div>
                     </div>
@@ -347,6 +353,7 @@ class GetInTouch extends React.Component {
                           name="phone"
                           placeholder={this.state.getInTouchPhonePlaceholder}
                           className="input_style"
+                          required
                         />
                       </div>
                     </div>
@@ -363,6 +370,7 @@ class GetInTouch extends React.Component {
                           className="textarea_style"
                           rows="5"
                           cols="80"
+                          required
                         />
                       </div>
                     </div>
@@ -417,8 +425,11 @@ class GetInTouch extends React.Component {
                           <input
                             type="text"
                             name="firstname"
-                            placeholder="Type your first name"
+                            placeholder={
+                              this.state.getInTouchFullNamePlaceholder
+                            }
                             className="input_style"
+                            required
                           />
                         </div>
                       </div>
@@ -426,14 +437,17 @@ class GetInTouch extends React.Component {
                     <Row className="center-in-row mt-3">
                       <div class="_form_element _x01777496 _full_width center-in-row">
                         <label class="_form-label">
-                          {this.state.getInTouchFullName}
+                          {this.state.getInTouchLastName}
                         </label>
                         <div class="_field-wrapper">
                           <input
                             type="text"
                             name="lastname"
-                            placeholder="Type your last name"
+                            placeholder={
+                              this.state.getInTouchLastNamePlaceholder
+                            }
                             className="input_style"
+                            required
                           />
                         </div>
                       </div>
@@ -465,6 +479,7 @@ class GetInTouch extends React.Component {
                             name="phone"
                             placeholder={this.state.getInTouchPhonePlaceholder}
                             className="input_style"
+                            required
                           />
                         </div>
                       </div>
@@ -483,6 +498,7 @@ class GetInTouch extends React.Component {
                             className="small-textarea_style"
                             rows="5"
                             cols="43"
+                            required
                           />
                         </div>
                       </div>
