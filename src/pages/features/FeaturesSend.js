@@ -14,6 +14,8 @@ import MobilePartnerImages from "../MobilePartnerImages";
 import Pointer from "../../img/Pointer.svg";
 import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 import { withRouter } from "react-router-dom";
+import FeaturesBullets from "./FeaturesBullets";
+import FeaturesSendBullets from "./FeaturesSendBullets";
 
 class FeaturesSend extends React.Component {
   constructor(props) {
@@ -68,6 +70,7 @@ class FeaturesSend extends React.Component {
 
   setFeaturesSendingPage = response => {
     const sendingPageContent = response.items[0].fields;
+    console.log(sendingPageContent);
     for (let key in sendingPageContent) {
       if (typeof sendingPageContent[key] === "string") {
         this.setState({
@@ -75,7 +78,7 @@ class FeaturesSend extends React.Component {
         });
       } else if (Array.isArray(sendingPageContent[key])) {
         this.setState({
-          [key]: sendingPageContent[key].map(test => test.fields.file.url)
+          [key]: sendingPageContent[key].map(test => test.fields.bulletPoint)
         });
       } else {
         this.setState({
@@ -86,7 +89,7 @@ class FeaturesSend extends React.Component {
   };
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
@@ -154,11 +157,11 @@ class FeaturesSend extends React.Component {
                 </Row>
                 <Row>
                   <Col>
-                    <h1 className="secondary_font">
-                      <img src={Pointer} />
-                      &nbsp;
-                      {this.state.sendPortalBlurb}
-                    </h1>
+                    <Col>
+                      <FeaturesSendBullets
+                        bullets={this.state.sendPortalBlurb}
+                      />
+                    </Col>
                   </Col>
                 </Row>
               </Container>
@@ -172,11 +175,9 @@ class FeaturesSend extends React.Component {
               <h1 className="primary_font">{this.state.sendPortalTitle}</h1>
             </Row>
             <Row className="mb-5 px-3">
-              <h1 className="secondary_font">
-                <img src={Pointer} />
-                &nbsp;
-                {this.state.sendPortalBlurb}
-              </h1>
+              <Col>
+                <FeaturesSendBullets bullets={this.state.sendPortalBlurb} />
+              </Col>
             </Row>
           </Container>
         </MediaQuery>
@@ -228,7 +229,7 @@ class FeaturesSend extends React.Component {
         </MediaQuery>
         <Row />
         {/* FULL WIDTH PARTNERS */}
-        <MediaQuery query="(min-device-width: 1224px)">
+        {/* <MediaQuery query="(min-device-width: 1224px)">
           <Row className="featureSendPartnersTitle">
             <div className="full-width-light-blue">
               <PartnerImages
@@ -241,10 +242,9 @@ class FeaturesSend extends React.Component {
               />
             </div>
           </Row>
-        </MediaQuery>
+        </MediaQuery> */}
         {/* MOBILE PARTNERS */}
-        <MediaQuery query="(max-device-width: 1223px)">
-          {/* <Container className="mb-5"> */}
+        {/* <MediaQuery query="(max-device-width: 1223px)">
           <MobilePartnerImages
             locale={this.props.locale}
             className="partnerImages"
@@ -253,8 +253,7 @@ class FeaturesSend extends React.Component {
             space={this.props.space}
             title={this.state.sendPartnersTitle}
           />
-          {/* </Container> */}
-        </MediaQuery>
+        </MediaQuery> */}
         {/* FEATURES SUBFOOTER ONLY ON FULL SCREEN */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row>
