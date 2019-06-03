@@ -17,31 +17,41 @@ class AboutBusinessAdvisors extends React.Component {
     if (businessAdvisors) {
       businessAdvisorsObject = businessAdvisors.map(businessAdvisor => {
         return (
-          <Col xs={4} key={businessAdvisor.sys.id}>
+          <Col xs={12} sm={6} md={6} xl={4} key={businessAdvisor.sys.id}>
             <Container className="counselor-advisor-container white-background">
-              <div className="innerObject">
-                <Row>
+              <div className="counselor-advisor-container-inner-object">
+                <Row className="counselor-advisor-blurb">
                   <p className="secondary_font">
                     {businessAdvisor.fields.aboutPageBusinessAdvisorBlurb}
                   </p>
                 </Row>
+                <Row
+                  className="height-80 mb-2">
+                  <Image
+                    className="max-height-width-100"
+                    roundedCircle
+                    src={
+                      businessAdvisor.fields.aboutPageBusinessAdvisorImage
+                        .fields.file.url
+                    }
+                  />
+                </Row>
                 <Row>
-                  <Col>
-                    <Image
-                      roundedCircle
-                      src={
-                        businessAdvisor.fields.aboutPageBusinessAdvisorImage
-                          .fields.file.url
-                      }
-                    />
-                  </Col>
-                  <Col>
-                    <div>
-                      <p className="secondary_font_bold">
-                        {businessAdvisor.fields.aboutPageBusinessAdvisorTitle}
-                      </p>
-                    </div>
-                  </Col>
+                  <div>
+                    <p className="secondary_font_bold mb-2">
+                      {businessAdvisor.fields.aboutPageBusinessAdvisorTitle}
+                    </p>
+                  </div>
+                </Row>
+                <Row>
+                  <p className="secondary_font mb-0">
+                    {businessAdvisor.fields.jobTitle}
+                  </p>
+                </Row>
+                <Row>
+                  <p className="secondary_font">
+                    {businessAdvisor.fields.organization}
+                  </p>
                 </Row>
               </div>
             </Container>
@@ -49,7 +59,6 @@ class AboutBusinessAdvisors extends React.Component {
         );
       });
     }
-
     return <Row>{businessAdvisorsObject}</Row>;
   }
 }

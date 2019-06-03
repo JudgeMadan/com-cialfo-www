@@ -3,37 +3,38 @@
   /* font-size: 2em; */
 }
 
-.secondary_font {
+/* .secondary_font {
   font-family: "roboto_regular";
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
   line-height: 28px;
-}
+} */
 
 .secondary_font_bold {
   font-family: "roboto_regular";
   font-style: medium;
   font-weight: bold;
-  font-size: 1em;
-  line-height: 28px;
-}
-
-.aboutPage {
-  max-width: 100% !important;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .aboutPageHeaderText {
   margin-right: 100px;
 }
 
-.aboutPageHeaderTitle {
-  margin-bottom: 20px;
+.small-eventPageTitle {
+  margin-top: 100px;
+  align-content: center;
 }
 
 .aboutPageTitle {
   margin-bottom: 175px;
   margin-top: 100px;
+  align-content: center;
+}
+
+.small-aboutPageTitle {
   align-content: center;
 }
 
@@ -50,7 +51,12 @@
 
 .who-we-are-image-container {
   justify-content: flex-end;
-  padding: 5% 0;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.small-who-we-are-image-container {
+  justify-content: center;
 }
 
 .mobile-who-we-are-image-container {
@@ -65,9 +71,10 @@
 }
 
 .about-page-who-we-are-image {
-  max-width: 50%;
-  max-height: auto;
-  margin-right: 50px;
+  /* max-width: 50%; */
+  height: auto;
+  margin-left: 50px;
+  width: 350px;
 }
 
 .aboutPageWhoWeAreContent {
@@ -103,11 +110,31 @@
 }
 
 .aboutPageLeadershipTeam {
-  margin-bottom: 200px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .leaderImage {
-  margin-bottom: 75px;
+  display: flex;
+  margin-bottom: 30px;
+  flex-shrink: 2;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 247px;
+  min-width: 247px;
+  height: 370px;
+}
+
+.oddNumberLeaderImage {
+  clip-path: polygon(0 2%, 100% 0, 100% 100%, 0 98%);
+}
+
+.evenNumberLeaderImage {
+  clip-path: polygon(0 0, 100% 2%, 100% 98%, 0 100%);
+}
+
+.leadership-team-container {
+  margin: 15px 10px !important;
 }
 
 .leadershipObjectContainer {
@@ -115,10 +142,10 @@
   padding-bottom: 150px;
   padding-top: 50px;
   margin-bottom: 10px;
+  max-width: 300px;
 }
 
 .leadershipObjectContent {
-  align-content: center;
   justify-content: center;
   text-align: center;
 }
@@ -139,7 +166,7 @@
 .mobile-homePartnerImagesContainer {
   display: flex;
 }
-/* 
+/*
 .mobile-aboutPartnerImages {
   width: 50%;
   height: auto;
@@ -155,16 +182,19 @@
 }
 
 .aboutPartners {
-  margin-bottom: 50px;
   justify-content: center;
 }
 
 .counselor-advisor-container {
-  margin: 15px 30px;
+  margin: 15px 5px;
+  /* min-height: 620px; */
+  display: flex;
+  justify-content: center;
 }
 
-.innerObject {
-  padding: 40px;
+.counselor-advisor-container-inner-object {
+  padding: 20px;
+  font-size: 20px;
 }
 
 /* WORK FROM HERE */
@@ -187,24 +217,37 @@
 }
 
 .officesContainer {
-  padding: 10% 5%;
   background-color: #2b1f31;
   color: white;
+  height: 375px;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
 }
 
 .officeImgContainer {
   display: flex;
-  justify-content: center;
-  margin-bottom: 5%;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 200px;
+}
+
+.office-image {
+  align-self: center;
 }
 
 .offices_row {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 475px;
 }
 .officeTitle {
   color: white;
+}
+
+.office-text-container {
+  height: 140px;
 }
 
 .white-text {
@@ -227,4 +270,58 @@
 
 .mobile-top-row-header-container {
   padding: 0 20px;
+}
+
+.reduced-margin-bottom {
+  margin-bottom: 0px;
+}
+
+/* .full-width-light-blue {
+  margin: 0 -9999rem;
+  padding: 0.25rem 9999rem;
+  background: #ebf9ff;
+} */
+
+.full-width-near-black {
+  margin: 0 -9999rem;
+  /* add back negative margin value */
+  padding: 0.25rem 9999rem;
+  background: #2b1f31;
+}
+
+/* .full-width-dark-blue {
+  margin: 0 -9999rem;
+  padding: 0.25rem 9999rem;
+  background: #1786df;
+} */
+
+.about-partners-columns {
+  margin: 0 75px;
+}
+
+.by-the-numbers-object-image {
+  margin-bottom: 15px;
+}
+
+.about-page-counselor-advisor-header {
+  margin-top: 100px;
+}
+
+.about-page-counselor-advisor-footer {
+  margin-bottom: 100px;
+}
+
+.counselor-test {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end !important;
+}
+
+/* .counselor-advisor-blurb {
+  min-height: 65%;
+} */
+
+.about-leadership-team-row {
+  justify-content: space-around;
 }

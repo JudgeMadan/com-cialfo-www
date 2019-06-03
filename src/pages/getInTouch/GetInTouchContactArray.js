@@ -17,10 +17,18 @@ class GetInTouchContactArray extends React.Component {
     if (contactArray) {
       contactArrayObject = contactArray.map(contact => {
         return (
-          <Col className="contactArrayCol" key={contact.sys.id}>
+          <Col
+            xl={3}
+            md={4}
+            xs={6}
+            className="contactArrayCol mb-5 px-3"
+            key={contact.sys.id}
+          >
             <Row className="contactArrayRow secondary_font">
               {contact.fields.header}
             </Row>
+            {/* The <br /> looks weird on local but is needed on staging */}
+            <br />
             <Row className="contactArrayRow secondary_font">
               {contact.fields.content}
             </Row>
@@ -29,7 +37,11 @@ class GetInTouchContactArray extends React.Component {
       });
     }
 
-    return <Row className="contactArray">{contactArrayObject}</Row>;
+    return (
+      <Container className="contactArray mx-5 mt-5">
+        <Row>{contactArrayObject}</Row>
+      </Container>
+    );
   }
 }
 

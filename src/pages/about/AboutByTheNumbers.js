@@ -17,8 +17,8 @@ class AboutByTheNumbers extends React.Component {
       byTheNumbersObject = byTheNumbers.map(number => {
         return (
           <Col className="byTheNumbersObject" key={number.sys.id}>
-            <Container className="byTheNumbersObjectContainer light-blue-background">
-              <Row className="byTheNumbersObjectContent ">
+            <Container className="byTheNumbersObjectContainer light-blue-background mb-3">
+              <Row className="byTheNumbersObjectContent by-the-numbers-object-image">
                 <img
                   src={number.fields.aboutPageNumbersObjectImg.fields.file.url}
                 />

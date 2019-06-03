@@ -2,8 +2,6 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./About.css";
-import Container from "react-bootstrap/Container";
-
 class AboutCialfoOffices extends React.Component {
   constructor(props) {
     super(props);
@@ -15,11 +13,20 @@ class AboutCialfoOffices extends React.Component {
     if (offices) {
       officesObject = offices.map(office => {
         return (
-          <Col key={office.sys.id}>
-            <div className="officesContainer">
-              <div className="officeImgContainer">
-                <img src={office.fields.icon.fields.file.url} />
-              </div>
+          <Col
+            xs={6}
+            md={3}
+            xl={3}
+            className="officesContainer"
+            key={office.sys.id}
+          >
+            <div className="officeImgContainer">
+              <img
+                className="office-image"
+                src={office.fields.icon.fields.file.url}
+              />
+            </div>
+            <div className="office-text-container">
               <h1 className="secondary_font_bold centeredText white-text">
                 {office.fields.city}
               </h1>

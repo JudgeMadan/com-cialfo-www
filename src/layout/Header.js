@@ -1,11 +1,16 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import * as contentful from "contentful";
 import "./Layout/Layout.css";
-import Logo from "./Layout/Logo.svg";
+import Logo from "../img/cialfo-vertical_blue@4x.png";
 import TranslateButton from "./header/TranslateButton";
+import NavItem from "react-bootstrap/NavItem";
+import MediaQuery from "react-responsive";
+import FullScreenHeaderLinks from "./header/FullScreenHeaderLinks";
+import { withRouter } from "react-router-dom";
+import PathToRegexp, { compile, parse } from "path-to-regexp";
 
 class Header extends React.Component {
   constructor(props) {
@@ -16,16 +21,100 @@ class Header extends React.Component {
     this.props.updateLocale(locale);
   };
 
-  client = contentful.createClient({
-    space: this.props.space,
-    accessToken: this.props.accessToken
-  });
+  generateLocale = location => {
+    const ROUTE = "/:space/:locale/:path*";
+    const routeComponents = PathToRegexp(ROUTE).exec(location);
+    // return routeComponents[2];
+    if (routeComponents) {
+      return routeComponents[2];
+    } else return;
+  };
+
+  generateSpace = location => {
+    const ROUTE = "/:space/:locale/:path*";
+    const routeComponents = PathToRegexp(ROUTE).exec(location);
+    if (routeComponents) {
+      return routeComponents[1];
+    } else return;
+  };
+
+  generateUrl = (path, location) => {
+    const ROUTE = "/:space/:locale/:path*";
+    const definePath = compile(ROUTE);
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    if (routeComponents && routeComponents[3]) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: path
+      });
+    } else if (routeComponents && routeComponents[3] == undefined) {
+      return definePath({
+        space: routeComponents[1],
+        locale: routeComponents[2],
+        path: "a"
+      });
+    }
+  };
+
+  setSpace = () => {
+    if (this.generateSpace(this.props.location.pathname)) {
+      if (this.generateSpace(this.props.location.pathname) === "cn") {
+        return this.props.spaces.cn.space;
+      } else if (this.generateSpace(this.props.location.pathname) === "intl") {
+        return this.props.spaces.intl.space;
+      } else if (this.generateSpace(this.props.location.pathname) === "in") {
+        return this.props.spaces.india.space;
+      } else if (this.generateSpace(this.props.location.pathname) === "us") {
+        return this.props.spaces.us.space;
+      }
+    } else {
+      if (this.props.spaceName === "china") {
+        return this.props.spaces.cn.space;
+      } else if (this.props.spaceName === "india") {
+        return this.props.spaces.india.space;
+      } else if (this.props.spaceName === "intl") {
+        return this.props.spaces.intl.space;
+      } else if (this.props.spaceName === "us") {
+        return this.props.spaces.us.space;
+      }
+    }
+  };
+
+  setAccessToken = () => {
+    if (this.generateSpace(this.props.location.pathname)) {
+      if (this.generateSpace(this.props.location.pathname) === "cn") {
+        return this.props.spaces.cn.accessToken;
+      } else if (this.generateSpace(this.props.location.pathname) === "intl") {
+        return this.props.spaces.intl.accessToken;
+      } else if (this.generateSpace(this.props.location.pathname) === "in") {
+        return this.props.spaces.india.accessToken;
+      } else if (this.generateSpace(this.props.location.pathname) === "us") {
+        return this.props.spaces.us.accessToken;
+      }
+    } else {
+      if (this.props.spaceName === "china") {
+        return this.props.spaces.cn.accessToken;
+      } else if (this.props.spaceName === "intl") {
+        return this.props.spaces.intl.accessToken;
+      } else if (this.props.spaceName === "india") {
+        return this.props.spaces.india.accessToken;
+      } else if (this.props.spaceName === "us") {
+        return this.props.spaces.us.accessToken;
+      }
+    }
+  };
 
   fetchNavBar = () =>
-    this.client.getEntries({
-      content_type: "navBar",
-      locale: this.props.locale
-    });
+    contentful
+      .createClient({
+        space: this.setSpace(),
+        accessToken: this.setAccessToken()
+      })
+      .getEntries({
+        content_type: "navBar",
+        locale: this.generateLocale(this.props.location.pathname)
+      });
 
   setNavBar = response => {
     const navBarContent = response.items[0].fields;
@@ -41,7 +130,7 @@ class Header extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.locale !== this.props.locale) {
+    if (prevProps.location.pathname !== this.props.location.pathname) {
       this.fetchNavBar().then(this.setNavBar);
     }
   }
@@ -52,47 +141,37 @@ class Header extends React.Component {
         className="justify-content-between header"
         fixed="top"
         sticky="top"
-        expand="lg"
+        expand="md"
       >
         <Nav href="#home">
-          <Link to="/" className="navbar-brand">
-            <img src={Logo} />
-          </Link>
+          <NavLink
+            to={this.generateUrl("home", this.props.location)}
+            className="navbar-brand"
+          >
+            <img className="logo" src={Logo} />
+          </NavLink>
         </Nav>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-          <Nav>
-            {/* <Link className="nav-link" to="/clients">
-              {this.state.clientsPage}
-            </Link> */}
-            <Link className="nav-link" to="/features">
-              {this.state.featuresPage}
-            </Link>
-            <Link className="nav-link" to="/about">
-              {this.state.aboutUsPage}
-            </Link>
-            {/* <Link className="nav-link" to="/resources">
-              {this.state.resourcesPage}
-            </Link>
-            <Link className="nav-link" to="/solutions">
-              {this.state.solutionsPage}
-            </Link> */}
-            {this.props.country_code === "country_code=CN" && (
-              <TranslateButton
-                locale={this.props.locale}
-                space={this.props.space}
-                accessToken={this.props.accessToken}
-                updateLocale={this.updateLocale}
-              />
-            )}
-            <Link className="nav-link demo-page-link" to="/demo">
-              {this.state.demoPage}
-            </Link>
-          </Nav>
+          <FullScreenHeaderLinks
+            aboutUsPage={this.state.aboutUsPage}
+            clientsPage={this.state.clientsPage}
+            demoPage={this.state.demoPage}
+            featuresPage={this.state.featuresPage}
+            resourcePage={this.state.resourcePage}
+            solutionsPage={this.state.solutionsPage}
+            country_code={this.props.country_code}
+            locale={this.props.locale}
+            space={this.props.space}
+            accessToken={this.props.accessToken}
+            updateLocale={this.updateLocale}
+            spaceName={this.props.spaceName}
+            spaces={this.props.spaces}
+          />
         </Navbar.Collapse>
       </Navbar>
     );
   }
 }
 
-export default Header;
+export default withRouter(Header);

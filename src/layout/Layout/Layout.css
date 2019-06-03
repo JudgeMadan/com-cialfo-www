@@ -1,7 +1,6 @@
 .logo-text {
   font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
   padding-left: 10px;
-  /* font-weight: bold; */
 }
 
 .header {
@@ -31,7 +30,7 @@
 }
 
 .footer {
-  padding: 0 0 30px 0 !important;
+  padding: 15px 0 !important;
 }
 
 .test {
@@ -44,4 +43,58 @@
 
 .demo-page-link {
   color: #1886df !important;
+}
+
+.footer-logo {
+  padding-top: 20px;
+}
+
+.activeStyle {
+  border-bottom: solid 2px #1886df !important;
+}
+
+.mobile-activeStyle {
+  font-weight: bold;
+}
+
+.footer-nav-link {
+  padding: 0px !important;
+  display: inline-block;
+}
+
+.blue-header-locale-text {
+  margin-left: -15px;
+  margin-top: 5px;
+  color: #1886df !important;
+  font-size: 12px;
+}
+
+.mobile-blue-header-locale-text {
+  margin-left: -150px;
+  margin-top: -30px;
+  color: #1886df !important;
+  font-size: 12px;
+}
+
+@media (max-width: 850px) {
+  .footer-logo {
+    display: none;
+  }
+}
+
+.navbar-nav {
+  align-items: flex-end !important;
+  margin-right: 10px;
+}
+
+.navbar-toggler {
+  margin-right: 10px;
+  border: none !important;
+}
+
+.logo {
+  max-width: 128px !important;
+  /* width: 128px !important;
+  min-width: 128px !important; */
+  height: auto;
 }

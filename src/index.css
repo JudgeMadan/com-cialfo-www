@@ -48,8 +48,8 @@ body {
   font-family: "roboto_regular";
   font-style: normal;
   font-weight: normal;
-  font-size: 1em;
-  line-height: 28px;
+  font-size: 1rem;
+  line-height: 1.4rem;
   color: #2b1f30;
 }
 
@@ -62,37 +62,49 @@ code {
   border: none;
 }
 
-.schoolCard {
-  background-color: #3386df;
-  color: white;
-}
-
-.orb {
+.marqueeElement {
   display: inline-block;
   margin: 0 20px;
   float: left;
   transition: all 0.2s ease-out;
-  padding-bottom: 50px;
-  padding-top: 50px;
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
-.orb-image {
-  display: flex;
-  justify-content: center;
-}
-
-.orb:hover {
-  transform: scale(1.2);
-  opacity: 0.5;
+.marqueeElement:hover {
+  transform: scale(1.1);
   cursor: pointer;
 }
 
+.marquee-image-row {
+  justify-content: center;
+}
+
+.marquee-image {
+  max-height: 100px;
+}
+
+.marquee-content {
+  margin: 0 5px;
+  justify-content: center;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.marquee-footer {
+  margin: 0 5px -15px 0;
+  justify-content: start;
+}
+
+/* Each marquee item is around 395 px wide in total,
+therefore, total marquee width is about 395 * # of marquee Items */
 .marquee {
   height: 500px;
-  width: 1482.92px;
-  overflow: hidden;
+  /* min-width: 1580px !important; */
+  overflow-y: hidden;
+  overflow-x: hidden;
   position: relative;
   margin: 10px auto;
   z-index: 2;
@@ -104,23 +116,31 @@ code {
   align-items: center;
   width: 200%;
   position: absolute;
-  animation: marquee 10s linear infinite;
+  animation: marquee 15s linear infinite;
   z-index: 2;
+  margin-top: 30px;
 }
 
 .marquee--inner:hover {
   animation-play-state: paused;
 }
 
+/* Each marquee item is around 395 px wide in total,
+therefore, total marquee width is about 395 * # of marquee Items */
 .marqueeItem {
-  background-color: #ebf9ff;
+  background: linear-gradient(transparent 15%, #ebf9ff 15% 85%);
+  max-width: 350px !important;
+  min-width: 350px !important;
+  width: 350px !important;
+  font-size: 15px;
+  padding-bottom: 10px;
 }
 
-.orb:nth-child(odd) {
+.marqueeElement:nth-child(odd) {
   margin-top: 50px;
 }
 
-.orb:nth-child(even) {
+.marqueeElement:nth-child(even) {
   margin-bottom: 50px;
 }
 
@@ -130,15 +150,30 @@ code {
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: transparent;
+  width: in;
+  display: inline-block;
+}
+
+.email-form {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #f4f4f5;
+}
+
+.email-form:hover {
+  border-bottom-color: #1886df;
 }
 
 .nav-link:hover {
+  display: inline-block;
   border-bottom-color: #1886df;
 }
 
 button {
+  border-bottom-width: 5px;
   border-bottom-style: solid;
-  border-bottom-color: transparent;
+  /* border-bottom-color: transparent; */
+  border-bottom-color: #f4f4f5;
 }
 
 button:hover {
@@ -153,8 +188,8 @@ button:hover {
   background: linear-gradient(
     to right,
     #fff 0,
-    rgba(255, 255, 255, 0) 15%,
-    rgba(255, 255, 255, 0) 85%,
+    rgba(255, 255, 255, 0) 25%,
+    rgba(255, 255, 255, 0) 75%,
     #fff 100%
   );
   height: 510px;
@@ -189,6 +224,9 @@ button:hover {
 
 .center-in-row {
   justify-content: center;
+}
+.text-align-left {
+  text-align: start;
 }
 
 .flexible-image-width-100 {
@@ -231,6 +269,122 @@ button:hover {
 .line {
   position: absolute;
   z-index: 2;
-  margin-top: -100px;
-  margin-left: 800px;
+  margin-top: -50px;
+  margin-left: 200px;
 }
+
+.partnerImages {
+  display: flex;
+  justify-content: space-around;
+  height: auto;
+  width: 100%;
+}
+
+.imageObjectTitle {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.security-test {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+.left-side-header-title {
+  margin-bottom: 20px;
+}
+
+.left-side-header-blurb {
+  max-width: 400px;
+}
+
+.top_row_left_col {
+  display: flex;
+  align-items: center;
+  margin-right: 100px;
+}
+
+.left-side-header-title-large-font {
+  font-size: 50px;
+}
+
+.blue-header-svg {
+  z-index: 2;
+}
+
+.mobile-blue-header-svg {
+  z-index: 2;
+  height: auto;
+  width: 400px;
+}
+
+.mobile-get-a-demo-blue-header-svg {
+  z-index: 2;
+  height: auto;
+  width: 350px;
+}
+
+.mobile-thank-you-svg {
+  z-index: 3;
+  height: auto;
+  width: 350px;
+}
+
+.full-width-light-blue {
+  margin: 0 -9999rem;
+  /* add back negative margin value */
+  padding: 0.25rem 9999rem;
+  background: #ebf9ff;
+}
+
+.full-width-near-black {
+  margin: 0 -9999rem;
+  /* add back negative margin value */
+  padding: 0.25rem 9999rem;
+  background: #2b1f31;
+}
+
+.full-width-dark-blue {
+  margin: 0 -9999rem;
+  /* add back negative margin value */
+  padding: 0.25rem 9999rem;
+  background: #1786df;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.header-locale-text {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.mobile-nav-link {
+  padding-right: 0;
+  padding-left: 0;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  color: #2a1f2f;
+  text-decoration: none !important;
+}
+
+.mobile-nav-link:hover {
+  color: #2a1f2f;
+  font-weight: bold;
+}
+
+.no-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.max-height-width-100 {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.height-80 { height: 80px; }

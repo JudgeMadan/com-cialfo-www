@@ -1,0 +1,90 @@
+import React from "react";
+import Nav from "react-bootstrap/Nav";
+import { NavLink } from "react-router-dom";
+import "../Layout/Layout.css";
+import TranslateButton from "./TranslateButton";
+import PathToRegexp from "path-to-regexp";
+import { withRouter } from "react-router-dom";
+
+class FullScreenHeaderLinks extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  updateLocale = locale => {
+    this.props.updateLocale(locale);
+  };
+
+  identifySpace = location => {
+    const ROUTE = "/:space/:locale/:path*";
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+    if (routeComponents) {
+      return routeComponents[1];
+    } else return "hey";
+  };
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.location !== this.props.location) {
+      this.setState({
+        space: this.identifySpace(this.props.location)
+      });
+    }
+  }
+
+  componentDidMount() {
+    this.identifySpace(this.props.location);
+  }
+
+  render() {
+    return (
+      <Nav>
+        <div>
+          <NavLink
+            activeClassName="activeStyle"
+            className="nav-link"
+            to="features"
+          >
+            {this.props.featuresPage}
+          </NavLink>
+        </div>
+        <div>
+          <NavLink
+            activeClassName="activeStyle"
+            className="nav-link"
+            to="about"
+          >
+            {this.props.aboutUsPage}
+          </NavLink>
+        </div>
+        <div>
+          <NavLink
+            activeClassName="activeStyle"
+            className="nav-link"
+            to="solutions"
+          >
+            {this.props.solutionsPage}
+          </NavLink>
+        </div>
+        {this.identifySpace(this.props.location) === "cn" && (
+          <TranslateButton
+            locale={this.props.locale}
+            space={this.props.space}
+            accessToken={this.props.accessToken}
+            updateLocale={this.updateLocale}
+          />
+        )}
+        <div>
+          <NavLink
+            activeClassName="activeStyle"
+            className="nav-link demo-page-link"
+            to="demo"
+          >
+            {this.props.demoPage}
+          </NavLink>
+        </div>
+      </Nav>
+    );
+  }
+}
+
+export default withRouter(FullScreenHeaderLinks);
