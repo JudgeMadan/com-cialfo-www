@@ -296,8 +296,8 @@
 }
 
 .features-productImgRight {
-  position: relative;
-  margin-right: -200px;
+  position: absolute;
+  left: 0;
   width: 150%;
   height: auto;
   /* z-index: 3; */
@@ -312,8 +312,8 @@
 }
 
 .features-productImgLeft {
-  position: relative;
-  margin-left: -200px;
+  position: absolute;
+  right: 0;
   width: 150%;
   height: auto;
   /* z-index: 3; */

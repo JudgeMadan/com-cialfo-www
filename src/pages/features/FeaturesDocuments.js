@@ -137,7 +137,7 @@ class FeaturesDocuments extends React.Component {
           <Row>
             <Col className="feature-image-left-side-col vertical-center-image">
               <img
-                className="features-productImgRight feature-image-sizing"
+                className="features-productImgLeft feature-image-sizing"
                 src={this.state.documentsTranscriptImage}
               />
             </Col>
@@ -221,7 +221,7 @@ class FeaturesDocuments extends React.Component {
           <Row className="researchBottomRow">
             <Col className="feature-image-left-side-col vertical-center-image">
               <img
-                className="features-productImgRight feature-image-sizing"
+                className="features-productImgLeft feature-image-sizing"
                 src={this.state.documentsPersonalKnowledgeImage}
               />
             </Col>
