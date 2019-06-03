@@ -17,7 +17,7 @@ class AboutBusinessAdvisors extends React.Component {
     if (businessAdvisors) {
       businessAdvisorsObject = businessAdvisors.map(businessAdvisor => {
         return (
-          <Col xs={6} md={4} xl={4} key={businessAdvisor.sys.id}>
+          <Col xs={12} sm={6} md={6} xl={4} key={businessAdvisor.sys.id}>
             <Container className="counselor-advisor-container white-background">
               <div className="counselor-advisor-container-inner-object">
                 <Row className="counselor-advisor-blurb">

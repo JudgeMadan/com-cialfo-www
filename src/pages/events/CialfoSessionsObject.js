@@ -19,7 +19,7 @@ class CialfoEventsObject extends React.Component {
       eventsObject = events.map(event => {
         const showDate = moment(event.fields.eventsDate).format("Do MMMM YYYY");
         return (
-          <Col className="my-3" xs={6} md={4} xl={4} key={event.sys.id}>
+          <Col className="my-3" xs={12} sm={6} md={6} xl={4} key={event.sys.id}>
             <Container className="light-blue-background">
               <div className="event-inner-object">
                 <Row>
