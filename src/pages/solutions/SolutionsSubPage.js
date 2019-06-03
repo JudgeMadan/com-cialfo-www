@@ -17,6 +17,7 @@ class SolutionsSubPage extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <Container fluid={true} className="no-padding">
         {/* FULL SCREEN SOLUTIONS SUBPAGE */}
@@ -29,6 +30,7 @@ class SolutionsSubPage extends React.Component {
           <SolutionsRightSideText
             title={this.props.topRowTitle}
             blurb={this.props.topRowBlurb}
+            image={this.props.topRowImage}
           />
           <div className="solutions-bottom-spacing" />
           <SolutionsSubfooter
@@ -41,6 +43,7 @@ class SolutionsSubPage extends React.Component {
           <SolutionsLeftSideText
             title={this.props.bottomRowTitle}
             blurb={this.props.bottomRowBlurb}
+            image={this.props.bottomRowImage}
           />
           <div className="solutions-bottom-spacing" />
           <Row className="center-in-row">
