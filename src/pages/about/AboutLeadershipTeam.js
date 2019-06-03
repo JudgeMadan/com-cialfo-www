@@ -13,7 +13,7 @@ class AboutLeadershipTeam extends React.Component {
   render() {
     const leadershipTeam = this.props.leadershipTeam;
     let leadershipTeamObject;
-
+    console.log(leadershipTeam);
     if (leadershipTeam) {
       leadershipTeamObject = leadershipTeam.map((leader, index) => {
         const number = index + 1;
@@ -22,16 +22,27 @@ class AboutLeadershipTeam extends React.Component {
             <div className="leadership-team-container">
               <Row className="leadershipObjectContent mx-3">
                 {number % 2 !== 0 && (
-                  <Image
-                    className="leaderImage oddNumberLeaderImage"
-                    src="https://picsum.photos/174/247"
-                  />
+                  <div>
+                    <Image
+                      className="leaderImage oddNumberLeaderImage"
+                      src={
+                        leader.fields.aboutPageLeadersObjectLeaderImage.fields
+                          .file.url
+                      }
+                    />
+                  </div>
                 )}
                 {number % 2 === 0 && (
-                  <Image
-                    className="leaderImage evenNumberLeaderImage"
-                    src="https://picsum.photos/174/247"
-                  />
+                  <div>
+                    <Image
+                      className="leaderImage evenNumberLeaderImage"
+                      // src="https://picsum.photos/174/247"
+                      src={
+                        leader.fields.aboutPageLeadersObjectLeaderImage.fields
+                          .file.url
+                      }
+                    />
+                  </div>
                 )}
               </Row>
               <Row className="leadershipObjectContent">

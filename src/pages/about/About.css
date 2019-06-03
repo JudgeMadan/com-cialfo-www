@@ -120,6 +120,10 @@
   flex-shrink: 2;
   margin-left: 10px;
   margin-right: 10px;
+  width: 147px;
+  min-width: 147px;
+  max-width: 147px;
+  height: auto;
 }
 
 .oddNumberLeaderImage {
