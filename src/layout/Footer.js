@@ -207,30 +207,6 @@ class Footer extends React.Component {
                           {this.state.forSuperintendents}
                         </NavLink>
                       </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        <NavLink
-                          className="footer-nav-link nav-link"
-                          to="cialfo-vs-bridge-u"
-                        >
-                          {this.state.cialfoVsBridgeU}
-                        </NavLink>
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        <NavLink
-                          className="footer-nav-link nav-link"
-                          to="cialfo-vs-naviance"
-                        >
-                          {this.state.cialfoVsNaviance}
-                        </NavLink>
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        <NavLink
-                          className="footer-nav-link nav-link"
-                          to="cialfo-vs-maia"
-                        >
-                          {this.state.cialfoVsMaia}
-                        </NavLink>
-                      </ListGroup.Item>
                     </ListGroup>
                   </Nav>
                 </Col>
@@ -247,18 +223,12 @@ class Footer extends React.Component {
                         {this.state.community}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoTips}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
                           to="events"
                         >
                           {this.state.events}
                         </NavLink>
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.partners}
                       </ListGroup.Item>
                     </ListGroup>
                   </Nav>
@@ -279,9 +249,6 @@ class Footer extends React.Component {
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         {this.state.blog}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.mediaKit}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         {this.state.careers}
@@ -358,30 +325,6 @@ class Footer extends React.Component {
                           {this.state.forSuperintendents}
                         </NavLink>
                       </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        <NavLink
-                          className="footer-nav-link nav-link"
-                          to="cialfo-vs-bridge-u"
-                        >
-                          {this.state.cialfoVsBridgeU}
-                        </NavLink>
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        <NavLink
-                          className="footer-nav-link nav-link"
-                          to="cialfo-vs-naviance"
-                        >
-                          {this.state.cialfoVsNaviance}
-                        </NavLink>
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        <NavLink
-                          className="footer-nav-link nav-link"
-                          to="cialfo-vs-maia"
-                        >
-                          {this.state.cialfoVsMaia}
-                        </NavLink>
-                      </ListGroup.Item>
                     </ListGroup>
                   </Nav>
                 </Col>
@@ -398,18 +341,12 @@ class Footer extends React.Component {
                         {this.state.community}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.cialfoTips}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link nav-link"
                           to="events"
                         >
                           {this.state.events}
                         </NavLink>
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.partners}
                       </ListGroup.Item>
                     </ListGroup>
                   </Nav>
@@ -430,9 +367,6 @@ class Footer extends React.Component {
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         {this.state.blog}
-                      </ListGroup.Item>
-                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.mediaKit}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         {this.state.careers}
