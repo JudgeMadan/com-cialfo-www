@@ -86,8 +86,8 @@ class SolutionsCounselors extends React.Component {
           spaces={this.props.spaces}
           setSpace={this.props.setSpace}
           setAccessToken={this.props.setAccessToken}
-          topRowImage={this.state.solutionsCounselorPageTopImage}
-          bottomRowImage={this.state.solutionsCounselorPageBottomImage}
+          topRowImage={this.state.solutionsSubPageTopImage}
+          bottomRowImage={this.state.solutionsSubPageBottomImage}
         />
       </Container>
     );
