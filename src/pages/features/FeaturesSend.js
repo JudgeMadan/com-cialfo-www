@@ -14,6 +14,7 @@ import MobilePartnerImages from "../MobilePartnerImages";
 import Pointer from "../../img/Pointer.svg";
 import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 import { withRouter } from "react-router-dom";
+import FeaturesBullets from "./FeaturesBullets";
 
 class FeaturesSend extends React.Component {
   constructor(props) {
@@ -68,15 +69,22 @@ class FeaturesSend extends React.Component {
 
   setFeaturesSendingPage = response => {
     const sendingPageContent = response.items[0].fields;
+    console.log(sendingPageContent);
     for (let key in sendingPageContent) {
       if (typeof sendingPageContent[key] === "string") {
         this.setState({
           [key]: sendingPageContent[key]
         });
       } else if (Array.isArray(sendingPageContent[key])) {
-        this.setState({
-          [key]: sendingPageContent[key].map(test => test.fields.file.url)
-        });
+        if (sendingPageContent[key].fields.file.url) {
+          this.setState({
+            [key]: sendingPageContent[key].map(test => test.fields.file.url)
+          });
+        } else {
+          this.setState({
+            [key]: sendingPageContent[key].map(test => test.fields.bulletPoint)
+          });
+        }
       } else {
         this.setState({
           [key]: sendingPageContent[key].fields.file.url
@@ -86,7 +94,6 @@ class FeaturesSend extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
@@ -154,11 +161,14 @@ class FeaturesSend extends React.Component {
                 </Row>
                 <Row>
                   <Col>
-                    <h1 className="secondary_font">
+                    {/* <h1 className="secondary_font">
                       <img src={Pointer} />
                       &nbsp;
                       {this.state.sendPortalBlurb}
-                    </h1>
+                    </h1> */}
+                    <Col>
+                      <FeaturesBullets bullets={this.state.sendPortalBlurb} />
+                    </Col>
                   </Col>
                 </Row>
               </Container>

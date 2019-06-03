@@ -8,6 +8,7 @@ class FeaturesBullets extends React.Component {
     let bulletsObject;
 
     if (bullets) {
+      console.log(bullets);
       bulletsObject = bullets.map(bullet => {
         return (
           <div className="bullet_point">

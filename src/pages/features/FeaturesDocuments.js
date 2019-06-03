@@ -135,7 +135,13 @@ class FeaturesDocuments extends React.Component {
         {/* FULL WIDTH EXPLORE */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row>
-            <Col className="feature-image-left-side-col vertical-center-image">
+            {/* <Col className="feature-image-left-side-col vertical-center-image">
+              <img
+                className="features-productImgLeft feature-image-sizing"
+                src={this.state.documentsExploreImage}
+              />
+            </Col> */}
+            <Col className="feature-image-right-side-col vertical-center-image">
               <img
                 className="features-productImgRight feature-image-sizing"
                 src={this.state.documentsTranscriptImage}
@@ -221,7 +227,7 @@ class FeaturesDocuments extends React.Component {
           <Row className="researchBottomRow">
             <Col className="feature-image-left-side-col vertical-center-image">
               <img
-                className="features-productImgRight feature-image-sizing"
+                className="features-productImgLeft feature-image-sizing"
                 src={this.state.documentsPersonalKnowledgeImage}
               />
             </Col>
