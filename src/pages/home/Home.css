@@ -6,22 +6,22 @@
   font-family: "roboto_regular";
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .secondary_font_regular {
   font-family: "roboto_regular";
   font-style: medium;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .top_row {
   display: flex;
   justify-content: space-around;
-  margin: 0 0 150px 0;
+  margin: 5rem 0 5rem 0;
 }
 
 .mobile_top_row {
@@ -169,7 +169,7 @@
 } */
 
 .homeMarquee {
-  margin-bottom: 100px;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: center;
 }
@@ -177,7 +177,7 @@
 .featureRows {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 125px;
+  margin-bottom: -5rem;
 }
 
 .mobile-featureRows {
@@ -211,7 +211,7 @@
 
 .homePageVideoCaseStudyVideoEmbed {
   justify-content: center;
-  margin-bottom: 150px;
+  margin-bottom: 5rem;
 }
 
 .mobile-homePageVideoCaseStudyVideoEmbed {
@@ -288,7 +288,27 @@
 
 .homePageImg {
   position: relative;
-  width: 110%;
+  width: 150%;
+  height: auto;
+  z-index: 3;
+  flex-shrink: 0;
+  min-width: 500px;
+}
+
+.productImgRight {
+  position: relative;
+  margin-right:-200px;
+  width: 150%;
+  height: auto;
+  z-index: 3;
+  flex-shrink: 0;
+  min-width: 500px;
+}
+
+.productImgLeft {
+  position: relative;
+  margin-left:-200px;
+  width: 150%;
   height: auto;
   z-index: 3;
   flex-shrink: 0;

@@ -15,8 +15,8 @@
   font-family: "roboto_regular";
   font-style: medium;
   font-weight: bold;
-  font-size: 1em;
-  line-height: 28px;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .aboutPageHeaderText {
@@ -73,8 +73,8 @@
 .about-page-who-we-are-image {
   /* max-width: 50%; */
   height: auto;
-  margin-right: 50px;
-  width: 270px;
+  margin-left: 50px;
+  width: 350px;
 }
 
 .aboutPageWhoWeAreContent {
@@ -185,7 +185,7 @@
 
 .counselor-advisor-container {
   margin: 15px 5px;
-  min-height: 620px;
+  /* min-height: 620px; */
   display: flex;
   justify-content: center;
 }
@@ -316,9 +316,9 @@
   justify-content: flex-end !important;
 }
 
-.counselor-advisor-blurb {
+/* .counselor-advisor-blurb {
   min-height: 65%;
-}
+} */
 
 .about-leadership-team-row {
   justify-content: space-around;
