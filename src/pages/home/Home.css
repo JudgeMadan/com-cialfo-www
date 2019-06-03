@@ -83,9 +83,18 @@
   margin-bottom: -2px;
 }
 
-.homePageFeaturesSendDocumentLinkText:hover {
+.homePageFeaturesSendDocumentLinkText:after {
   border-bottom: 3px solid #1986df;
-  margin-bottom: -2px;
+  transition: width .3s;
+  margin-bottom: -3px;
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+}
+
+.homePageFeaturesSendDocumentLinkText:hover::after {
+  width: 100%;
 }
 
 .homePageFeaturesLeverageLinkText {
@@ -93,9 +102,18 @@
   padding-bottom: 1px;
 }
 
-.homePageFeaturesLeverageLinkText:hover {
+.homePageFeaturesLeverageLinkText:after {
   border-bottom: 3px solid #ff6574;
-  margin-bottom: -2px;
+  transition: width .3s;
+  margin-bottom: -3px;
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+}
+
+.homePageFeaturesLeverageLinkText:hover::after {
+  width: 100%;
 }
 
 .homePageFeaturesDiscoverLinkText {
@@ -104,10 +122,18 @@
   font-weight: bold;
 }
 
-.homePageFeaturesDiscoverLinkText:hover {
+.homePageFeaturesDiscoverLinkText:after {
   border-bottom: 3px solid #ffca43;
-  margin-bottom: -2px;
-  font-weight: bold;
+  transition: width .3s;
+  margin-bottom: -3px;
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+}
+
+.homePageFeaturesDiscoverLinkText:hover::after {
+  width: 100%;
 }
 
 .homePageHeaderEmailSubmitButton {
@@ -190,7 +216,7 @@
   text-align: center;
   justify-content: center;
   margin-bottom: 50px;
-  padding: 50px 150px 0px 150px;
+  padding: 5rem 5rem 0px 5rem;
 }
 
 .mobile-homePageVideoCaseStudyTitle {
@@ -288,7 +314,7 @@
 
 .homePageImg {
   position: relative;
-  width: 150%;
+  width: 160%;
   height: auto;
   z-index: 3;
   flex-shrink: 0;
