@@ -65,7 +65,6 @@ class FourOhFourRedirect extends React.Component {
   }
 
   render() {
-    console.log(this.props.spaceName);
     return <div />;
   }
 }

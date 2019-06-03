@@ -67,7 +67,6 @@ class ClientStoriesAmericanSchoolInChina extends React.Component {
   };
 
   render() {
-    console.log(this.state.width);
     return (
       <div>
         {/* FULL SCREEN CLIENT STORY PAGE */}

@@ -43,7 +43,6 @@ class ClientStoriesHomePageCards extends React.Component {
     });
 
   setContent = response => {
-    console.log(response.items);
     const pageContent = response.items;
     this.setState({ schoolInfo: [] });
     for (let key in pageContent) {

@@ -111,16 +111,10 @@ class GetADemo extends React.Component {
         "Content-Type": "application/json"
       },
       body: e.target || null
-    }).then(function(response) {
-      console.log(response.status);
-      console.log("response");
-      console.log(response);
-    });
-    console.log(e.target.u.value);
+    }).then(function(response) {});
   };
 
   render() {
-    console.log(this.state.width);
     return (
       <div>
         {/* FULL WIDTH GET A DEMO HEADER */}

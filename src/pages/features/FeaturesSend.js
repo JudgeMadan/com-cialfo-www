@@ -86,6 +86,7 @@ class FeaturesSend extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
@@ -136,7 +137,12 @@ class FeaturesSend extends React.Component {
         {/* FULL SCREEN FEATURE ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row>
-            <Col className="feature-image-col" />
+            <Col className="feature-image-left-side-col vertical-center-image">
+              <img
+                className="features-productImgRight feature-image-sizing"
+                src={this.state.sendPortalImage}
+              />
+            </Col>
             <Col className="featureSubSectionTextAlign">
               <Container>
                 <Row>
@@ -197,7 +203,12 @@ class FeaturesSend extends React.Component {
                 </Row>
               </Container>
             </Col>
-            <Col className="feature-image-col" />
+            <Col className="feature-image-right-side-col vertical-center-image">
+              <img
+                className="features-productImgRight feature-image-sizing"
+                src={this.state.sendTranscriptImage}
+              />
+            </Col>
           </Row>
         </MediaQuery>
         {/* MOBILE TRANSCRIPT ROW */}

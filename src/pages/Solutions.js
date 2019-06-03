@@ -79,7 +79,6 @@ class Solutions extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container className="homePageContainer" fluid={true}>
         {/* FULL PAGE HEADER */}

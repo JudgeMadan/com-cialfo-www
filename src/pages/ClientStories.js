@@ -27,7 +27,6 @@ class ClientStories extends React.Component {
   });
 
   render() {
-    console.log(this.props);
     return (
       <Container>
         {this.props.match.params.locale === "en-US" && (
