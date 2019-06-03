@@ -132,8 +132,8 @@ therefore, total marquee width is about 395 * # of marquee Items */
   max-width: 350px !important;
   min-width: 350px !important;
   width: 350px !important;
-  height: 275px;
   font-size: 15px;
+  padding-bottom: 10px;
 }
 
 .marqueeElement:nth-child(odd) {
