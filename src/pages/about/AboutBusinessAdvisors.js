@@ -15,6 +15,7 @@ class AboutBusinessAdvisors extends React.Component {
     let businessAdvisorsObject;
 
     if (businessAdvisors) {
+      // console.log(businessAdvisors);
       businessAdvisorsObject = businessAdvisors.map(businessAdvisor => {
         return (
           <Col xs={12} sm={6} md={6} xl={4} key={businessAdvisor.sys.id}>
