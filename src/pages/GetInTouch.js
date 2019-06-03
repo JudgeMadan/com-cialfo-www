@@ -177,7 +177,7 @@ class GetInTouch extends React.Component {
                   </div>
                 </Row>
                 <Row className="get-in-touch-row ">
-                  <div class="_form_element _x76859237 _full_width upper_left_content_row">
+                  <div class="_form_element _x76859237 _full_width center-in-row">
                     <label class="_form-label secondary_font mobile-get-in-touch-form-header">
                       {this.state.getInTouchFullName}
                     </label>
@@ -190,7 +190,9 @@ class GetInTouch extends React.Component {
                       />
                     </div>
                   </div>
-                  <div class="_form_element _x01777496 _full_width mobile-get-in-touch-form-header">
+                </Row>
+                <Row className="get-in-touch-row ">
+                  <div class="_form_element _x01777496 _full_width mobile-get-in-touch-form-header center-in-row">
                     <label class="_form-label">
                       {this.state.getInTouchFullName}
                     </label>
@@ -205,7 +207,7 @@ class GetInTouch extends React.Component {
                   </div>
                 </Row>
                 <Row className="get-in-touch-row">
-                  <div class="_form_element _x39044956 _full_width lower_left_content_row">
+                  <div class="_form_element _x39044956 _full_width center-in-row">
                     <label class="_form-label secondary_font mobile-get-in-touch-form-header">
                       {this.state.getInTouchEmail}
                     </label>
@@ -219,7 +221,9 @@ class GetInTouch extends React.Component {
                       />
                     </div>
                   </div>
-                  <div class="_form_element _x16241918 _full_width lower_right_content_row">
+                </Row>
+                <Row className="get-in-touch-row">
+                  <div class="_form_element _x16241918 _full_width center-in-row">
                     <label class="_form-label secondary_font mobile-get-in-touch-form-header">
                       {this.state.getInTouchPhone}
                     </label>
@@ -242,14 +246,14 @@ class GetInTouch extends React.Component {
                       <textarea
                         name="field[7]"
                         placeholder={this.state.getInTouchMessagePlaceholder}
-                        className="textarea_style"
+                        className="mobile-textarea_style"
                         rows="5"
                         cols="43"
                       />
                     </div>
                   </div>
                 </Row>
-                <Row className="get-in-touch-row">
+                <Row className="get-in-touch-row mb-5">
                   <div class="_button-wrapper _full_width">
                     <button
                       id="_form_6_submit"
@@ -405,7 +409,7 @@ class GetInTouch extends React.Component {
                       </div>
                     </Row>
                     <Row className="get-in-touch-row center-in-row mt-3">
-                      <div class="_form_element _x76859237 _full_width upper_left_content_row">
+                      <div class="_form_element _x76859237 _full_width center-in-row">
                         <label class="_form-label secondary_fon">
                           {this.state.getInTouchFullName}
                         </label>
@@ -420,7 +424,7 @@ class GetInTouch extends React.Component {
                       </div>
                     </Row>
                     <Row className="center-in-row mt-3">
-                      <div class="_form_element _x01777496 _full_width ">
+                      <div class="_form_element _x01777496 _full_width center-in-row">
                         <label class="_form-label">
                           {this.state.getInTouchFullName}
                         </label>
@@ -435,7 +439,7 @@ class GetInTouch extends React.Component {
                       </div>
                     </Row>
                     <Row className="get-in-touch-row center-in-row mt-3">
-                      <div class="_form_element _x39044956 _full_width lower_left_content_row">
+                      <div class="_form_element _x39044956 _full_width center-in-row">
                         <label class="_form-label">
                           {this.state.getInTouchEmail}
                         </label>
@@ -451,7 +455,7 @@ class GetInTouch extends React.Component {
                       </div>
                     </Row>
                     <Row className="get-in-touch-row center-in-row mt-3">
-                      <div class="_form_element _x16241918 _full_width lower_right_content_row">
+                      <div class="_form_element _x16241918 _full_width center-in-row">
                         <label class="_form-label">
                           {this.state.getInTouchPhone}
                         </label>
@@ -476,7 +480,7 @@ class GetInTouch extends React.Component {
                             placeholder={
                               this.state.getInTouchMessagePlaceholder
                             }
-                            className="textarea_style"
+                            className="small-textarea_style"
                             rows="5"
                             cols="43"
                           />

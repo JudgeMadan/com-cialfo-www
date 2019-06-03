@@ -84,10 +84,8 @@
 
 .navbar-nav {
   align-items: flex-end !important;
-  margin-right: 10px;
 }
 
 .navbar-toggler {
-  margin-right: 10px;
   border: none !important;
 }
