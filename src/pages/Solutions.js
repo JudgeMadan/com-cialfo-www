@@ -79,6 +79,7 @@ class Solutions extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container className="homePageContainer" fluid={true}>
         {/* FULL PAGE HEADER */}
@@ -105,6 +106,7 @@ class Solutions extends React.Component {
             link={this.state.homePageFeaturesSendDocumentLinkText}
             url={this.state.homePageFeaturesSendDocumentLinkUrl}
             linkStyle={this.state.forCounselors}
+            image={this.state.solutionsForCounselorImage}
           />
         </MediaQuery>
         {/* MOBILE RIGHT SIDE COUNSELORS */}
@@ -115,6 +117,7 @@ class Solutions extends React.Component {
             link={this.state.homePageFeaturesSendDocumentLinkText}
             url={this.state.homePageFeaturesSendDocumentLinkUrl}
             linkStyle={this.state.forCounselors}
+            image={this.state.solutionsForCounselorImage}
           />
         </MediaQuery>
         {/* FULL PAGE LEFT SIDE IT TEAM */}
@@ -125,6 +128,7 @@ class Solutions extends React.Component {
             link={this.state.homePageFeaturesLeverageLinkText}
             url={this.state.homePageFeaturesLeverageLinkUrl}
             linkStyle={this.state.forIT}
+            image={this.state.solutionsForItImage}
           />
         </MediaQuery>
         {/* MOBILE IT TEAM */}
@@ -135,6 +139,7 @@ class Solutions extends React.Component {
             link={this.state.homePageFeaturesLeverageLinkText}
             url={this.state.homePageFeaturesLeverageLinkUrl}
             linkStyle={this.state.forIT}
+            image={this.state.solutionsForItImage}
           />
         </MediaQuery>
         {/* FULL SCREEN FOR PRINCIPALS */}
@@ -145,6 +150,7 @@ class Solutions extends React.Component {
             link={this.state.homePageFeaturesDiscoverLinkText}
             url={this.state.homePageFeaturesDiscoveryLinkUrl}
             linkStyle={this.state.forPrincipals}
+            image={this.state.solutionsForPrincipalsImage}
           />
         </MediaQuery>
         {/* MOBILE FOR PRINCIPALS */}
@@ -155,6 +161,7 @@ class Solutions extends React.Component {
             link={this.state.homePageFeaturesDiscoverLinkText}
             url={this.state.homePageFeaturesDiscoveryLinkUrl}
             linkStyle={this.state.forPrincipals}
+            image={this.state.solutionsForPrincipalsImage}
           />
         </MediaQuery>
         {/* FULL SCREEN FOR SUPERINTENDENTS */}
@@ -165,6 +172,7 @@ class Solutions extends React.Component {
             link={this.state.solutionsExtraLinkText}
             url={this.state.solutionsExtraLinkUrl}
             linkStyle={this.state.forSuperintendents}
+            image={this.state.solutionsForSuperintendentsImage}
           />
         </MediaQuery>
         {/* MOBILE FOR SUPERINTENDENTS */}
@@ -175,6 +183,7 @@ class Solutions extends React.Component {
             link={this.state.solutionsExtraLinkText}
             url={this.state.solutionsExtraLinkUrl}
             linkStyle={this.state.forSuperintendents}
+            image={this.state.solutionsForSuperintendentsImage}
           />
         </MediaQuery>
         <div className="solutions-bottom-spacing" />
