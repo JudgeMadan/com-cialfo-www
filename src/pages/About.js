@@ -259,7 +259,7 @@ class About extends React.Component {
         </MediaQuery>
         {/* Full Screen LeadershipTitle */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="center-in-row pt-5">
+          <Row className="center-in-row pt-5 pb-5">
             <h1 className="primary_font">
               {this.state.aboutPageLeadershipTitle}
             </h1>
