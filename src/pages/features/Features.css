@@ -43,13 +43,13 @@
 
 .feature-image-left-side-col {
   height: auto;
-  min-height: 420px;
+  min-height: 421px;
   background: linear-gradient(to right, #ebf9ff 50%, transparent 50%);
 }
 
 .feature-image-right-side-col {
   height: auto;
-  min-height: 420px;
+  min-height: 421px;
   background: linear-gradient(to left, #ebf9ff 50%, transparent 50%);
 }
 
