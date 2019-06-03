@@ -225,6 +225,17 @@
   border: solid #ebf9ff 2px;
 }
 
+.small-textarea_style {
+  border: solid #ebf9ff 2px;
+  width: 300px;
+}
+
+.full-screen-text-area {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 94px !important;
+}
+
 .mobile-textarea_style {
   border: solid #ebf9ff 2px;
   width: 300px;
