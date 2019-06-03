@@ -518,7 +518,7 @@ class Home extends React.Component {
                     <Link
                       className="homeFeatureLink homePageFeaturesDiscoverLinkText"
                       to={this.generateUrl(
-                        "features-documents",
+                        "features-report",
                         this.props.location
                       )}
                     >
@@ -546,7 +546,7 @@ class Home extends React.Component {
                     <Link
                       className="homeFeatureLink homePageFeaturesDiscoverLinkText"
                       to={this.generateUrl(
-                        "features-documents",
+                        "features-report",
                         this.props.location
                       )}
                     >
