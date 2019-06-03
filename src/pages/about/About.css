@@ -51,8 +51,8 @@
 
 .who-we-are-image-container {
   justify-content: flex-end;
-  padding: 5%;
-  padding-left: 200px;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .small-who-we-are-image-container {
