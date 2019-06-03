@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import NavBar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
 import * as contentful from "contentful";
-import Logo from "../img/Logo.svg";
+import Logo from "../img/cialfo-vertical_blue@4x.png";
 import { Link } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup";
 import "./Layout/Layout.css";
@@ -291,23 +291,13 @@ class Footer extends React.Component {
                 </Col>
               </Row>
             </Col>
-            {/* <Col className="footer-logo">
-              <Row className="">
-                <Link
-                  to={this.generateUrl("home", this.props.location)}
-                  className="navbar-brand"
-                >
-                  <img src={Logo} />
-                </Link>
-              </Row>
-            </Col> */}
             <Col className="justify-content-sm-end justify-content-md-end  footer-logo">
               <Row className="justify-content-sm-end justify-content-md-end">
                 <Link
                   to={this.generateUrl("home", this.props.location)}
                   className="navbar-brand"
                 >
-                  <img className="footer-logo-image" src={Logo} />
+                  <img className="footer-logo-image logo" src={Logo} />
                 </Link>
               </Row>
             </Col>

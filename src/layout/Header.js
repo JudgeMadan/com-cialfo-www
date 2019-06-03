@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import { NavLink } from "react-router-dom";
 import * as contentful from "contentful";
 import "./Layout/Layout.css";
-import Logo from "../img/Logo.svg";
+import Logo from "../img/cialfo-vertical_blue@4x.png";
 import TranslateButton from "./header/TranslateButton";
 import NavItem from "react-bootstrap/NavItem";
 import MediaQuery from "react-responsive";
@@ -148,7 +148,7 @@ class Header extends React.Component {
             to={this.generateUrl("home", this.props.location)}
             className="navbar-brand"
           >
-            <img src={Logo} />
+            <img className="logo" src={Logo} />
           </NavLink>
         </Nav>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
