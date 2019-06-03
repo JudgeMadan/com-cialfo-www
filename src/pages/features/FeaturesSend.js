@@ -169,6 +169,12 @@ class FeaturesSend extends React.Component {
         {/* MOBILE FEATURE ROW */}
         <MediaQuery query="(max-device-width: 1223px)">
           <Container className="mobile-bottom-border my-5 px-4">
+            <Row className="mobile-homePageFeaturesImage mt-5">
+              <img
+                className="mobile-homePageImg"
+                src={this.state.sendPortalImage}
+              />
+            </Row>
             <Row className="center-in-row px-3">
               <h1 className="primary_font">{this.state.sendPortalTitle}</h1>
             </Row>
@@ -213,6 +219,12 @@ class FeaturesSend extends React.Component {
         {/* MOBILE TRANSCRIPT ROW */}
         <MediaQuery query="(max-device-width: 1223px)">
           <Container className="mobile-bottom-border my-5 px-4">
+            <Row className="mobile-homePageFeaturesImage mt-5">
+              <img
+                className="mobile-homePageImg"
+                src={this.state.sendTranscriptImage}
+              />
+            </Row>
             <Row className="center-in-row px-3">
               <h1 className="primary_font">{this.state.sendTranscriptTitle}</h1>
             </Row>
