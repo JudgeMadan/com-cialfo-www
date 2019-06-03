@@ -70,7 +70,6 @@ class FeaturesSend extends React.Component {
 
   setFeaturesSendingPage = response => {
     const sendingPageContent = response.items[0].fields;
-    console.log(sendingPageContent);
     for (let key in sendingPageContent) {
       if (typeof sendingPageContent[key] === "string") {
         this.setState({
@@ -89,7 +88,7 @@ class FeaturesSend extends React.Component {
   };
 
   render() {
-    // console.log(this.state);
+    console.log(this.state);
     return (
       <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
