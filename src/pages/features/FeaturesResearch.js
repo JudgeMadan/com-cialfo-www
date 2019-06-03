@@ -122,7 +122,6 @@ class FeaturesResearch extends React.Component {
           <Row className="mobile-featuresVideoEmbed">
             <div>
               <img className="oval" src={Oval} />
-              <img className="line" src={Line} />
               <ReactPlayer
                 className="video"
                 width="345px"
@@ -167,14 +166,13 @@ class FeaturesResearch extends React.Component {
         </MediaQuery>
         {/* MOBILE SCREEN Knowledge */}
         <MediaQuery query="(max-device-width: 1223px)">
-          {/* <Col className="featureImage">
-              <img
-                className="feature-send-portal-left-align-light-blue-rectangle"
-                src={ThinLightBlueRectangle}
-              />
-              <img src={this.state.researchInfoImg} />
-            </Col> */}
           <Container className="mobile-bottom-border my-5 px-4">
+            <Row className="mobile-homePageFeaturesImage mt-5">
+              <img
+                className="mobile-homePageImg"
+                src={this.state.researchInfoImg}
+              />
+            </Row>
             <Row className="center-in-row px-3 mb-3">
               <h1 className="primary_font">{this.state.researchInfoTitle}</h1>
             </Row>
@@ -218,6 +216,12 @@ class FeaturesResearch extends React.Component {
         {/* MOBILE TRANSCRIPT */}
         <MediaQuery query="(max-device-width: 1223px)">
           <Container className="mobile-bottom-border my-5 px-4">
+            <Row className="mobile-homePageFeaturesImage mt-5">
+              <img
+                className="mobile-homePageImg"
+                src={this.state.researchTranscriptImg}
+              />
+            </Row>
             <Row className="center-in-row px-3 mb-3">
               <h1 className="primary_font">
                 {this.state.researchTranscriptTitle}
@@ -260,6 +264,12 @@ class FeaturesResearch extends React.Component {
         {/* MOBILE KNOWLEDGE */}
         <MediaQuery query="(max-device-width: 1223px)">
           <Container className="my-5 px-4">
+            <Row className="mobile-homePageFeaturesImage mt-5">
+              <img
+                className="mobile-homePageImg"
+                src={this.state.researchKnowledgeImg}
+              />
+            </Row>
             <Row className="center-in-row px-3 mb-3">
               <h1 className="primary_font">
                 {this.state.researchKnowledgeTitle}

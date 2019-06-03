@@ -122,7 +122,6 @@ class FeaturesDocuments extends React.Component {
           <Row className="mobile-featuresVideoEmbed">
             <div>
               <img className="oval" src={Oval} />
-              <img className="line" src={Line} />
               <ReactPlayer
                 className="video"
                 width="345px"
@@ -144,7 +143,7 @@ class FeaturesDocuments extends React.Component {
             <Col className="feature-image-right-side-col vertical-center-image">
               <img
                 className="features-productImgLeft feature-image-sizing"
-                src={this.state.documentsTranscriptImage}
+                src={this.state.documentsExploreImage}
               />
             </Col>
             <Col className="featureSubSectionTextAlign">
@@ -170,6 +169,12 @@ class FeaturesDocuments extends React.Component {
         {/* MOBILE EXPLORE */}
         <MediaQuery query="(max-device-width: 1223px)">
           <Container className="mobile-bottom-border my-5 px-4">
+            <Row className="mobile-homePageFeaturesImage mt-5">
+              <img
+                className="mobile-homePageImg"
+                src={this.state.documentsTranscriptImage}
+              />
+            </Row>
             <Row className="center-in-row px-3 mb-3">
               <h1 className="primary_font">
                 {this.state.documentsExploreTitle}
@@ -212,6 +217,12 @@ class FeaturesDocuments extends React.Component {
         {/* MOBILE TRANSCRIPT */}
         <MediaQuery query="(max-device-width: 1223px)">
           <Container className="mobile-bottom-border my-5 px-4">
+            <Row className="mobile-homePageFeaturesImage mt-5">
+              <img
+                className="mobile-homePageImg"
+                src={this.state.documentsTranscriptImage}
+              />
+            </Row>
             <Row className="center-in-row px-3 mb-3">
               <h1 className="primary_font">
                 {this.state.documentsTranscriptTitle}
@@ -254,6 +265,12 @@ class FeaturesDocuments extends React.Component {
         {/* MOBILE TRANSCRIPT */}
         <MediaQuery query="(max-device-width: 1223px)">
           <Container className="my-5 px-4">
+            <Row className="mobile-homePageFeaturesImage mt-5">
+              <img
+                className="mobile-homePageImg"
+                src={this.state.documentsPersonalKnowledgeImage}
+              />
+            </Row>
             <Row className="center-in-row px-3 mb-3">
               <h1 className="primary_font">
                 {this.state.documentsPersonalKnowledgeTitle}
