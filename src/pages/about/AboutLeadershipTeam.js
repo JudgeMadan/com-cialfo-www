@@ -13,7 +13,6 @@ class AboutLeadershipTeam extends React.Component {
   render() {
     const leadershipTeam = this.props.leadershipTeam;
     let leadershipTeamObject;
-    console.log(leadershipTeam);
     if (leadershipTeam) {
       leadershipTeamObject = leadershipTeam.map((leader, index) => {
         const number = index + 1;
@@ -36,7 +35,6 @@ class AboutLeadershipTeam extends React.Component {
                   <div>
                     <Image
                       className="leaderImage evenNumberLeaderImage"
-                      // src="https://picsum.photos/174/247"
                       src={
                         leader.fields.aboutPageLeadersObjectLeaderImage.fields
                           .file.url
