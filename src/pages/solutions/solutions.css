@@ -216,3 +216,12 @@
     margin-top: -225px;
   }
 }
+
+.solutionPageImg {
+  position: relative;
+  width: 75%;
+  height: auto;
+  z-index: 3;
+  flex-shrink: 0;
+  min-width: 500px;
+}

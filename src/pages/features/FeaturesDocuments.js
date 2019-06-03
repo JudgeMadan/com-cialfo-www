@@ -83,6 +83,7 @@ class FeaturesDocuments extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
@@ -134,7 +135,18 @@ class FeaturesDocuments extends React.Component {
         {/* FULL WIDTH EXPLORE */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row>
-            <Col className="feature-image-col" />
+            {/* <Col className="feature-image-left-side-col vertical-center-image">
+              <img
+                className="features-productImgLeft feature-image-sizing"
+                src={this.state.documentsExploreImage}
+              />
+            </Col> */}
+            <Col className="feature-image-right-side-col vertical-center-image">
+              <img
+                className="features-productImgLeft feature-image-sizing"
+                src={this.state.documentsTranscriptImage}
+              />
+            </Col>
             <Col className="featureSubSectionTextAlign">
               <Container>
                 <Row>
@@ -189,7 +201,12 @@ class FeaturesDocuments extends React.Component {
                 </Row>
               </Container>
             </Col>
-            <Col className="feature-image-col" />
+            <Col className="feature-image-right-side-col vertical-center-image">
+              <img
+                className="features-productImgRight feature-image-sizing"
+                src={this.state.documentsTranscriptImage}
+              />
+            </Col>
           </Row>
         </MediaQuery>
         {/* MOBILE TRANSCRIPT */}
@@ -208,7 +225,12 @@ class FeaturesDocuments extends React.Component {
         {/* FULL WIDTH PERSONAL KNOWLEDGE */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="researchBottomRow">
-            <Col className="feature-image-col" />
+            <Col className="feature-image-left-side-col vertical-center-image">
+              <img
+                className="features-productImgLeft feature-image-sizing"
+                src={this.state.documentsPersonalKnowledgeImage}
+              />
+            </Col>
             <Col className="featureSubSectionTextAlign">
               <Container>
                 <Row>

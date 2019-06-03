@@ -85,7 +85,8 @@ class App extends Component {
         "country_code=US"
       ];
 
-      const cookieArrayJP = [
+
+      const cookieArrayInternational = [
         "ajs_user_id=null;",
         "ajs_group_id=null;",
         "ajs_anonymous_id=%22da02155a-24b5-4a2f-975b-57a2d9b11ba7%22;",

@@ -135,11 +135,17 @@ class FeaturesResearch extends React.Component {
         {/* FULL SCREEN Knowledge */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="test-row" no-gutters>
-            <Col className="feature-image-col">
-              {/* <img
+            {/* <Col className="feature-image-col">
+              <img
                 className="feature-send-portal-left-align-light-blue-rectangle"
                 src={ThinLightBlueRectangle}
-              /> */}
+              />
+            </Col> */}
+            <Col className="feature-image-left-side-col vertical-center-image">
+              <img
+                className="features-productImgLeft feature-image-sizing"
+                src={this.state.researchInfoImg}
+              />
             </Col>
             <Col className="featureSubSectionTextAlign ">
               <Container className="inner-test-div">
@@ -201,12 +207,11 @@ class FeaturesResearch extends React.Component {
                 </Row>
               </Container>
             </Col>
-            <Col className="feature-image-col">
-              {/* <img
-                className="feature-send-portal-right-align-light-blue-rectangle"
-                src={ThinLightBlueRectangle}
-              /> */}
-              {/* <img src={this.state.researchTranscriptImg} /> */}
+            <Col className="feature-image-right-side-col vertical-center-image">
+              <img
+                className="features-productImgRight feature-image-sizing"
+                src={this.state.researchTranscriptImg}
+              />
             </Col>
           </Row>
         </MediaQuery>
@@ -225,8 +230,13 @@ class FeaturesResearch extends React.Component {
         </MediaQuery>
         {/* FULL WIDTH KNOWLEDGE */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="researchBottomRow test-row">
-            <Col className="feature-image-col" />
+          <Row className="researchBottomRow">
+            <Col className="feature-image-left-side-col vertical-center-image">
+              <img
+                className="features-productImgLeft feature-image-sizing"
+                src={this.state.researchKnowledgeImg}
+              />
+            </Col>
             <Col className="featureSubSectionTextAlign">
               <Container className="inner-test-div">
                 <Row>

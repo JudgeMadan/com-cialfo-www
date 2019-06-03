@@ -89,3 +89,10 @@
 .navbar-toggler {
   border: none !important;
 }
+
+.logo {
+  max-width: 128px !important;
+  /* width: 128px !important;
+  min-width: 128px !important; */
+  height: auto;
+}

@@ -25,9 +25,10 @@ class AboutBusinessAdvisors extends React.Component {
                     {businessAdvisor.fields.aboutPageBusinessAdvisorBlurb}
                   </p>
                 </Row>
-                <Row>
+                <Row
+                  className="height-80 mb-2">
                   <Image
-                    className="mb-3"
+                    className="max-height-width-100"
                     roundedCircle
                     src={
                       businessAdvisor.fields.aboutPageBusinessAdvisorImage
@@ -37,13 +38,13 @@ class AboutBusinessAdvisors extends React.Component {
                 </Row>
                 <Row>
                   <div>
-                    <p className="secondary_font_bold">
+                    <p className="secondary_font_bold mb-2">
                       {businessAdvisor.fields.aboutPageBusinessAdvisorTitle}
                     </p>
                   </div>
                 </Row>
                 <Row>
-                  <p className="secondary_font reduced-margin-bottom">
+                  <p className="secondary_font mb-0">
                     {businessAdvisor.fields.jobTitle}
                   </p>
                 </Row>

@@ -93,7 +93,7 @@ class About extends React.Component {
   };
 
   render() {
-    console.log(this.state.width);
+    console.log(this.state);
     return (
       <Container className="aboutPage">
         {/* FULL SCREEN HEADER */}

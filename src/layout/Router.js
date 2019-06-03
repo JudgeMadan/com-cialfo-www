@@ -199,7 +199,7 @@ class Router extends React.Component {
             ":space" +
             "/" +
             ":locale" +
-            "/features-documents"
+            "/features-report"
           }
           render={() => (
             <FeaturesDocuments

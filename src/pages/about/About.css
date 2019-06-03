@@ -15,8 +15,8 @@
   font-family: "roboto_regular";
   font-style: medium;
   font-weight: bold;
-  font-size: 1em;
-  line-height: 28px;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .aboutPageHeaderText {
@@ -51,8 +51,8 @@
 
 .who-we-are-image-container {
   justify-content: flex-end;
-  padding: 5%;
-  padding-left: 200px;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .small-who-we-are-image-container {
@@ -73,8 +73,8 @@
 .about-page-who-we-are-image {
   /* max-width: 50%; */
   height: auto;
-  margin-right: 50px;
-  width: 270px;
+  margin-left: 50px;
+  width: 350px;
 }
 
 .aboutPageWhoWeAreContent {
@@ -116,18 +116,21 @@
 
 .leaderImage {
   display: flex;
-  margin-bottom: 75px;
+  margin-bottom: 30px;
   flex-shrink: 2;
   margin-left: 10px;
   margin-right: 10px;
+  width: 247px;
+  min-width: 247px;
+  height: 370px;
 }
 
 .oddNumberLeaderImage {
-  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+  clip-path: polygon(0 2%, 100% 0, 100% 100%, 0 98%);
 }
 
 .evenNumberLeaderImage {
-  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+  clip-path: polygon(0 0, 100% 2%, 100% 98%, 0 100%);
 }
 
 .leadership-team-container {
@@ -163,7 +166,7 @@
 .mobile-homePartnerImagesContainer {
   display: flex;
 }
-/* 
+/*
 .mobile-aboutPartnerImages {
   width: 50%;
   height: auto;
@@ -179,13 +182,12 @@
 }
 
 .aboutPartners {
-  margin-bottom: 50px;
   justify-content: center;
 }
 
 .counselor-advisor-container {
   margin: 15px 5px;
-  min-height: 620px;
+  /* min-height: 620px; */
   display: flex;
   justify-content: center;
 }
@@ -316,9 +318,9 @@
   justify-content: flex-end !important;
 }
 
-.counselor-advisor-blurb {
+/* .counselor-advisor-blurb {
   min-height: 65%;
-}
+} */
 
 .about-leadership-team-row {
   justify-content: space-around;

@@ -28,7 +28,6 @@ class SolutionsSubfooter extends React.Component {
   }
 
   render() {
-    console.log(this.state.width);
     return (
       <Container className="featuresSendPage subFooterPage">
         <div className="full-width-dark-blue-custom-height">
