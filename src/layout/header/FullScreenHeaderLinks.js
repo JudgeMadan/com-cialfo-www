@@ -42,15 +42,6 @@ class FullScreenHeaderLinks extends React.Component {
           <NavLink
             activeClassName="activeStyle"
             className="nav-link"
-            to="clients"
-          >
-            {this.props.clientsPage}
-          </NavLink>
-        </div>
-        <div>
-          <NavLink
-            activeClassName="activeStyle"
-            className="nav-link"
             to="features"
           >
             {this.props.featuresPage}
