@@ -269,22 +269,20 @@ class Home extends React.Component {
           <Row className="featureRows">
             {this.state.width > 1000 && (
               <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-                <img className="stroke-10" src={Stroke10} />
                 <img
                   className="custom-left-align-light-blue-background"
                   src={LightBlueRectangle}
                 />
-                <img className="homePageImg" src={Documents} />
+                <img className="productImgLeft" src={Documents} />
               </Col>
             )}
             {this.state.width <= 1000 && (
               <Row className="homePageFeaturesImage homePageFeaturesImageBackground">
-                <img className="stroke-10" src={Stroke10} />
                 <img
                   className="custom-left-align-light-blue-background"
                   src={LightBlueRectangle}
                 />
-                <img className="homePageImg" src={Documents} />
+                <img className="productImgLeft" src={Documents} />
               </Row>
             )}
             {this.state.width > 1000 && (
@@ -405,7 +403,7 @@ class Home extends React.Component {
             )}
             {this.state.width <= 1000 && (
               <Row className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
-                <img className="homePageImg" src={ResearchImage} />
+                <img className="productImgRight" src={ResearchImage} />
                 <img
                   className="right-align-light-blue-background"
                   src={LightBlueRectangle}
@@ -414,7 +412,7 @@ class Home extends React.Component {
             )}
             {this.state.width > 1000 && (
               <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
-                <img className="homePageImg" src={ResearchImage} />
+                <img className="productImgRight" src={ResearchImage} />
                 <img
                   className="right-align-light-blue-background"
                   src={LightBlueRectangle}
@@ -485,7 +483,7 @@ class Home extends React.Component {
           <Row className="featureRows">
             {this.state.width > 1000 && (
               <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-                <img className="homePageImg" src={Reports} />
+                <img className="productImgLeft" src={Reports} />
                 <img
                   className="custom-left-align-light-blue-background"
                   src={LightBlueRectangle}
@@ -494,7 +492,7 @@ class Home extends React.Component {
             )}
             {this.state.width <= 1000 && (
               <Row className="homePageFeaturesImage homePageFeaturesImageBackground">
-                <img className="homePageImg" src={Reports} />
+                <img className="productImgLeft" src={Reports} />
                 <img
                   className="custom-left-align-light-blue-background"
                   src={LightBlueRectangle}

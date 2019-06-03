@@ -42,9 +42,6 @@ class SolutionsHeader extends React.Component {
             <img className="solutions-oval" src={Oval} />
           )}
           {this.props.isSolutionsPage && (
-            <img className="solutions-blue-stroke-10" src={BlueStroke10} />
-          )}
-          {this.props.isSolutionsPage && (
             <img className="solutions-line" src={Line} />
           )}
           <p className="secondary_font solutions-header-text">

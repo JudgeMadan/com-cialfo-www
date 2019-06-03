@@ -142,7 +142,7 @@ class FeaturesDocuments extends React.Component {
             </Col> */}
             <Col className="feature-image-right-side-col vertical-center-image">
               <img
-                className="features-productImgRight feature-image-sizing"
+                className="features-productImgLeft feature-image-sizing"
                 src={this.state.documentsExploreImage}
               />
             </Col>

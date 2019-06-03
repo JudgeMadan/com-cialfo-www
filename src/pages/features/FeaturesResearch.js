@@ -142,7 +142,7 @@ class FeaturesResearch extends React.Component {
             </Col> */}
             <Col className="feature-image-left-side-col vertical-center-image">
               <img
-                className="features-productImgRight feature-image-sizing"
+                className="features-productImgLeft feature-image-sizing"
                 src={this.state.researchInfoImg}
               />
             </Col>
@@ -237,7 +237,7 @@ class FeaturesResearch extends React.Component {
           <Row className="researchBottomRow">
             <Col className="feature-image-left-side-col vertical-center-image">
               <img
-                className="features-productImgRight feature-image-sizing"
+                className="features-productImgLeft feature-image-sizing"
                 src={this.state.researchKnowledgeImg}
               />
             </Col>
