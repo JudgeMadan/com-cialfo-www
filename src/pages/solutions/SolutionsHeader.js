@@ -30,7 +30,6 @@ class SolutionsHeader extends React.Component {
   };
 
   render() {
-    console.log(this.state.height);
     return (
       <div className="solutions-header">
         <Row className="solutions-title">

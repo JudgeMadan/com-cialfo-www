@@ -150,7 +150,6 @@ class Footer extends React.Component {
   }
 
   render() {
-    console.log(this.state.width);
     return (
       <div>
         <MediaQuery query="(min-device-width: 1224px)">
