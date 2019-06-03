@@ -83,7 +83,6 @@ class Security extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container>
         {/* FULL SCREEN PAGE HEADER */}

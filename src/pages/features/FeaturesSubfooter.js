@@ -14,7 +14,6 @@ class FeaturesSubfooter extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.state.height);
     window.addEventListener("resize", this.updateDimensions);
   }
   updateDimensions = () => {

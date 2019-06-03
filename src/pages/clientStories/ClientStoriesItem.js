@@ -33,7 +33,6 @@ class ClientStoriesItem extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container>
         {this.state.width > 1000 && (

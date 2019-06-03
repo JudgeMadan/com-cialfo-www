@@ -17,7 +17,6 @@ class SolutionsSubPage extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <Container fluid={true} className="no-padding">
         {/* FULL SCREEN SOLUTIONS SUBPAGE */}

@@ -106,7 +106,6 @@ class Features extends React.Component {
   };
 
   render() {
-    console.log(this.state.width);
     return (
       <Container className="homePageContainer">
         {/* FULL SCREEN TOP ROW */}

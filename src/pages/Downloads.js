@@ -98,7 +98,6 @@ class Downloads extends React.Component {
   };
 
   render() {
-    console.log(this.state.width);
     return (
       <Container>
         {/* FULL SCREEN DOWNLOADS */}
