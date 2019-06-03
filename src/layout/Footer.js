@@ -217,10 +217,22 @@ class Footer extends React.Component {
                         {this.state.resources}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.knowledgeBase}
+                        <a
+                          className="footer-nav-link nav-link"
+                          href="https://help.cialfo.co"
+                          target="_blank"
+                        >
+                          {this.state.knowledgeBase}
+                        </a>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.community}
+                        <a
+                          className="footer-nav-link nav-link"
+                          href="https://facebook.com/cialfo"
+                          target="_blank"
+                        >
+                          {this.state.community}
+                        </a>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
@@ -248,10 +260,22 @@ class Footer extends React.Component {
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.blog}
+                        <a
+                          className="footer-nav-link nav-link"
+                          href="https://blog.cialfo.co"
+                          target="_blank"
+                        >
+                          {this.state.blog}
+                        </a>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.careers}
+                        <a
+                          className="footer-nav-link nav-link"
+                          href="https://angel.co/company/cialfo"
+                          target="_blank"
+                        >
+                          {this.state.careers}
+                        </a>
                       </ListGroup.Item>
                     </ListGroup>
                   </Nav>
@@ -335,10 +359,22 @@ class Footer extends React.Component {
                         {this.state.resources}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.knowledgeBase}
+                        <a
+                          className="footer-nav-link nav-link"
+                          href="https://help.cialfo.co"
+                          target="_blank"
+                        >
+                          {this.state.knowledgeBase}
+                        </a>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.community}
+                        <a
+                          className="footer-nav-link nav-link"
+                          href="https://facebook.com/cialfo"
+                          target="_blank"
+                        >
+                          {this.state.community}
+                        </a>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
@@ -366,10 +402,22 @@ class Footer extends React.Component {
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.blog}
+                        <a
+                          className="footer-nav-link nav-link"
+                          href="https://blog.cialfo.co"
+                          target="_blank"
+                        >
+                          {this.state.blog}
+                        </a>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        {this.state.careers}
+                        <a
+                          className="footer-nav-link nav-link"
+                          href="https://angel.co/company/cialfo"
+                          target="_blank"
+                        >
+                          {this.state.careers}
+                        </a>
                       </ListGroup.Item>
                     </ListGroup>
                   </Nav>
