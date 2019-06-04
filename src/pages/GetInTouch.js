@@ -153,7 +153,7 @@ class GetInTouch extends React.Component {
               action="https://cialfo51705.activehosted.com/proc.php"
               id="_form_6_"
               class="_form _form_6 _inline-form  _dark get_in_touch_object"
-              novalidate
+              validate
             >
               <input type="hidden" name="u" value="6" />
               <input type="hidden" name="f" value="6" />
@@ -209,7 +209,7 @@ class GetInTouch extends React.Component {
                     </label>
                     <div class="_field-wrapper">
                       <input
-                        type="text"
+                        type="email"
                         name="email"
                         placeholder={this.state.getInTouchEmailPlaceholder}
                         required
@@ -276,7 +276,7 @@ class GetInTouch extends React.Component {
                 action="https://cialfo51705.activehosted.com/proc.php"
                 id="_form_6_"
                 class="_form _form_6 _inline-form  _dark get_in_touch_object"
-                novalidate
+                validate
               >
                 <input type="hidden" name="u" value="6" />
                 <input type="hidden" name="f" value="6" />
@@ -330,7 +330,7 @@ class GetInTouch extends React.Component {
                       </label>
                       <div class="_field-wrapper">
                         <input
-                          type="text"
+                          type="email"
                           name="email"
                           placeholder={this.state.getInTouchEmailPlaceholder}
                           required
@@ -394,7 +394,7 @@ class GetInTouch extends React.Component {
                   action="https://cialfo51705.activehosted.com/proc.php"
                   id="_form_6_"
                   class="_form _form_6 _inline-form  _dark get_in_touch_object"
-                  novalidate
+                  validate
                 >
                   <input type="hidden" name="u" value="6" />
                   <input type="hidden" name="f" value="6" />
@@ -454,7 +454,7 @@ class GetInTouch extends React.Component {
                         </label>
                         <div class="_field-wrapper">
                           <input
-                            type="text"
+                            type="email"
                             name="email"
                             placeholder={this.state.getInTouchEmailPlaceholder}
                             required

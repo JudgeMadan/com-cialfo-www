@@ -115,6 +115,7 @@ class GetADemo extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <div>
         {/* FULL WIDTH GET A DEMO HEADER */}
@@ -150,7 +151,7 @@ class GetADemo extends React.Component {
                   action="https://cialfo51705.activehosted.com/proc.php"
                   id="_form_7_"
                   class="_form _form_7 _inline-form  _dark"
-                  // novalidate
+                  validate
                 >
                   <input type="hidden" name="u" value="7" />
                   <input type="hidden" name="f" value="7" />
@@ -204,7 +205,7 @@ class GetADemo extends React.Component {
                         </label>
                         <div class="_field-wrapper">
                           <input
-                            type="text"
+                            type="email"
                             name="email"
                             placeholder="Type your email"
                             required
@@ -284,7 +285,7 @@ class GetADemo extends React.Component {
                   action="https://cialfo51705.activehosted.com/proc.php"
                   id="_form_7_"
                   class="_form _form_7 _inline-form  _dark"
-                  novalidate
+                  validate
                 >
                   <input type="hidden" name="u" value="7" />
                   <input type="hidden" name="f" value="7" />
@@ -428,7 +429,7 @@ class GetADemo extends React.Component {
                 action="https://cialfo51705.activehosted.com/proc.php"
                 id="_form_7_"
                 class="_form _form_7 _inline-form  _dark"
-                novalidate
+                validate
               >
                 <input type="hidden" name="u" value="7" />
                 <input type="hidden" name="f" value="7" />
