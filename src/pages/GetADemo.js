@@ -150,7 +150,7 @@ class GetADemo extends React.Component {
                   action="https://cialfo51705.activehosted.com/proc.php"
                   id="_form_7_"
                   class="_form _form_7 _inline-form  _dark"
-                  novalidate
+                  // novalidate
                 >
                   <input type="hidden" name="u" value="7" />
                   <input type="hidden" name="f" value="7" />
