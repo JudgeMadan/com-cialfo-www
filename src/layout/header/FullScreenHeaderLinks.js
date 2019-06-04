@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "react-bootstrap/Nav";
+import Button from "react-bootstrap/Button";
 import { NavLink } from "react-router-dom";
 import "../Layout/Layout.css";
 import TranslateButton from "./TranslateButton";
@@ -76,10 +77,12 @@ class FullScreenHeaderLinks extends React.Component {
         <div>
           <NavLink
             activeClassName="activeStyle"
-            className="nav-link demo-page-link"
+            // className="nav-link demo-page-link"
             to="demo"
           >
-            {this.props.demoPage}
+            <Button className="mb-2" size="sm" variant="primary">
+              {this.props.demoPage}
+            </Button>
           </NavLink>
         </div>
       </Nav>
