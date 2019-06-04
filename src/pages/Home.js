@@ -4,6 +4,7 @@ import MobileHomePartnerImages from "./home/MobileHomePartnerImages";
 import * as contentful from "contentful";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
@@ -153,9 +154,11 @@ class Home extends React.Component {
                           />
                         </Col>
                         <Col>
-                          <button
-                            className=" primary_font get-a-demo-button"
+                          <Button
+                            className="nav-link-button get-a-demo-button"
                             type="submit"
+                            size="sm"
+                            variant="primary"
                           >
                             <Link
                               className="primary_font get-a-demo-link"
@@ -163,7 +166,7 @@ class Home extends React.Component {
                             >
                               {this.state.homePageHeaderEmailSubmitButtonText}
                             </Link>
-                          </button>
+                          </Button>
                         </Col>
                       </Form.Row>
                     </Form>
@@ -206,9 +209,11 @@ class Home extends React.Component {
                           />
                         </Col>
                         <Col>
-                          <button
-                            className=" primary_font get-a-demo-button"
+                          <Button
+                            className="nav-link-button get-a-demo-button"
                             type="submit"
+                            size="sm"
+                            variant="primary"
                           >
                             <Link
                               className="primary_font get-a-demo-link"
@@ -216,7 +221,7 @@ class Home extends React.Component {
                             >
                               {this.state.homePageHeaderEmailSubmitButtonText}
                             </Link>
-                          </button>
+                          </Button>
                         </Col>
                       </Form.Row>
                     </Form>

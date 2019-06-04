@@ -387,7 +387,7 @@
 .get-a-demo-button {
   font-size: 1.1em !important;
   background: none;
-  color: #757575 !important;
+  color: white !important;
   border: none;
   border-bottom: 2px solid #f4f4f5;
   padding-bottom: 3.6px;
@@ -400,7 +400,7 @@
 .get-a-demo-link {
   font-size: 1.1em !important;
   background: none;
-  color: #757575 !important;
+  color: white !important;
   border: none;
   padding: 0;
   cursor: pointer;

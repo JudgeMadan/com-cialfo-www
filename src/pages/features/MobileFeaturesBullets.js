@@ -13,6 +13,7 @@ class MobileFeaturesBullets extends React.Component {
         return (
           <div className="bullet_point no-x-axis-margin">
             <img src={Pointer} />
+            &nbsp;
             <span className="secondary_font"> {bullet.fields.bulletPoint}</span>
           </div>
         );
