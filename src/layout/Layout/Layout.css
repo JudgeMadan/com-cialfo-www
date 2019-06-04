@@ -12,6 +12,12 @@
   color: #2b1f30 !important;
 }
 
+.nav-link-button {
+  font-family: "roboto_regular";
+  font-size: 16px !important;
+  margin-bottom: 6px;
+}
+
 .navbar-brand {
   font-family: "roboto_regular";
 }
