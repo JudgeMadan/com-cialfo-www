@@ -207,11 +207,11 @@ class FeaturesSend extends React.Component {
                 </Row>
                 <Row>
                   <Col>
-                    <h1 className="secondary_font">
-                      <img src={Pointer} />
-                      &nbsp;
-                      {this.state.sendTranscriptBlurb}
-                    </h1>
+                    <Col>
+                      <FeaturesSendBullets
+                        bullets={this.state.sendTranscriptBlurb}
+                      />
+                    </Col>
                   </Col>
                 </Row>
               </Container>
@@ -240,12 +240,12 @@ class FeaturesSend extends React.Component {
                     {this.state.sendTranscriptTitle}
                   </h1>
                 </Row>
-                <Row>
-                  <h1 className="secondary_font">
-                    <img src={Pointer} />
-                    &nbsp;
-                    {this.state.sendTranscriptBlurb}
-                  </h1>
+                <Row className="mt-2">
+                  <Col>
+                    <MobileFeaturesSendBullets
+                      bullets={this.state.sendPortalBlurb}
+                    />
+                  </Col>
                 </Row>
                 <Row className="mb-5" />
               </div>
