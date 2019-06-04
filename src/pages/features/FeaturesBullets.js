@@ -13,7 +13,10 @@ class FeaturesBullets extends React.Component {
         return (
           <div className="bullet_point">
             <img src={Pointer} />
-            <span className="secondary_font"> {bullet.fields.bulletPoint}</span>
+            &nbsp;
+            <span className="feature-bullet-text secondary_font">
+              {bullet.fields.bulletPoint}
+            </span>
           </div>
         );
       });
