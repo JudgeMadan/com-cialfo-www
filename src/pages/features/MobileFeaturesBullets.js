@@ -8,7 +8,6 @@ class MobileFeaturesBullets extends React.Component {
     let bulletsObject;
 
     if (bullets) {
-      console.log(bullets);
       bulletsObject = bullets.map(bullet => {
         return (
           <div className="bullet_point no-x-axis-margin">
