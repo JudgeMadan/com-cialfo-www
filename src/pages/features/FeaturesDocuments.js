@@ -173,7 +173,7 @@ class FeaturesDocuments extends React.Component {
             <Row className="mobile-homePageFeaturesImage mt-5">
               <img
                 className="mobile-homePageImg"
-                src={this.state.documentsExportImage}
+                src={this.state.documentsExploreImage}
               />
             </Row>
             <Row className="homePageFeaturesText">
