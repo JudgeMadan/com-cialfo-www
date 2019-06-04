@@ -59,18 +59,18 @@ class TermsOfService extends React.Component {
 
   render() {
     return (
-<Container className="secondary_font">
-              <div class="text-lg-center text-md-center text-sm-center text-xs-center">
-                <Row className="center-in-row">
-            <p className="hidden-xs-down primary_font privacy-upper-title">
-              Cialfo
-            </p>
+        <Container className="secondary_font">
+          <Container class="text-lg-center text-md-center text-sm-center text-xs-center">
+            <Row className="center-in-row">
+              <p className="hidden-xs-down primary_font privacy-upper-title">
+                Cialfo
+              </p>
             </Row>
             <Row className="center-in-row">
-              <h1 className="primary_font privacy-title">Terms of Service</h1>
+                <h1 className="primary_font terms-of-service-title ">Terms of Service</h1>
             </Row>
             <br />
-          </div>
+          </Container>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <p>
             <strong>THIS AGREEMENT</strong>
@@ -304,9 +304,11 @@ class TermsOfService extends React.Component {
         <Row className="center-in-row pb-5">
           <h1>···</h1>
         </Row>
-</Container>
+      </Container>
     );
   }
 }
 
 export default withRouter(TermsOfService);
+
+

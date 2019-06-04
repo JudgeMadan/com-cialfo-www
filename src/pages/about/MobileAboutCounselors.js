@@ -26,9 +26,10 @@ class MobileAboutCounselors extends React.Component {
                   {counselorsObject.fields.aboutPageBusinessAdvisorBlurb}
                 </p>
               </Row>
-              <Row>
+              <Row className="height-80 mb-2">
                 <Image
                   roundedCircle
+                  className="max-height-width-100"
                   src={
                     counselorsObject.fields.aboutPageBusinessAdvisorImage.fields
                       .file.url
