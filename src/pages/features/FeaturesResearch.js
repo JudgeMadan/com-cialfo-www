@@ -7,6 +7,7 @@ import ReactPlayer from "react-player";
 import "./Features.css";
 import FeaturesSubfooter from "./FeaturesSubfooter";
 import FeaturesBullets from "./FeaturesBullets";
+import MobileFeaturesBullets from "./MobileFeaturesBullets";
 import Oval from "../../img/Oval.svg";
 import Line from "../../img/Line.svg";
 import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
@@ -166,18 +167,29 @@ class FeaturesResearch extends React.Component {
         </MediaQuery>
         {/* MOBILE SCREEN Knowledge */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Container className="mobile-bottom-border my-5 px-4">
+          <Container className="mobile-bottom-border">
             <Row className="mobile-homePageFeaturesImage mt-5">
               <img
                 className="mobile-homePageImg"
                 src={this.state.researchInfoImg}
               />
             </Row>
-            <Row className="center-in-row px-3 mb-3">
-              <h1 className="primary_font">{this.state.researchInfoTitle}</h1>
-            </Row>
-            <Row className="mb-5 px-3">
-              <FeaturesBullets bullets={this.state.researchInfoBlurb} />
+            <Row className="homePageFeaturesText">
+              <div className="homePageFeaturesRightSideTextObject mt-3">
+                <Row>
+                  <h1 className="primary_font">
+                    {this.state.researchInfoTitle}
+                  </h1>
+                </Row>
+                <Row>
+                  <Col>
+                    <MobileFeaturesBullets
+                      bullets={this.state.researchInfoBlurb}
+                    />
+                  </Col>
+                </Row>
+                <Row className="mb-5" />
+              </div>
             </Row>
           </Container>
         </MediaQuery>
@@ -215,20 +227,29 @@ class FeaturesResearch extends React.Component {
         </MediaQuery>
         {/* MOBILE TRANSCRIPT */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Container className="mobile-bottom-border my-5 px-4">
+          <Container className="mobile-bottom-border">
             <Row className="mobile-homePageFeaturesImage mt-5">
               <img
                 className="mobile-homePageImg"
                 src={this.state.researchTranscriptImg}
               />
             </Row>
-            <Row className="center-in-row px-3 mb-3">
-              <h1 className="primary_font">
-                {this.state.researchTranscriptTitle}
-              </h1>
-            </Row>
-            <Row className="mb-5 px-3">
-              <FeaturesBullets bullets={this.state.researchTranscriptBlurb} />
+            <Row className="homePageFeaturesText">
+              <div className="homePageFeaturesRightSideTextObject mt-3">
+                <Row>
+                  <h1 className="primary_font">
+                    {this.state.researchTranscriptTitle}
+                  </h1>
+                </Row>
+                <Row>
+                  <Col>
+                    <MobileFeaturesBullets
+                      bullets={this.state.researchTranscriptBlurb}
+                    />
+                  </Col>
+                </Row>
+                <Row className="mb-5" />
+              </div>
             </Row>
           </Container>
         </MediaQuery>
@@ -263,20 +284,29 @@ class FeaturesResearch extends React.Component {
         </MediaQuery>
         {/* MOBILE KNOWLEDGE */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Container className="my-5 px-4">
+          <Container className="mobile-bottom-border">
             <Row className="mobile-homePageFeaturesImage mt-5">
               <img
                 className="mobile-homePageImg"
                 src={this.state.researchKnowledgeImg}
               />
             </Row>
-            <Row className="center-in-row px-3 mb-3">
-              <h1 className="primary_font">
-                {this.state.researchKnowledgeTitle}
-              </h1>
-            </Row>
-            <Row className="mb-5 px-3">
-              <FeaturesBullets bullets={this.state.researchKnowledgeBlurb} />
+            <Row className="homePageFeaturesText">
+              <div className="homePageFeaturesRightSideTextObject mt-3">
+                <Row>
+                  <h1 className="primary_font">
+                    {this.state.researchKnowledgeTitle}
+                  </h1>
+                </Row>
+                <Row>
+                  <Col>
+                    <MobileFeaturesBullets
+                      bullets={this.state.researchKnowledgeBlurb}
+                    />
+                  </Col>
+                </Row>
+                <Row className="mb-5" />
+              </div>
             </Row>
           </Container>
         </MediaQuery>

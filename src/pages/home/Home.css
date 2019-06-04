@@ -85,9 +85,9 @@
 
 .homePageFeaturesSendDocumentLinkText:after {
   border-bottom: 3px solid #1986df;
-  transition: width .3s;
+  transition: width 0.3s;
   margin-bottom: -3px;
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 2px;
@@ -104,9 +104,9 @@
 
 .homePageFeaturesLeverageLinkText:after {
   border-bottom: 3px solid #ff6574;
-  transition: width .3s;
+  transition: width 0.3s;
   margin-bottom: -3px;
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 2px;
@@ -124,9 +124,9 @@
 
 .homePageFeaturesDiscoverLinkText:after {
   border-bottom: 3px solid #ffca43;
-  transition: width .3s;
+  transition: width 0.3s;
   margin-bottom: -3px;
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 2px;
@@ -323,7 +323,7 @@
 
 .productImgRight {
   position: relative;
-  margin-right:-200px;
+  margin-right: -200px;
   width: 150%;
   height: auto;
   z-index: 3;
@@ -333,7 +333,7 @@
 
 .productImgLeft {
   position: relative;
-  margin-left:-200px;
+  margin-left: -200px;
   width: 150%;
   height: auto;
   z-index: 3;

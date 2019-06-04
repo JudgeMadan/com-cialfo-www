@@ -10,8 +10,8 @@ class MobileSolutionsHeader extends React.Component {
 
   render() {
     return (
-      <Container className="mobile-solutions-header mobile-bottom-border pb-5">
-        <Row className="solutions-title">
+      <Container className="mobile-solutions-header mobile-bottom-border">
+        <Row className="mobile-solutions-title">
           <h1 className="primary_font solutions-header-text">
             {this.props.title}
           </h1>
