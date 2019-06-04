@@ -252,63 +252,6 @@ class FeaturesDocuments extends React.Component {
             </Row>
           </Container>
         </MediaQuery>
-        {/* FULL WIDTH PERSONAL KNOWLEDGE */}
-        <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="researchBottomRow">
-            <Col className="feature-image-left-side-col vertical-center-image">
-              <img
-                className="features-productImgLeft feature-image-sizing"
-                src={this.state.documentsPersonalKnowledgeImage}
-              />
-            </Col>
-            <Col className="featureSubSectionTextAlign">
-              <Container>
-                <Row>
-                  <Col>
-                    <h1 className="primary_font">
-                      {this.state.documentsPersonalKnowledgeTitle}
-                    </h1>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <FeaturesBullets
-                      bullets={this.state.documentsPersonalKnowledgeBlurb}
-                    />
-                  </Col>
-                </Row>
-              </Container>
-            </Col>
-          </Row>
-        </MediaQuery>
-        {/* MOBILE TRANSCRIPT */}
-        <MediaQuery query="(max-device-width: 1223px)">
-          <Container className="mobile-bottom-border">
-            <Row className="mobile-homePageFeaturesImage mt-5">
-              <img
-                className="mobile-homePageImg"
-                src={this.state.documentsPersonalKnowledgeImage}
-              />
-            </Row>
-            <Row className="homePageFeaturesText">
-              <div className="homePageFeaturesRightSideTextObject mt-3">
-                <Row>
-                  <h1 className="primary_font">
-                    {this.state.documentsPersonalKnowledgeTitle}
-                  </h1>
-                </Row>
-                <Row>
-                  <Col>
-                    <MobileFeaturesBullets
-                      bullets={this.state.documentsPersonalKnowledgeBlurb}
-                    />
-                  </Col>
-                </Row>
-                <Row className="mb-5" />
-              </div>
-            </Row>
-          </Container>
-        </MediaQuery>
         {/* FULL WIDTH SUB FOOTER */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row>
