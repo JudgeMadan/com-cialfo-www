@@ -155,7 +155,7 @@ class Home extends React.Component {
                         </Col>
                         <Col>
                           <Button
-                            // className="nav-link-button get-a-demo-button"
+                            className="home-page-button"
                             type="submit"
                             size="sm"
                             variant="primary"
@@ -210,7 +210,7 @@ class Home extends React.Component {
                         </Col>
                         <Col>
                           <Button
-                            // className="nav-link-button get-a-demo-button"
+                            className="home-page-button"
                             type="submit"
                             size="sm"
                             variant="primary"
