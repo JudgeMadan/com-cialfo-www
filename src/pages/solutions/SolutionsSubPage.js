@@ -75,10 +75,12 @@ class SolutionsSubPage extends React.Component {
           <MobileSolutionsContentText
             title={this.props.topRowTitle}
             blurb={this.props.topRowBlurb}
+            image={this.props.topRowImage}
           />
           <MobileSolutionsContentText
             title={this.props.bottomRowTitle}
             blurb={this.props.bottomRowBlurb}
+            image={this.props.bottomRowImage}
           />
         </MediaQuery>
       </Container>
