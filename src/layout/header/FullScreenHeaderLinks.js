@@ -80,7 +80,7 @@ class FullScreenHeaderLinks extends React.Component {
             // className="nav-link demo-page-link"
             to="demo"
           >
-            <Button className="mb-2" size="sm" variant="primary">
+            <Button className="nav-link-button" size="sm" variant="primary">
               {this.props.demoPage}
             </Button>
           </NavLink>
