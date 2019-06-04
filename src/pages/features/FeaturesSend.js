@@ -243,7 +243,7 @@ class FeaturesSend extends React.Component {
                 <Row className="mt-2">
                   <Col>
                     <MobileFeaturesSendBullets
-                      bullets={this.state.sendPortalBlurb}
+                      bullets={this.state.sendTranscriptBlurb}
                     />
                   </Col>
                 </Row>
