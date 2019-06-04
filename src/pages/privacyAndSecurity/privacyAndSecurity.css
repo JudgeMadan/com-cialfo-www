@@ -181,7 +181,11 @@
 
 .privacy-title {
   font-size: 60px !important;
-  font-size: 22px;
+}
+
+.terms-of-service-title {
+  font-size: 60px;
+  text-align: center;
 }
 
 .mobile-privacy-title {

@@ -27,8 +27,9 @@ class MobileAboutBusinessAdvisors extends React.Component {
                   {businessAdvisor.fields.aboutPageBusinessAdvisorBlurb}
                 </p>
               </Row>
-              <Row>
+              <Row className="height-80 mb-2">
                 <Image
+                  className="max-height-width-100"
                   roundedCircle
                   src={
                     businessAdvisor.fields.aboutPageBusinessAdvisorImage.fields
