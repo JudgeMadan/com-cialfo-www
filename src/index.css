@@ -164,11 +164,6 @@ therefore, total marquee width is about 395 * # of marquee Items */
   border-bottom-color: #1886df;
 }
 
-.nav-link:hover {
-  display: inline-block;
-  border-bottom-color: #1886df;
-}
-
 button {
   border-bottom-width: 5px;
   border-bottom-style: solid;
