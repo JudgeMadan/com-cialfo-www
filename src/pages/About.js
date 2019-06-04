@@ -93,7 +93,6 @@ class About extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container className="aboutPage">
         {/* FULL SCREEN HEADER */}
@@ -259,7 +258,7 @@ class About extends React.Component {
         </MediaQuery>
         {/* Full Screen LeadershipTitle */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="center-in-row pt-5">
+          <Row className="center-in-row pt-5 pb-5">
             <h1 className="primary_font">
               {this.state.aboutPageLeadershipTitle}
             </h1>
@@ -274,7 +273,7 @@ class About extends React.Component {
           </Row>
         </MediaQuery>
         {/* ABOUT LEADERSHIP TEAM OBJECT IS THe SAME ON MOBILE AND DESKTOP */}
-        <Row className="aboutPageLeadershipTeam center-in-row">
+        <Row className="aboutPageLeadershipTeam pb-5 center-in-row">
           <AboutLeadershipTeam
             leadershipTeam={this.state.aboutPageLeadershipLeaders}
           />

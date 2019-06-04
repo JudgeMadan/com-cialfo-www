@@ -6,6 +6,14 @@
   justify-content: center;
 }
 
+.mobile-solutions-title {
+  margin-top: 30px;
+  padding: 0 20%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
 .solutions-subtitle {
   justify-content: center;
 }
@@ -46,12 +54,22 @@
   padding-bottom: 1px;
   color: #2b1f30 !important;
   font-weight: bold;
+  text-decoration: none !important;
 }
 
-.solutions-counselors-link-text:hover {
+.solutions-counselors-link-text:after {
   border-bottom: 3px solid #1886df;
-  text-decoration: none;
-  margin-bottom: -2px;
+  transition: width 0.3s;
+  margin-bottom: -3px;
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  text-decoration: none !important;
+}
+
+.solutions-counselors-link-text:hover::after {
+  width: 100%;
 }
 
 .solutions-it-link-text {
@@ -59,12 +77,22 @@
   padding-bottom: 1px;
   color: #2b1f30 !important;
   font-weight: bold;
+  text-decoration: none !important;
 }
 
-.solutions-it-link-text:hover {
-  border-bottom: 3px solid #ff6575;
-  text-decoration: none;
-  margin-bottom: -2px;
+.solutions-it-link-text:after {
+  border-bottom: 3px solid #ff6574;
+  transition: width 0.3s;
+  margin-bottom: -3px;
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  text-decoration: none !important;
+}
+
+.solutions-it-link-text:hover::after {
+  width: 100%;
 }
 
 .solutions-principals-link-text {
@@ -72,12 +100,22 @@
   padding-bottom: 1px;
   color: #2b1f30 !important;
   font-weight: bold;
+  text-decoration: none !important;
 }
 
-.solutions-principals-link-text:hover {
+.solutions-principals-link-text:after {
   border-bottom: 3px solid #dfff4a;
-  text-decoration: none;
-  margin-bottom: -2px;
+  transition: width 0.3s;
+  margin-bottom: -3px;
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  text-decoration: none !important;
+}
+
+.solutions-principals-link-text:hover::after {
+  width: 100%;
 }
 
 .solutions-superintendents-link-text {
@@ -85,12 +123,22 @@
   padding-bottom: 1px;
   color: #2b1f30 !important;
   font-weight: bold;
+  text-decoration: none !important;
 }
 
-.solutions-superintendents-link-text:hover {
+.solutions-superintendents-link-text:after {
   border-bottom: 3px solid #1886df;
-  text-decoration: none;
-  margin-bottom: -2px;
+  transition: width 0.3s;
+  margin-bottom: -3px;
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  text-decoration: none !important;
+}
+
+.solutions-superintendents-link-text:hover::after {
+  width: 100%;
 }
 
 .solutions-line {

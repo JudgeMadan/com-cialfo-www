@@ -326,3 +326,8 @@
   height: auto;
   margin-left: 0px;
 } */
+
+.no-x-axis-margin {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}

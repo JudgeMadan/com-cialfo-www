@@ -7,6 +7,7 @@ import ReactPlayer from "react-player";
 import "./Features.css";
 import FeaturesSubfooter from "./FeaturesSubfooter";
 import FeaturesBullets from "./FeaturesBullets";
+import MobileFeaturesBullets from "./MobileFeaturesBullets";
 import Oval from "../../img/Oval.svg";
 import Line from "../../img/Line.svg";
 import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
@@ -83,7 +84,6 @@ class FeaturesDocuments extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
@@ -122,7 +122,6 @@ class FeaturesDocuments extends React.Component {
           <Row className="mobile-featuresVideoEmbed">
             <div>
               <img className="oval" src={Oval} />
-              <img className="line" src={Line} />
               <ReactPlayer
                 className="video"
                 width="345px"
@@ -141,10 +140,10 @@ class FeaturesDocuments extends React.Component {
                 src={this.state.documentsExploreImage}
               />
             </Col> */}
-            <Col className="feature-image-right-side-col vertical-center-image">
+            <Col className="feature-image-left-side-col vertical-center-image">
               <img
                 className="features-productImgLeft feature-image-sizing"
-                src={this.state.documentsTranscriptImage}
+                src={this.state.documentsExploreImage}
               />
             </Col>
             <Col className="featureSubSectionTextAlign">
@@ -169,14 +168,29 @@ class FeaturesDocuments extends React.Component {
         </MediaQuery>
         {/* MOBILE EXPLORE */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Container className="mobile-bottom-border my-5 px-4">
-            <Row className="center-in-row px-3 mb-3">
-              <h1 className="primary_font">
-                {this.state.documentsExploreTitle}
-              </h1>
+          <Container className="mobile-bottom-border">
+            <Row className="mobile-homePageFeaturesImage mt-5">
+              <img
+                className="mobile-homePageImg"
+                src={this.state.documentsExploreImage}
+              />
             </Row>
-            <Row className="mb-5 px-3">
-              <FeaturesBullets bullets={this.state.documentsExploreBlurb} />
+            <Row className="homePageFeaturesText">
+              <div className="homePageFeaturesRightSideTextObject mt-3">
+                <Row>
+                  <h1 className="primary_font">
+                    {this.state.documentsExploreTitle}
+                  </h1>
+                </Row>
+                <Row>
+                  <Col>
+                    <MobileFeaturesBullets
+                      bullets={this.state.documentsExploreBlurb}
+                    />
+                  </Col>
+                </Row>
+                <Row className="mb-5" />
+              </div>
             </Row>
           </Container>
         </MediaQuery>
@@ -211,58 +225,29 @@ class FeaturesDocuments extends React.Component {
         </MediaQuery>
         {/* MOBILE TRANSCRIPT */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Container className="mobile-bottom-border my-5 px-4">
-            <Row className="center-in-row px-3 mb-3">
-              <h1 className="primary_font">
-                {this.state.documentsTranscriptTitle}
-              </h1>
-            </Row>
-            <Row className="mb-5 px-3">
-              <FeaturesBullets bullets={this.state.documentsTranscriptBlurb} />
-            </Row>
-          </Container>
-        </MediaQuery>
-        {/* FULL WIDTH PERSONAL KNOWLEDGE */}
-        <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="researchBottomRow">
-            <Col className="feature-image-left-side-col vertical-center-image">
+          <Container className="mobile-bottom-border">
+            <Row className="mobile-homePageFeaturesImage mt-5">
               <img
-                className="features-productImgLeft feature-image-sizing"
-                src={this.state.documentsPersonalKnowledgeImage}
+                className="mobile-homePageImg"
+                src={this.state.documentsTranscriptImage}
               />
-            </Col>
-            <Col className="featureSubSectionTextAlign">
-              <Container>
+            </Row>
+            <Row className="homePageFeaturesText">
+              <div className="homePageFeaturesRightSideTextObject mt-3">
                 <Row>
-                  <Col>
-                    <h1 className="primary_font">
-                      {this.state.documentsPersonalKnowledgeTitle}
-                    </h1>
-                  </Col>
+                  <h1 className="primary_font">
+                    {this.state.documentsTranscriptTitle}
+                  </h1>
                 </Row>
                 <Row>
                   <Col>
-                    <FeaturesBullets
-                      bullets={this.state.documentsPersonalKnowledgeBlurb}
+                    <MobileFeaturesBullets
+                      bullets={this.state.documentsTranscriptBlurb}
                     />
                   </Col>
                 </Row>
-              </Container>
-            </Col>
-          </Row>
-        </MediaQuery>
-        {/* MOBILE TRANSCRIPT */}
-        <MediaQuery query="(max-device-width: 1223px)">
-          <Container className="my-5 px-4">
-            <Row className="center-in-row px-3 mb-3">
-              <h1 className="primary_font">
-                {this.state.documentsPersonalKnowledgeTitle}
-              </h1>
-            </Row>
-            <Row className="mb-5 px-3">
-              <FeaturesBullets
-                bullets={this.state.documentsPersonalKnowledgeBlurb}
-              />
+                <Row className="mb-5" />
+              </div>
             </Row>
           </Container>
         </MediaQuery>

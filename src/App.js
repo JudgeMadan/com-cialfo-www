@@ -85,6 +85,7 @@ class App extends Component {
         "country_code=US"
       ];
 
+
       const cookieArrayInternational = [
         "ajs_user_id=null;",
         "ajs_group_id=null;",
@@ -94,7 +95,7 @@ class App extends Component {
         "country_code=JP"
       ];
 
-      const country_codeArray = cookieArrayInternational.filter(
+      const country_codeArray = cookieArray.filter(
         cookie => cookie.substring(0, 12) === "country_code"
       );
 

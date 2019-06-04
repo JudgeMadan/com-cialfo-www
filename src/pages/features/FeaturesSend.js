@@ -16,6 +16,7 @@ import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 import { withRouter } from "react-router-dom";
 import FeaturesBullets from "./FeaturesBullets";
 import FeaturesSendBullets from "./FeaturesSendBullets";
+import MobileFeaturesSendBullets from "./MobileFeaturesSendBullets";
 
 class FeaturesSend extends React.Component {
   constructor(props) {
@@ -70,7 +71,6 @@ class FeaturesSend extends React.Component {
 
   setFeaturesSendingPage = response => {
     const sendingPageContent = response.items[0].fields;
-    console.log(sendingPageContent);
     for (let key in sendingPageContent) {
       if (typeof sendingPageContent[key] === "string") {
         this.setState({
@@ -89,7 +89,6 @@ class FeaturesSend extends React.Component {
   };
 
   render() {
-    // console.log(this.state);
     return (
       <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
@@ -170,14 +169,27 @@ class FeaturesSend extends React.Component {
         </MediaQuery>
         {/* MOBILE FEATURE ROW */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Container className="mobile-bottom-border my-5 px-4">
-            <Row className="center-in-row px-3">
-              <h1 className="primary_font">{this.state.sendPortalTitle}</h1>
+          <Container className="mobile-bottom-border">
+            <Row className="mobile-homePageFeaturesImage mt-5">
+              <img
+                className="mobile-homePageImg"
+                src={this.state.sendPortalImage}
+              />
             </Row>
-            <Row className="mb-5 px-3">
-              <Col>
-                <FeaturesSendBullets bullets={this.state.sendPortalBlurb} />
-              </Col>
+            <Row className="homePageFeaturesText">
+              <div className="homePageFeaturesRightSideTextObject mt-3">
+                <Row>
+                  <h1 className="primary_font">{this.state.sendPortalTitle}</h1>
+                </Row>
+                <Row className="mt-2">
+                  <Col>
+                    <MobileFeaturesSendBullets
+                      bullets={this.state.sendPortalBlurb}
+                    />
+                  </Col>
+                </Row>
+                <Row className="mb-5" />
+              </div>
             </Row>
           </Container>
         </MediaQuery>
@@ -195,11 +207,11 @@ class FeaturesSend extends React.Component {
                 </Row>
                 <Row>
                   <Col>
-                    <h1 className="secondary_font">
-                      <img src={Pointer} />
-                      &nbsp;
-                      {this.state.sendTranscriptBlurb}
-                    </h1>
+                    <Col>
+                      <FeaturesSendBullets
+                        bullets={this.state.sendTranscriptBlurb}
+                      />
+                    </Col>
                   </Col>
                 </Row>
               </Container>
@@ -214,16 +226,29 @@ class FeaturesSend extends React.Component {
         </MediaQuery>
         {/* MOBILE TRANSCRIPT ROW */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Container className="mobile-bottom-border my-5 px-4">
-            <Row className="center-in-row px-3">
-              <h1 className="primary_font">{this.state.sendTranscriptTitle}</h1>
+          <Container className="mobile-bottom-border">
+            <Row className="mobile-homePageFeaturesImage mt-5">
+              <img
+                className="mobile-homePageImg"
+                src={this.state.sendTranscriptImage}
+              />
             </Row>
-            <Row className="mb-5 px-3">
-              <h1 className="secondary_font">
-                <img src={Pointer} />
-                &nbsp;
-                {this.state.sendTranscriptBlurb}
-              </h1>
+            <Row className="homePageFeaturesText">
+              <div className="homePageFeaturesRightSideTextObject mt-3">
+                <Row>
+                  <h1 className="primary_font">
+                    {this.state.sendTranscriptTitle}
+                  </h1>
+                </Row>
+                <Row className="mt-2">
+                  <Col>
+                    <MobileFeaturesSendBullets
+                      bullets={this.state.sendTranscriptBlurb}
+                    />
+                  </Col>
+                </Row>
+                <Row className="mb-5" />
+              </div>
             </Row>
           </Container>
         </MediaQuery>
