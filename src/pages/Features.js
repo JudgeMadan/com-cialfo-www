@@ -106,6 +106,7 @@ class Features extends React.Component {
   };
 
   render() {
+    const space = this.props.match.params.space;
     return (
       <Container className="homePageContainer">
         {/* FULL SCREEN TOP ROW */}
@@ -135,21 +136,25 @@ class Features extends React.Component {
               )}
             </div>
           </Row>
-          <Row className="homePageSchoolTestimonialsTitle">
-            <h1 className="primary_font">
-              {this.state.homePageSchoolTestimonialsTitle}
-            </h1>
-          </Row>
-          <Row className="homeMarquee">
-            <HomeMarquee
-              locale={this.props.locale}
-              accessToken={this.props.accessToken}
-              space={this.props.space}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-            />
-          </Row>
+          {space !== "us" && (
+            <Row className="homePageSchoolTestimonialsTitle">
+              <h1 className="primary_font">
+                {this.state.homePageSchoolTestimonialsTitle}
+              </h1>
+            </Row>
+          )}
+          {space !== "us" && (
+            <Row className="homeMarquee">
+              <HomeMarquee
+                locale={this.props.locale}
+                accessToken={this.props.accessToken}
+                space={this.props.space}
+                spaces={this.props.spaces}
+                setSpace={this.props.setSpace}
+                setAccessToken={this.props.setAccessToken}
+              />
+            </Row>
+          )}
         </MediaQuery>
         {/* MOBILE TOP ROW */}
         <MediaQuery query="(max-device-width: 1223px)">

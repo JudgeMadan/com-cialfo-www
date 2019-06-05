@@ -122,6 +122,7 @@ class Home extends React.Component {
   };
 
   render() {
+    const space = this.props.match.params.space;
     return (
       <Container className="homePageContainer">
         {/* FULL SCREEN TOP ROW */}
@@ -251,24 +252,26 @@ class Home extends React.Component {
           </Container>
         </MediaQuery>
         {/* FULL SCREEN MARQUEE | NO MARQUEE ON MOBILE */}
-        <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="homePageSchoolTestimonialsTitle">
-            <h1 className="primary_font">
-              {this.state.homePageSchoolTestimonialsTitle}
-            </h1>
-          </Row>
-          {/* keep div to permit overflow */}
-          <div className="homeMarquee">
-            <HomeMarquee
-              locale={this.props.locale}
-              accessToken={this.props.accessToken}
-              space={this.props.space}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-            />
-          </div>
-        </MediaQuery>
+        {space !== "us" && (
+          <MediaQuery query="(min-device-width: 1224px)">
+            <Row className="homePageSchoolTestimonialsTitle">
+              <h1 className="primary_font">
+                {this.state.homePageSchoolTestimonialsTitle}
+              </h1>
+            </Row>
+            {/* keep div to permit overflow */}
+            <div className="homeMarquee">
+              <HomeMarquee
+                locale={this.props.locale}
+                accessToken={this.props.accessToken}
+                space={this.props.space}
+                spaces={this.props.spaces}
+                setSpace={this.props.setSpace}
+                setAccessToken={this.props.setAccessToken}
+              />
+            </div>
+          </MediaQuery>
+        )}
         {/* FULL SCREEN SEND DOCUMENTS FEATURE */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="featureRows">
