@@ -6,6 +6,7 @@ import "../Layout/Layout.css";
 import TranslateButton from "./TranslateButton";
 import PathToRegexp from "path-to-regexp";
 import { withRouter } from "react-router-dom";
+import MediaQuery from "react-responsive";
 
 class FullScreenHeaderLinks extends React.Component {
   constructor(props) {
@@ -77,6 +78,7 @@ class FullScreenHeaderLinks extends React.Component {
         <div>
           <NavLink
             activeClassName="activeStyle"
+            className="demo-page-link"
             // className="nav-link demo-page-link"
             to="demo"
           >

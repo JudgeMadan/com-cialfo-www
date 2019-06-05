@@ -144,16 +144,6 @@ therefore, total marquee width is about 395 * # of marquee Items */
   margin-bottom: 50px;
 }
 
-.navbar-nav .nav-link {
-  padding-right: 0;
-  padding-left: 0;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: transparent;
-  width: in;
-  display: inline-block;
-}
-
 .email-form {
   border-bottom-width: 2px;
   border-bottom-style: solid;
@@ -161,11 +151,6 @@ therefore, total marquee width is about 395 * # of marquee Items */
 }
 
 .email-form:hover {
-  border-bottom-color: #1886df;
-}
-
-.nav-link:hover {
-  display: inline-block;
   border-bottom-color: #1886df;
 }
 
@@ -387,4 +372,6 @@ button:hover {
   max-height: 100%;
 }
 
-.height-80 { height: 80px; }
+.height-80 {
+  height: 80px;
+}
