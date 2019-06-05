@@ -3,7 +3,7 @@ import HomeMarquee from "../home/HomeMarquee";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-
+import { withRouter } from "react-router-dom";
 import SolutionsHeader from "./SolutionsHeader";
 import SolutionsRightSideText from "./SolutionsRightSideText";
 import SolutionsLeftSideText from "./SolutionsLeftSideText";
@@ -17,6 +17,7 @@ class SolutionsSubPage extends React.Component {
   }
 
   render() {
+    const space = this.props.match.params.space;
     return (
       <Container fluid={true} className="no-padding">
         {/* FULL SCREEN SOLUTIONS SUBPAGE */}
@@ -45,26 +46,30 @@ class SolutionsSubPage extends React.Component {
             image={this.props.bottomRowImage}
           />
           <div className="solutions-bottom-spacing" />
-          <Row className="center-in-row">
-            {this.props.locale !== "zh-CN" && (
-              <h1 className="primary_font">
-                The top international schools trust Cialfo
-              </h1>
-            )}
-            {this.props.locale === "zh-CN" && (
-              <h1 className="primary_font">中文中文中文</h1>
-            )}
-          </Row>
-          <div className="solutions-marquee-container">
-            <HomeMarquee
-              locale={this.props.locale}
-              accessToken={this.props.accessToken}
-              space={this.props.space}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-            />
-          </div>
+          {space !== "us" && (
+            <Row className="center-in-row">
+              {this.props.locale !== "zh-CN" && (
+                <h1 className="primary_font">
+                  The top international schools trust Cialfo
+                </h1>
+              )}
+              {this.props.locale === "zh-CN" && (
+                <h1 className="primary_font">中文中文中文</h1>
+              )}
+            </Row>
+          )}
+          {space !== "us" && (
+            <div className="solutions-marquee-container">
+              <HomeMarquee
+                locale={this.props.locale}
+                accessToken={this.props.accessToken}
+                space={this.props.space}
+                spaces={this.props.spaces}
+                setSpace={this.props.setSpace}
+                setAccessToken={this.props.setAccessToken}
+              />
+            </div>
+          )}
         </MediaQuery>
         {/* MOBILE SOLUTIONS SUBPAGE */}
         <MediaQuery query="(max-device-width: 1223px)">
@@ -88,4 +93,4 @@ class SolutionsSubPage extends React.Component {
   }
 }
 
-export default SolutionsSubPage;
+export default withRouter(SolutionsSubPage);
