@@ -115,6 +115,8 @@ class GetADemo extends React.Component {
   };
 
   render() {
+    console.log(this.state);
+    console.log(this.props);
     return (
       <div>
         {/* FULL WIDTH GET A DEMO HEADER */}
@@ -232,19 +234,23 @@ class GetADemo extends React.Component {
                     </Row>
                     <Row className="get-in-touch-last-row">
                       <div class="_form_element _x65466860 _full_width left_content_row">
-                        <label class="_form-label">Organization</label>
+                        <label class="_form-label">
+                          {this.state.getADemoOrg}
+                        </label>
                         <div class="_field-wrapper">
                           <input
                             type="text"
                             name="organization"
-                            placeholder="Type your organization"
+                            placeholder={this.state.getADemoOrgPlaceholder}
                             className="input_style"
                             required
                           />
                         </div>
                       </div>
                       <div class="_form_element _field116 _full_width ">
-                        <label class="_form-label">Number of Students</label>
+                        <label class="_form-label">
+                          {this.state.getADemoNumberOfStudents}
+                        </label>
                         <div class="_field-wrapper">
                           <input
                             type="number"
