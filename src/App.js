@@ -16,14 +16,13 @@ class App extends Component {
         spaceName: "china"
       },
       indiaSpace: {
-        space: "ez9go2p7jf7w",
-        accessToken: "Q3_oIZQNF9DINUYgr8qNU3EsaRtT1bIu-k-d6x3O8Xw",
+        space: "89vh0by7r10e",
+        accessToken: "s_7c-MEBqRej3OTuT2ucxFLfOBL03MD6fyd8DDfavc0",
         spaceName: "india"
       },
       internationalSpace: {
-        space: "qlwyndleu3of",
-        accessToken:
-          "2eb1abe530767fecfa2bbc4505a44fb7a4a205df1275e863807c2d9c4470e1fe",
+        space: "kq0n6h3xq8i9",
+        accessToken: "9tSaFiRLObn_CKT5hpYU-iNrTN47rUquWSmSfV3KNLY",
         spaceName: "intl"
       },
       usaSpace: {
@@ -38,13 +37,12 @@ class App extends Component {
             "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2"
         },
         intl: {
-          space: "qlwyndleu3of",
-          accessToken:
-            "2eb1abe530767fecfa2bbc4505a44fb7a4a205df1275e863807c2d9c4470e1fe"
+          space: "kq0n6h3xq8i9",
+          accessToken: "9tSaFiRLObn_CKT5hpYU-iNrTN47rUquWSmSfV3KNLY"
         },
         india: {
-          space: "ez9go2p7jf7w",
-          accessToken: "Q3_oIZQNF9DINUYgr8qNU3EsaRtT1bIu-k-d6x3O8Xw"
+          space: "89vh0by7r10e",
+          accessToken: "s_7c-MEBqRej3OTuT2ucxFLfOBL03MD6fyd8DDfavc0"
         },
         us: {
           space: "o04ly23snu5p",
@@ -84,7 +82,6 @@ class App extends Component {
         "intercom-id-giyujuw5=0732defb-3725-488f-809e-2b74254a709a;",
         "country_code=US"
       ];
-
 
       const cookieArrayInternational = [
         "ajs_user_id=null;",
