@@ -17,6 +17,7 @@ import { withRouter } from "react-router-dom";
 import FeaturesBullets from "./FeaturesBullets";
 import FeaturesSendBullets from "./FeaturesSendBullets";
 import MobileFeaturesSendBullets from "./MobileFeaturesSendBullets";
+import Documents from "../../img/home/CDocs.svg";
 
 class FeaturesSend extends React.Component {
   constructor(props) {
@@ -93,49 +94,31 @@ class FeaturesSend extends React.Component {
       <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="titleContainer">
+          <Row className="features-titleContainer mb-5">
             <h1 className="primary_font">{this.state.sendTitle}</h1>
           </Row>
           <Row className="featuresVideoEmbed">
             <div>
-              <img className="oval" src={Oval} />
-              <img className="line" src={Line} />
-              {this.state.width > 850 && (
-                <ReactPlayer
-                  className="video"
-                  width="800px"
-                  height="448px"
-                  url={this.state.sendVideo}
-                />
-              )}
-              {this.state.width < 850 && (
-                <ReactPlayer
-                  className="video"
-                  width="600px"
-                  height="366px"
-                  url={this.state.sendVideo}
-                />
-              )}
+              <img className="features-oval" src={Oval} />
+              <img className="features-line" src={Line} />
+              <Row>
+                <img className="features-hero-image" src={Documents} />
+              </Row>
             </div>
           </Row>
         </MediaQuery>
         {/* MOBILE PAGE HEADER */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Row className="titleContainer">
+          <Row className="features-titleContainer mb-5">
             <h1 className="primary_font">{this.state.sendTitle}</h1>
           </Row>
-          <Row className="mobile-featuresVideoEmbed">
-            <div>
-              <img className="oval" src={Oval} />
-              <ReactPlayer
-                className="video"
-                width="345px"
-                height="194px"
-                url={this.state.sendVideo}
-              />
-            </div>
-          </Row>
+          <Container className="featuresVideoEmbed mobile-bottom-border pb-5">
+            <Row className="center-in-row">
+              <img className="mobile-features-hero-image" src={Documents} />
+            </Row>
+          </Container>
         </MediaQuery>
+
         {/* FULL SCREEN FEATURE ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row>

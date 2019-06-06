@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ReactPlayer from "react-player";
+import Documents from "../../img/home/CDocs.svg";
 import "./Features.css";
 import FeaturesSubfooter from "./FeaturesSubfooter";
 import FeaturesBullets from "./FeaturesBullets";
@@ -88,48 +89,29 @@ class FeaturesResearch extends React.Component {
       <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="titleContainer">
+          <Row className="features-titleContainer mb-5">
             <h1 className="primary_font">{this.state.researchTitle}</h1>
           </Row>
           <Row className="featuresVideoEmbed">
             <div>
-              <img className="oval" src={Oval} />
-              <img className="line" src={Line} />
-              {this.state.width > 850 && (
-                <ReactPlayer
-                  className="video"
-                  width="800px"
-                  height="448px"
-                  url={this.state.researchVideo}
-                />
-              )}
-              {this.state.width <= 850 && (
-                <ReactPlayer
-                  className="video"
-                  width="600px"
-                  height="366px"
-                  url={this.state.researchVideo}
-                />
-              )}
+              <img className="features-oval" src={Oval} />
+              <img className="features-line" src={Line} />
+              <Row>
+                <img className="features-hero-image" src={Documents} />
+              </Row>
             </div>
           </Row>
         </MediaQuery>
-        {/* MOBILE HEADER */}
+        {/* MOBILE PAGE HEADER */}
         <MediaQuery query="(max-device-width: 1223px)">
-          <Row className="titleContainer">
+          <Row className="features-titleContainer mb-5">
             <h1 className="primary_font">{this.state.researchTitle}</h1>
           </Row>
-          <Row className="mobile-featuresVideoEmbed">
-            <div>
-              <img className="oval" src={Oval} />
-              <ReactPlayer
-                className="video"
-                width="345px"
-                height="194px"
-                url={this.state.researchVideo}
-              />
-            </div>
-          </Row>
+          <Container className="featuresVideoEmbed mobile-bottom-border pb-5">
+            <Row className="center-in-row">
+              <img className="mobile-features-hero-image" src={Documents} />
+            </Row>
+          </Container>
         </MediaQuery>
         {/* FULL SCREEN Knowledge */}
         <MediaQuery query="(min-device-width: 1224px)">
