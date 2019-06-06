@@ -167,16 +167,13 @@ class Footer extends React.Component {
                         {this.state.platform}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        <NavLink
-                          className="footer-nav-link nav-link"
-                          to="features"
-                        >
+                        <NavLink className="footer-nav-link" to="features">
                           {this.state.whyCialfo}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
-                          className="footer-nav-link nav-link"
+                          className="footer-nav-link"
                           to="solutions-principals"
                         >
                           {this.state.forPrincipals}
@@ -184,23 +181,20 @@ class Footer extends React.Component {
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
-                          className="footer-nav-link nav-link"
+                          className="footer-nav-link"
                           to="solutions-counselors"
                         >
                           {this.state.forCounselors}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        <NavLink
-                          className="footer-nav-link nav-link"
-                          to="solutions-it"
-                        >
+                        <NavLink className="footer-nav-link" to="solutions-it">
                           {this.state.forItTeams}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
                         <NavLink
-                          className="footer-nav-link nav-link"
+                          className="footer-nav-link"
                           to="solutions-superintendents"
                         >
                           {this.state.forSuperintendents}
@@ -217,7 +211,7 @@ class Footer extends React.Component {
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <a
-                          className="footer-nav-link nav-link"
+                          className="footer-nav-link"
                           href="https://help.cialfo.co"
                           target="_blank"
                         >
@@ -226,7 +220,7 @@ class Footer extends React.Component {
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <a
-                          className="footer-nav-link nav-link"
+                          className="footer-nav-link"
                           href="https://facebook.com/cialfo"
                           target="_blank"
                         >
@@ -234,10 +228,7 @@ class Footer extends React.Component {
                         </a>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        <NavLink
-                          className="footer-nav-link nav-link"
-                          to="events"
-                        >
+                        <NavLink className="footer-nav-link" to="events">
                           {this.state.events}
                         </NavLink>
                       </ListGroup.Item>
@@ -251,16 +242,13 @@ class Footer extends React.Component {
                         {this.state.team}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        <NavLink
-                          className="footer-nav-link nav-link"
-                          to="about"
-                        >
+                        <NavLink className="footer-nav-link" to="about">
                           {this.state.aboutUs}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <a
-                          className="footer-nav-link nav-link"
+                          className="footer-nav-link"
                           href="https://blog.cialfo.co"
                           target="_blank"
                         >
@@ -269,7 +257,7 @@ class Footer extends React.Component {
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <a
-                          className="footer-nav-link nav-link"
+                          className="footer-nav-link"
                           href="https://angel.co/company/cialfo"
                           target="_blank"
                         >
@@ -309,16 +297,13 @@ class Footer extends React.Component {
                         {this.state.platform}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        <NavLink
-                          className="footer-nav-link nav-link"
-                          to="features"
-                        >
+                        <NavLink className="footer-nav-link" to="features">
                           {this.state.whyCialfo}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
-                          className="footer-nav-link nav-link"
+                          className="footer-nav-link"
                           to="solutions-principals"
                         >
                           {this.state.forPrincipals}
@@ -326,23 +311,20 @@ class Footer extends React.Component {
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink
-                          className="footer-nav-link nav-link"
+                          className="footer-nav-link"
                           to="solutions-counselors"
                         >
                           {this.state.forCounselors}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        <NavLink
-                          className="footer-nav-link nav-link"
-                          to="solutions-it"
-                        >
+                        <NavLink className="footer-nav-link" to="solutions-it">
                           {this.state.forItTeams}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
                         <NavLink
-                          className="footer-nav-link nav-link"
+                          className="footer-nav-link"
                           to="solutions-superintendents"
                         >
                           {this.state.forSuperintendents}
@@ -359,7 +341,7 @@ class Footer extends React.Component {
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <a
-                          className="footer-nav-link nav-link"
+                          className="footer-nav-link"
                           href="https://help.cialfo.co"
                           target="_blank"
                         >
@@ -368,7 +350,7 @@ class Footer extends React.Component {
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <a
-                          className="footer-nav-link nav-link"
+                          className="footer-nav-link"
                           href="https://facebook.com/cialfo"
                           target="_blank"
                         >
@@ -376,10 +358,7 @@ class Footer extends React.Component {
                         </a>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        <NavLink
-                          className="footer-nav-link nav-link"
-                          to="events"
-                        >
+                        <NavLink className="footer-nav-link" to="events">
                           {this.state.events}
                         </NavLink>
                       </ListGroup.Item>
@@ -393,16 +372,13 @@ class Footer extends React.Component {
                         {this.state.team}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
-                        <NavLink
-                          className="footer-nav-link nav-link"
-                          to="about"
-                        >
+                        <NavLink className="footer-nav-link" to="about">
                           {this.state.aboutUs}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <a
-                          className="footer-nav-link nav-link"
+                          className="footer-nav-link"
                           href="https://blog.cialfo.co"
                           target="_blank"
                         >
@@ -411,7 +387,7 @@ class Footer extends React.Component {
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <a
-                          className="footer-nav-link nav-link"
+                          className="footer-nav-link"
                           href="https://angel.co/company/cialfo"
                           target="_blank"
                         >
