@@ -18,6 +18,8 @@ class MobileCialfoSessionsObject extends React.Component {
     if (events) {
       eventsObject = events.map(event => {
         const showDate = moment(event.fields.eventsDate).format("Do MMMM YYYY");
+        const showTime = moment(event.fields.eventsDate).format("LT");
+        const timeZone = moment(event.fields.eventsDate).format("Z");
         return (
           <Container key={event.sys.id}>
             <div className="event-inner-object light-blue-background mt-5">
@@ -38,8 +40,9 @@ class MobileCialfoSessionsObject extends React.Component {
               <Row className="pb-3">
                 <img src={Calendar} />
                 <p className="secondary_font event-remove-margin-bottom event-bold">
-                  &nbsp; &nbsp;
-                  {showDate}
+                  &nbsp;&nbsp;{showTime}&nbsp;
+                  <span>UTC</span>
+                  {timeZone}
                 </p>
               </Row>
               <Row>
