@@ -16,8 +16,8 @@ class App extends Component {
         spaceName: "china"
       },
       indiaSpace: {
-        space: "89vh0by7r10e",
-        accessToken: "s_7c-MEBqRej3OTuT2ucxFLfOBL03MD6fyd8DDfavc0",
+        space: "6s1t375h60iy",
+        accessToken: "vZ4pPEGukFHPrZCLU0ql6SlH5hvabD-aAV2wr65Pjwo",
         spaceName: "india"
       },
       internationalSpace: {
@@ -41,8 +41,8 @@ class App extends Component {
           accessToken: "9tSaFiRLObn_CKT5hpYU-iNrTN47rUquWSmSfV3KNLY"
         },
         india: {
-          space: "89vh0by7r10e",
-          accessToken: "s_7c-MEBqRej3OTuT2ucxFLfOBL03MD6fyd8DDfavc0"
+          space: "6s1t375h60iy",
+          accessToken: "vZ4pPEGukFHPrZCLU0ql6SlH5hvabD-aAV2wr65Pjwo"
         },
         us: {
           space: "o04ly23snu5p",
