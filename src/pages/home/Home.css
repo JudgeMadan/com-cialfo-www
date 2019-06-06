@@ -513,10 +513,10 @@
 }
 
 .home-page-button {
-  font-family: "roboto_regular";
   font-size: 16px !important;
   margin-top: 8px !important;
   background-color: #1886df !important;
+  font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif !important;
 }
 
 .home-page-button:hover {
