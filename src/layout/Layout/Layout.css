@@ -12,6 +12,11 @@
   font-size: 16px !important;
   margin-bottom: 6px;
   margin-left: 8px !important;
+  background-color: #1886df !important;
+}
+
+.nav-link-button:hover {
+  background-color: #0069d9 !important;
 }
 
 .navbar-brand {
