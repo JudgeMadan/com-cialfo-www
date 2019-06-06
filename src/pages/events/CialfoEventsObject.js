@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Pin from "../../img/Pin.svg";
 import Calendar from "../../img/Calendar.svg";
+import Clock from "../../img/clock-regular.svg";
 import "./Events.css";
 const moment = require("moment");
 
@@ -53,6 +54,10 @@ class CialfoEventsObject extends React.Component {
                   </p>
                 </Row>
                 <Row className="pb-3">
+                  <div className="events-clock-container">
+                    <img className="full-screen-events-clock" src={Clock} />
+                  </div>
+                  &nbsp; &nbsp;
                   <p className="secondary_font event-bold">{showTime}</p>
                 </Row>
                 <Row>
