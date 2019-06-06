@@ -26,8 +26,8 @@ class App extends Component {
         spaceName: "intl"
       },
       usaSpace: {
-        space: "o04ly23snu5p",
-        accessToken: "FKo0MkSEOkz5qYJ4OTWzddgv2FdGyzk8zaEwgRbwYuw",
+        space: "2w8l1bcem16l",
+        accessToken: "bO1jaDXJM1S5kWXDVJoZ6buysg9bGkhohqYyJr-NxIw",
         spaceName: "us"
       },
       spaces: {
@@ -45,8 +45,8 @@ class App extends Component {
           accessToken: "vZ4pPEGukFHPrZCLU0ql6SlH5hvabD-aAV2wr65Pjwo"
         },
         us: {
-          space: "o04ly23snu5p",
-          accessToken: "FKo0MkSEOkz5qYJ4OTWzddgv2FdGyzk8zaEwgRbwYuw"
+          space: "2w8l1bcem16l",
+          accessToken: "bO1jaDXJM1S5kWXDVJoZ6buysg9bGkhohqYyJr-NxIw"
         }
       }
     };
