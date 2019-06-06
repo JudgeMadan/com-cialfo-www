@@ -376,12 +376,19 @@
   margin-left: 750px;
 }
 
-.video {
+.features-hero-image {
   position: relative;
   display: flex;
-  width: 33em;
   height: auto;
   z-index: 3;
+}
+
+.mobile-features-hero-image {
+  position: relative;
+  display: flex;
+  height: auto;
+  z-index: 3;
+  width: 300px;
 }
 
 .get-a-demo-button {

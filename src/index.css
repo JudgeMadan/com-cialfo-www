@@ -230,6 +230,13 @@ button:hover {
   margin-left: -50px;
 }
 
+.features-oval {
+  position: absolute;
+  z-index: 1;
+  margin-top: -25px;
+  margin-left: -50px;
+}
+
 .marquee-oval {
   position: absolute;
   z-index: 1;
@@ -256,6 +263,13 @@ button:hover {
   z-index: 2;
   margin-top: -50px;
   margin-left: 200px;
+}
+
+.features-line {
+  position: absolute;
+  z-index: 1;
+  margin-top: -20px;
+  margin-left: 300px;
 }
 
 .partnerImages {
