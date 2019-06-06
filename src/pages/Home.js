@@ -211,7 +211,7 @@ class Home extends React.Component {
                         </Col>
                         <Col>
                           <Button
-                            className="home-page-button"
+                            className="home-page-button sharp-corners-button"
                             type="submit"
                             size="sm"
                             variant="primary"
