@@ -1,6 +1,7 @@
 import Row from "react-bootstrap/Row";
 import React from "react";
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 import "./getADemo/GetADemo.css";
 import DemoText from "../img/GetADemo.svg";
 import FeaturesSubfooter from "./features/FeaturesSubfooter";
@@ -264,13 +265,14 @@ class GetADemo extends React.Component {
                     </Row>
                     <Row className="title_row">
                       <div class="_button-wrapper _full_width">
-                        <button
+                        <Button
                           id="_form_45_submit"
-                          class="_submit submit_button"
+                          className="_submit nav-link-button sharp-corners-button demo-button"
                           type="submit"
+                          variant="primary"
                         >
-                          Submit
-                        </button>
+                          {this.state.getAdemoSubmitButtonText}
+                        </Button>
                       </div>
                     </Row>
                     <div class="_clear-element" />
@@ -406,13 +408,14 @@ class GetADemo extends React.Component {
                     </Row>
                     <Row className="title_row mt-3">
                       <div class="_button-wrapper _full_width">
-                        <button
+                        <Button
                           id="_form_45_submit"
-                          class="_submit submit_button"
+                          className="_submit nav-link-button sharp-corners-button demo-button"
                           type="submit"
+                          variant="primary"
                         >
                           {this.state.getAdemoSubmitButtonText}
-                        </button>
+                        </Button>
                       </div>
                     </Row>
                     <div class="_clear-element" />
@@ -536,13 +539,14 @@ class GetADemo extends React.Component {
                     </div>
                   </div>
                   <div class="_button-wrapper _full_width mobile-demo-form-field-label mobile-demo-form-submit-button">
-                    <button
+                    <Button
                       id="_form_45_submit"
-                      className="_submit submit_button"
+                      className="_submit nav-link-button sharp-corners-button demo-button"
                       type="submit"
+                      variant="primary"
                     >
-                      Submit
-                    </button>
+                      {this.state.getAdemoSubmitButtonText}
+                    </Button>
                   </div>
                   <div class="_clear-element" />
                 </Container>

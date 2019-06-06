@@ -185,3 +185,7 @@
   width: 100%;
   display: block;
 }
+
+.sharp-corners-button {
+  border-radius: 0 !important;
+}

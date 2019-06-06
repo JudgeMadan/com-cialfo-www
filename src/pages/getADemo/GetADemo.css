@@ -358,3 +358,20 @@
 .get-in-touch-array-container {
   display: flex;
 }
+
+.sharp-corners-button {
+  border-radius: 0px !important;
+}
+
+.demo-button {
+  /* padding: 0.5rem 1.5rem !important; */
+  padding: 0.5rem 2.75rem !important;
+  font-size: 20px !important;
+  background-color: #1886df !important;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.demo-button:hover {
+  background-color: #0069d9 !important;
+}
