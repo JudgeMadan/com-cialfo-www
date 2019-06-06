@@ -405,6 +405,7 @@
 }
 
 .get-a-demo-link {
+  font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
   font-size: 1.1em !important;
   background: none;
   color: white !important;
@@ -416,9 +417,9 @@
 }
 
 .get-a-demo-link:hover {
+  font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
   font-size: 1.1em !important;
   background: none;
-  /* color: #2b1f31 !important; */
   border: none;
   padding: 0;
   cursor: pointer;
