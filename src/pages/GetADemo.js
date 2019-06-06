@@ -115,8 +115,6 @@ class GetADemo extends React.Component {
   };
 
   render() {
-    console.log(this.state);
-    console.log(this.props);
     return (
       <div>
         {/* FULL WIDTH GET A DEMO HEADER */}

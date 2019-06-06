@@ -17,7 +17,6 @@ class CialfoEventsObject extends React.Component {
 
     if (events) {
       eventsObject = events.map(event => {
-        console.log(event);
         const showDate = moment(event.fields.eventsDate).format("Do MMMM YYYY");
         const showTime = moment(event.fields.eventsDate).format("LT");
         const timeZone = moment(event.fields.eventsDate).format("Z");
