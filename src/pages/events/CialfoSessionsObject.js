@@ -19,7 +19,6 @@ class CialfoEventsObject extends React.Component {
       eventsObject = events.map(event => {
         const showDate = moment(event.fields.eventsDate).format("Do MMMM YYYY");
         const showTime = moment(event.fields.eventsDate).format("LT");
-        const timeZone = moment(event.fields.eventsDate).format("Z");
         return (
           <Col className="my-3" xs={12} sm={6} md={6} xl={4} key={event.sys.id}>
             <Container className="light-blue-background">
@@ -46,11 +45,7 @@ class CialfoEventsObject extends React.Component {
                   </p>
                 </Row>
                 <Row className="pb-3">
-                  <p className="secondary_font event-bold">
-                    {showTime}&nbsp;
-                    <span>UTC</span>
-                    {timeZone}
-                  </p>
+                  <p className="secondary_font event-bold">{showTime}</p>
                 </Row>
                 <Row>
                   <a className="event-link" href={event.fields.eventsRsvpLink}>
