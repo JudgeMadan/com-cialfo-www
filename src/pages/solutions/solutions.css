@@ -267,9 +267,29 @@
 
 .solutionPageImg {
   position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 3;
+  flex-shrink: 0;
+  min-width: 500px;
+  /* margin-left: -200px; */
+}
+
+/* .solutionPageImg {
+  position: relative;
   width: 75%;
   height: auto;
   z-index: 3;
   flex-shrink: 0;
   min-width: 500px;
-}
+} */
+
+/* .productImgLeft {
+  position: relative;
+  margin-left: -200px;
+  width: 150%;
+  height: auto;
+  z-index: 3;
+  flex-shrink: 0;
+  min-width: 500px;
+} */
