@@ -397,7 +397,7 @@ class Features extends React.Component {
         </MediaQuery>
         {/* FULL SCREEN DISCOVER*/}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="featureRows">
+          <Row className="featureRows mb-3">
             {this.state.width > 1000 && (
               <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
                 <img className="productImgLeft" src={Reports} />
