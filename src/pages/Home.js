@@ -162,7 +162,7 @@ class Home extends React.Component {
                             variant="primary"
                           >
                             <Link
-                              className="secondary_font get-a-demo-link"
+                              className="primary_font get-a-demo-link"
                               to={this.generateUrl("demo", this.props.location)}
                             >
                               {this.state.homePageHeaderEmailSubmitButtonText}
@@ -217,7 +217,7 @@ class Home extends React.Component {
                             variant="primary"
                           >
                             <Link
-                              className="secondary_font get-a-demo-link"
+                              className="primary_font get-a-demo-link"
                               to={this.generateUrl("demo", this.props.location)}
                             >
                               {this.state.homePageHeaderEmailSubmitButtonText}
