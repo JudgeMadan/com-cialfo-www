@@ -284,12 +284,29 @@
   min-width: 500px;
 } */
 
-/* .productImgLeft {
+.solutions-productImgLeft {
   position: relative;
-  margin-left: -200px;
-  width: 150%;
+  margin-left: -125px;
+  width: 133%;
   height: auto;
   z-index: 3;
   flex-shrink: 0;
   min-width: 500px;
-} */
+}
+
+.solutions-productImgRight {
+  position: relative;
+  margin-right: -125px;
+  width: 133%;
+  height: auto;
+  z-index: 3;
+  flex-shrink: 0;
+  min-width: 500px;
+}
+
+.solutionsPageFeaturesImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 120px 0;
+}

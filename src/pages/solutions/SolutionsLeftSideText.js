@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import "./solutions.css";
-
+import LightBlueRectangle from "../../img/LightBlueRectangle.svg";
 import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
@@ -55,8 +55,15 @@ class SolutionsLeftSideText extends React.Component {
               </Row>
             </div>
           </Col>
-          <Col className="feature-image-right-side-col vertical-center-image">
+          {/* <Col className="feature-image-right-side-col vertical-center-image">
             <img src={this.props.image} className="solutionPageImg" />
+          </Col> */}
+          <Col className="solutionsPageFeaturesImage homePageFeaturesImageBackground">
+            <img
+              className="features-right-align-light-blue-background"
+              src={LightBlueRectangle}
+            />
+            <img className="solutions-productImgRight" src={this.props.image} />
           </Col>
         </Row>
       </div>

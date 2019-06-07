@@ -36,18 +36,18 @@ class SolutionsRightSideText extends React.Component {
     return (
       <div>
         <Row>
-          <Col className="feature-image-left-side-col vertical-center-image">
+          {/* <Col className="feature-image-left-side-col vertical-center-image">
             <div>
               <img src={this.props.image} className="solutionPageImg" />
             </div>
+          </Col> */}
+          <Col className="solutionsPageFeaturesImage homePageFeaturesImageBackground">
+            <img
+              className="custom-left-align-light-blue-background"
+              src={LightBlueRectangle}
+            />
+            <img className="solutions-productImgLeft" src={this.props.image} />
           </Col>
-          {/* // <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-          //   <img
-          //     className="custom-left-align-light-blue-background"
-          //     src={LightBlueRectangle}
-          //   />
-          //   <img className="productImgLeft" src={this.props.imageents} />
-          // </Col> */}
           <Col className="featureSubSectionTextAlign">
             <div className="homePageFeaturesRightSideTextObject">
               <Row>
