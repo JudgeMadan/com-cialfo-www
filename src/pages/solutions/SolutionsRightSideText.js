@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
+import LightBlueRectangle from "../../img/LightBlueRectangle.svg";
 import "./solutions.css";
 import { withRouter } from "react-router-dom";
 import PathToRegexp, { compile, parse } from "path-to-regexp";
@@ -35,10 +36,17 @@ class SolutionsRightSideText extends React.Component {
     return (
       <div>
         <Row>
-          <Col className="feature-image-left-side-col vertical-center-image">
+          {/* <Col className="feature-image-left-side-col vertical-center-image">
             <div>
               <img src={this.props.image} className="solutionPageImg" />
             </div>
+          </Col> */}
+          <Col className="solutionsPageFeaturesImage homePageFeaturesImageBackground">
+            <img
+              className="custom-left-align-light-blue-background"
+              src={LightBlueRectangle}
+            />
+            <img className="solutions-productImgLeft" src={this.props.image} />
           </Col>
           <Col className="featureSubSectionTextAlign">
             <div className="homePageFeaturesRightSideTextObject">
