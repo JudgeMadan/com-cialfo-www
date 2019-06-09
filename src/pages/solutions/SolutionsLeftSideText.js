@@ -85,7 +85,7 @@ class SolutionsLeftSideText extends React.Component {
         )}
         {this.state.width <= 1000 && (
           <Container className="m-5">
-            <Row className="homePageFeaturesImageBackground medium-solutionsPageFeaturesImage mt-5">
+            <Row className="homePageFeaturesImageBackground solutionsPageFeaturesImage mt-5">
               <img
                 className="features-right-align-light-blue-background"
                 src={LightBlueRectangle}
