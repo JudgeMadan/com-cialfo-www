@@ -285,7 +285,7 @@ class Home extends React.Component {
               </Col>
             )}
             {this.state.width <= 1000 && (
-              <Row className="homePageFeaturesImage homePageFeaturesImageBackground">
+              <Row className="homePageFeaturesImage homePageFeaturesImageBackground mb-5">
                 <img
                   className="custom-left-align-light-blue-background"
                   src={LightBlueRectangle}
@@ -321,7 +321,7 @@ class Home extends React.Component {
               </Col>
             )}
             {this.state.width <= 1000 && (
-              <Row className="homePageFeaturesText">
+              <Row className="homePageFeaturesText mb-5">
                 <div className="homePageFeaturesRightSideTextObject">
                   <Row>
                     <h1 className="primary_font">
@@ -410,7 +410,7 @@ class Home extends React.Component {
               </Col>
             )}
             {this.state.width <= 1000 && (
-              <Row className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
+              <Row className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse mt-5">
                 <img className="productImgRight" src={ResearchImage} />
                 <img
                   className="right-align-light-blue-background"
@@ -428,7 +428,7 @@ class Home extends React.Component {
               </Col>
             )}
             {this.state.width <= 1000 && (
-              <Row className="homePageFeaturesText">
+              <Row className="homePageFeaturesText my-5">
                 <div className="homePageFeaturesLeftSideTextObject">
                   <Row>
                     <h1 className="primary_font">
@@ -499,7 +499,7 @@ class Home extends React.Component {
               </Col>
             )}
             {this.state.width <= 1000 && (
-              <Row className="homePageFeaturesImage homePageFeaturesImageBackground">
+              <Row className="homePageFeaturesImage homePageFeaturesImageBackground mt-5">
                 <img className="productImgLeft" src={Reports} />
                 <img
                   className="custom-left-align-light-blue-background"
