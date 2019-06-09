@@ -11,8 +11,23 @@ import PathToRegexp, { compile, parse } from "path-to-regexp";
 class SolutionsLeftSideText extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { height: window.innerHeight, width: window.innerWidth };
   }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
+  updateDimensions = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    });
+  };
 
   generateUrl = (path, location) => {
     const ROUTE = "/:space/:locale/:path*";
@@ -36,33 +51,70 @@ class SolutionsLeftSideText extends React.Component {
   render() {
     return (
       <div>
-        <Row>
-          <Col className="homePageFeaturesText">
-            <div className="homePageFeaturesLeftSideTextObject">
-              <Row>
-                <h1 className="primary_font">{this.props.title}</h1>
-              </Row>
-              <Row>
-                <p className="secondary_font">{this.props.blurb}</p>
-              </Row>
-              <Row>
-                <Link
-                  className={this.props.linkStyle}
-                  to={this.generateUrl(this.props.url, this.props.location)}
-                >
-                  {this.props.link}
-                </Link>
-              </Row>
-            </div>
-          </Col>
-          <Col className="solutionsPageFeaturesImage homePageFeaturesImageBackground">
-            <img
-              className="features-right-align-light-blue-background"
-              src={LightBlueRectangle}
-            />
-            <img className="solutions-productImgRight" src={this.props.image} />
-          </Col>
-        </Row>
+        {this.state.width > 1000 && (
+          <Row>
+            <Col className="homePageFeaturesText">
+              <div className="homePageFeaturesLeftSideTextObject">
+                <Row>
+                  <h1 className="primary_font">{this.props.title}</h1>
+                </Row>
+                <Row>
+                  <p className="secondary_font">{this.props.blurb}</p>
+                </Row>
+                <Row>
+                  <Link
+                    className={this.props.linkStyle}
+                    to={this.generateUrl(this.props.url, this.props.location)}
+                  >
+                    {this.props.link}
+                  </Link>
+                </Row>
+              </div>
+            </Col>
+            <Col className="solutionsPageFeaturesImage homePageFeaturesImageBackground">
+              <img
+                className="features-right-align-light-blue-background"
+                src={LightBlueRectangle}
+              />
+              <img
+                className="solutions-productImgRight"
+                src={this.props.image}
+              />
+            </Col>
+          </Row>
+        )}
+        {this.state.width <= 1000 && (
+          <Container className="m-5">
+            <Row className="homePageFeaturesImageBackground medium-solutionsPageFeaturesImage mt-5">
+              <img
+                className="features-right-align-light-blue-background"
+                src={LightBlueRectangle}
+              />
+              <img
+                className="medium-solutions-productImgRight"
+                src={this.props.image}
+              />
+            </Row>
+            <Row className="homePageFeaturesText mb-5 pb-5">
+              <div className="homePageFeaturesLeftSideTextObject">
+                <Row>
+                  <h1 className="primary_font">{this.props.title}</h1>
+                </Row>
+                <Row>
+                  <p className="secondary_font">{this.props.blurb}</p>
+                </Row>
+                <Row>
+                  <Link
+                    className={this.props.linkStyle}
+                    to={this.generateUrl(this.props.url, this.props.location)}
+                  >
+                    {this.props.link}
+                  </Link>
+                </Row>
+              </div>
+            </Row>
+          </Container>
+        )}
       </div>
     );
   }
