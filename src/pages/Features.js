@@ -190,7 +190,7 @@ class Features extends React.Component {
                 />
               </Col>
             )}
-            {this.state.width < 1000 && (
+            {this.state.width <= 1000 && (
               <Row className="homePageFeaturesImage homePageFeaturesImageBackground">
                 <img className="productImgLeft" src={Documents} />
                 <img
@@ -226,8 +226,8 @@ class Features extends React.Component {
                 </div>
               </Col>
             )}
-            {this.state.width < 1000 && (
-              <Row className="homePageFeaturesText">
+            {this.state.width <= 1000 && (
+              <Row className="homePageFeaturesText mb-5">
                 <div className="homePageFeaturesRightSideTextObject">
                   <Row>
                     <h1 className="primary_font">
@@ -315,8 +315,8 @@ class Features extends React.Component {
                 </div>
               </Col>
             )}
-            {this.state.width < 1000 && (
-              <Row className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
+            {this.state.width <= 1000 && (
+              <Row className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse mt-5">
                 <img className="productImgRight" src={ResearchImage} />
                 <img
                   className="features-right-align-light-blue-background"
@@ -333,8 +333,8 @@ class Features extends React.Component {
                 />
               </Col>
             )}
-            {this.state.width < 1000 && (
-              <Row className="homePageFeaturesText">
+            {this.state.width <= 1000 && (
+              <Row className="homePageFeaturesText mb-5">
                 <div className="homePageFeaturesLeftSideTextObject">
                   <Row>
                     <h1 className="primary_font">
@@ -407,8 +407,8 @@ class Features extends React.Component {
                 />
               </Col>
             )}
-            {this.state.width < 1000 && (
-              <Row className="homePageFeaturesImage homePageFeaturesImageBackground">
+            {this.state.width <= 1000 && (
+              <Row className="homePageFeaturesImage homePageFeaturesImageBackground mt-5">
                 <img className="productImgLeft" src={Reports} />
                 <img
                   className="features-left-align-light-blue-background"
@@ -443,8 +443,8 @@ class Features extends React.Component {
                 </div>
               </Col>
             )}
-            {this.state.width < 1000 && (
-              <Row className="homePageFeaturesText">
+            {this.state.width <= 1000 && (
+              <Row className="homePageFeaturesText mb-5">
                 <div className="homePageFeaturesRightSideTextObject">
                   <Row>
                     <h1 className="primary_font">
