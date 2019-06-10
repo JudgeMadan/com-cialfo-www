@@ -409,3 +409,14 @@
     width: 600px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .medium-solutions-productImgLeft {
+    margin-right: 0px;
+    width: 500px;
+  }
+  .medium-solutions-productImgRight {
+    margin-left: 0px;
+    width: 500px;
+  }
+}
