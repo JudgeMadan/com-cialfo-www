@@ -84,10 +84,10 @@ class SolutionsLeftSideText extends React.Component {
           </Row>
         )}
         {this.state.width <= 1000 && (
-          <Container className="pb-3">
-            <Row className="homePageFeaturesImageBackground solutionsPageFeaturesImage my-5">
+          <Container fluid>
+            <Row className="solutions-right-blue-background homePageFeaturesImageBackground solutionsPageFeaturesImage my-5">
               <img
-                className="features-right-align-light-blue-background"
+                className="solutions-right-align-light-blue-background"
                 src={LightBlueRectangle}
               />
               <img
@@ -95,7 +95,7 @@ class SolutionsLeftSideText extends React.Component {
                 src={this.props.image}
               />
             </Row>
-            <Row className="homePageFeaturesText my-5 pb-5">
+            <Row className="homePageFeaturesText my-5">
               <div className="homePageFeaturesLeftSideTextObject">
                 <Row>
                   <h1 className="primary_font">{this.props.title}</h1>

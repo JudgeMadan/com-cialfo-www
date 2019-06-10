@@ -319,7 +319,7 @@ class Features extends React.Component {
               <Row className="feature-right-blue-background feature-homePageFeaturesImage homePageFeaturesImageBackgroundReverse my-5">
                 <img className="feature-productImgRight" src={ResearchImage} />
                 <img
-                  className="features-right-align-light-blue-background"
+                  className="features-features-right-align-light-blue-background"
                   src={LightBlueRectangle}
                 />
               </Row>
@@ -328,7 +328,7 @@ class Features extends React.Component {
               <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
                 <img className="productImgRight" src={ResearchImage} />
                 <img
-                  className="features-right-align-light-blue-background"
+                  className="features-features-right-align-light-blue-background"
                   src={LightBlueRectangle}
                 />
               </Col>
