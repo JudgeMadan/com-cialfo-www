@@ -225,6 +225,42 @@
   margin-left: -700px;
 }
 
+.feature-homePageFeaturesImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0 100px 0;
+}
+
+@media screen and (max-width: 1250px) {
+  .feature-homePageFeaturesImage {
+    display: flex;
+    align-items: center;
+    padding: 25px 0 25px 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .features-left-align-light-blue-background {
+    display: none;
+  }
+  .features-right-align-light-blue-background {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .feature-left-blue-background {
+    background: linear-gradient(to right, #ebf9ff 50%, transparent 50%);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .feature-right-blue-background {
+    background: linear-gradient(to left, #ebf9ff 50%, transparent 50%);
+  }
+}
+
 .features-custom-left-align-light-blue-background {
   position: absolute;
   z-index: 1;
@@ -332,6 +368,66 @@
   height: auto;
   margin-left: -200px;
   flex-shrink: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .feature-productImgLeft {
+    position: relative;
+    width: 150%;
+    height: auto;
+    z-index: 3;
+    flex-shrink: 0;
+    max-width: 700px;
+    margin-left: 100px;
+    /* margin-right: 100px; */
+  }
+  .feature-productImgRight {
+    position: relative;
+    width: 150%;
+    height: auto;
+    z-index: 3;
+    flex-shrink: 0;
+    max-width: 700px;
+    margin-right: 100px;
+    /* margin-right: 100px; */
+  }
+}
+
+.featureRows {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -5rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .featureRows {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -5rem;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .feature-productImgLeft {
+    margin-right: 0px;
+    margin-left: 50px;
+  }
+  .feature-productImgRight {
+    margin-left: 0px;
+    margin-right: 50px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .feature-productImgLeft {
+    margin-right: 0px;
+    width: 600px;
+  }
+  .feature-productImgRight {
+    margin-left: 0px;
+    width: 600px;
+  }
 }
 
 /* .productImgLeft {
