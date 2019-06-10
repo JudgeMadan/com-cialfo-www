@@ -3,14 +3,12 @@ import * as contentful from "contentful";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import ReactPlayer from "react-player";
 import "./Features.css";
 import FeaturesSubfooter from "./FeaturesSubfooter";
 import FeaturesBullets from "./FeaturesBullets";
 import MobileFeaturesBullets from "./MobileFeaturesBullets";
 import Oval from "../../img/Oval.svg";
 import Line from "../../img/Line.svg";
-import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 import Documents from "../../img/home/CDocs.svg";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
@@ -115,38 +113,63 @@ class FeaturesDocuments extends React.Component {
         </MediaQuery>
         {/* FULL WIDTH EXPLORE */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row>
-            {/* <Col className="feature-image-left-side-col vertical-center-image">
-              <img
-                className="features-productImgLeft feature-image-sizing"
-                src={this.state.documentsExploreImage}
-              />
-            </Col> */}
-            <Col className="feature-image-left-side-col vertical-center-image">
-              <img
-                className="features-productImgLeft feature-image-sizing"
-                src={this.state.documentsExploreImage}
-              />
-            </Col>
-            <Col className="featureSubSectionTextAlign">
-              <Container>
-                <Row>
-                  <Col>
-                    <h1 className="primary_font">
-                      {this.state.documentsExploreTitle}
-                    </h1>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <FeaturesBullets
-                      bullets={this.state.documentsExploreBlurb}
-                    />
-                  </Col>
-                </Row>
-              </Container>
-            </Col>
-          </Row>
+          {this.state.width > 1000 && (
+            <Row>
+              <Col className="feature-image-left-side-col vertical-center-image">
+                <img
+                  className="subpage-features-productImgLeft feature-image-sizing"
+                  src={this.state.documentsExploreImage}
+                />
+              </Col>
+              <Col className="featureSubSectionTextAlign">
+                <Container>
+                  <Row>
+                    <Col>
+                      <h1 className="primary_font">
+                        {this.state.documentsExploreTitle}
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FeaturesBullets
+                        bullets={this.state.documentsExploreBlurb}
+                      />
+                    </Col>
+                  </Row>
+                </Container>
+              </Col>
+            </Row>
+          )}
+          {this.state.width <= 1000 && (
+            <div>
+              <Row className="feature-image-left-side-col vertical-center-image center-in-row">
+                {/* <Row> */}
+                <img
+                  className="medium-subpage-features-productImgLeft medium-left-feature-image-sizing"
+                  src={this.state.documentsExploreImage}
+                />
+              </Row>
+              <Row className="featureSubSectionTextAlign my-5">
+                <Container>
+                  <Row>
+                    <Col>
+                      <h1 className="primary_font">
+                        {this.state.documentsExploreTitle}
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FeaturesBullets
+                        bullets={this.state.documentsExploreBlurb}
+                      />
+                    </Col>
+                  </Row>
+                </Container>
+              </Row>
+            </div>
+          )}
         </MediaQuery>
         {/* MOBILE EXPLORE */}
         <MediaQuery query="(max-device-width: 1223px)">
@@ -178,32 +201,65 @@ class FeaturesDocuments extends React.Component {
         </MediaQuery>
         {/* FULL WIDTH TRANSCRIPT */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row>
-            <Col className="featureSubSectionTextAlign">
-              <Container>
-                <Row>
-                  <Col>
-                    <h1 className="primary_font">
-                      {this.state.documentsTranscriptTitle}
-                    </h1>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <FeaturesBullets
-                      bullets={this.state.documentsTranscriptBlurb}
-                    />
-                  </Col>
-                </Row>
-              </Container>
-            </Col>
-            <Col className="feature-image-right-side-col vertical-center-image">
-              <img
-                className="features-productImgRight feature-image-sizing"
-                src={this.state.documentsTranscriptImage}
-              />
-            </Col>
-          </Row>
+          {this.state.width > 1000 && (
+            <Row className="mb-5">
+              <Col className="featureSubSectionTextAlign">
+                <Container>
+                  <Row>
+                    <Col>
+                      <h1 className="primary_font">
+                        {this.state.documentsTranscriptTitle}
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FeaturesBullets
+                        bullets={this.state.documentsTranscriptBlurb}
+                      />
+                    </Col>
+                  </Row>
+                </Container>
+              </Col>
+              <Col className="feature-image-right-side-col vertical-center-image">
+                <img
+                  className="features-productImgRight feature-image-sizing"
+                  // src={this.state.documentsTranscriptImage}
+                  src={this.state.documentsExploreImage}
+                />
+              </Col>
+            </Row>
+          )}
+          {this.state.width <= 1000 && (
+            <div>
+              <Row className="feature-image-right-side-col vertical-center-image">
+                <img
+                  // className="medium-subpage-features-productImgRight medium-right-feature-image-sizing"
+                  className=" medium-right-feature-image-sizing"
+                  src={this.state.documentsExploreImage}
+                  // src={this.state.documentsTranscriptImage}
+                />
+              </Row>
+              <Row className="featureSubSectionTextAlign my-5">
+                <Container>
+                  <Row>
+                    <Col>
+                      <h1 className="primary_font">
+                        {this.state.documentsTranscriptTitle}
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FeaturesBullets
+                        bullets={this.state.documentsTranscriptBlurb}
+                      />
+                    </Col>
+                  </Row>
+                </Container>
+              </Row>
+            </div>
+          )}
         </MediaQuery>
         {/* MOBILE TRANSCRIPT */}
         <MediaQuery query="(max-device-width: 1223px)">
