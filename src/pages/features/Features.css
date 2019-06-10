@@ -389,7 +389,7 @@
     z-index: 3;
     flex-shrink: 0;
     max-width: 700px;
-    margin-left: 100px;
+    margin-left: -125px;
     /* margin-right: 100px; */
   }
   .feature-productImgRight {
@@ -399,7 +399,7 @@
     z-index: 3;
     flex-shrink: 0;
     max-width: 700px;
-    margin-right: 100px;
+    margin-right: -125px;
     /* margin-right: 100px; */
   }
 
@@ -420,11 +420,11 @@
 @media screen and (max-width: 800px) {
   .feature-productImgLeft {
     margin-right: 0px;
-    margin-left: 50px;
+    margin-left: 10px;
   }
   .feature-productImgRight {
     margin-left: 0px;
-    margin-right: 50px;
+    margin-right: 10px;
   }
 }
 

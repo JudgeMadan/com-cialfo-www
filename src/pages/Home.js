@@ -128,7 +128,7 @@ class Home extends React.Component {
         {/* FULL SCREEN TOP ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
           {this.state.width > 1250 && (
-            <Row className="top_row mx-3">
+            <Row className="top_row mx-5">
               <Col className="top_row_left_col">
                 <div>
                   <Row>
@@ -174,7 +174,7 @@ class Home extends React.Component {
                   </Row>
                 </div>
               </Col>
-              <Col className="homePageHeaderProductImage">
+              <Col className="homePageHeaderProductImage mr-5">
                 <img className="homePageImg" src={Hero} />
               </Col>
             </Row>
@@ -185,51 +185,51 @@ class Home extends React.Component {
                 {/* MAKE THIS IMAGE SMALLER */}
                 <img className="small-homePageImg" src={Hero} />
               </Row>
-              <Container className="center-in-row">
-                <div>
-                  <Row className="mt-3">
-                    <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
-                      {this.state.homePageHeaderTitle}
-                    </h1>
-                  </Row>
-                  <Row className="mt-3">
-                    <h1 className="secondary_font left-side-header-blurb">
-                      {this.state.homePageHeaderBlurb}
-                    </h1>
-                  </Row>
-                  <Row>
-                    <Form className="get-a-demo-form">
-                      <Form.Row className="email-form-container">
-                        <Col xs={7} className="pt-1">
-                          <Form.Control
-                            className="primary_font email-form"
-                            placeholder={
-                              this.state.homePageHeaderEmailPlaceholderText
-                            }
-                            plaintext
-                            onChange={this.handleChange}
-                          />
-                        </Col>
-                        <Col>
-                          <Button
-                            className="home-page-button sharp-corners-button"
-                            type="submit"
-                            size="sm"
-                            variant="primary"
+              <div className="home-medium-header-content center-in-row">
+                {/* <div className="center-in-row"> */}
+                <Row className="mt-3">
+                  <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
+                    {this.state.homePageHeaderTitle}
+                  </h1>
+                </Row>
+                <Row className="mt-3">
+                  <h1 className="secondary_font left-side-header-blurb">
+                    {this.state.homePageHeaderBlurb}
+                  </h1>
+                </Row>
+                <Row>
+                  <Form className="get-a-demo-form">
+                    <Form.Row className="email-form-container">
+                      <Col xs={7} className="pt-1">
+                        <Form.Control
+                          className="primary_font email-form"
+                          placeholder={
+                            this.state.homePageHeaderEmailPlaceholderText
+                          }
+                          plaintext
+                          onChange={this.handleChange}
+                        />
+                      </Col>
+                      <Col>
+                        <Button
+                          className="home-page-button sharp-corners-button"
+                          type="submit"
+                          size="sm"
+                          variant="primary"
+                        >
+                          <Link
+                            className="primary_font get-a-demo-link"
+                            to={this.generateUrl("demo", this.props.location)}
                           >
-                            <Link
-                              className="primary_font get-a-demo-link"
-                              to={this.generateUrl("demo", this.props.location)}
-                            >
-                              {this.state.homePageHeaderEmailSubmitButtonText}
-                            </Link>
-                          </Button>
-                        </Col>
-                      </Form.Row>
-                    </Form>
-                  </Row>
-                </div>
-              </Container>
+                            {this.state.homePageHeaderEmailSubmitButtonText}
+                          </Link>
+                        </Button>
+                      </Col>
+                    </Form.Row>
+                  </Form>
+                </Row>
+                {/* </div> */}
+              </div>
             </Row>
           )}
         </MediaQuery>
