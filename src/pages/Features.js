@@ -328,7 +328,7 @@ class Features extends React.Component {
               <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
                 <img className="productImgRight" src={ResearchImage} />
                 <img
-                  className="features-features-right-align-light-blue-background"
+                  className="features-right-align-light-blue-background"
                   src={LightBlueRectangle}
                 />
               </Col>
@@ -408,7 +408,7 @@ class Features extends React.Component {
               </Col>
             )}
             {this.state.width <= 1000 && (
-              <Row className="feature-left-blue-background left-homePageFeaturesImage homePageFeaturesImageBackground my-5">
+              <Row className="feature-left-blue-background feature-homePageFeaturesImage homePageFeaturesImageBackground my-5">
                 <img className="feature-productImgLeft" src={Reports} />
                 <img
                   className="features-left-align-light-blue-background"
