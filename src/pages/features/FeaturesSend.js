@@ -121,34 +121,67 @@ class FeaturesSend extends React.Component {
 
         {/* FULL SCREEN FEATURE ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row>
-            <Col className="feature-image-left-side-col vertical-center-image">
-              <img
-                className="features-productImgLeft feature-image-sizing"
-                src={this.state.sendPortalImage}
-              />
-            </Col>
-            <Col className="featureSubSectionTextAlign">
-              <Container>
-                <Row>
-                  <Col>
-                    <h1 className="primary_font">
-                      {this.state.sendPortalTitle}
-                    </h1>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
+          {this.state.width > 1000 && (
+            <Row>
+              <Col className="feature-image-left-side-col vertical-center-image">
+                <img
+                  className="features-productImgLeft feature-image-sizing"
+                  src={this.state.sendPortalImage}
+                />
+              </Col>
+              <Col className="featureSubSectionTextAlign">
+                <Container>
+                  <Row>
+                    <Col>
+                      <h1 className="primary_font">
+                        {this.state.sendPortalTitle}
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Col>
+                        <FeaturesSendBullets
+                          bullets={this.state.sendPortalBlurb}
+                        />
+                      </Col>
+                    </Col>
+                  </Row>
+                </Container>
+              </Col>
+            </Row>
+          )}
+          {this.state.width <= 1000 && (
+            <div>
+              <Row className="feature-image-left-side-col vertical-center-image">
+                <Container className="medium-subpage-features-productImg subpage-features-margin-right">
+                  <img
+                    className="medium-feature-subpage-image-sizing"
+                    src={this.state.sendPortalImage}
+                    // src={this.state.documentsTranscriptImage}
+                  />
+                </Container>
+              </Row>
+              <Row className="featureSubSectionTextAlign my-5">
+                <Container>
+                  <Row>
+                    <Col>
+                      <h1 className="primary_font">
+                        {this.state.sendPortalTitle}
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
                     <Col>
                       <FeaturesSendBullets
                         bullets={this.state.sendPortalBlurb}
                       />
                     </Col>
-                  </Col>
-                </Row>
-              </Container>
-            </Col>
-          </Row>
+                  </Row>
+                </Container>
+              </Row>
+            </div>
+          )}
         </MediaQuery>
         {/* MOBILE FEATURE ROW */}
         <MediaQuery query="(max-device-width: 1223px)">
@@ -178,34 +211,66 @@ class FeaturesSend extends React.Component {
         </MediaQuery>
         {/* FULL SCREEN TRANSCRIPT ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row>
-            <Col className="featureSubSectionTextAlign">
-              <Container>
-                <Row>
-                  <Col>
-                    <h1 className="primary_font">
-                      {this.state.sendTranscriptTitle}
-                    </h1>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
+          {this.state.width > 1000 && (
+            <Row>
+              <Col className="featureSubSectionTextAlign">
+                <Container>
+                  <Row>
+                    <Col>
+                      <h1 className="primary_font">
+                        {this.state.sendTranscriptTitle}
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Col>
+                        <FeaturesSendBullets
+                          bullets={this.state.sendTranscriptBlurb}
+                        />
+                      </Col>
+                    </Col>
+                  </Row>
+                </Container>
+              </Col>
+              <Col className="feature-image-right-side-col vertical-center-image">
+                <img
+                  className="features-productImgRight feature-image-sizing"
+                  src={this.state.sendTranscriptImage}
+                />
+              </Col>
+            </Row>
+          )}
+          {this.state.width <= 1000 && (
+            <div>
+              <Row className="feature-image-right-side-col vertical-center-image">
+                <Container className="medium-subpage-features-productImg subpage-features-margin-right">
+                  <img
+                    className="medium-feature-subpage-image-sizing"
+                    src={this.state.sendTranscriptImage}
+                  />
+                </Container>
+              </Row>
+              <Row className="featureSubSectionTextAlign my-5">
+                <Container>
+                  <Row>
+                    <Col>
+                      <h1 className="primary_font">
+                        {this.state.sendTranscriptTitle}
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
                     <Col>
                       <FeaturesSendBullets
                         bullets={this.state.sendTranscriptBlurb}
                       />
                     </Col>
-                  </Col>
-                </Row>
-              </Container>
-            </Col>
-            <Col className="feature-image-right-side-col vertical-center-image">
-              <img
-                className="features-productImgRight feature-image-sizing"
-                src={this.state.sendTranscriptImage}
-              />
-            </Col>
-          </Row>
+                  </Row>
+                </Container>
+              </Row>
+            </div>
+          )}
         </MediaQuery>
         {/* MOBILE TRANSCRIPT ROW */}
         <MediaQuery query="(max-device-width: 1223px)">

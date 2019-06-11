@@ -143,12 +143,13 @@ class FeaturesDocuments extends React.Component {
           )}
           {this.state.width <= 1000 && (
             <div>
-              <Row className="feature-image-left-side-col vertical-center-image center-in-row">
-                {/* <Row> */}
-                <img
-                  className="medium-subpage-features-productImgLeft medium-left-feature-image-sizing"
-                  src={this.state.documentsExploreImage}
-                />
+              <Row className="feature-image-left-side-col vertical-center-image">
+                <Container className="medium-subpage-features-productImg subpage-features-margin-right">
+                  <img
+                    className="medium-feature-subpage-image-sizing"
+                    src={this.state.documentsExploreImage}
+                  />
+                </Container>
               </Row>
               <Row className="featureSubSectionTextAlign my-5">
                 <Container>
@@ -233,12 +234,13 @@ class FeaturesDocuments extends React.Component {
           {this.state.width <= 1000 && (
             <div>
               <Row className="feature-image-right-side-col vertical-center-image">
-                <img
-                  // className="medium-subpage-features-productImgRight medium-right-feature-image-sizing"
-                  className=" medium-right-feature-image-sizing"
-                  src={this.state.documentsExploreImage}
-                  // src={this.state.documentsTranscriptImage}
-                />
+                <Container className="medium-subpage-features-productImg subpage-features-margin-right">
+                  <img
+                    className="medium-feature-subpage-image-sizing"
+                    src={this.state.documentsExploreImage}
+                    // src={this.state.documentsTranscriptImage}
+                  />
+                </Container>
               </Row>
               <Row className="featureSubSectionTextAlign my-5">
                 <Container>
