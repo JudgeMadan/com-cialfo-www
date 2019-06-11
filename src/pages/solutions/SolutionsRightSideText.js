@@ -56,7 +56,7 @@ class SolutionsRightSideText extends React.Component {
   render() {
     return (
       <div>
-        {this.state.width > 1000 && (
+        {this.state.width > 990 && (
           <Row>
             <Col className="solutionsPageFeaturesImage homePageFeaturesImageBackground">
               <img
@@ -88,20 +88,18 @@ class SolutionsRightSideText extends React.Component {
             </Col>
           </Row>
         )}
-        {this.state.width <= 1000 && (
-          <Container fluid>
-            <Row className="solutions-left-blue-background solutionsPageFeaturesImage homePageFeaturesImageBackground my-5">
-              <img
-                className="solutions-left-align-light-blue-background"
-                src={LightBlueRectangle}
-              />
-              <img
-                className="medium-solutions-productImgLeft"
-                src={this.props.image}
-              />
+        {this.state.width <= 990 && (
+          <div>
+            <Row className="feature-image-left-side-col vertical-center-image">
+              <Container className="medium-subpage-features-productImg subpage-features-margin-right">
+                <img
+                  className="medium-feature-subpage-image-sizing"
+                  src={this.props.image}
+                />
+              </Container>
             </Row>
-            <Row className="featureSubSectionTextAlign my-5">
-              <div className="homePageFeaturesRightSideTextObject">
+            <Row className="featureSubSectionTextAlign my-5 mx-5 px-5">
+              <Container>
                 <Row>
                   <h1 className="primary_font">{this.props.title}</h1>
                 </Row>
@@ -116,9 +114,9 @@ class SolutionsRightSideText extends React.Component {
                     {this.props.link}
                   </Link>
                 </Row>
-              </div>
+              </Container>
             </Row>
-          </Container>
+          </div>
         )}
       </div>
     );
