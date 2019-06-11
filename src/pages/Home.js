@@ -127,7 +127,7 @@ class Home extends React.Component {
       <Container className="homePageContainer" fluid>
         {/* FULL SCREEN TOP ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
-          {this.state.width > 1250 && (
+          {this.state.width > 1100 && (
             <Row className="top_row mx-5">
               <Col className="top_row_left_col">
                 <div>
@@ -179,7 +179,7 @@ class Home extends React.Component {
               </Col>
             </Row>
           )}
-          {this.state.width <= 1250 && (
+          {this.state.width <= 1100 && (
             <Row className="top_row mx-3">
               <Row className="homePageHeaderProductImage">
                 {/* MAKE THIS IMAGE SMALLER */}
@@ -322,7 +322,7 @@ class Home extends React.Component {
               </Col>
             )}
             {this.state.width <= 1250 && (
-              <Row className="homePageFeaturesText mb-5">
+              <Row className="homePageFeaturesText mb-5 pb-3">
                 <div className="homePageFeaturesRightSideTextObject">
                   <Row>
                     <h1 className="primary_font">
@@ -429,7 +429,7 @@ class Home extends React.Component {
               </Col>
             )}
             {this.state.width <= 1250 && (
-              <Row className="homePageFeaturesText my-5">
+              <Row className="homePageFeaturesText my-5 pb-3">
                 <div className="homePageFeaturesLeftSideTextObject">
                   <Row>
                     <h1 className="primary_font">
