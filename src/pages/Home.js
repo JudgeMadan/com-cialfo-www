@@ -124,11 +124,11 @@ class Home extends React.Component {
   render() {
     const space = this.props.match.params.space;
     return (
-      <Container className="homePageContainer">
+      <Container className="homePageContainer" fluid>
         {/* FULL SCREEN TOP ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
-          {this.state.width > 1000 && (
-            <Row className="top_row">
+          {this.state.width > 1100 && (
+            <Row className="top_row mx-5">
               <Col className="top_row_left_col">
                 <div>
                   <Row>
@@ -174,61 +174,62 @@ class Home extends React.Component {
                   </Row>
                 </div>
               </Col>
-              <Col className="homePageHeaderProductImage">
+              <Col className="homePageHeaderProductImage mr-5">
                 <img className="homePageImg" src={Hero} />
               </Col>
             </Row>
           )}
-          {this.state.width <= 1000 && (
-            <Row className="top_row">
+          {this.state.width <= 1100 && (
+            <Row className="top_row mx-3">
               <Row className="homePageHeaderProductImage">
+                {/* MAKE THIS IMAGE SMALLER */}
                 <img className="small-homePageImg" src={Hero} />
               </Row>
-              <Container className="center-in-row">
-                <div>
-                  <Row className="mt-3">
-                    <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
-                      {this.state.homePageHeaderTitle}
-                    </h1>
-                  </Row>
-                  <Row className="mt-3">
-                    <h1 className="secondary_font left-side-header-blurb">
-                      {this.state.homePageHeaderBlurb}
-                    </h1>
-                  </Row>
-                  <Row>
-                    <Form className="get-a-demo-form">
-                      <Form.Row className="email-form-container">
-                        <Col xs={7} className="pt-1">
-                          <Form.Control
-                            className="primary_font email-form"
-                            placeholder={
-                              this.state.homePageHeaderEmailPlaceholderText
-                            }
-                            plaintext
-                            onChange={this.handleChange}
-                          />
-                        </Col>
-                        <Col>
-                          <Button
-                            className="home-page-button sharp-corners-button"
-                            type="submit"
-                            size="sm"
-                            variant="primary"
+              <div className="home-medium-header-content center-in-row">
+                {/* <div className="center-in-row"> */}
+                <Row className="mt-3">
+                  <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
+                    {this.state.homePageHeaderTitle}
+                  </h1>
+                </Row>
+                <Row className="mt-3">
+                  <h1 className="secondary_font left-side-header-blurb">
+                    {this.state.homePageHeaderBlurb}
+                  </h1>
+                </Row>
+                <Row>
+                  <Form className="get-a-demo-form">
+                    <Form.Row className="email-form-container">
+                      <Col xs={7} className="pt-1">
+                        <Form.Control
+                          className="primary_font email-form"
+                          placeholder={
+                            this.state.homePageHeaderEmailPlaceholderText
+                          }
+                          plaintext
+                          onChange={this.handleChange}
+                        />
+                      </Col>
+                      <Col>
+                        <Button
+                          className="home-page-button sharp-corners-button"
+                          type="submit"
+                          size="sm"
+                          variant="primary"
+                        >
+                          <Link
+                            className="primary_font get-a-demo-link"
+                            to={this.generateUrl("demo", this.props.location)}
                           >
-                            <Link
-                              className="primary_font get-a-demo-link"
-                              to={this.generateUrl("demo", this.props.location)}
-                            >
-                              {this.state.homePageHeaderEmailSubmitButtonText}
-                            </Link>
-                          </Button>
-                        </Col>
-                      </Form.Row>
-                    </Form>
-                  </Row>
-                </div>
-              </Container>
+                            {this.state.homePageHeaderEmailSubmitButtonText}
+                          </Link>
+                        </Button>
+                      </Col>
+                    </Form.Row>
+                  </Form>
+                </Row>
+                {/* </div> */}
+              </div>
             </Row>
           )}
         </MediaQuery>
@@ -274,26 +275,26 @@ class Home extends React.Component {
         )}
         {/* FULL SCREEN SEND DOCUMENTS FEATURE */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="featureRows">
-            {this.state.width > 1000 && (
+          <Row className="homeRows">
+            {this.state.width > 1250 && (
               <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
                 <img
-                  className="custom-left-align-light-blue-background"
+                  className="home-custom-left-align-light-blue-background"
                   src={LightBlueRectangle}
                 />
-                <img className="productImgLeft" src={Documents} />
+                <img className="home-productImgLeft" src={Documents} />
               </Col>
             )}
-            {this.state.width <= 1000 && (
-              <Row className="homePageFeaturesImage homePageFeaturesImageBackground mb-5">
+            {this.state.width <= 1250 && (
+              <Row className="home-left-blue-background home-homePageFeaturesImage homePageFeaturesImageBackground mb-5">
                 <img
-                  className="custom-left-align-light-blue-background"
+                  className="home-custom-left-align-light-blue-background"
                   src={LightBlueRectangle}
                 />
-                <img className="productImgLeft" src={Documents} />
+                <img className="home-productImgLeft" src={Documents} />
               </Row>
             )}
-            {this.state.width > 1000 && (
+            {this.state.width > 1250 && (
               <Col className="homePageFeaturesText">
                 <div className="homePageFeaturesRightSideTextObject">
                   <Row>
@@ -320,8 +321,8 @@ class Home extends React.Component {
                 </div>
               </Col>
             )}
-            {this.state.width <= 1000 && (
-              <Row className="homePageFeaturesText mb-5">
+            {this.state.width <= 1250 && (
+              <Row className="homePageFeaturesText mb-5 pb-3">
                 <div className="homePageFeaturesRightSideTextObject">
                   <Row>
                     <h1 className="primary_font">
@@ -381,8 +382,8 @@ class Home extends React.Component {
         </MediaQuery>
         {/* FULL SCREEN LEVERAGE TEXT */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="featureRows">
-            {this.state.width > 1000 && (
+          <Row className="homeRows">
+            {this.state.width > 1250 && (
               <Col className="homePageFeaturesText">
                 <div className="homePageFeaturesLeftSideTextObject">
                   <Row>
@@ -409,26 +410,26 @@ class Home extends React.Component {
                 </div>
               </Col>
             )}
-            {this.state.width <= 1000 && (
-              <Row className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse mt-5">
-                <img className="productImgRight" src={ResearchImage} />
+            {this.state.width <= 1250 && (
+              <Row className="home-right-blue-background home-homePageFeaturesImage homePageFeaturesImageBackgroundReverse mt-5 mb-5">
+                <img className="home-productImgRight" src={ResearchImage} />
                 <img
-                  className="right-align-light-blue-background"
+                  className="home-right-align-light-blue-background"
                   src={LightBlueRectangle}
                 />
               </Row>
             )}
-            {this.state.width > 1000 && (
+            {this.state.width > 1250 && (
               <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
                 <img className="productImgRight" src={ResearchImage} />
                 <img
-                  className="right-align-light-blue-background"
+                  className="home-right-align-light-blue-background"
                   src={LightBlueRectangle}
                 />
               </Col>
             )}
-            {this.state.width <= 1000 && (
-              <Row className="homePageFeaturesText my-5">
+            {this.state.width <= 1250 && (
+              <Row className="homePageFeaturesText my-5 pb-3">
                 <div className="homePageFeaturesLeftSideTextObject">
                   <Row>
                     <h1 className="primary_font">
@@ -488,26 +489,26 @@ class Home extends React.Component {
         </MediaQuery>
         {/* FULL SCREEN INSIGHTS */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="featureRows mb-3">
-            {this.state.width > 1000 && (
+          <Row className="homeRows mb-3">
+            {this.state.width > 1250 && (
               <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
-                <img className="productImgLeft" src={Reports} />
+                <img className="home-productImgLeft" src={Reports} />
                 <img
-                  className="custom-left-align-light-blue-background"
+                  className="home-custom-left-align-light-blue-background"
                   src={LightBlueRectangle}
                 />
               </Col>
             )}
-            {this.state.width <= 1000 && (
-              <Row className="homePageFeaturesImage homePageFeaturesImageBackground mt-5">
-                <img className="productImgLeft" src={Reports} />
+            {this.state.width <= 1250 && (
+              <Row className="home-left-blue-background home-homePageFeaturesImage homePageFeaturesImageBackground mt-5 mb-5">
+                <img className="home-productImgLeft" src={Reports} />
                 <img
-                  className="custom-left-align-light-blue-background"
+                  className="home-custom-left-align-light-blue-background"
                   src={LightBlueRectangle}
                 />
               </Row>
             )}
-            {this.state.width > 1000 && (
+            {this.state.width > 1250 && (
               <Col className="homePageFeaturesText">
                 <div className="homePageFeaturesRightSideTextObject">
                   <Row>
@@ -535,7 +536,7 @@ class Home extends React.Component {
               </Col>
             )}
 
-            {this.state.width <= 1000 && (
+            {this.state.width <= 1250 && (
               <Row className="homePageFeaturesText">
                 <div className="homePageFeaturesRightSideTextObject">
                   <Row>

@@ -115,36 +115,66 @@ class FeaturesResearch extends React.Component {
         </MediaQuery>
         {/* FULL SCREEN Knowledge */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="test-row" no-gutters>
-            {/* <Col className="feature-image-col">
+          {this.state.width > 1000 && (
+            <Row className="test-row" no-gutters>
+              {/* <Col className="feature-image-col">
               <img
                 className="feature-send-portal-left-align-light-blue-rectangle"
                 src={ThinLightBlueRectangle}
               />
             </Col> */}
-            <Col className="feature-image-left-side-col vertical-center-image">
-              <img
-                className="features-productImgLeft feature-image-sizing"
-                src={this.state.researchInfoImg}
-              />
-            </Col>
-            <Col className="featureSubSectionTextAlign ">
-              <Container className="inner-test-div">
-                <Row>
-                  <Col>
-                    <h1 className="primary_font">
-                      {this.state.researchInfoTitle}
-                    </h1>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <FeaturesBullets bullets={this.state.researchInfoBlurb} />
-                  </Col>
-                </Row>
-              </Container>
-            </Col>
-          </Row>
+              <Col className="feature-image-left-side-col vertical-center-image">
+                <img
+                  className="features-productImgLeft feature-image-sizing"
+                  src={this.state.researchInfoImg}
+                />
+              </Col>
+              <Col className="featureSubSectionTextAlign ">
+                <Container className="inner-test-div">
+                  <Row>
+                    <Col>
+                      <h1 className="primary_font">
+                        {this.state.researchInfoTitle}
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FeaturesBullets bullets={this.state.researchInfoBlurb} />
+                    </Col>
+                  </Row>
+                </Container>
+              </Col>
+            </Row>
+          )}
+          {this.state.width <= 1000 && (
+            <div>
+              <Row className="feature-image-left-side-col vertical-center-image">
+                <Container className="medium-subpage-features-productImg subpage-features-margin-right">
+                  <img
+                    className="medium-feature-subpage-image-sizing"
+                    src={this.state.researchInfoImg}
+                  />
+                </Container>
+              </Row>
+              <Row className="featureSubSectionTextAlign my-5">
+                <Container>
+                  <Row>
+                    <Col>
+                      <h1 className="primary_font">
+                        {this.state.researchInfoTitle}
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FeaturesBullets bullets={this.state.researchInfoBlurb} />
+                    </Col>
+                  </Row>
+                </Container>
+              </Row>
+            </div>
+          )}
         </MediaQuery>
         {/* MOBILE SCREEN Knowledge */}
         <MediaQuery query="(max-device-width: 1223px)">
@@ -176,35 +206,67 @@ class FeaturesResearch extends React.Component {
         </MediaQuery>
         {/* FULL WIDTH TRANSCRIPT */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="test-row">
-            <Col
-              className="featureSubSectionTextAlign"
-              ref={divElement => (this.divElement = divElement)}
-            >
-              <Container className="inner-test-div ">
-                <Row>
-                  <Col>
-                    <h1 className="primary_font">
-                      {this.state.researchTranscriptTitle}
-                    </h1>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <FeaturesBullets
-                      bullets={this.state.researchTranscriptBlurb}
-                    />
-                  </Col>
-                </Row>
-              </Container>
-            </Col>
-            <Col className="feature-image-right-side-col vertical-center-image">
-              <img
-                className="features-productImgRight feature-image-sizing"
-                src={this.state.researchTranscriptImg}
-              />
-            </Col>
-          </Row>
+          {this.state.width > 1000 && (
+            <Row className="test-row">
+              <Col
+                className="featureSubSectionTextAlign"
+                ref={divElement => (this.divElement = divElement)}
+              >
+                <Container className="inner-test-div ">
+                  <Row>
+                    <Col>
+                      <h1 className="primary_font">
+                        {this.state.researchTranscriptTitle}
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FeaturesBullets
+                        bullets={this.state.researchTranscriptBlurb}
+                      />
+                    </Col>
+                  </Row>
+                </Container>
+              </Col>
+              <Col className="feature-image-right-side-col vertical-center-image">
+                <img
+                  className="features-productImgRight feature-image-sizing"
+                  src={this.state.researchTranscriptImg}
+                />
+              </Col>
+            </Row>
+          )}
+          {this.state.width <= 1000 && (
+            <div>
+              <Row className="feature-image-right-side-col vertical-center-image">
+                <Container className="medium-subpage-features-productImg subpage-features-margin-right">
+                  <img
+                    className="medium-feature-subpage-image-sizing"
+                    src={this.state.researchTranscriptImg}
+                  />
+                </Container>
+              </Row>
+              <Row className="featureSubSectionTextAlign my-5">
+                <Container>
+                  <Row>
+                    <Col>
+                      <h1 className="primary_font">
+                        {this.state.researchTranscriptTitle}
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FeaturesBullets
+                        bullets={this.state.researchTranscriptBlurb}
+                      />
+                    </Col>
+                  </Row>
+                </Container>
+              </Row>
+            </div>
+          )}
         </MediaQuery>
         {/* MOBILE TRANSCRIPT */}
         <MediaQuery query="(max-device-width: 1223px)">
@@ -236,32 +298,64 @@ class FeaturesResearch extends React.Component {
         </MediaQuery>
         {/* FULL WIDTH KNOWLEDGE */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="researchBottomRow">
-            <Col className="feature-image-left-side-col vertical-center-image">
-              <img
-                className="features-productImgLeft feature-image-sizing"
-                src={this.state.researchKnowledgeImg}
-              />
-            </Col>
-            <Col className="featureSubSectionTextAlign">
-              <Container className="inner-test-div">
-                <Row>
-                  <Col>
-                    <h1 className="primary_font">
-                      {this.state.researchKnowledgeTitle}
-                    </h1>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <FeaturesBullets
-                      bullets={this.state.researchKnowledgeBlurb}
-                    />
-                  </Col>
-                </Row>
-              </Container>
-            </Col>
-          </Row>
+          {this.state.width > 1000 && (
+            <Row className="researchBottomRow">
+              <Col className="feature-image-left-side-col vertical-center-image">
+                <img
+                  className="features-productImgLeft feature-image-sizing"
+                  src={this.state.researchKnowledgeImg}
+                />
+              </Col>
+              <Col className="featureSubSectionTextAlign">
+                <Container className="inner-test-div">
+                  <Row>
+                    <Col>
+                      <h1 className="primary_font">
+                        {this.state.researchKnowledgeTitle}
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FeaturesBullets
+                        bullets={this.state.researchKnowledgeBlurb}
+                      />
+                    </Col>
+                  </Row>
+                </Container>
+              </Col>
+            </Row>
+          )}
+          {this.state.width <= 1000 && (
+            <div>
+              <Row className="feature-image-left-side-col vertical-center-image">
+                <Container className="medium-subpage-features-productImg subpage-features-margin-right">
+                  <img
+                    className="medium-feature-subpage-image-sizing"
+                    src={this.state.researchKnowledgeImg}
+                  />
+                </Container>
+              </Row>
+              <Row className="featureSubSectionTextAlign my-5">
+                <Container>
+                  <Row>
+                    <Col>
+                      <h1 className="primary_font">
+                        {this.state.researchKnowledgeTitle}
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FeaturesBullets
+                        bullets={this.state.researchKnowledgeBlurb}
+                      />
+                    </Col>
+                  </Row>
+                </Container>
+              </Row>
+            </div>
+          )}
         </MediaQuery>
         {/* MOBILE KNOWLEDGE */}
         <MediaQuery query="(max-device-width: 1223px)">

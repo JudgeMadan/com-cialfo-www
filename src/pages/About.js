@@ -392,7 +392,6 @@ class About extends React.Component {
         </MediaQuery>
         {/* MOBILE ABOUT OFFICES */}
         <MediaQuery query="(max-device-width: 1223px)">
-          {/* <div className="full-width-near-black"> */}
           <MobileAboutCialfoOffices
             cialfoOffices={this.state.aboutPageOfficesLocations}
           />

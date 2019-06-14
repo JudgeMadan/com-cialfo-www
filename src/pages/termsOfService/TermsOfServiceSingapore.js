@@ -246,9 +246,6 @@ class TermsOfServiceSingapore extends React.Component {
           </h5>
           <p>The Parties shall execute and do and procure all other persons if necessary, to execute and do all such further deeds, assurances, acts and things as may be reasonably required so that full effect may be given to the terms and conditions of this Agreement.</p>
         </div>
-        <Row className="center-in-row pb-5">
-          <h1>···</h1>
-        </Row>
       </Container>
     );
   }

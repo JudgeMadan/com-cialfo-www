@@ -41,7 +41,7 @@ body {
 
 .form_title {
   font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
-  font-size: 50px;
+  font-size: 42px;
 }
 
 .secondary_font {
@@ -49,7 +49,7 @@ body {
   font-style: normal;
   font-weight: normal;
   font-size: 1rem;
-  line-height: 1.4rem;
+  line-height: 1.5rem;
   color: #2b1f30;
 }
 
@@ -60,6 +60,8 @@ code {
 
 .footerListGroupItem {
   border: none;
+  font-family: "roboto_regular";
+  background-color: #ebf9ff !important;
 }
 
 .marqueeElement {
@@ -148,10 +150,12 @@ therefore, total marquee width is about 395 * # of marquee Items */
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: #f4f4f5;
+  font-size: 1.1em !important;
 }
 
 .email-form:hover {
   border-bottom-color: #1886df;
+  cursor: pointer;
 }
 
 button {
@@ -209,18 +213,6 @@ button:hover {
 
 .center-in-row {
   justify-content: center;
-}
-.text-align-left {
-  text-align: start;
-}
-
-.flexible-image-width-100 {
-  height: auto;
-  width: 100%;
-}
-
-.max-width-200px {
-  max-width: 200px;
 }
 
 .oval {
@@ -283,12 +275,6 @@ button:hover {
   display: flex;
   justify-content: center;
   text-align: center;
-}
-
-.security-test {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
 }
 
 .left-side-header-title {
@@ -354,26 +340,6 @@ button:hover {
 
 .text-align-center {
   text-align: center;
-}
-
-.header-locale-text {
-  margin-top: 8px;
-  font-weight: bold;
-}
-
-.mobile-nav-link {
-  padding-right: 0;
-  padding-left: 0;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: transparent;
-  color: #2a1f2f;
-  text-decoration: none !important;
-}
-
-.mobile-nav-link:hover {
-  color: #2a1f2f;
-  font-weight: bold;
 }
 
 .no-padding {
