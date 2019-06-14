@@ -23,11 +23,6 @@
   font-family: "roboto_regular";
 }
 
-.footerListGroupItem {
-  font-family: "roboto_regular";
-  background-color: #ebf9ff !important;
-}
-
 .navbar-nav .nav-link {
   color: #2b1f30 !important;
   font-family: "roboto_regular";
@@ -189,8 +184,4 @@
 .nav-link:hover::after {
   width: 100%;
   display: block;
-}
-
-.sharp-corners-button {
-  border-radius: 0 !important;
 }

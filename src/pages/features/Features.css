@@ -3,14 +3,6 @@
   /* font-size: 42px; */
 }
 
-.secondary_font {
-  font-family: "roboto_regular";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
 .titleContainer {
   margin-bottom: 5rem;
   margin-top: 5rem;
@@ -197,19 +189,6 @@
   justify-content: center;
   padding: 0 !important;
 }
-
-.full-width-near-black {
-  margin: 0 -9999rem;
-  /* add back negative margin value */
-  padding: 0.25rem 9999rem;
-  background: #2b1f31;
-}
-
-/* .full-width-dark-blue {
-  margin: 0 -9999rem;
-  padding: 0.25rem 9999rem;
-  background: #1786df;
-} */
 
 .full-width-dark-blue-custom-height {
   margin: 0 -9999rem;

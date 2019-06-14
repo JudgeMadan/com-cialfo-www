@@ -55,15 +55,6 @@
   box-shadow: none;
 }
 
-.email-form {
-  font-size: 1.1em !important;
-}
-
-.email-form:hover {
-  /* border-bottom: 4px solid #1981d6; */
-  cursor: pointer;
-}
-
 .homePageSchoolTestimonialsTitle {
   justify-content: center;
 }
@@ -329,7 +320,6 @@
 .imageObjectTitle {
   display: flex;
   justify-content: center;
-  /* margin-bottom: 50px; */
 }
 
 .mobile-imageObjectTitle {
