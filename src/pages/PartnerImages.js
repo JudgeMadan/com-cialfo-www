@@ -28,7 +28,7 @@ class PartnerImages extends React.Component {
 
     return (
       <div className="home-partners-image-container">
-        <Container className="home-partners-image-content">
+        <Container className="home-partners-image-content home-partners-image-content-auto-margin">
           <Row className="imageObjectTitle pb-5">
             <h1 className="primary_font ">{this.props.title}</h1>
           </Row>

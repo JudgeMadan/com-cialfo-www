@@ -594,6 +594,11 @@
   margin: 50px;
 }
 
+.home-partners-image-content-auto-margin {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .home-page-partner-image {
   margin: 0 10px;
 }
