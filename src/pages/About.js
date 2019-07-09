@@ -94,7 +94,6 @@ class About extends React.Component {
 
   render() {
     const space = this.props.match.params.space;
-    console.log(space)
     return (
       <Container className="aboutPage">
         {/* FULL SCREEN HEADER */}

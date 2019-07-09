@@ -82,7 +82,6 @@ class FeaturesDocuments extends React.Component {
   };
 
   render() {
-    console.log(this.state)
     const space = this.props.match.params.space;
     return (
       <Container className="featuresSendPage" fluid={true}>
