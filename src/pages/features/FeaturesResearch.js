@@ -386,7 +386,7 @@ class FeaturesResearch extends React.Component {
           </Container>
         </MediaQuery>
         {/* FULL WIDTH FEATURES SUBFOOTER */}
-        <MediaQuery query="(min-device-width: 1224px)">
+        {/* <MediaQuery query="(min-device-width: 1224px)">
           {space !== "us" && (
             <Row>
               <FeaturesSubfooter
@@ -396,7 +396,7 @@ class FeaturesResearch extends React.Component {
               />
             </Row>
           )}
-        </MediaQuery>
+        </MediaQuery> */}
       </Container>
     );
   }
