@@ -112,7 +112,7 @@ class GetADemo extends React.Component {
         "Content-Type": "application/json"
       },
       body: e.target || null
-    }).then(function(response) {});
+    }).then(function (response) { });
   };
 
   render() {
@@ -556,7 +556,7 @@ class GetADemo extends React.Component {
           </Container>
         </MediaQuery>
         {/* FULL WIDTH FEATURE SUBFOOTER */}
-        <MediaQuery query="(min-device-width: 1224px)">
+        {/* <MediaQuery query="(min-device-width: 1224px)">
           <Row>
             <FeaturesSubfooter
               img={this.state.getADemoSubfooterImg}
@@ -564,7 +564,7 @@ class GetADemo extends React.Component {
               quoteAuthor={this.state.getAdemoSubfooterQuoteAuthor}
             />
           </Row>
-        </MediaQuery>
+        </MediaQuery> */}
       </div>
     );
   }

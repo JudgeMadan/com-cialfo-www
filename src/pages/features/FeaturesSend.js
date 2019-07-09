@@ -328,7 +328,7 @@ class FeaturesSend extends React.Component {
           />
         </MediaQuery> */}
         {/* FEATURES SUBFOOTER ONLY ON FULL SCREEN */}
-        <MediaQuery query="(min-device-width: 1224px)">
+        {/* <MediaQuery query="(min-device-width: 1224px)">
           {space !== "us" && (
             <Row>
               <FeaturesSubfooter
@@ -338,7 +338,7 @@ class FeaturesSend extends React.Component {
               />
             </Row>
           )}
-        </MediaQuery>
+        </MediaQuery> */}
       </Container>
     );
   }

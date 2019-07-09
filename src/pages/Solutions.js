@@ -190,7 +190,7 @@ class Solutions extends React.Component {
           />
         </MediaQuery>
         <div className="solutions-bottom-spacing" />
-        <MediaQuery query="(min-device-width: 1224px)">
+        {/* <MediaQuery query="(min-device-width: 1224px)">
           {space !== "us" && (
             <FeaturesSubfooter
               img={this.state.solutionsSubfooterImg}
@@ -198,7 +198,7 @@ class Solutions extends React.Component {
               quoteAuthor={this.state.solutionsSubfooterQuoteAuthor}
             />
           )}
-        </MediaQuery>
+        </MediaQuery> */}
       </Container>
     );
   }

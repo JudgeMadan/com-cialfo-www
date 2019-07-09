@@ -82,6 +82,7 @@ class FeaturesDocuments extends React.Component {
   };
 
   render() {
+    console.log(this.state)
     const space = this.props.match.params.space;
     return (
       <Container className="featuresSendPage" fluid={true}>
@@ -225,8 +226,8 @@ class FeaturesDocuments extends React.Component {
               <Col className="feature-image-right-side-col vertical-center-image">
                 <img
                   className="features-productImgRight feature-image-sizing"
-                  // src={this.state.documentsTranscriptImage}
-                  src={this.state.documentsExploreImage}
+                  src={this.state.documentsTranscriptImage}
+                // src={this.state.documentsExploreImage}
                 />
               </Col>
             </Row>
@@ -237,8 +238,7 @@ class FeaturesDocuments extends React.Component {
                 <Container className="medium-subpage-features-productImg subpage-features-margin-right">
                   <img
                     className="medium-feature-subpage-image-sizing"
-                    src={this.state.documentsExploreImage}
-                  // src={this.state.documentsTranscriptImage}
+                    src={this.state.documentsTranscriptImage}
                   />
                 </Container>
               </Row>
@@ -292,7 +292,7 @@ class FeaturesDocuments extends React.Component {
           </Container>
         </MediaQuery>
         {/* FULL WIDTH SUB FOOTER */}
-        <MediaQuery query="(min-device-width: 1224px)">
+        {/* <MediaQuery query="(min-device-width: 1224px)">
           {space !== "us" && (
             <Row>
               <FeaturesSubfooter
@@ -302,7 +302,7 @@ class FeaturesDocuments extends React.Component {
               />
             </Row>
           )}
-        </MediaQuery>
+        </MediaQuery> */}
       </Container>
     );
   }
