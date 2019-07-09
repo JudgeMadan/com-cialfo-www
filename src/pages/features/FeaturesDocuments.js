@@ -9,7 +9,6 @@ import FeaturesBullets from "./FeaturesBullets";
 import MobileFeaturesBullets from "./MobileFeaturesBullets";
 import Oval from "../../img/Oval.svg";
 import Line from "../../img/Line.svg";
-import Documents from "../../img/home/CDocs.svg";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
 
@@ -83,6 +82,7 @@ class FeaturesDocuments extends React.Component {
   };
 
   render() {
+    const space = this.props.match.params.space;
     return (
       <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
@@ -95,7 +95,7 @@ class FeaturesDocuments extends React.Component {
               <img className="features-oval" src={Oval} />
               <img className="features-line" src={Line} />
               <Row>
-                <img className="features-hero-image" src={Documents} />
+                <img className="features-hero-image" src={this.state.featuresDocumentHero} />
               </Row>
             </div>
           </Row>
@@ -107,7 +107,7 @@ class FeaturesDocuments extends React.Component {
           </Row>
           <Container className="featuresVideoEmbed mobile-bottom-border pb-5">
             <Row className="center-in-row">
-              <img className="mobile-features-hero-image" src={Documents} />
+              <img className="mobile-features-hero-image" src={this.state.featuresDocumentHero} />
             </Row>
           </Container>
         </MediaQuery>
@@ -238,7 +238,7 @@ class FeaturesDocuments extends React.Component {
                   <img
                     className="medium-feature-subpage-image-sizing"
                     src={this.state.documentsExploreImage}
-                    // src={this.state.documentsTranscriptImage}
+                  // src={this.state.documentsTranscriptImage}
                   />
                 </Container>
               </Row>
@@ -293,13 +293,15 @@ class FeaturesDocuments extends React.Component {
         </MediaQuery>
         {/* FULL WIDTH SUB FOOTER */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row>
-            <FeaturesSubfooter
-              img={this.state.documentsFooterImg}
-              quote={this.state.documentsFooterQuote}
-              quoteAuthor={this.state.documentsFooterAuthor}
-            />
-          </Row>
+          {space !== "us" && (
+            <Row>
+              <FeaturesSubfooter
+                img={this.state.documentsFooterImg}
+                quote={this.state.documentsFooterQuote}
+                quoteAuthor={this.state.documentsFooterAuthor}
+              />
+            </Row>
+          )}
         </MediaQuery>
       </Container>
     );

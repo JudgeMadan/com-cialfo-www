@@ -17,7 +17,6 @@ import { withRouter } from "react-router-dom";
 import FeaturesBullets from "./FeaturesBullets";
 import FeaturesSendBullets from "./FeaturesSendBullets";
 import MobileFeaturesSendBullets from "./MobileFeaturesSendBullets";
-import Documents from "../../img/home/CDocs.svg";
 
 class FeaturesSend extends React.Component {
   constructor(props) {
@@ -90,6 +89,7 @@ class FeaturesSend extends React.Component {
   };
 
   render() {
+    const space = this.props.match.params.space;
     return (
       <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
@@ -102,7 +102,7 @@ class FeaturesSend extends React.Component {
               <img className="features-oval" src={Oval} />
               <img className="features-line" src={Line} />
               <Row>
-                <img className="features-hero-image" src={Documents} />
+                <img className="features-hero-image" src={this.state.featureSendHero} />
               </Row>
             </div>
           </Row>
@@ -114,7 +114,7 @@ class FeaturesSend extends React.Component {
           </Row>
           <Container className="featuresVideoEmbed mobile-bottom-border pb-5">
             <Row className="center-in-row">
-              <img className="mobile-features-hero-image" src={Documents} />
+              <img className="mobile-features-hero-image" src={this.state.featureSendHero} />
             </Row>
           </Container>
         </MediaQuery>
@@ -158,7 +158,7 @@ class FeaturesSend extends React.Component {
                   <img
                     className="medium-feature-subpage-image-sizing"
                     src={this.state.sendPortalImage}
-                    // src={this.state.documentsTranscriptImage}
+                  // src={this.state.documentsTranscriptImage}
                   />
                 </Container>
               </Row>
@@ -300,7 +300,7 @@ class FeaturesSend extends React.Component {
             </Row>
           </Container>
         </MediaQuery>
-        <Row />
+        <Row className="mb-3" />
         {/* FULL WIDTH PARTNERS */}
         {/* <MediaQuery query="(min-device-width: 1224px)">
           <Row className="featureSendPartnersTitle">
@@ -329,13 +329,15 @@ class FeaturesSend extends React.Component {
         </MediaQuery> */}
         {/* FEATURES SUBFOOTER ONLY ON FULL SCREEN */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row>
-            <FeaturesSubfooter
-              img={this.state.sendFooterImage}
-              quote={this.state.sendFooterQuote}
-              quoteAuthor={this.state.sendingFooterAuthor}
-            />
-          </Row>
+          {space !== "us" && (
+            <Row>
+              <FeaturesSubfooter
+                img={this.state.sendFooterImage}
+                quote={this.state.sendFooterQuote}
+                quoteAuthor={this.state.sendingFooterAuthor}
+              />
+            </Row>
+          )}
         </MediaQuery>
       </Container>
     );
