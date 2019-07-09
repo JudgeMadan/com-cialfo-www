@@ -33,12 +33,14 @@ class SolutionsSubPage extends React.Component {
             image={this.props.topRowImage}
           />
           <div className="solutions-bottom-spacing" />
-          <SolutionsSubfooter
-            img={this.props.subFooterImg}
-            quote={this.props.subFooterQuote}
-            quoteAuthor={this.props.subFooterQuoteAuthor}
-            quoteAuthorCredit={this.props.subFooterQuoteCredit}
-          />
+          {space !== "us" && (
+            <SolutionsSubfooter
+              img={this.props.subFooterImg}
+              quote={this.props.subFooterQuote}
+              quoteAuthor={this.props.subFooterQuoteAuthor}
+              quoteAuthorCredit={this.props.subFooterQuoteCredit}
+            />
+          )}
           <div className="solutions-bottom-spacing" />
           <SolutionsLeftSideText
             title={this.props.bottomRowTitle}

@@ -79,6 +79,7 @@ class Solutions extends React.Component {
   };
 
   render() {
+    const space = this.props.match.params.space;
     return (
       <Container className="homePageContainer" fluid>
         {/* FULL PAGE HEADER */}
@@ -119,26 +120,26 @@ class Solutions extends React.Component {
             image={this.state.solutionsForCounselorImage}
           />
         </MediaQuery>
-        {/* FULL PAGE LEFT SIDE IT TEAM */}
+        {/* FULL SCREEN FOR SUPERINTENDENTS */}
         <MediaQuery query="(min-device-width: 1224px)">
           <SolutionsLeftSideText
-            title={this.state.homePageFeaturesLeverageTitle}
-            blurb={this.state.homePageFeaturesLeverageBlurb}
-            link={this.state.homePageFeaturesLeverageLinkText}
-            url={this.state.homePageFeaturesLeverageLinkUrl}
-            linkStyle={this.state.forIT}
-            image={this.state.solutionsForItImage}
+            title={this.state.solutionsExtraTitle}
+            blurb={this.state.solutionsExtraBlurb}
+            link={this.state.solutionsExtraLinkText}
+            url={this.state.solutionsExtraLinkUrl}
+            linkStyle={this.state.forSuperintendents}
+            image={this.state.solutionsForSuperintendentsImage}
           />
         </MediaQuery>
-        {/* MOBILE IT TEAM */}
+        {/* MOBILE FOR SUPERINTENDENTS */}
         <MediaQuery query="(max-device-width: 1223px)">
           <MobileSolutionsContentText
-            title={this.state.homePageFeaturesLeverageTitle}
-            blurb={this.state.homePageFeaturesLeverageBlurb}
-            link={this.state.homePageFeaturesLeverageLinkText}
-            url={this.state.homePageFeaturesLeverageLinkUrl}
-            linkStyle={this.state.forIT}
-            image={this.state.solutionsForItImage}
+            title={this.state.solutionsExtraTitle}
+            blurb={this.state.solutionsExtraBlurb}
+            link={this.state.solutionsExtraLinkText}
+            url={this.state.solutionsExtraLinkUrl}
+            linkStyle={this.state.forSuperintendents}
+            image={this.state.solutionsForSuperintendentsImage}
           />
         </MediaQuery>
         {/* FULL SCREEN FOR PRINCIPALS */}
@@ -161,28 +162,6 @@ class Solutions extends React.Component {
             url={this.state.homePageFeaturesDiscoveryLinkUrl}
             linkStyle={this.state.forPrincipals}
             image={this.state.solutionsForPrincipalsImage}
-          />
-        </MediaQuery>
-        {/* FULL SCREEN FOR SUPERINTENDENTS */}
-        <MediaQuery query="(min-device-width: 1224px)">
-          <SolutionsLeftSideText
-            title={this.state.solutionsExtraTitle}
-            blurb={this.state.solutionsExtraBlurb}
-            link={this.state.solutionsExtraLinkText}
-            url={this.state.solutionsExtraLinkUrl}
-            linkStyle={this.state.forSuperintendents}
-            image={this.state.solutionsForSuperintendentsImage}
-          />
-        </MediaQuery>
-        {/* MOBILE FOR SUPERINTENDENTS */}
-        <MediaQuery query="(max-device-width: 1223px)">
-          <MobileSolutionsContentText
-            title={this.state.solutionsExtraTitle}
-            blurb={this.state.solutionsExtraBlurb}
-            link={this.state.solutionsExtraLinkText}
-            url={this.state.solutionsExtraLinkUrl}
-            linkStyle={this.state.forSuperintendents}
-            image={this.state.solutionsForSuperintendentsImage}
           />
         </MediaQuery>
         <div className="solutions-bottom-spacing" />
@@ -212,11 +191,13 @@ class Solutions extends React.Component {
         </MediaQuery>
         <div className="solutions-bottom-spacing" />
         <MediaQuery query="(min-device-width: 1224px)">
-          <FeaturesSubfooter
-            img={this.state.solutionsSubfooterImg}
-            quote={this.state.solutionsSubfooterQuote}
-            quoteAuthor={this.state.solutionsSubfooterQuoteAuthor}
-          />
+          {space !== "us" && (
+            <FeaturesSubfooter
+              img={this.state.solutionsSubfooterImg}
+              quote={this.state.solutionsSubfooterQuote}
+              quoteAuthor={this.state.solutionsSubfooterQuoteAuthor}
+            />
+          )}
         </MediaQuery>
       </Container>
     );

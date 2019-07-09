@@ -4,7 +4,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ReactPlayer from "react-player";
-import Documents from "../../img/home/CDocs.svg";
 import "./Features.css";
 import FeaturesSubfooter from "./FeaturesSubfooter";
 import FeaturesBullets from "./FeaturesBullets";
@@ -85,6 +84,7 @@ class FeaturesResearch extends React.Component {
   };
 
   render() {
+    const space = this.props.match.params.space;
     return (
       <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}
@@ -97,7 +97,7 @@ class FeaturesResearch extends React.Component {
               <img className="features-oval" src={Oval} />
               <img className="features-line" src={Line} />
               <Row>
-                <img className="features-hero-image" src={Documents} />
+                <img className="features-hero-image" src={this.state.featuresResearchHero} />
               </Row>
             </div>
           </Row>
@@ -109,7 +109,7 @@ class FeaturesResearch extends React.Component {
           </Row>
           <Container className="featuresVideoEmbed mobile-bottom-border pb-5">
             <Row className="center-in-row">
-              <img className="mobile-features-hero-image" src={Documents} />
+              <img className="mobile-features-hero-image" src={this.state.featuresResearchHero} />
             </Row>
           </Container>
         </MediaQuery>
@@ -387,13 +387,15 @@ class FeaturesResearch extends React.Component {
         </MediaQuery>
         {/* FULL WIDTH FEATURES SUBFOOTER */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row>
-            <FeaturesSubfooter
-              img={this.state.researchFooterImg}
-              quote={this.state.researchFooterQuote}
-              quoteAuthor={this.state.researchFooterAuthor}
-            />
-          </Row>
+          {space !== "us" && (
+            <Row>
+              <FeaturesSubfooter
+                img={this.state.researchFooterImg}
+                quote={this.state.researchFooterQuote}
+                quoteAuthor={this.state.researchFooterAuthor}
+              />
+            </Row>
+          )}
         </MediaQuery>
       </Container>
     );
