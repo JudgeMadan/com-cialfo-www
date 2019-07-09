@@ -1,16 +1,3 @@
-.primary_font {
-  font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
-  /* font-size: 2em; */
-}
-
-/* .secondary_font {
-  font-family: "roboto_regular";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1em;
-  line-height: 28px;
-} */
-
 .secondary_font_bold {
   font-family: "roboto_regular";
   font-style: medium;
@@ -275,25 +262,6 @@
 .reduced-margin-bottom {
   margin-bottom: 0px;
 }
-
-/* .full-width-light-blue {
-  margin: 0 -9999rem;
-  padding: 0.25rem 9999rem;
-  background: #ebf9ff;
-} */
-
-.full-width-near-black {
-  margin: 0 -9999rem;
-  /* add back negative margin value */
-  padding: 0.25rem 9999rem;
-  background: #2b1f31;
-}
-
-/* .full-width-dark-blue {
-  margin: 0 -9999rem;
-  padding: 0.25rem 9999rem;
-  background: #1786df;
-} */
 
 .about-partners-columns {
   margin: 0 75px;

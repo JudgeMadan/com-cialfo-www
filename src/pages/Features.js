@@ -106,8 +106,9 @@ class Features extends React.Component {
   };
 
   render() {
+    const space = this.props.match.params.space;
     return (
-      <Container className="homePageContainer">
+      <Container className="homePageContainer" fluid>
         {/* FULL SCREEN TOP ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="titleContainer">
@@ -135,21 +136,25 @@ class Features extends React.Component {
               )}
             </div>
           </Row>
-          <Row className="homePageSchoolTestimonialsTitle">
-            <h1 className="primary_font">
-              {this.state.homePageSchoolTestimonialsTitle}
-            </h1>
-          </Row>
-          <Row className="homeMarquee">
-            <HomeMarquee
-              locale={this.props.locale}
-              accessToken={this.props.accessToken}
-              space={this.props.space}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-            />
-          </Row>
+          {space !== "us" && (
+            <Row className="homePageSchoolTestimonialsTitle">
+              <h1 className="primary_font">
+                {this.state.homePageSchoolTestimonialsTitle}
+              </h1>
+            </Row>
+          )}
+          {space !== "us" && (
+            <Row className="homeMarquee mx-3">
+              <HomeMarquee
+                locale={this.props.locale}
+                accessToken={this.props.accessToken}
+                space={this.props.space}
+                spaces={this.props.spaces}
+                setSpace={this.props.setSpace}
+                setAccessToken={this.props.setAccessToken}
+              />
+            </Row>
+          )}
         </MediaQuery>
         {/* MOBILE TOP ROW */}
         <MediaQuery query="(max-device-width: 1223px)">
@@ -185,9 +190,9 @@ class Features extends React.Component {
                 />
               </Col>
             )}
-            {this.state.width < 1000 && (
-              <Row className="homePageFeaturesImage homePageFeaturesImageBackground">
-                <img className="productImgLeft" src={Documents} />
+            {this.state.width <= 1000 && (
+              <Row className="feature-left-blue-background feature-homePageFeaturesImage homePageFeaturesImageBackground my-5">
+                <img className="feature-productImgLeft" src={Documents} />
                 <img
                   className="features-left-align-light-blue-background"
                   src={LightBlueRectangle}
@@ -221,8 +226,8 @@ class Features extends React.Component {
                 </div>
               </Col>
             )}
-            {this.state.width < 1000 && (
-              <Row className="homePageFeaturesText">
+            {this.state.width <= 1000 && (
+              <Row className="homePageFeaturesText my-3 pb-5">
                 <div className="homePageFeaturesRightSideTextObject">
                   <Row>
                     <h1 className="primary_font">
@@ -310,11 +315,11 @@ class Features extends React.Component {
                 </div>
               </Col>
             )}
-            {this.state.width < 1000 && (
-              <Row className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
-                <img className="productImgRight" src={ResearchImage} />
+            {this.state.width <= 1000 && (
+              <Row className="feature-right-blue-background feature-homePageFeaturesImage homePageFeaturesImageBackgroundReverse my-5">
+                <img className="feature-productImgRight" src={ResearchImage} />
                 <img
-                  className="features-right-align-light-blue-background"
+                  className="features-features-right-align-light-blue-background"
                   src={LightBlueRectangle}
                 />
               </Row>
@@ -328,8 +333,8 @@ class Features extends React.Component {
                 />
               </Col>
             )}
-            {this.state.width < 1000 && (
-              <Row className="homePageFeaturesText">
+            {this.state.width <= 1000 && (
+              <Row className="homePageFeaturesText my-3 pb-5">
                 <div className="homePageFeaturesLeftSideTextObject">
                   <Row>
                     <h1 className="primary_font">
@@ -392,7 +397,7 @@ class Features extends React.Component {
         </MediaQuery>
         {/* FULL SCREEN DISCOVER*/}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="featureRows">
+          <Row className="featureRows mb-3">
             {this.state.width > 1000 && (
               <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
                 <img className="productImgLeft" src={Reports} />
@@ -402,9 +407,9 @@ class Features extends React.Component {
                 />
               </Col>
             )}
-            {this.state.width < 1000 && (
-              <Row className="homePageFeaturesImage homePageFeaturesImageBackground">
-                <img className="productImgLeft" src={Reports} />
+            {this.state.width <= 1000 && (
+              <Row className="feature-left-blue-background feature-homePageFeaturesImage homePageFeaturesImageBackground my-5">
+                <img className="feature-productImgLeft" src={Reports} />
                 <img
                   className="features-left-align-light-blue-background"
                   src={LightBlueRectangle}
@@ -438,8 +443,8 @@ class Features extends React.Component {
                 </div>
               </Col>
             )}
-            {this.state.width < 1000 && (
-              <Row className="homePageFeaturesText">
+            {this.state.width <= 1000 && (
+              <Row className="homePageFeaturesText my-3 pb-5">
                 <div className="homePageFeaturesRightSideTextObject">
                   <Row>
                     <h1 className="primary_font">

@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Calendar from "../../img/Calendar.svg";
+import Clock from "../../img/clock-regular.svg";
 import "./Events.css";
 const moment = require("moment");
 
@@ -18,6 +19,7 @@ class MobileCialfoSessionsObject extends React.Component {
     if (events) {
       eventsObject = events.map(event => {
         const showDate = moment(event.fields.eventsDate).format("Do MMMM YYYY");
+        const showTime = moment(event.fields.eventsDate).format("LT");
         return (
           <Container key={event.sys.id}>
             <div className="event-inner-object light-blue-background mt-5">
@@ -35,11 +37,17 @@ class MobileCialfoSessionsObject extends React.Component {
                   </p>
                 </div>
               </Row>
-              <Row className="pb-3">
+              <Row>
                 <img src={Calendar} />
                 <p className="secondary_font event-remove-margin-bottom event-bold">
                   &nbsp; &nbsp;
                   {showDate}
+                </p>
+              </Row>
+              <Row className="pb-3">
+                <img className="mobile-events-clock " src={Clock} />
+                <p className="secondary_font event-remove-margin-bottom event-bold">
+                  &nbsp;&nbsp;&nbsp;{showTime}
                 </p>
               </Row>
               <Row>

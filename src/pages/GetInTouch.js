@@ -1,6 +1,7 @@
 import Row from "react-bootstrap/Row";
 import React from "react";
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 import "./getADemo/GetADemo.css";
 import GetInTouchImg from "../img/GetInTouch.svg";
 import FeaturesSubfooter from "./features/FeaturesSubfooter";
@@ -253,13 +254,14 @@ class GetInTouch extends React.Component {
                 </Row>
                 <Row className="get-in-touch-row mb-5">
                   <div class="_button-wrapper _full_width">
-                    <button
+                    <Button
                       id="_form_44_submit"
-                      class="_submit home_button"
+                      className="_submit nav-link-button sharp-corners-button demo-button mt-2"
                       type="submit"
+                      variant="primary"
                     >
                       Submit
-                    </button>
+                    </Button>
                   </div>
                   <div class="_clear-element" />
                 </Row>
@@ -371,13 +373,14 @@ class GetInTouch extends React.Component {
                   </Row>
                   <Row className="get-in-touch-row mb-5">
                     <div class="_button-wrapper _full_width">
-                      <button
+                      <Button
                         id="_form_44_submit"
-                        class="_submit home_button"
+                        className="_submit nav-link-button sharp-corners-button demo-button mt-2"
                         type="submit"
+                        variant="primary"
                       >
                         Submit
-                      </button>
+                      </Button>
                     </div>
                     <div class="_clear-element" />
                   </Row>
@@ -499,13 +502,14 @@ class GetInTouch extends React.Component {
                     </Row>
                     <Row className="get-in-touch-row">
                       <div class="_button-wrapper _full_width">
-                        <button
+                        <Button
                           id="_form_44_submit"
-                          class="_submit home_button"
+                          className="_submit nav-link-button sharp-corners-button demo-button mt-2"
                           type="submit"
+                          variant="primary"
                         >
                           Submit
-                        </button>
+                        </Button>
                       </div>
                       <div class="_clear-element" />
                     </Row>

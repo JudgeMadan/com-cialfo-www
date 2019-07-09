@@ -27,6 +27,7 @@ class ClientStories extends React.Component {
   });
 
   render() {
+    const space = this.props.match.params.space;
     return (
       <Container>
         {this.props.match.params.locale === "en-US" && (
@@ -76,16 +77,18 @@ class ClientStories extends React.Component {
               <h1 className="primary_font">中文名</h1>
             )}
           </Row>
-          <Row className="mb-5 center-in-row">
-            <HomeMarquee
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-            />
-          </Row>
+          {space !== "us" && (
+            <Row className="mb-5 center-in-row">
+              <HomeMarquee
+                locale={this.props.locale}
+                space={this.props.space}
+                accessToken={this.props.accessToken}
+                spaces={this.props.spaces}
+                setSpace={this.props.setSpace}
+                setAccessToken={this.props.setAccessToken}
+              />
+            </Row>
+          )}
         </MediaQuery>
       </Container>
     );
