@@ -371,3 +371,20 @@
 .demo-button:hover {
   background-color: #0069d9 !important;
 }
+
+.full-screen-radio{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 94px !important;
+}
+
+.half-width-text-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 94px !important;
+}
+
+.get-in-touch-bottom-row{
+  /* margin: 0px !important; */
+}
