@@ -501,7 +501,7 @@ class GetADemo extends React.Component {
                     <Row className="mt-3 center-in-row">
                       <div class="_form_element _field30 _full_width" >
                         <label class="_form-label">
-                          Job Title
+                          {this.state.getADemoJobTitle}
                         </label>
                         <div class="_field-wrapper">
                           <input
@@ -509,7 +509,7 @@ class GetADemo extends React.Component {
                             type="text"
                             name="field[30]"
                             placeholder={
-                              this.state.getADemoNumberOfStudentsPlaceholder
+                              this.state.getADemoJobTitle
                             }
                             required
                           />
@@ -519,7 +519,7 @@ class GetADemo extends React.Component {
                     <Row className="mt-3 center-in-row">
                       <div class="_form_element _field171 _full_width " >
                         <label class="_form-label">
-                          Location
+                          {this.state.getADemoLocation}
                         </label>
                         <div class="_field-wrapper">
                           <input
@@ -527,7 +527,7 @@ class GetADemo extends React.Component {
                             type="text"
                             name="field[171]"
                             placeholder={
-                              this.state.getADemoNumberOfStudentsPlaceholder
+                              this.state.getADemoLocation
                             }
                             required
                           />
@@ -537,13 +537,13 @@ class GetADemo extends React.Component {
                     <Row className="mt-3 center-in-row">
                       <div class="_form_element _field172 _full_width left_content_row" >
                         <label class="_form-label">
-                          Organization Type
+                          {this.state.getADemoOrganizationType}
                         </label>
                         <div class="_row _checkbox-radio">
                           <input id="field_172Public School" type="radio" name="field[172]" value="Public School" />
                           <span>
                             <label for="field_172Public School">
-                              &nbsp; Public School
+                              &nbsp; {this.state.getADemoPublicSchool}
                             </label>
                           </span>
                         </div>
@@ -551,7 +551,7 @@ class GetADemo extends React.Component {
                           <input id="field_172Independent School" type="radio" name="field[172]" value="Independent School" />
                           <span>
                             <label for="field_172Independent School">
-                              &nbsp; Independent School
+                              &nbsp; {this.state.getADemoIndependentSchool}
                             </label>
                           </span>
                         </div>
@@ -559,7 +559,7 @@ class GetADemo extends React.Component {
                           <input id="field_172School District" type="radio" name="field[172]" value="School District" />
                           <span>
                             <label for="field_172School District">
-                              &nbsp; School District
+                              &nbsp; {this.state.getADemoSchoolDistrict}
                             </label>
                           </span>
                         </div>
@@ -567,7 +567,7 @@ class GetADemo extends React.Component {
                           <input id="field_172Independent Consultant" type="radio" name="field[172]" value="Independent Consultant" />
                           <span>
                             <label for="field_172Independent Consultant">
-                              &nbsp; Independent Consultant
+                              &nbsp; {this.state.getADemoIndependentConsultant}
                             </label>
                           </span>
                         </div>
@@ -577,7 +577,7 @@ class GetADemo extends React.Component {
                       <div class="_form_element _field173 _full_width" >
                         <div>
                           <label class="_form-label">
-                            Why are you here?
+                            {this.state.getADemoWhyAreYouHere}
                           </label>
                         </div>
                         <div class="_field-wrapper">
@@ -746,15 +746,15 @@ class GetADemo extends React.Component {
                   <Row className="mt-3 center-in-row">
                     <div class="_form_element _field171 _full_width " >
                       <label class="_form-label">
-                        Location
-                        </label>
+                        {this.state.getADemoLocation}
+                      </label>
                       <div class="_field-wrapper">
                         <input
                           className="input_style"
                           type="text"
                           name="field[171]"
                           placeholder={
-                            this.state.getADemoNumberOfStudentsPlaceholder
+                            this.state.getADemoLocation
                           }
                           required
                         />
@@ -764,38 +764,38 @@ class GetADemo extends React.Component {
                   <Row className="mt-3 center-in-row">
                     <div class="_form_element _field172 _full_width left_content_row" >
                       <label class="_form-label">
-                        Organization Type
-                        </label>
+                        {this.state.getADemoOrganizationType}
+                      </label>
                       <div class="_row _checkbox-radio">
                         <input id="field_172Public School" type="radio" name="field[172]" value="Public School" />
                         <span>
                           <label for="field_172Public School">
-                            &nbsp; Public School
-                            </label>
+                            &nbsp; {this.state.getADemoPublicSchool}
+                          </label>
                         </span>
                       </div>
                       <div class="_row _checkbox-radio">
                         <input id="field_172Independent School" type="radio" name="field[172]" value="Independent School" />
                         <span>
                           <label for="field_172Independent School">
-                            &nbsp; Independent School
-                            </label>
+                            &nbsp; {this.state.getADemoIndependentSchool}
+                          </label>
                         </span>
                       </div>
                       <div class="_row _checkbox-radio">
                         <input id="field_172School District" type="radio" name="field[172]" value="School District" />
                         <span>
                           <label for="field_172School District">
-                            &nbsp; School District
-                            </label>
+                            &nbsp; {this.state.getADemoSchoolDistrict}
+                          </label>
                         </span>
                       </div>
                       <div class="_row _checkbox-radio">
                         <input id="field_172Independent Consultant" type="radio" name="field[172]" value="Independent Consultant" />
                         <span>
                           <label for="field_172Independent Consultant">
-                            &nbsp; Independent Consultant
-                            </label>
+                            &nbsp; {this.state.getADemoIndependentConsultant}
+                          </label>
                         </span>
                       </div>
                     </div>
@@ -804,8 +804,8 @@ class GetADemo extends React.Component {
                     <div class="_form_element _field173 _full_width" >
                       <div>
                         <label class="_form-label">
-                          Why are you here?
-                          </label>
+                          {this.state.getADemoWhyAreYouHere}
+                        </label>
                       </div>
                       <div class="_field-wrapper">
                         <textarea
