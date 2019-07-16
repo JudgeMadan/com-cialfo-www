@@ -32,7 +32,7 @@ class SolutionsSubPage extends React.Component {
             blurb={this.props.topRowBlurb}
             image={this.props.topRowImage}
           />
-          <div className="solutions-bottom-spacing" />
+          {/* <div className="solutions-bottom-spacing" />
           {space !== "us" && (
             <SolutionsSubfooter
               img={this.props.subFooterImg}
@@ -40,7 +40,7 @@ class SolutionsSubPage extends React.Component {
               quoteAuthor={this.props.subFooterQuoteAuthor}
               quoteAuthorCredit={this.props.subFooterQuoteCredit}
             />
-          )}
+          )} */}
           <div className="solutions-bottom-spacing" />
           <SolutionsLeftSideText
             title={this.props.bottomRowTitle}
