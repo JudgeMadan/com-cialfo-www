@@ -23,7 +23,8 @@ class ClientStories extends React.Component {
 
   client = contentful.createClient({
     space: this.setSpace(),
-    accessToken: this.setAccessToken()
+    accessToken: this.setAccessToken(),
+    environment: this.props.environment
   });
 
   render() {
@@ -64,6 +65,7 @@ class ClientStories extends React.Component {
             spaces={this.props.spaces}
             setSpace={this.props.setSpace}
             setAccessToken={this.props.setAccessToken}
+            environment={this.props.environment}
           />
         </Row>
         <MediaQuery query="(min-device-width: 1224px)">
@@ -86,6 +88,7 @@ class ClientStories extends React.Component {
                 spaces={this.props.spaces}
                 setSpace={this.props.setSpace}
                 setAccessToken={this.props.setAccessToken}
+                environment={this.props.environment}
               />
             </Row>
           )}

@@ -23,7 +23,8 @@ class SolutionsIT extends React.Component {
 
   client = contentful.createClient({
     space: this.setSpace(),
-    accessToken: this.setAccessToken()
+    accessToken: this.setAccessToken(),
+    environment: this.props.environment
   });
 
   componentDidMount() {
@@ -88,6 +89,7 @@ class SolutionsIT extends React.Component {
           setAccessToken={this.props.setAccessToken}
           topRowImage={this.state.solutionsSubPageTopImage}
           bottomRowImage={this.state.solutionsSubPageBottomImage}
+          environment={this.props.environment}
         />
       </Container>
     );

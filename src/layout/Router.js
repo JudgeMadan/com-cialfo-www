@@ -47,6 +47,7 @@ class Router extends React.Component {
               sendEmailAddressToGetADemo={this.props.sendEmailAddressToGetADemo}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -63,6 +64,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -78,6 +80,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -99,6 +102,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -120,6 +124,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -129,12 +134,13 @@ class Router extends React.Component {
           path={this.props.match.url + ":space" + "/" + ":locale" + "/features"}
           render={() => (
             <Features
-              // locale={this.props.locale}
-              // space={this.props.space}
-              // accessToken={this.props.accessToken}
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -150,6 +156,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -167,6 +174,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -188,6 +196,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -209,6 +218,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -225,6 +235,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -241,6 +252,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -256,6 +268,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -271,6 +284,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -288,6 +302,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -305,6 +320,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -326,6 +342,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -343,6 +360,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -365,6 +383,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -387,6 +406,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -403,6 +423,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -420,6 +441,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -441,6 +463,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -462,6 +485,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -483,6 +507,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -504,6 +529,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -519,6 +545,7 @@ class Router extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />
@@ -532,6 +559,7 @@ class Router extends React.Component {
               accessToken={this.props.accessToken}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           )}
         />

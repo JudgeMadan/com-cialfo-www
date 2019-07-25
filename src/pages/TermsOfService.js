@@ -24,7 +24,8 @@ class TermsOfService extends React.Component {
 
   client = contentful.createClient({
     space: this.setSpace(),
-    accessToken: this.setAccessToken()
+    accessToken: this.setAccessToken(),
+    environment: this.props.environment
   });
 
   componentDidMount() {
