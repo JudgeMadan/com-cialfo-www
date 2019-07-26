@@ -60,7 +60,8 @@ class Home extends React.Component {
 
   client = contentful.createClient({
     space: this.setSpace(),
-    accessToken: this.setAccessToken()
+    accessToken: this.setAccessToken(),
+    environment: this.props.environment
   });
 
   componentDidMount() {
@@ -269,6 +270,7 @@ class Home extends React.Component {
                 spaces={this.props.spaces}
                 setSpace={this.props.setSpace}
                 setAccessToken={this.props.setAccessToken}
+                environment={this.props.environment}
               />
             </div>
           </MediaQuery>
@@ -634,6 +636,7 @@ class Home extends React.Component {
             accessToken={this.props.accessToken}
             space={this.props.space}
             title={this.state.homePagePoweredByOurPartnersTitle}
+            environment={this.props.environment}
           />
         </MediaQuery>
         {/* MOBILE VIDEO CONTENT */}

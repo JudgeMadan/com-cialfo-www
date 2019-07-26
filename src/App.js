@@ -7,6 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      environment: "staging",
       locale: "en-US",
       getADemoEmail: "",
       chinaSpace: {
@@ -188,6 +189,7 @@ class App extends Component {
             spaces={this.state.spaces}
             setSpace={this.setSpace}
             setAccessToken={this.setAccessToken}
+            environment={this.state.environment}
           />
           <Router
             spaceName={this.state.spaceName}
@@ -197,6 +199,7 @@ class App extends Component {
             space={this.state.space}
             setSpace={this.setSpace}
             setAccessToken={this.setAccessToken}
+            environment={this.state.environment}
           />
           <Footer
             locale={this.state.locale}
@@ -206,6 +209,7 @@ class App extends Component {
             spaces={this.state.spaces}
             setSpace={this.setSpace}
             setAccessToken={this.setAccessToken}
+            environment={this.state.environment}
           />
         </div>
       );

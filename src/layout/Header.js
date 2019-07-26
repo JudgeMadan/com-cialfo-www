@@ -109,7 +109,8 @@ class Header extends React.Component {
     contentful
       .createClient({
         space: this.setSpace(),
-        accessToken: this.setAccessToken()
+        accessToken: this.setAccessToken(),
+        environment: this.props.environment
       })
       .getEntries({
         content_type: "navBar",

@@ -199,6 +199,7 @@ class ClientStoriesItem extends React.Component {
             spaces={this.props.spaces}
             setSpace={this.props.setSpace}
             setAccessToken={this.props.setAccessToken}
+            environment={this.props.environment}
           />
         </Row>
       </Container>

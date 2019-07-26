@@ -54,7 +54,8 @@ class Features extends React.Component {
 
   client = contentful.createClient({
     space: this.setSpace(),
-    accessToken: this.setAccessToken()
+    accessToken: this.setAccessToken(),
+    environment: this.props.environment
   });
 
   componentDidMount() {
@@ -152,6 +153,7 @@ class Features extends React.Component {
                 spaces={this.props.spaces}
                 setSpace={this.props.setSpace}
                 setAccessToken={this.props.setAccessToken}
+                environment={this.props.environment}
               />
             </Row>
           )}
