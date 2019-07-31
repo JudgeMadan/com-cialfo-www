@@ -193,6 +193,7 @@ class Footer extends React.Component {
                           {this.state.forItTeams}
                         </NavLink>
                       </ListGroup.Item> */}
+                      {this.generateSpace(this.props.location.pathname) == "us" && (
                       <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link"
@@ -201,6 +202,7 @@ class Footer extends React.Component {
                           {this.state.forSuperintendents}
                         </NavLink>
                       </ListGroup.Item>
+                    )}
                     </ListGroup>
                   </Nav>
                 </Col>
@@ -323,6 +325,7 @@ class Footer extends React.Component {
                           {this.state.forItTeams}
                         </NavLink>
                       </ListGroup.Item> */}
+                      {this.generateSpace(this.props.location.pathname) == "us" && (
                       <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
                         <NavLink
                           className="footer-nav-link"
@@ -331,6 +334,7 @@ class Footer extends React.Component {
                           {this.state.forSuperintendents}
                         </NavLink>
                       </ListGroup.Item>
+                    )}
                     </ListGroup>
                   </Nav>
                 </Col>
