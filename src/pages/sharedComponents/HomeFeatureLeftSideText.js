@@ -75,7 +75,7 @@ class HomeFeatureLeftSideText extends React.Component {
                     <Link
                       className="homeFeatureLink homePageFeaturesLeverageLinkText"
                       to={this.generateUrl(
-                        "features-research",
+                        this.props.linkUrl,
                         this.props.location
                       )}
                     >
@@ -118,7 +118,7 @@ class HomeFeatureLeftSideText extends React.Component {
                     <Link
                       className="homeFeatureLink homePageFeaturesLeverageLinkText"
                       to={this.generateUrl(
-                        "features-research",
+                        this.props.linkUrl,
                         this.props.location
                       )}
                     >
@@ -151,7 +151,7 @@ class HomeFeatureLeftSideText extends React.Component {
                 <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesLeverageLinkText"
-                    to={this.generateUrl("features-research", this.props.location)}
+                    to={this.generateUrl(this.props.linkUrl, this.props.location)}
                   >
                     {this.props.linkText}
                   </Link>

@@ -187,20 +187,22 @@ class Features extends React.Component {
           title={this.state.featurePageFeaturesSendDocumentTitle}
           blurb={this.state.featurePageFeaturesSendDocumentBlurb}
           linkText={this.state.featurePageFeaturesSendDocumentLinkText}
+          linkUrl="features-send"
         />
         {/* LEVERAGE*/}
         <HomeFeatureLeftSideText
           title={this.state.featurePageFeaturesLeverageTitle}
           blurb={this.state.featurePageFeaturesLeverageBlurb}
           linkText={this.state.featurePageFeaturesLeverageLinkText}
+          linkUrl="features-research"
         />
         {/* DISCOVER*/}
         <HomeFeatureRightSideText
           title={this.state.featurePageFeaturesDiscoverTitle}
           blurb={this.state.featurePageFeaturesDiscoverBlurb}
           linkText={this.state.featurePageFeaturesDiscoverLinkText}
+          linkUrl="features-report"
         />
-
       </Container>
     );
   }

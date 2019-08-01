@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import "./getADemo/GetADemo.css";
 import GetInTouchImg from "../img/GetInTouch.svg";
-import FeaturesSubfooter from "./features/FeaturesSubfooter";
+import FeaturesSubfooter from "./features/featuresSharedComponents/FeaturesSubfooter";
 import * as contentful from "contentful";
 import GetInTouchContactArray from "./getInTouch/GetInTouchContactArray";
 import MobileGetInTouchContactArray from "./getInTouch/MobileGetInTouchContactArray";
@@ -105,7 +105,7 @@ class GetInTouch extends React.Component {
         "Content-Type": "application/json"
       },
       body: e.target || null
-    }).then(function(response) {});
+    }).then(function (response) { });
   };
 
   render() {

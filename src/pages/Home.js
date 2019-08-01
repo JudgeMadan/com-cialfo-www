@@ -282,18 +282,21 @@ class Home extends React.Component {
           title={this.state.homePageFeaturesSendDocumentTitle}
           blurb={this.state.homePageFeaturesSendDocumentBlurb}
           linkText={this.state.homePageFeaturesSendDocumentLinkText}
+          linkUrl="features-send"
         />
         {/* LEVERAGE FEATURE */}
         <HomeFeatureLeftSideText
           title={this.state.homePageFeaturesLeverageTitle}
           blurb={this.state.homePageFeaturesLeverageBlurb}
           linkText={this.state.homePageFeaturesLeverageLinkText}
+          linkUrl="features-research"
         />
         {/* DISCOVER INSIGHTS */}
         <HomeFeatureRightSideText
           title={this.state.homePageFeaturesDiscoverTitle}
           blurb={this.state.homePageFeaturesDiscoverBlurb}
           linkText={this.state.homePageFeaturesDiscoverLinkText}
+          linkUrl="features-report"
         />
         <MediaQuery query="(min-device-width: 1224px)">
           <div className="homePageVideoCaseStudy">

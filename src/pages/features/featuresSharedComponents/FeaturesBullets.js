@@ -1,8 +1,8 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
-import "./Features.css";
-import Pointer from "../../img/Pointer.svg";
-class MobileFeaturesSendBullets extends React.Component {
+import "./../Features.css";
+import Pointer from "../../../img/Pointer.svg";
+class FeaturesBullets extends React.Component {
   render() {
     const bullets = this.props.bullets;
     let bulletsObject;
@@ -10,10 +10,12 @@ class MobileFeaturesSendBullets extends React.Component {
     if (bullets) {
       bulletsObject = bullets.map(bullet => {
         return (
-          <div className="bullet_point no-x-axis-margin">
+          <div className="bullet_point">
             <img src={Pointer} />
             &nbsp;
-            <span className="secondary_font"> {bullet}</span>
+            <span className="feature-bullet-text secondary_font">
+              {bullet.fields.bulletPoint}
+            </span>
           </div>
         );
       });
@@ -22,4 +24,4 @@ class MobileFeaturesSendBullets extends React.Component {
     return <Row>{bulletsObject}</Row>;
   }
 }
-export default MobileFeaturesSendBullets;
+export default FeaturesBullets;

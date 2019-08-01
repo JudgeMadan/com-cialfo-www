@@ -95,7 +95,7 @@ class HomeFeatureRightSideText extends React.Component {
                     <Link
                       className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
                       to={this.generateUrl(
-                        "features-send",
+                        this.props.linkUrl,
                         this.props.location
                       )}
                     >
@@ -122,7 +122,7 @@ class HomeFeatureRightSideText extends React.Component {
                     <Link
                       className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
                       to={this.generateUrl(
-                        "features-send",
+                        this.props.linkUrl,
                         this.props.location
                       )}
                     >
@@ -155,7 +155,7 @@ class HomeFeatureRightSideText extends React.Component {
                 <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
-                    to={this.generateUrl("features-send", this.props.location)}
+                    to={this.generateUrl(this.props.linkUrl, this.props.location)}
                   >
                     {this.props.linkText}
                   </Link>
