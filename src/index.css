@@ -118,7 +118,7 @@ therefore, total marquee width is about 395 * # of marquee Items */
   align-items: center;
   width: 200%;
   position: absolute;
-  animation: marquee 15s linear infinite;
+  animation: marquee 22s linear infinite;
   z-index: 2;
   margin-top: 30px;
 }
