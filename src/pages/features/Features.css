@@ -389,8 +389,21 @@
 }
 
 .medium-feature-home-subpage-image-sizing {
-  /* max-width: 594px; */
-  /* height: auto; */
+  /* max-width: 594px; 
+  height: auto; */
+}
+.max-width-800{
+  max-width: 800px;
+}
+
+.feature-subpage-image-sizing-medium{
+  max-width: 594px; 
+  height: auto;
+}
+
+.feature-subpage-image-centering{
+  display: flex;
+  justify-content: center;
 }
 
 .test-feature-subpage-image{
