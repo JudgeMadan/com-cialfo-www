@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
-// import Linked-In-Bug.png from ",,/../"
+import LinkedInBug from "../../img/LinkedInBug.png"
 import "./About.css";
 
 class AboutLeadershipTeam extends React.Component {
@@ -12,6 +12,7 @@ class AboutLeadershipTeam extends React.Component {
   }
 
   render() {
+    console.log(this.props.leadershipTeam)
     const leadershipTeam = this.props.leadershipTeam;
     let leadershipTeamObject;
     if (leadershipTeam) {
@@ -54,10 +55,12 @@ class AboutLeadershipTeam extends React.Component {
                   {leader.fields.aboutPageLeadersObjectSubtitle}
                 </h2>
               </Row>
-              <Row>
-                <a href="#">
-                  <img src="https://bit.ly/fcc-running-cats" alt="Three kittens running towards the camera." />
-                </a>
+              <Row className="linked-in-container">
+                <div className="linked-in-icon">
+                  <a href={leader.fields.aboutPageLeadersObjectLinkedIn}>
+                    <img className="linked-in-icon" src={LinkedInBug} />
+                  </a>
+                </div>
               </Row>
             </div>
           </Col>
