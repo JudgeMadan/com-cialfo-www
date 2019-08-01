@@ -110,7 +110,7 @@ class FeaturesLeftSideText extends React.Component {
               </Col>
               <Col className="feature-image-right-side-col vertical-center-image">
                 <img
-                  className="features-productImgRight feature-image-sizing"
+                  className="features-img features-productImgRight feature-image-sizing"
                   src={this.props.image}
                 />
               </Col>
@@ -121,7 +121,7 @@ class FeaturesLeftSideText extends React.Component {
               <Row className="feature-image-right-side-col vertical-center-image">
                 <Container className="medium-subpage-features-productImg subpage-features-margin-right">
                   <img
-                    className="medium-feature-subpage-image-sizing"
+                    className="features-img medium-feature-subpage-image-sizing"
                     src={this.props.image}
                   />
                 </Container>
@@ -152,7 +152,7 @@ class FeaturesLeftSideText extends React.Component {
           <Container className="mobile-bottom-border">
             <Row className="mobile-homePageFeaturesImage mt-5">
               <img
-                className="mobile-homePageImg"
+                className="features-img mobile-homePageImg"
                 src={this.props.image}
               />
             </Row>

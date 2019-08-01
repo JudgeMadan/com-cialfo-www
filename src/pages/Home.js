@@ -10,9 +10,11 @@ import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import "./home/Home.css";
 import Hero from "../img/home/devices.png";
-import Documents from "../img/home/CDocs.svg";
-import ResearchImage from "../img/home/SchoolsOverview.svg";
-import Reports from "../img/home/Reports.svg";
+import HeroUS from "../img/home/devices-us.png";
+import Documents from "../img/home/CDocs.png";
+import ResearchImage from "../img/home/SchoolsOverview.png";
+import ResearchImageUS from "../img/home/SchoolsOverview-us.png";
+import Discover from "../img/home/Discover.png";
 import Stroke10 from "../img/Stroke10.svg";
 import LightBlueRectangle from "../img/LightBlueRectangle.svg";
 import Oval from "../img/Oval.svg";
@@ -178,7 +180,7 @@ class Home extends React.Component {
                 </div>
               </Col>
               <Col className="homePageHeaderProductImage mr-5">
-                <img className="homePageImg" src={Hero} />
+                <img className="homePageImg" src={space == "us" ? HeroUS : Hero} />
               </Col>
             </Row>
           )}
@@ -186,7 +188,7 @@ class Home extends React.Component {
             <Row className="top_row mx-3">
               <Row className="homePageHeaderProductImage">
                 {/* MAKE THIS IMAGE SMALLER */}
-                <img className="small-homePageImg" src={Hero} />
+                <img className="small-homePageImg" src={space == "us" ? HeroUS : Hero} />
               </Row>
               <div className="home-medium-header-content center-in-row">
                 {/* <div className="center-in-row"> */}
@@ -283,12 +285,14 @@ class Home extends React.Component {
           blurb={this.state.homePageFeaturesSendDocumentBlurb}
           linkText={this.state.homePageFeaturesSendDocumentLinkText}
           linkUrl="features-send"
+          image={Documents}
         />
         {/* LEVERAGE FEATURE */}
         <HomeFeatureLeftSideText
           title={this.state.homePageFeaturesLeverageTitle}
           blurb={this.state.homePageFeaturesLeverageBlurb}
           linkText={this.state.homePageFeaturesLeverageLinkText}
+          image={space == "us" ? ResearchImageUS : ResearchImage}
           linkUrl="features-research"
         />
         {/* DISCOVER INSIGHTS */}
@@ -297,6 +301,7 @@ class Home extends React.Component {
           blurb={this.state.homePageFeaturesDiscoverBlurb}
           linkText={this.state.homePageFeaturesDiscoverLinkText}
           linkUrl="features-report"
+          image={Discover}
         />
         <MediaQuery query="(min-device-width: 1224px)">
           <div className="homePageVideoCaseStudy">

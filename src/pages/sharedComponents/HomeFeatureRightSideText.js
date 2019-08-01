@@ -9,7 +9,6 @@ import "../home/Home.css";
 import { withRouter } from "react-router-dom";
 import PathToRegexp, { compile, parse } from "path-to-regexp";
 import MediaQuery from "react-responsive";
-import Documents from "../../img/home/CDocs.svg";
 
 class HomeFeatureRightSideText extends React.Component {
   constructor(props) {
@@ -62,8 +61,8 @@ class HomeFeatureRightSideText extends React.Component {
             {this.state.width > 1250 && (
               <Col className="feature-image-left-side-col vertical-center-image">
                 <img
-                  className="subpage-features-productImgLeft feature-image-sizing"
-                  src={Documents}
+                  className="features-img subpage-features-productImgLeft feature-image-sizing"
+                  src={this.props.image}
                 />
               </Col>
 
@@ -72,8 +71,8 @@ class HomeFeatureRightSideText extends React.Component {
               <Row className="feature-image-left-side-col vertical-center-image">
                 <Container className="medium-subpage-features-productImg subpage-features-margin-right">
                   <img
-                    className="medium-feature-subpage-image-sizing"
-                    src={Documents}
+                    className="features-img medium-feature-subpage-image-sizing"
+                    src={this.props.image}
                   />
                 </Container>
               </Row>
@@ -138,7 +137,7 @@ class HomeFeatureRightSideText extends React.Component {
         <MediaQuery query="(max-device-width: 1223px)">
           <Container className="mobile-bottom-border">
             <Row className="mobile-homePageFeaturesImage mt-5">
-              <img className="mobile-homePageImg" src={Documents} />
+              <img className="features-img mobile-homePageImg" src={this.props.image} />
             </Row>
             <Row className="mobile-homePageFeaturesText">
               <div className="homePageFeaturesRightSideTextObject mt-3">

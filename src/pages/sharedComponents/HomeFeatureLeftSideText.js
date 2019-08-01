@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import PathToRegexp, { compile, parse } from "path-to-regexp";
 import MediaQuery from "react-responsive";
-import ResearchImage from "../../img/home/SchoolsOverview.svg";
 
 class HomeFeatureLeftSideText extends React.Component {
   constructor(props) {
@@ -53,6 +52,7 @@ class HomeFeatureLeftSideText extends React.Component {
   };
 
   render() {
+    const space = this.props.match.params.space;
     return (
       <div>
         {/* FULL SCREEN LEVERAGE TEXT */}
@@ -88,16 +88,16 @@ class HomeFeatureLeftSideText extends React.Component {
             {this.state.width <= 1250 && (
               <Col className="feature-image-right-side-col vertical-center-image">
                 <img
-                  className="features-productImgRight medium-feature-subpage-image-sizing-left "
-                  src={ResearchImage}
+                  className="features-img features-productImgRight medium-feature-subpage-image-sizing-left "
+                  src={this.props.image}
                 />
               </Col>
             )}
             {this.state.width > 1250 && (
               <Col className="feature-image-right-side-col vertical-center-image">
                 <img
-                  className="features-productImgRight feature-image-sizing"
-                  src={ResearchImage}
+                  className="features-img features-productImgRight feature-image-sizing"
+                  src={this.props.image}
                 />
               </Col>
             )}
@@ -134,7 +134,7 @@ class HomeFeatureLeftSideText extends React.Component {
         <MediaQuery query="(max-device-width: 1223px)">
           <Container className="mobile-bottom-border">
             <Row className="mobile-homePageFeaturesImage mt-5">
-              <img className="mobile-homePageImg" src={ResearchImage} />
+              <img className="features-img mobile-homePageImg" src={this.props.image} />
             </Row>
             <Row className="homePageFeaturesText">
               <div className="homePageFeaturesRightSideTextObject mt-3">
