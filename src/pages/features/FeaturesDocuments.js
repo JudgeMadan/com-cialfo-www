@@ -5,7 +5,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./Features.css";
 import FeaturesSubfooter from "./featuresSharedComponents/FeaturesSubfooter";
-import FeaturesSubPage from "./featuresSharedComponents/FeaturesSubPage"
 import FeaturesBullets from "./featuresSharedComponents/FeaturesBullets";
 import MobileFeaturesBullets from "./featuresSharedComponents/MobileFeaturesBullets";
 import Oval from "../../img/Oval.svg";

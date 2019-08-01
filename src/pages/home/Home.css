@@ -2,6 +2,10 @@
   font-family: "domainedisplay_regular", Arial, Helvetica, sans-serif;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .secondary_font {
   font-family: "roboto_regular";
   font-style: normal;
@@ -146,20 +150,20 @@
   padding: 100px 0 100px 0;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1200px) {
   .home-homePageFeaturesImage {
     display: flex;
     align-items: center;
     padding: 25px 0 25px 0;
   }
 }
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1200px) {
   .home-left-blue-background {
     background: linear-gradient(to right, #ebf9ff 50%, transparent 50%);
   }
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1200px) {
   .home-right-blue-background {
     background: linear-gradient(to left, #ebf9ff 50%, transparent 50%);
   }
@@ -229,7 +233,7 @@
   margin-bottom: -5rem;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1200px) {
   .homeRows {
     display: flex;
     flex-direction: column;
@@ -372,7 +376,7 @@
   min-width: 500px;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1200px) {
   .home-productImgRight {
     position: relative;
     width: 150%;
@@ -419,7 +423,7 @@
   min-width: 500px;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1200px) {
   .home-productImgLeft {
     position: relative;
     width: 150%;
@@ -466,7 +470,7 @@
   position: absolute;
   z-index: 1;
   margin-top: -100px;
-  margin-left: -1250px;
+  margin-left: -1200px;
 }
 
 .custom-left-align-light-blue-background {
@@ -481,7 +485,7 @@
   margin-left: -800px;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1200px) {
   .home-custom-left-align-light-blue-background {
     /* position: absolute;
     z-index: 1;
@@ -496,7 +500,7 @@
   margin-left: 750px;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1200px) {
   .home-right-align-light-blue-background {
     /* position: absolute;
     z-index: 1;
