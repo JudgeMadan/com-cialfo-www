@@ -57,7 +57,7 @@ class HomeFeatureLeftSideText extends React.Component {
       <div>
         {/* FULL SCREEN LEVERAGE TEXT */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="homeRows">
+          <Row className="homeRows mb-5">
             {this.state.width > 1250 && (
               <Col className="homePageFeaturesText">
                 <div className="homePageFeaturesLeftSideTextObject">
@@ -86,20 +86,18 @@ class HomeFeatureLeftSideText extends React.Component {
               </Col>
             )}
             {this.state.width <= 1250 && (
-              <Row className="home-right-blue-background home-homePageFeaturesImage homePageFeaturesImageBackgroundReverse mt-5 mb-5">
-                <img className="home-productImgRight" src={ResearchImage} />
+              <Col className="feature-image-right-side-col vertical-center-image">
                 <img
-                  className="home-right-align-light-blue-background"
-                  src={LightBlueRectangle}
+                  className="features-productImgRight medium-feature-subpage-image-sizing-left "
+                  src={ResearchImage}
                 />
-              </Row>
+              </Col>
             )}
             {this.state.width > 1250 && (
-              <Col className="homePageFeaturesImage homePageFeaturesImageBackgroundReverse">
-                <img className="productImgRight" src={ResearchImage} />
+              <Col className="feature-image-right-side-col vertical-center-image">
                 <img
-                  className="home-right-align-light-blue-background"
-                  src={LightBlueRectangle}
+                  className="features-productImgRight feature-image-sizing"
+                  src={ResearchImage}
                 />
               </Col>
             )}

@@ -58,23 +58,24 @@ class HomeFeatureRightSideText extends React.Component {
     return (
       <div>
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="homeRows">
+          <Row className="homeRows mb-5">
             {this.state.width > 1250 && (
-              <Col className="homePageFeaturesImage homePageFeaturesImageBackground">
+              <Col className="feature-image-left-side-col vertical-center-image">
                 <img
-                  className="home-custom-left-align-light-blue-background"
-                  src={LightBlueRectangle}
+                  className="subpage-features-productImgLeft feature-image-sizing"
+                  src={Documents}
                 />
-                <img className="home-productImgLeft" src={Documents} />
               </Col>
+
             )}
             {this.state.width <= 1250 && (
-              <Row className="home-left-blue-background home-homePageFeaturesImage homePageFeaturesImageBackground mb-5">
-                <img
-                  className="home-custom-left-align-light-blue-background"
-                  src={LightBlueRectangle}
-                />
-                <img className="home-productImgLeft" src={Documents} />
+              <Row className="feature-image-left-side-col vertical-center-image">
+                <Container className="medium-subpage-features-productImg subpage-features-margin-right">
+                  <img
+                    className="medium-feature-subpage-image-sizing"
+                    src={Documents}
+                  />
+                </Container>
               </Row>
             )}
             {this.state.width > 1250 && (
@@ -105,7 +106,7 @@ class HomeFeatureRightSideText extends React.Component {
               </Col>
             )}
             {this.state.width <= 1250 && (
-              <Row className="homePageFeaturesText mb-5 pb-3">
+              <Row className="homePageFeaturesText my-5 pb-3">
                 <div className="homePageFeaturesRightSideTextObject">
                   <Row>
                     <h1 className="primary_font">
@@ -163,7 +164,7 @@ class HomeFeatureRightSideText extends React.Component {
             </Row>
           </Container>
         </MediaQuery>
-      </div>
+      </div >
     );
   }
 }

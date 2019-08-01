@@ -361,6 +361,13 @@
 .medium-feature-subpage-image-sizing {
   max-width: 594px;
   height: auto;
+  margin-right: 300px;
+}
+
+.medium-feature-subpage-image-sizing-left {
+  max-width: 594px;
+  height: auto;
+  margin-left: 300px;
 }
 
 .medium-right-feature-image-sizing {
@@ -407,7 +414,7 @@
 }
 
 .subpage-features-margin-right {
-  padding-right: 200px;
+  padding-right: 100px;
 }
 
 @media screen and (max-width: 1000px) {

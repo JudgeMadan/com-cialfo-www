@@ -226,7 +226,6 @@ class FeaturesDocuments extends React.Component {
                 <img
                   className="features-productImgRight feature-image-sizing"
                   src={this.state.documentsTranscriptImage}
-                // src={this.state.documentsExploreImage}
                 />
               </Col>
             </Row>
