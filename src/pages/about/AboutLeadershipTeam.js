@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
+// import Linked-In-Bug.png from ",,/../"
 import "./About.css";
 
 class AboutLeadershipTeam extends React.Component {
@@ -52,6 +53,11 @@ class AboutLeadershipTeam extends React.Component {
                 <h2 className="secondary_font">
                   {leader.fields.aboutPageLeadersObjectSubtitle}
                 </h2>
+              </Row>
+              <Row>
+                <a href="#">
+                  <img src="https://bit.ly/fcc-running-cats" alt="Three kittens running towards the camera." />
+                </a>
               </Row>
             </div>
           </Col>
