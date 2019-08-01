@@ -12,7 +12,6 @@ class AboutLeadershipTeam extends React.Component {
   }
 
   render() {
-    console.log(this.props.leadershipTeam)
     const leadershipTeam = this.props.leadershipTeam;
     let leadershipTeamObject;
     if (leadershipTeam) {
