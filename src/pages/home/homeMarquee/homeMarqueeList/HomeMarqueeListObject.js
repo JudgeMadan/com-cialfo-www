@@ -2,7 +2,6 @@ import React from "react";
 import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import LinkedInBug from "../../../../img/LinkedInBug.png"
 
 class HomeMarqueeListObject extends React.Component {
   constructor(props) {
