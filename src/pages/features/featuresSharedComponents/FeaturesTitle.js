@@ -3,19 +3,18 @@ import * as contentful from "contentful";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "./Features.css";
-import FeaturesSubfooter from "./featuresSharedComponents/FeaturesSubfooter";
-import FeaturesBullets from "./featuresSharedComponents/FeaturesBullets";
-import MobileFeaturesBullets from "./featuresSharedComponents/MobileFeaturesBullets";
-import Oval from "../../img/Oval.svg";
-import Line from "../../img/Line.svg";
+import "./../Features.css";
+import FeaturesSubfooter from "./FeaturesSubfooter";
+import FeaturesRightSideText from "./FeaturesRightSideText"
+import FeaturesLeftSideText from "./FeaturesLeftSideText"
+import FeaturesBullets from "./FeaturesBullets";
+import MobileFeaturesBullets from "./MobileFeaturesBullets";
+import Oval from "../../../img/Oval.svg";
+import Line from "../../../img/Line.svg";
 import MediaQuery from "react-responsive";
-import FeaturesRightSideText from "./featuresSharedComponents/FeaturesRightSideText"
-import FeaturesLeftSideText from "./featuresSharedComponents/FeaturesLeftSideText"
-import FeaturesTitle from "./featuresSharedComponents/FeaturesTitle"
 import { withRouter } from "react-router-dom";
 
-class FeaturesDocuments extends React.Component {
+class FeaturesTitle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -89,28 +88,34 @@ class FeaturesDocuments extends React.Component {
     const space = this.props.match.params.space;
     return (
       <Container className="featuresSendPage" fluid={true}>
-        <FeaturesTitle
-          setSpace={this.setSpace}
-          setAccessToken={this.setAccessToken}
-          title={this.state.documentsTitle}
-          heroImage={this.state.featuresResearchHero}
-        />
-        <FeaturesRightSideText
-          setSpace={this.setSpace}
-          setAccessToken={this.setAccessToken}
-          image={this.state.documentsExploreImage}
-          title={this.state.documentsExploreTitle}
-          bullets={this.state.documentsExploreBlurb}
-        />
-        <FeaturesLeftSideText
-          setSpace={this.setSpace}
-          setAccessToken={this.setAccessToken}
-          image={this.state.documentsTranscriptImage}
-          title={this.state.documentsTranscriptTitle}
-          bullets={this.state.documentsTranscriptBlurb}
-        />
-      </Container >
+        {/* FULL SCREEN PAGE HEADER */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <Row className="features-titleContainer mb-5">
+            <h1 className="primary_font">{this.props.title}</h1>
+          </Row>
+          <Row className="featuresVideoEmbed">
+            <div>
+              <img className="features-oval" src={Oval} />
+              <img className="features-line" src={Line} />
+              <Row>
+                <img className="features-hero-image" src={this.props.heroImage} />
+              </Row>
+            </div>
+          </Row>
+        </MediaQuery>
+        {/* MOBILE PAGE HEADER */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <Row className="features-titleContainer mb-5">
+            <h1 className="primary_font">{this.props.title}</h1>
+          </Row>
+          <Container className="featuresVideoEmbed mobile-bottom-border pb-5">
+            <Row className="center-in-row">
+              <img className="mobile-features-hero-image" src={this.props.heroImage} />
+            </Row>
+          </Container>
+        </MediaQuery>
+      </Container>
     );
   }
 }
-export default withRouter(FeaturesDocuments);
+export default withRouter(FeaturesTitle);

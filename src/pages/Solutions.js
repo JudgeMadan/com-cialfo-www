@@ -7,7 +7,7 @@ import MobileSolutionsHeader from "./solutions/MobileSolutionsHeader";
 import SolutionsRightSideText from "./solutions/SolutionsRightSideText";
 import MobileSolutionsContentText from "./solutions/MobileSolutionsContentText";
 import SolutionsLeftSideText from "./solutions/SolutionsLeftSideText";
-import FeaturesSubfooter from "./features/FeaturesSubfooter";
+import FeaturesSubfooter from "./features/featuresSharedComponents/FeaturesSubfooter";
 import PartnerImages from "./PartnerImages";
 import MobilePartnerImages from "./MobilePartnerImages";
 import MediaQuery from "react-responsive";
@@ -33,7 +33,8 @@ class Solutions extends React.Component {
 
   client = contentful.createClient({
     space: this.setSpace(),
-    accessToken: this.setAccessToken()
+    accessToken: this.setAccessToken(),
+    environment: this.props.environment
   });
 
   componentDidMount() {
@@ -120,31 +121,9 @@ class Solutions extends React.Component {
             image={this.state.solutionsForCounselorImage}
           />
         </MediaQuery>
-        {/* FULL SCREEN FOR SUPERINTENDENTS */}
-        <MediaQuery query="(min-device-width: 1224px)">
-          <SolutionsLeftSideText
-            title={this.state.solutionsExtraTitle}
-            blurb={this.state.solutionsExtraBlurb}
-            link={this.state.solutionsExtraLinkText}
-            url={this.state.solutionsExtraLinkUrl}
-            linkStyle={this.state.forSuperintendents}
-            image={this.state.solutionsForSuperintendentsImage}
-          />
-        </MediaQuery>
-        {/* MOBILE FOR SUPERINTENDENTS */}
-        <MediaQuery query="(max-device-width: 1223px)">
-          <MobileSolutionsContentText
-            title={this.state.solutionsExtraTitle}
-            blurb={this.state.solutionsExtraBlurb}
-            link={this.state.solutionsExtraLinkText}
-            url={this.state.solutionsExtraLinkUrl}
-            linkStyle={this.state.forSuperintendents}
-            image={this.state.solutionsForSuperintendentsImage}
-          />
-        </MediaQuery>
         {/* FULL SCREEN FOR PRINCIPALS */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <SolutionsRightSideText
+          <SolutionsLeftSideText
             title={this.state.homePageFeaturesDiscoverTitle}
             blurb={this.state.homePageFeaturesDiscoverBlurb}
             link={this.state.homePageFeaturesDiscoverLinkText}
@@ -165,6 +144,32 @@ class Solutions extends React.Component {
           />
         </MediaQuery>
         <div className="solutions-bottom-spacing" />
+        {/* FULL SCREEN FOR SUPERINTENDENTS */}
+        {space == "us" && (
+          <MediaQuery query="(min-device-width: 1224px)">
+            <SolutionsRightSideText
+              title={this.state.solutionsExtraTitle}
+              blurb={this.state.solutionsExtraBlurb}
+              link={this.state.solutionsExtraLinkText}
+              url={this.state.solutionsExtraLinkUrl}
+              linkStyle={this.state.forSuperintendents}
+              image={this.state.solutionsForSuperintendentsImage}
+            />
+          </MediaQuery>
+        )}
+        {/* MOBILE FOR SUPERINTENDENTS */}
+        {space == "us" && (
+          <MediaQuery query="(max-device-width: 1223px)">
+            <MobileSolutionsContentText
+              title={this.state.solutionsExtraTitle}
+              blurb={this.state.solutionsExtraBlurb}
+              link={this.state.solutionsExtraLinkText}
+              url={this.state.solutionsExtraLinkUrl}
+              linkStyle={this.state.forSuperintendents}
+              image={this.state.solutionsForSuperintendentsImage}
+            />
+          </MediaQuery>
+        )}
         {/* FULL SCREEN PARTNERS IMAGES */}
         <MediaQuery query="(min-device-width: 1224px)">
           <div className="full-width-light-blue center-in-row">

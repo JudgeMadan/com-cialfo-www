@@ -1,7 +1,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
-import "./Features.css";
-import Pointer from "../../img/Pointer.svg";
+import "./../Features.css";
+import Pointer from "../../../img/Pointer.svg";
 class MobileFeaturesBullets extends React.Component {
   render() {
     const bullets = this.props.bullets;

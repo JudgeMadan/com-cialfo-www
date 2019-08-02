@@ -16,7 +16,8 @@ class ThankYou extends React.Component {
 
   client = contentful.createClient({
     space: this.props.space,
-    accessToken: this.props.accessToken
+    accessToken: this.props.accessToken,
+    environment: this.props.environment
   });
 
   componentDidMount() {

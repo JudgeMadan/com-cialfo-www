@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import "./getADemo/GetADemo.css";
 import DemoText from "../img/GetADemo.svg";
-import FeaturesSubfooter from "./features/FeaturesSubfooter";
+import FeaturesSubfooter from "./features/featuresSharedComponents/FeaturesSubfooter";
 import * as contentful from "contentful";
 import GrayLines from "../img/GrayLines.svg";
 import MediaQuery from "react-responsive";
@@ -35,7 +35,8 @@ class GetADemo extends React.Component {
 
   client = contentful.createClient({
     space: this.setSpace(),
-    accessToken: this.setAccessToken()
+    accessToken: this.setAccessToken(),
+    environment: this.props.environment
   });
 
   componentDidMount() {

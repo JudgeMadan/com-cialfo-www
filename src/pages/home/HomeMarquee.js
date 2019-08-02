@@ -23,7 +23,8 @@ class HomeMarquee extends React.Component {
 
   client = contentful.createClient({
     space: this.setSpace(),
-    accessToken: this.setAccessToken()
+    accessToken: this.setAccessToken(),
+    environment: this.props.environment
   });
 
   componentDidMount() {
@@ -62,6 +63,7 @@ class HomeMarquee extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
             <HomeMarqueeList
               locale={this.props.locale}
@@ -70,6 +72,7 @@ class HomeMarquee extends React.Component {
               spaces={this.props.spaces}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
           </div>
           <img className="marquee-oval" src={BlueOval} />

@@ -109,7 +109,8 @@ class Header extends React.Component {
     contentful
       .createClient({
         space: this.setSpace(),
-        accessToken: this.setAccessToken()
+        accessToken: this.setAccessToken(),
+        environment: this.props.environment
       })
       .getEntries({
         content_type: "navBar",
@@ -159,6 +160,7 @@ class Header extends React.Component {
             demoPage={this.state.demoPage}
             featuresPage={this.state.featuresPage}
             resourcePage={this.state.resourcePage}
+            eventsPage={this.state.eventsPage}
             solutionsPage={this.state.solutionsPage}
             country_code={this.props.country_code}
             locale={this.props.locale}
