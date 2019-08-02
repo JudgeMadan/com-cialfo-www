@@ -359,6 +359,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: auto;
+  max-height: 40px;
 }
 
 .productImgRight {
@@ -394,8 +396,8 @@
 }
 
 .medium-feature-home-subpage-image-sizing {
-  /* max-width: 594px; 
-  height: auto; */
+  max-width: 594px; 
+  height: auto;
 }
 .max-width-800{
   max-width: 800px;

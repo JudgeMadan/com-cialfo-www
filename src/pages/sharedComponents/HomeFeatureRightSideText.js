@@ -70,11 +70,13 @@ class HomeFeatureRightSideText extends React.Component {
 
             {this.state.width <= 1200 && (
               <Col className="feature-home-page-shared-component-image-right-side-col 
-              medium-home-left-side-text-image"> 
-                <img
-                  className="features-img medium-feature-home-subpage-image-sizing"
-                  src={this.props.image}
-                />
+              medium-home-left-side-text-image medium-home-feature-img-div-container"> 
+                <div className="medium-home-feature-img-div">
+                    <img
+                      className="features-img medium-feature-home-subpage-image-sizing"
+                      src={this.props.image}
+                    />
+                </div>
               </Col>
             )}
             {this.state.width > 1200 && (
