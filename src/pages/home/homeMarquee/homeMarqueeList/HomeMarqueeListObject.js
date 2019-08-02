@@ -2,6 +2,7 @@ import React from "react";
 import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import LinkedInBug from "../../../../img/LinkedInBug.png"
 
 class HomeMarqueeListObject extends React.Component {
   constructor(props) {
@@ -33,11 +34,13 @@ class HomeMarqueeListObject extends React.Component {
             {marqueeItem.fields.marqueeAuthor}
           </p>
         </Row>
-        <Row className="marquee-footer">
-          <p className="secondary_font">
-            {marqueeItem.fields.marqueeAuthorSchool}
-          </p>
-        </Row>
+        {marqueeItem.fields.marqueeSchoolImage && (
+          <Row className="marquee-school-image-container px-3">
+            <div className="marquee-school-image">
+              <img className="marquee-school-image" src={marqueeItem.fields.marqueeSchoolImage.fields.file.url} />
+            </div>
+          </Row>
+        )}
       </div>
     );
   }
