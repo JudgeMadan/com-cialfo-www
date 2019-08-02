@@ -12,7 +12,7 @@ import Line from "../../../img/Line.svg";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
 
-class FeaturesLeftSideText extends React.Component {
+class FeaturesSendLeftSideText extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -88,7 +88,7 @@ class FeaturesLeftSideText extends React.Component {
       <div>
         {/* FULL WIDTH TRANSCRIPT */}
         <MediaQuery query="(min-device-width: 1224px)">
-          {this.state.width > 1000 && (
+          {this.state.width > 1200 && (
             <Row className="mb-5">
               <Col className="featureSubSectionTextAlign">
                 <Container>
@@ -116,27 +116,28 @@ class FeaturesLeftSideText extends React.Component {
               </Col>
             </Row>
           )}
-          {this.state.width <= 1000 && (
+          {this.state.width <= 1200 && (
             <div>
-              <Row className="feature-image-right-side-col vertical-center-image">
-                <Container className="medium-subpage-features-productImg subpage-features-margin-right">
+              <Col className="feature-home-page-shared-component-image-right-side-col 
+              medium-home-left-side-text-image center-in-row"> 
+                <div className="feature-subpage-image-centering"> 
                   <img
-                    className="medium-feature-subpage-image-sizing"
+                    className="feature-subpage-image-sizing-medium"
                     src={this.props.image}
                   />
-                </Container>
-              </Row>
+                </div>
+              </Col>
               <Row className="featureSubSectionTextAlign my-5">
-                <Container>
+                <Container className="center-in-row">
                   <Row>
-                    <Col>
-                      <h1 className="primary_font">
+                    <Col className="center-in-row max-width-800">
+                      <h1 className="primary_font text-center">
                         {this.props.title}
                       </h1>
                     </Col>
                   </Row>
                   <Row>
-                    <Col>
+                    <Col className="center-in-row max-width-800 mx-5">
                       <FeaturesSendBullets
                         bullets={this.props.bullets}
                       />
@@ -179,4 +180,4 @@ class FeaturesLeftSideText extends React.Component {
     );
   }
 }
-export default withRouter(FeaturesLeftSideText);
+export default withRouter(FeaturesSendLeftSideText);

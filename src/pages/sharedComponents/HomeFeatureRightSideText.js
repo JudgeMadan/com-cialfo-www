@@ -59,8 +59,8 @@ class HomeFeatureRightSideText extends React.Component {
       <div>
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="homeRows mb-5">
-            {this.state.width > 1250 && (
-              <Col className="feature-image-left-side-col vertical-center-image">
+            {this.state.width > 1200 && (
+              <Col className="feature-home-page-shared-component-image-left-side-col vertical-center-image">
                 <img
                   className="subpage-features-productImgLeft feature-image-sizing"
                   src={Documents}
@@ -68,17 +68,16 @@ class HomeFeatureRightSideText extends React.Component {
               </Col>
 
             )}
-            {this.state.width <= 1250 && (
-              <Row className="feature-image-left-side-col vertical-center-image">
-                <Container className="medium-subpage-features-productImg subpage-features-margin-right">
-                  <img
-                    className="medium-feature-subpage-image-sizing"
-                    src={Documents}
-                  />
-                </Container>
-              </Row>
+            {this.state.width <= 1200 && (
+              <Col className="feature-home-page-shared-component-image-right-side-col 
+              medium-home-left-side-text-image"> 
+                <img
+                  className="medium-feature-home-subpage-image-sizing"
+                  src={Documents}
+                />
+              </Col>
             )}
-            {this.state.width > 1250 && (
+            {this.state.width > 1200 && (
               <Col className="homePageFeaturesText">
                 <div className="homePageFeaturesRightSideTextObject">
                   <Row>
@@ -105,22 +104,22 @@ class HomeFeatureRightSideText extends React.Component {
                 </div>
               </Col>
             )}
-            {this.state.width <= 1250 && (
+            {this.state.width <= 1200 && (
               <Row className="homePageFeaturesText my-5 pb-3">
                 <div className="homePageFeaturesRightSideTextObject">
-                  <Row>
-                    <h1 className="primary_font">
+                  <Row className="center-in-row">
+                    <h1 className="primary_font text-center">
                       {this.props.title}
                     </h1>
                   </Row>
-                  <Row>
-                    <p className="secondary_font">
+                  <Row className="center-in-row">
+                    <p className="secondary_font text-center">
                       {this.props.blurb}
                     </p>
                   </Row>
-                  <Row>
+                  <Row className="center-in-row">
                     <Link
-                      className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
+                      className="homeFeatureLink homePageFeaturesSendDocumentLinkText text-center"
                       to={this.generateUrl(
                         this.props.linkUrl,
                         this.props.location
