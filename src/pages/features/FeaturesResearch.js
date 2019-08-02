@@ -12,7 +12,6 @@ import Oval from "../../img/Oval.svg";
 import Line from "../../img/Line.svg";
 import ThinLightBlueRectangle from "../../img/ThinLightBlueRectangle.svg";
 import MediaQuery from "react-responsive";
-import FeaturesSubPage from "./featuresSharedComponents/FeaturesSubPage"
 import FeaturesRightSideText from "./featuresSharedComponents/FeaturesRightSideText"
 import FeaturesLeftSideText from "./featuresSharedComponents/FeaturesLeftSideText"
 import FeaturesTitle from "./featuresSharedComponents/FeaturesTitle"

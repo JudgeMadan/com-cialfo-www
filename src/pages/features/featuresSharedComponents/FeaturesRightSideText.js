@@ -88,7 +88,7 @@ class FeaturesRightSideText extends React.Component {
       <div>
         {/* FULL WIDTH EXPLORE */}
         <MediaQuery query="(min-device-width: 1224px)">
-          {this.state.width > 1000 && (
+          {this.state.width > 1200 && (
             <Row>
               <Col className="feature-image-left-side-col vertical-center-image mb-5">
                 <img
@@ -116,29 +116,31 @@ class FeaturesRightSideText extends React.Component {
               </Col>
             </Row>
           )}
-          {this.state.width <= 1000 && (
+          {this.state.width <= 1200 && (
             <div>
-              <Row className="feature-image-left-side-col vertical-center-image">
-                <Container className="medium-subpage-features-productImg subpage-features-margin-right">
+              <Col className="feature-home-page-shared-component-image-right-side-col 
+              medium-home-left-side-text-image"> 
+                <div className="feature-subpage-image-centering"> 
                   <img
-                    className="features-img medium-feature-subpage-image-sizing"
+                    className="features-img feature-subpage-image-sizing-medium"
                     src={this.props.image}
                   />
-                </Container>
-              </Row>
-              <Row className="featureSubSectionTextAlign my-5">
-                <Container>
+                </div>
+              </Col>
+              <Row className="featureSubSectionTextAlign  my-5">
+                <Container className="center-in-row">
                   <Row>
-                    <Col>
-                      <h1 className="primary_font">
+                    <Col className="center-in-row max-width-800">
+                      <h1 className="primary_font text-center">
                         {this.props.title}
                       </h1>
                     </Col>
                   </Row>
                   <Row>
-                    <Col>
+                    <Col className="center-in-row max-width-800 mx-5">
                       <FeaturesBullets
                         bullets={this.props.bullets}
+                        className="mx-5"
                       />
                     </Col>
                   </Row>

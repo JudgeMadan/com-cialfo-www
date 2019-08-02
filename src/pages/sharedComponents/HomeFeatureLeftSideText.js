@@ -58,7 +58,7 @@ class HomeFeatureLeftSideText extends React.Component {
         {/* FULL SCREEN LEVERAGE TEXT */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="homeRows mb-5">
-            {this.state.width > 1250 && (
+            {this.state.width > 1200 && (
               <Col className="homePageFeaturesText">
                 <div className="homePageFeaturesLeftSideTextObject">
                   <Row>
@@ -85,38 +85,39 @@ class HomeFeatureLeftSideText extends React.Component {
                 </div>
               </Col>
             )}
-            {this.state.width <= 1250 && (
-              <Col className="feature-image-right-side-col vertical-center-image">
+            {this.state.width <= 1200 && (
+              <Col className="feature-home-page-shared-component-image-right-side-col 
+              medium-home-left-side-text-image"> 
                 <img
-                  className="features-img features-productImgRight medium-feature-subpage-image-sizing-left "
+                  className="features-img medium-feature-home-subpage-image-sizing"
                   src={this.props.image}
                 />
               </Col>
             )}
-            {this.state.width > 1250 && (
-              <Col className="feature-image-right-side-col vertical-center-image">
+            {this.state.width > 1200 && (
+              <Col className="feature-home-page-shared-component-image-right-side-col vertical-center-image">
                 <img
                   className="features-img features-productImgRight feature-image-sizing"
                   src={this.props.image}
                 />
               </Col>
             )}
-            {this.state.width <= 1250 && (
+            {this.state.width <= 1200 && (
               <Row className="homePageFeaturesText my-5 pb-3">
                 <div className="homePageFeaturesLeftSideTextObject">
-                  <Row>
-                    <h1 className="primary_font">
+                  <Row className="center-in-row">
+                    <h1 className="primary_font text-center">
                       {this.props.title}
                     </h1>
                   </Row>
-                  <Row>
-                    <p className="secondary_font">
+                  <Row className="center-in-row">
+                    <p className="secondary_font text-center">
                       {this.props.blurb}
                     </p>
                   </Row>
-                  <Row>
+                  <Row className="center-in-row">
                     <Link
-                      className="homeFeatureLink homePageFeaturesLeverageLinkText"
+                      className="homeFeatureLink homePageFeaturesLeverageLinkText text-center"
                       to={this.generateUrl(
                         this.props.linkUrl,
                         this.props.location
