@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
+import LinkedInBug from "../../img/LinkedInBug.png"
 import "./About.css";
 
 class AboutLeadershipTeam extends React.Component {
@@ -52,6 +53,13 @@ class AboutLeadershipTeam extends React.Component {
                 <h2 className="secondary_font">
                   {leader.fields.aboutPageLeadersObjectSubtitle}
                 </h2>
+              </Row>
+              <Row className="linked-in-container">
+                <div className="linked-in-icon">
+                  <a href={leader.fields.aboutPageLeadersObjectLinkedIn}>
+                    <img className="linked-in-icon" src={LinkedInBug} />
+                  </a>
+                </div>
               </Row>
             </div>
           </Col>

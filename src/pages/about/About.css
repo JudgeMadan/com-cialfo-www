@@ -293,3 +293,12 @@
 .about-leadership-team-row {
   justify-content: space-around;
 }
+
+.linked-in-icon{
+  max-width: 20px;
+}
+
+.linked-in-container{
+  display: flex;
+  justify-content: center;
+}
