@@ -7,9 +7,10 @@ import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import "./home/Home.css";
-import Documents from "../img/home/CDocs.svg";
-import ResearchImage from "../img/home/SchoolsOverview.svg";
-import Reports from "../img/home/Reports.svg";
+import Documents from "../img/home/CDocs.png";
+import ResearchImage from "../img/home/SchoolsOverview.png";
+import ResearchImageUS from "../img/home/SchoolsOverview-us.png";
+import Discover from "../img/home/Discover.png";
 import Oval from "../img/Oval.svg";
 import Line from "../img/Line.svg";
 import LightBlueRectangle from "../img/LightBlueRectangle.svg";
@@ -188,12 +189,14 @@ class Features extends React.Component {
           blurb={this.state.featurePageFeaturesSendDocumentBlurb}
           linkText={this.state.featurePageFeaturesSendDocumentLinkText}
           linkUrl="features-send"
+          image={Documents}
         />
         {/* LEVERAGE*/}
         <HomeFeatureLeftSideText
           title={this.state.featurePageFeaturesLeverageTitle}
           blurb={this.state.featurePageFeaturesLeverageBlurb}
           linkText={this.state.featurePageFeaturesLeverageLinkText}
+          image={space == "us" ? ResearchImageUS : ResearchImage}
           linkUrl="features-research"
         />
         {/* DISCOVER*/}
@@ -201,6 +204,7 @@ class Features extends React.Component {
           title={this.state.featurePageFeaturesDiscoverTitle}
           blurb={this.state.featurePageFeaturesDiscoverBlurb}
           linkText={this.state.featurePageFeaturesDiscoverLinkText}
+          image={Discover}
           linkUrl="features-report"
         />
       </Container>

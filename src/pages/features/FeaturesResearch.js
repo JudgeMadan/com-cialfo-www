@@ -123,4 +123,3 @@ class FeaturesResearch extends React.Component {
   }
 }
 export default withRouter(FeaturesResearch);
-
