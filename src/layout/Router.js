@@ -15,6 +15,7 @@ import FourOhFour from "../pages/FourOhFour";
 import ThankYou from "../pages/ThankYou";
 import Solutions from "../pages/Solutions";
 import SolutionsCounselors from "../pages/SolutionsCounselors";
+import SolutionsFamilies from "../pages/SolutionsFamilies";
 import SolutionsIT from "../pages/SolutionsIT";
 import SolutionsPrincipals from "../pages/SolutionsPrincipals";
 import SolutionsSuperintendents from "../pages/SolutionsSuperintendents";
@@ -400,6 +401,29 @@ class Router extends React.Component {
           }
           render={() => (
             <SolutionsSuperintendents
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
+              setSpace={this.props.setSpace}
+              setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
+            />
+          )}
+        />
+
+        <Route
+          locale={this.props.locale}
+          exact
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
+            "/solutions-families"
+          }
+          render={() => (
+            <SolutionsFamilies
               locale={this.props.locale}
               space={this.props.space}
               accessToken={this.props.accessToken}
