@@ -56,7 +56,7 @@ class SolutionsRightSideText extends React.Component {
   render() {
     return (
       <div>
-        {this.state.width > 990 && (
+        {this.state.width > 1200 && (
           <Row>
             <Col className="solutionsPageFeaturesImage homePageFeaturesImageBackground">
               <img
@@ -88,36 +88,41 @@ class SolutionsRightSideText extends React.Component {
             </Col>
           </Row>
         )}
-        {this.state.width <= 990 && (
-          <div>
-            <Row className="feature-image-left-side-col vertical-center-image">
-              <Container className="medium-subpage-features-productImg subpage-features-margin-right">
-                <img
-                  className="medium-feature-subpage-image-sizing"
-                  src={this.props.image}
-                />
-              </Container>
-            </Row>
-            <Row className="featureSubSectionTextAlign my-5 mx-5 px-5">
-              <Container>
-                <Row>
-                  <h1 className="primary_font">{this.props.title}</h1>
-                </Row>
-                <Row>
-                  <p className="secondary_font">{this.props.blurb}</p>
-                </Row>
-                <Row>
-                  <Link
-                    className={this.props.linkStyle}
-                    to={this.generateUrl(this.props.url, this.props.location)}
-                  >
-                    {this.props.link}
-                  </Link>
-                </Row>
-              </Container>
-            </Row>
-          </div>
-        )}
+           {this.state.width <= 1200 && (
+            <div>
+                <Col className="feature-home-page-shared-component-image-right-side-col 
+                medium-home-left-side-text-image medium-home-feature-img-div-container"> 
+                <div className="medium-home-feature-img-div">
+                    <img
+                      className="features-img medium-feature-home-subpage-image-sizing"
+                      src={this.props.image}
+                    />
+                  </div>
+                </Col>
+              <Row className="homePageFeaturesText my-5 pb-3">
+                <div className="homePageFeaturesRightSideTextObject">
+                  <Row className="center-in-row">
+                    <h1 className="primary_font text-center">
+                      {this.props.title}
+                    </h1>
+                  </Row>
+                  <Row className="center-in-row">
+                    <p className="secondary_font text-center">
+                      {this.props.blurb}
+                    </p>
+                  </Row>
+                  <Row className="center-in-row">
+                    <Link
+                      className={this.props.linkStyle}
+                      to={this.generateUrl(this.props.url, this.props.location)}
+                    >
+                      {this.props.link}
+                    </Link>
+                  </Row>
+                </div>
+              </Row>
+            </div>
+          )}
       </div>
     );
   }
