@@ -155,13 +155,10 @@ class Header extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <FullScreenHeaderLinks
-            aboutUsPage={this.state.aboutUsPage}
-            clientsPage={this.state.clientsPage}
-            demoPage={this.state.demoPage}
-            featuresPage={this.state.featuresPage}
-            resourcePage={this.state.resourcePage}
-            eventsPage={this.state.eventsPage}
-            solutionsPage={this.state.solutionsPage}
+            nameDemo = {this.state.nameDemo}
+            linkDemo={this.state.linkDemo}
+            name = {[this.state.name1, this.state.name2, this.state.name3, this.state.name4, this.state.name5, this.state.name6]}
+            link = {[this.state.link1, this.state.link2, this.state.link3, this.state.link4, this.state.link5, this.state.link6]}
             country_code={this.props.country_code}
             locale={this.props.locale}
             space={this.props.space}
