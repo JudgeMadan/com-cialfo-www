@@ -25,14 +25,18 @@ import { withRouter } from "react-router-dom";
 import PathToRegexp, { compile } from "path-to-regexp";
 import HomeFeatureLeftSideText from "./sharedComponents/HomeFeatureLeftSideText"
 import HomeFeatureRightSideText from "./sharedComponents/HomeFeatureRightSideText"
+import { DataContext } from "../contexts/DataContext"
 class Home extends React.Component {
+  static contextType = DataContext;
+
   constructor(props) {
     super(props);
     this.state = {
       height: window.innerHeight,
-      width: window.innerWidth
+      width: window.innerWidth,
     };
   }
+
 
   generateUrl = (path, location) => {
     const ROUTE = "/:space/:locale/:path*";
@@ -55,8 +59,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    this.setHomeContent2();
-
+    this.context.fetchEntries().then(this.setHomeContent2);
   }
 
   componentWillUnmount() {
@@ -72,7 +75,7 @@ class Home extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.setHomeContent2();
+      this.context.fetchEntries().then(this.setHomeContent2);
     }
   }
 
@@ -81,14 +84,8 @@ class Home extends React.Component {
     this.props.sendEmailAddressToGetADemo(fieldContent);
   };
 
-  fetchHomeContent = () =>
-    this.client.getEntries({
-      content_type: "homePageHeaderProductImage",
-      locale: this.props.match.params.locale
-    });
-
-  setHomeContent2 = () => {
-    const content = this.props.content
+  setHomeContent2 = (response) => {
+    const content = response
     let filteredContent = content.filter(
       content => content.fields.pageType === "homePage"
     )
@@ -112,33 +109,7 @@ class Home extends React.Component {
     }
   }
 
-  setHomeContent = response => {
-    const homeContent = response.items;
-    let filteredhomeContent = homeContent.filter(
-      homeContent => homeContent.fields.pageType === "homePage"
-    );
-    let filteredhomeContentFields = filteredhomeContent[0].fields;
-    for (let key in filteredhomeContentFields) {
-      if (typeof filteredhomeContentFields[key] === "string") {
-        this.setState({
-          [key]: filteredhomeContentFields[key]
-        });
-      } else if (Array.isArray(filteredhomeContentFields[key])) {
-        this.setState({
-          [key]: filteredhomeContentFields[key].map(
-            test => test.fields.file.url
-          )
-        });
-      } else {
-        this.setState({
-          [key]: filteredhomeContentFields[key].fields.file.url
-        });
-      }
-    }
-  };
-
   render() {
-    console.log(this.props)
     const space = this.props.match.params.space;
     return (
       <Container className="homePageContainer" fluid>

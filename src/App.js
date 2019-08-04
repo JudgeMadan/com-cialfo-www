@@ -5,6 +5,7 @@ import Router from "./layout/Router";
 import { getAllCopy } from "./getContentfulData";
 import * as contentful from "contentful";
 import { access } from "fs";
+import DataContextProvider from "./contexts/DataContext"
 
 class App extends Component {
   constructor(props) {
@@ -136,7 +137,6 @@ class App extends Component {
       );
 
       const country_code = country_codeArray[0];
-      console.log(country_code)
       if (country_code === "country_code=US") {
         space = this.data.usaSpace.space
         accessToken = this.data.usaSpace.accessToken
@@ -238,11 +238,9 @@ class App extends Component {
     const space = this.state.space;
     const accessToken = this.state.accessToken;
     const content = this.state.content;
-    console.log(this.state)
 
 
     if (space && accessToken && content) {
-      console.log(content)
       return (
         <div>
           <Header

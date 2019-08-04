@@ -6,12 +6,15 @@ import * as serviceWorker from "./serviceWorker";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import ScrollToTop from "./ScrollToTop";
+import DataContextProvider from "../src/contexts/DataContext"
 require('dotenv').config()
 
 ReactDOM.render(
   <Router>
     <ScrollToTop>
-      <App />
+      <DataContextProvider>
+        <App />
+      </DataContextProvider>
     </ScrollToTop>
   </Router>,
   document.getElementById("root")
