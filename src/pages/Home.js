@@ -1,7 +1,6 @@
 import React from "react";
 import HomeMarquee from "./home/HomeMarquee";
 import MobileHomePartnerImages from "./home/MobileHomePartnerImages";
-import * as contentful from "contentful";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
@@ -54,23 +53,10 @@ class Home extends React.Component {
     }
   };
 
-  setSpace = () => {
-    return this.props.setSpace(this.props.match.params.space);
-  };
-
-  setAccessToken = () => {
-    return this.props.setAccessToken(this.props.match.params.space);
-  };
-
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
-
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    this.fetchHomeContent().then(this.setHomeContent);
+    this.setHomeContent2();
+
   }
 
   componentWillUnmount() {
@@ -86,7 +72,7 @@ class Home extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.fetchHomeContent().then(this.setHomeContent);
+      this.setHomeContent2();
     }
   }
 
@@ -100,6 +86,31 @@ class Home extends React.Component {
       content_type: "homePageHeaderProductImage",
       locale: this.props.match.params.locale
     });
+
+  setHomeContent2 = () => {
+    const content = this.props.content
+    let filteredContent = content.filter(
+      content => content.fields.pageType === "homePage"
+    )
+    let filteredhomeContentFields = filteredContent[0].fields;
+    for (let key in filteredhomeContentFields) {
+      if (typeof filteredhomeContentFields[key] === "string") {
+        this.setState({
+          [key]: filteredhomeContentFields[key]
+        });
+      } else if (Array.isArray(filteredhomeContentFields[key])) {
+        this.setState({
+          [key]: filteredhomeContentFields[key].map(
+            test => test.fields.file.url
+          )
+        });
+      } else {
+        this.setState({
+          [key]: filteredhomeContentFields[key].fields.file.url
+        });
+      }
+    }
+  }
 
   setHomeContent = response => {
     const homeContent = response.items;
@@ -127,6 +138,7 @@ class Home extends React.Component {
   };
 
   render() {
+    console.log(this.props)
     const space = this.props.match.params.space;
     return (
       <Container className="homePageContainer" fluid>

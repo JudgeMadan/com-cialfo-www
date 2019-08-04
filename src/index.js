@@ -6,6 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import ScrollToTop from "./ScrollToTop";
+require('dotenv').config()
 
 ReactDOM.render(
   <Router>

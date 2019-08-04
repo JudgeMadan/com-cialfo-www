@@ -65,6 +65,7 @@ class Router extends React.Component {
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
               environment={this.props.environment}
+              content={this.props.content}
             />
           )}
         />
