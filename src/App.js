@@ -8,7 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       environment: "staging",
-      locale: "en-US"
+      locale: "en-US",
       getADemoEmail: "",
       chinaSpace: {
         space: "1acwuo4zy8aa",
@@ -105,7 +105,7 @@ class App extends Component {
         //   country_code: country_code,
         //   spaceName: this.state.chinaSpace.spaceName
         // });
-        window.location="https://cialfo.cn"
+        window.location.href="https://cialfo.cn"
       } else if (country_code === "country_code=IN") {
         this.setState({
           space: this.state.indiaSpace.space,
@@ -152,7 +152,7 @@ class App extends Component {
   setSpace = url => {
     if (url === "cn") {
       // return this.state.spaces.cn.space;
-      window.location="https://cialfo.cn"
+      window.location.href="https://cialfo.cn"
     } else if (url === "intl") {
       return this.state.spaces.intl.space;
     } else if (url === "in") {
