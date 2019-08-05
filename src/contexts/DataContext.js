@@ -75,7 +75,7 @@ class DataContextProvider extends Component {
         "country_code=JP"
       ];
 
-      const country_codeArray = cookieArrayChina.filter(
+      const country_codeArray = cookieArrayUSA.filter(
         cookie => cookie.substring(0, 12) === "country_code"
       );
 
@@ -101,15 +101,16 @@ class DataContextProvider extends Component {
     return routeComponents[2]
   }
 
-  fetchEntries = () => {
+  fetchEntries = (content_type) => {
     const client = contentful.createClient({
       space: this.generateSpaceAndAccess().space,
-      environment: "master",
+      environment: "staging",
       accessToken: this.generateSpaceAndAccess().accessToken,
-      locale: this.generateLocale(this.props.location)
     });
     return client
       .getEntries({
+        content_type: content_type,
+        locale: this.generateLocale(this.props.location)
       })
       .then(response => response.items)
       .catch(err => console.error(err));

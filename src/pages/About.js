@@ -18,8 +18,11 @@ import MediaQuery from "react-responsive";
 import PartnerImages from "./PartnerImages";
 import { withRouter } from "react-router-dom";
 import "./about/About.css";
+import { DataContext } from "../contexts/DataContext"
 
 class About extends React.Component {
+  static contextType = DataContext;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -44,13 +47,20 @@ class About extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.fetchAboutContent().then(this.setAboutContent);
+      // this.fetchAboutContent().then(this.setAboutContent2);
+      // this.fetchAboutContent().then(this.setAboutContent);
+      this.context.fetchEntries("about").then(this.setAboutContent2);
+
     }
   }
 
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    this.fetchAboutContent().then(this.setAboutContent);
+    // this.fetchAboutContent().then(this.setAboutContent);
+    this.context.fetchEntries("about").then(this.setAboutContent2);
+
+    // this.context.fetchEntries("about").then(this.setAboutContent2);
+
   }
 
   componentWillUnmount() {
@@ -69,6 +79,30 @@ class About extends React.Component {
       content_type: "about",
       locale: this.props.match.params.locale
     });
+
+  setAboutContent2 = response => {
+    const aboutContent = response;
+    console.log(aboutContent)
+    let filteredaboutContent = aboutContent.filter(
+      aboutContent => aboutContent.fields.pageType === "aboutPage"
+    );
+    let filteredaboutContentFields = filteredaboutContent[0].fields;
+    for (let key in filteredaboutContentFields) {
+      if (typeof filteredaboutContentFields[key] === "string") {
+        this.setState({
+          [key]: filteredaboutContentFields[key]
+        });
+      } else if (Array.isArray(filteredaboutContentFields[key])) {
+        this.setState({
+          [key]: filteredaboutContentFields[key]
+        });
+      } else {
+        this.setState({
+          [key]: filteredaboutContentFields[key].fields.file.url
+        });
+      }
+    }
+  };
 
   setAboutContent = response => {
     const aboutContent = response.items;
@@ -323,23 +357,23 @@ class About extends React.Component {
             </Container>
           </Row>
         </MediaQuery>
-          <Row className="center-in-row about-page-counselor-advisor-header mx-3">
-            <h1 className="primary_font text-align-center">
-              {this.state.aboutPageCounselorsTitle}
-            </h1>
-          </Row>
+        <Row className="center-in-row about-page-counselor-advisor-header mx-3">
+          <h1 className="primary_font text-align-center">
+            {this.state.aboutPageCounselorsTitle}
+          </h1>
+        </Row>
         <Row className=" about-page-counselor-advisor-footer">
           <Container>
             <MediaQuery query="(min-device-width: 1223px)">
-                <AboutCounselors
-                  counselors={this.state.aboutPageCounselorsCounselors}
-                />
+              <AboutCounselors
+                counselors={this.state.aboutPageCounselorsCounselors}
+              />
             </MediaQuery>
             {/* MOBILE COUNSELORS */}
             <MediaQuery query="(max-device-width: 1223px)">
-                <MobileAboutCounselors
-                  counselors={this.state.aboutPageCounselorsCounselors}
-                />
+              <MobileAboutCounselors
+                counselors={this.state.aboutPageCounselorsCounselors}
+              />
             </MediaQuery>
           </Container>
         </Row>

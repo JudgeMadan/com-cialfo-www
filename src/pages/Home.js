@@ -84,6 +84,12 @@ class Home extends React.Component {
     this.props.sendEmailAddressToGetADemo(fieldContent);
   };
 
+  fetchHomeContent = () =>
+    this.client.getEntries({
+      content_type: "homePageHeaderProductImage",
+      locale: this.props.match.params.locale
+    });
+
   setHomeContent2 = (response) => {
     const content = response
     let filteredContent = content.filter(
@@ -108,6 +114,31 @@ class Home extends React.Component {
       }
     }
   }
+  // setHomeContent2 = () => {
+  //   const content = this.state.data
+  //   let filteredContent = content.filter(
+  //     content => content.fields.pageType === "homePage"
+  //   )
+  //   let filteredhomeContentFields = filteredContent[0].fields;
+  //   for (let key in filteredhomeContentFields) {
+  //     if (typeof filteredhomeContentFields[key] === "string") {
+  //       this.setState({
+  //         [key]: filteredhomeContentFields[key]
+  //       });
+  //     } else if (Array.isArray(filteredhomeContentFields[key])) {
+  //       this.setState({
+  //         [key]: filteredhomeContentFields[key].map(
+  //           test => test.fields.file.url
+  //         )
+  //       });
+  //     } else {
+  //       this.setState({
+  //         [key]: filteredhomeContentFields[key].fields.file.url
+  //       });
+  //     }
+  //   }
+  // }
+
 
   render() {
     const space = this.props.match.params.space;
