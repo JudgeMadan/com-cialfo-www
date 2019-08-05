@@ -99,12 +99,13 @@ class App extends Component {
 
       const country_code = country_codeArray[0];
       if (country_code === "country_code=CN") {
-        this.setState({
-          space: this.state.chinaSpace.space,
-          accessToken: this.state.chinaSpace.accessToken,
-          country_code: country_code,
-          spaceName: this.state.chinaSpace.spaceName
-        });
+        // this.setState({
+        //   space: this.state.chinaSpace.space,
+        //   accessToken: this.state.chinaSpace.accessToken,
+        //   country_code: country_code,
+        //   spaceName: this.state.chinaSpace.spaceName
+        // });
+        window.location="https://cialfo.cn"
       } else if (country_code === "country_code=IN") {
         this.setState({
           space: this.state.indiaSpace.space,
@@ -150,7 +151,8 @@ class App extends Component {
 
   setSpace = url => {
     if (url === "cn") {
-      return this.state.spaces.cn.space;
+      // return this.state.spaces.cn.space;
+      window.location="https://cialfo.cn"
     } else if (url === "intl") {
       return this.state.spaces.intl.space;
     } else if (url === "in") {
