@@ -168,7 +168,7 @@ class Events extends React.Component {
           </Container>
           {/* </Row> */}
         </MediaQuery>
-        {/* FULL SCREEN TOP ROW */}
+        {/* FULL SCREEN TOP ROW 
         <MediaQuery query="(min-device-width: 1224px)">
           <EventsSubfooter
             img={this.state.eventsSubfooterImg}
@@ -176,6 +176,7 @@ class Events extends React.Component {
             quote={this.state.eventsSubfooterQuote}
           />
         </MediaQuery>
+        */}
         {/* MOBILE EVENT SUBFOOTER
         <MediaQuery query="(max-device-width: 1223px)">
           <MobileEventsSubfooter
