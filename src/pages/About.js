@@ -38,7 +38,8 @@ class About extends React.Component {
 
   client = contentful.createClient({
     space: this.setSpace(),
-    accessToken: this.setAccessToken()
+    accessToken: this.setAccessToken(),
+    environment: this.props.environment
   });
 
   componentDidUpdate(prevProps) {
@@ -322,29 +323,23 @@ class About extends React.Component {
             </Container>
           </Row>
         </MediaQuery>
-        {space !== "us" && (
           <Row className="center-in-row about-page-counselor-advisor-header mx-3">
             <h1 className="primary_font text-align-center">
               {this.state.aboutPageCounselorsTitle}
             </h1>
           </Row>
-        )}
         <Row className=" about-page-counselor-advisor-footer">
           <Container>
             <MediaQuery query="(min-device-width: 1223px)">
-              {space !== "us" && (
                 <AboutCounselors
                   counselors={this.state.aboutPageCounselorsCounselors}
                 />
-              )}
             </MediaQuery>
             {/* MOBILE COUNSELORS */}
             <MediaQuery query="(max-device-width: 1223px)">
-              {space !== "us" && (
                 <MobileAboutCounselors
                   counselors={this.state.aboutPageCounselorsCounselors}
                 />
-              )}
             </MediaQuery>
           </Container>
         </Row>

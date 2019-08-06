@@ -33,11 +33,13 @@ class HomeMarqueeListObject extends React.Component {
             {marqueeItem.fields.marqueeAuthor}
           </p>
         </Row>
-        <Row className="marquee-footer">
-          <p className="secondary_font">
-            {marqueeItem.fields.marqueeAuthorSchool}
-          </p>
-        </Row>
+        {marqueeItem.fields.marqueeSchoolImage && (
+          <Row className="marquee-school-image-container px-3">
+            <div className="marquee-school-image">
+              <img className="marquee-school-image" src={marqueeItem.fields.marqueeSchoolImage.fields.file.url} />
+            </div>
+          </Row>
+        )}
       </div>
     );
   }

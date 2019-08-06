@@ -3,6 +3,11 @@
   /* font-size: 42px; */
 }
 
+.features-img {
+  box-shadow:  6px 9px 20px rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
 .titleContainer {
   margin-bottom: 5rem;
   margin-top: 5rem;
@@ -211,7 +216,32 @@
   padding: 100px 0 100px 0;
 }
 
-@media screen and (max-width: 1250px) {
+@media (min-width: 1200px) {
+  .feature-home-page-shared-component-image-left-side-col {
+    height: auto;
+    min-height: 421px;
+    background: linear-gradient(to right, #ebf9ff 50%, transparent 50%);
+  }
+  .feature-home-page-shared-component-image-right-side-col {
+    height: auto;
+    min-height: 421px;
+    background: linear-gradient(to left, #ebf9ff 50%, transparent 50%);
+  }
+}
+
+@media (max-width: 1199px) {
+  .feature-home-page-shared-component-image-left-side-col {
+    height: auto;
+    min-height: 421px;
+  }
+
+  .feature-home-page-shared-component-image-right-side-col {
+    height: auto;
+    min-height: 421px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
   .feature-homePageFeaturesImage {
     display: flex;
     align-items: center;
@@ -325,12 +355,13 @@
   justify-content: center;
 }
 
-/* .vertical-center-image {
+.medium-home-left-side-text-image {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-direction: column-reverse;
-} */
+  width: auto;
+  max-height: 40px;
+}
 
 .productImgRight {
   position: relative;
@@ -361,6 +392,36 @@
 .medium-feature-subpage-image-sizing {
   max-width: 594px;
   height: auto;
+  margin-right: 300px;
+}
+
+.medium-feature-home-subpage-image-sizing {
+  max-width: 594px; 
+  height: auto;
+}
+.max-width-800{
+  max-width: 800px;
+}
+
+.feature-subpage-image-sizing-medium{
+  max-width: 594px; 
+  height: auto;
+}
+
+.feature-subpage-image-centering{
+  display: flex;
+  justify-content: center;
+}
+
+.test-feature-subpage-image{
+  max-width: 594px;
+  height: auto;
+}
+
+.medium-feature-subpage-image-sizing-left {
+  max-width: 594px;
+  height: auto;
+  margin-left: 300px;
 }
 
 .medium-right-feature-image-sizing {
@@ -407,7 +468,7 @@
 }
 
 .subpage-features-margin-right {
-  padding-right: 200px;
+  padding-right: 100px;
 }
 
 @media screen and (max-width: 1000px) {

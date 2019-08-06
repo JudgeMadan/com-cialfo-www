@@ -7,6 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      environment: "master",
       locale: "en-US",
       getADemoEmail: "",
       chinaSpace: {
@@ -98,12 +99,13 @@ class App extends Component {
 
       const country_code = country_codeArray[0];
       if (country_code === "country_code=CN") {
-        this.setState({
-          space: this.state.chinaSpace.space,
-          accessToken: this.state.chinaSpace.accessToken,
-          country_code: country_code,
-          spaceName: this.state.chinaSpace.spaceName
-        });
+        // this.setState({
+        //   space: this.state.chinaSpace.space,
+        //   accessToken: this.state.chinaSpace.accessToken,
+        //   country_code: country_code,
+        //   spaceName: this.state.chinaSpace.spaceName
+        // });
+        window.location="https://cialfo.cn"
       } else if (country_code === "country_code=IN") {
         this.setState({
           space: this.state.indiaSpace.space,
@@ -149,7 +151,8 @@ class App extends Component {
 
   setSpace = url => {
     if (url === "cn") {
-      return this.state.spaces.cn.space;
+      // return this.state.spaces.cn.space;
+      window.location="https://cialfo.cn"
     } else if (url === "intl") {
       return this.state.spaces.intl.space;
     } else if (url === "in") {
@@ -188,6 +191,7 @@ class App extends Component {
             spaces={this.state.spaces}
             setSpace={this.setSpace}
             setAccessToken={this.setAccessToken}
+            environment={this.state.environment}
           />
           <Router
             spaceName={this.state.spaceName}
@@ -197,6 +201,7 @@ class App extends Component {
             space={this.state.space}
             setSpace={this.setSpace}
             setAccessToken={this.setAccessToken}
+            environment={this.state.environment}
           />
           <Footer
             locale={this.state.locale}
@@ -206,6 +211,7 @@ class App extends Component {
             spaces={this.state.spaces}
             setSpace={this.setSpace}
             setAccessToken={this.setAccessToken}
+            environment={this.state.environment}
           />
         </div>
       );

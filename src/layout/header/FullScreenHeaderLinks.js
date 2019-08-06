@@ -67,6 +67,15 @@ class FullScreenHeaderLinks extends React.Component {
             {this.props.solutionsPage}
           </NavLink>
         </div>
+        <div>
+          <NavLink
+            activeClassName="activeStyle"
+            className="nav-link"
+            to="events"
+          >
+            {this.props.eventsPage}
+          </NavLink>
+        </div>
         {this.identifySpace(this.props.location) === "cn" && (
           <TranslateButton
             locale={this.props.locale}
