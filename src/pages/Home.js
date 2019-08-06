@@ -26,6 +26,8 @@ import { withRouter } from "react-router-dom";
 import PathToRegexp, { compile } from "path-to-regexp";
 import HomeFeatureLeftSideText from "./sharedComponents/HomeFeatureLeftSideText"
 import HomeFeatureRightSideText from "./sharedComponents/HomeFeatureRightSideText"
+import DemoCallToAction from "./sharedComponents/DemoCallToAction"
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -304,6 +306,15 @@ class Home extends React.Component {
           image={Discover}
         />
         <MediaQuery query="(min-device-width: 1224px)">
+          <PartnerImages
+            locale={this.props.locale}
+            className="partnerImages"
+            partnerImages={this.state.homePagePoweredByOurPartnersPartners}
+            accessToken={this.props.accessToken}
+            space={this.props.space}
+            title={this.state.homePagePoweredByOurPartnersTitle}
+            environment={this.props.environment}
+          />
           <div className="homePageVideoCaseStudy">
             <div className="partial-width-dark-blue">
               <Row className="homePageVideoCaseStudyTitle">
@@ -335,15 +346,6 @@ class Home extends React.Component {
               </Row>
             </div>
           </div>
-          <PartnerImages
-            locale={this.props.locale}
-            className="partnerImages"
-            partnerImages={this.state.homePagePoweredByOurPartnersPartners}
-            accessToken={this.props.accessToken}
-            space={this.props.space}
-            title={this.state.homePagePoweredByOurPartnersTitle}
-            environment={this.props.environment}
-          />
         </MediaQuery>
         {/* MOBILE VIDEO CONTENT */}
         <MediaQuery query="(max-device-width: 1223px)">
@@ -367,6 +369,7 @@ class Home extends React.Component {
             </Container>
           </Row>
         </MediaQuery>
+        <DemoCallToAction />
       </Container>
     );
   }

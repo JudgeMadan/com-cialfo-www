@@ -20,6 +20,7 @@ import MobileFeaturesSendBullets from "./featuresSharedComponents/MobileFeatures
 import FeaturesSendRightSideText from "./featuresSharedComponents/FeaturesSendRightSideText"
 import FeaturesSendLeftSideText from "./featuresSharedComponents/FeaturesSendLeftSideText"
 import FeaturesTitle from "./featuresSharedComponents/FeaturesTitle"
+import DemoCallToAction from "../sharedComponents/DemoCallToAction"
 
 class FeaturesSend extends React.Component {
   constructor(props) {
@@ -116,8 +117,8 @@ class FeaturesSend extends React.Component {
           title={this.state.sendTranscriptTitle}
           bullets={this.state.sendTranscriptBlurb}
         />
+        <DemoCallToAction />
       </Container >
-
     );
   }
 }
