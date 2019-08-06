@@ -26,6 +26,7 @@ import { withRouter } from "react-router-dom";
 import PathToRegexp, { compile } from "path-to-regexp";
 import HomeFeatureLeftSideText from "./sharedComponents/HomeFeatureLeftSideText"
 import HomeFeatureRightSideText from "./sharedComponents/HomeFeatureRightSideText"
+import HomeCarousel from "./home/HomeCarousel";
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -127,6 +128,16 @@ class Home extends React.Component {
   };
 
   render() {
+    let settings = {
+      // dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      centerPadding: "60px",
+      slidesToScroll: 1,
+      centerMode: true,
+      focusOnSelect: true
+    };
     const space = this.props.match.params.space;
     return (
       <Container className="homePageContainer" fluid>
@@ -304,6 +315,7 @@ class Home extends React.Component {
           image={Discover}
         />
         <MediaQuery query="(min-device-width: 1224px)">
+          {/* VIDEO CAROUSEL GOES HERE */}
           <div className="homePageVideoCaseStudy">
             <div className="partial-width-dark-blue">
               <Row className="homePageVideoCaseStudyTitle">
@@ -311,7 +323,8 @@ class Home extends React.Component {
                   {this.state.homePageVideoCaseStudyTitle}
                 </h1>
               </Row>
-              <Row className="homePageVideoCaseStudyVideoEmbed">
+              <HomeCarousel homePageVideoCaseStudyVideoEmbed={this.state.homePageVideoCaseStudyVideoEmbed} />
+              {/* <Row className="homePageVideoCaseStudyVideoEmbed">
                 <div>
                   <img className="oval" src={Oval} />
                   <img className="line" src={Line} />
@@ -331,8 +344,8 @@ class Home extends React.Component {
                       url={this.state.homePageVideoCaseStudyVideoEmbed}
                     />
                   )}
-                </div>
-              </Row>
+                </div> */}
+              {/* </Row> */}
             </div>
           </div>
           <PartnerImages
@@ -367,7 +380,7 @@ class Home extends React.Component {
             </Container>
           </Row>
         </MediaQuery>
-      </Container>
+      </Container >
     );
   }
 }
