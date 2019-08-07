@@ -16,6 +16,7 @@ import Oval from "../img/Oval.svg";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
 import "./events/Events.css";
+import DemoCallToAction from "./sharedComponents/DemoCallToAction"
 
 class Events extends React.Component {
   constructor(props) {
@@ -168,7 +169,7 @@ class Events extends React.Component {
           </Container>
           {/* </Row> */}
         </MediaQuery>
-        {/* FULL SCREEN TOP ROW 
+        {/* FULL SCREEN TOP ROW
         <MediaQuery query="(min-device-width: 1224px)">
           <EventsSubfooter
             img={this.state.eventsSubfooterImg}
@@ -275,6 +276,7 @@ class Events extends React.Component {
             </Row>
           </Container>
         </MediaQuery>
+        <DemoCallToAction />
       </Container>
     );
   }

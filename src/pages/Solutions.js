@@ -12,6 +12,8 @@ import PartnerImages from "./PartnerImages";
 import MobilePartnerImages from "./MobilePartnerImages";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
+import DemoCallToAction from "./sharedComponents/DemoCallToAction"
+
 class Solutions extends React.Component {
   constructor(props) {
     super(props);
@@ -204,6 +206,7 @@ class Solutions extends React.Component {
             />
           )}
         </MediaQuery> */}
+        <DemoCallToAction />
       </Container>
     );
   }

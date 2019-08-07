@@ -614,6 +614,22 @@
   margin-right: auto;
 }
 
+.demo-cta-container {
+  margin:50px;
+}
+
+.demo-cta-title-text {
+  font-size: 3rem;
+  text-align: center;
+  width: 700px;
+}
+
+.demo-cta-content {
+  display: flex;
+  justify-content: center;
+  /* padding-bottom: 0px; */
+}
+
 .home-page-partner-image {
   margin: 0 10px;
 }
@@ -685,7 +701,6 @@
   }
 }
 
-
 .marquee-school-image-container{
   display: flex;
   justify-content: flex-start;
@@ -724,3 +739,4 @@
     max-width: 1000px;
   }
 }
+

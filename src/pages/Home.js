@@ -28,6 +28,8 @@ import HomeFeatureLeftSideText from "./sharedComponents/HomeFeatureLeftSideText"
 import HomeFeatureRightSideText from "./sharedComponents/HomeFeatureRightSideText"
 import HomeCarousel from "./home/HomeCarousel";
 import MobileHomeCarousel from "./home/MobileHomeCarousel";
+import DemoCallToAction from "./sharedComponents/DemoCallToAction"
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -359,6 +361,8 @@ class Home extends React.Component {
           </Row>
         </MediaQuery>
       </div >
+        <DemoCallToAction />
+      </Container>
     );
   }
 }

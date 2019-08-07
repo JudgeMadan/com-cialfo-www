@@ -7,6 +7,8 @@ import ClientStoriesHomePageCards from "./clientStories/ClientStoriesHomePageCar
 import HomeMarquee from "../pages/home/HomeMarquee";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
+import DemoCallToAction from "./sharedComponents/DemoCallToAction"
+
 class ClientStories extends React.Component {
   constructor(props) {
     super(props);
@@ -93,6 +95,7 @@ class ClientStories extends React.Component {
             </Row>
           )}
         </MediaQuery>
+        <DemoCallToAction />
       </Container>
     );
   }
