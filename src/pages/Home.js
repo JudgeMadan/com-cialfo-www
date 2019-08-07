@@ -26,6 +26,8 @@ import { withRouter } from "react-router-dom";
 import PathToRegexp, { compile } from "path-to-regexp";
 import HomeFeatureLeftSideText from "./sharedComponents/HomeFeatureLeftSideText"
 import HomeFeatureRightSideText from "./sharedComponents/HomeFeatureRightSideText"
+import HomeCarousel from "./home/HomeCarousel";
+import MobileHomeCarousel from "./home/MobileHomeCarousel";
 import DemoCallToAction from "./sharedComponents/DemoCallToAction"
 
 class Home extends React.Component {
@@ -115,11 +117,17 @@ class Home extends React.Component {
           [key]: filteredhomeContentFields[key]
         });
       } else if (Array.isArray(filteredhomeContentFields[key])) {
-        this.setState({
-          [key]: filteredhomeContentFields[key].map(
-            test => test.fields.file.url
-          )
-        });
+        if (typeof filteredhomeContentFields[key][0] === "string") {
+          this.setState({
+            [key]: filteredhomeContentFields[key]
+          })
+        } else {
+          this.setState({
+            [key]: filteredhomeContentFields[key].map(
+              test => test.fields.file.url
+            )
+          });
+        }
       } else {
         this.setState({
           [key]: filteredhomeContentFields[key].fields.file.url
@@ -131,7 +139,7 @@ class Home extends React.Component {
   render() {
     const space = this.props.match.params.space;
     return (
-      <Container className="homePageContainer" fluid>
+      <div className="homePageContainer" fluid>
         {/* FULL SCREEN TOP ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
           {this.state.width > 1100 && (
@@ -306,6 +314,21 @@ class Home extends React.Component {
           image={Discover}
         />
         <MediaQuery query="(min-device-width: 1224px)">
+          {/* VIDEO CAROUSEL GOES HERE */}
+          <div className="homePageVideoCaseStudy ">
+            {/* <div className="partial-width-dark-blue"> */}
+            <Row className="homePageVideoCaseStudyTitle">
+              <h1 className="primary_font white-font mobile-home-page-video-case-study-title">
+                {this.state.homePageVideoCaseStudyTitle}
+              </h1>
+            </Row>
+            <HomeCarousel
+              setSpace={this.props.setSpace}
+              setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
+            />
+          </div>
+          {/* </div> */}
           <PartnerImages
             locale={this.props.locale}
             className="partnerImages"
@@ -315,37 +338,6 @@ class Home extends React.Component {
             title={this.state.homePagePoweredByOurPartnersTitle}
             environment={this.props.environment}
           />
-          <div className="homePageVideoCaseStudy">
-            <div className="partial-width-dark-blue">
-              <Row className="homePageVideoCaseStudyTitle">
-                <h1 className="primary_font white-font mobile-home-page-video-case-study-title">
-                  {this.state.homePageVideoCaseStudyTitle}
-                </h1>
-              </Row>
-              <Row className="homePageVideoCaseStudyVideoEmbed">
-                <div>
-                  <img className="oval" src={Oval} />
-                  <img className="line" src={Line} />
-                  {this.state.width > 850 && (
-                    <ReactPlayer
-                      className="video"
-                      width="800px"
-                      height="448px"
-                      url={this.state.homePageVideoCaseStudyVideoEmbed}
-                    />
-                  )}
-                  {this.state.width <= 850 && (
-                    <ReactPlayer
-                      className="video"
-                      width="600px"
-                      height="366px"
-                      url={this.state.homePageVideoCaseStudyVideoEmbed}
-                    />
-                  )}
-                </div>
-              </Row>
-            </div>
-          </div>
         </MediaQuery>
         {/* MOBILE VIDEO CONTENT */}
         <MediaQuery query="(max-device-width: 1223px)">
@@ -358,17 +350,17 @@ class Home extends React.Component {
               </Row>
               <Row className="mobile-homePageVideoCaseStudyVideoEmbed mb-4">
                 <div>
-                  <ReactPlayer
-                    className="video"
-                    width="345px"
-                    height="194px"
-                    url={this.state.homePageVideoCaseStudyVideoEmbed}
+                  <MobileHomeCarousel
+                    setSpace={this.props.setSpace}
+                    setAccessToken={this.props.setAccessToken}
+                    environment={this.props.environment}
                   />
                 </div>
               </Row>
             </Container>
           </Row>
         </MediaQuery>
+      </div >
         <DemoCallToAction />
       </Container>
     );

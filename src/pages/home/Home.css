@@ -634,14 +634,6 @@
   margin: 0 10px;
 }
 
-.partial-width-dark-blue {
-  margin: 0 -9999rem;
-  /* add back negative margin value */
-  padding: 0.25rem 9999rem;
-  background: #1786df;
-  background: linear-gradient(white 3%, #1786df 3% 55%, white 55%);
-}
-
 .partner-object-image-container {
   display: flex;
   height: 100px;
@@ -709,7 +701,6 @@
   }
 }
 
-
 .marquee-school-image-container{
   display: flex;
   justify-content: flex-start;
@@ -719,3 +710,33 @@
   max-height: 60px;
   width: auto;
 }
+
+.slider-container{
+  /* border: solid red 2px; */
+  justify-content: center;
+}
+
+.partial-width-dark-blue {
+  margin: 0 -9999rem;
+  /* add back negative margin value */
+  padding: 0.25rem 9999rem;
+  background: #1786df;
+  /* background: linear-gradient (#1786df 55%, white 55%); */
+  background: linear-gradient(white 3%, #1786df 3% 55%, white 55%);
+}
+
+.slick-current{
+  filter: none !important;
+}
+
+.slick-slide{
+  filter: blur(2.5px);
+}
+
+@media screen and (max-width: 500px) {
+  .slick-list{
+    max-height: 200px;
+    max-width: 1000px;
+  }
+}
+
