@@ -9,8 +9,7 @@ class HomeCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      height: window.innerHeight,
-      width: window.innerWidth
+      playing_1: false,
     };
   }
 
@@ -29,20 +28,8 @@ class HomeCarousel extends React.Component {
   });
 
   componentDidMount() {
-    window.addEventListener("resize", this.updateDimensions);
     this.fetchHomeContent().then(this.setHomeContent);
   }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.updateDimensions);
-  }
-
-  updateDimensions = () => {
-    this.setState({
-      height: window.innerHeight,
-      width: window.innerWidth
-    });
-  };
 
   fetchHomeContent = () =>
     this.client.getEntries({
@@ -76,41 +63,9 @@ class HomeCarousel extends React.Component {
       speed: 500,
       slidesToShow: 1,
       initialSlide: 0,
-      centerPadding: "150px",
+      centerPadding: "10px",
       slidesToScroll: 1,
       centerMode: true,
-      responsive: [
-        {
-          breakpoint: 1200,
-          settings: {
-            centerPadding: "125px",
-          }
-        },
-        {
-          breakpoint: 1100,
-          settings: {
-            centerPadding: "100px",
-          }
-        },
-        {
-          breakpoint: 1000,
-          settings: {
-            centerPadding: "75px",
-          }
-        },
-        {
-          breakpoint: 950,
-          settings: {
-            centerPadding: "62.5px",
-          }
-        },
-        {
-          breakpoint: 900,
-          settings: {
-            centerPadding: "0px",
-          }
-        }
-      ]
     };
     const videoArray = this.state.homePageVideoCaseStudyVideoArray
     let videoCarouselObject;
@@ -120,29 +75,19 @@ class HomeCarousel extends React.Component {
         return (
           <div>
             <div>
-              {this.state.width > 900 && (
-                <ReactPlayer
-                  className="video mx-auto"
-                  width="750px"
-                  height="458px"
-                  url={video}
-                />
-              )}
-              {this.state.width <= 900 && (
-                <ReactPlayer
-                  className="video mx-auto"
-                  width="600px"
-                  height="366px"
-                  url={video}
-                />
-              )}
+              <ReactPlayer
+                className="video mx-auto"
+                width="345px"
+                height="194px"
+                url={video}
+              />
             </div>
           </div>
         );
       });
     }
     return (
-      <Slider {...settings} className="about-leadership-team-row">{videoCarouselObject}</Slider>
+      <Slider {...settings} >{videoCarouselObject}</Slider>
     );
   }
 }
