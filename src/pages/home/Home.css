@@ -719,10 +719,6 @@
   justify-content: center;
 }
 
-.slider-element{
-  /* border: solid green 2px; */
-}
-
 .partial-width-dark-blue {
   margin: 0 -9999rem;
   /* add back negative margin value */
@@ -738,6 +734,12 @@
 }
 
 .slick-slide{
-  /* opacity: 0.75; */
   filter: blur(2.5px);
+}
+
+@media screen and (max-width: 500px) {
+  .slick-list{
+    max-height: 200px;
+    max-width: 1000px;
+  }
 }

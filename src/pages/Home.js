@@ -27,6 +27,7 @@ import PathToRegexp, { compile } from "path-to-regexp";
 import HomeFeatureLeftSideText from "./sharedComponents/HomeFeatureLeftSideText"
 import HomeFeatureRightSideText from "./sharedComponents/HomeFeatureRightSideText"
 import HomeCarousel from "./home/HomeCarousel";
+import MobileHomeCarousel from "./home/MobileHomeCarousel";
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -135,6 +136,7 @@ class Home extends React.Component {
   };
 
   render() {
+    console.log(this.state)
     const space = this.props.match.params.space;
     return (
       <div className="homePageContainer" fluid>
@@ -320,31 +322,11 @@ class Home extends React.Component {
                 {this.state.homePageVideoCaseStudyTitle}
               </h1>
             </Row>
-            <HomeCarousel homePageVideoCaseStudyVideoEmbed={this.state.homePageVideoCaseStudyVideoEmbed}
-              homePageVideoCaseStudyVideoArray={this.state.homePageVideoCaseStudyVideoArray}
+            <HomeCarousel
+              setSpace={this.props.setSpace}
+              setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
             />
-            {/* <Row className="homePageVideoCaseStudyVideoEmbed">
-                <div>
-                  <img className="oval" src={Oval} />
-                  <img className="line" src={Line} />
-                  {this.state.width > 850 && (
-                    <ReactPlayer
-                      className="video"
-                      width="800px"
-                      height="448px"
-                      url={this.state.homePageVideoCaseStudyVideoEmbed}
-                    />
-                  )}
-                  {this.state.width <= 850 && (
-                    <ReactPlayer
-                      className="video"
-                      width="600px"
-                      height="366px"
-                      url={this.state.homePageVideoCaseStudyVideoEmbed}
-                    />
-                  )}
-                </div> */}
-            {/* </Row> */}
           </div>
           {/* </div> */}
           <PartnerImages
@@ -368,11 +350,10 @@ class Home extends React.Component {
               </Row>
               <Row className="mobile-homePageVideoCaseStudyVideoEmbed mb-4">
                 <div>
-                  <ReactPlayer
-                    className="video"
-                    width="345px"
-                    height="194px"
-                    url={this.state.homePageVideoCaseStudyVideoEmbed}
+                  <MobileHomeCarousel
+                    setSpace={this.props.setSpace}
+                    setAccessToken={this.props.setAccessToken}
+                    environment={this.props.environment}
                   />
                 </div>
               </Row>
