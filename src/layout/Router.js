@@ -37,23 +37,6 @@ class Router extends React.Component {
       <Switch>
         <Route
           exact
-          path="/"
-          render={() => (
-            <Redirect
-              locale={this.props.locale}
-              space={this.props.space}
-              spaceName={this.props.spaceName}
-              accessToken={this.props.accessToken}
-              getADemoEmail={this.props.getADemoEmail}
-              sendEmailAddressToGetADemo={this.props.sendEmailAddressToGetADemo}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
-          )}
-        />
-        <Route
-          exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/home"}
           render={() => (
             <Home
@@ -260,7 +243,7 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
-          path={this.props.match.url + ":space" + "/" + ":locale" + "/privacy"}
+          path={this.props.match.url + ":space" + "/" + ":locale" + "/privacy-policy"}
           render={() => (
             <Privacy
               locale={this.props.locale}
@@ -575,12 +558,30 @@ class Router extends React.Component {
         />
         <Route
           exact
+          path={this.props.match.url + ":space/*" }
           render={() => (
             <FourOhFourRedirect
               locale={this.props.locale}
               space={this.props.space}
               spaceName={this.props.spaceName}
               accessToken={this.props.accessToken}
+              setSpace={this.props.setSpace}
+              setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
+            />
+          )}
+        />
+        <Route
+          exact
+          render={() => (
+            <Redirect
+              locale={this.props.locale}
+              url={this.props.match.url}
+              space={this.props.space}
+              spaceName={this.props.spaceName}
+              accessToken={this.props.accessToken}
+              getADemoEmail={this.props.getADemoEmail}
+              sendEmailAddressToGetADemo={this.props.sendEmailAddressToGetADemo}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
               environment={this.props.environment}
