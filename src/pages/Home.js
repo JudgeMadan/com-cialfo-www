@@ -115,7 +115,6 @@ class Home extends React.Component {
           [key]: filteredhomeContentFields[key]
         });
       } else if (Array.isArray(filteredhomeContentFields[key])) {
-        console.log(filteredhomeContentFields[key])
         if (typeof filteredhomeContentFields[key][0] === "string") {
           this.setState({
             [key]: filteredhomeContentFields[key]
@@ -136,7 +135,6 @@ class Home extends React.Component {
   };
 
   render() {
-    console.log(this.state)
     const space = this.props.match.params.space;
     return (
       <div className="homePageContainer" fluid>
