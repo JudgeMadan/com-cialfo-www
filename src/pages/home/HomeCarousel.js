@@ -58,7 +58,6 @@ class HomeCarousel extends React.Component {
     let filteredhomeContentFields = filteredhomeContent[0].fields;
     for (let key in filteredhomeContentFields) {
       if (Array.isArray(filteredhomeContentFields[key])) {
-        console.log(filteredhomeContentFields[key])
         if (typeof filteredhomeContentFields[key][0] === "string") {
           this.setState({
             [key]: filteredhomeContentFields[key]
@@ -69,7 +68,6 @@ class HomeCarousel extends React.Component {
   };
 
   render() {
-    console.log(this.state)
     let settings = {
       dots: true,
       infinite: true,
@@ -114,7 +112,6 @@ class HomeCarousel extends React.Component {
     };
     const videoArray = this.state.homePageVideoCaseStudyVideoArray
     let videoCarouselObject;
-    console.log(videoArray)
     if (videoArray) {
       videoCarouselObject = videoArray.map(video => {
         return (
@@ -142,7 +139,7 @@ class HomeCarousel extends React.Component {
       });
     }
     return (
-      <Slider {...settings} className="about-leadership-team-row">{videoCarouselObject}</Slider>
+      <Slider {...settings} >{videoCarouselObject}</Slider>
     );
   }
 }
