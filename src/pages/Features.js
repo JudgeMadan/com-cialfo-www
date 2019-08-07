@@ -19,6 +19,8 @@ import { withRouter } from "react-router-dom";
 import PathToRegexp, { compile } from "path-to-regexp";
 import HomeFeatureLeftSideText from "./sharedComponents/HomeFeatureLeftSideText"
 import HomeFeatureRightSideText from "./sharedComponents/HomeFeatureRightSideText"
+import DemoCallToAction from "./sharedComponents/DemoCallToAction"
+
 class Features extends React.Component {
   constructor(props) {
     super(props);
@@ -207,6 +209,7 @@ class Features extends React.Component {
           image={Discover}
           linkUrl="features-report"
         />
+        <DemoCallToAction />
       </Container>
     );
   }
