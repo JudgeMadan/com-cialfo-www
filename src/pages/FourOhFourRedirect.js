@@ -18,43 +18,47 @@ class FourOhFourRedirect extends React.Component {
 
   redirect = () => {
     if (this.props.spaceName == "china") {
-      if (this.identifyLocale(this.props.location)) {
+      let locale = this.identifyLocale(this.props.location)
+      if (locale === "zh-CN" || locale === "en-US") {
         this.props.history.push(
-          "/cn/" + this.identifyLocale(this.props.location) + "/404"
+          "/cn/" + locale + "/404"
         );
         return;
       } else {
-        this.props.history.push("/cn/en-US/404");
+        window.location.href = "/cn/en-US/404";
         return;
       }
     } else if (this.props.spaceName == "india") {
-      if (this.identifyLocale(this.props.location)) {
+      let locale = this.identifyLocale(this.props.location)
+      if (locale === "zh-CN" || locale === "en-US") {
         this.props.history.push(
-          "/in/" + this.identifyLocale(this.props.location) + "/404"
+          "/in/" + locale + "/404"
         );
         return;
       } else {
-        this.props.history.push("/in/en-US/404");
+        window.location.href = "/in/en-US/404";
         return;
       }
     } else if (this.props.spaceName == "us") {
-      if (this.identifyLocale(this.props.location)) {
+      let locale = this.identifyLocale(this.props.location)
+      if (locale === "zh-CN" || locale === "en-US") {
         this.props.history.push(
-          "/us/" + this.identifyLocale(this.props.location) + "/404"
+          "/us/" + locale + "/404"
         );
         return;
       } else {
-        this.props.history.push("/us/en-US/404");
+        window.location.href = "/us/en-US/404";
         return;
       }
     } else {
-      if (this.identifyLocale(this.props.location)) {
+      let locale = this.identifyLocale(this.props.location)
+      if (locale === "zh-CN" || locale === "en-US") {
         this.props.history.push(
-          "/intl/" + this.identifyLocale(this.props.location) + "/404"
+          "/intl/" + locale + "/404"
         );
         return;
       } else {
-        this.props.history.push("/intl/en-US/404");
+        window.location.href = "/intl/en-US/404"; // hard refresh for accessToken
         return;
       }
     }
