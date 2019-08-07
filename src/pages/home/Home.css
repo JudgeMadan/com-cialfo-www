@@ -618,14 +618,6 @@
   margin: 0 10px;
 }
 
-.partial-width-dark-blue {
-  margin: 0 -9999rem;
-  /* add back negative margin value */
-  padding: 0.25rem 9999rem;
-  background: #1786df;
-  background: linear-gradient(white 3%, #1786df 3% 55%, white 55%);
-}
-
 .partner-object-image-container {
   display: flex;
   height: 100px;
@@ -703,13 +695,49 @@
   max-height: 60px;
   width: auto;
 }
-
-.slider-container{
+/* _______________________________________________ */
+/* BASIC WORKING SLIDER CONFIG - NOT FULL SCREEN */
+/* .slider-container{
   border: solid red 2px;
   justify-content: center;
-  max-width: 750px;
 }
 
 .slider-element{
   border: solid green 2px;
+} */
+
+/* .partial-width-dark-blue {
+  margin: 0 -9999rem; */
+  /* add back negative margin value */
+  /* padding: 0.25rem 9999rem;
+  background: #1786df;
+  background: linear-gradient(white 3%, #1786df 3% 55%, white 55%);
+} */
+/* _______________________________________________ */
+.slider-container{
+  /* border: solid red 2px; */
+  justify-content: center;
+}
+
+.slider-element{
+  /* border: solid green 2px; */
+}
+
+.partial-width-dark-blue {
+  margin: 0 -9999rem;
+  /* add back negative margin value */
+  padding: 0.25rem 9999rem;
+  background: #1786df;
+  /* background: linear-gradient (#1786df 55%, white 55%); */
+  background: linear-gradient(white 3%, #1786df 3% 55%, white 55%);
+}
+
+.slick-current{
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.slick-slide{
+  /* opacity: 0.75; */
+  filter: blur(2.5px);
 }
