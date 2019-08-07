@@ -7,34 +7,21 @@ class HomeCarousel extends React.Component {
     super(props);
     this.state = {
       playing_1: false,
-      muted_1: false,
-      playing_2: false,
-      playing_3: false,
-      playing_4: false,
-      playing_5: false,
     };
   }
 
   afterChangeHandler = (video) => {
     this.setState({
       playing_1: false,
-      muted_1: true,
-      playing_2: false,
-      playing_3: false,
-      playing_4: false,
-      playing_5: false,
     })
   }
 
+
   render() {
     let settings = {
-      // dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-
-      // BASIC NOT FULL SCREEN CAROUSEL
-      // centerPadding: "200px",
       centerPadding: "250px",
       slidesToScroll: 1,
       centerMode: true,
@@ -66,57 +53,29 @@ class HomeCarousel extends React.Component {
         }
       ]
     };
+    const videoArray = this.props.homePageVideoCaseStudyVideoArray
+    let videoCarouselObject;
+    console.log(videoArray)
+    if (videoArray) {
+      videoCarouselObject = videoArray.map(video => {
+        return (
+          <div className="slider-outer-container">
+            <div className="slider-element">
+              <ReactPlayer
+                // onClick={this.afterChangeHandler}
+                className="video mx-auto"
+                width="600px"
+                height="366px"
+                url={video}
+              // playing={this.state.playing_1}
+              />
+            </div>
+          </div>
+        );
+      });
+    }
     return (
-      <div className="slider-outer-container">
-        <Slider {...settings} beforeChange={this.afterChangeHandler} className="slider-container mx-auto">
-          <div className="slider-element">
-            <ReactPlayer
-              onClick={this.afterChangeHandler}
-              className="video mx-auto"
-              width="600px"
-              height="366px"
-              url={this.props.homePageVideoCaseStudyVideoEmbed}
-              playing={this.state.playing_1}
-            />
-          </div>
-          <div className="slider-element hello">
-            <ReactPlayer
-              className="video mx-auto"
-              width="600px"
-              height="366px"
-              url={this.props.homePageVideoCaseStudyVideoEmbed}
-              playing={this.state.playing_2}
-            />
-          </div>
-          <div className="slider-element mx-auto">
-            <ReactPlayer
-              className="video mx-auto"
-              width="600px"
-              height="366px"
-              url={this.props.homePageVideoCaseStudyVideoEmbed}
-              playing={this.state.playing_3}
-            />
-          </div>
-          <div className="slider-element mx-auto">
-            <ReactPlayer
-              className="video mx-auto"
-              width="600px"
-              height="366px"
-              url={this.props.homePageVideoCaseStudyVideoEmbed}
-              playing={this.state.playing_4}
-            />
-          </div>
-          <div className="slider-element mx-auto">
-            <ReactPlayer
-              className="video mx-auto"
-              width="600px"
-              height="366px"
-              url={this.props.homePageVideoCaseStudyVideoEmbed}
-              playing={this.state.playing_5}
-            />
-          </div>
-        </Slider>
-      </div>
+      <Slider {...settings} className="about-leadership-team-row">{videoCarouselObject}</Slider>
     );
   }
 }
