@@ -140,7 +140,7 @@ class Home extends React.Component {
     };
     const space = this.props.match.params.space;
     return (
-      <Container className="homePageContainer" fluid>
+      <div className="homePageContainer" fluid>
         {/* FULL SCREEN TOP ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
           {this.state.width > 1100 && (
@@ -316,15 +316,15 @@ class Home extends React.Component {
         />
         <MediaQuery query="(min-device-width: 1224px)">
           {/* VIDEO CAROUSEL GOES HERE */}
-          <div className="homePageVideoCaseStudy">
-            <div className="partial-width-dark-blue">
-              <Row className="homePageVideoCaseStudyTitle">
-                <h1 className="primary_font white-font mobile-home-page-video-case-study-title">
-                  {this.state.homePageVideoCaseStudyTitle}
-                </h1>
-              </Row>
-              <HomeCarousel homePageVideoCaseStudyVideoEmbed={this.state.homePageVideoCaseStudyVideoEmbed} />
-              {/* <Row className="homePageVideoCaseStudyVideoEmbed">
+          <div className="homePageVideoCaseStudy ">
+            {/* <div className="partial-width-dark-blue"> */}
+            <Row className="homePageVideoCaseStudyTitle">
+              <h1 className="primary_font white-font mobile-home-page-video-case-study-title">
+                {this.state.homePageVideoCaseStudyTitle}
+              </h1>
+            </Row>
+            <HomeCarousel homePageVideoCaseStudyVideoEmbed={this.state.homePageVideoCaseStudyVideoEmbed} />
+            {/* <Row className="homePageVideoCaseStudyVideoEmbed">
                 <div>
                   <img className="oval" src={Oval} />
                   <img className="line" src={Line} />
@@ -345,9 +345,9 @@ class Home extends React.Component {
                     />
                   )}
                 </div> */}
-              {/* </Row> */}
-            </div>
+            {/* </Row> */}
           </div>
+          {/* </div> */}
           <PartnerImages
             locale={this.props.locale}
             className="partnerImages"
@@ -380,7 +380,7 @@ class Home extends React.Component {
             </Container>
           </Row>
         </MediaQuery>
-      </Container >
+      </div >
     );
   }
 }
