@@ -114,11 +114,18 @@ class Home extends React.Component {
           [key]: filteredhomeContentFields[key]
         });
       } else if (Array.isArray(filteredhomeContentFields[key])) {
-        this.setState({
-          [key]: filteredhomeContentFields[key].map(
-            test => test.fields.file.url
-          )
-        });
+        console.log(filteredhomeContentFields[key])
+        if (typeof filteredhomeContentFields[key][0] === "string") {
+          this.setState({
+            [key]: filteredhomeContentFields[key]
+          })
+        } else {
+          this.setState({
+            [key]: filteredhomeContentFields[key].map(
+              test => test.fields.file.url
+            )
+          });
+        }
       } else {
         this.setState({
           [key]: filteredhomeContentFields[key].fields.file.url
@@ -128,16 +135,6 @@ class Home extends React.Component {
   };
 
   render() {
-    let settings = {
-      // dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      centerPadding: "60px",
-      slidesToScroll: 1,
-      centerMode: true,
-      focusOnSelect: true
-    };
     const space = this.props.match.params.space;
     return (
       <div className="homePageContainer" fluid>
@@ -323,7 +320,9 @@ class Home extends React.Component {
                 {this.state.homePageVideoCaseStudyTitle}
               </h1>
             </Row>
-            <HomeCarousel homePageVideoCaseStudyVideoEmbed={this.state.homePageVideoCaseStudyVideoEmbed} />
+            <HomeCarousel homePageVideoCaseStudyVideoEmbed={this.state.homePageVideoCaseStudyVideoEmbed}
+              homePageVideoCaseStudyVideoArray={this.state.homePageVideoCaseStudyVideoArray}
+            />
             {/* <Row className="homePageVideoCaseStudyVideoEmbed">
                 <div>
                   <img className="oval" src={Oval} />
