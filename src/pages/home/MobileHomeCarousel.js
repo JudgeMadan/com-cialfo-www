@@ -84,7 +84,7 @@ class HomeCarousel extends React.Component {
       });
     }
     return (
-      <Slider {...settings} className="test-class" >{videoCarouselObject}</Slider>
+      <Slider {...settings}>{videoCarouselObject}</Slider>
     );
   }
 }
