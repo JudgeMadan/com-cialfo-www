@@ -126,11 +126,19 @@ class HomeCarousel extends React.Component {
                 url={video}
               />
             )}
-            {this.state.width <= 900 && (
+            {this.state.width <= 900 && this.state.width > 600 && (
               <ReactPlayer
                 className="video mx-auto"
                 width="600px"
                 height="366px"
+                url={video}
+              />
+            )}
+            {this.state.width <= 600 && (
+              <ReactPlayer
+                className="video mx-auto"
+                width="450px"
+                height="275px"
                 url={video}
               />
             )}
