@@ -323,16 +323,26 @@ class Home extends React.Component {
                   {this.state.homePageVideoCaseStudyTitle}
                 </h1>
               </Row>
-              <HomeCarousel
-                setSpace={this.props.setSpace}
-                setAccessToken={this.props.setAccessToken}
-                environment={this.props.environment}
-              />
+              <div className="home-page-carousel">
+                <HomeCarousel
+                  setSpace={this.props.setSpace}
+                  setAccessToken={this.props.setAccessToken}
+                  environment={this.props.environment}
+                />
+              </div>
+              <div className="home-page-video">
+                <ReactPlayer
+                  className="video mx-auto"
+                  width="450px"
+                  height="275px"
+                  url={this.state.homePageVideoCaseStudyVideoEmbed}
+                />
+              </div>
             </div>
             {/* </div> */}
             <PartnerImages
               locale={this.props.locale}
-              className="partnerImages"
+              className="partnerImages mt-5"
               partnerImages={this.state.homePagePoweredByOurPartnersPartners}
               accessToken={this.props.accessToken}
               space={this.props.space}
@@ -351,11 +361,14 @@ class Home extends React.Component {
                 </Row>
                 <Row className="mobile-homePageVideoCaseStudyVideoEmbed mb-4">
                   <div>
-                    <MobileHomeCarousel
-                      setSpace={this.props.setSpace}
-                      setAccessToken={this.props.setAccessToken}
-                      environment={this.props.environment}
-                    />
+                    <div>
+                      <ReactPlayer
+                        className="video mx-auto"
+                        width="345px"
+                        height="194px"
+                        url={this.state.homePageVideoCaseStudyVideoEmbed}
+                      />
+                    </div>
                   </div>
                 </Row>
               </Container>
