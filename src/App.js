@@ -7,7 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      environment: "staging",
+      environment: "master",
       locale: "en-US",
       getADemoEmail: "",
       chinaSpace: {
