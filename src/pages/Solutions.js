@@ -12,6 +12,8 @@ import PartnerImages from "./PartnerImages";
 import MobilePartnerImages from "./MobilePartnerImages";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
+import DemoCallToAction from "./sharedComponents/DemoCallToAction"
+
 class Solutions extends React.Component {
   constructor(props) {
     super(props);
@@ -144,8 +146,8 @@ class Solutions extends React.Component {
           />
         </MediaQuery>
         <div className="solutions-bottom-spacing" />
-        {/* FULL SCREEN FOR SUPERINTENDENTS */}
-        {space == "us" && (
+        {/* FULL SCREEN FOR SUPERINTENDENTS (US) / FAMILIES (INDIA) */}
+        {(space == "us" || space == "in") && (
           <MediaQuery query="(min-device-width: 1224px)">
             <SolutionsRightSideText
               title={this.state.solutionsExtraTitle}
@@ -153,12 +155,12 @@ class Solutions extends React.Component {
               link={this.state.solutionsExtraLinkText}
               url={this.state.solutionsExtraLinkUrl}
               linkStyle={this.state.forSuperintendents}
-              image={this.state.solutionsForSuperintendentsImage}
+              image={space == "us" ? this.state.solutionsForSuperintendentsImage : this.state.solutionsForFamiliesImage}
             />
           </MediaQuery>
         )}
-        {/* MOBILE FOR SUPERINTENDENTS */}
-        {space == "us" && (
+        {/* MOBILE FOR SUPERINTENDENTS (US) / FAMILIES (INDIA) */}
+        {(space == "us" || space == "in") && (
           <MediaQuery query="(max-device-width: 1223px)">
             <MobileSolutionsContentText
               title={this.state.solutionsExtraTitle}
@@ -166,7 +168,7 @@ class Solutions extends React.Component {
               link={this.state.solutionsExtraLinkText}
               url={this.state.solutionsExtraLinkUrl}
               linkStyle={this.state.forSuperintendents}
-              image={this.state.solutionsForSuperintendentsImage}
+              image={space == "us" ? this.state.solutionsForSuperintendentsImage : this.state.solutionsForFamiliesImage}
             />
           </MediaQuery>
         )}
@@ -204,6 +206,7 @@ class Solutions extends React.Component {
             />
           )}
         </MediaQuery> */}
+        <DemoCallToAction />
       </Container>
     );
   }
