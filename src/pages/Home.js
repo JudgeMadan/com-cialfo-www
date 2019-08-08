@@ -342,7 +342,7 @@ class Home extends React.Component {
             {/* </div> */}
             <PartnerImages
               locale={this.props.locale}
-              className="partnerImages mt-5"
+              className="partnerImages"
               partnerImages={this.state.homePagePoweredByOurPartnersPartners}
               accessToken={this.props.accessToken}
               space={this.props.space}
