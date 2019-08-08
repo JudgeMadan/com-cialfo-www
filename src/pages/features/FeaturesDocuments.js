@@ -14,6 +14,7 @@ import FeaturesRightSideText from "./featuresSharedComponents/FeaturesRightSideT
 import FeaturesLeftSideText from "./featuresSharedComponents/FeaturesLeftSideText"
 import FeaturesTitle from "./featuresSharedComponents/FeaturesTitle"
 import { withRouter } from "react-router-dom";
+import DemoCallToAction from "../sharedComponents/DemoCallToAction"
 
 class FeaturesDocuments extends React.Component {
   constructor(props) {
@@ -109,6 +110,7 @@ class FeaturesDocuments extends React.Component {
           title={this.state.documentsTranscriptTitle}
           bullets={this.state.documentsTranscriptBlurb}
         />
+        <DemoCallToAction />
       </Container >
     );
   }

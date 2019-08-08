@@ -34,25 +34,6 @@ class HomeFeatureRightSideText extends React.Component {
     });
   };
 
-  generateUrl = (path, location) => {
-    const ROUTE = "/:space/:locale/:path*";
-    const definePath = compile(ROUTE);
-    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
-    if (routeComponents && routeComponents[3]) {
-      return definePath({
-        space: routeComponents[1],
-        locale: routeComponents[2],
-        path: path
-      });
-    } else if (routeComponents && routeComponents[3] == undefined) {
-      return definePath({
-        space: routeComponents[1],
-        locale: routeComponents[2],
-        path: "a"
-      });
-    }
-  };
-
   render() {
     return (
       <div>
@@ -69,8 +50,8 @@ class HomeFeatureRightSideText extends React.Component {
             )}
 
             {this.state.width <= 1200 && (
-              <Col className="feature-home-page-shared-component-image-right-side-col 
-              medium-home-left-side-text-image medium-home-feature-img-div-container"> 
+              <Col className="feature-home-page-shared-component-image-right-side-col
+              medium-home-left-side-text-image medium-home-feature-img-div-container">
                 <div className="medium-home-feature-img-div">
                     <img
                       className="features-img medium-feature-home-subpage-image-sizing"
@@ -95,10 +76,7 @@ class HomeFeatureRightSideText extends React.Component {
                   <Row>
                     <Link
                       className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
-                      to={this.generateUrl(
-                        this.props.linkUrl,
-                        this.props.location
-                      )}
+                      to={this.props.linkUrl}
                     >
                       {this.props.linkText}
                     </Link>
@@ -122,10 +100,7 @@ class HomeFeatureRightSideText extends React.Component {
                   <Row className="center-in-row">
                     <Link
                       className="homeFeatureLink homePageFeaturesSendDocumentLinkText text-center"
-                      to={this.generateUrl(
-                        this.props.linkUrl,
-                        this.props.location
-                      )}
+                      to={this.props.linkUrl}
                     >
                       {this.props.linkText}
                     </Link>
@@ -156,7 +131,7 @@ class HomeFeatureRightSideText extends React.Component {
                 <Row className="mb-5">
                   <Link
                     className="homeFeatureLink homePageFeaturesSendDocumentLinkText"
-                    to={this.generateUrl(this.props.linkUrl, this.props.location)}
+                    to={this.props.linkUrl}
                   >
                     {this.props.linkText}
                   </Link>

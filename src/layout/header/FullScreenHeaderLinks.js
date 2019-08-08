@@ -37,45 +37,26 @@ class FullScreenHeaderLinks extends React.Component {
     this.identifySpace(this.props.location);
   }
 
+  buildCustomNavLinks = () => {
+    let table = []
+    for(let i = 0; i < 6; i++){
+      if(this.props.name[i] != null){
+        table.push(<div>
+          <NavLink activeClassName="activeStyle" className="nav-link" to={this.props.link[i]}>
+            {this.props.name[i]}
+          </NavLink>
+        </div>)
+      }
+    }
+    return table;
+  }
+
   render() {
     return (
       <Nav>
-        <div>
-          <NavLink
-            activeClassName="activeStyle"
-            className="nav-link"
-            to="features"
-          >
-            {this.props.featuresPage}
-          </NavLink>
-        </div>
-        <div>
-          <NavLink
-            activeClassName="activeStyle"
-            className="nav-link"
-            to="about"
-          >
-            {this.props.aboutUsPage}
-          </NavLink>
-        </div>
-        <div>
-          <NavLink
-            activeClassName="activeStyle"
-            className="nav-link"
-            to="solutions"
-          >
-            {this.props.solutionsPage}
-          </NavLink>
-        </div>
-        <div>
-          <NavLink
-            activeClassName="activeStyle"
-            className="nav-link"
-            to="events"
-          >
-            {this.props.eventsPage}
-          </NavLink>
-        </div>
+
+        {this.buildCustomNavLinks()}
+
         {this.identifySpace(this.props.location) === "cn" && (
           <TranslateButton
             locale={this.props.locale}
@@ -89,14 +70,14 @@ class FullScreenHeaderLinks extends React.Component {
             activeClassName="activeStyle"
             className="demo-page-link"
             // className="nav-link demo-page-link"
-            to="demo"
+            to={this.props.linkDemo}
           >
             <Button
               className="nav-link-button sharp-corners-button"
               size="sm"
               variant="primary"
             >
-              {this.props.demoPage}
+              {this.props.nameDemo}
             </Button>
           </NavLink>
         </div>

@@ -16,6 +16,8 @@ import FeaturesRightSideText from "./featuresSharedComponents/FeaturesRightSideT
 import FeaturesLeftSideText from "./featuresSharedComponents/FeaturesLeftSideText"
 import FeaturesTitle from "./featuresSharedComponents/FeaturesTitle"
 import { withRouter } from "react-router-dom";
+import DemoCallToAction from "../sharedComponents/DemoCallToAction"
+
 class FeaturesResearch extends React.Component {
   constructor(props) {
     super(props);
@@ -118,6 +120,7 @@ class FeaturesResearch extends React.Component {
           title={this.state.researchKnowledgeTitle}
           bullets={this.state.researchKnowledgeBlurb}
         />
+        <DemoCallToAction />
       </Container >
     );
   }

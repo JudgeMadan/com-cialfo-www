@@ -11,6 +11,8 @@ import SolutionsSubfooter from "./SolutionsSubfooter";
 import MobileSolutionsContentText from "./MobileSolutionsContentText";
 import MobileSolutionsHeader from "./MobileSolutionsHeader";
 import MediaQuery from "react-responsive";
+import DemoCallToAction from "../sharedComponents/DemoCallToAction"
+
 class SolutionsSubPage extends React.Component {
   constructor(props) {
     super(props);
@@ -82,6 +84,7 @@ class SolutionsSubPage extends React.Component {
             image={this.props.bottomRowImage}
           />
         </MediaQuery>
+        <DemoCallToAction />
       </Container>
     );
   }
