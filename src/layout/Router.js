@@ -482,6 +482,28 @@ class Router extends React.Component {
             ":space" +
             "/" +
             ":locale" +
+            "/terms-and-conditions"
+          }
+          render={() => (
+            <TermsOfService
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
+              setSpace={this.props.setSpace}
+              setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
             "/cialfo-vs-naviance"
           }
           render={() => (
