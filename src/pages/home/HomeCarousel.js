@@ -70,6 +70,8 @@ class HomeCarousel extends React.Component {
   render() {
     let settings = {
       dots: true,
+      focusOnSelect: true,
+      draggable: false,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
@@ -116,24 +118,22 @@ class HomeCarousel extends React.Component {
       videoCarouselObject = videoArray.map(video => {
         return (
           <div>
-            <div>
-              {this.state.width > 900 && (
-                <ReactPlayer
-                  className="video mx-auto"
-                  width="750px"
-                  height="458px"
-                  url={video}
-                />
-              )}
-              {this.state.width <= 900 && (
-                <ReactPlayer
-                  className="video mx-auto"
-                  width="600px"
-                  height="366px"
-                  url={video}
-                />
-              )}
-            </div>
+            {this.state.width > 900 && (
+              <ReactPlayer
+                className="video mx-auto"
+                width="750px"
+                height="458px"
+                url={video}
+              />
+            )}
+            {this.state.width <= 900 && (
+              <ReactPlayer
+                className="video mx-auto"
+                width="600px"
+                height="366px"
+                url={video}
+              />
+            )}
           </div>
         );
       });
