@@ -90,23 +90,36 @@ class DataContextProvider extends Component {
   setContent = (response, pageType) => {
     const content = response
     const data = {}
-    let filteredContent = content.filter(
-      content => content.fields.pageType === pageType
-    )
-    let filteredhomeContentFields = filteredContent[0].fields;
-    for (let key in filteredhomeContentFields) {
-      if (typeof filteredhomeContentFields[key] === "string") {
-        data[key] = filteredhomeContentFields[key]
-      } else if (Array.isArray(filteredhomeContentFields[key])) {
-        if (typeof filteredhomeContentFields[key][0] === "string") {
-          data[key] = filteredhomeContentFields[key]
-        } else {
-          data[key] = filteredhomeContentFields[key].map(
-            test => test.fields.file.url
+    let filteredContent = {}
+    if (content[0].fields.pageType) {
+      filteredContent = content.filter(
+        content => content.fields.pageType === pageType
+      )
+    } else {
+      filteredContent = content
+    }
+    console.log(filteredContent)
+    let filteredContentFields = filteredContent[0].fields;
+    for (let key in filteredContentFields) {
+      if (typeof filteredContentFields[key] === "string") {
+        data[key] = filteredContentFields[key]
+      } else if (Array.isArray(filteredContentFields[key])) {
+        if (typeof filteredContentFields[key][0] === "string") {
+          data[key] = filteredContentFields[key]
+        } else if (filteredContentFields[key][0].sys.type === "Asset") {
+          data[key] = filteredContentFields[key].map(
+            content => content.fields.file.url
+          )
+        } else if (filteredContentFields[key][0].sys.type === "Entry") {
+          data[key] = filteredContentFields[key]
+        }
+        else {
+          data[key] = filteredContentFields[key].map(
+            content => content.fields.file.url
           )
         }
       } else {
-        data[key] = filteredhomeContentFields[key].fields.file.url
+        data[key] = filteredContentFields[key].fields.file.url
       }
     }
     return data

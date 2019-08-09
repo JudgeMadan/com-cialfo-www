@@ -19,12 +19,15 @@ import { withRouter } from "react-router-dom";
 import PathToRegexp, { compile } from "path-to-regexp";
 import HomeFeatureLeftSideText from "./sharedComponents/HomeFeatureLeftSideText"
 import HomeFeatureRightSideText from "./sharedComponents/HomeFeatureRightSideText"
+import { DataContext } from "../contexts/DataContext"
 class Features extends React.Component {
+  static contextType = DataContext;
   constructor(props) {
     super(props);
     this.state = {
       height: window.innerHeight,
-      width: window.innerWidth
+      width: window.innerWidth,
+      data: {}
     };
   }
 
@@ -55,15 +58,16 @@ class Features extends React.Component {
     return this.props.setAccessToken(this.props.match.params.space);
   };
 
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
 
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    this.fetchFeatures().then(this.setFeatures);
+    // this.fetchFeatures().then(this.setFeatures);
+    this.context.fetchEntries("featuresPage").then((response) => {
+      let data = this.context.setContent(response, "featuresPage")
+      this.setState({
+        data: data
+      })
+    });
   }
 
   componentWillUnmount() {
@@ -79,35 +83,16 @@ class Features extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.fetchFeatures().then(this.setFeatures);
+      this.context.fetchEntries("featuresPage").then((response) => {
+        let data = this.context.setContent(response, "featuresPage")
+        this.setState({
+          data: data
+        })
+      });
     }
   }
 
-  fetchFeatures = () => {
-    return this.client.getEntries({
-      content_type: "featuresPage",
-      locale: this.props.match.params.locale
-    });
-  };
 
-  setFeatures = response => {
-    const featureContent = response.items[0].fields;
-    for (let key in featureContent) {
-      if (typeof featureContent[key] === "string") {
-        this.setState({
-          [key]: featureContent[key]
-        });
-      } else if (Array.isArray(featureContent[key])) {
-        this.setState({
-          [key]: featureContent[key]
-        });
-      } else {
-        this.setState({
-          [key]: featureContent[key].fields.file.url
-        });
-      }
-    }
-  };
 
   render() {
     const space = this.props.match.params.space;
@@ -116,7 +101,7 @@ class Features extends React.Component {
         {/* FULL SCREEN TOP ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="titleContainer">
-            <h1 className="primary_font">{this.state.featuresTitle}</h1>
+            <h1 className="primary_font">{this.state.data.featuresTitle}</h1>
           </Row>
           <Row className="featuresVideoEmbed">
             <div>
@@ -127,7 +112,7 @@ class Features extends React.Component {
                   className="video"
                   width="800px"
                   height="448px"
-                  url={this.state.featuresVideo}
+                  url={this.state.data.featuresVideo}
                 />
               )}
               {this.state.width < 850 && (
@@ -135,7 +120,7 @@ class Features extends React.Component {
                   className="video"
                   width="600px"
                   height="366px"
-                  url={this.state.featuresVideo}
+                  url={this.state.data.featuresVideo}
                 />
               )}
             </div>
@@ -143,7 +128,7 @@ class Features extends React.Component {
           {space !== "us" && (
             <Row className="homePageSchoolTestimonialsTitle">
               <h1 className="primary_font">
-                {this.state.homePageSchoolTestimonialsTitle}
+                {this.state.data.homePageSchoolTestimonialsTitle}
               </h1>
             </Row>
           )}
@@ -164,7 +149,7 @@ class Features extends React.Component {
         {/* MOBILE TOP ROW */}
         <MediaQuery query="(max-device-width: 1223px)">
           <Row className="titleContainer">
-            <h1 className="primary_font">{this.state.featuresTitle}</h1>
+            <h1 className="primary_font">{this.state.data.featuresTitle}</h1>
           </Row>
           <Row className="mobile-featuresVideoEmbed">
             <div>
@@ -173,37 +158,37 @@ class Features extends React.Component {
                 className="video"
                 width="345px"
                 height="194px"
-                url={this.state.featuresVideo}
+                url={this.state.data.featuresVideo}
               />
             </div>
           </Row>
           <Row className="homePageSchoolTestimonialsTitle">
             <h1 className="primary_font">
-              {this.state.homePageSchoolTestimonialsTitle}
+              {this.state.data.homePageSchoolTestimonialsTitle}
             </h1>
           </Row>
         </MediaQuery>
         {/* SEND DOCUMENTS*/}
         <HomeFeatureRightSideText
-          title={this.state.featurePageFeaturesSendDocumentTitle}
-          blurb={this.state.featurePageFeaturesSendDocumentBlurb}
-          linkText={this.state.featurePageFeaturesSendDocumentLinkText}
+          title={this.state.data.featurePageFeaturesSendDocumentTitle}
+          blurb={this.state.data.featurePageFeaturesSendDocumentBlurb}
+          linkText={this.state.data.featurePageFeaturesSendDocumentLinkText}
           linkUrl="features-send"
           image={Documents}
         />
         {/* LEVERAGE*/}
         <HomeFeatureLeftSideText
-          title={this.state.featurePageFeaturesLeverageTitle}
-          blurb={this.state.featurePageFeaturesLeverageBlurb}
+          title={this.state.data.featurePageFeaturesLeverageTitle}
+          blurb={this.state.data.featurePageFeaturesLeverageBlurb}
           linkText={this.state.featurePageFeaturesLeverageLinkText}
           image={space == "us" ? ResearchImageUS : ResearchImage}
           linkUrl="features-research"
         />
         {/* DISCOVER*/}
         <HomeFeatureRightSideText
-          title={this.state.featurePageFeaturesDiscoverTitle}
-          blurb={this.state.featurePageFeaturesDiscoverBlurb}
-          linkText={this.state.featurePageFeaturesDiscoverLinkText}
+          title={this.state.data.featurePageFeaturesDiscoverTitle}
+          blurb={this.state.data.featurePageFeaturesDiscoverBlurb}
+          linkText={this.state.data.featurePageFeaturesDiscoverLinkText}
           image={Discover}
           linkUrl="features-report"
         />

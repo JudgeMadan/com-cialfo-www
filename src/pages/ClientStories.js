@@ -7,10 +7,16 @@ import ClientStoriesHomePageCards from "./clientStories/ClientStoriesHomePageCar
 import HomeMarquee from "../pages/home/HomeMarquee";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
+import { DataContext } from "../contexts/DataContext"
+
 class ClientStories extends React.Component {
+  static contextType = DataContext;
+
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: {}
+    };
   }
 
   setSpace = () => {

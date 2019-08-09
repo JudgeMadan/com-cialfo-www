@@ -16,39 +16,38 @@ import Oval from "../img/Oval.svg";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
 import "./events/Events.css";
+import { DataContext } from "../contexts/DataContext"
 
 class Events extends React.Component {
+  static contextType = DataContext;
   constructor(props) {
     super(props);
     this.state = {
       height: window.innerHeight,
-      width: window.innerWidth
+      width: window.innerWidth,
+      data: {}
     };
   }
 
-  setSpace = () => {
-    return this.props.setSpace(this.props.match.params.space);
-  };
-
-  setAccessToken = () => {
-    return this.props.setAccessToken(this.props.match.params.space);
-  };
-
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
-
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.fetchAboutContent().then(this.setAboutContent);
+      this.context.fetchEntries("about").then((response) => {
+        let data = this.context.setContent(response, "eventsPage")
+        this.setState({
+          data: data
+        })
+      });
     }
   }
 
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    this.fetchAboutContent().then(this.setAboutContent);
+    this.context.fetchEntries("about").then((response) => {
+      let data = this.context.setContent(response, "eventsPage")
+      this.setState({
+        data: data
+      })
+    });
   }
 
   componentWillUnmount() {
@@ -62,34 +61,6 @@ class Events extends React.Component {
     });
   };
 
-  fetchAboutContent = () =>
-    this.client.getEntries({
-      content_type: "about",
-      locale: this.props.match.params.locale
-    });
-
-  setAboutContent = response => {
-    const aboutContent = response.items;
-    let filteredaboutContent = aboutContent.filter(
-      aboutContent => aboutContent.fields.pageType === "eventsPage"
-    );
-    let filteredaboutContentFields = filteredaboutContent[0].fields;
-    for (let key in filteredaboutContentFields) {
-      if (typeof filteredaboutContentFields[key] === "string") {
-        this.setState({
-          [key]: filteredaboutContentFields[key]
-        });
-      } else if (Array.isArray(filteredaboutContentFields[key])) {
-        this.setState({
-          [key]: filteredaboutContentFields[key]
-        });
-      } else {
-        this.setState({
-          [key]: filteredaboutContentFields[key].fields.file.url
-        });
-      }
-    }
-  };
 
   render() {
     return (
@@ -104,18 +75,18 @@ class Events extends React.Component {
                     <div>
                       <Row>
                         <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
-                          {this.state.aboutPageHeaderTitle}
+                          {this.state.data.aboutPageHeaderTitle}
                         </h1>
                       </Row>
                       <Row>
                         <h2 className="secondary_font left-side-header-blurb">
-                          {this.state.aboutPageHeaderSubtitle}
+                          {this.state.data.aboutPageHeaderSubtitle}
                         </h2>
                       </Row>
                     </div>
                   </Col>
                   <Col>
-                    <img src={this.state.aboutPageHeaderImage} />
+                    <img src={this.state.data.aboutPageHeaderImage} />
                   </Col>
                 </Row>
               </Container>
@@ -125,18 +96,18 @@ class Events extends React.Component {
             <Row className="small-eventPageTitle">
               <Container>
                 <Row>
-                  <img src={this.state.aboutPageHeaderImage} />
+                  <img src={this.state.data.aboutPageHeaderImage} />
                 </Row>
                 <Row className="top_row_left_col events-header-text">
                   <Container className="mx-3">
                     <Row>
                       <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
-                        {this.state.aboutPageHeaderTitle}
+                        {this.state.data.aboutPageHeaderTitle}
                       </h1>
                     </Row>
                     <Row>
                       <h2 className="secondary_font left-side-header-blurb">
-                        {this.state.aboutPageHeaderSubtitle}
+                        {this.state.data.aboutPageHeaderSubtitle}
                       </h2>
                     </Row>
                   </Container>
@@ -152,17 +123,17 @@ class Events extends React.Component {
             <Row className="center-in-row">
               <img
                 className="mobile-events-hero-image"
-                src={this.state.aboutPageHeaderImage}
+                src={this.state.data.aboutPageHeaderImage}
               />
             </Row>
             <Row className="center-in-row">
               <h1 className="primary_font left-side-header-title left-side-header-title-large-font mobile-events-header-text">
-                {this.state.aboutPageHeaderTitle}
+                {this.state.data.aboutPageHeaderTitle}
               </h1>
             </Row>
             <Row className="center-in-row">
               <h2 className="mx-3 secondary_font left-side-header-blurb mobile-events-header-text">
-                {this.state.aboutPageHeaderSubtitle}
+                {this.state.data.aboutPageHeaderSubtitle}
               </h2>
             </Row>
           </Container>
@@ -171,9 +142,9 @@ class Events extends React.Component {
         {/* FULL SCREEN TOP ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
           <EventsSubfooter
-            img={this.state.eventsSubfooterImg}
-            title={this.state.eventsSubfooterQuoteTitle}
-            quote={this.state.eventsSubfooterQuote}
+            img={this.state.data.eventsSubfooterImg}
+            title={this.state.data.eventsSubfooterQuoteTitle}
+            quote={this.state.data.eventsSubfooterQuote}
           />
         </MediaQuery>
         {/* MOBILE EVENT SUBFOOTER
@@ -189,18 +160,18 @@ class Events extends React.Component {
           <div className="full-width-light-blue">
             <Row className="center-in-row events-cialfo-events-sessions-top-row">
               <h1 className="primary_font">
-                {this.state.eventsCialfoEventsTitle}
+                {this.state.data.eventsCialfoEventsTitle}
               </h1>
             </Row>
             <Row className="events-subtitle center-in-row pb-5">
               <p className="secondary_font">
-                {this.state.eventsCialfoEventsBlurb}
+                {this.state.data.eventsCialfoEventsBlurb}
               </p>
             </Row>
             <Row className="events-cialfo-events-sessions-bottom-row ">
               <Container>
                 <CialfoEventsObject
-                  events={this.state.aboutPageLeadershipLeaders}
+                  events={this.state.data.aboutPageLeadershipLeaders}
                 />
               </Container>
             </Row>
@@ -211,18 +182,18 @@ class Events extends React.Component {
           <Container>
             <Row className="center-in-row events-cialfo-events-sessions-top-row light-blue-background">
               <h1 className="primary_font">
-                {this.state.eventsCialfoEventsTitle}
+                {this.state.data.eventsCialfoEventsTitle}
               </h1>
             </Row>
             <Row className="events-subtitle center-in-row px-3 light-blue-background">
               <p className="secondary_font">
-                {this.state.eventsCialfoEventsBlurb}
+                {this.state.data.eventsCialfoEventsBlurb}
               </p>
             </Row>
             <Row className="events-cialfo-events-sessions-bottom-row light-blue-background">
               <Container>
                 <MobileCialfoEventsObject
-                  events={this.state.aboutPageLeadershipLeaders}
+                  events={this.state.data.aboutPageLeadershipLeaders}
                 />
               </Container>
             </Row>
@@ -233,12 +204,12 @@ class Events extends React.Component {
           <div>
             <Row className="center-in-row events-cialfo-events-sessions-top-row">
               <h1 className="primary_font">
-                {this.state.eventsCialfoSessionsTitle}
+                {this.state.data.eventsCialfoSessionsTitle}
               </h1>
             </Row>
             <Row className="events-subtitle center-in-row pb-5">
               <p className="secondary_font">
-                {this.state.eventsCialfoSessionsBlurb}
+                {this.state.data.eventsCialfoSessionsBlurb}
               </p>
             </Row>
             <Row className="events-cialfo-events-sessions-bottom-row ">
@@ -246,7 +217,7 @@ class Events extends React.Component {
                 <img className="events-oval" src={Oval} />
                 <img className="events-blue-stroke-10" src={BlueStroke10} />
                 <CialfoSessionsObject
-                  events={this.state.aboutPageCounselorsCounselors}
+                  events={this.state.data.aboutPageCounselorsCounselors}
                 />
               </Container>
             </Row>
@@ -257,18 +228,18 @@ class Events extends React.Component {
           <Container className="mobile-events-bottom-border mobile-events-top-border my-5">
             <Row className="center-in-row mt-5">
               <h1 className="primary_font">
-                {this.state.eventsCialfoSessionsTitle}
+                {this.state.data.eventsCialfoSessionsTitle}
               </h1>
             </Row>
             <Row className="events-subtitle center-in-row px-3">
               <p className="secondary_font">
-                {this.state.eventsCialfoSessionsBlurb}
+                {this.state.data.eventsCialfoSessionsBlurb}
               </p>
             </Row>
             <Row className="pb-5">
               <Container>
                 <MobileCialfoSessionsObject
-                  events={this.state.aboutPageCounselorsCounselors}
+                  events={this.state.data.aboutPageCounselorsCounselors}
                 />
               </Container>
             </Row>

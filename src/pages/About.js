@@ -27,7 +27,8 @@ class About extends React.Component {
     super(props);
     this.state = {
       height: window.innerHeight,
-      width: window.innerWidth
+      width: window.innerWidth,
+      data: {}
     };
   }
 
@@ -47,13 +48,24 @@ class About extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.context.fetchEntries("about").then(this.setAboutContent2);
+      // this.context.fetchEntries("about").then(this.setAboutContent2);
+      this.context.fetchEntries("about").then((response) => {
+        let data = this.context.setContent(response, "aboutPage")
+        this.setState({
+          data: data
+        })
+      });
     }
   }
 
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    this.context.fetchEntries("about").then(this.setAboutContent2);
+    this.context.fetchEntries("about").then((response) => {
+      let data = this.context.setContent(response, "aboutPage")
+      this.setState({
+        data: data
+      })
+    });
   }
 
   componentWillUnmount() {
@@ -73,57 +85,9 @@ class About extends React.Component {
       locale: this.props.match.params.locale
     });
 
-  setAboutContent2 = response => {
-    const aboutContent = response;
-    console.log(aboutContent)
-    let filteredaboutContent = aboutContent.filter(
-      aboutContent => aboutContent.fields.pageType === "aboutPage"
-    );
-    console.log(filteredaboutContent)
-    let filteredaboutContentFields = filteredaboutContent[0].fields;
-    for (let key in filteredaboutContentFields) {
-      if (typeof filteredaboutContentFields[key] === "string") {
-        this.setState({
-          [key]: filteredaboutContentFields[key]
-        });
-      } else if (Array.isArray(filteredaboutContentFields[key])) {
-        this.setState({
-          [key]: filteredaboutContentFields[key]
-        });
-      } else {
-        this.setState({
-          [key]: filteredaboutContentFields[key].fields.file.url
-        });
-      }
-    }
-  };
 
-  setAboutContent = response => {
-    const aboutContent = response.items;
-    let filteredaboutContent = aboutContent.filter(
-      aboutContent => aboutContent.fields.pageType === "aboutPage"
-    );
-    let filteredaboutContentFields = filteredaboutContent[0].fields;
-    for (let key in filteredaboutContentFields) {
-      if (typeof filteredaboutContentFields[key] === "string") {
-        this.setState({
-          [key]: filteredaboutContentFields[key]
-        });
-      } else if (Array.isArray(filteredaboutContentFields[key])) {
-        this.setState({
-          [key]: filteredaboutContentFields[key]
-        });
-      } else {
-        this.setState({
-          [key]: filteredaboutContentFields[key].fields.file.url
-        });
-      }
-    }
-  };
 
   render() {
-    console.log(this.context.stuff)
-    const space = this.props.match.params.space;
     return (
       <Container className="aboutPage">
         {/* FULL SCREEN HEADER */}
@@ -136,18 +100,18 @@ class About extends React.Component {
                     <div>
                       <Row>
                         <h1 className="primary_font left-side-header-title">
-                          {this.state.aboutPageHeaderTitle}
+                          {this.state.data.aboutPageHeaderTitle}
                         </h1>
                       </Row>
                       <Row>
                         <h2 className="secondary_font left-side-header-blurb">
-                          {this.state.aboutPageHeaderSubtitle}
+                          {this.state.data.aboutPageHeaderSubtitle}
                         </h2>
                       </Row>
                     </div>
                   </Col>
                   <Col>
-                    <img src={this.state.aboutPageHeaderImage} />
+                    <img src={this.state.data.aboutPageHeaderImage} />
                   </Col>
                 </Row>
               </Container>
@@ -157,16 +121,16 @@ class About extends React.Component {
             <Row className="aboutPageTitle">
               <Container>
                 <Row className="center-in-row">
-                  <img src={this.state.aboutPageHeaderImage} />
+                  <img src={this.state.data.aboutPageHeaderImage} />
                 </Row>
                 <Row className="center-in-row mt-5 mb-3">
                   <h1 className="primary_font left-side-header-title">
-                    {this.state.aboutPageHeaderTitle}
+                    {this.state.data.aboutPageHeaderTitle}
                   </h1>
                 </Row>
                 <Row className="center-in-row">
                   <h2 className="secondary_font">
-                    {this.state.aboutPageHeaderSubtitle}
+                    {this.state.data.aboutPageHeaderSubtitle}
                   </h2>
                 </Row>
               </Container>
@@ -179,16 +143,16 @@ class About extends React.Component {
             <Container>
               <img
                 className="mobile-hero-image"
-                src={this.state.aboutPageHeaderImage}
+                src={this.state.data.aboutPageHeaderImage}
               />
               <Row className="mobile-top-row-header-container center-in-row">
                 <h1 className="primary_font aboutPageHeaderTitle mobile_top_row_header">
-                  {this.state.aboutPageHeaderTitle}
+                  {this.state.data.aboutPageHeaderTitle}
                 </h1>
               </Row>
               <Row className="mobile-top-row-header-container center-in-row my-3">
                 <h2 className="secondary_font mobile_top_row_header">
-                  {this.state.aboutPageHeaderSubtitle}
+                  {this.state.data.aboutPageHeaderSubtitle}
                 </h2>
               </Row>
             </Container>
@@ -199,12 +163,12 @@ class About extends React.Component {
           <div className="full-width-light-blue">
             <Row className="center-in-row light-blue-background pt-5">
               <h1 className="primary_font">
-                {this.state.aboutPageNumbersTitle}
+                {this.state.data.aboutPageNumbersTitle}
               </h1>
             </Row>
             <Row className="by-the-numbers light-blue-background">
               <AboutByTheNumbers
-                byTheNumbers={this.state.aboutPageNumbersArray}
+                byTheNumbers={this.state.data.aboutPageNumbersArray}
               />
             </Row>
           </div>
@@ -215,12 +179,12 @@ class About extends React.Component {
             <Container className="m-3">
               <Row className="center-in-row light-blue-background pt-5">
                 <h1 className="primary_font">
-                  {this.state.aboutPageNumbersTitle}
+                  {this.state.data.aboutPageNumbersTitle}
                 </h1>
               </Row>
               <Row className="by-the-numbers light-blue-background">
                 <MobileAboutByTheNumbers
-                  byTheNumbers={this.state.aboutPageNumbersArray}
+                  byTheNumbers={this.state.data.aboutPageNumbersArray}
                 />
               </Row>
             </Container>
@@ -234,13 +198,13 @@ class About extends React.Component {
                 <Col className="who-we-are-image-container">
                   <img
                     className="about-page-who-we-are-image"
-                    src={this.state.aboutPageWhoWeAreImage}
+                    src={this.state.data.aboutPageWhoWeAreImage}
                   />
                 </Col>
                 <Col className="aboutPageWhoWeAreContentContainer">
                   <Row>
                     <p className="aboutPageWhoWeAreContent">
-                      {this.state.aboutPageWhoWeAreContent}
+                      {this.state.data.aboutPageWhoWeAreContent}
                     </p>
                   </Row>
                 </Col>
@@ -252,14 +216,14 @@ class About extends React.Component {
                   <Container className="center-in-row">
                     <img
                       className="about-page-who-we-are-image"
-                      src={this.state.aboutPageWhoWeAreImage}
+                      src={this.state.data.aboutPageWhoWeAreImage}
                     />
                   </Container>
                 </Row>
                 <Row className="aboutPageWhoWeAreContentContainer mb-5 px-5">
                   <Row>
                     <p className="aboutPageWhoWeAreContent">
-                      {this.state.aboutPageWhoWeAreContent}
+                      {this.state.data.aboutPageWhoWeAreContent}
                     </p>
                   </Row>
                 </Row>
@@ -274,14 +238,14 @@ class About extends React.Component {
             <div className="mobile-who-we-are-image-container">
               <img
                 className="mobile-about-page-who-we-are-image"
-                src={this.state.aboutPageWhoWeAreImage}
+                src={this.state.data.aboutPageWhoWeAreImage}
               />
             </div>
             {/* </Col> */}
             <Col className="aboutPageWhoWeAreContentContainer">
               <Row>
                 <p className="mobile-aboutPageWhoWeAreContent">
-                  {this.state.aboutPageWhoWeAreContent}
+                  {this.state.data.aboutPageWhoWeAreContent}
                 </p>
               </Row>
             </Col>
@@ -291,7 +255,7 @@ class About extends React.Component {
         <MediaQuery query="(min-device-width: 1224px)">
           <Row className="center-in-row pt-5 pb-5">
             <h1 className="primary_font">
-              {this.state.aboutPageLeadershipTitle}
+              {this.state.data.aboutPageLeadershipTitle}
             </h1>
           </Row>
         </MediaQuery>
@@ -299,14 +263,14 @@ class About extends React.Component {
         <MediaQuery query="(max-device-width: 1223px)">
           <Row className="center-in-row pt-5">
             <h1 className="primary_font mobile_top_row_header">
-              {this.state.aboutPageLeadershipTitle}
+              {this.state.data.aboutPageLeadershipTitle}
             </h1>
           </Row>
         </MediaQuery>
         {/* ABOUT LEADERSHIP TEAM OBJECT IS THe SAME ON MOBILE AND DESKTOP */}
         <Row className="aboutPageLeadershipTeam pb-5 center-in-row">
           <AboutLeadershipTeam
-            leadershipTeam={this.state.aboutPageLeadershipLeaders}
+            leadershipTeam={this.state.data.aboutPageLeadershipLeaders}
           />
         </Row>
         {/* FULL SCREEN ABOUT PARTNERS */}
@@ -316,15 +280,15 @@ class About extends React.Component {
               <Container className="partners">
                 <Row className="center-in-row partnersTitle light-blue-background">
                   <h1 className="primary_font light-blue-background">
-                    {this.state.aboutPagePartnersTitle}
+                    {this.state.data.aboutPagePartnersTitle}
                   </h1>
                   <h1 className="secondary_font">
-                    {this.state.aboutPagePartnersSubtitle}
+                    {this.state.data.aboutPagePartnersSubtitle}
                   </h1>
                 </Row>
                 <Row className="aboutPartners light-blue-background">
                   <AboutPartners
-                    partners={this.state.aboutPagePartnersPartners}
+                    partners={this.state.data.aboutPagePartnersPartners}
                   />
                 </Row>
               </Container>
@@ -337,16 +301,16 @@ class About extends React.Component {
             <Container className="partners">
               <Row className="center-in-row partnersTitle light-blue-background">
                 <h1 className="primary_font light-blue-background">
-                  {this.state.aboutPagePartnersTitle}
+                  {this.state.data.aboutPagePartnersTitle}
                 </h1>
                 <h1 className="secondary_font">
-                  {this.state.aboutPagePartnersSubtitle}
+                  {this.state.data.aboutPagePartnersSubtitle}
                 </h1>
               </Row>
               <Row className="aboutPartners light-blue-background">
                 {/* MOBILE ABOUT PARTNERS  */}
                 <MobileAboutPartners
-                  partners={this.state.aboutPagePartnersPartners}
+                  partners={this.state.data.aboutPagePartnersPartners}
                 />
               </Row>
             </Container>
@@ -354,20 +318,20 @@ class About extends React.Component {
         </MediaQuery>
         <Row className="center-in-row about-page-counselor-advisor-header mx-3">
           <h1 className="primary_font text-align-center">
-            {this.state.aboutPageCounselorsTitle}
+            {this.state.data.aboutPageCounselorsTitle}
           </h1>
         </Row>
         <Row className=" about-page-counselor-advisor-footer">
           <Container>
             <MediaQuery query="(min-device-width: 1223px)">
               <AboutCounselors
-                counselors={this.state.aboutPageCounselorsCounselors}
+                counselors={this.state.data.aboutPageCounselorsCounselors}
               />
             </MediaQuery>
             {/* MOBILE COUNSELORS */}
             <MediaQuery query="(max-device-width: 1223px)">
               <MobileAboutCounselors
-                counselors={this.state.aboutPageCounselorsCounselors}
+                counselors={this.state.data.aboutPageCounselorsCounselors}
               />
             </MediaQuery>
           </Container>
@@ -377,14 +341,14 @@ class About extends React.Component {
           <div className="full-width-light-blue">
             <Row className="light-blue-background about-page-counselor-advisor-header center-in-row ">
               <h1 className="primary_font">
-                {this.state.aboutPageBusinessAdvisorsTitle}
+                {this.state.data.aboutPageBusinessAdvisorsTitle}
               </h1>
             </Row>
             <Row className="light-blue-background about-page-counselor-advisor-footer">
               <Container>
                 <AboutBusinessAdvisors
                   businessAdvisors={
-                    this.state.aboutPageBusinessAdvisorsAdvisors
+                    this.state.data.aboutPageBusinessAdvisorsAdvisors
                   }
                 />
               </Container>
@@ -397,7 +361,7 @@ class About extends React.Component {
             <Row className="light-blue-background about-page-counselor-advisor-header center-in-row pt-5">
               <Container className="mx-5">
                 <h1 className="primary_font text-align-center">
-                  {this.state.aboutPageBusinessAdvisorsTitle}
+                  {this.state.data.aboutPageBusinessAdvisorsTitle}
                 </h1>
               </Container>
             </Row>
@@ -405,7 +369,7 @@ class About extends React.Component {
               <Container>
                 <MobileAboutBusinessAdvisors
                   businessAdvisors={
-                    this.state.aboutPageBusinessAdvisorsAdvisors
+                    this.state.data.aboutPageBusinessAdvisorsAdvisors
                   }
                 />
               </Container>
@@ -416,14 +380,14 @@ class About extends React.Component {
         <MediaQuery query="(min-device-width: 1223px)">
           <div className="full-width-near-black">
             <AboutCialfoOffices
-              cialfoOffices={this.state.aboutPageOfficesLocations}
+              cialfoOffices={this.state.data.aboutPageOfficesLocations}
             />
           </div>
         </MediaQuery>
         {/* MOBILE ABOUT OFFICES */}
         <MediaQuery query="(max-device-width: 1223px)">
           <MobileAboutCialfoOffices
-            cialfoOffices={this.state.aboutPageOfficesLocations}
+            cialfoOffices={this.state.data.aboutPageOfficesLocations}
           />
           {/* </div> */}
         </MediaQuery>

@@ -61,7 +61,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    this.context.fetchEntries().then((response) => {
+    this.context.fetchEntries("homePageHeaderProductImage").then((response) => {
       let data = this.context.setContent(response, "homePage")
       this.setState({
         data: data

@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import Router from "./layout/Router";
-import { getAllCopy } from "./getContentfulData";
-import * as contentful from "contentful";
-import { access } from "fs";
-import DataContextProvider from "./contexts/DataContext"
 
 class App extends Component {
   constructor(props) {
@@ -189,14 +185,8 @@ class App extends Component {
         spaceName: this.state.internationalSpace.spaceName
       });
     }
-    getAllCopy(space, "master", accessToken).then(this.setFeatures)
+    // getAllCopy(space, "master", accessToken).then(this.setFeatures)
   }
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.match.params.locale !== this.props.match.params.locale) {
-  //     this.fetchFeatures().then(this.setFeatures);
-  //   }
-  // }
 
   sendEmailAddressToGetADemo = email => {
     this.setState({
@@ -240,7 +230,7 @@ class App extends Component {
     const content = this.state.content;
 
 
-    if (space && accessToken && content) {
+    if (space && accessToken) {
       return (
         <div>
           <Header
@@ -264,7 +254,6 @@ class App extends Component {
             setSpace={this.setSpace}
             setAccessToken={this.setAccessToken}
             environment={this.state.environment}
-            content={this.state.content}
           />
           <Footer
             locale={this.state.locale}
