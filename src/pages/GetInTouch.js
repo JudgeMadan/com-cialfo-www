@@ -11,8 +11,11 @@ import MobileGetInTouchContactArray from "./getInTouch/MobileGetInTouchContactAr
 import GrayLines from "../img/GrayLines.svg";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
+import { DataContext } from "../contexts/DataContext"
 
 class GetInTouch extends React.Component {
+  static contextType = DataContext;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -43,7 +46,7 @@ class GetInTouch extends React.Component {
 
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    this.fetchGetADemo().then(this.setGetADemo);
+    this.context.fetchEntries("getInTouch").then(this.setGetADemo2);
   }
 
   componentWillUnmount() {
@@ -59,7 +62,7 @@ class GetInTouch extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.fetchGetADemo().then(this.setGetADemo);
+      this.context.fetchEntries("getInTouch").then(this.setGetADemo2);
     }
   }
 
@@ -70,24 +73,26 @@ class GetInTouch extends React.Component {
     });
   };
 
-  setGetADemo = response => {
-    const sendingPageContent = response.items[0].fields;
-    for (let key in sendingPageContent) {
-      if (typeof sendingPageContent[key] === "string") {
+  setGetADemo2 = response => {
+    const sendingPageContent = response;
+    let filteredSendingPageContent = sendingPageContent[0].fields;
+    for (let key in filteredSendingPageContent) {
+      if (typeof filteredSendingPageContent[key] === "string") {
         this.setState({
-          [key]: sendingPageContent[key]
+          [key]: filteredSendingPageContent[key]
         });
-      } else if (Array.isArray(sendingPageContent[key])) {
+      } else if (Array.isArray(filteredSendingPageContent[key])) {
         this.setState({
-          [key]: sendingPageContent[key]
+          [key]: filteredSendingPageContent[key]
         });
-      } else {
+      }
+      else {
         this.setState({
-          [key]: sendingPageContent[key].fields.file.url
+          [key]: filteredSendingPageContent[key].fields.file.url
         });
       }
     }
-  };
+  }
 
   formChange = e => {
     const { id, value } = e.target;

@@ -1,7 +1,7 @@
 import * as contentful from "contentful";
 
 const fetchEntries = (space, environment, accessToken) => {
-  console.log(space)
+  console.log(space, environment, accessToken)
   const client = contentful.createClient({
     space: space,
     environment: environment,

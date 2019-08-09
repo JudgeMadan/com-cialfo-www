@@ -9,8 +9,10 @@ import * as contentful from "contentful";
 import GrayLines from "../img/GrayLines.svg";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
+import { DataContext } from "../contexts/DataContext"
 
 class GetADemo extends React.Component {
+  static contextType = DataContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -25,23 +27,9 @@ class GetADemo extends React.Component {
     };
   }
 
-  setSpace = () => {
-    return this.props.setSpace(this.props.match.params.space);
-  };
-
-  setAccessToken = () => {
-    return this.props.setAccessToken(this.props.match.params.space);
-  };
-
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
-
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    this.fetchGetADemo().then(this.setGetADemo);
+    this.context.fetchEntries("getADemo").then(this.setGetADemo2);
   }
 
   componentWillUnmount() {
@@ -57,38 +45,54 @@ class GetADemo extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.fetchGetADemo().then(this.setGetADemo);
+      this.context.fetchEntries("getADemo").then(this.setGetADemo2);
     }
   }
 
-  fetchGetADemo = () => {
-    return this.client.getEntries({
-      content_type: "getADemo",
-      locale: this.props.match.params.locale
-    });
-  };
 
-  setGetADemo = response => {
-    const sendingPageContent = response.items[0].fields;
-    for (let key in sendingPageContent) {
-      if (typeof sendingPageContent[key] === "string") {
+
+  setGetADemo2 = response => {
+    const sendingPageContent = response;
+    let filteredSendingPageContent = sendingPageContent[0].fields;
+    for (let key in filteredSendingPageContent) {
+      if (typeof filteredSendingPageContent[key] === "string") {
         this.setState({
-          [key]: sendingPageContent[key]
+          [key]: filteredSendingPageContent[key]
         });
-      } else if (Array.isArray(sendingPageContent[key])) {
+      } else if (Array.isArray(filteredSendingPageContent[key])) {
         this.setState({
-          [key]: sendingPageContent[key]
+          [key]: filteredSendingPageContent[key]
         });
-      } else {
+      }
+      else {
         this.setState({
-          [key]: sendingPageContent[key].fields.file.url
+          [key]: filteredSendingPageContent[key].fields.file.url
         });
       }
     }
-    this.setState({
-      email: this.props.getADemoEmail
-    });
-  };
+  }
+
+  // setGetADemo = response => {
+  //   const sendingPageContent = response.items[0].fields;
+  //   for (let key in sendingPageContent) {
+  //     if (typeof sendingPageContent[key] === "string") {
+  //       this.setState({
+  //         [key]: sendingPageContent[key]
+  //       });
+  //     } else if (Array.isArray(sendingPageContent[key])) {
+  //       this.setState({
+  //         [key]: sendingPageContent[key]
+  //       });
+  //     } else {
+  //       this.setState({
+  //         [key]: sendingPageContent[key].fields.file.url
+  //       });
+  //     }
+  //   }
+  //   this.setState({
+  //     email: this.props.getADemoEmail
+  //   });
+  // };
 
   handleChange = e => {
     const fieldContent = e.target.value;

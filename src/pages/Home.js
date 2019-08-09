@@ -102,11 +102,17 @@ class Home extends React.Component {
           [key]: filteredhomeContentFields[key]
         });
       } else if (Array.isArray(filteredhomeContentFields[key])) {
-        this.setState({
-          [key]: filteredhomeContentFields[key].map(
-            test => test.fields.file.url
-          )
-        });
+        if (typeof filteredhomeContentFields[key][0] === "string") {
+          this.setState({
+            [key]: filteredhomeContentFields[key]
+          })
+        } else {
+          this.setState({
+            [key]: filteredhomeContentFields[key].map(
+              test => test.fields.file.url
+            )
+          });
+        }
       } else {
         this.setState({
           [key]: filteredhomeContentFields[key].fields.file.url
@@ -114,6 +120,7 @@ class Home extends React.Component {
       }
     }
   }
+
   // setHomeContent2 = () => {
   //   const content = this.state.data
   //   let filteredContent = content.filter(

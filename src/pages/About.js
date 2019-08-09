@@ -47,20 +47,13 @@ class About extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      // this.fetchAboutContent().then(this.setAboutContent2);
-      // this.fetchAboutContent().then(this.setAboutContent);
       this.context.fetchEntries("about").then(this.setAboutContent2);
-
     }
   }
 
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    // this.fetchAboutContent().then(this.setAboutContent);
     this.context.fetchEntries("about").then(this.setAboutContent2);
-
-    // this.context.fetchEntries("about").then(this.setAboutContent2);
-
   }
 
   componentWillUnmount() {
@@ -86,6 +79,7 @@ class About extends React.Component {
     let filteredaboutContent = aboutContent.filter(
       aboutContent => aboutContent.fields.pageType === "aboutPage"
     );
+    console.log(filteredaboutContent)
     let filteredaboutContentFields = filteredaboutContent[0].fields;
     for (let key in filteredaboutContentFields) {
       if (typeof filteredaboutContentFields[key] === "string") {
