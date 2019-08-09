@@ -34,6 +34,7 @@ class Home extends React.Component {
     this.state = {
       height: window.innerHeight,
       width: window.innerWidth,
+      data: {}
     };
   }
 
@@ -57,9 +58,15 @@ class Home extends React.Component {
     }
   };
 
+
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    this.context.fetchEntries().then(this.setHomeContent2);
+    this.context.fetchEntries().then((response) => {
+      let data = this.context.setContent(response, "homePage")
+      this.setState({
+        data: data
+      })
+    });
   }
 
   componentWillUnmount() {
@@ -75,7 +82,12 @@ class Home extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.context.fetchEntries().then(this.setHomeContent2);
+      this.context.fetchEntries().then((response) => {
+        let data = this.context.setContent(response, "homePage")
+        this.setState({
+          data: data
+        })
+      });
     }
   }
 
@@ -84,67 +96,8 @@ class Home extends React.Component {
     this.props.sendEmailAddressToGetADemo(fieldContent);
   };
 
-  fetchHomeContent = () =>
-    this.client.getEntries({
-      content_type: "homePageHeaderProductImage",
-      locale: this.props.match.params.locale
-    });
 
-  setHomeContent2 = (response) => {
-    const content = response
-    let filteredContent = content.filter(
-      content => content.fields.pageType === "homePage"
-    )
-    let filteredhomeContentFields = filteredContent[0].fields;
-    for (let key in filteredhomeContentFields) {
-      if (typeof filteredhomeContentFields[key] === "string") {
-        this.setState({
-          [key]: filteredhomeContentFields[key]
-        });
-      } else if (Array.isArray(filteredhomeContentFields[key])) {
-        if (typeof filteredhomeContentFields[key][0] === "string") {
-          this.setState({
-            [key]: filteredhomeContentFields[key]
-          })
-        } else {
-          this.setState({
-            [key]: filteredhomeContentFields[key].map(
-              test => test.fields.file.url
-            )
-          });
-        }
-      } else {
-        this.setState({
-          [key]: filteredhomeContentFields[key].fields.file.url
-        });
-      }
-    }
-  }
 
-  // setHomeContent2 = () => {
-  //   const content = this.state.data
-  //   let filteredContent = content.filter(
-  //     content => content.fields.pageType === "homePage"
-  //   )
-  //   let filteredhomeContentFields = filteredContent[0].fields;
-  //   for (let key in filteredhomeContentFields) {
-  //     if (typeof filteredhomeContentFields[key] === "string") {
-  //       this.setState({
-  //         [key]: filteredhomeContentFields[key]
-  //       });
-  //     } else if (Array.isArray(filteredhomeContentFields[key])) {
-  //       this.setState({
-  //         [key]: filteredhomeContentFields[key].map(
-  //           test => test.fields.file.url
-  //         )
-  //       });
-  //     } else {
-  //       this.setState({
-  //         [key]: filteredhomeContentFields[key].fields.file.url
-  //       });
-  //     }
-  //   }
-  // }
 
 
   render() {
@@ -159,12 +112,12 @@ class Home extends React.Component {
                 <div>
                   <Row>
                     <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
-                      {this.state.homePageHeaderTitle}
+                      {this.state.data.homePageHeaderTitle}
                     </h1>
                   </Row>
                   <Row>
                     <h1 className="secondary_font left-side-header-blurb">
-                      {this.state.homePageHeaderBlurb}
+                      {this.state.data.homePageHeaderBlurb}
                     </h1>
                   </Row>
                   <Row>
@@ -174,7 +127,7 @@ class Home extends React.Component {
                           <Form.Control
                             className="primary_font email-form"
                             placeholder={
-                              this.state.homePageHeaderEmailPlaceholderText
+                              this.state.data.homePageHeaderEmailPlaceholderText
                             }
                             plaintext
                             onChange={this.handleChange}
@@ -191,7 +144,7 @@ class Home extends React.Component {
                               className="primary_font get-a-demo-link"
                               to={this.generateUrl("demo", this.props.location)}
                             >
-                              {this.state.homePageHeaderEmailSubmitButtonText}
+                              {this.state.data.homePageHeaderEmailSubmitButtonText}
                             </Link>
                           </Button>
                         </Col>
@@ -215,12 +168,12 @@ class Home extends React.Component {
                 {/* <div className="center-in-row"> */}
                 <Row className="mt-3">
                   <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
-                    {this.state.homePageHeaderTitle}
+                    {this.state.data.homePageHeaderTitle}
                   </h1>
                 </Row>
                 <Row className="mt-3">
                   <h1 className="secondary_font left-side-header-blurb">
-                    {this.state.homePageHeaderBlurb}
+                    {this.state.data.homePageHeaderBlurb}
                   </h1>
                 </Row>
                 <Row>
@@ -230,7 +183,7 @@ class Home extends React.Component {
                         <Form.Control
                           className="primary_font email-form"
                           placeholder={
-                            this.state.homePageHeaderEmailPlaceholderText
+                            this.state.data.homePageHeaderEmailPlaceholderText
                           }
                           plaintext
                           onChange={this.handleChange}
@@ -247,7 +200,7 @@ class Home extends React.Component {
                             className="primary_font get-a-demo-link"
                             to={this.generateUrl("demo", this.props.location)}
                           >
-                            {this.state.homePageHeaderEmailSubmitButtonText}
+                            {this.state.data.homePageHeaderEmailSubmitButtonText}
                           </Link>
                         </Button>
                       </Col>
@@ -266,12 +219,12 @@ class Home extends React.Component {
               <div>
                 <Row>
                   <h1 className="primary_font mobile_top_row_header">
-                    {this.state.homePageHeaderTitle}
+                    {this.state.data.homePageHeaderTitle}
                   </h1>
                 </Row>
                 <Row>
                   <h1 className="secondary_font homePageHeaderBlurb mobile_top_row_header">
-                    {this.state.homePageHeaderBlurb}
+                    {this.state.data.homePageHeaderBlurb}
                   </h1>
                 </Row>
               </div>
@@ -283,7 +236,7 @@ class Home extends React.Component {
           <MediaQuery query="(min-device-width: 1224px)">
             <Row className="homePageSchoolTestimonialsTitle">
               <h1 className="primary_font">
-                {this.state.homePageSchoolTestimonialsTitle}
+                {this.state.data.homePageSchoolTestimonialsTitle}
               </h1>
             </Row>
             {/* keep div to permit overflow */}
@@ -302,25 +255,25 @@ class Home extends React.Component {
         )}
         {/*SEND DOCUMENTS FEATURE */}
         <HomeFeatureRightSideText
-          title={this.state.homePageFeaturesSendDocumentTitle}
-          blurb={this.state.homePageFeaturesSendDocumentBlurb}
-          linkText={this.state.homePageFeaturesSendDocumentLinkText}
+          title={this.state.data.homePageFeaturesSendDocumentTitle}
+          blurb={this.state.data.homePageFeaturesSendDocumentBlurb}
+          linkText={this.state.data.homePageFeaturesSendDocumentLinkText}
           linkUrl="features-send"
           image={Documents}
         />
         {/* LEVERAGE FEATURE */}
         <HomeFeatureLeftSideText
-          title={this.state.homePageFeaturesLeverageTitle}
-          blurb={this.state.homePageFeaturesLeverageBlurb}
-          linkText={this.state.homePageFeaturesLeverageLinkText}
+          title={this.state.data.homePageFeaturesLeverageTitle}
+          blurb={this.state.data.homePageFeaturesLeverageBlurb}
+          linkText={this.state.data.homePageFeaturesLeverageLinkText}
           image={space == "us" ? ResearchImageUS : ResearchImage}
           linkUrl="features-research"
         />
         {/* DISCOVER INSIGHTS */}
         <HomeFeatureRightSideText
-          title={this.state.homePageFeaturesDiscoverTitle}
-          blurb={this.state.homePageFeaturesDiscoverBlurb}
-          linkText={this.state.homePageFeaturesDiscoverLinkText}
+          title={this.state.data.homePageFeaturesDiscoverTitle}
+          blurb={this.state.data.homePageFeaturesDiscoverBlurb}
+          linkText={this.state.data.homePageFeaturesDiscoverLinkText}
           linkUrl="features-report"
           image={Discover}
         />
@@ -329,7 +282,7 @@ class Home extends React.Component {
             <div className="partial-width-dark-blue">
               <Row className="homePageVideoCaseStudyTitle">
                 <h1 className="primary_font white-font mobile-home-page-video-case-study-title">
-                  {this.state.homePageVideoCaseStudyTitle}
+                  {this.state.data.homePageVideoCaseStudyTitle}
                 </h1>
               </Row>
               <Row className="homePageVideoCaseStudyVideoEmbed">
@@ -341,7 +294,7 @@ class Home extends React.Component {
                       className="video"
                       width="800px"
                       height="448px"
-                      url={this.state.homePageVideoCaseStudyVideoEmbed}
+                      url={this.state.data.homePageVideoCaseStudyVideoEmbed}
                     />
                   )}
                   {this.state.width <= 850 && (
@@ -349,7 +302,7 @@ class Home extends React.Component {
                       className="video"
                       width="600px"
                       height="366px"
-                      url={this.state.homePageVideoCaseStudyVideoEmbed}
+                      url={this.state.data.homePageVideoCaseStudyVideoEmbed}
                     />
                   )}
                 </div>
@@ -359,10 +312,10 @@ class Home extends React.Component {
           <PartnerImages
             locale={this.props.locale}
             className="partnerImages"
-            partnerImages={this.state.homePagePoweredByOurPartnersPartners}
+            partnerImages={this.state.data.homePagePoweredByOurPartnersPartners}
             accessToken={this.props.accessToken}
             space={this.props.space}
-            title={this.state.homePagePoweredByOurPartnersTitle}
+            title={this.state.data.homePagePoweredByOurPartnersTitle}
             environment={this.props.environment}
           />
         </MediaQuery>
@@ -372,7 +325,7 @@ class Home extends React.Component {
             <Container className="mobile-homePageVideoCaseStudy mobile-top-border py-3">
               <Row className=" mobile-homePageVideoCaseStudyTitle">
                 <h1 className="primary_font white-font">
-                  {this.state.homePageVideoCaseStudyTitle}
+                  {this.state.data.homePageVideoCaseStudyTitle}
                 </h1>
               </Row>
               <Row className="mobile-homePageVideoCaseStudyVideoEmbed mb-4">
@@ -381,7 +334,7 @@ class Home extends React.Component {
                     className="video"
                     width="345px"
                     height="194px"
-                    url={this.state.homePageVideoCaseStudyVideoEmbed}
+                    url={this.state.data.homePageVideoCaseStudyVideoEmbed}
                   />
                 </div>
               </Row>
@@ -390,6 +343,7 @@ class Home extends React.Component {
         </MediaQuery>
       </Container>
     );
+
   }
 }
 

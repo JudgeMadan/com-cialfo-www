@@ -122,6 +122,7 @@ class About extends React.Component {
   };
 
   render() {
+    console.log(this.context.stuff)
     const space = this.props.match.params.space;
     return (
       <Container className="aboutPage">

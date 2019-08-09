@@ -1,41 +1,12 @@
-// BOILER PLATE FOR CREATING ALL CONTEXT
 import * as contentful from "contentful";
 import React, { Component, createContext } from 'react';
 import { withRouter } from "react-router-dom";
-import PathToRegexp, { compile } from "path-to-regexp";
+import PathToRegexp from "path-to-regexp";
+import { contenfulConfig } from "../config/contentfulKeys"
 
 export const DataContext = createContext();
 
 class DataContextProvider extends Component {
-  state = {
-    data: '',
-  }
-
-
-  data = {
-    environment: "staging",
-    chinaSpace: {
-      space: "1acwuo4zy8aa",
-      accessToken:
-        "c6080034f52655b2fdb9267c7c555bff17c0134a4ae75b646bb112d992b485b2",
-      spaceName: "china"
-    },
-    indiaSpace: {
-      space: "6s1t375h60iy",
-      accessToken: "vZ4pPEGukFHPrZCLU0ql6SlH5hvabD-aAV2wr65Pjwo",
-      spaceName: "india"
-    },
-    internationalSpace: {
-      space: "kq0n6h3xq8i9",
-      accessToken: "9tSaFiRLObn_CKT5hpYU-iNrTN47rUquWSmSfV3KNLY",
-      spaceName: "intl"
-    },
-    usaSpace: {
-      space: "2w8l1bcem16l",
-      accessToken: "bO1jaDXJM1S5kWXDVJoZ6buysg9bGkhohqYyJr-NxIw",
-      spaceName: "us"
-    },
-  }
 
   generateSpaceAndAccess = () => {
     if (document.cookie) {
@@ -82,16 +53,16 @@ class DataContextProvider extends Component {
       const country_code = country_codeArray[0];
 
       if (country_code === "country_code=CN") {
-        return this.data.chinaSpace
+        return contenfulConfig.chinaSpace
       } else if (country_code === "country_code=IN") {
-        return this.data.indiaSpace
+        return contenfulConfig.indiaSpace
       } else if (country_code === "country_code=US") {
-        return this.data.usaSpace
+        return contenfulConfig.usaSpace
       } else {
-        return this.data.internationalSpace
+        return contenfulConfig.internationalSpace
       }
     } else {
-      return this.data.internationalSpace
+      return contenfulConfig.internationalSpace
     }
   }
 
@@ -104,7 +75,7 @@ class DataContextProvider extends Component {
   fetchEntries = (content_type) => {
     const client = contentful.createClient({
       space: this.generateSpaceAndAccess().space,
-      environment: "staging",
+      environment: contenfulConfig.environment,
       accessToken: this.generateSpaceAndAccess().accessToken,
     });
     return client
@@ -116,15 +87,30 @@ class DataContextProvider extends Component {
       .catch(err => console.error(err));
   };
 
-  // CURRENTLY NOT USING THIS FUNCTION, BUT IF WE COULD THEN WE WOULD ONLY NEED TO LOAD DATA ONCE
-  // getAllCopy = () => {
-  //   this.fetchEntries().then(response => {
-  //     this.setState({
-  //       data: response
-  //     })
-  //   });
-  // };
-
+  setContent = (response, pageType) => {
+    const content = response
+    const data = {}
+    let filteredContent = content.filter(
+      content => content.fields.pageType === pageType
+    )
+    let filteredhomeContentFields = filteredContent[0].fields;
+    for (let key in filteredhomeContentFields) {
+      if (typeof filteredhomeContentFields[key] === "string") {
+        data[key] = filteredhomeContentFields[key]
+      } else if (Array.isArray(filteredhomeContentFields[key])) {
+        if (typeof filteredhomeContentFields[key][0] === "string") {
+          data[key] = filteredhomeContentFields[key]
+        } else {
+          data[key] = filteredhomeContentFields[key].map(
+            test => test.fields.file.url
+          )
+        }
+      } else {
+        data[key] = filteredhomeContentFields[key].fields.file.url
+      }
+    }
+    return data
+  }
 
 
   render() {
@@ -132,7 +118,9 @@ class DataContextProvider extends Component {
       <DataContext.Provider
         value={{
           ...this.state,
-          fetchEntries: this.fetchEntries
+          fetchEntries: this.fetchEntries,
+          setContent: this.setContent,
+          stuff: this.stuff
         }}
       >
         {this.props.children}
