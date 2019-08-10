@@ -1,13 +1,18 @@
 import React from "react";
-import * as contentful from "contentful";
 import ClientStoriesItem from "./ClientStoriesItem";
 import MobileClientStoriesItem from "./MobileClientStoriesItem";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
+import { DataContext } from "../../contexts/DataContext"
+
 class ClientStoriesAmericanSchoolInChina extends React.Component {
+  static contextType = DataContext;
+
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: {}
+    };
   }
 
   setSpace = () => {
@@ -18,54 +23,25 @@ class ClientStoriesAmericanSchoolInChina extends React.Component {
     return this.props.setAccessToken(this.props.match.params.space);
   };
 
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
-
   componentDidMount() {
-    this.fetchContent().then(this.setContent);
+    this.context.fetchEntries("clientStory").then((response) => {
+      let data = this.context.setContent(response, "americanSchoolInChina")
+      this.setState({
+        data: data
+      })
+    });
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.fetchContent().then(this.setContent);
+      this.context.fetchEntries("clientStory").then((response) => {
+        let data = this.context.setContent(response, "americanSchoolInChina")
+        this.setState({
+          data: data
+        })
+      });
     }
   }
-
-  fetchContent = () =>
-    this.client.getEntries({
-      content_type: "clientStory",
-      locale: this.props.match.params.locale
-    });
-
-  setContent = response => {
-    const pageContent = response.items;
-    let filteredpageContent = pageContent.filter(
-      pageContent => pageContent.fields.pageType === "americanSchoolInChina"
-    );
-    let filteredpageContentFields = filteredpageContent[0].fields;
-    for (let key in filteredpageContentFields) {
-      if (typeof filteredpageContentFields[key] === "string") {
-        this.setState({
-          [key]: filteredpageContentFields[key]
-        });
-      } else if (filteredpageContentFields[key].fields) {
-        this.setState({
-          [key]: filteredpageContentFields[key].fields.file.url
-        });
-      } else if (typeof filteredpageContentFields[key] === "number") {
-        this.setState({
-          [key]: filteredpageContentFields[key]
-        });
-      } else {
-        this.setState({
-          [key]: filteredpageContentFields[key].content
-        });
-      }
-    }
-  };
 
   render() {
     return (
@@ -73,25 +49,25 @@ class ClientStoriesAmericanSchoolInChina extends React.Component {
         {/* FULL SCREEN CLIENT STORY PAGE */}
         <MediaQuery query="(min-device-width: 1224px)">
           <ClientStoriesItem
-            schoolName={this.state.clientStorySchoolName}
-            schoolBlurb={this.state.clientStoryStoryBlurb}
-            schoolImage={this.state.clientStorySchoolImage}
-            schoolLogo={this.state.clientStoryLogo}
-            shortTestimonial={this.state.clientStoryShortTestimonial}
-            seniorNumbers={this.state.clientStoryNumberOfSeniors}
-            counselorNumbers={this.state.clientStoryConsultingTeam}
-            curriculum={this.state.clientStoryCurriculum}
-            location={this.state.clientStorySchoolLocation}
+            schoolName={this.state.data.clientStorySchoolName}
+            schoolBlurb={this.state.data.clientStoryStoryBlurb}
+            schoolImage={this.state.data.clientStorySchoolImage}
+            schoolLogo={this.state.data.clientStoryLogo}
+            shortTestimonial={this.state.data.clientStoryShortTestimonial}
+            seniorNumbers={this.state.data.clientStoryNumberOfSeniors}
+            counselorNumbers={this.state.data.clientStoryConsultingTeam}
+            curriculum={this.state.data.clientStoryCurriculum}
+            location={this.state.data.clientStorySchoolLocation}
             buttonText={this.state.clientStoryContactSalesText}
-            testimonialBlurb_1={this.state.clientStoryTestimonialBlurb1}
-            testimonialBlurb_2={this.state.clientStoryTestimonialBlurb2}
-            testimonialBlurb_3={this.state.clientStoryTestimonialBlurb3}
-            testimonialBlurb_4={this.state.clientStoryTestimonialBlurb4}
-            testimonialBlurb_5={this.state.clientStoryTestimonialBlurb5}
-            testimonialPullQuote_1={this.state.clientStoryTestimonialPullQuote1}
-            testimonialPullQuote_2={this.state.clientStoryTestimonialPullQuote2}
-            testimonialVideo={this.state.clientStoryTestimonialVideoEmbedLink}
-            testimonialType={this.state.testimonialType}
+            testimonialBlurb_1={this.state.data.clientStoryTestimonialBlurb1}
+            testimonialBlurb_2={this.state.data.clientStoryTestimonialBlurb2}
+            testimonialBlurb_3={this.state.data.clientStoryTestimonialBlurb3}
+            testimonialBlurb_4={this.state.data.clientStoryTestimonialBlurb4}
+            testimonialBlurb_5={this.state.data.clientStoryTestimonialBlurb5}
+            testimonialPullQuote_1={this.state.data.clientStoryTestimonialPullQuote1}
+            testimonialPullQuote_2={this.state.data.clientStoryTestimonialPullQuote2}
+            testimonialVideo={this.state.data.clientStoryTestimonialVideoEmbedLink}
+            testimonialType={this.state.data.testimonialType}
             locale={this.props.locale}
             space={this.props.space}
             accessToken={this.props.accessToken}
@@ -104,25 +80,25 @@ class ClientStoriesAmericanSchoolInChina extends React.Component {
         {/* MOBILE CLIENT STORY PAGE */}
         <MediaQuery query="(max-device-width: 1223px)">
           <MobileClientStoriesItem
-            schoolName={this.state.clientStorySchoolName}
-            schoolBlurb={this.state.clientStoryStoryBlurb}
-            schoolImage={this.state.clientStorySchoolImage}
-            schoolLogo={this.state.clientStoryLogo}
-            shortTestimonial={this.state.clientStoryShortTestimonial}
-            seniorNumbers={this.state.clientStoryNumberOfSeniors}
-            counselorNumbers={this.state.clientStoryConsultingTeam}
-            curriculum={this.state.clientStoryCurriculum}
-            location={this.state.clientStorySchoolLocation}
-            buttonText={this.state.clientStoryContactSalesText}
-            testimonialBlurb_1={this.state.clientStoryTestimonialBlurb1}
-            testimonialBlurb_2={this.state.clientStoryTestimonialBlurb2}
-            testimonialBlurb_3={this.state.clientStoryTestimonialBlurb3}
-            testimonialBlurb_4={this.state.clientStoryTestimonialBlurb4}
-            testimonialBlurb_5={this.state.clientStoryTestimonialBlurb5}
-            testimonialPullQuote_1={this.state.clientStoryTestimonialPullQuote1}
-            testimonialPullQuote_2={this.state.clientStoryTestimonialPullQuote2}
-            testimonialVideo={this.state.clientStoryTestimonialVideoEmbedLink}
-            testimonialType={this.state.testimonialType}
+            schoolName={this.state.data.clientStorySchoolName}
+            schoolBlurb={this.state.data.clientStoryStoryBlurb}
+            schoolImage={this.state.data.clientStorySchoolImage}
+            schoolLogo={this.state.data.clientStoryLogo}
+            shortTestimonial={this.state.data.clientStoryShortTestimonial}
+            seniorNumbers={this.state.data.clientStoryNumberOfSeniors}
+            counselorNumbers={this.state.data.clientStoryConsultingTeam}
+            curriculum={this.state.data.clientStoryCurriculum}
+            location={this.state.data.clientStorySchoolLocation}
+            buttonText={this.state.data.clientStoryContactSalesText}
+            testimonialBlurb_1={this.state.data.clientStoryTestimonialBlurb1}
+            testimonialBlurb_2={this.state.data.clientStoryTestimonialBlurb2}
+            testimonialBlurb_3={this.state.data.clientStoryTestimonialBlurb3}
+            testimonialBlurb_4={this.state.data.clientStoryTestimonialBlurb4}
+            testimonialBlurb_5={this.state.data.clientStoryTestimonialBlurb5}
+            testimonialPullQuote_1={this.state.data.clientStoryTestimonialPullQuote1}
+            testimonialPullQuote_2={this.state.data.clientStoryTestimonialPullQuote2}
+            testimonialVideo={this.state.data.clientStoryTestimonialVideoEmbedLink}
+            testimonialType={this.state.data.testimonialType}
             locale={this.props.locale}
             space={this.props.space}
             accessToken={this.props.accessToken}

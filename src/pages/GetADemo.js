@@ -23,13 +23,19 @@ class GetADemo extends React.Component {
       organization: "",
       studentAmount: "",
       height: window.innerHeight,
-      width: window.innerWidth
+      width: window.innerWidth,
+      data: {}
     };
   }
 
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    this.context.fetchEntries("getADemo").then(this.setGetADemo2);
+    this.context.fetchEntries("getADemo").then((response) => {
+      let data = this.context.setContent(response)
+      this.setState({
+        data: data
+      })
+    });
   }
 
   componentWillUnmount() {
@@ -45,54 +51,14 @@ class GetADemo extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.context.fetchEntries("getADemo").then(this.setGetADemo2);
+      this.context.fetchEntries("getADemo").then((response) => {
+        let data = this.context.setContent(response)
+        this.setState({
+          data: data
+        })
+      });
     }
   }
-
-
-
-  setGetADemo2 = response => {
-    const sendingPageContent = response;
-    let filteredSendingPageContent = sendingPageContent[0].fields;
-    for (let key in filteredSendingPageContent) {
-      if (typeof filteredSendingPageContent[key] === "string") {
-        this.setState({
-          [key]: filteredSendingPageContent[key]
-        });
-      } else if (Array.isArray(filteredSendingPageContent[key])) {
-        this.setState({
-          [key]: filteredSendingPageContent[key]
-        });
-      }
-      else {
-        this.setState({
-          [key]: filteredSendingPageContent[key].fields.file.url
-        });
-      }
-    }
-  }
-
-  // setGetADemo = response => {
-  //   const sendingPageContent = response.items[0].fields;
-  //   for (let key in sendingPageContent) {
-  //     if (typeof sendingPageContent[key] === "string") {
-  //       this.setState({
-  //         [key]: sendingPageContent[key]
-  //       });
-  //     } else if (Array.isArray(sendingPageContent[key])) {
-  //       this.setState({
-  //         [key]: sendingPageContent[key]
-  //       });
-  //     } else {
-  //       this.setState({
-  //         [key]: sendingPageContent[key].fields.file.url
-  //       });
-  //     }
-  //   }
-  //   this.setState({
-  //     email: this.props.getADemoEmail
-  //   });
-  // };
 
   handleChange = e => {
     const fieldContent = e.target.value;
@@ -130,7 +96,7 @@ class GetADemo extends React.Component {
             <img className="demo-get-in-touch-gray-lines " src={GrayLines} />
           </Row>
           <Row className="demoTextTitleContainer secondary_font">
-            <h1 className="demoTextTitle">{this.state.getADemoTitle}</h1>
+            <h1 className="demoTextTitle">{this.state.data.getADemoTitle}</h1>
           </Row>
         </MediaQuery>
         {/* MOBILE GET A DEMO HEADER */}
@@ -143,7 +109,7 @@ class GetADemo extends React.Component {
             />
           </Row>
           <Row className="demoTextTitleContainer secondary_font">
-            <h1 className="mobile-demoTextTitle">{this.state.getADemoTitle}</h1>
+            <h1 className="mobile-demoTextTitle">{this.state.data.getADemoTitle}</h1>
           </Row>
         </MediaQuery>
         {/* FULL WIDTH GET A DEMO FORM */}
@@ -169,20 +135,20 @@ class GetADemo extends React.Component {
                     <Row className="title_row">
                       <div class="_form_element _x11159107 _full_width _clear primary_font form_title_container">
                         <div class="_form-title primary_font form_title">
-                          {this.state.getADemoFormTitle}
+                          {this.state.data.getADemoFormTitle}
                         </div>
                       </div>
                     </Row>
                     <Row className="get-in-touch-row">
                       <div class="_form_element _x06707072 _full_width left_content_row">
                         <label class="_form-label">
-                          {this.state.getADemoName}
+                          {this.state.data.getADemoName}
                         </label>
                         <div class="_field-wrapper">
                           <input
                             type="text"
                             name="firstname"
-                            placeholder={this.state.getADemoNamePlaceholder}
+                            placeholder={this.state.data.getADemoNamePlaceholder}
                             className="input_style"
                             required
                           />
@@ -190,13 +156,13 @@ class GetADemo extends React.Component {
                       </div>
                       <div class="_form_element _x61853092 _full_width ">
                         <label class="_form-label">
-                          {this.state.getADemoLastName}
+                          {this.state.data.getADemoLastName}
                         </label>
                         <div class="_field-wrapper">
                           <input
                             type="text"
                             name="lastname"
-                            placeholder={this.state.getADemoLastNamePlaceholder}
+                            placeholder={this.state.data.getADemoLastNamePlaceholder}
                             className="input_style"
                             required
                           />
@@ -206,7 +172,7 @@ class GetADemo extends React.Component {
                     <Row className="get-in-touch-row">
                       <div class="_form_element _x99442472 _full_width left_content_row">
                         <label class="_form-label secondary_font">
-                          {this.state.getADemoEmail}
+                          {this.state.data.getADemoEmail}
                         </label>
                         <div class="_field-wrapper">
                           <input
@@ -216,20 +182,20 @@ class GetADemo extends React.Component {
                             required
                             value={this.state.email}
                             onChange={this.handleChange}
-                            placeholder={this.state.getADemoEmailPlaceholder}
+                            placeholder={this.state.data.getADemoEmailPlaceholder}
                             className="input_style"
                           />
                         </div>
                       </div>
                       <div class="_form_element _x47659873 _full_width ">
                         <label class="_form-label secondary_font">
-                          {this.state.getADemoMobile}
+                          {this.state.data.getADemoMobile}
                         </label>
                         <div class="_field-wrapper">
                           <input
                             type="text"
                             name="phone"
-                            placeholder={this.state.getADemoMobilePlaceholder}
+                            placeholder={this.state.data.getADemoMobilePlaceholder}
                             className="input_style"
                             required
                           />
@@ -239,13 +205,13 @@ class GetADemo extends React.Component {
                     <Row className="get-in-touch-last-row">
                       <div class="_form_element _x65466860 _full_width left_content_row">
                         <label class="_form-label">
-                          {this.state.getADemoOrg}
+                          {this.state.data.getADemoOrg}
                         </label>
                         <div class="_field-wrapper">
                           <input
                             type="text"
                             name="organization"
-                            placeholder={this.state.getADemoOrgPlaceholder}
+                            placeholder={this.state.data.getADemoOrgPlaceholder}
                             className="input_style"
                             required
                           />
@@ -253,14 +219,14 @@ class GetADemo extends React.Component {
                       </div>
                       <div class="_form_element _field116 _full_width ">
                         <label class="_form-label">
-                          {this.state.getADemoNumberOfStudents}
+                          {this.state.data.getADemoNumberOfStudents}
                         </label>
                         <div class="_field-wrapper">
                           <input
                             type="number"
                             name="field[4]"
                             placeholder={
-                              this.state.getADemoNumberOfStudentsPlaceholder
+                              this.state.data.getADemoNumberOfStudentsPlaceholder
                             }
                             className="input_style"
                             required
@@ -276,7 +242,7 @@ class GetADemo extends React.Component {
                           type="submit"
                           variant="primary"
                         >
-                          {this.state.getAdemoSubmitButtonText}
+                          {this.state.data.getAdemoSubmitButtonText}
                         </Button>
                       </div>
                     </Row>
@@ -308,20 +274,20 @@ class GetADemo extends React.Component {
                     <Row className="title_row primary_font form_title_container">
                       <div class="_form_element _x11159107 primary_font form_title">
                         <div class="_form-title">
-                          {this.state.getADemoFormTitle}
+                          {this.state.data.getADemoFormTitle}
                         </div>
                       </div>
                     </Row>
                     <Row className="get-in-touch-row mt-3 center-in-row">
                       <div class="_form_element _x06707072 _full_width ">
                         <label class="_form-label secondary_font">
-                          {this.state.getADemoName}
+                          {this.state.data.getADemoName}
                         </label>
                         <div class="_field-wrapper demo-center-in-row">
                           <input
                             type="text"
                             name="firstname"
-                            placeholder={this.state.getADemoNamePlaceholder}
+                            placeholder={this.state.data.getADemoNamePlaceholder}
                             className="input_style"
                             required
                           />
@@ -331,13 +297,13 @@ class GetADemo extends React.Component {
                     <Row className="get-in-touch-row mt-3 center-in-row">
                       <div class="_form_element _x61853092 _full_width ">
                         <label class="_form-label secondary_font">
-                          {this.state.getADemoLastName}
+                          {this.state.data.getADemoLastName}
                         </label>
                         <div class="_field-wrapper">
                           <input
                             type="text"
                             name="lastname"
-                            placeholder={this.state.getADemoLastNamePlaceholder}
+                            placeholder={this.state.data.getADemoLastNamePlaceholder}
                             className="input_style"
                             required
                           />
@@ -347,14 +313,14 @@ class GetADemo extends React.Component {
                     <Row className="mt-3 center-in-row">
                       <div class="_form_element _x99442472 _full_width ">
                         <label class="_form-label secondary_font">
-                          {this.state.getADemoEmail}
+                          {this.state.data.getADemoEmail}
                         </label>
                         <div class="_field-wrapper">
                           <input
-                            value={this.state.email}
+                            value={this.state.data.email}
                             type="email"
                             name="email"
-                            placeholder={this.state.getADemoEmailPlaceholder}
+                            placeholder={this.state.data.getADemoEmailPlaceholder}
                             className="input_style"
                             onChange={this.handleChange}
                             required
@@ -365,13 +331,13 @@ class GetADemo extends React.Component {
                     <Row className="mt-3 center-in-row">
                       <div class="_form_element _x47659873 _full_width ">
                         <label class="_form-label secondary_font">
-                          {this.state.getADemoMobile}
+                          {this.state.data.getADemoMobile}
                         </label>
                         <div class="_field-wrapper">
                           <input
                             type="text"
                             name="phone"
-                            placeholder={this.state.getADemoMobilePlaceholder}
+                            placeholder={this.state.data.getADemoMobilePlaceholder}
                             className="input_style"
                             required
                           />
@@ -381,12 +347,12 @@ class GetADemo extends React.Component {
                     <Row className="mt-3 center-in-row">
                       <div class="_form_element _x65466860 _full_width ">
                         <label class="_form-label secondary_font">
-                          {this.state.getADemoOrg}
+                          {this.state.data.getADemoOrg}
                         </label>
                         <div class="_field-wrapper">
                           <input
                             name="organization"
-                            placeholder={this.state.getADemoOrgPlaceholder}
+                            placeholder={this.state.data.getADemoOrgPlaceholder}
                             className="input_style"
                             required
                           />
@@ -396,14 +362,14 @@ class GetADemo extends React.Component {
                     <Row className="get-in-touch-last-row mt-3">
                       <div class="_form_element _field116 _full_width ">
                         <label class="_form-label secondary_font">
-                          {this.state.getADemoNumberOfStudents}
+                          {this.state.data.getADemoNumberOfStudents}
                         </label>
                         <div class="_field-wrapper">
                           <input
                             type="number"
                             name="lastname"
                             placeholder={
-                              this.state.getADemoNumberOfStudentsPlaceholder
+                              this.state.data.getADemoNumberOfStudentsPlaceholder
                             }
                             className="input_style"
                             required
@@ -419,7 +385,7 @@ class GetADemo extends React.Component {
                           type="submit"
                           variant="primary"
                         >
-                          {this.state.getAdemoSubmitButtonText}
+                          {this.state.data.getAdemoSubmitButtonText}
                         </Button>
                       </div>
                     </Row>
@@ -452,18 +418,18 @@ class GetADemo extends React.Component {
                 <Container class="_form-content demo-center-in-row">
                   <div className="_form_element _x11159107 _full_width _clear primary_font form_title_container">
                     <div className="_form-title primary_font form_title">
-                      {this.state.getADemoFormTitle}
+                      {this.state.data.getADemoFormTitle}
                     </div>
                   </div>
                   <div class="_form_element _x06707072 _full_width ">
                     <label className="_form-label secondary_font mobile-get-in-touch-form-header">
-                      {this.state.getADemoName}
+                      {this.state.data.getADemoName}
                     </label>
                     <div class="_field-wrapper">
                       <input
                         type="text"
                         name="firstname"
-                        placeholder={this.state.getADemoNamePlaceholder}
+                        placeholder={this.state.data.getADemoNamePlaceholder}
                         className="mobile-input_style"
                         required
                       />
@@ -471,13 +437,13 @@ class GetADemo extends React.Component {
                   </div>
                   <div class="_form_element _x61853092 _full_width ">
                     <label className="_form-label secondary_font mobile-get-in-touch-form-header">
-                      {this.state.getADemoLastName}
+                      {this.state.data.getADemoLastName}
                     </label>
                     <div class="_field-wrapper">
                       <input
                         type="text"
                         name="firstname"
-                        placeholder={this.state.getADemoLastNamePlaceholder}
+                        placeholder={this.state.data.getADemoLastNamePlaceholder}
                         className="mobile-input_style"
                         required
                       />
@@ -485,14 +451,14 @@ class GetADemo extends React.Component {
                   </div>
                   <div class="_form_element _x99442472 _full_width ">
                     <label class="_form-label secondary_font mobile-get-in-touch-form-header">
-                      {this.state.getADemoEmail}
+                      {this.state.data.getADemoEmail}
                     </label>
                     <div class="_field-wrapper mobile-demo-form-field-label">
                       <input
-                        value={this.state.email}
+                        value={this.state.data.email}
                         type="email"
                         name="email"
-                        placeholder={this.state.getADemoEmailPlaceholder}
+                        placeholder={this.state.data.getADemoEmailPlaceholder}
                         className="mobile-input_style"
                         onChange={this.handleChange}
                         required
@@ -501,13 +467,13 @@ class GetADemo extends React.Component {
                   </div>
                   <div class="_form_element _x47659873 _full_width ">
                     <label class="_form-label secondary_font">
-                      {this.state.getADemoMobile}
+                      {this.state.data.getADemoMobile}
                     </label>
                     <div class="_field-wrapper">
                       <input
                         type="text"
                         name="phone"
-                        placeholder={this.state.getADemoMobilePlaceholder}
+                        placeholder={this.state.data.getADemoMobilePlaceholder}
                         className="input_style"
                         required
                       />
@@ -515,13 +481,13 @@ class GetADemo extends React.Component {
                   </div>
                   <div class="_form_element _x65466860 _full_width ">
                     <label class="_form-label secondary_font mobile-get-in-touch-form-header">
-                      {this.state.getADemoOrg}
+                      {this.state.data.getADemoOrg}
                     </label>
                     <div class="_field-wrapper mobile-demo-form-field-label">
                       <input
                         type="text"
                         name="organization"
-                        placeholder={this.state.getADemoOrgPlaceholder}
+                        placeholder={this.state.data.getADemoOrgPlaceholder}
                         className="mobile-input_style"
                         required
                       />
@@ -529,14 +495,14 @@ class GetADemo extends React.Component {
                   </div>
                   <div class="_form_element _field116 _full_width ">
                     <label class="_form-label secondary_font mobile-get-in-touch-form-header">
-                      {this.state.getADemoNumberOfStudents}
+                      {this.state.data.getADemoNumberOfStudents}
                     </label>
                     <div class="_field-wrapper mobile-demo-form-field-label">
                       <input
                         type="number"
                         name="lastname"
                         placeholder={
-                          this.state.getADemoNumberOfStudentsPlaceholder
+                          this.state.data.getADemoNumberOfStudentsPlaceholder
                         }
                         className="mobile-input_style"
                         required
@@ -550,7 +516,7 @@ class GetADemo extends React.Component {
                       type="submit"
                       variant="primary"
                     >
-                      {this.state.getAdemoSubmitButtonText}
+                      {this.state.data.getAdemoSubmitButtonText}
                     </Button>
                   </div>
                   <div class="_clear-element" />
@@ -564,9 +530,9 @@ class GetADemo extends React.Component {
         {/* <MediaQuery query="(min-device-width: 1224px)">
           <Row>
             <FeaturesSubfooter
-              img={this.state.getADemoSubfooterImg}
-              quote={this.state.getADemoSubfooterQuote}
-              quoteAuthor={this.state.getAdemoSubfooterQuoteAuthor}
+              img={this.state.data.getADemoSubfooterImg}
+              quote={this.state.data.getADemoSubfooterQuote}
+              quoteAuthor={this.state.data.getAdemoSubfooterQuoteAuthor}
             />
           </Row>
         </MediaQuery> */}

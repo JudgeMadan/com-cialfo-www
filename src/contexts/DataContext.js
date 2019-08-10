@@ -117,7 +117,11 @@ class DataContextProvider extends Component {
             content => content.fields.file.url
           )
         }
-      } else {
+      } else if (typeof filteredContentFields[key] === "number") {
+        data[key] = filteredContentFields[key]
+        console.log(data[key])
+      }
+      else {
         data[key] = filteredContentFields[key].fields.file.url
       }
     }

@@ -20,6 +20,7 @@ import { DataContext } from "../contexts/DataContext"
 
 class Events extends React.Component {
   static contextType = DataContext;
+
   constructor(props) {
     super(props);
     this.state = {
