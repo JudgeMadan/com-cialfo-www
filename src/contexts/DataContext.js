@@ -98,7 +98,6 @@ class DataContextProvider extends Component {
     } else {
       filteredContent = content
     }
-    console.log(filteredContent)
     let filteredContentFields = filteredContent[0].fields;
     for (let key in filteredContentFields) {
       if (typeof filteredContentFields[key] === "string") {
@@ -125,6 +124,21 @@ class DataContextProvider extends Component {
     return data
   }
 
+  // This is used to filter the data for HomeMarquee -> src/pages/home/HomeMarquee.js &
+  // HomeMarqueeList -> src/pages/home/homeMarquee/HomeMarqueeList.js
+  // I cant get it to work inside the primary setContent function
+  // Refactor would be nice
+  setMarqueeContent = (response, pageType) => {
+    let data = {}
+    let filteredContent = response.filter(
+      content => content.sys.contentType.sys.id === pageType
+    )
+    data = filteredContent
+    this.setState({
+      marqueeCount: filteredContent.length
+    })
+    return data
+  }
 
   render() {
     return (
@@ -133,7 +147,7 @@ class DataContextProvider extends Component {
           ...this.state,
           fetchEntries: this.fetchEntries,
           setContent: this.setContent,
-          stuff: this.stuff
+          setMarqueeContent: this.setMarqueeContent
         }}
       >
         {this.props.children}

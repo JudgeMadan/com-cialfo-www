@@ -12,26 +12,29 @@ class HomeMarquee extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: {}
+    };
   }
 
   componentDidMount() {
-    this.context.fetchEntries().then(this.setContent2);
+    this.context.fetchEntries().then((response) => {
+      let data = this.context.setMarqueeContent(response, "marqueeItem")
+      this.setState({
+        marqueeCount: data.length
+      })
+    });
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.context.fetchEntries().then(this.setContent2);
+      this.context.fetchEntries().then((response) => {
+        let data = this.context.setMarqueeContent(response, "marqueeItem")
+        this.setState({
+          marqueeCount: data.length
+        })
+      });
     }
-  }
-
-  setContent2 = response => {
-    let filteredContent = response.filter(
-      content => content.sys.contentType.sys.id === "marqueeItem"
-    )
-    this.setState({
-      marqueeCount: filteredContent.length
-    })
   }
 
   render() {

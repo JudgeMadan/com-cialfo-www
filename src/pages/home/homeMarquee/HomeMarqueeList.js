@@ -8,31 +8,34 @@ class HomeMarqueeList extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: []
+    };
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.context.fetchEntries().then(this.setContent2);
+      this.context.fetchEntries().then((response) => {
+        let data = this.context.setMarqueeContent(response, "marqueeItem")
+        this.setState({
+          data: data
+        })
+      });
     }
   }
 
   componentDidMount() {
-    this.context.fetchEntries().then(this.setContent2)
-  }
-
-  setContent2 = response => {
-    let filteredContent = response.filter(
-      content => content.sys.contentType.sys.id === "marqueeItem"
-    )
-    this.setState({
-      marqueeItemArray: filteredContent
-    })
+    this.context.fetchEntries().then((response) => {
+      let data = this.context.setMarqueeContent(response, "marqueeItem")
+      this.setState({
+        data: data
+      })
+    });
   }
 
 
   render() {
-    const marqueeItemArrays = this.state.marqueeItemArray;
+    const marqueeItemArrays = this.state.data;
     let marqueeItemArray;
 
     if (marqueeItemArrays) {
