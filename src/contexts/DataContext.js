@@ -144,7 +144,8 @@ class DataContextProvider extends Component {
   }
 
   // This is used to create the array needed for the schoolMarquee
-  // Used here -> src/pages/clientStories/clientStoriesMarquee/ClientStoriesMarqueeList.js
+  // Used here -> src/pages/clientStories/clientStoriesMarquee/ClientStoriesMarqueeList.js 
+  // & Used here -> src/pages/clientStories/ClientStoriesHomePageCards.js
   setSchoolMarqueeContent = response => {
     const pageContent = response;
     let schoolItems = []
@@ -153,6 +154,7 @@ class DataContextProvider extends Component {
         blurb: pageContent[key].fields.clientStoryStoryBlurb,
         logo: pageContent[key].fields.clientStoryLogo.fields.file.url,
         route: pageContent[key].fields.pageRoute,
+        homePageBlurb: pageContent[key].fields.clientStoryHomePageBlurb,
         id: pageContent[key].sys.id
       };
       schoolItems.push(schoolObject)
@@ -168,7 +170,7 @@ class DataContextProvider extends Component {
           fetchEntries: this.fetchEntries,
           setContent: this.setContent,
           setMarqueeContent: this.setMarqueeContent,
-          setSchoolMarqueeContent: this.setSchoolMarqueeContent
+          setSchoolMarqueeContent: this.setSchoolMarqueeContent,
         }}
       >
         {this.props.children}
