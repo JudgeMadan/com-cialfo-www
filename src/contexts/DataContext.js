@@ -119,7 +119,6 @@ class DataContextProvider extends Component {
         }
       } else if (typeof filteredContentFields[key] === "number") {
         data[key] = filteredContentFields[key]
-        console.log(data[key])
       }
       else {
         data[key] = filteredContentFields[key].fields.file.url
@@ -144,6 +143,23 @@ class DataContextProvider extends Component {
     return data
   }
 
+  // This is used to create the array needed for the schoolMarquee
+  // Used here -> src/pages/clientStories/clientStoriesMarquee/ClientStoriesMarqueeList.js
+  setSchoolMarqueeContent = response => {
+    const pageContent = response;
+    let schoolItems = []
+    for (let key in pageContent) {
+      let schoolObject = {
+        blurb: pageContent[key].fields.clientStoryStoryBlurb,
+        logo: pageContent[key].fields.clientStoryLogo.fields.file.url,
+        route: pageContent[key].fields.pageRoute,
+        id: pageContent[key].sys.id
+      };
+      schoolItems.push(schoolObject)
+    }
+    return schoolItems
+  };
+
   render() {
     return (
       <DataContext.Provider
@@ -151,7 +167,8 @@ class DataContextProvider extends Component {
           ...this.state,
           fetchEntries: this.fetchEntries,
           setContent: this.setContent,
-          setMarqueeContent: this.setMarqueeContent
+          setMarqueeContent: this.setMarqueeContent,
+          setSchoolMarqueeContent: this.setSchoolMarqueeContent
         }}
       >
         {this.props.children}

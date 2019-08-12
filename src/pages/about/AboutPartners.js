@@ -13,7 +13,6 @@ class AboutPartners extends React.Component {
     let partnersObject;
 
     if (partners) {
-      console.log(partners)
       partnersObject = partners.map(partner => {
         return (
           <Col className="home-page-partner-image" key={partner}>

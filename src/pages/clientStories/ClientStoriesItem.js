@@ -33,7 +33,6 @@ class ClientStoriesItem extends React.Component {
   };
 
   render() {
-    console.log(this.props.data)
     return (
       <Container>
         {this.state.width > 1000 && (
@@ -41,11 +40,11 @@ class ClientStoriesItem extends React.Component {
             <Col className="client-top-row-left-col">
               <div>
                 <Row>
-                  <p className="primary_font">{this.props.data.schoolName}</p>
+                  <p className="primary_font">{this.props.data.clientStorySchoolName}</p>
                 </Row>
                 <Row>
                   <h1 className="primary_font client-top-row-blurb left-side-header-title-large-font">
-                    {this.props.data.schoolBlurb}
+                    {this.props.data.clientStoryStoryBlurb}
                   </h1>
                 </Row>
               </div>
@@ -53,7 +52,7 @@ class ClientStoriesItem extends React.Component {
             <Col>
               <img
                 className="client-story-hero-image"
-                src={this.props.data.schoolImage}
+                src={this.props.data.clientStorySchoolImage}
               />
             </Col>
           </Row>
@@ -63,15 +62,15 @@ class ClientStoriesItem extends React.Component {
             <Row className="center-in-row">
               <img
                 className="client-story-hero-image"
-                src={this.props.data.schoolImage}
+                src={this.props.data.clientStorySchoolImage}
               />
             </Row>
             <Row className="center-in-row">
-              <p className="primary_font">{this.props.data.schoolName}</p>
+              <p className="primary_font">{this.props.data.clientStorySchoolName}</p>
             </Row>
             <Row>
               <h1 className="primary_font client-top-row-blurb left-side-header-title-large-font">
-                {this.props.data.schoolBlurb}
+                {this.props.data.clientStoryStoryBlurb}
               </h1>
             </Row>
           </Container>
@@ -80,41 +79,41 @@ class ClientStoriesItem extends React.Component {
           {this.state.width > 1000 && (
             <Col className="client-school-card px-5 pt-5">
               <Row className="mb-5">
-                <img src={this.props.data.schoolLogo} />
+                <img src={this.props.data.clientStoryLogo} />
               </Row>
               <Row className="mb-5">
-                <p> "{this.props.data.shortTestimonial}"</p>
+                <p> "{this.props.data.clientStoryShortTestimonial}"</p>
               </Row>
               <Row>
                 <p className="bold">
                   <Octicon size="small" icon={Location} />
 
-                  <span> {this.props.data.location}</span>
+                  <span> {this.props.data.clientStorySchoolLocation}</span>
                 </p>
               </Row>
 
               <Row>
                 <p className="bold">
                   Number of Seniors:
-                  <span> {this.props.data.seniorNumbers}</span>
+                  <span> {this.props.data.clientStoryNumberOfSeniors}</span>
                 </p>
               </Row>
 
               <Row>
                 <p className="bold">
                   Counseling Team:
-                  <span> {this.props.data.counselorNumbers}</span>
+                  <span> {this.props.data.clientStoryConsultingTeam}</span>
                 </p>
               </Row>
               <Row>
                 <p className="bold">
                   Curriculum:
-                  <span> {this.props.data.curriculum}</span>
+                  <span> {this.props.data.clientStoryCurriculum}</span>
                 </p>
               </Row>
               <Row>
                 <button className="mt-5 client-sales-button">
-                  {this.props.data.buttonText}
+                  {this.props.data.clientStoryContactSalesText}
                 </button>
               </Row>
             </Col>
@@ -122,41 +121,41 @@ class ClientStoriesItem extends React.Component {
           {this.state.width <= 1000 && (
             <Container className="client-school-card-medium p-5 mb-5">
               <Row className="mb-5 center-in-row">
-                <img src={this.props.data.schoolLogo} />
+                <img src={this.props.data.clientStoryLogo} />
               </Row>
               <Row>
-                <p> "{this.props.data.shortTestimonial}"</p>
+                <p> "{this.props.data.clientStoryShortTestimonial}"</p>
               </Row>
               <Row>
                 <p className="bold">
                   <Octicon size="small" icon={Location} />
 
-                  <span> {this.props.data.location}</span>
+                  <span> {this.props.data.clientStorySchoolLocation}</span>
                 </p>
               </Row>
 
               <Row>
                 <p className="bold">
                   Number of Seniors:
-                  <span> {this.props.data.seniorNumbers}</span>
+                  <span> {this.props.data.clientStoryNumberOfSeniors}</span>
                 </p>
               </Row>
 
               <Row>
                 <p className="bold">
                   Counseling Team:
-                  <span> {this.props.data.counselorNumbers}</span>
+                  <span> {this.props.data.clientStoryConsultingTeam}</span>
                 </p>
               </Row>
               <Row>
                 <p className="bold">
                   Curriculum:
-                  <span> {this.props.data.curriculum}</span>
+                  <span> {this.props.data.clientStoryCurriculum}</span>
                 </p>
               </Row>
               <Row className="center-in-row">
                 <button className="mt-5 client-sales-button">
-                  {this.props.data.buttonText}
+                  {this.props.data.clientStoryContactSalesText}
                 </button>
               </Row>
             </Container>
@@ -164,11 +163,11 @@ class ClientStoriesItem extends React.Component {
           <Col>
             {this.props.testimonialType === 1 && (
               <ClientStoriesItemTestimonialType1
-                testimonialBlurb_1={this.props.data.testimonialBlurb_1}
-                testimonialBlurb_2={this.props.data.testimonialBlurb_2}
-                testimonialBlurb_3={this.props.data.testimonialBlurb_3}
-                testimonialPullQuote_1={this.props.data.testimonialPullQuote_1}
-                testimonialVideo={this.props.data.testimonialVideo}
+                testimonialBlurb_1={this.props.data.clientStoryTestimonialBlurb1}
+                testimonialBlurb_2={this.props.data.clientStoryTestimonialBlurb2}
+                testimonialBlurb_3={this.props.data.clientStoryTestimonialBlurb3}
+                testimonialPullQuote_1={this.props.data.clientStoryTestimonialPullQuote1}
+                testimonialVideo={this.props.data.clientStoryTestimonialVideoEmbedLink}
                 videoWidth="600px"
                 videoHeight="336px"
               />
@@ -176,11 +175,11 @@ class ClientStoriesItem extends React.Component {
 
             {this.props.testimonialType === 2 && (
               <ClientStoriesItemTestimonialType2
-                testimonialBlurb_1={this.props.data.testimonialBlurb_1}
-                testimonialBlurb_2={this.props.data.testimonialBlurb_2}
-                testimonialBlurb_3={this.props.data.testimonialBlurb_3}
-                testimonialPullQuote_1={this.props.data.testimonialPullQuote_1}
-                testimonialVideo={this.props.data.testimonialVideo}
+                testimonialBlurb_1={this.props.data.clientStoryTestimonialBlurb1}
+                testimonialBlurb_2={this.props.data.clientStoryTestimonialBlurb2}
+                testimonialBlurb_3={this.props.data.clientStoryTestimonialBlurb3}
+                testimonialPullQuote_1={this.props.data.clientStoryTestimonialPullQuote1}
+                testimonialVideo={this.props.data.clientStoryTestimonialVideoEmbedLink}
                 videoWidth="600px"
                 videoHeight="336px"
               />
@@ -194,6 +193,7 @@ class ClientStoriesItem extends React.Component {
 
         <Row>
           <ClientStoriesMarquee
+            school={this.props.school}
             locale={this.props.locale}
             space={this.props.space}
             accessToken={this.props.accessToken}
