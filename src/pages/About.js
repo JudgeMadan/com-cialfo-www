@@ -1,5 +1,4 @@
 import React from "react";
-import * as contentful from "contentful";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -15,7 +14,6 @@ import AboutCialfoOffices from "./about/AboutCialfoOffices";
 import MobileAboutCialfoOffices from "./about/MobileAboutCialfoOffices";
 import MobileAboutByTheNumbers from "./about/MobileAboutByTheNumbers";
 import MediaQuery from "react-responsive";
-import PartnerImages from "./PartnerImages";
 import { withRouter } from "react-router-dom";
 import "./about/About.css";
 import { DataContext } from "../contexts/DataContext"
@@ -31,20 +29,6 @@ class About extends React.Component {
       data: {}
     };
   }
-
-  setSpace = () => {
-    return this.props.setSpace(this.props.match.params.space);
-  };
-
-  setAccessToken = () => {
-    return this.props.setAccessToken(this.props.match.params.space);
-  };
-
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
@@ -78,14 +62,6 @@ class About extends React.Component {
       width: window.innerWidth
     });
   };
-
-  fetchAboutContent = () =>
-    this.client.getEntries({
-      content_type: "about",
-      locale: this.props.match.params.locale
-    });
-
-
 
   render() {
     return (
