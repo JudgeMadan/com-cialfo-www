@@ -15,7 +15,6 @@ class PrivacyChinese extends React.Component {
         <MediaQuery query="(min-device-width: 1224px)">
           <div class="text-lg-center text-md-center text-sm-center text-xs-center">
             <p className="hidden-xs-down privacy-upper-title primary_font">
-              Cialfo
             </p>
             <div class="h2 hidden-sm-up privacy-title primary_font">
               Privacy Policy

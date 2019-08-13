@@ -1,6 +1,5 @@
 import React from "react";
 import HomeMarquee from "./home/HomeMarquee";
-import MobileHomePartnerImages from "./home/MobileHomePartnerImages";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
