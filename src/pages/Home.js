@@ -1,7 +1,5 @@
 import React from "react";
 import HomeMarquee from "./home/HomeMarquee";
-import MobileHomePartnerImages from "./home/MobileHomePartnerImages";
-import * as contentful from "contentful";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
@@ -28,16 +26,20 @@ import HomeFeatureLeftSideText from "./sharedComponents/HomeFeatureLeftSideText"
 import HomeFeatureRightSideText from "./sharedComponents/HomeFeatureRightSideText"
 import HomeCarousel from "./home/HomeCarousel";
 import MobileHomeCarousel from "./home/MobileHomeCarousel";
-import DemoCallToAction from "./sharedComponents/DemoCallToAction"
-
+import DemoCallToAction from "./sharedComponents/DemoCallToAction";
+import { DataContext } from "../contexts/DataContext"
 class Home extends React.Component {
+  static contextType = DataContext;
+
   constructor(props) {
     super(props);
     this.state = {
       height: window.innerHeight,
-      width: window.innerWidth
+      width: window.innerWidth,
+      data: {}
     };
   }
+
 
   generateUrl = (path, location) => {
     const ROUTE = "/:space/:locale/:path*";
@@ -58,23 +60,15 @@ class Home extends React.Component {
     }
   };
 
-  setSpace = () => {
-    return this.props.setSpace(this.props.match.params.space);
-  };
-
-  setAccessToken = () => {
-    return this.props.setAccessToken(this.props.match.params.space);
-  };
-
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
 
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    this.fetchHomeContent().then(this.setHomeContent);
+    this.context.fetchEntries("homePageHeaderProductImage").then((response) => {
+      let data = this.context.setContent(response, "homePage")
+      this.setState({
+        data: data
+      })
+    });
   }
 
   componentWillUnmount() {
@@ -90,7 +84,12 @@ class Home extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.fetchHomeContent().then(this.setHomeContent);
+      this.context.fetchEntries().then((response) => {
+        let data = this.context.setContent(response, "homePage")
+        this.setState({
+          data: data
+        })
+      });
     }
   }
 
@@ -99,116 +98,22 @@ class Home extends React.Component {
     this.props.sendEmailAddressToGetADemo(fieldContent);
   };
 
-  fetchHomeContent = () =>
-    this.client.getEntries({
-      content_type: "homePageHeaderProductImage",
-      locale: this.props.match.params.locale
-    });
-
-  setHomeContent = response => {
-    const homeContent = response.items;
-    let filteredhomeContent = homeContent.filter(
-      homeContent => homeContent.fields.pageType === "homePage"
-    );
-    let filteredhomeContentFields = filteredhomeContent[0].fields;
-    for (let key in filteredhomeContentFields) {
-      if (typeof filteredhomeContentFields[key] === "string") {
-        this.setState({
-          [key]: filteredhomeContentFields[key]
-        });
-      } else if (Array.isArray(filteredhomeContentFields[key])) {
-        if (typeof filteredhomeContentFields[key][0] === "string") {
-          this.setState({
-            [key]: filteredhomeContentFields[key]
-          })
-        } else {
-          this.setState({
-            [key]: filteredhomeContentFields[key].map(
-              test => test.fields.file.url
-            )
-          });
-        }
-      } else {
-        this.setState({
-          [key]: filteredhomeContentFields[key].fields.file.url
-        });
-      }
-    }
-  };
-
   render() {
     const space = this.props.match.params.space;
     return (
-      <div>
-        <div className="homePageContainer" fluid>
-          {/* FULL SCREEN TOP ROW */}
-          <MediaQuery query="(min-device-width: 1224px)">
-            {this.state.width > 1100 && (
-              <Row className="top_row mx-5">
-                <Col className="top_row_left_col">
-                  <div>
-                    <Row>
-                      <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
-                        {this.state.homePageHeaderTitle}
-                      </h1>
-                    </Row>
-                    <Row>
-                      <h1 className="secondary_font left-side-header-blurb">
-                        {this.state.homePageHeaderBlurb}
-                      </h1>
-                    </Row>
-                    <Row>
-                      <Form className="get-a-demo-form">
-                        <Form.Row className="email-form-container">
-                          <Col xs={7} className="pt-1">
-                            <Form.Control
-                              className="primary_font email-form"
-                              placeholder={
-                                this.state.homePageHeaderEmailPlaceholderText
-                              }
-                              plaintext
-                              onChange={this.handleChange}
-                            />
-                          </Col>
-                          <Col>
-                            <Button
-                              className="home-page-button sharp-corners-button"
-                              type="submit"
-                              size="sm"
-                              variant="primary"
-                            >
-                              <Link
-                                className="primary_font get-a-demo-link"
-                                to={this.generateUrl("demo", this.props.location)}
-                              >
-                                {this.state.homePageHeaderEmailSubmitButtonText}
-                              </Link>
-                            </Button>
-                          </Col>
-                        </Form.Row>
-                      </Form>
-                    </Row>
-                  </div>
-                </Col>
-                <Col className="homePageHeaderProductImage mr-5">
-                  <img className="homePageImg" src={space == "us" ? HeroUS : Hero} />
-                </Col>
-              </Row>
-            )}
-            {this.state.width <= 1100 && (
-              <Row className="top_row mx-3">
-                <Row className="homePageHeaderProductImage">
-                  {/* MAKE THIS IMAGE SMALLER */}
-                  <img className="small-homePageImg" src={space == "us" ? HeroUS : Hero} />
-                </Row>
-                <div className="home-medium-header-content center-in-row">
-                  {/* <div className="center-in-row"> */}
-                  <Row className="mt-3">
+      <div className="homePageContainer" fluid>
+        {/* FULL SCREEN TOP ROW */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          {this.state.width > 1100 && (
+            <Row className="top_row mx-5">
+              <Col className="top_row_left_col">
+                <div>
+                  <Row>
                     <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
                       {this.state.homePageHeaderTitle}
                     </h1>
                   </Row>
-                  <Row className="mt-3">
+                  <Row>
                     <h1 className="secondary_font left-side-header-blurb">
                       {this.state.homePageHeaderBlurb}
                     </h1>
@@ -244,139 +149,243 @@ class Home extends React.Component {
                       </Form.Row>
                     </Form>
                   </Row>
+                </div>
+              </Col>
+              <Col className="homePageHeaderProductImage mr-5">
+                <img className="homePageImg" src={space == "us" ? HeroUS : Hero} />
+              </Col>
+            </Row>
+          )}
+          {this.state.width <= 1100 && (
+            <div>
+              <Row className="top_row mx-3">
+                <Row className="homePageHeaderProductImage">
+                  {/* MAKE THIS IMAGE SMALLER */}
+                  <img className="small-homePageImg" src={space == "us" ? HeroUS : Hero} />
+                </Row>
+                <div className="home-medium-header-content center-in-row">
+                  {/* <div className="center-in-row"> */}
+                  <Row className="mt-3">
+                    <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
+                      {this.state.data.homePageHeaderTitle}
+                    </h1>
+                  </Row>
+                  <Row className="mt-3">
+                    <h1 className="secondary_font left-side-header-blurb">
+                      {this.state.data.homePageHeaderBlurb}
+                    </h1>
+                  </Row>
+                  <Row>
+                    <Form className="get-a-demo-form">
+                      <Form.Row className="email-form-container">
+                        <Col xs={7} className="pt-1">
+                          <Form.Control
+                            className="primary_font email-form"
+                            placeholder={
+                              this.state.data.homePageHeaderEmailPlaceholderText
+                            }
+                            plaintext
+                            onChange={this.handleChange}
+                          />
+                        </Col>
+                        <Col>
+                          <Button
+                            className="home-page-button sharp-corners-button"
+                            type="submit"
+                            size="sm"
+                            variant="primary"
+                          >
+                            <Link
+                              className="primary_font get-a-demo-link"
+                              to={this.generateUrl("demo", this.props.location)}
+                            >
+                              {this.state.data.homePageHeaderEmailSubmitButtonText}
+                            </Link>
+                          </Button>
+                        </Col>
+                      </Form.Row>
+                    </Form>
+                  </Row>
                   {/* </div> */}
                 </div>
               </Row>
-            )}
+              <div className="home-medium-header-content center-in-row">
+                {/* <div className="center-in-row"> */}
+                <Row className="mt-3">
+                  <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
+                    {this.state.data.homePageHeaderTitle}
+                  </h1>
+                </Row>
+                <Row className="mt-3">
+                  <h1 className="secondary_font left-side-header-blurb">
+                    {this.state.data.homePageHeaderBlurb}
+                  </h1>
+                </Row>
+                <Row>
+                  <Form className="get-a-demo-form">
+                    <Form.Row className="email-form-container">
+                      <Col xs={7} className="pt-1">
+                        <Form.Control
+                          className="primary_font email-form"
+                          placeholder={
+                            this.state.data.homePageHeaderEmailPlaceholderText
+                          }
+                          plaintext
+                          onChange={this.handleChange}
+                        />
+                      </Col>
+                      <Col>
+                        <Button
+                          className="home-page-button sharp-corners-button"
+                          type="submit"
+                          size="sm"
+                          variant="primary"
+                        >
+                          <Link
+                            className="primary_font get-a-demo-link"
+                            to={this.generateUrl("demo", this.props.location)}
+                          >
+                            {this.state.data.homePageHeaderEmailSubmitButtonText}
+                          </Link>
+                        </Button>
+                      </Col>
+                    </Form.Row>
+                  </Form>
+                </Row>
+              </div>
+            </div>
+          )}
+        </MediaQuery>
+        {/* MOBILE TOP ROW */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <Container className="mobile_top_row mobile-bottom-border">
+            <Row className="mobile_top_row_left_col">
+              <div>
+                <Row>
+                  <h1 className="primary_font mobile_top_row_header">
+                    {this.state.data.homePageHeaderTitle}
+                  </h1>
+                </Row>
+                <Row>
+                  <h1 className="secondary_font homePageHeaderBlurb mobile_top_row_header">
+                    {this.state.data.homePageHeaderBlurb}
+                  </h1>
+                </Row>
+              </div>
+            </Row>
+          </Container>
+        </MediaQuery>
+        {/* FULL SCREEN MARQUEE | NO MARQUEE ON MOBILE */}
+        {space !== "us" && (
+          <MediaQuery query="(min-device-width: 1224px)">
+            <Row className="homePageSchoolTestimonialsTitle">
+              <h1 className="primary_font">
+                {this.state.data.homePageSchoolTestimonialsTitle}
+              </h1>
+            </Row>
+            {/* keep div to permit overflow */}
+            <div className="homeMarquee">
+              <HomeMarquee
+                locale={this.props.locale}
+                accessToken={this.props.accessToken}
+                space={this.props.space}
+                spaces={this.props.spaces}
+                setSpace={this.props.setSpace}
+                setAccessToken={this.props.setAccessToken}
+                environment={this.props.environment}
+              />
+            </div>
           </MediaQuery>
-          {/* MOBILE TOP ROW */}
-          <MediaQuery query="(max-device-width: 1223px)">
-            <Container className="mobile_top_row mobile-bottom-border">
-              <Row className="mobile_top_row_left_col">
+        )}
+        {/*SEND DOCUMENTS FEATURE */}
+        <HomeFeatureRightSideText
+          title={this.state.data.homePageFeaturesSendDocumentTitle}
+          blurb={this.state.data.homePageFeaturesSendDocumentBlurb}
+          linkText={this.state.data.homePageFeaturesSendDocumentLinkText}
+          linkUrl="features-send"
+          image={Documents}
+        />
+        {/* LEVERAGE FEATURE */}
+        <HomeFeatureLeftSideText
+          title={this.state.data.homePageFeaturesLeverageTitle}
+          blurb={this.state.data.homePageFeaturesLeverageBlurb}
+          linkText={this.state.data.homePageFeaturesLeverageLinkText}
+          image={space == "us" ? ResearchImageUS : ResearchImage}
+          linkUrl="features-research"
+        />
+        {/* DISCOVER INSIGHTS */}
+        <HomeFeatureRightSideText
+          title={this.state.data.homePageFeaturesDiscoverTitle}
+          blurb={this.state.data.homePageFeaturesDiscoverBlurb}
+          linkText={this.state.data.homePageFeaturesDiscoverLinkText}
+          linkUrl="features-report"
+          image={Discover}
+        />
+        <MediaQuery query="(min-device-width: 1224px)">
+          <div className="homePageVideoCaseStudy">
+            <div className="partial-width-dark-blue">
+              <Row className="homePageVideoCaseStudyTitle">
+                <h1 className="primary_font white-font mobile-home-page-video-case-study-title">
+                  {this.state.data.homePageVideoCaseStudyTitle}
+                </h1>
+              </Row>
+              <Row className="homePageVideoCaseStudyVideoEmbed">
                 <div>
-                  <Row>
-                    <h1 className="primary_font mobile_top_row_header">
-                      {this.state.homePageHeaderTitle}
-                    </h1>
-                  </Row>
-                  <Row>
-                    <h1 className="secondary_font homePageHeaderBlurb mobile_top_row_header">
-                      {this.state.homePageHeaderBlurb}
-                    </h1>
-                  </Row>
+                  <img className="oval" src={Oval} />
+                  <img className="line" src={Line} />
+                  {this.state.width > 850 && (
+                    <ReactPlayer
+                      className="video"
+                      width="800px"
+                      height="448px"
+                      url={this.state.data.homePageVideoCaseStudyVideoEmbed}
+                    />
+                  )}
+                  {this.state.width <= 850 && (
+                    <ReactPlayer
+                      className="video"
+                      width="600px"
+                      height="366px"
+                      url={this.state.data.homePageVideoCaseStudyVideoEmbed}
+                    />
+                  )}
+                </div>
+              </Row>
+            </div>
+          </div>
+          <PartnerImages
+            locale={this.props.locale}
+            className="partnerImages"
+            partnerImages={this.state.data.homePagePoweredByOurPartnersPartners}
+            accessToken={this.props.accessToken}
+            space={this.props.space}
+            title={this.state.data.homePagePoweredByOurPartnersTitle}
+            environment={this.props.environment}
+          />
+        </MediaQuery>
+        {/* MOBILE VIDEO CONTENT */}
+        <MediaQuery query="(max-device-width: 1223px)">
+          <Row>
+            <Container className="mobile-homePageVideoCaseStudy mobile-top-border py-3">
+              <Row className=" mobile-homePageVideoCaseStudyTitle">
+                <h1 className="primary_font white-font">
+                  {this.state.data.homePageVideoCaseStudyTitle}
+                </h1>
+              </Row>
+              <Row className="mobile-homePageVideoCaseStudyVideoEmbed mb-4">
+                <div>
+                  <ReactPlayer
+                    className="video"
+                    width="345px"
+                    height="194px"
+                    url={this.state.data.homePageVideoCaseStudyVideoEmbed}
+                  />
                 </div>
               </Row>
             </Container>
-          </MediaQuery>
-          {/* FULL SCREEN MARQUEE | NO MARQUEE ON MOBILE */}
-          {space !== "us" && (
-            <MediaQuery query="(min-device-width: 1224px)">
-              <Row className="homePageSchoolTestimonialsTitle">
-                <h1 className="primary_font">
-                  {this.state.homePageSchoolTestimonialsTitle}
-                </h1>
-              </Row>
-              {/* keep div to permit overflow */}
-              <div className="homeMarquee">
-                <HomeMarquee
-                  locale={this.props.locale}
-                  accessToken={this.props.accessToken}
-                  space={this.props.space}
-                  spaces={this.props.spaces}
-                  setSpace={this.props.setSpace}
-                  setAccessToken={this.props.setAccessToken}
-                  environment={this.props.environment}
-                />
-              </div>
-            </MediaQuery>
-          )}
-          {/*SEND DOCUMENTS FEATURE */}
-          <HomeFeatureRightSideText
-            title={this.state.homePageFeaturesSendDocumentTitle}
-            blurb={this.state.homePageFeaturesSendDocumentBlurb}
-            linkText={this.state.homePageFeaturesSendDocumentLinkText}
-            linkUrl="features-send"
-            image={Documents}
-          />
-          {/* LEVERAGE FEATURE */}
-          <HomeFeatureLeftSideText
-            title={this.state.homePageFeaturesLeverageTitle}
-            blurb={this.state.homePageFeaturesLeverageBlurb}
-            linkText={this.state.homePageFeaturesLeverageLinkText}
-            image={space == "us" ? ResearchImageUS : ResearchImage}
-            linkUrl="features-research"
-          />
-          {/* DISCOVER INSIGHTS */}
-          <HomeFeatureRightSideText
-            title={this.state.homePageFeaturesDiscoverTitle}
-            blurb={this.state.homePageFeaturesDiscoverBlurb}
-            linkText={this.state.homePageFeaturesDiscoverLinkText}
-            linkUrl="features-report"
-            image={Discover}
-          />
-          <MediaQuery query="(min-device-width: 1224px)">
-            {/* VIDEO CAROUSEL GOES HERE */}
-            <div className="homePageVideoCaseStudy ">
-              {/* <div className="partial-width-dark-blue"> */}
-              <Row className="homePageVideoCaseStudyTitle">
-                <h1 className="primary_font white-font mobile-home-page-video-case-study-title">
-                  {this.state.homePageVideoCaseStudyTitle}
-                </h1>
-              </Row>
-              <div className="home-page-carousel">
-                <HomeCarousel
-                  setSpace={this.props.setSpace}
-                  setAccessToken={this.props.setAccessToken}
-                  environment={this.props.environment}
-                />
-              </div>
-              <div className="home-page-video">
-                <ReactPlayer
-                  className="video mx-auto"
-                  width="450px"
-                  height="275px"
-                  url={this.state.homePageVideoCaseStudyVideoEmbed}
-                />
-              </div>
-            </div>
-            {/* </div> */}
-            <PartnerImages
-              locale={this.props.locale}
-              className="partnerImages"
-              partnerImages={this.state.homePagePoweredByOurPartnersPartners}
-              accessToken={this.props.accessToken}
-              space={this.props.space}
-              title={this.state.homePagePoweredByOurPartnersTitle}
-              environment={this.props.environment}
-            />
-          </MediaQuery>
-          {/* MOBILE VIDEO CONTENT */}
-          <MediaQuery query="(max-device-width: 1223px)">
-            <Row>
-              <Container className="mobile-homePageVideoCaseStudy mobile-top-border py-3">
-                <Row className=" mobile-homePageVideoCaseStudyTitle">
-                  <h1 className="primary_font white-font">
-                    {this.state.homePageVideoCaseStudyTitle}
-                  </h1>
-                </Row>
-                <Row className="mobile-homePageVideoCaseStudyVideoEmbed mb-4">
-                  <div>
-                    <div>
-                      <ReactPlayer
-                        className="video mx-auto"
-                        width="345px"
-                        height="194px"
-                        url={this.state.homePageVideoCaseStudyVideoEmbed}
-                      />
-                    </div>
-                  </div>
-                </Row>
-              </Container>
-            </Row>
-          </MediaQuery>
-        </div >
-        <DemoCallToAction />
-      </div >
+          </Row>
+        </MediaQuery>
+      </div>
     );
   }
 }

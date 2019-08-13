@@ -1,53 +1,41 @@
 import React from "react";
 import HomeMarqueeListObject from "./homeMarqueeList/HomeMarqueeListObject";
-import * as contentful from "contentful";
 import { withRouter } from "react-router-dom";
+import { DataContext } from "../../../contexts/DataContext"
 
 class HomeMarqueeList extends React.Component {
+  static contextType = DataContext;
+
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: []
+    };
   }
-
-  setSpace = () => {
-    return this.props.setSpace(this.props.match.params.space);
-  };
-
-  setAccessToken = () => {
-    return this.props.setAccessToken(this.props.match.params.space);
-  };
-
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.fetchAboutContent().then(this.setAboutContent);
+      this.context.fetchEntries().then((response) => {
+        let data = this.context.setMarqueeContent(response, "marqueeItem")
+        this.setState({
+          data: data
+        })
+      });
     }
   }
 
   componentDidMount() {
-    this.fetchAboutContent().then(this.setAboutContent);
+    this.context.fetchEntries().then((response) => {
+      let data = this.context.setMarqueeContent(response, "marqueeItem")
+      this.setState({
+        data: data
+      })
+    });
   }
 
-  fetchAboutContent = () =>
-    this.client.getEntries({
-      content_type: "marqueeItem",
-      locale: this.props.match.params.locale
-    });
-
-  setAboutContent = response => {
-    const marqueeItemArray = response.items;
-    this.setState({
-      marqueeItemArray: marqueeItemArray
-    });
-  };
 
   render() {
-    const marqueeItemArrays = this.state.marqueeItemArray;
+    const marqueeItemArrays = this.state.data;
     let marqueeItemArray;
 
     if (marqueeItemArrays) {

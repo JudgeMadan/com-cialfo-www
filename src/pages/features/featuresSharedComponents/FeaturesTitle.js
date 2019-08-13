@@ -1,5 +1,4 @@
 import React from "react";
-import * as contentful from "contentful";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -23,23 +22,8 @@ class FeaturesTitle extends React.Component {
     };
   }
 
-  setSpace = () => {
-    return this.props.setSpace(this.props.match.params.space);
-  };
-
-  setAccessToken = () => {
-    return this.props.setAccessToken(this.props.match.params.space);
-  };
-
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
-
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    this.fetchFeaturesResearchPage().then(this.setFeaturesResearchPage);
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateDimensions);
@@ -52,40 +36,7 @@ class FeaturesTitle extends React.Component {
     });
   };
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.fetchFeaturesResearchPage().then(this.setFeaturesResearchPage);
-    }
-  }
-
-  fetchFeaturesResearchPage = () => {
-    return this.client.getEntries({
-      content_type: "featuresDocuments",
-      locale: this.props.match.params.locale
-    });
-  };
-
-  setFeaturesResearchPage = response => {
-    const sendingPageContent = response.items[0].fields;
-    for (let key in sendingPageContent) {
-      if (typeof sendingPageContent[key] === "string") {
-        this.setState({
-          [key]: sendingPageContent[key]
-        });
-      } else if (Array.isArray(sendingPageContent[key])) {
-        this.setState({
-          [key]: sendingPageContent[key]
-        });
-      } else {
-        this.setState({
-          [key]: sendingPageContent[key].fields.file.url
-        });
-      }
-    }
-  };
-
   render() {
-    const space = this.props.match.params.space;
     return (
       <Container className="featuresSendPage" fluid={true}>
         {/* FULL SCREEN PAGE HEADER */}

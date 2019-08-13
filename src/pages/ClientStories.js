@@ -7,27 +7,18 @@ import ClientStoriesHomePageCards from "./clientStories/ClientStoriesHomePageCar
 import HomeMarquee from "../pages/home/HomeMarquee";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
-import DemoCallToAction from "./sharedComponents/DemoCallToAction"
+import DemoCallToAction from "./sharedComponents/DemoCallToAction";
+import { DataContext } from "../contexts/DataContext"
 
 class ClientStories extends React.Component {
+  static contextType = DataContext;
+
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: {}
+    };
   }
-
-  setSpace = () => {
-    return this.props.setSpace(this.props.match.params.space);
-  };
-
-  setAccessToken = () => {
-    return this.props.setAccessToken(this.props.match.params.space);
-  };
-
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
 
   render() {
     const space = this.props.match.params.space;
