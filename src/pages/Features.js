@@ -180,7 +180,7 @@ class Features extends React.Component {
         <HomeFeatureLeftSideText
           title={this.state.data.featurePageFeaturesLeverageTitle}
           blurb={this.state.data.featurePageFeaturesLeverageBlurb}
-          linkText={this.state.featurePageFeaturesLeverageLinkText}
+          linkText={this.state.data.featurePageFeaturesLeverageLinkText}
           image={space == "us" ? ResearchImageUS : ResearchImage}
           linkUrl="features-research"
         />

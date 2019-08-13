@@ -32,7 +32,6 @@ class About extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      // this.context.fetchEntries("about").then(this.setAboutContent2);
       this.context.fetchEntries("about").then((response) => {
         let data = this.context.setContent(response, "aboutPage")
         this.setState({

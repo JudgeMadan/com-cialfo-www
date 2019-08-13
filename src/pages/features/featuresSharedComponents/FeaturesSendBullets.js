@@ -13,7 +13,7 @@ class FeaturesSendBullets extends React.Component {
           <div className="bullet_point">
             <img src={Pointer} />
             &nbsp;
-            <span className="secondary_font"> {bullet}</span>
+            <span className="secondary_font"> {bullet.fields.bulletPoint}</span>
           </div>
         );
       });

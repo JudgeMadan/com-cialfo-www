@@ -19,20 +19,6 @@ class ClientStories extends React.Component {
     };
   }
 
-  setSpace = () => {
-    return this.props.setSpace(this.props.match.params.space);
-  };
-
-  setAccessToken = () => {
-    return this.props.setAccessToken(this.props.match.params.space);
-  };
-
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
-
   render() {
     const space = this.props.match.params.space;
     return (

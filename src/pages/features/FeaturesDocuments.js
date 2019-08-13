@@ -1,47 +1,34 @@
 import React from "react";
-import * as contentful from "contentful";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import "./Features.css";
-import FeaturesSubfooter from "./featuresSharedComponents/FeaturesSubfooter";
-import FeaturesBullets from "./featuresSharedComponents/FeaturesBullets";
-import MobileFeaturesBullets from "./featuresSharedComponents/MobileFeaturesBullets";
-import Oval from "../../img/Oval.svg";
-import Line from "../../img/Line.svg";
-import MediaQuery from "react-responsive";
 import FeaturesRightSideText from "./featuresSharedComponents/FeaturesRightSideText"
 import FeaturesLeftSideText from "./featuresSharedComponents/FeaturesLeftSideText"
 import FeaturesTitle from "./featuresSharedComponents/FeaturesTitle"
 import { withRouter } from "react-router-dom";
+import { DataContext } from "../../contexts/DataContext"
 
 class FeaturesDocuments extends React.Component {
+  static contextType = DataContext;
+
   constructor(props) {
     super(props);
     this.state = {
       height: window.innerHeight,
-      width: window.innerWidth
+      width: window.innerWidth,
+      data: {}
     };
   }
 
-  setSpace = () => {
-    return this.props.setSpace(this.props.match.params.space);
-  };
-
-  setAccessToken = () => {
-    return this.props.setAccessToken(this.props.match.params.space);
-  };
-
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
-
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    this.fetchFeaturesResearchPage().then(this.setFeaturesResearchPage);
+    this.context.fetchEntries("featuresDocuments").then((response) => {
+      let data = this.context.setContent(response)
+      this.setState({
+        data: data
+      })
+    });
   }
+
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateDimensions);
   }
@@ -55,59 +42,31 @@ class FeaturesDocuments extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.fetchFeaturesResearchPage().then(this.setFeaturesResearchPage);
+      this.context.fetchEntries("featuresDocuments").then((response) => {
+        let data = this.context.setContent(response)
+        this.setState({
+          data: data
+        })
+      });
     }
   }
 
-  fetchFeaturesResearchPage = () => {
-    return this.client.getEntries({
-      content_type: "featuresDocuments",
-      locale: this.props.match.params.locale
-    });
-  };
-
-  setFeaturesResearchPage = response => {
-    const sendingPageContent = response.items[0].fields;
-    for (let key in sendingPageContent) {
-      if (typeof sendingPageContent[key] === "string") {
-        this.setState({
-          [key]: sendingPageContent[key]
-        });
-      } else if (Array.isArray(sendingPageContent[key])) {
-        this.setState({
-          [key]: sendingPageContent[key]
-        });
-      } else {
-        this.setState({
-          [key]: sendingPageContent[key].fields.file.url
-        });
-      }
-    }
-  };
-
   render() {
-    const space = this.props.match.params.space;
     return (
       <Container className="featuresSendPage" fluid={true}>
         <FeaturesTitle
-          setSpace={this.setSpace}
-          setAccessToken={this.setAccessToken}
-          title={this.state.documentsTitle}
-          heroImage={this.state.featuresResearchHero}
+          title={this.state.data.documentsTitle}
+          heroImage={this.state.data.featuresResearchHero}
         />
         <FeaturesRightSideText
-          setSpace={this.setSpace}
-          setAccessToken={this.setAccessToken}
-          image={this.state.documentsExploreImage}
-          title={this.state.documentsExploreTitle}
-          bullets={this.state.documentsExploreBlurb}
+          image={this.state.data.documentsExploreImage}
+          title={this.state.data.documentsExploreTitle}
+          bullets={this.state.data.documentsExploreBlurb}
         />
         <FeaturesLeftSideText
-          setSpace={this.setSpace}
-          setAccessToken={this.setAccessToken}
-          image={this.state.documentsTranscriptImage}
-          title={this.state.documentsTranscriptTitle}
-          bullets={this.state.documentsTranscriptBlurb}
+          image={this.state.data.documentsTranscriptImage}
+          title={this.state.data.documentsTranscriptTitle}
+          bullets={this.state.data.documentsTranscriptBlurb}
         />
       </Container >
     );
