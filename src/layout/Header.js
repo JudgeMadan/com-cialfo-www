@@ -64,7 +64,6 @@ class Header extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <Navbar
         className="justify-content-between header"

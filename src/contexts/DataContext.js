@@ -67,9 +67,13 @@ class DataContextProvider extends Component {
   }
 
   generateLocale = (location) => {
-    const ROUTE = "/:space/:locale/:path*";
-    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
-    return routeComponents[2]
+    if (location.pathname === "/home" || location.pathname === "/") {
+      return "en-US"
+    } else {
+      const ROUTE = "/:space/:locale/:path*";
+      const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+      return routeComponents[2]
+    }
   }
 
   fetchEntries = (content_type) => {

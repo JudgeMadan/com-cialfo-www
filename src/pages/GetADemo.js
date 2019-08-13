@@ -33,7 +33,8 @@ class GetADemo extends React.Component {
     this.context.fetchEntries("getADemo").then((response) => {
       let data = this.context.setContent(response)
       this.setState({
-        data: data
+        data: data,
+        email: this.props.getADemoEmail
       })
     });
   }
@@ -54,7 +55,8 @@ class GetADemo extends React.Component {
       this.context.fetchEntries("getADemo").then((response) => {
         let data = this.context.setContent(response)
         this.setState({
-          data: data
+          data: data,
+          email: this.props.getADemoEmail
         })
       });
     }
@@ -172,7 +174,7 @@ class GetADemo extends React.Component {
                     <Row className="get-in-touch-row">
                       <div class="_form_element _x99442472 _full_width left_content_row">
                         <label class="_form-label secondary_font">
-                          {this.state.data.getADemoEmail}
+                          {this.state.getADemoEmail}
                         </label>
                         <div class="_field-wrapper">
                           <input
@@ -313,7 +315,7 @@ class GetADemo extends React.Component {
                     <Row className="mt-3 center-in-row">
                       <div class="_form_element _x99442472 _full_width ">
                         <label class="_form-label secondary_font">
-                          {this.state.data.getADemoEmail}
+                          {this.state.getADemoEmail}
                         </label>
                         <div class="_field-wrapper">
                           <input
@@ -451,11 +453,11 @@ class GetADemo extends React.Component {
                   </div>
                   <div class="_form_element _x99442472 _full_width ">
                     <label class="_form-label secondary_font mobile-get-in-touch-form-header">
-                      {this.state.data.getADemoEmail}
+                      {this.state.getADemoEmail}
                     </label>
                     <div class="_field-wrapper mobile-demo-form-field-label">
                       <input
-                        value={this.state.data.email}
+                        value={this.state.email}
                         type="email"
                         name="email"
                         placeholder={this.state.data.getADemoEmailPlaceholder}

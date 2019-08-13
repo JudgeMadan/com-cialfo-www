@@ -128,7 +128,7 @@ class App extends Component {
         "country_code=JP"
       ];
 
-      const country_codeArray = cookieArrayInternational.filter(
+      const country_codeArray = cookieArray.filter(
         cookie => cookie.substring(0, 12) === "country_code"
       );
 
@@ -216,51 +216,20 @@ class App extends Component {
   };
 
   render() {
-    const space = this.state.space;
-    const accessToken = this.state.accessToken;
-    const content = this.state.content;
-
-
-    if (space && accessToken) {
+    const spaceName = this.state.spaceName
+    if (spaceName) {
       return (
         <div>
-          <Header
-            locale={this.state.locale}
-            space={this.state.space}
-            accessToken={this.state.accessToken}
-            updateLocale={this.updateLocale}
-            country_code={this.state.country_code}
-            spaceName={this.state.spaceName}
-            spaces={this.state.spaces}
-            setSpace={this.setSpace}
-            setAccessToken={this.setAccessToken}
-            environment={this.state.environment}
-          />
+          <Header />
           <Router
             spaceName={this.state.spaceName}
             getADemoEmail={this.state.getADemoEmail}
             sendEmailAddressToGetADemo={this.sendEmailAddressToGetADemo}
-            spaces={this.state.spaces}
-            space={this.state.space}
-            setSpace={this.setSpace}
-            setAccessToken={this.setAccessToken}
-            environment={this.state.environment}
           />
-          <Footer
-            locale={this.state.locale}
-            space={this.state.space}
-            accessToken={this.state.accessToken}
-            spaceName={this.state.spaceName}
-            spaces={this.state.spaces}
-            setSpace={this.setSpace}
-            setAccessToken={this.setAccessToken}
-            environment={this.state.environment}
-          />
-        </div>
-      );
-    } else {
-      return <div />;
+          <Footer />
+        </div>)
     }
+    else return (<div />)
   }
 }
 

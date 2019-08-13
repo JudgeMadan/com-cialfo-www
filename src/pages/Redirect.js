@@ -9,7 +9,7 @@ class Redirect extends React.Component {
   }
 
   redirect = () => {
-    if(this.props.location.pathname === "/"){this.props.location.pathname = "/home"}
+    if (this.props.location.pathname === "/") { this.props.location.pathname = "/home" }
     if (this.props.spaceName == "china") {
       this.props.history.push("/cn/en-US" + this.props.location.pathname);
     }
