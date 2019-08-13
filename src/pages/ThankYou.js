@@ -12,7 +12,6 @@ import { withRouter } from "react-router-dom";
 class ThankYou extends React.Component {
 
   render() {
-    console.log(this.props.match.params.locale)
     const locale = this.props.match.params.locale
     return (
       <Container className="thank_you_outer_content">
