@@ -329,28 +329,21 @@ class Home extends React.Component {
                   {this.state.data.homePageVideoCaseStudyTitle}
                 </h1>
               </Row>
-              <Row className="homePageVideoCaseStudyVideoEmbed">
-                <div>
-                  <img className="oval" src={Oval} />
-                  <img className="line" src={Line} />
-                  {this.state.width > 850 && (
-                    <ReactPlayer
-                      className="video"
-                      width="800px"
-                      height="448px"
-                      url={this.state.data.homePageVideoCaseStudyVideoEmbed}
-                    />
-                  )}
-                  {this.state.width <= 850 && (
-                    <ReactPlayer
-                      className="video"
-                      width="600px"
-                      height="366px"
-                      url={this.state.data.homePageVideoCaseStudyVideoEmbed}
-                    />
-                  )}
-                </div>
-              </Row>
+              <div className="home-page-carousel">
+                <HomeCarousel
+                  setSpace={this.props.setSpace}
+                  setAccessToken={this.props.setAccessToken}
+                  environment={this.props.environment}
+                />
+              </div>
+              <div className="home-page-video">
+                <ReactPlayer
+                  className="video mx-auto"
+                  width="450px"
+                  height="275px"
+                  url={this.state.data.homePageVideoCaseStudyVideoEmbed}
+                />
+              </div>
             </div>
           </div>
           <PartnerImages
@@ -385,6 +378,7 @@ class Home extends React.Component {
             </Container>
           </Row>
         </MediaQuery>
+        <DemoCallToAction />
       </div>
     );
   }
