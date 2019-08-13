@@ -84,7 +84,7 @@ class Home extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.context.fetchEntries().then((response) => {
+      this.context.fetchEntries("homePageHeaderProductImage").then((response) => {
         let data = this.context.setContent(response, "homePage")
         this.setState({
           data: data
@@ -110,12 +110,12 @@ class Home extends React.Component {
                 <div>
                   <Row>
                     <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
-                      {this.state.homePageHeaderTitle}
+                      {this.state.data.homePageHeaderTitle}
                     </h1>
                   </Row>
                   <Row>
                     <h1 className="secondary_font left-side-header-blurb">
-                      {this.state.homePageHeaderBlurb}
+                      {this.state.data.homePageHeaderBlurb}
                     </h1>
                   </Row>
                   <Row>
@@ -125,7 +125,7 @@ class Home extends React.Component {
                           <Form.Control
                             className="primary_font email-form"
                             placeholder={
-                              this.state.homePageHeaderEmailPlaceholderText
+                              this.state.data.homePageHeaderEmailPlaceholderText
                             }
                             plaintext
                             onChange={this.handleChange}
@@ -142,7 +142,7 @@ class Home extends React.Component {
                               className="primary_font get-a-demo-link"
                               to={this.generateUrl("demo", this.props.location)}
                             >
-                              {this.state.homePageHeaderEmailSubmitButtonText}
+                              {this.state.data.homePageHeaderEmailSubmitButtonText}
                             </Link>
                           </Button>
                         </Col>

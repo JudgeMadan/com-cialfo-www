@@ -18,6 +18,7 @@ class TranslateButton extends React.Component {
     return routeComponents[2];
   };
 
+
   generateUrl = (locale, location) => {
     const ROUTE = "/:space/:locale/:path*";
     const definePath = compile(ROUTE);
@@ -44,6 +45,7 @@ class TranslateButton extends React.Component {
   }
 
   render() {
+    console.log(this.props.location.pathname)
     return (
       <div>
         {this.identifyLocale(this.props.location) !== "zh-CN" && (

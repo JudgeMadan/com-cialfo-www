@@ -9,7 +9,7 @@ class App extends Component {
     this.state = {
       space: "2w8l1bcem16l",
       accessToken: "bO1jaDXJM1S5kWXDVJoZ6buysg9bGkhohqYyJr-NxIw",
-      environment: "staging",
+      environment: "master",
       locale: "en-US",
       getADemoEmail: "",
       chinaSpace: {
@@ -128,7 +128,7 @@ class App extends Component {
         "country_code=JP"
       ];
 
-      const country_codeArray = cookieArrayChina.filter(
+      const country_codeArray = cookieArrayInternational.filter(
         cookie => cookie.substring(0, 12) === "country_code"
       );
 
@@ -138,14 +138,7 @@ class App extends Component {
         accessToken = this.data.usaSpace.accessToken
       }
 
-      // getAllCopy(space, "master", accessToken).then(this.setFeatures)
       if (country_code === "country_code=CN") {
-        // this.setState({
-        //   space: this.state.chinaSpace.space,
-        //   accessToken: this.state.chinaSpace.accessToken,
-        //   country_code: country_code,
-        //   spaceName: this.state.chinaSpace.spaceName
-        // });
         window.location.href = "https://cialfo.cn"
       } else if (country_code === "country_code=IN") {
         space = this.data.indiaSpace.space
@@ -184,7 +177,6 @@ class App extends Component {
         spaceName: this.state.internationalSpace.spaceName
       });
     }
-    // getAllCopy(space, "master", accessToken).then(this.setFeatures)
   }
 
   sendEmailAddressToGetADemo = email => {
@@ -201,7 +193,6 @@ class App extends Component {
 
   setSpace = url => {
     if (url === "cn") {
-      // return this.state.spaces.cn.space;
       window.location.href = "https://cialfo.cn"
     } else if (url === "intl") {
       return this.state.spaces.intl.space;
