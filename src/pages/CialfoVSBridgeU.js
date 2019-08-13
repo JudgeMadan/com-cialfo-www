@@ -1,5 +1,4 @@
 import React from "react";
-import * as contentful from "contentful";
 import Container from "react-bootstrap/Container";
 import SolutionsSubPage from "./solutions/SolutionsSubPage";
 import { withRouter } from "react-router-dom";
