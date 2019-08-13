@@ -1,48 +1,36 @@
 import React from "react";
-import * as contentful from "contentful";
 import ClientStoriesMarqueeList from "./clientStoriesMarquee/ClientStoriesMarqueeList";
 import { withRouter } from "react-router-dom";
+import { DataContext } from "../../contexts/DataContext"
 
 class ClientStoriesMarquee extends React.Component {
+  static contextType = DataContext;
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      clientMarqueeCount: ''
+    };
   }
 
-  setSpace = () => {
-    return this.props.setSpace(this.props.match.params.space);
-  };
-
-  setAccessToken = () => {
-    return this.props.setAccessToken(this.props.match.params.space);
-  };
-
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
-
   componentDidMount() {
-    this.fetchContent().then(this.setContent);
+    this.context.fetchEntries().then((response) => {
+      let data = this.context.setMarqueeContent(response, "clientStory")
+      this.setState({
+        clientMarqueeCount: data.length
+      })
+    });
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.fetchContent().then(this.setContent);
+      this.context.fetchEntries().then((response) => {
+        let data = this.context.setMarqueeContent(response, "marqueeItem")
+        this.setState({
+          clientMarqueeCount: data.length
+        })
+      });
     }
   }
-
-  fetchContent = () =>
-    this.client.getEntries({
-      content_type: "clientStory",
-      locale: this.props.match.params.locale
-    });
-
-  setContent = response => {
-    const pageContent = response.items;
-    this.setState({ clientMarqueeCount: pageContent.length });
-  };
 
   render() {
     return (
@@ -52,22 +40,12 @@ class ClientStoriesMarquee extends React.Component {
       >
         <div className="client-marquee--inner">
           <ClientStoriesMarqueeList
-            locale={this.props.locale}
-            accessToken={this.props.accessToken}
-            space={this.props.space}
+            school={this.props.school}
             clientStoriesMarqueeCheck={this.clientStoriesMarqueeCheck}
-            spaces={this.props.spaces}
-            setSpace={this.props.setSpace}
-            setAccessToken={this.props.setAccessToken}
           />
           <ClientStoriesMarqueeList
-            locale={this.props.locale}
-            accessToken={this.props.accessToken}
-            space={this.props.space}
+            school={this.props.school}
             clientStoriesMarqueeCheck={this.clientStoriesMarqueeCheck}
-            spaces={this.props.spaces}
-            setSpace={this.props.setSpace}
-            setAccessToken={this.props.setAccessToken}
           />
         </div>
       </div>

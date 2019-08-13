@@ -4,49 +4,38 @@ import BlueOval from "../../img/home/BlueOval.svg";
 import Line from "../../img/Line.svg";
 import Stroke10 from "../../img/Stroke10.svg";
 import MediaQuery from "react-responsive";
-import * as contentful from "contentful";
 import { withRouter } from "react-router-dom";
+import { DataContext } from "../../contexts/DataContext"
 
 class HomeMarquee extends React.Component {
+  static contextType = DataContext;
+
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: {}
+    };
   }
 
-  setSpace = () => {
-    return this.props.setSpace(this.props.match.params.space);
-  };
-
-  setAccessToken = () => {
-    return this.props.setAccessToken(this.props.match.params.space);
-  };
-
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
-
   componentDidMount() {
-    this.fetchContent().then(this.setContent);
+    this.context.fetchEntries().then((response) => {
+      let data = this.context.setMarqueeContent(response, "marqueeItem")
+      this.setState({
+        marqueeCount: data.length
+      })
+    });
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.fetchContent().then(this.setContent);
+      this.context.fetchEntries().then((response) => {
+        let data = this.context.setMarqueeContent(response, "marqueeItem")
+        this.setState({
+          marqueeCount: data.length
+        })
+      });
     }
   }
-
-  fetchContent = () =>
-    this.client.getEntries({
-      content_type: "marqueeItem",
-      locale: this.props.match.params.locale
-    });
-
-  setContent = response => {
-    const pageContent = response.items;
-    this.setState({ marqueeCount: pageContent.length });
-  };
 
   render() {
     return (

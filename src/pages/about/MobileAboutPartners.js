@@ -15,11 +15,11 @@ class MobileAboutPartners extends React.Component {
     if (partners) {
       partnersObject = partners.map(partner => {
         return (
-          <Col className="home-page-partner-image" key={partner.sys.id}>
+          <Col className="home-page-partner-image" key={partner}>
             <div className="partner-object-image-container">
               <img
                 className="homePartnerImages"
-                src={partner.fields.file.url}
+                src={partner}
               />
             </div>
           </Col>
@@ -30,9 +30,6 @@ class MobileAboutPartners extends React.Component {
     return (
       <div className="home-partners-image-container">
         <Container className="home-partners-image-content">
-          <Row className="imageObjectTitle">
-            <h1 className="primary_font ">{this.props.title}</h1>
-          </Row>
           <Row className="imageObjectRow">{partnersObject}</Row>
         </Container>
       </div>

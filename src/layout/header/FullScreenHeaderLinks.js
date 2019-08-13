@@ -39,8 +39,8 @@ class FullScreenHeaderLinks extends React.Component {
 
   buildCustomNavLinks = () => {
     let table = []
-    for(let i = 0; i < 6; i++){
-      if(this.props.name[i] != null){
+    for (let i = 0; i < 6; i++) {
+      if (this.props.name[i] != null) {
         table.push(<div>
           <NavLink activeClassName="activeStyle" className="nav-link" to={this.props.link[i]}>
             {this.props.name[i]}
@@ -59,9 +59,6 @@ class FullScreenHeaderLinks extends React.Component {
 
         {this.identifySpace(this.props.location) === "cn" && (
           <TranslateButton
-            locale={this.props.locale}
-            space={this.props.space}
-            accessToken={this.props.accessToken}
             updateLocale={this.updateLocale}
           />
         )}
