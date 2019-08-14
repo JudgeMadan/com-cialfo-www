@@ -10,6 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      getADemoEmail: "",
     }
   };
 
@@ -19,12 +20,11 @@ class App extends Component {
     });
   };
 
-  updateLocale = locale => {
-    this.setState({
-      locale: locale
-    });
-  };
-
+  componentDidMount() {
+    if (this.context.generateSpaceAndAccess().spaceName === "china") {
+      window.location.href = "https://cialfo.cn"
+    }
+  }
 
   render() {
     const spaceName = this.context.generateSpaceAndAccess().spaceName
