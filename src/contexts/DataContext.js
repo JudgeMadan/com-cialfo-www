@@ -78,7 +78,6 @@ class DataContextProvider extends Component {
     }
   }
 
-
   fetchEntries = (content_type) => {
     const client = contentful.createClient({
       space: this.generateSpaceAndAccess().space,
