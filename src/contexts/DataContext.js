@@ -178,7 +178,8 @@ class DataContextProvider extends Component {
           fetchEntries: this.fetchEntries,
           setContent: this.setContent,
           setMarqueeContent: this.setMarqueeContent,
-          setSchoolMarqueeContent: this.setSchoolMarqueeContent
+          setSchoolMarqueeContent: this.setSchoolMarqueeContent,
+          generateSpaceAndAccess: this.generateSpaceAndAccess
         }}
       >
         {this.props.children}
