@@ -72,7 +72,9 @@ class DataContextProvider extends Component {
     } else {
       const ROUTE = "/:space/:locale/:path*";
       const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
-      return routeComponents[2]
+      if (routeComponents) {
+        return routeComponents[2]
+      } else return "en-US"
     }
   }
 
@@ -90,7 +92,9 @@ class DataContextProvider extends Component {
       .then(response => response.items)
       .catch(err => console.error(err));
   };
-
+  // Should be refactored
+  // Consider using lodash get inside of the filterContentFields[key][0]
+  // https://lodash.com/docs/4.17.15#get
   setContent = (response, pageType) => {
     const content = response
     const data = {}

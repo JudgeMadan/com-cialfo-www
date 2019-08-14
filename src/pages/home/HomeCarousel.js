@@ -49,7 +49,6 @@ class HomeCarousel extends React.Component {
   };
 
   render() {
-    console.log(this.state.data.homePageVideoCaseStudyVideoArray)
     let settings = {
       dots: true,
       focusOnSelect: true,
