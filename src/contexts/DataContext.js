@@ -46,7 +46,7 @@ class DataContextProvider extends Component {
         "country_code=JP"
       ];
 
-      const country_codeArray = cookieArrayUSA.filter(
+      const country_codeArray = cookieArray.filter(
         cookie => cookie.substring(0, 12) === "country_code"
       );
 
@@ -152,7 +152,7 @@ class DataContextProvider extends Component {
   }
 
   // This is used to create the array needed for the schoolMarquee
-  // Used here -> src/pages/clientStories/clientStoriesMarquee/ClientStoriesMarqueeList.js 
+  // Used here -> src/pages/clientStories/clientStoriesMarquee/ClientStoriesMarqueeList.js
   // & Used here -> src/pages/clientStories/ClientStoriesHomePageCards.js
   setSchoolMarqueeContent = response => {
     const pageContent = response;

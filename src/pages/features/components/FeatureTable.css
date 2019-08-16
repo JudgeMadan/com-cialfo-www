@@ -1,0 +1,24 @@
+.feature-content-container {
+  margin:50px;
+  background-color: transparent;
+  width: 700px;
+}
+
+.feature-content-row {
+  display:flex;
+  justify-content: center;
+  padding-bottom:50px;
+
+}
+
+.feature-content-block {
+  border: 0px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+
+.feature-content-block-container {
+  margin-left: 12px;
+  margin-right: 12px;
+}
