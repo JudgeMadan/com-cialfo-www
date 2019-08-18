@@ -156,7 +156,7 @@ class Home extends React.Component {
               </Col>
             </Row>
           )}
-          {this.state.width <= 1100 && (
+          {this.state.width < 1100 && (
             <div>
               <Row className="top_row mx-3">
                 <Row className="homePageHeaderProductImage">
@@ -209,50 +209,6 @@ class Home extends React.Component {
                   {/* </div> */}
                 </div>
               </Row>
-              <div className="home-medium-header-content center-in-row">
-                {/* <div className="center-in-row"> */}
-                <Row className="mt-3">
-                  <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
-                    {this.state.data.homePageHeaderTitle}
-                  </h1>
-                </Row>
-                <Row className="mt-3">
-                  <h1 className="secondary_font left-side-header-blurb">
-                    {this.state.data.homePageHeaderBlurb}
-                  </h1>
-                </Row>
-                <Row>
-                  <Form className="get-a-demo-form">
-                    <Form.Row className="email-form-container">
-                      <Col xs={7} className="pt-1">
-                        <Form.Control
-                          className="primary_font email-form"
-                          placeholder={
-                            this.state.data.homePageHeaderEmailPlaceholderText
-                          }
-                          plaintext
-                          onChange={this.handleChange}
-                        />
-                      </Col>
-                      <Col>
-                        <Button
-                          className="home-page-button sharp-corners-button"
-                          type="submit"
-                          size="sm"
-                          variant="primary"
-                        >
-                          <Link
-                            className="primary_font get-a-demo-link"
-                            to={this.generateUrl("demo", this.props.location)}
-                          >
-                            {this.state.data.homePageHeaderEmailSubmitButtonText}
-                          </Link>
-                        </Button>
-                      </Col>
-                    </Form.Row>
-                  </Form>
-                </Row>
-              </div>
             </div>
           )}
         </MediaQuery>
