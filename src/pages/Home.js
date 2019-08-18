@@ -156,7 +156,7 @@ class Home extends React.Component {
               </Col>
             </Row>
           )}
-          {this.state.width < 1100 && (
+          {this.state.width <= 1100 && (
             <div>
               <Row className="top_row mx-3">
                 <Row className="homePageHeaderProductImage">
