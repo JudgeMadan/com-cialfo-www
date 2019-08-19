@@ -615,7 +615,30 @@
 }
 
 .demo-cta-container {
-  margin:50px;
+  padding: 50px;
+  background: #1886DF;
+  margin-bottom: 50px;
+}
+
+.demo-cta-container .submit_button {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px !important;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #2B1F30;
+  background: #FFCA44 !important;
+  border-radius: 5px !important;
+  border: none;
+  width: inherit !important;
+  padding: 0 42px !important;
+}
+
+.demo-cta-container .submit_button:hover {
+  color: #2B1F30 ;
 }
 
 .demo-cta-title-text {
