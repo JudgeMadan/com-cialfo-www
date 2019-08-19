@@ -64,6 +64,22 @@ code {
   background-color: #ebf9ff !important;
 }
 
+.subFooterItem {
+  padding: .75rem 1.25rem;
+  font-family: "roboto_regular";
+  font-size: 14px;
+  font-weight: 500;
+  color: #676767;
+}
+
+.subFooterItem a {
+  margin-right: 21px;
+}
+
+.subFooterItem a:last-child {
+  margin-right: 0;
+}
+
 .marqueeElement {
   display: inline-block;
   margin: 0 20px;
