@@ -40,16 +40,8 @@ class Router extends React.Component {
           path={this.props.match.url + ":space" + "/" + ":locale" + "/home"}
           render={() => (
             <Home
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
               getADemoEmail={this.props.getADemoEmail}
               sendEmailAddressToGetADemo={this.props.sendEmailAddressToGetADemo}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-              content={this.props.content}
             />
           )}
         />
@@ -58,15 +50,7 @@ class Router extends React.Component {
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/clients"}
           render={() => (
-            <ClientStories
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <ClientStories />
           )}
         />
         <Route
@@ -80,15 +64,7 @@ class Router extends React.Component {
             "/clients-american-school-japan"
           }
           render={() => (
-            <ClientStoriesAmericanSchoolInJapan
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <ClientStoriesAmericanSchoolInJapan />
           )}
         />
         <Route
@@ -102,15 +78,7 @@ class Router extends React.Component {
             "/clients-american-school-china"
           }
           render={() => (
-            <ClientStoriesAmericanSchoolInChina
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <ClientStoriesAmericanSchoolInChina />
           )}
         />
         <Route
@@ -118,15 +86,7 @@ class Router extends React.Component {
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/features"}
           render={() => (
-            <Features
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <Features />
           )}
         />
         <Route
@@ -134,15 +94,7 @@ class Router extends React.Component {
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/about"}
           render={() => (
-            <About
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <About />
           )}
         />
         <Route
@@ -152,15 +104,7 @@ class Router extends React.Component {
             this.props.match.url + ":space" + "/" + ":locale" + "/features-send"
           }
           render={() => (
-            <FeaturesSend
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <FeaturesSend />
           )}
         />
         <Route
@@ -174,15 +118,7 @@ class Router extends React.Component {
             "/features-research"
           }
           render={() => (
-            <FeaturesResearch
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <FeaturesResearch />
           )}
         />
         <Route
@@ -196,15 +132,7 @@ class Router extends React.Component {
             "/features-report"
           }
           render={() => (
-            <FeaturesDocuments
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <FeaturesDocuments />
           )}
         />
         <Route
@@ -213,14 +141,7 @@ class Router extends React.Component {
           path={this.props.match.url + ":space" + "/" + ":locale" + "/demo"}
           render={() => (
             <GetADemo
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
               getADemoEmail={this.props.getADemoEmail}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
             />
           )}
         />
@@ -229,16 +150,7 @@ class Router extends React.Component {
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/contact"}
           render={() => (
-            <GetInTouch
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              path={this.props.match.url + ":space" + "/" + ":locale" + "/demo"}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <GetInTouch />
           )}
         />
         <Route
@@ -246,15 +158,7 @@ class Router extends React.Component {
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/privacy-policy"}
           render={() => (
-            <Privacy
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <Privacy />
           )}
         />
         <Route
@@ -262,15 +166,7 @@ class Router extends React.Component {
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/security"}
           render={() => (
-            <Security
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <Security />
           )}
         />
         <Route
@@ -280,15 +176,7 @@ class Router extends React.Component {
             this.props.match.url + ":space" + "/" + ":locale" + "/thank-you"
           }
           render={() => (
-            <ThankYou
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <ThankYou />
           )}
         />
         <Route
@@ -298,15 +186,7 @@ class Router extends React.Component {
             this.props.match.url + ":space" + "/" + ":locale" + "/solutions"
           }
           render={() => (
-            <Solutions
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <Solutions />
           )}
         />
         <Route
@@ -320,15 +200,7 @@ class Router extends React.Component {
             "/solutions-counselors"
           }
           render={() => (
-            <SolutionsCounselors
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <SolutionsCounselors />
           )}
         />
         <Route
@@ -338,15 +210,7 @@ class Router extends React.Component {
             this.props.match.url + ":space" + "/" + ":locale" + "/solutions-it"
           }
           render={() => (
-            <SolutionsIT
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <SolutionsIT />
           )}
         />
 
@@ -361,15 +225,7 @@ class Router extends React.Component {
             "/solutions-principals"
           }
           render={() => (
-            <SolutionsPrincipals
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <SolutionsPrincipals />
           )}
         />
 
@@ -384,15 +240,7 @@ class Router extends React.Component {
             "/solutions-superintendents"
           }
           render={() => (
-            <SolutionsSuperintendents
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <SolutionsSuperintendents />
           )}
         />
 
@@ -407,15 +255,7 @@ class Router extends React.Component {
             "/solutions-families"
           }
           render={() => (
-            <SolutionsFamilies
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <SolutionsFamilies />
           )}
         />
 
@@ -424,15 +264,7 @@ class Router extends React.Component {
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/events"}
           render={() => (
-            <Events
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <Events />
           )}
         />
         <Route
@@ -442,15 +274,7 @@ class Router extends React.Component {
             this.props.match.url + ":space" + "/" + ":locale" + "/downloads"
           }
           render={() => (
-            <Downloads
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <Downloads />
           )}
         />
         <Route
@@ -464,15 +288,7 @@ class Router extends React.Component {
             "/terms-of-service"
           }
           render={() => (
-            <TermsOfService
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <TermsOfService />
           )}
         />
         <Route
@@ -486,15 +302,7 @@ class Router extends React.Component {
             "/terms-and-conditions"
           }
           render={() => (
-            <TermsOfService
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <TermsOfService />
           )}
         />
         <Route
@@ -508,15 +316,7 @@ class Router extends React.Component {
             "/cialfo-vs-naviance"
           }
           render={() => (
-            <CialfoVSNaviance
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <CialfoVSNaviance />
           )}
         />
         <Route
@@ -530,15 +330,7 @@ class Router extends React.Component {
             "/cialfo-vs-bridge-u"
           }
           render={() => (
-            <CialfoVSBridgeU
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <CialfoVSBridgeU />
           )}
         />
         <Route
@@ -552,15 +344,7 @@ class Router extends React.Component {
             "/cialfo-vs-maia"
           }
           render={() => (
-            <CialfoVSMaia
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <CialfoVSMaia />
           )}
         />
         <Route
@@ -568,29 +352,15 @@ class Router extends React.Component {
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/404"}
           render={() => (
-            <FourOhFour
-              locale={this.props.locale}
-              space={this.props.space}
-              accessToken={this.props.accessToken}
-              spaces={this.props.spaces}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
+            <FourOhFour />
           )}
         />
         <Route
           exact
-          path={this.props.match.url + ":space/*" }
+          path={this.props.match.url + ":space/*"}
           render={() => (
             <FourOhFourRedirect
-              locale={this.props.locale}
-              space={this.props.space}
               spaceName={this.props.spaceName}
-              accessToken={this.props.accessToken}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
             />
           )}
         />
@@ -598,16 +368,9 @@ class Router extends React.Component {
           exact
           render={() => (
             <Redirect
-              locale={this.props.locale}
-              url={this.props.match.url}
-              space={this.props.space}
               spaceName={this.props.spaceName}
-              accessToken={this.props.accessToken}
               getADemoEmail={this.props.getADemoEmail}
               sendEmailAddressToGetADemo={this.props.sendEmailAddressToGetADemo}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
             />
           )}
         />
