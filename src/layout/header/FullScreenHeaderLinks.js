@@ -41,7 +41,7 @@ class FullScreenHeaderLinks extends React.Component {
     let table = []
     for (let i = 0; i < 6; i++) {
       if (this.props.name[i] != null) {
-        table.push(<div>
+        table.push(<div key={i}>
           <NavLink activeClassName="activeStyle" className="nav-link" to={this.props.link[i]}>
             {this.props.name[i]}
           </NavLink>
@@ -52,6 +52,7 @@ class FullScreenHeaderLinks extends React.Component {
   }
 
   render() {
+    const { linkDemo, nameDemo } = this.props;
     return (
       <Nav>
 
@@ -62,22 +63,24 @@ class FullScreenHeaderLinks extends React.Component {
             updateLocale={this.updateLocale}
           />
         )}
-        <div>
-          <NavLink
-            activeClassName="activeStyle"
-            className="demo-page-link"
-            // className="nav-link demo-page-link"
-            to={this.props.linkDemo}
-          >
-            <Button
-              className="nav-link-button sharp-corners-button"
-              size="sm"
-              variant="primary"
+        {linkDemo &&
+          <div>
+            <NavLink
+              activeClassName="activeStyle"
+              className="demo-page-link"
+              // className="nav-link demo-page-link"
+              to={linkDemo}
             >
-              {this.props.nameDemo}
-            </Button>
-          </NavLink>
-        </div>
+              <Button
+                className="nav-link-button sharp-corners-button"
+                size="sm"
+                variant="primary"
+              >
+                {nameDemo}
+              </Button>
+            </NavLink>
+          </div>
+        }
       </Nav>
     );
   }
