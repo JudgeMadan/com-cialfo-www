@@ -1,0 +1,39 @@
+.featuredVideoContainer {
+  padding: 5rem;
+  background-color: #FFF2D0;
+}
+
+.featuredVideoWrapper {
+  padding-bottom: 1rem;
+  margin-right: 5rem;
+}
+
+.featuredVideoWrapper > div {
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.featuredVideo {
+  box-shadow: 1rem 1rem #FFCA44;
+}
+
+.featuredVideoInfo h1 {
+  font-size: 36px;
+  line-height: 47px;
+  margin-bottom: 1.5rem;
+}
+
+.featuredVideoInfo p {
+  font-size: 18px;
+  line-height: 134%;
+  margin-bottom: 1.5rem;
+}
+
+.featuredVideoContainer .caseStudyBtn {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19px;
+  padding: .7rem 1rem;
+  border-radius: 5px;
+  background: #FFCA44;
+}

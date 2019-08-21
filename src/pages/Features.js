@@ -20,6 +20,7 @@ import PathToRegexp, { compile } from "path-to-regexp";
 import HomeFeatureLeftSideText from "./sharedComponents/HomeFeatureLeftSideText"
 import HomeFeatureRightSideText from "./sharedComponents/HomeFeatureRightSideText"
 import DemoCallToAction from "./sharedComponents/DemoCallToAction"
+import FeaturedVideo from "./sharedComponents/FeaturedVideo";
 import { DataContext } from "../contexts/DataContext"
 class Features extends React.Component {
   static contextType = DataContext;
@@ -133,6 +134,7 @@ class Features extends React.Component {
               </h1>
             </Row>
           )}
+          <FeaturedVideo />
           {space !== "us" && (
             <Row className="homeMarquee mx-3">
               <HomeMarquee
