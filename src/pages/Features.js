@@ -134,7 +134,6 @@ class Features extends React.Component {
               </h1>
             </Row>
           )}
-          <FeaturedVideo />
           {space !== "us" && (
             <Row className="homeMarquee mx-3">
               <HomeMarquee
@@ -195,6 +194,7 @@ class Features extends React.Component {
           image={Discover}
           linkUrl="features-report"
         />
+        <FeaturedVideo />
         <DemoCallToAction />
       </Container>
     );
