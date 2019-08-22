@@ -12,9 +12,9 @@ class DemoCallToAction extends React.Component {
   render() {
     return (
       <Row className="demo-cta-container d-block">
-        <Row className="demo-cta-content center-in-row">
+        <Row className="demo-cta-content">
           <Col>
-            <h1 className="primary_font demo-cta-title-text text-white">
+            <h1 className="primary_font demo-cta-title-text text-white m-auto">
                 Ready to get started? Our team is here to help.
             </h1>
           </Col>
