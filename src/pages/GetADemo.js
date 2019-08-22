@@ -174,7 +174,7 @@ class GetADemo extends React.Component {
                     <Row className="get-in-touch-row">
                       <div class="_form_element _x99442472 _full_width left_content_row">
                         <label class="_form-label secondary_font">
-                          {this.state.getADemoEmail}
+                          {this.state.data.getADemoEmail}
                         </label>
                         <div class="_field-wrapper">
                           <input
@@ -315,7 +315,7 @@ class GetADemo extends React.Component {
                     <Row className="mt-3 center-in-row">
                       <div class="_form_element _x99442472 _full_width ">
                         <label class="_form-label secondary_font">
-                          {this.state.getADemoEmail}
+                          {this.state.data.getADemoEmail}
                         </label>
                         <div class="_field-wrapper">
                           <input
@@ -453,7 +453,7 @@ class GetADemo extends React.Component {
                   </div>
                   <div class="_form_element _x99442472 _full_width ">
                     <label class="_form-label secondary_font mobile-get-in-touch-form-header">
-                      {this.state.getADemoEmail}
+                      {this.state.data.getADemoEmail}
                     </label>
                     <div class="_field-wrapper mobile-demo-form-field-label">
                       <input

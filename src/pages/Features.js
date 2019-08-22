@@ -19,6 +19,7 @@ import PathToRegexp, { compile } from "path-to-regexp";
 import HomeFeatureLeftSideText from "./sharedComponents/HomeFeatureLeftSideText"
 import HomeFeatureRightSideText from "./sharedComponents/HomeFeatureRightSideText"
 import DemoCallToAction from "./sharedComponents/DemoCallToAction"
+import FeaturedVideo from "./sharedComponents/FeaturedVideo";
 import { DataContext } from "../contexts/DataContext"
 import FeatureTable from "./features/components/FeatureTable"
 
@@ -88,33 +89,9 @@ class Features extends React.Component {
       <FeatureTable
         data={this.state.dataTableMain}
       />
+      <FeaturedVideo />
         {/* FULL SCREEN TOP ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="titleContainer">
-            <h1 className="primary_font">{this.state.data.featuresTitle}</h1>
-          </Row>
-          <Row className="featuresVideoEmbed">
-            <div>
-              <img className="oval" src={Oval} />
-              <img className="line" src={Line} />
-              {this.state.width > 850 && (
-                <ReactPlayer
-                  className="video"
-                  width="800px"
-                  height="448px"
-                  url={this.state.data.featuresVideo}
-                />
-              )}
-              {this.state.width < 850 && (
-                <ReactPlayer
-                  className="video"
-                  width="600px"
-                  height="366px"
-                  url={this.state.data.featuresVideo}
-                />
-              )}
-            </div>
-          </Row>
           <FeatureTable
             data={this.state.dataTableSecondary}
           />
