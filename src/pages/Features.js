@@ -86,59 +86,32 @@ class Features extends React.Component {
   render() {
     return (
       <Container className="homePageContainer" fluid>
-      <FeatureTable
-        data={this.state.dataTableMain}
-      />
-      <FeaturedVideo />
+        <FeatureTable
+          data={this.state.dataTableMain}
+        />
+        <FeaturedVideo />
         {/* FULL SCREEN TOP ROW */}
         <MediaQuery query="(min-device-width: 1224px)">
           <FeatureTable
             data={this.state.dataTableSecondary}
           />
-            <Row className="homePageSchoolTestimonialsTitle">
-              <h1 className="primary_font">
-                {this.state.data.homePageSchoolTestimonialsTitle}
-              </h1>
-            </Row>
-            <Row className="homeMarquee mx-3">
-              <HomeMarquee
-                locale={this.props.locale}
-                accessToken={this.props.accessToken}
-                space={this.props.space}
-                spaces={this.props.spaces}
-                setSpace={this.props.setSpace}
-                setAccessToken={this.props.setAccessToken}
-                environment={this.props.environment}
-              />
-            </Row>
-
-        </MediaQuery>
-        {/* MOBILE TOP ROW */}
-        <MediaQuery query="(max-device-width: 1223px)">
-          <Row className="titleContainer">
-            <h1 className="primary_font">{this.state.data.featuresTitle}</h1>
-          </Row>
-          <Row className="mobile-featuresVideoEmbed">
-            <div>
-              <img className="oval" src={Oval} />
-              <ReactPlayer
-                className="video"
-                width="345px"
-                height="194px"
-                url={this.state.data.featuresVideo}
-              />
-            </div>
-          </Row>
-          <FeatureTable
-            data={this.state.dataTableMain}
-          />
-          <Row className="homePageSchoolTestimonialsTitle">
+          <Row className="schoolTestimonialsTitle">
             <h1 className="primary_font">
-              {this.state.data.homePageSchoolTestimonialsTitle}
+              {this.state.data.featurePageSchoolTestimonialsTitle}
             </h1>
           </Row>
+          <Row className="homeMarquee mx-3">
+            <HomeMarquee
+              locale={this.props.locale}
+              accessToken={this.props.accessToken}
+              space={this.props.space}
+              spaces={this.props.spaces}
+              setSpace={this.props.setSpace}
+              setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
+            />
+          </Row>
         </MediaQuery>
-        {/* SEND DOCUMENTS*/}
         <DemoCallToAction />
       </Container>
     );

@@ -22,3 +22,13 @@
   margin-left: 12px;
   margin-right: 12px;
 }
+
+@media (max-width: 767px) {
+  .feature-content-block h4 {
+    font-size: 18px;
+  }
+  .feature-content-block p,
+  .feature-content-block a {
+    font-size: 14px;
+  }
+}

@@ -19,9 +19,9 @@ class FeatureTable extends React.Component {
         table.push(  <Col className = "feature-content-block">
             <div className="feature-content-block-container">
               <Row>
-                <h2 className="secondary_title_font">
+                <h4 className="secondary_title_font">
                   {this.props.data["title" + i]}
-                </h2>
+                </h4>
               </Row>
               <Row>
                 <p className="secondary_font">
@@ -47,7 +47,7 @@ class FeatureTable extends React.Component {
       return <Row className="feature-content-row center-in-row">{table}</Row>;
   }
 
-  generateTable = (cols) => {
+  generateTable = (cols, limit = 9) => {
     let table = []
     let titles = this.props.data.title1
     let texts = this.props.data
@@ -57,7 +57,7 @@ class FeatureTable extends React.Component {
     if(this.props.data.mainTitleText){
       table.push(<div className="titleContainer row"><h1 className="primary_font">{this.props.data.mainTitleText}</h1></div>)
     }
-    for(var i=1; i<=9; i+=cols){
+    for(var i=1; i<=limit; i+=cols){
       if(this.props.data["title" + i]){
         table.push(this.generateRow(i, cols))
       }
@@ -75,8 +75,11 @@ class FeatureTable extends React.Component {
         <MediaQuery query="(min-device-width: 1224px)">
           {this.generateTable(3)}
         </MediaQuery>
-        <MediaQuery query="(max-device-width: 1223px)">
-          {this.generateTable(1)}
+        <MediaQuery query="(max-device-width: 1223px) and (min-device-width: 768px)">
+          {this.generateTable(2)}
+        </MediaQuery>
+        <MediaQuery query="(max-device-width: 767px)">
+          {this.generateTable(1, 1)}
         </MediaQuery>
       </Container>
     );

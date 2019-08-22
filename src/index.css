@@ -376,3 +376,7 @@ button:hover {
 .sharp-corners-button {
   border-radius: 0px !important;
 }
+
+.schoolTestimonialsTitle {
+  justify-content: center;
+}
