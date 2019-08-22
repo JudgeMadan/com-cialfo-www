@@ -234,7 +234,7 @@ class Home extends React.Component {
         {/* FULL SCREEN MARQUEE | NO MARQUEE ON MOBILE */}
         {space !== "us" && (
           <MediaQuery query="(min-device-width: 1224px)">
-            <Row className="homePageSchoolTestimonialsTitle">
+            <Row className="schoolTestimonialsTitle">
               <h1 className="primary_font">
                 {this.state.data.homePageSchoolTestimonialsTitle}
               </h1>
