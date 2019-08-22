@@ -11,7 +11,7 @@ class DemoCallToAction extends React.Component {
 
   render() {
     return (
-      <div className="demo-cta-container">
+      <Row className="demo-cta-container d-block">
         <Row className="demo-cta-content center-in-row">
           <h1 className="primary_font demo-cta-title-text text-white">
               Ready to get started? Our team is here to help.
@@ -24,7 +24,7 @@ class DemoCallToAction extends React.Component {
             </button>
           </Link>
         </Row>
-      </div>
+      </Row>
     );
   }
 }
