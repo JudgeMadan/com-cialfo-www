@@ -66,15 +66,43 @@ class Events extends React.Component {
 
   render() {
     return (
-      <Container>
-        {/* FULL SCREEN TOP ROW */}
-        <MediaQuery query="(min-device-width: 1224px)">
-          {this.state.width > 1000 && (
-            <Row className="aboutPageTitle">
-              <Container>
-                <Row>
-                  <Col className="top_row_left_col events-header-text">
-                    <div>
+      <div>
+        <Container>
+          {/* FULL SCREEN TOP ROW */}
+          <MediaQuery query="(min-device-width: 1224px)">
+            {this.state.width > 1000 && (
+              <Row className="aboutPageTitle">
+                <Container>
+                  <Row>
+                    <Col className="top_row_left_col events-header-text">
+                      <div>
+                        <Row>
+                          <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
+                            {this.state.data.aboutPageHeaderTitle}
+                          </h1>
+                        </Row>
+                        <Row>
+                          <h2 className="secondary_font left-side-header-blurb">
+                            {this.state.data.aboutPageHeaderSubtitle}
+                          </h2>
+                        </Row>
+                      </div>
+                    </Col>
+                    <Col>
+                      <img src={this.state.data.aboutPageHeaderImage} />
+                    </Col>
+                  </Row>
+                </Container>
+              </Row>
+            )}
+            {this.state.width <= 1000 && (
+              <Row className="small-eventPageTitle">
+                <Container>
+                  <Row>
+                    <img src={this.state.data.aboutPageHeaderImage} />
+                  </Row>
+                  <Row className="top_row_left_col events-header-text">
+                    <Container className="mx-3">
                       <Row>
                         <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
                           {this.state.data.aboutPageHeaderTitle}
@@ -85,171 +113,145 @@ class Events extends React.Component {
                           {this.state.data.aboutPageHeaderSubtitle}
                         </h2>
                       </Row>
-                    </div>
-                  </Col>
-                  <Col>
-                    <img src={this.state.data.aboutPageHeaderImage} />
-                  </Col>
-                </Row>
-              </Container>
-            </Row>
-          )}
-          {this.state.width <= 1000 && (
-            <Row className="small-eventPageTitle">
-              <Container>
-                <Row>
-                  <img src={this.state.data.aboutPageHeaderImage} />
-                </Row>
-                <Row className="top_row_left_col events-header-text">
-                  <Container className="mx-3">
-                    <Row>
-                      <h1 className="primary_font left-side-header-title left-side-header-title-large-font">
-                        {this.state.data.aboutPageHeaderTitle}
-                      </h1>
-                    </Row>
-                    <Row>
-                      <h2 className="secondary_font left-side-header-blurb">
-                        {this.state.data.aboutPageHeaderSubtitle}
-                      </h2>
-                    </Row>
-                  </Container>
-                </Row>
-              </Container>
-            </Row>
-          )}
-        </MediaQuery>
-        {/* MOBILE TOP ROW */}
-        <MediaQuery query="(max-device-width: 1223px)">
-          {/* <Row className="aboutPageTitle"> */}
-          <Container className="center-in-row mobile-events-bottom-border pb-5 mb-5">
-            <Row className="center-in-row">
-              <img
-                className="mobile-events-hero-image"
-                src={this.state.data.aboutPageHeaderImage}
-              />
-            </Row>
-            <Row className="center-in-row">
-              <h1 className="primary_font left-side-header-title left-side-header-title-large-font mobile-events-header-text">
-                {this.state.data.aboutPageHeaderTitle}
-              </h1>
-            </Row>
-            <Row className="center-in-row">
-              <h2 className="mx-3 secondary_font left-side-header-blurb mobile-events-header-text">
-                {this.state.data.aboutPageHeaderSubtitle}
-              </h2>
-            </Row>
-          </Container>
-          {/* </Row> */}
-        </MediaQuery>
-        {/* FULL SCREEN TOP ROW
-        <MediaQuery query="(min-device-width: 1224px)">
-          <EventsSubfooter
-            img={this.state.data.eventsSubfooterImg}
-            title={this.state.data.eventsSubfooterQuoteTitle}
-            quote={this.state.data.eventsSubfooterQuote}
-          />
-        </MediaQuery>
-        */}
-        {/* MOBILE EVENT SUBFOOTER
-        <MediaQuery query="(max-device-width: 1223px)">
-          <MobileEventsSubfooter
-            img={this.state.eventsSubfooterImg}
-            title={this.state.eventsSubfooterQuoteTitle}
-            quote={this.state.eventsSubfooterQuote}
-          />
-        </MediaQuery> */}
-        {/* FULL SCREEN EVENTS */}
-        <MediaQuery query="(min-device-width: 1224px)">
-          <div className="full-width-light-blue">
-            <Row className="center-in-row events-cialfo-events-sessions-top-row">
-              <h1 className="primary_font">
-                {this.state.data.eventsCialfoEventsTitle}
-              </h1>
-            </Row>
-            <Row className="events-subtitle center-in-row pb-5">
-              <p className="secondary_font">
-                {this.state.data.eventsCialfoEventsBlurb}
-              </p>
-            </Row>
-            <Row className="events-cialfo-events-sessions-bottom-row ">
-              <Container>
-                <CialfoEventsObject
-                  events={this.state.data.aboutPageLeadershipLeaders}
+                    </Container>
+                  </Row>
+                </Container>
+              </Row>
+            )}
+          </MediaQuery>
+          {/* MOBILE TOP ROW */}
+          <MediaQuery query="(max-device-width: 1223px)">
+            {/* <Row className="aboutPageTitle"> */}
+            <Container className="center-in-row mobile-events-bottom-border pb-5 mb-5">
+              <Row className="center-in-row">
+                <img
+                  className="mobile-events-hero-image"
+                  src={this.state.data.aboutPageHeaderImage}
                 />
-              </Container>
-            </Row>
-          </div>
-        </MediaQuery>
-        {/* MOBILE EVENTS */}
-        <MediaQuery query="(max-device-width: 1223px)">
-          <Container>
-            <Row className="center-in-row events-cialfo-events-sessions-top-row light-blue-background">
-              <h1 className="primary_font">
-                {this.state.data.eventsCialfoEventsTitle}
-              </h1>
-            </Row>
-            <Row className="events-subtitle center-in-row px-3 light-blue-background">
-              <p className="secondary_font">
-                {this.state.data.eventsCialfoEventsBlurb}
-              </p>
-            </Row>
-            <Row className="events-cialfo-events-sessions-bottom-row light-blue-background">
-              <Container>
-                <MobileCialfoEventsObject
-                  events={this.state.data.aboutPageLeadershipLeaders}
-                />
-              </Container>
-            </Row>
-          </Container>
-        </MediaQuery>
-        {/* FULL SCREEN CIALFO SESSIONS */}
-        <MediaQuery query="(min-device-width: 1224px)">
-          <div>
-            <Row className="center-in-row events-cialfo-events-sessions-top-row">
-              <h1 className="primary_font">
-                {this.state.data.eventsCialfoSessionsTitle}
-              </h1>
-            </Row>
-            <Row className="events-subtitle center-in-row pb-5">
-              <p className="secondary_font">
-                {this.state.data.eventsCialfoSessionsBlurb}
-              </p>
-            </Row>
-            <Row className="events-cialfo-events-sessions-bottom-row ">
-              <Container>
-                <img className="events-oval" src={Oval} />
-                <img className="events-blue-stroke-10" src={BlueStroke10} />
-                <CialfoSessionsObject
-                  events={this.state.data.aboutPageCounselorsCounselors}
-                />
-              </Container>
-            </Row>
-          </div>
-        </MediaQuery>
-        {/* MOBILE CIALFO SESSIONS */}
-        <MediaQuery query="(max-device-width: 1223px)">
-          <Container className="mobile-events-bottom-border mobile-events-top-border my-5">
-            <Row className="center-in-row mt-5">
-              <h1 className="primary_font">
-                {this.state.data.eventsCialfoSessionsTitle}
-              </h1>
-            </Row>
-            <Row className="events-subtitle center-in-row px-3">
-              <p className="secondary_font">
-                {this.state.data.eventsCialfoSessionsBlurb}
-              </p>
-            </Row>
-            <Row className="pb-5">
-              <Container>
-                <MobileCialfoSessionsObject
-                  events={this.state.data.aboutPageCounselorsCounselors}
-                />
-              </Container>
-            </Row>
-          </Container>
-        </MediaQuery>
+              </Row>
+              <Row className="center-in-row">
+                <h1 className="primary_font left-side-header-title left-side-header-title-large-font mobile-events-header-text">
+                  {this.state.data.aboutPageHeaderTitle}
+                </h1>
+              </Row>
+              <Row className="center-in-row">
+                <h2 className="mx-3 secondary_font left-side-header-blurb mobile-events-header-text">
+                  {this.state.data.aboutPageHeaderSubtitle}
+                </h2>
+              </Row>
+            </Container>
+            {/* </Row> */}
+          </MediaQuery>
+          {/* FULL SCREEN TOP ROW
+          <MediaQuery query="(min-device-width: 1224px)">
+            <EventsSubfooter
+              img={this.state.data.eventsSubfooterImg}
+              title={this.state.data.eventsSubfooterQuoteTitle}
+              quote={this.state.data.eventsSubfooterQuote}
+            />
+          </MediaQuery>
+          */}
+          {/* MOBILE EVENT SUBFOOTER
+          <MediaQuery query="(max-device-width: 1223px)">
+            <MobileEventsSubfooter
+              img={this.state.eventsSubfooterImg}
+              title={this.state.eventsSubfooterQuoteTitle}
+              quote={this.state.eventsSubfooterQuote}
+            />
+          </MediaQuery> */}
+          {/* FULL SCREEN EVENTS */}
+          <MediaQuery query="(min-device-width: 1224px)">
+            <div className="full-width-light-blue">
+              <Row className="center-in-row events-cialfo-events-sessions-top-row">
+                <h1 className="primary_font">
+                  {this.state.data.eventsCialfoEventsTitle}
+                </h1>
+              </Row>
+              <Row className="events-subtitle center-in-row pb-5">
+                <p className="secondary_font">
+                  {this.state.data.eventsCialfoEventsBlurb}
+                </p>
+              </Row>
+              <Row className="events-cialfo-events-sessions-bottom-row ">
+                <Container>
+                  <CialfoEventsObject
+                    events={this.state.data.aboutPageLeadershipLeaders}
+                  />
+                </Container>
+              </Row>
+            </div>
+          </MediaQuery>
+          {/* MOBILE EVENTS */}
+          <MediaQuery query="(max-device-width: 1223px)">
+            <Container>
+              <Row className="center-in-row events-cialfo-events-sessions-top-row light-blue-background">
+                <h1 className="primary_font">
+                  {this.state.data.eventsCialfoEventsTitle}
+                </h1>
+              </Row>
+              <Row className="events-subtitle center-in-row px-3 light-blue-background">
+                <p className="secondary_font">
+                  {this.state.data.eventsCialfoEventsBlurb}
+                </p>
+              </Row>
+              <Row className="events-cialfo-events-sessions-bottom-row light-blue-background">
+                <Container>
+                  <MobileCialfoEventsObject
+                    events={this.state.data.aboutPageLeadershipLeaders}
+                  />
+                </Container>
+              </Row>
+            </Container>
+          </MediaQuery>
+          {/* FULL SCREEN CIALFO SESSIONS */}
+          <MediaQuery query="(min-device-width: 1224px)">
+            <div>
+              <Row className="center-in-row events-cialfo-events-sessions-top-row">
+                <h1 className="primary_font">
+                  {this.state.data.eventsCialfoSessionsTitle}
+                </h1>
+              </Row>
+              <Row className="events-subtitle center-in-row pb-5">
+                <p className="secondary_font">
+                  {this.state.data.eventsCialfoSessionsBlurb}
+                </p>
+              </Row>
+              <Row className="events-cialfo-events-sessions-bottom-row ">
+                <Container>
+                  <img className="events-oval" src={Oval} />
+                  <img className="events-blue-stroke-10" src={BlueStroke10} />
+                  <CialfoSessionsObject
+                    events={this.state.data.aboutPageCounselorsCounselors}
+                  />
+                </Container>
+              </Row>
+            </div>
+          </MediaQuery>
+          {/* MOBILE CIALFO SESSIONS */}
+          <MediaQuery query="(max-device-width: 1223px)">
+            <Container className="mobile-events-bottom-border mobile-events-top-border my-5">
+              <Row className="center-in-row mt-5">
+                <h1 className="primary_font">
+                  {this.state.data.eventsCialfoSessionsTitle}
+                </h1>
+              </Row>
+              <Row className="events-subtitle center-in-row px-3">
+                <p className="secondary_font">
+                  {this.state.data.eventsCialfoSessionsBlurb}
+                </p>
+              </Row>
+              <Row className="pb-5">
+                <Container>
+                  <MobileCialfoSessionsObject
+                    events={this.state.data.aboutPageCounselorsCounselors}
+                  />
+                </Container>
+              </Row>
+            </Container>
+          </MediaQuery>
+        </Container>
         <DemoCallToAction />
-      </Container>
+      </div>
     );
   }
 }
