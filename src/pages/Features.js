@@ -100,7 +100,7 @@ class Features extends React.Component {
             data={this.state.dataTableSecondary}
           />
           <Row className="schoolTestimonialsTitle">
-            <h1 className="primary_font">
+            <h1 className="primary_font text-center">
               {this.state.data.featurePageSchoolTestimonialsTitle}
             </h1>
           </Row>

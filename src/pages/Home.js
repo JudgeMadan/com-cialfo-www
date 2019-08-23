@@ -235,7 +235,7 @@ class Home extends React.Component {
         {space !== "us" && (
           <MediaQuery query="(min-device-width: 1224px)">
             <Row className="schoolTestimonialsTitle">
-              <h1 className="primary_font">
+              <h1 className="primary_font text-center">
                 {this.state.data.homePageSchoolTestimonialsTitle}
               </h1>
             </Row>
