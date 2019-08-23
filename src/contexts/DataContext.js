@@ -152,7 +152,7 @@ class DataContextProvider extends Component {
   }
 
   // This is used to create the array needed for the schoolMarquee
-  // Used here -> src/pages/clientStories/clientStoriesMarquee/ClientStoriesMarqueeList.js 
+  // Used here -> src/pages/clientStories/clientStoriesMarquee/ClientStoriesMarqueeList.js
   // & Used here -> src/pages/clientStories/ClientStoriesHomePageCards.js
   setSchoolMarqueeContent = response => {
     const pageContent = response;

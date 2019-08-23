@@ -8,6 +8,114 @@
   border-radius: 4px;
 }
 
+.featuresPageHeader {
+  background-color: #EBF9FF;
+  position: relative;
+  overflow: hidden;
+}
+
+.featuresPageHeader .blueCircle {
+  position: absolute;
+  right: -1rem;
+  top: 1rem;
+}
+
+.featuresPageTitle {
+  width: 60%;
+  margin: 7rem 8rem;
+  font-family: 'domainedisplay_regular';
+  font-size: 4rem;
+  color: #000;
+}
+
+.featuresImages {
+  width: 100% !important;
+  margin: 0 10% !important;
+  margin-bottom: 11rem !important;
+}
+
+.featureMobileImage {
+  flex: 1 !important;
+  display: flex;
+}
+
+.featureMobileImage img {
+  margin-top: auto;
+  width: 75%;
+  height: auto;
+}
+
+.featureDocumentsImage {
+  flex: 4 !important;
+}
+
+.featureDocumentsImage img {
+  width: 100%;
+  height: auto;
+}
+
+.featuresHeaderBottomArc {
+  width: 140%;
+  margin-left: -20%;
+  margin-right: -20%;
+  height: 40%;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  bottom: -32%;
+}
+
+.featuresHeaderBlueCircle {
+  position: absolute;
+  border-radius: 50%;
+  border: 5.6px solid #1886DF;
+  background: transparent;
+  width: 18rem;
+  height: 18rem;
+  top: 2.5rem;
+  right: -5.25rem;
+}
+
+@media (max-width: 1223px) and (min-width: 768px) {
+  .featuresPageTitle {
+    margin: 4rem 4.5rem;
+  }
+
+  .featuresImages {
+    margin-bottom: 8rem !important;
+  }
+
+  .featuresHeaderBlueCircle {
+    width: 10rem;
+    height: 10rem;
+    top: 2rem;
+    right: -3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .featuresPageTitle {
+    width: 100%;
+    margin: 4rem 2.5rem 2rem;
+    font-size: 2.25rem;
+  }
+
+  .featureMobileImage {
+    display: none;
+  }
+
+  .featuresImages {
+    margin-bottom: 6rem !important;
+  }
+
+  .featuresHeaderBlueCircle {
+    width: 5rem;
+    height: 5rem;
+    top: 1.6rem;
+    right: -1.6rem;
+  }
+}
+
 .titleContainer {
   margin-bottom: 5rem;
   margin-top: 5rem;
@@ -15,6 +123,18 @@
   text-align: center;
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .titleContainer {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 0 10%;
+  }
+
+  .titleContainer h1 {
+    font-size: 1.5rem;
+  }
 }
 
 .features-titleContainer {

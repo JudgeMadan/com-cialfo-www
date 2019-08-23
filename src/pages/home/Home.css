@@ -70,10 +70,6 @@
   box-shadow: none;
 }
 
-.homePageSchoolTestimonialsTitle {
-  justify-content: center;
-}
-
 .homePageFeaturesSendDocumentLinkText {
   border-bottom: 1px solid #1986df;
   padding-bottom: 1px;
@@ -617,7 +613,6 @@
 .demo-cta-container {
   padding: 50px;
   background: #1886DF;
-  margin-bottom: 50px;
 }
 
 .demo-cta-container .submit_button {
@@ -642,15 +637,28 @@
 }
 
 .demo-cta-title-text {
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
-  width: 700px;
+  width: 930px;
 }
 
 .demo-cta-content {
   display: flex;
   justify-content: center;
   /* padding-bottom: 0px; */
+}
+
+@media (max-width: 1223px) and (min-width: 768px) {
+  .demo-cta-title-text {
+    width: 660px;
+  }
+}
+
+@media (max-width: 767px) {
+  .demo-cta-title-text {
+    font-size: 2.25rem;
+    width: 100%;
+  }
 }
 
 .home-page-partner-image {

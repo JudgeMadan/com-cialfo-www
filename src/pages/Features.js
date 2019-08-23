@@ -1,27 +1,19 @@
 import React from "react";
 import HomeMarquee from "./home/HomeMarquee";
-import * as contentful from "contentful";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import "./home/Home.css";
-import Documents from "../img/home/CDocs.png";
-import ResearchImage from "../img/home/SchoolsOverview.png";
-import ResearchImageUS from "../img/home/SchoolsOverview-us.png";
-import Discover from "../img/home/Discover.png";
-import Oval from "../img/Oval.svg";
-import Line from "../img/Line.svg";
-import LightBlueRectangle from "../img/LightBlueRectangle.svg";
+import Documents from "../img/CDocs.png";
+import Mobile from "../img/features/mobile.png";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
-import PathToRegexp, { compile } from "path-to-regexp";
-import HomeFeatureLeftSideText from "./sharedComponents/HomeFeatureLeftSideText"
-import HomeFeatureRightSideText from "./sharedComponents/HomeFeatureRightSideText"
 import DemoCallToAction from "./sharedComponents/DemoCallToAction"
 import FeaturedVideo from "./sharedComponents/FeaturedVideo";
 import { DataContext } from "../contexts/DataContext"
+import FeatureTable from "./features/components/FeatureTable"
+
 class Features extends React.Component {
   static contextType = DataContext;
   constructor(props) {
@@ -29,37 +21,11 @@ class Features extends React.Component {
     this.state = {
       height: window.innerHeight,
       width: window.innerWidth,
-      data: {}
+      data: {},
+      dataTableMain: {},
+      dataTableSecondary: {}
     };
   }
-
-  generateUrl = (path, location) => {
-    const ROUTE = "/:space/:locale/:path*";
-    const definePath = compile(ROUTE);
-    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
-    if (routeComponents && routeComponents[3]) {
-      return definePath({
-        space: routeComponents[1],
-        locale: routeComponents[2],
-        path: path
-      });
-    } else if (routeComponents && routeComponents[3] == undefined) {
-      return definePath({
-        space: routeComponents[1],
-        locale: routeComponents[2],
-        path: "a"
-      });
-    }
-  };
-
-  setSpace = () => {
-    return this.props.setSpace(this.props.match.params.space);
-  };
-
-  setAccessToken = () => {
-    return this.props.setAccessToken(this.props.match.params.space);
-  };
-
 
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
@@ -68,6 +34,12 @@ class Features extends React.Component {
       let data = this.context.setContent(response, "featuresPage")
       this.setState({
         data: data
+      })
+    });
+    this.context.fetchEntries("featureTable").then((response) => {
+      this.setState({
+        dataTableMain: this.context.setContent(response, "featureTableMain"),
+        dataTableSecondary: this.context.setContent(response, "featureTableSecondary")
       })
     });
   }
@@ -91,110 +63,59 @@ class Features extends React.Component {
           data: data
         })
       });
+      this.context.fetchEntries("featureTable").then((response) => {
+        this.setState({
+          dataTableMain: this.context.setContent(response, "featureTableMain"),
+          dataTableSecondary: this.context.setContent(response, "featureTableSecondary")
+        })
+      });
     }
   }
 
 
 
   render() {
-    const space = this.props.match.params.space;
     return (
-      <Container className="homePageContainer" fluid>
-        {/* FULL SCREEN TOP ROW */}
-        <MediaQuery query="(min-device-width: 1224px)">
-          <Row className="titleContainer">
-            <h1 className="primary_font">{this.state.data.featuresTitle}</h1>
-          </Row>
-          <Row className="featuresVideoEmbed">
-            <div>
-              <img className="oval" src={Oval} />
-              <img className="line" src={Line} />
-              {this.state.width > 850 && (
-                <ReactPlayer
-                  className="video"
-                  width="800px"
-                  height="448px"
-                  url={this.state.data.featuresVideo}
-                />
-              )}
-              {this.state.width < 850 && (
-                <ReactPlayer
-                  className="video"
-                  width="600px"
-                  height="366px"
-                  url={this.state.data.featuresVideo}
-                />
-              )}
+      <Container className="featuresPageContainer" fluid>
+        <Row className="featuresPageHeader">
+          <h1 className="featuresPageTitle">{this.state.data.featuresTitle}</h1>
+          <div className="featuresImages d-flex">
+            <div className="featureMobileImage">
+              <img src={Mobile} />
             </div>
-          </Row>
-          {space !== "us" && (
-            <Row className="homePageSchoolTestimonialsTitle">
-              <h1 className="primary_font">
-                {this.state.data.homePageSchoolTestimonialsTitle}
-              </h1>
-            </Row>
-          )}
-          {space !== "us" && (
-            <Row className="homeMarquee mx-3">
-              <HomeMarquee
-                locale={this.props.locale}
-                accessToken={this.props.accessToken}
-                space={this.props.space}
-                spaces={this.props.spaces}
-                setSpace={this.props.setSpace}
-                setAccessToken={this.props.setAccessToken}
-                environment={this.props.environment}
-              />
-            </Row>
-          )}
-        </MediaQuery>
-        {/* MOBILE TOP ROW */}
-        <MediaQuery query="(max-device-width: 1223px)">
-          <Row className="titleContainer">
-            <h1 className="primary_font">{this.state.data.featuresTitle}</h1>
-          </Row>
-          <Row className="mobile-featuresVideoEmbed">
-            <div>
-              <img className="oval" src={Oval} />
-              <ReactPlayer
-                className="video"
-                width="345px"
-                height="194px"
-                url={this.state.data.featuresVideo}
-              />
+            <div className="featureDocumentsImage">
+              <img className="" src={Documents} />
             </div>
-          </Row>
-          <Row className="homePageSchoolTestimonialsTitle">
-            <h1 className="primary_font">
-              {this.state.data.homePageSchoolTestimonialsTitle}
-            </h1>
-          </Row>
-        </MediaQuery>
-        {/* SEND DOCUMENTS*/}
-        <HomeFeatureRightSideText
-          title={this.state.data.featurePageFeaturesSendDocumentTitle}
-          blurb={this.state.data.featurePageFeaturesSendDocumentBlurb}
-          linkText={this.state.data.featurePageFeaturesSendDocumentLinkText}
-          linkUrl="features-send"
-          image={Documents}
-        />
-        {/* LEVERAGE*/}
-        <HomeFeatureLeftSideText
-          title={this.state.data.featurePageFeaturesLeverageTitle}
-          blurb={this.state.data.featurePageFeaturesLeverageBlurb}
-          linkText={this.state.data.featurePageFeaturesLeverageLinkText}
-          image={space == "us" ? ResearchImageUS : ResearchImage}
-          linkUrl="features-research"
-        />
-        {/* DISCOVER*/}
-        <HomeFeatureRightSideText
-          title={this.state.data.featurePageFeaturesDiscoverTitle}
-          blurb={this.state.data.featurePageFeaturesDiscoverBlurb}
-          linkText={this.state.data.featurePageFeaturesDiscoverLinkText}
-          image={Discover}
-          linkUrl="features-report"
+          </div>
+          <div className="featuresHeaderBlueCircle" />
+          <div className="featuresHeaderBottomArc" />
+        </Row>
+        <FeatureTable
+          data={this.state.dataTableMain}
         />
         <FeaturedVideo />
+        {/* FULL SCREEN TOP ROW */}
+        <MediaQuery query="(min-device-width: 1224px)">
+          <FeatureTable
+            data={this.state.dataTableSecondary}
+          />
+          <Row className="schoolTestimonialsTitle">
+            <h1 className="primary_font text-center">
+              {this.state.data.featurePageSchoolTestimonialsTitle}
+            </h1>
+          </Row>
+          <Row className="homeMarquee mx-3">
+            <HomeMarquee
+              locale={this.props.locale}
+              accessToken={this.props.accessToken}
+              space={this.props.space}
+              spaces={this.props.spaces}
+              setSpace={this.props.setSpace}
+              setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
+            />
+          </Row>
+        </MediaQuery>
         <DemoCallToAction />
       </Container>
     );

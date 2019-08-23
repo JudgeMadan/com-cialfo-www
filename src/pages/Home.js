@@ -9,7 +9,7 @@ import ReactPlayer from "react-player";
 import "./home/Home.css";
 import Hero from "../img/home/devices.png";
 import HeroUS from "../img/home/devices-us.png";
-import Documents from "../img/home/CDocs.png";
+import Documents from "../img/CDocs.png";
 import ResearchImage from "../img/home/SchoolsOverview.png";
 import ResearchImageUS from "../img/home/SchoolsOverview-us.png";
 import Discover from "../img/home/Discover.png";
@@ -234,8 +234,8 @@ class Home extends React.Component {
         {/* FULL SCREEN MARQUEE | NO MARQUEE ON MOBILE */}
         {space !== "us" && (
           <MediaQuery query="(min-device-width: 1224px)">
-            <Row className="homePageSchoolTestimonialsTitle">
-              <h1 className="primary_font">
+            <Row className="schoolTestimonialsTitle">
+              <h1 className="primary_font text-center">
                 {this.state.data.homePageSchoolTestimonialsTitle}
               </h1>
             </Row>
