@@ -16,7 +16,7 @@ class FeatureTable extends React.Component {
     let table = []
     for(var i=startIndex; i<startIndex+cols; i++){
       if(this.props.data["title" + i] != null){
-        table.push(  <Col className = "feature-content-block">
+        table.push(  <Col key={i} className = "feature-content-block">
             <div className="feature-content-block-container">
               <Row>
                 <h4 className="secondary_title_font">
@@ -32,7 +32,7 @@ class FeatureTable extends React.Component {
                 <Row>
                   <Link
                     className={"homeFeatureLink " + ["homePageFeaturesSendDocumentLinkText", "homePageFeaturesLeverageLinkText", "homePageFeaturesDiscoverLinkText"][i%3]}
-                    to={this.props.data["link" + i]}>
+                    to={this.props.data["link" + i] || ''}>
                     {this.props.data["linkTitle" + i]}
                   </Link>
                 </Row>
@@ -44,7 +44,7 @@ class FeatureTable extends React.Component {
           table.push(<Col className = "feature-content-block"></Col>)
         }
       }
-      return <Row className="feature-content-row center-in-row">{table}</Row>;
+      return <Row key={startIndex} className="feature-content-row center-in-row">{table}</Row>;
   }
 
   generateTable = (cols, limit = 9) => {
@@ -55,7 +55,7 @@ class FeatureTable extends React.Component {
     let links = this.props.data
 
     if(this.props.data.mainTitleText){
-      table.push(<div className="titleContainer row"><h1 className="primary_font">{this.props.data.mainTitleText}</h1></div>)
+      table.push(<div key={0} className="titleContainer row"><h1 className="primary_font">{this.props.data.mainTitleText}</h1></div>)
     }
     for(var i=1; i<=limit; i+=cols){
       if(this.props.data["title" + i]){

@@ -8,6 +8,83 @@
   border-radius: 4px;
 }
 
+.featuresPageHeader {
+  background-color: #EBF9FF;
+  position: relative;
+  overflow: hidden;
+}
+
+.featuresPageTitle {
+  width: 60%;
+  margin: 7rem 8rem;
+  font-family: 'domainedisplay_regular';
+  font-size: 4rem;
+  color: #000;
+}
+
+.featuresImages {
+  width: 100% !important;
+  margin: 0 10% !important;
+  margin-bottom: 11rem !important;
+}
+
+.featureMobileImage {
+  flex: 1 !important;
+  display: flex;
+}
+
+.featureMobileImage img {
+  margin-top: auto;
+  width: 75%;
+  height: auto;
+}
+
+.featureDocumentsImage {
+  flex: 4 !important;
+}
+
+.featureDocumentsImage img {
+  width: 100%;
+  height: auto;
+}
+
+.headerBottomArc {
+  width: 140%;
+  margin-left: -20%;
+  margin-right: -20%;
+  height: 40%;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  bottom: -32%;
+}
+
+@media (max-width: 1223px) and (min-width: 768px) {
+  .featuresPageTitle {
+    margin: 4rem 4.5rem;
+  }
+
+  .featuresImages {
+    margin-bottom: 8rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .featuresPageTitle {
+    width: 100%;
+    margin: 4rem 2.5rem 2rem;
+    font-size: 2.25rem;
+  }
+
+  .featureMobileImage {
+    display: none;
+  }
+
+  .featuresImages {
+    margin-bottom: 6rem !important;
+  }
+}
+
 .titleContainer {
   margin-bottom: 5rem;
   margin-top: 5rem;

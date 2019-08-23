@@ -9,7 +9,7 @@ import ReactPlayer from "react-player";
 import "./home/Home.css";
 import Hero from "../img/home/devices.png";
 import HeroUS from "../img/home/devices-us.png";
-import Documents from "../img/home/CDocs.png";
+import Documents from "../img/CDocs.png";
 import ResearchImage from "../img/home/SchoolsOverview.png";
 import ResearchImageUS from "../img/home/SchoolsOverview-us.png";
 import Discover from "../img/home/Discover.png";

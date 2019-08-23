@@ -3,21 +3,12 @@ import HomeMarquee from "./home/HomeMarquee";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import "./home/Home.css";
-import Documents from "../img/home/CDocs.png";
-import ResearchImage from "../img/home/SchoolsOverview.png";
-import ResearchImageUS from "../img/home/SchoolsOverview-us.png";
-import Discover from "../img/home/Discover.png";
-import Oval from "../img/Oval.svg";
-import Line from "../img/Line.svg";
-import LightBlueRectangle from "../img/LightBlueRectangle.svg";
+import Documents from "../img/CDocs.png";
+import Mobile from "../img/features/mobile.png";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
-import PathToRegexp, { compile } from "path-to-regexp";
-import HomeFeatureLeftSideText from "./sharedComponents/HomeFeatureLeftSideText"
-import HomeFeatureRightSideText from "./sharedComponents/HomeFeatureRightSideText"
 import DemoCallToAction from "./sharedComponents/DemoCallToAction"
 import FeaturedVideo from "./sharedComponents/FeaturedVideo";
 import { DataContext } from "../contexts/DataContext"
@@ -85,7 +76,19 @@ class Features extends React.Component {
 
   render() {
     return (
-      <Container className="homePageContainer" fluid>
+      <Container className="featuresPageContainer" fluid>
+        <Row className="featuresPageHeader">
+          <h1 className="featuresPageTitle">{this.state.data.featuresTitle}</h1>
+          <div className="featuresImages d-flex">
+            <div className="featureMobileImage">
+              <img src={Mobile} />
+            </div>
+            <div className="featureDocumentsImage">
+              <img className="" src={Documents} />
+            </div>
+          </div>
+          <div className="headerBottomArc" />
+        </Row>
         <FeatureTable
           data={this.state.dataTableMain}
         />
