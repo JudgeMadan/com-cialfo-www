@@ -87,7 +87,8 @@ class Features extends React.Component {
               <img className="" src={Documents} />
             </div>
           </div>
-          <div className="headerBottomArc" />
+          <div className="featuresHeaderBlueCircle" />
+          <div className="featuresHeaderBottomArc" />
         </Row>
         <FeatureTable
           data={this.state.dataTableMain}
