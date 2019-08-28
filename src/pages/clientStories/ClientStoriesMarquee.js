@@ -13,7 +13,7 @@ class ClientStoriesMarquee extends React.Component {
   }
 
   componentDidMount() {
-    this.context.fetchEntries().then((response) => {
+    this.context.fetchEntries(undefined, true).then((response) => {
       let data = this.context.setMarqueeContent(response, "clientStory")
       this.setState({
         clientMarqueeCount: data.length
