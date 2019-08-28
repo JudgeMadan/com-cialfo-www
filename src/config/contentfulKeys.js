@@ -21,4 +21,9 @@ export const contenfulConfig = {
     accessToken: "bO1jaDXJM1S5kWXDVJoZ6buysg9bGkhohqYyJr-NxIw",
     spaceName: "us"
   },
+  sharedSpace: {
+    space: "6z68mehe72kf",
+    accessToken: "yuqqUFmLi3xxrPn472eQQJP5Qe5hcjxZahdXKfdNnrc",
+    spaceName: "shared"
+  },
 }

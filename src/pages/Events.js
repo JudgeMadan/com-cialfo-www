@@ -33,7 +33,7 @@ class Events extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.context.fetchEntries("about").then((response) => {
+      this.context.fetchEntries("about", true).then((response) => {
         let data = this.context.setContent(response, "eventsPage")
         this.setState({
           data: data
@@ -44,7 +44,7 @@ class Events extends React.Component {
 
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    this.context.fetchEntries("about").then((response) => {
+    this.context.fetchEntries("about", true).then((response) => {
       let data = this.context.setContent(response, "eventsPage")
       this.setState({
         data: data

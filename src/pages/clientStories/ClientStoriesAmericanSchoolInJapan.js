@@ -17,7 +17,7 @@ class ClientStoriesAmericanSchoolInJapan extends React.Component {
   }
 
   componentDidMount() {
-    this.context.fetchEntries("clientStory").then((response) => {
+    this.context.fetchEntries("clientStory", true).then((response) => {
       let data = this.context.setContent(response, "americanSchoolInJapan")
       this.setState({
         data: data
@@ -27,7 +27,7 @@ class ClientStoriesAmericanSchoolInJapan extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.context.fetchEntries("clientStory").then((response) => {
+      this.context.fetchEntries("clientStory", true).then((response) => {
         let data = this.context.setContent(response, "americanSchoolInJapan")
         this.setState({
           data: data
