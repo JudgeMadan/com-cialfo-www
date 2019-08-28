@@ -78,11 +78,13 @@ class DataContextProvider extends Component {
     }
   }
 
-  fetchEntries = (content_type) => {
+  fetchEntries = (content_type, fetch_from_shared_space = false) => {
+    const space = fetch_from_shared_space ? contenfulConfig.sharedSpace.space : this.generateSpaceAndAccess().space;
+    const accessToken = fetch_from_shared_space ? contenfulConfig.sharedSpace.accessToken : this.generateSpaceAndAccess().accessToken;
     const client = contentful.createClient({
-      space: this.generateSpaceAndAccess().space,
+      space,
       environment: contenfulConfig.environment,
-      accessToken: this.generateSpaceAndAccess().accessToken,
+      accessToken,
     });
     return client
       .getEntries({
