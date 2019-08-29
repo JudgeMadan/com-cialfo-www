@@ -22,7 +22,7 @@ class ClientStories extends React.Component {
 
   render() {
     const space = this.props.match.params.space;
-    return (
+    return ([
       <Container>
         {this.props.match.params.locale === "en-US" && (
           <div>
@@ -86,9 +86,9 @@ class ClientStories extends React.Component {
             </Row>
           )}
         </MediaQuery>
-        <DemoCallToAction />
-      </Container>
-    );
+      </Container>,
+      <DemoCallToAction />
+    ]);
   }
 }
 
