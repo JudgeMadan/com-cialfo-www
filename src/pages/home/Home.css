@@ -614,16 +614,24 @@
   margin-right: auto;
 }
 
-.home-page-partner-image {
-  margin: 0 10px;
+.demo-cta-container {
+  margin:50px;
 }
 
-.partial-width-dark-blue {
-  margin: 0 -9999rem;
-  /* add back negative margin value */
-  padding: 0.25rem 9999rem;
-  background: #1786df;
-  background: linear-gradient(white 3%, #1786df 3% 55%, white 55%);
+.demo-cta-title-text {
+  font-size: 3rem;
+  text-align: center;
+  width: 700px;
+}
+
+.demo-cta-content {
+  display: flex;
+  justify-content: center;
+  /* padding-bottom: 0px; */
+}
+
+.home-page-partner-image {
+  margin: 0 10px;
 }
 
 .partner-object-image-container {
@@ -693,7 +701,6 @@
   }
 }
 
-
 .marquee-school-image-container{
   display: flex;
   justify-content: flex-start;
@@ -702,4 +709,53 @@
 .marquee-school-image{
   max-height: 60px;
   width: auto;
+}
+
+.slider-container{
+  /* border: solid red 2px; */
+  justify-content: center;
+}
+
+.partial-width-dark-blue {
+  margin: 0 -9999rem;
+  /* add back negative margin value */
+  padding: 0.25rem 9999rem;
+  background: #1786df;
+  /* background: linear-gradient (#1786df 55%, white 55%); */
+  background: linear-gradient(white 3%, #1786df 3% 55%, white 55%);
+}
+
+.slick-current{
+  filter: none !important;
+}
+
+.slick-slide{
+  filter: blur(2.5px);
+}
+
+@media screen and (max-width: 500px) {
+  .slick-list{
+    max-height: 200px;
+    max-width: 1000px;
+  }
+  .slick-track{
+    max-width: 100vw;
+  }
+  .slick-slide{
+    max-width: 200px !important;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .home-page-carousel{
+    display: none ;
+  }
+
+}
+
+@media screen and (min-width: 501px) {
+  .home-page-video{
+    display: none;
+  }
 }

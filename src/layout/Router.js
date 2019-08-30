@@ -15,6 +15,7 @@ import FourOhFour from "../pages/FourOhFour";
 import ThankYou from "../pages/ThankYou";
 import Solutions from "../pages/Solutions";
 import SolutionsCounselors from "../pages/SolutionsCounselors";
+import SolutionsFamilies from "../pages/SolutionsFamilies";
 import SolutionsIT from "../pages/SolutionsIT";
 import SolutionsPrincipals from "../pages/SolutionsPrincipals";
 import SolutionsSuperintendents from "../pages/SolutionsSuperintendents";
@@ -34,23 +35,6 @@ class Router extends React.Component {
   render() {
     return (
       <Switch>
-        <Route
-          exact
-          path="/"
-          render={() => (
-            <Redirect
-              locale={this.props.locale}
-              space={this.props.space}
-              spaceName={this.props.spaceName}
-              accessToken={this.props.accessToken}
-              getADemoEmail={this.props.getADemoEmail}
-              sendEmailAddressToGetADemo={this.props.sendEmailAddressToGetADemo}
-              setSpace={this.props.setSpace}
-              setAccessToken={this.props.setAccessToken}
-              environment={this.props.environment}
-            />
-          )}
-        />
         <Route
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/home"}
@@ -259,7 +243,7 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
-          path={this.props.match.url + ":space" + "/" + ":locale" + "/privacy"}
+          path={this.props.match.url + ":space" + "/" + ":locale" + "/privacy-policy"}
           render={() => (
             <Privacy
               locale={this.props.locale}
@@ -414,6 +398,29 @@ class Router extends React.Component {
         <Route
           locale={this.props.locale}
           exact
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
+            "/solutions-families"
+          }
+          render={() => (
+            <SolutionsFamilies
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
+              setSpace={this.props.setSpace}
+              setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
+            />
+          )}
+        />
+
+        <Route
+          locale={this.props.locale}
+          exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/events"}
           render={() => (
             <Events
@@ -454,6 +461,28 @@ class Router extends React.Component {
             "/" +
             ":locale" +
             "/terms-of-service"
+          }
+          render={() => (
+            <TermsOfService
+              locale={this.props.locale}
+              space={this.props.space}
+              accessToken={this.props.accessToken}
+              spaces={this.props.spaces}
+              setSpace={this.props.setSpace}
+              setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
+            />
+          )}
+        />
+        <Route
+          locale={this.props.locale}
+          exact
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
+            "/terms-and-conditions"
           }
           render={() => (
             <TermsOfService
@@ -551,12 +580,30 @@ class Router extends React.Component {
         />
         <Route
           exact
+          path={this.props.match.url + ":space/*" }
           render={() => (
             <FourOhFourRedirect
               locale={this.props.locale}
               space={this.props.space}
               spaceName={this.props.spaceName}
               accessToken={this.props.accessToken}
+              setSpace={this.props.setSpace}
+              setAccessToken={this.props.setAccessToken}
+              environment={this.props.environment}
+            />
+          )}
+        />
+        <Route
+          exact
+          render={() => (
+            <Redirect
+              locale={this.props.locale}
+              url={this.props.match.url}
+              space={this.props.space}
+              spaceName={this.props.spaceName}
+              accessToken={this.props.accessToken}
+              getADemoEmail={this.props.getADemoEmail}
+              sendEmailAddressToGetADemo={this.props.sendEmailAddressToGetADemo}
               setSpace={this.props.setSpace}
               setAccessToken={this.props.setAccessToken}
               environment={this.props.environment}
