@@ -28,21 +28,21 @@ class Solutions extends React.Component {
   }
 
   componentDidMount() {
-    this.context.fetchEntries("homePageHeaderProductImage").then((response) => {
-      let data = this.context.setContent(response, "solutions")
+    this.context.fetchEntries("homePageHeaderProductImage").then(response => {
+      let data = this.context.setContent(response, "solutions");
       this.setState({
         data: data
-      })
+      });
     });
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.context.fetchEntries("homePageHeaderProductImage").then((response) => {
-        let data = this.context.setContent(response, "solutions")
+      this.context.fetchEntries("homePageHeaderProductImage").then(response => {
+        let data = this.context.setContent(response, "solutions");
         this.setState({
           data: data
-        })
+        });
       });
     }
   }
@@ -113,7 +113,8 @@ class Solutions extends React.Component {
         </MediaQuery>
         <div className="solutions-bottom-spacing" />
         {/* FULL SCREEN FOR SUPERINTENDENTS (US) / FAMILIES (INDIA) */}
-        {(space == "us" || space == "in") && (
+        {/* {(space == "us" || space == "in") && ( */}
+        {space == "us" && (
           <MediaQuery query="(min-device-width: 1224px)">
             <SolutionsRightSideText
               title={this.state.data.solutionsExtraTitle}
@@ -121,12 +122,17 @@ class Solutions extends React.Component {
               link={this.state.data.solutionsExtraLinkText}
               url={this.state.data.solutionsExtraLinkUrl}
               linkStyle={this.state.forSuperintendents}
-              image={space == "us" ? this.state.data.solutionsForSuperintendentsImage : this.state.data.solutionsForFamiliesImage}
+              image={
+                space == "us"
+                  ? this.state.data.solutionsForSuperintendentsImage
+                  : this.state.data.solutionsForFamiliesImage
+              }
             />
           </MediaQuery>
         )}
         {/* MOBILE FOR SUPERINTENDENTS (US) / FAMILIES (INDIA) */}
-        {(space == "us" || space == "in") && (
+        {/* {(space == "us" || space == "in") && ( */}
+        {space == "us" && (
           <MediaQuery query="(max-device-width: 1223px)">
             <MobileSolutionsContentText
               title={this.state.data.solutionsExtraTitle}
@@ -134,7 +140,11 @@ class Solutions extends React.Component {
               link={this.state.data.solutionsExtraLinkText}
               url={this.state.data.solutionsExtraLinkUrl}
               linkStyle={this.state.forSuperintendents}
-              image={space == "us" ? this.state.data.solutionsForSuperintendentsImage : this.state.data.solutionsForFamiliesImage}
+              image={
+                space == "us"
+                  ? this.state.data.solutionsForSuperintendentsImage
+                  : this.state.data.solutionsForFamiliesImage
+              }
             />
           </MediaQuery>
         )}
@@ -144,7 +154,9 @@ class Solutions extends React.Component {
             <PartnerImages
               locale={this.props.locale}
               className="partnerImages"
-              partnerImages={this.state.data.homePagePoweredByOurPartnersPartners}
+              partnerImages={
+                this.state.data.homePagePoweredByOurPartnersPartners
+              }
               accessToken={this.props.accessToken}
               space={this.props.space}
               title={this.state.data.homePagePoweredByOurPartnersTitle}

@@ -1,13 +1,12 @@
 import * as contentful from "contentful";
-import React, { Component, createContext } from 'react';
+import React, { Component, createContext } from "react";
 import { withRouter } from "react-router-dom";
 import PathToRegexp from "path-to-regexp";
-import { contenfulConfig } from "../config/contentfulKeys"
+import { contenfulConfig } from "../config/contentfulKeys";
 
 export const DataContext = createContext();
 
 class DataContextProvider extends Component {
-
   generateSpaceAndAccess = () => {
     if (document.cookie) {
       const cookieArray = document.cookie.split(" ");
@@ -53,38 +52,42 @@ class DataContextProvider extends Component {
       const country_code = country_codeArray[0];
 
       if (country_code === "country_code=CN") {
-        return contenfulConfig.chinaSpace
+        return contenfulConfig.chinaSpace;
       } else if (country_code === "country_code=IN") {
-        return contenfulConfig.indiaSpace
+        return contenfulConfig.indiaSpace;
       } else if (country_code === "country_code=US") {
-        return contenfulConfig.usaSpace
+        return contenfulConfig.usaSpace;
       } else {
-        return contenfulConfig.internationalSpace
+        return contenfulConfig.internationalSpace;
       }
     } else {
-      return contenfulConfig.internationalSpace
+      return contenfulConfig.internationalSpace;
     }
-  }
+  };
 
-  generateLocale = (location) => {
+  generateLocale = location => {
     if (location.pathname === "/home" || location.pathname === "/") {
-      return "en-US"
+      return "en-US";
     } else {
       const ROUTE = "/:space/:locale/:path*";
       const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
       if (routeComponents) {
-        return routeComponents[2]
-      } else return "en-US"
+        return routeComponents[2];
+      } else return "en-US";
     }
-  }
+  };
 
   fetchEntries = (content_type, fetch_from_shared_space = false) => {
-    const space = fetch_from_shared_space ? contenfulConfig.sharedSpace.space : this.generateSpaceAndAccess().space;
-    const accessToken = fetch_from_shared_space ? contenfulConfig.sharedSpace.accessToken : this.generateSpaceAndAccess().accessToken;
+    const space = fetch_from_shared_space
+      ? contenfulConfig.sharedSpace.space
+      : this.generateSpaceAndAccess().space;
+    const accessToken = fetch_from_shared_space
+      ? contenfulConfig.sharedSpace.accessToken
+      : this.generateSpaceAndAccess().accessToken;
     const client = contentful.createClient({
       space,
       environment: contenfulConfig.environment,
-      accessToken,
+      accessToken
     });
     return client
       .getEntries({
@@ -98,67 +101,65 @@ class DataContextProvider extends Component {
   // Consider using lodash get inside of the filterContentFields[key][0]
   // https://lodash.com/docs/4.17.15#get
   setContent = (response, pageType) => {
-    const content = response
-    const data = {}
-    let filteredContent = {}
+    const content = response;
+    const data = {};
+    let filteredContent = {};
     if (content[0].fields.pageType) {
       filteredContent = content.filter(
         content => content.fields.pageType === pageType
-      )
+      );
     } else {
-      filteredContent = content
+      filteredContent = content;
     }
     let filteredContentFields = filteredContent[0].fields;
     for (let key in filteredContentFields) {
       if (typeof filteredContentFields[key] === "string") {
-        data[key] = filteredContentFields[key]
+        data[key] = filteredContentFields[key];
       } else if (Array.isArray(filteredContentFields[key])) {
         if (typeof filteredContentFields[key][0] === "string") {
-          data[key] = filteredContentFields[key]
+          data[key] = filteredContentFields[key];
         } else if (filteredContentFields[key][0].sys.type === "Asset") {
           data[key] = filteredContentFields[key].map(
             content => content.fields.file.url
-          )
+          );
         } else if (filteredContentFields[key][0].sys.type === "Entry") {
-          data[key] = filteredContentFields[key]
-        }
-        else {
+          data[key] = filteredContentFields[key];
+        } else {
           data[key] = filteredContentFields[key].map(
             content => content.fields.file.url
-          )
+          );
         }
       } else if (typeof filteredContentFields[key] === "number") {
-        data[key] = filteredContentFields[key]
-      }
-      else {
-        data[key] = filteredContentFields[key].fields.file.url
+        data[key] = filteredContentFields[key];
+      } else {
+        data[key] = filteredContentFields[key].fields.file.url;
       }
     }
-    return data
-  }
+    return data;
+  };
 
   // This is used to filter the data for HomeMarquee -> src/pages/home/HomeMarquee.js &
   // HomeMarqueeList -> src/pages/home/homeMarquee/HomeMarqueeList.js
   // I cant get it to work inside the primary setContent function
   // Refactor would be nice
   setMarqueeContent = (response, pageType) => {
-    let data = {}
+    let data = {};
     let filteredContent = response.filter(
       content => content.sys.contentType.sys.id === pageType
-    )
-    data = filteredContent
+    );
+    data = filteredContent;
     this.setState({
       marqueeCount: filteredContent.length
-    })
-    return data
-  }
+    });
+    return data;
+  };
 
   // This is used to create the array needed for the schoolMarquee
   // Used here -> src/pages/clientStories/clientStoriesMarquee/ClientStoriesMarqueeList.js
   // & Used here -> src/pages/clientStories/ClientStoriesHomePageCards.js
   setSchoolMarqueeContent = response => {
     const pageContent = response;
-    let schoolItems = []
+    let schoolItems = [];
     for (let key in pageContent) {
       let schoolObject = {
         blurb: pageContent[key].fields.clientStoryStoryBlurb,
@@ -167,9 +168,9 @@ class DataContextProvider extends Component {
         homePageBlurb: pageContent[key].fields.clientStoryHomePageBlurb,
         id: pageContent[key].sys.id
       };
-      schoolItems.push(schoolObject)
+      schoolItems.push(schoolObject);
     }
-    return schoolItems
+    return schoolItems;
   };
 
   render() {

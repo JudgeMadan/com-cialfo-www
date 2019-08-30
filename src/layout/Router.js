@@ -45,7 +45,7 @@ class Router extends React.Component {
             />
           )}
         />
-        <Route
+        {/* <Route
           locale={this.props.locale}
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/clients"}
@@ -80,22 +80,18 @@ class Router extends React.Component {
           render={() => (
             <ClientStoriesAmericanSchoolInChina />
           )}
-        />
+        /> */}
         <Route
           locale={this.props.locale}
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/features"}
-          render={() => (
-            <Features />
-          )}
+          render={() => <Features />}
         />
         <Route
           locale={this.props.locale}
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/about"}
-          render={() => (
-            <About />
-          )}
+          render={() => <About />}
         />
         <Route
           locale={this.props.locale}
@@ -103,9 +99,7 @@ class Router extends React.Component {
           path={
             this.props.match.url + ":space" + "/" + ":locale" + "/features-send"
           }
-          render={() => (
-            <FeaturesSend />
-          )}
+          render={() => <FeaturesSend />}
         />
         <Route
           locale={this.props.locale}
@@ -117,9 +111,7 @@ class Router extends React.Component {
             ":locale" +
             "/features-research"
           }
-          render={() => (
-            <FeaturesResearch />
-          )}
+          render={() => <FeaturesResearch />}
         />
         <Route
           locale={this.props.locale}
@@ -131,43 +123,37 @@ class Router extends React.Component {
             ":locale" +
             "/features-report"
           }
-          render={() => (
-            <FeaturesDocuments />
-          )}
+          render={() => <FeaturesDocuments />}
         />
         <Route
           locale={this.props.locale}
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/demo"}
-          render={() => (
-            <GetADemo
-              getADemoEmail={this.props.getADemoEmail}
-            />
-          )}
+          render={() => <GetADemo getADemoEmail={this.props.getADemoEmail} />}
         />
         <Route
           locale={this.props.locale}
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/contact"}
-          render={() => (
-            <GetInTouch />
-          )}
+          render={() => <GetInTouch />}
         />
         <Route
           locale={this.props.locale}
           exact
-          path={this.props.match.url + ":space" + "/" + ":locale" + "/privacy-policy"}
-          render={() => (
-            <Privacy />
-          )}
+          path={
+            this.props.match.url +
+            ":space" +
+            "/" +
+            ":locale" +
+            "/privacy-policy"
+          }
+          render={() => <Privacy />}
         />
         <Route
           locale={this.props.locale}
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/security"}
-          render={() => (
-            <Security />
-          )}
+          render={() => <Security />}
         />
         <Route
           locale={this.props.locale}
@@ -175,9 +161,7 @@ class Router extends React.Component {
           path={
             this.props.match.url + ":space" + "/" + ":locale" + "/thank-you"
           }
-          render={() => (
-            <ThankYou />
-          )}
+          render={() => <ThankYou />}
         />
         <Route
           locale={this.props.locale}
@@ -185,9 +169,7 @@ class Router extends React.Component {
           path={
             this.props.match.url + ":space" + "/" + ":locale" + "/solutions"
           }
-          render={() => (
-            <Solutions />
-          )}
+          render={() => <Solutions />}
         />
         <Route
           locale={this.props.locale}
@@ -199,9 +181,7 @@ class Router extends React.Component {
             ":locale" +
             "/solutions-counselors"
           }
-          render={() => (
-            <SolutionsCounselors />
-          )}
+          render={() => <SolutionsCounselors />}
         />
         <Route
           locale={this.props.locale}
@@ -209,9 +189,7 @@ class Router extends React.Component {
           path={
             this.props.match.url + ":space" + "/" + ":locale" + "/solutions-it"
           }
-          render={() => (
-            <SolutionsIT />
-          )}
+          render={() => <SolutionsIT />}
         />
 
         <Route
@@ -224,9 +202,7 @@ class Router extends React.Component {
             ":locale" +
             "/solutions-principals"
           }
-          render={() => (
-            <SolutionsPrincipals />
-          )}
+          render={() => <SolutionsPrincipals />}
         />
 
         <Route
@@ -239,9 +215,7 @@ class Router extends React.Component {
             ":locale" +
             "/solutions-superintendents"
           }
-          render={() => (
-            <SolutionsSuperintendents />
-          )}
+          render={() => <SolutionsSuperintendents />}
         />
 
         <Route
@@ -254,18 +228,14 @@ class Router extends React.Component {
             ":locale" +
             "/solutions-families"
           }
-          render={() => (
-            <SolutionsFamilies />
-          )}
+          render={() => <SolutionsFamilies />}
         />
 
         <Route
           locale={this.props.locale}
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/events"}
-          render={() => (
-            <Events />
-          )}
+          render={() => <Events />}
         />
         <Route
           locale={this.props.locale}
@@ -273,9 +243,7 @@ class Router extends React.Component {
           path={
             this.props.match.url + ":space" + "/" + ":locale" + "/downloads"
           }
-          render={() => (
-            <Downloads />
-          )}
+          render={() => <Downloads />}
         />
         <Route
           locale={this.props.locale}
@@ -287,9 +255,7 @@ class Router extends React.Component {
             ":locale" +
             "/terms-of-service"
           }
-          render={() => (
-            <TermsOfService />
-          )}
+          render={() => <TermsOfService />}
         />
         <Route
           locale={this.props.locale}
@@ -301,9 +267,7 @@ class Router extends React.Component {
             ":locale" +
             "/terms-and-conditions"
           }
-          render={() => (
-            <TermsOfService />
-          )}
+          render={() => <TermsOfService />}
         />
         <Route
           locale={this.props.locale}
@@ -315,9 +279,7 @@ class Router extends React.Component {
             ":locale" +
             "/cialfo-vs-naviance"
           }
-          render={() => (
-            <CialfoVSNaviance />
-          )}
+          render={() => <CialfoVSNaviance />}
         />
         <Route
           locale={this.props.locale}
@@ -329,9 +291,7 @@ class Router extends React.Component {
             ":locale" +
             "/cialfo-vs-bridge-u"
           }
-          render={() => (
-            <CialfoVSBridgeU />
-          )}
+          render={() => <CialfoVSBridgeU />}
         />
         <Route
           locale={this.props.locale}
@@ -343,26 +303,18 @@ class Router extends React.Component {
             ":locale" +
             "/cialfo-vs-maia"
           }
-          render={() => (
-            <CialfoVSMaia />
-          )}
+          render={() => <CialfoVSMaia />}
         />
         <Route
           locale={this.props.locale}
           exact
           path={this.props.match.url + ":space" + "/" + ":locale" + "/404"}
-          render={() => (
-            <FourOhFour />
-          )}
+          render={() => <FourOhFour />}
         />
         <Route
           exact
           path={this.props.match.url + ":space/*"}
-          render={() => (
-            <FourOhFourRedirect
-              spaceName={this.props.spaceName}
-            />
-          )}
+          render={() => <FourOhFourRedirect spaceName={this.props.spaceName} />}
         />
         <Route
           exact
