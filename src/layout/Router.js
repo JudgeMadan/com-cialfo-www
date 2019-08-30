@@ -217,7 +217,7 @@ class Router extends React.Component {
           }
           render={() => <SolutionsSuperintendents />}
         />
-
+        {/* 
         <Route
           locale={this.props.locale}
           exact
@@ -229,7 +229,7 @@ class Router extends React.Component {
             "/solutions-families"
           }
           render={() => <SolutionsFamilies />}
-        />
+        /> */}
 
         <Route
           locale={this.props.locale}
