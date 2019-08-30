@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import MediaQuery from "react-responsive";
 import ReactPlayer from "react-player";
-import { DataContext } from "../../contexts/DataContext"
+import { DataContext } from "../../contexts/DataContext";
 import "./FeaturedVideo.css";
 
 class FeaturedVideo extends React.Component {
@@ -17,11 +17,11 @@ class FeaturedVideo extends React.Component {
   }
 
   componentDidMount() {
-    this.context.fetchEntries("featuredVideo").then((response) => {
-      let data = this.context.setContent(response, "featuredVideo")
+    this.context.fetchEntries("featuredVideo").then(response => {
+      let data = this.context.setContent(response, "featuredVideo");
       this.setState({
         data: data
-      })
+      });
     });
   }
 
@@ -45,7 +45,9 @@ class FeaturedVideo extends React.Component {
               <div className="my-auto">
                 <h1 className="primary_font">{data.title}</h1>
                 <p className="secondary_font">{data.description}</p>
-                <button className="btn caseStudyBtn">Read the case study</button>
+                {/* <button className="btn caseStudyBtn">
+                  Read the case study
+                </button> */}
               </div>
             </Col>
           </Row>
@@ -66,7 +68,9 @@ class FeaturedVideo extends React.Component {
               <div className="featuredVideoInfo text-center px-5">
                 <h1 className="primary_font">{data.title}</h1>
                 <p className="secondary_font">{data.description}</p>
-                <button className="btn caseStudyBtn">Read the case study</button>
+                {/* <button className="btn caseStudyBtn">
+                  Read the case study
+                </button> */}
               </div>
             </Col>
           </Row>
@@ -87,7 +91,9 @@ class FeaturedVideo extends React.Component {
               <div className="featuredVideoInfo text-center">
                 <h1 className="primary_font">{data.title}</h1>
                 <p className="secondary_font">{data.description}</p>
-                <button className="btn caseStudyBtn">Read the case study</button>
+                {/* <button className="btn caseStudyBtn">
+                  Read the case study
+                </button> */}
               </div>
             </Col>
           </Row>
