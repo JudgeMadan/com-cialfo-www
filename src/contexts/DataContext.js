@@ -18,7 +18,7 @@ class DataContextProvider extends Component {
         "ajs_anonymous_id=%22da02155a-24b5-4a2f-975b-57a2d9b11ba7%22;",
         "__distillery=37c1813_175da9d6-de81-42cc-a6bd-df41c410e0ac-7e613e6a1-52e74d9ca234-69d2;",
         "intercom-id-giyujuw5=0732defb-3725-488f-809e-2b74254a709a;",
-        "country_code=CN"
+        "country_code=CN;"
       ];
       const cookieArrayIndia = [
         "ajs_user_id=null;",
@@ -26,7 +26,7 @@ class DataContextProvider extends Component {
         "ajs_anonymous_id=%22da02155a-24b5-4a2f-975b-57a2d9b11ba7%22;",
         "__distillery=37c1813_175da9d6-de81-42cc-a6bd-df41c410e0ac-7e613e6a1-52e74d9ca234-69d2;",
         "intercom-id-giyujuw5=0732defb-3725-488f-809e-2b74254a709a;",
-        "country_code=IN"
+        "country_code=IN;"
       ];
       const cookieArrayUSA = [
         "ajs_user_id=null;",
@@ -34,7 +34,7 @@ class DataContextProvider extends Component {
         "ajs_anonymous_id=%22da02155a-24b5-4a2f-975b-57a2d9b11ba7%22;",
         "__distillery=37c1813_175da9d6-de81-42cc-a6bd-df41c410e0ac-7e613e6a1-52e74d9ca234-69d2;",
         "intercom-id-giyujuw5=0732defb-3725-488f-809e-2b74254a709a;",
-        "country_code=US"
+        "country_code=US;"
       ];
       const cookieArrayInternational = [
         "ajs_user_id=null;",
@@ -42,7 +42,7 @@ class DataContextProvider extends Component {
         "ajs_anonymous_id=%22da02155a-24b5-4a2f-975b-57a2d9b11ba7%22;",
         "__distillery=37c1813_175da9d6-de81-42cc-a6bd-df41c410e0ac-7e613e6a1-52e74d9ca234-69d2;",
         "intercom-id-giyujuw5=0732defb-3725-488f-809e-2b74254a709a;",
-        "country_code=JP"
+        "country_code=JP;"
       ];
 
       const country_codeArray = cookieArray.filter(
@@ -50,12 +50,20 @@ class DataContextProvider extends Component {
       );
 
       const country_code = country_codeArray[0];
-
-      if (country_code === "country_code=CN") {
+      if (
+        country_code === "country_code=CN" ||
+        country_code === "country_code=CN;"
+      ) {
         return contenfulConfig.chinaSpace;
-      } else if (country_code === "country_code=IN") {
+      } else if (
+        country_code === "country_code=IN" ||
+        country_code === "country_code=IN;"
+      ) {
         return contenfulConfig.indiaSpace;
-      } else if (country_code === "country_code=US") {
+      } else if (
+        country_code === "country_code=US" ||
+        country_code === "country_code=US;"
+      ) {
         return contenfulConfig.usaSpace;
       } else {
         return contenfulConfig.internationalSpace;
