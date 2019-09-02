@@ -1,5 +1,5 @@
 export const contenfulConfig = {
-  environment: "staging",
+  environment: "master",
   chinaSpace: {
     space: "1acwuo4zy8aa",
     accessToken:
