@@ -50,8 +50,6 @@ class DataContextProvider extends Component {
       );
 
       const country_code = country_codeArray[0];
-      console.log(country_code);
-
       if (
         country_code === "country_code=CN" ||
         country_code === "country_code=CN;"
