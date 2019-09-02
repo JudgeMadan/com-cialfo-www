@@ -2,7 +2,6 @@ import Row from "react-bootstrap/Row";
 import React from "react";
 import "./getADemo/GetADemo.css";
 import Container from "react-bootstrap/Container";
-import * as contentful from "contentful";
 import SecurityFeatureObject from "./privacyAndSecurity/SecurityFeatureObject";
 import MobileSecurityFeatureObject from "./privacyAndSecurity/MobileSecurityFeatureObject";
 import Line from "../img/Line.svg";
@@ -12,40 +11,34 @@ import "./privacyAndSecurity/privacyAndSecurity.css";
 import { NavLink } from "react-router-dom";
 import MediaQuery from "react-responsive";
 import { withRouter } from "react-router-dom";
-import PathToRegexp from "path-to-regexp";
+import { DataContext } from "../contexts/DataContext"
+
 class Security extends React.Component {
+  static contextType = DataContext;
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: {}
+    };
   }
 
-  identifyLocale = location => {
-    const ROUTE = "/:space/:locale/:path+";
-    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
-    return routeComponents[2];
-  };
-
-  setSpace = () => {
-    return this.props.setSpace(this.props.match.params.space);
-  };
-
-  setAccessToken = () => {
-    return this.props.setAccessToken(this.props.match.params.space);
-  };
-
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
-
   componentDidMount() {
-    this.fetchHomeContent().then(this.setHomeContent);
+    this.context.fetchEntries("securityPage").then((response) => {
+      let data = this.context.setContent(response, "securityPage")
+      this.setState({
+        data: data
+      })
+    });
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.fetchHomeContent().then(this.setHomeContent);
+      this.context.fetchEntries("securityPage").then((response) => {
+        let data = this.context.setContent(response, "securityPage")
+        this.setState({
+          data: data
+        })
+      });
     }
   }
 
@@ -54,36 +47,8 @@ class Security extends React.Component {
     this.props.sendEmailAddressToGetADemo(fieldContent);
   };
 
-  fetchHomeContent = () =>
-    this.client.getEntries({
-      content_type: "securityPage",
-      locale: this.props.match.params.locale
-    });
-
-  setHomeContent = response => {
-    const homeContent = response.items;
-    let filteredhomeContent = homeContent.filter(
-      homeContent => homeContent.fields.pageType === "securityPage"
-    );
-    let filteredhomeContentFields = filteredhomeContent[0].fields;
-    for (let key in filteredhomeContentFields) {
-      if (typeof filteredhomeContentFields[key] === "string") {
-        this.setState({
-          [key]: filteredhomeContentFields[key]
-        });
-      } else if (Array.isArray(filteredhomeContentFields[key])) {
-        this.setState({
-          [key]: filteredhomeContentFields[key]
-        });
-      } else {
-        this.setState({
-          [key]: filteredhomeContentFields[key].fields.file.url
-        });
-      }
-    }
-  };
-
   render() {
+    const locale = this.props.match.params.locale
     return (
       <Container>
         {/* FULL SCREEN PAGE HEADER */}
@@ -91,12 +56,12 @@ class Security extends React.Component {
           <Row className="center-in-row security-header-row">
             <img className="security-line" src={Line} />
             <h1 className="primary_font security-header-text">
-              {this.state.securityTitle}
+              {this.state.data.securityTitle}
             </h1>
           </Row>
           <Row className="center-in-row pb-5 security-title-row">
             <p className="secondary_font security-header-subtitle security-header-text">
-              {this.state.securitySubtitle}
+              {this.state.data.securitySubtitle}
             </p>
           </Row>
         </MediaQuery>
@@ -105,12 +70,12 @@ class Security extends React.Component {
           <Container className="center-in-row security-header-row">
             <Row className="center-in-row ">
               <h1 className="primary_font security-header-text">
-                {this.state.securityTitle}
+                {this.state.data.securityTitle}
               </h1>
             </Row>
             <Row className="center-in-row mobile-security-title-row">
               <p className="secondary_font mobile-security-header-subtitle security-header-text">
-                {this.state.securitySubtitle}
+                {this.state.data.securitySubtitle}
               </p>
             </Row>
           </Container>
@@ -122,45 +87,45 @@ class Security extends React.Component {
               <img className="security-oval" src={Oval} />
               <img className="security-blue-stroke-10" src={BlueStroke10} />
               <h1 className="primary_font security-subheader security-header-text">
-                {this.state.securityFeaturesTitle}
+                {this.state.data.securityFeaturesTitle}
               </h1>
             </Row>
             <Row className="center-in-row">
               <SecurityFeatureObject
-                securityFeatures={this.state.securityFeaturesItems}
+                securityFeatures={this.state.data.securityFeaturesItems}
               />
             </Row>
           </div>
           <div className="full-width-dark-blue">
             <Row className="center-in-row security-content-row-header">
               <h1 className="primary_font white-font security-subheader ">
-                {this.state.securityQuestionTitle}
+                {this.state.data.securityQuestionTitle}
               </h1>
             </Row>
             <Row className="center-in-row">
               <p className="secondary_font white-font security-questions-blurb">
-                {this.state.securityQuestionBlurb}
+                {this.state.data.securityQuestionBlurb}
               </p>
             </Row>
             <Row className="center-in-row pb-5 security-content-row-footer">
               <NavLink to="contact">
                 <button className="security-button">
-                  {this.state.securityQuestionButtonText}
+                  {this.state.data.securityQuestionButtonText}
                 </button>
               </NavLink>
             </Row>
           </div>
           <Row className="center-in-row pt-5 pb-5">
-            {this.identifyLocale(this.props.location) !== "zh-CN" && (
+            {locale !== "zh-CN" && (
               <p className="secondary_font">
                 Read more about our{" "}
-                <NavLink to="privacy">Privacy Policy</NavLink> and&nbsp;
+                <NavLink to="privacy-policy">Privacy Policy</NavLink> and&nbsp;
                 <NavLink to="terms-of-service">Terms of Service</NavLink>
               </p>
             )}
-            {this.identifyLocale(this.props.location) === "zh-CN" && (
+            {locale === "zh-CN" && (
               <p className="secondary_font">
-                中文中文中文 <NavLink to="privacy">Privacy Policy</NavLink>{" "}
+                中文中文中文 <NavLink to="privacy-policy">Privacy Policy</NavLink>{" "}
                 and&nbsp;
                 <NavLink to="terms-of-service">Terms of Service</NavLink>
               </p>
@@ -171,42 +136,42 @@ class Security extends React.Component {
         <MediaQuery query="(max-device-width: 1223px)">
           <Row className="center-in-row light-blue-background mobile-security-content-row-header mt-5">
             <h1 className="primary_font mobile-security-subheader security-header-text">
-              {this.state.securityFeaturesTitle}
+              {this.state.data.securityFeaturesTitle}
             </h1>
           </Row>
           <Row className="center-in-row light-blue-background">
             <MobileSecurityFeatureObject
-              securityFeatures={this.state.securityFeaturesItems}
+              securityFeatures={this.state.data.securityFeaturesItems}
             />
           </Row>
           <Row className="center-in-row dark-blue-background">
             <h1 className="primary_font white-font mobile-security-subheader pt-5">
-              {this.state.securityQuestionTitle}
+              {this.state.data.securityQuestionTitle}
             </h1>
           </Row>
           <Row className="center-in-row dark-blue-background">
             <p className="secondary_font white-font security-questions-blurb">
-              {this.state.securityQuestionBlurb}
+              {this.state.data.securityQuestionBlurb}
             </p>
           </Row>
           <Row className="center-in-row pb-5 mobile-security-content-button dark-blue-background">
             <NavLink to="contact">
               <button className="security-button">
-                {this.state.securityQuestionButtonText}
+                {this.state.data.securityQuestionButtonText}
               </button>
             </NavLink>
           </Row>
           <Row className="center-in-row mobile-security-read-more pb-5">
-            {this.identifyLocale(this.props.location) !== "zh-CN" && (
+            {locale !== "zh-CN" && (
               <p className="secondary_font">
                 Read more about our{" "}
-                <NavLink to="privacy">Privacy Policy</NavLink> and&nbsp;
+                <NavLink to="privacy-policy">Privacy Policy</NavLink> and&nbsp;
                 <NavLink to="terms-of-service">Terms of Service</NavLink>
               </p>
             )}
-            {this.identifyLocale(this.props.location) === "zh-CN" && (
+            {locale === "zh-CN" && (
               <p className="secondary_font">
-                中文中文中文 <NavLink to="privacy">Privacy Policy</NavLink>
+                中文中文中文 <NavLink to="privacy-policy">Privacy Policy</NavLink>
                 and&nbsp;
                 <NavLink to="terms-of-service">Terms of Service</NavLink>
               </p>

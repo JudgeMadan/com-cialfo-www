@@ -64,6 +64,23 @@ code {
   background-color: #ebf9ff !important;
 }
 
+.subFooterItem {
+  padding: .75rem 1.25rem;
+  color: #676767;
+}
+
+.subFooterItem a {
+  font-family: "roboto_regular";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-right: 21px;
+}
+
+.subFooterItem a:last-child {
+  margin-right: 0;
+}
+
 .marqueeElement {
   display: inline-block;
   margin: 0 20px;
@@ -358,4 +375,8 @@ button:hover {
 
 .sharp-corners-button {
   border-radius: 0px !important;
+}
+
+.schoolTestimonialsTitle {
+  justify-content: center;
 }

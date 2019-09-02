@@ -3,61 +3,38 @@ import ClientStoriesMarqueeListObject from "./clientStoriesMarqueeList/ClientSto
 import * as contentful from "contentful";
 import Row from "react-bootstrap/Row";
 import { withRouter } from "react-router-dom";
+import { DataContext } from "../../../contexts/DataContext"
 
 class ClientStoriesMarqueeList extends React.Component {
+  static contextType = DataContext;
+
   constructor(props) {
     super(props);
     this.state = {
-      schoolInfo: []
+      schoolInfo: [],
     };
   }
 
-  setSpace = () => {
-    return this.props.setSpace(this.props.match.params.space);
-  };
-
-  setAccessToken = () => {
-    return this.props.setAccessToken(this.props.match.params.space);
-  };
-
-  client = contentful.createClient({
-    space: this.setSpace(),
-    accessToken: this.setAccessToken(),
-    environment: this.props.environment
-  });
 
   componentDidMount() {
-    this.fetchContent().then(this.setContent);
+    this.context.fetchEntries("clientStory", true).then((response) => {
+      let data = this.context.setSchoolMarqueeContent(response, "clientStory")
+      this.setState({
+        schoolInfo: data
+      })
+    });
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.locale !== this.props.match.params.locale) {
-      this.fetchContent().then(this.setContent);
+      this.context.fetchEntries("clientStory", true).then((response) => {
+        let data = this.context.setSchoolMarqueeContent(response, "clientStory")
+        this.setState({
+          schoolInfo: data
+        })
+      });
     }
   }
-
-  fetchContent = () =>
-    this.client.getEntries({
-      content_type: "clientStory",
-      locale: this.props.match.params.locale
-    });
-
-  setContent = response => {
-    const pageContent = response.items;
-    this.setState({ schoolInfo: [] });
-    for (let key in pageContent) {
-      let schoolObject = {
-        blurb: pageContent[key].fields.clientStoryStoryBlurb,
-        logo: pageContent[key].fields.clientStoryLogo.fields.file.url,
-        route: pageContent[key].fields.pageRoute,
-        id: pageContent[key].sys.id
-      };
-
-      let schoolInfo = this.state.schoolInfo.slice();
-      schoolInfo.push(schoolObject);
-      this.setState({ schoolInfo: schoolInfo });
-    }
-  };
 
   render() {
     const schoolInfo = this.state.schoolInfo;
@@ -75,7 +52,6 @@ class ClientStoriesMarqueeList extends React.Component {
         );
       });
     }
-
     return <Row>{schoolInfoArray}</Row>;
   }
 }

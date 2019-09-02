@@ -12,17 +12,18 @@ import "./Layout/Layout.css";
 import MediaQuery from "react-responsive";
 import PathToRegexp, { compile, parse } from "path-to-regexp";
 import { withRouter } from "react-router-dom";
+import { DataContext } from "../contexts/DataContext"
+
 class Footer extends React.Component {
+  static contextType = DataContext;
+
   constructor(props) {
     super(props);
     this.state = {
       height: window.innerHeight,
-      width: window.innerWidth
+      width: window.innerWidth,
+      data: {}
     };
-  }
-
-  componentDidMount() {
-    window.addEventListener("resize", this.updateDimensions);
   }
 
   componentWillUnmount() {
@@ -36,14 +37,6 @@ class Footer extends React.Component {
     });
   };
 
-  generateLocale = location => {
-    const ROUTE = "/:space/:locale/:path*";
-    const routeComponents = PathToRegexp(ROUTE).exec(location);
-    if (routeComponents) {
-      return routeComponents[2];
-    } else return;
-  };
-
   generateSpace = location => {
     const ROUTE = "/:space/:locale/:path*";
     const routeComponents = PathToRegexp(ROUTE).exec(location);
@@ -52,105 +45,29 @@ class Footer extends React.Component {
     } else return;
   };
 
-  setSpace = () => {
-    if (this.generateSpace(this.props.location.pathname)) {
-      if (this.generateSpace(this.props.location.pathname) === "cn") {
-        return this.props.spaces.cn.space;
-      } else if (this.generateSpace(this.props.location.pathname) === "intl") {
-        return this.props.spaces.intl.space;
-      } else if (this.generateSpace(this.props.location.pathname) === "in") {
-        return this.props.spaces.india.space;
-      } else if (this.generateSpace(this.props.location.pathname) === "us") {
-        return this.props.spaces.us.space;
-      }
-    } else {
-      if (this.props.spaceName === "china") {
-        return this.props.spaces.cn.space;
-      } else if (this.props.spaceName === "india") {
-        return this.props.spaces.india.space;
-      } else if (this.props.spaceName === "intl") {
-        return this.props.spaces.intl.space;
-      } else if (this.props.spaceName === "us") {
-        return this.props.spaces.us.space;
-      }
-    }
-  };
-
-  setAccessToken = () => {
-    if (this.generateSpace(this.props.location.pathname)) {
-      if (this.generateSpace(this.props.location.pathname) === "cn") {
-        return this.props.spaces.cn.accessToken;
-      } else if (this.generateSpace(this.props.location.pathname) === "intl") {
-        return this.props.spaces.intl.accessToken;
-      } else if (this.generateSpace(this.props.location.pathname) === "in") {
-        return this.props.spaces.india.accessToken;
-      } else if (this.generateSpace(this.props.location.pathname) === "us") {
-        return this.props.spaces.us.accessToken;
-      }
-    } else {
-      if (this.props.spaceName === "china") {
-        return this.props.spaces.cn.accessToken;
-      } else if (this.props.spaceName === "intl") {
-        return this.props.spaces.intl.accessToken;
-      } else if (this.props.spaceName === "india") {
-        return this.props.spaces.india.accessToken;
-      } else if (this.props.spaceName === "us") {
-        return this.props.spaces.us.accessToken;
-      }
-    }
-  };
-
-  generateUrl = (path, location) => {
-    const ROUTE = "/:space/:locale/:path*";
-    const definePath = compile(ROUTE);
-    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
-    if (routeComponents && routeComponents[3]) {
-      return definePath({
-        space: routeComponents[1],
-        locale: routeComponents[2],
-        path: path
-      });
-    } else if (routeComponents && routeComponents[3] == undefined) {
-      return definePath({
-        space: routeComponents[1],
-        locale: routeComponents[2],
-        path: "a"
-      });
-    }
-  };
-
-  fetchNavBar = () =>
-    contentful
-      .createClient({
-        space: this.setSpace(),
-        accessToken: this.setAccessToken(),
-        environment: this.props.environment
-      })
-      .getEntries({
-        content_type: "footer",
-        locale: this.generateLocale(this.props.location.pathname)
-      });
-
-  setNavBar = response => {
-    const footerContent = response.items[0].fields;
-    for (let key in footerContent) {
-      this.setState({
-        [key]: footerContent[key]
-      });
-    }
-  };
-
   componentDidMount() {
-    this.fetchNavBar().then(this.setNavBar);
+    window.addEventListener("resize", this.updateDimensions);
+    this.context.fetchEntries("footer").then((response) => {
+      let data = this.context.setContent(response)
+      this.setState({
+        data: data
+      })
+    });
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
-      this.fetchNavBar().then(this.setNavBar);
+      this.context.fetchEntries("footer").then((response) => {
+        let data = this.context.setContent(response)
+        this.setState({
+          data: data
+        })
+      });
     }
   }
 
   render() {
+    const { data } = this.state;
     return (
       <div>
         <MediaQuery query="(min-device-width: 1224px)">
@@ -165,11 +82,11 @@ class Footer extends React.Component {
                   <Nav>
                     <ListGroup variant="flush">
                       <ListGroup.Item className="pb-1 pt-1 font-weight-bold footerListGroupItem">
-                        {this.state.platform}
+                        {data.platform}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink className="footer-nav-link" to="features">
-                          {this.state.whyCialfo}
+                          {data.whyCialfo}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
@@ -177,7 +94,7 @@ class Footer extends React.Component {
                           className="footer-nav-link"
                           to="solutions-principals"
                         >
-                          {this.state.forPrincipals}
+                          {data.forPrincipals}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
@@ -185,7 +102,7 @@ class Footer extends React.Component {
                           className="footer-nav-link"
                           to="solutions-counselors"
                         >
-                          {this.state.forCounselors}
+                          {data.forCounselors}
                         </NavLink>
                       </ListGroup.Item>
                       {/* <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
@@ -199,7 +116,7 @@ class Footer extends React.Component {
                           className="footer-nav-link"
                           to="solutions-superintendents"
                         >
-                          {this.state.forSuperintendents}
+                          {data.forSuperintendents}
                         </NavLink>
                       </ListGroup.Item>
                     )}
@@ -210,7 +127,7 @@ class Footer extends React.Component {
                   <Nav>
                     <ListGroup variant="flush">
                       <ListGroup.Item className="font-weight-bold pt-1 pb-1 footerListGroupItem">
-                        {this.state.resources}
+                        {data.resources}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <a
@@ -218,7 +135,7 @@ class Footer extends React.Component {
                           href="https://help.cialfo.co"
                           target="_blank"
                         >
-                          {this.state.knowledgeBase}
+                          {data.knowledgeBase}
                         </a>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
@@ -227,12 +144,12 @@ class Footer extends React.Component {
                           href="https://facebook.com/cialfo"
                           target="_blank"
                         >
-                          {this.state.community}
+                          {data.community}
                         </a>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink className="footer-nav-link" to="events">
-                          {this.state.events}
+                          {data.events}
                         </NavLink>
                       </ListGroup.Item>
                     </ListGroup>
@@ -242,11 +159,11 @@ class Footer extends React.Component {
                   <Nav>
                     <ListGroup variant="flush">
                       <ListGroup.Item className="pb-1 pt-1 font-weight-bold footerListGroupItem">
-                        {this.state.team}
+                        {data.team}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink className="footer-nav-link" to="about">
-                          {this.state.aboutUs}
+                          {data.aboutUs}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
@@ -255,7 +172,7 @@ class Footer extends React.Component {
                           href="https://blog.cialfo.co"
                           target="_blank"
                         >
-                          {this.state.blog}
+                          {data.blog}
                         </a>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
@@ -264,7 +181,7 @@ class Footer extends React.Component {
                           href="https://angel.co/company/cialfo"
                           target="_blank"
                         >
-                          {this.state.careers}
+                          {data.careers}
                         </a>
                       </ListGroup.Item>
                     </ListGroup>
@@ -275,7 +192,8 @@ class Footer extends React.Component {
             <Col className="justify-content-sm-end justify-content-md-end  footer-logo">
               <Row className="justify-content-sm-end justify-content-md-end">
                 <Link
-                  to={this.generateUrl("home", this.props.location)}
+                  // to={this.generateUrl("home", this.props.location)}
+                  to="home"
                   className="navbar-brand"
                 >
                   <img className="footer-logo-image logo" src={Logo} />
@@ -283,9 +201,37 @@ class Footer extends React.Component {
               </Row>
             </Col>
           </NavBar>
+          <NavBar>
+            <Nav>
+              <Row>
+                <Col>
+                  <div className="pb-1 pt-1 subFooterItem">
+                    <NavLink
+                      className="footer-nav-link"
+                      to="privacy-policy"
+                    >
+                      {data.privacy}
+                    </NavLink>
+                    <NavLink
+                      className="footer-nav-link"
+                      to="terms-and-conditions"
+                    >
+                      {data.termsOfService}
+                    </NavLink>
+                    <NavLink
+                      className="footer-nav-link"
+                      to="contact"
+                    >
+                      {data.contactUs}
+                    </NavLink>
+                  </div>
+                </Col>
+              </Row>
+            </Nav>
+          </NavBar>
         </MediaQuery>
         {/* MOBILE FOOTER */}
-        <MediaQuery query="(max-device-width: 1223px)">
+        <MediaQuery query="(max-device-width: 1223px) and (min-width: 386px)">
           <NavBar
             className="
             footer-background align-items-start justify-content-between footer"
@@ -297,11 +243,11 @@ class Footer extends React.Component {
                   <Nav>
                     <ListGroup variant="flush">
                       <ListGroup.Item className="pb-1 pt-1 font-weight-bold footerListGroupItem">
-                        {this.state.platform}
+                        {data.platform}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink className="footer-nav-link" to="features">
-                          {this.state.whyCialfo}
+                          {data.whyCialfo}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
@@ -309,7 +255,7 @@ class Footer extends React.Component {
                           className="footer-nav-link"
                           to="solutions-principals"
                         >
-                          {this.state.forPrincipals}
+                          {data.forPrincipals}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
@@ -317,7 +263,7 @@ class Footer extends React.Component {
                           className="footer-nav-link"
                           to="solutions-counselors"
                         >
-                          {this.state.forCounselors}
+                          {data.forCounselors}
                         </NavLink>
                       </ListGroup.Item>
                       {/* <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
@@ -331,7 +277,7 @@ class Footer extends React.Component {
                           className="footer-nav-link"
                           to="solutions-superintendents"
                         >
-                          {this.state.forSuperintendents}
+                          {data.forSuperintendents}
                         </NavLink>
                       </ListGroup.Item>
                     )}
@@ -342,7 +288,7 @@ class Footer extends React.Component {
                   <Nav>
                     <ListGroup variant="flush">
                       <ListGroup.Item className="font-weight-bold pt-1 pb-1 footerListGroupItem">
-                        {this.state.resources}
+                        {data.resources}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <a
@@ -350,7 +296,7 @@ class Footer extends React.Component {
                           href="https://help.cialfo.co"
                           target="_blank"
                         >
-                          {this.state.knowledgeBase}
+                          {data.knowledgeBase}
                         </a>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
@@ -359,12 +305,12 @@ class Footer extends React.Component {
                           href="https://facebook.com/cialfo"
                           target="_blank"
                         >
-                          {this.state.community}
+                          {data.community}
                         </a>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink className="footer-nav-link" to="events">
-                          {this.state.events}
+                          {data.events}
                         </NavLink>
                       </ListGroup.Item>
                     </ListGroup>
@@ -374,11 +320,11 @@ class Footer extends React.Component {
                   <Nav>
                     <ListGroup variant="flush">
                       <ListGroup.Item className="pb-1 pt-3 font-weight-bold footerListGroupItem">
-                        {this.state.team}
+                        {data.team}
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
                         <NavLink className="footer-nav-link" to="about">
-                          {this.state.aboutUs}
+                          {data.aboutUs}
                         </NavLink>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
@@ -387,7 +333,7 @@ class Footer extends React.Component {
                           href="https://blog.cialfo.co"
                           target="_blank"
                         >
-                          {this.state.blog}
+                          {data.blog}
                         </a>
                       </ListGroup.Item>
                       <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
@@ -396,7 +342,7 @@ class Footer extends React.Component {
                           href="https://angel.co/company/cialfo"
                           target="_blank"
                         >
-                          {this.state.careers}
+                          {data.careers}
                         </a>
                       </ListGroup.Item>
                     </ListGroup>
@@ -404,6 +350,181 @@ class Footer extends React.Component {
                 </Col>
               </Row>
             </Col>
+          </NavBar>
+          <NavBar>
+            <Nav>
+              <Row>
+                <Col>
+                  <div className="pb-1 pt-1 subFooterItem">
+                    <NavLink
+                      className="footer-nav-link"
+                      to="privacy-policy"
+                    >
+                      {data.privacy}
+                    </NavLink>
+                    <NavLink
+                      className="footer-nav-link"
+                      to="terms-and-conditions"
+                    >
+                      {data.termsOfService}
+                    </NavLink>
+                    <NavLink
+                      className="footer-nav-link"
+                      to="contact"
+                    >
+                      {data.contactUs}
+                    </NavLink>
+                  </div>
+                </Col>
+              </Row>
+            </Nav>
+          </NavBar>
+        </MediaQuery>
+        <MediaQuery query="(max-width: 385px)">
+          <NavBar
+            className="
+            footer-background align-items-start justify-content-between footer"
+            sticky="bottom"
+          >
+            <Col>
+              <Row className="small">
+                <Col>
+                  <Nav>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item className="pb-1 pt-1 font-weight-bold footerListGroupItem">
+                        {data.platform}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink className="footer-nav-link" to="features">
+                          {data.whyCialfo}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link"
+                          to="solutions-principals"
+                        >
+                          {data.forPrincipals}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link"
+                          to="solutions-counselors"
+                        >
+                          {data.forCounselors}
+                        </NavLink>
+                      </ListGroup.Item>
+                      {/* <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink className="footer-nav-link" to="solutions-it">
+                          {this.state.forItTeams}
+                        </NavLink>
+                      </ListGroup.Item> */}
+                      {this.generateSpace(this.props.location.pathname) == "us" && (
+                      <ListGroup.Item className="pb-3 pt-1 footerListGroupItem">
+                        <NavLink
+                          className="footer-nav-link"
+                          to="solutions-superintendents"
+                        >
+                          {data.forSuperintendents}
+                        </NavLink>
+                      </ListGroup.Item>
+                    )}
+                    </ListGroup>
+                  </Nav>
+                </Col>
+                <Col>
+                  <Nav>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item className="font-weight-bold pt-1 pb-1 footerListGroupItem">
+                        {data.resources}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <a
+                          className="footer-nav-link"
+                          href="https://help.cialfo.co"
+                          target="_blank"
+                        >
+                          {data.knowledgeBase}
+                        </a>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <a
+                          className="footer-nav-link"
+                          href="https://facebook.com/cialfo"
+                          target="_blank"
+                        >
+                          {data.community}
+                        </a>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink className="footer-nav-link" to="events">
+                          {data.events}
+                        </NavLink>
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </Nav>
+                </Col>
+                <Col>
+                  <Nav>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item className="pb-1 pt-3 font-weight-bold footerListGroupItem">
+                        {data.team}
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <NavLink className="footer-nav-link" to="about">
+                          {data.aboutUs}
+                        </NavLink>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <a
+                          className="footer-nav-link"
+                          href="https://blog.cialfo.co"
+                          target="_blank"
+                        >
+                          {data.blog}
+                        </a>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="pb-1 pt-1 footerListGroupItem">
+                        <a
+                          className="footer-nav-link"
+                          href="https://angel.co/company/cialfo"
+                          target="_blank"
+                        >
+                          {data.careers}
+                        </a>
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </Nav>
+                </Col>
+              </Row>
+            </Col>
+          </NavBar>
+          <NavBar>
+            <Nav className="pb-1 pt-1 w-100 justify-content-between subFooterItem">
+              {/* <Row>
+                <Col> */}
+                  <NavLink
+                    className="footer-nav-link"
+                    to="privacy-policy"
+                  >
+                    {data.privacy}
+                  </NavLink>
+                  <NavLink
+                    className="footer-nav-link"
+                    to="terms-and-conditions"
+                  >
+                    {data.termsOfService}
+                  </NavLink>
+                  <NavLink
+                    className="footer-nav-link"
+                    to="contact"
+                  >
+                    {data.contactUs}
+                  </NavLink>
+                {/* </Col>
+              </Row> */}
+            </Nav>
           </NavBar>
         </MediaQuery>
       </div>

@@ -13,11 +13,11 @@ class PrivacyEnglish extends React.Component {
       <Container className="secondary_font pb-5">
         {/* FULL WIDTH ENGLISH PRIVACY */}
         <MediaQuery query="(min-device-width: 1224px)">
-          <div class="text-lg-center text-md-center text-sm-center text-xs-center">
+          <div className="text-lg-center text-md-center text-sm-center text-xs-center">
             <p className="hidden-xs-down privacy-upper-title primary_font">
               Cialfo
             </p>
-            <div class="h2 hidden-sm-up privacy-title primary_font">
+            <div className="h2 hidden-sm-up privacy-title primary_font">
               Privacy Policy
             </div>
             <br />
@@ -49,7 +49,7 @@ class PrivacyEnglish extends React.Component {
             Cialfo or a long-time user, please take the time to get to know our
             practices.
           </p>
-          <h3 class="text-uppercase">Personal Information We Collect</h3>
+          <h3 className="text-uppercase">Personal Information We Collect</h3>
           We collect personal information about you in the following ways:
           <h5>Information that you give us</h5>
           <p>
@@ -175,7 +175,7 @@ class PrivacyEnglish extends React.Component {
             your account or emailing us at{" "}
             <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>.
           </p>
-          <h3 class="text-uppercase">How We Use Your Personal Information</h3>
+          <h3 className="text-uppercase">How We Use Your Personal Information</h3>
           <h5>To provide the service</h5>
           <p>
             If you have a Cialfo account, we use your personal information to:
@@ -261,7 +261,7 @@ class PrivacyEnglish extends React.Component {
             against fraudulent, harmful, unauthorized, unethical or illegal
             activity.
           </p>
-          <h3 class="text-uppercase">How We Share your Personal Information</h3>
+          <h3 className="text-uppercase">How We Share your Personal Information</h3>
           <p>
             Our Policy does not cover any third party services. To learn about
             those third parties’ privacy practices, please read their privacy
@@ -311,7 +311,7 @@ class PrivacyEnglish extends React.Component {
               require the recipient to honor this Privacy Policy.
             </li>
           </ul>
-          <h3 class="text-uppercase">Platform Activities</h3>
+          <h3 className="text-uppercase">Platform Activities</h3>
           <p>
             With respects to our Service, Cialfo collects information under the
             direction of its customers (the data controller), and has no direct
@@ -339,7 +339,7 @@ class PrivacyEnglish extends React.Component {
             with our legal obligations, resolve disputes, and enforce our
             agreements.
           </p>
-          <h3 class="text-uppercase">Security</h3>
+          <h3 className="text-uppercase">Security</h3>
           <p>
             The security of your personal information important to us. We take a
             number of commercially reasonable organizational, technical and
@@ -353,7 +353,7 @@ class PrivacyEnglish extends React.Component {
             You should not use or reuse the same passwords you use with other
             accounts as your password for our Service.
           </p>
-          <h3 class="text-uppercase">International Transfer</h3>
+          <h3 className="text-uppercase">International Transfer</h3>
           <p>
             Cialfo is headquartered in Singapore and has affiliates and service
             providers in other countries. Your personal information may be
@@ -364,7 +364,7 @@ class PrivacyEnglish extends React.Component {
             EU from a non-EU country (e.g., U.S, Singapore, China or India) for
             technical and support related reasons.
           </p>
-          <h3 class="text-uppercase">Other sites and services</h3>
+          <h3 className="text-uppercase">Other sites and services</h3>
           <p>
             The service may contain links to other websites and services. These
             links are not an endorsement, authorization or representation that
@@ -375,7 +375,7 @@ class PrivacyEnglish extends React.Component {
             submit to them. We encourage you to read the privacy policies of the
             other websites you visit and services you use.
           </p>
-          <h3 class="text-uppercase">Social Media Widgets</h3>
+          <h3 className="text-uppercase">Social Media Widgets</h3>
           <p>
             Our site may include social media features, such as the Facebook
             “like” button and widgets, such as the “share this” button. These
@@ -385,7 +385,7 @@ class PrivacyEnglish extends React.Component {
             features are governed by the privacy policy of the company providing
             such functionality.
           </p>
-          <h3 class="text-uppercase">User Generated Content</h3>
+          <h3 className="text-uppercase">User Generated Content</h3>
           <p>
             We may make available on our site, or link to, features that allow
             you to share information online (e.g., on message boards, in chat
@@ -397,7 +397,7 @@ class PrivacyEnglish extends React.Component {
             information. By posting personal information online in public
             forums, you may receive unsolicited messages from other parties.
           </p>
-          <h3 class="text-uppercase">Children</h3>
+          <h3 className="text-uppercase">Children</h3>
           <p>
             We do not knowingly acquire or receive personal information from
             children under the age of 13. If you are under the age of 13, you
@@ -431,7 +431,7 @@ class PrivacyEnglish extends React.Component {
             posting of any modified Privacy Policy indicates your acceptance of
             the terms of the modified Privacy Policy.
           </p>
-          <h3 class="text-uppercase">Your Choices</h3>
+          <h3 className="text-uppercase">Your Choices</h3>
           <h5>Access, Update, Correct or Delete Your Information</h5>
           <p>
             All Cialfo account holders may review, update, correct or delete the
@@ -502,7 +502,7 @@ class PrivacyEnglish extends React.Component {
             receive the service by designating it as required in the service or
             through other appropriate means.
           </p>
-          <h3 class="text-uppercase">Questions?</h3>
+          <h3 className="text-uppercase">Questions?</h3>
           <p>
             If you have any questions or concerns at all about our Privacy
             Policy, please feel free to email us at{" "}
@@ -518,7 +518,7 @@ class PrivacyEnglish extends React.Component {
             <br />
             Attention: Data Protection Officer
           </p>
-          <h3 class="text-uppercase">
+          <h3 className="text-uppercase">
             Additional Information for European Union Users
           </h3>
           <h5>Personal information</h5>
@@ -538,14 +538,14 @@ class PrivacyEnglish extends React.Component {
         {/* MOBILE ENGLISH PRIVACY */}
         <MediaQuery query="(max-device-width: 1223px)">
           <Container>
-            <div class="text-lg-center text-md-center text-sm-center text-xs-center">
+            <div className="text-lg-center text-md-center text-sm-center text-xs-center">
               <Row className="center-in-row">
                 <p className="hidden-xs-down primary_font privacy-upper-title">
                   Cialfo
                 </p>
               </Row>
               <Row className="center-in-row px-4">
-                <div class="h1 hidden-sm-up primary_font mobile-privacy-title">
+                <div className="h1 hidden-sm-up primary_font mobile-privacy-title">
                   Privacy Policy
                 </div>
               </Row>
@@ -580,7 +580,7 @@ class PrivacyEnglish extends React.Component {
                 to Cialfo or a long-time user, please take the time to get to
                 know our practices.
               </p>
-              <h3 class="text-uppercase">Personal Information We Collect</h3>
+              <h3 className="text-uppercase">Personal Information We Collect</h3>
               We collect personal information about you in the following ways:
               <h5>Information that you give us</h5>
               <p>
@@ -710,7 +710,7 @@ class PrivacyEnglish extends React.Component {
                 your account or emailing us at{" "}
                 <a href="mailto:hello@cialfo.co">hello@cialfo.co</a>.
               </p>
-              <h3 class="text-uppercase">
+              <h3 className="text-uppercase">
                 How We Use Your Personal Information
               </h3>
               <h5>To provide the service</h5>
@@ -799,7 +799,7 @@ class PrivacyEnglish extends React.Component {
                 investigate and deter against fraudulent, harmful, unauthorized,
                 unethical or illegal activity.
               </p>
-              <h3 class="text-uppercase">
+              <h3 className="text-uppercase">
                 How We Share your Personal Information
               </h3>
               <p>
@@ -857,7 +857,7 @@ class PrivacyEnglish extends React.Component {
                   Privacy Policy.
                 </li>
               </ul>
-              <h3 class="text-uppercase">Platform Activities</h3>
+              <h3 className="text-uppercase">Platform Activities</h3>
               <p>
                 With respects to our Service, Cialfo collects information under
                 the direction of its customers (the data controller), and has no
@@ -886,7 +886,7 @@ class PrivacyEnglish extends React.Component {
                 necessary to comply with our legal obligations, resolve
                 disputes, and enforce our agreements.
               </p>
-              <h3 class="text-uppercase">Security</h3>
+              <h3 className="text-uppercase">Security</h3>
               <p>
                 The security of your personal information important to us. We
                 take a number of commercially reasonable organizational,
@@ -901,7 +901,7 @@ class PrivacyEnglish extends React.Component {
                 services. You should not use or reuse the same passwords you use
                 with other accounts as your password for our Service.
               </p>
-              <h3 class="text-uppercase">International Transfer</h3>
+              <h3 className="text-uppercase">International Transfer</h3>
               <p>
                 Cialfo is headquartered in Singapore and has affiliates and
                 service providers in other countries. Your personal information
@@ -913,7 +913,7 @@ class PrivacyEnglish extends React.Component {
                 (e.g., U.S, Singapore, China or India) for technical and support
                 related reasons.
               </p>
-              <h3 class="text-uppercase">Other sites and services</h3>
+              <h3 className="text-uppercase">Other sites and services</h3>
               <p>
                 The service may contain links to other websites and services.
                 These links are not an endorsement, authorization or
@@ -925,7 +925,7 @@ class PrivacyEnglish extends React.Component {
                 to read the privacy policies of the other websites you visit and
                 services you use.
               </p>
-              <h3 class="text-uppercase">Social Media Widgets</h3>
+              <h3 className="text-uppercase">Social Media Widgets</h3>
               <p>
                 Our site may include social media features, such as the Facebook
                 “like” button and widgets, such as the “share this” button.
@@ -935,7 +935,7 @@ class PrivacyEnglish extends React.Component {
                 interactions with these features are governed by the privacy
                 policy of the company providing such functionality.
               </p>
-              <h3 class="text-uppercase">User Generated Content</h3>
+              <h3 className="text-uppercase">User Generated Content</h3>
               <p>
                 We may make available on our site, or link to, features that
                 allow you to share information online (e.g., on message boards,
@@ -948,7 +948,7 @@ class PrivacyEnglish extends React.Component {
                 information online in public forums, you may receive unsolicited
                 messages from other parties.
               </p>
-              <h3 class="text-uppercase">Children</h3>
+              <h3 className="text-uppercase">Children</h3>
               <p>
                 We do not knowingly acquire or receive personal information from
                 children under the age of 13. If you are under the age of 13,
@@ -984,7 +984,7 @@ class PrivacyEnglish extends React.Component {
                 indicates your acceptance of the terms of the modified Privacy
                 Policy.
               </p>
-              <h3 class="text-uppercase">Your Choices</h3>
+              <h3 className="text-uppercase">Your Choices</h3>
               <h5>Access, Update, Correct or Delete Your Information</h5>
               <p>
                 All Cialfo account holders may review, update, correct or delete
@@ -1058,7 +1058,7 @@ class PrivacyEnglish extends React.Component {
                 must provide to receive the service by designating it as
                 required in the service or through other appropriate means.
               </p>
-              <h3 class="text-uppercase">Questions?</h3>
+              <h3 className="text-uppercase">Questions?</h3>
               <p>
                 If you have any questions or concerns at all about our Privacy
                 Policy, please feel free to email us at{" "}
@@ -1074,7 +1074,7 @@ class PrivacyEnglish extends React.Component {
                 <br />
                 Attention: Data Protection Officer
               </p>
-              <h3 class="text-uppercase">
+              <h3 className="text-uppercase">
                 Additional Information for European Union Users
               </h3>
               <h5>Personal information</h5>
