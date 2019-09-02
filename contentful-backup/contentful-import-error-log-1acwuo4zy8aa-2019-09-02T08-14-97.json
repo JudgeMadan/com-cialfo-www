@@ -1,0 +1,211 @@
+[
+  {
+    "ts": "2019-09-02T00:16:01.455Z",
+    "level": "error",
+    "error": {
+      "name": "VersionMismatch",
+      "entity": {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "1acwuo4zy8aa"
+            }
+          },
+          "id": "1nYul6umSkP8gstWeNakDq",
+          "type": "Asset",
+          "createdAt": "2019-05-03T05:49:12.432Z",
+          "updatedAt": "2019-09-02T00:15:25.038Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "publishedVersion": 22,
+          "publishedAt": "2019-08-08T13:03:40.879Z",
+          "firstPublishedAt": "2019-05-03T05:49:59.568Z",
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6IuCy1YvZDi5QYyZnCkV6Z"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6SozqT4fGTYorccFX9HCer"
+            }
+          },
+          "publishedCounter": 4,
+          "version": 25,
+          "publishedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6SozqT4fGTYorccFX9HCer"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "150+",
+            "zh-CN": "150+"
+          },
+          "file": {
+            "en-US": {
+              "url": "//images.ctfassets.net/1acwuo4zy8aa/1nYul6umSkP8gstWeNakDq/be25a6015b8d8bcb3fed9e5f14eb7fe9/150_.svg",
+              "details": {
+                "size": 2027,
+                "image": {
+                  "width": 195,
+                  "height": 88
+                }
+              },
+              "fileName": "150+.svg",
+              "contentType": "image/svg+xml"
+            },
+            "zh-CN": {
+              "upload": "https://images.ctfassets.net/1acwuo4zy8aa/1nYul6umSkP8gstWeNakDq/4e002c0bf49fda4d12a874e0c58f7ded/150_.svg",
+              "fileName": "150+.svg",
+              "contentType": "image/svg+xml"
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 409,
+        "statusText": "Conflict",
+        "message": "",
+        "details": {
+        },
+        "request": {
+          "url": "https://api.contentful.com:443/spaces/1acwuo4zy8aa/environments/master/assets/1nYul6umSkP8gstWeNakDq/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.36.2; feature space-import; sdk contentful-management.js/5.2.1; platform node.js/v10.15.3; os macOS/18.7.0;",
+            "Authorization": "Bearer ...jORoA",
+            "user-agent": "node.js/v10.15.3",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 25
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "9d7a937f9c62e17227ae270588b89d32"
+      }
+    }
+  },
+  {
+    "ts": "2019-09-02T00:16:18.597Z",
+    "level": "error",
+    "error": {
+      "name": "VersionMismatch",
+      "entity": {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "1acwuo4zy8aa"
+            }
+          },
+          "id": "1nYul6umSkP8gstWeNakDq",
+          "type": "Asset",
+          "createdAt": "2019-05-03T05:49:12.432Z",
+          "updatedAt": "2019-09-02T00:15:25.038Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "publishedVersion": 22,
+          "publishedAt": "2019-08-08T13:03:40.879Z",
+          "firstPublishedAt": "2019-05-03T05:49:59.568Z",
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6IuCy1YvZDi5QYyZnCkV6Z"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6SozqT4fGTYorccFX9HCer"
+            }
+          },
+          "publishedCounter": 4,
+          "version": 25,
+          "publishedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6SozqT4fGTYorccFX9HCer"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "150+",
+            "zh-CN": "150+"
+          },
+          "file": {
+            "en-US": {
+              "url": "//images.ctfassets.net/1acwuo4zy8aa/1nYul6umSkP8gstWeNakDq/be25a6015b8d8bcb3fed9e5f14eb7fe9/150_.svg",
+              "details": {
+                "size": 2027,
+                "image": {
+                  "width": 195,
+                  "height": 88
+                }
+              },
+              "fileName": "150+.svg",
+              "contentType": "image/svg+xml"
+            },
+            "zh-CN": {
+              "upload": "https://images.ctfassets.net/1acwuo4zy8aa/1nYul6umSkP8gstWeNakDq/4e002c0bf49fda4d12a874e0c58f7ded/150_.svg",
+              "fileName": "150+.svg",
+              "contentType": "image/svg+xml"
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 409,
+        "statusText": "Conflict",
+        "message": "",
+        "details": {
+        },
+        "request": {
+          "url": "https://api.contentful.com:443/spaces/1acwuo4zy8aa/environments/master/assets/1nYul6umSkP8gstWeNakDq/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.36.2; feature space-import; sdk contentful-management.js/5.2.1; platform node.js/v10.15.3; os macOS/18.7.0;",
+            "Authorization": "Bearer ...jORoA",
+            "user-agent": "node.js/v10.15.3",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 25
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "385e248355b0b20145feecfa107641f8"
+      }
+    }
+  },
+  {
+    "ts": "2019-09-02T00:16:18.597Z",
+    "level": "error",
+    "error": "Could not publish the following entities: 150+ (1nYul6umSkP8gstWeNakDq)"
+  }
+]

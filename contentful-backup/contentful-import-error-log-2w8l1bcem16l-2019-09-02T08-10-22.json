@@ -1,0 +1,415 @@
+[
+  {
+    "ts": "2019-09-02T00:12:26.003Z",
+    "level": "error",
+    "error": {
+      "name": "VersionMismatch",
+      "entity": {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "2w8l1bcem16l"
+            }
+          },
+          "id": "7gspsNt6SqxBsKqEu7I71A",
+          "type": "Asset",
+          "createdAt": "2019-06-06T08:28:49.160Z",
+          "updatedAt": "2019-09-02T00:11:21.594Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "publishedVersion": 15,
+          "publishedAt": "2019-08-08T12:59:34.778Z",
+          "firstPublishedAt": "2019-06-06T08:31:17.205Z",
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6IuCy1YvZDi5QYyZnCkV6Z"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6SozqT4fGTYorccFX9HCer"
+            }
+          },
+          "publishedCounter": 4,
+          "version": 18,
+          "publishedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6SozqT4fGTYorccFX9HCer"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "23",
+            "zh-CN": "23"
+          },
+          "file": {
+            "en-US": {
+              "url": "//images.ctfassets.net/2w8l1bcem16l/7gspsNt6SqxBsKqEu7I71A/817b77e3cbb7f124255649f9bec082ae/23.svg",
+              "details": {
+                "size": 1755,
+                "image": {
+                  "width": 110,
+                  "height": 86
+                }
+              },
+              "fileName": "23.svg",
+              "contentType": "image/svg+xml"
+            },
+            "zh-CN": {
+              "upload": "https://images.ctfassets.net/2w8l1bcem16l/7gspsNt6SqxBsKqEu7I71A/bb39d045befcff13bc3094bbd22758c0/23.svg",
+              "fileName": "23.svg",
+              "contentType": "image/svg+xml"
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 409,
+        "statusText": "Conflict",
+        "message": "",
+        "details": {
+        },
+        "request": {
+          "url": "https://api.contentful.com:443/spaces/2w8l1bcem16l/environments/master/assets/7gspsNt6SqxBsKqEu7I71A/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.36.2; feature space-import; sdk contentful-management.js/5.2.1; platform node.js/v10.15.3; os macOS/18.7.0;",
+            "Authorization": "Bearer ...jORoA",
+            "user-agent": "node.js/v10.15.3",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 18
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "6d823dcd5e1f24aae830bb7963ee1981"
+      }
+    }
+  },
+  {
+    "ts": "2019-09-02T00:12:32.873Z",
+    "level": "error",
+    "error": {
+      "name": "VersionMismatch",
+      "entity": {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "2w8l1bcem16l"
+            }
+          },
+          "id": "1gygHdM8KbQfoELmArs27D",
+          "type": "Asset",
+          "createdAt": "2019-06-06T08:28:47.425Z",
+          "updatedAt": "2019-09-02T00:11:32.795Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "publishedVersion": 15,
+          "publishedAt": "2019-08-08T12:59:43.298Z",
+          "firstPublishedAt": "2019-06-06T08:30:59.282Z",
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6IuCy1YvZDi5QYyZnCkV6Z"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6SozqT4fGTYorccFX9HCer"
+            }
+          },
+          "publishedCounter": 4,
+          "version": 18,
+          "publishedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6SozqT4fGTYorccFX9HCer"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "download on app store",
+            "zh-CN": "image"
+          },
+          "file": {
+            "en-US": {
+              "url": "//images.ctfassets.net/2w8l1bcem16l/1gygHdM8KbQfoELmArs27D/cbaf1322c90e1d70a7092b7842009ab6/image.svg",
+              "details": {
+                "size": 8429,
+                "image": {
+                  "width": 169,
+                  "height": 50
+                }
+              },
+              "fileName": "image.svg",
+              "contentType": "image/svg+xml"
+            },
+            "zh-CN": {
+              "upload": "https://images.ctfassets.net/2w8l1bcem16l/1gygHdM8KbQfoELmArs27D/3ed6cddda83f2bab6a40db9e34648785/image.svg",
+              "fileName": "image.svg",
+              "contentType": "image/svg+xml"
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 409,
+        "statusText": "Conflict",
+        "message": "",
+        "details": {
+        },
+        "request": {
+          "url": "https://api.contentful.com:443/spaces/2w8l1bcem16l/environments/master/assets/1gygHdM8KbQfoELmArs27D/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.36.2; feature space-import; sdk contentful-management.js/5.2.1; platform node.js/v10.15.3; os macOS/18.7.0;",
+            "Authorization": "Bearer ...jORoA",
+            "user-agent": "node.js/v10.15.3",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 18
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "98d331b363b184184eb10d63fbdccc6c"
+      }
+    }
+  },
+  {
+    "ts": "2019-09-02T00:13:00.583Z",
+    "level": "error",
+    "error": {
+      "name": "VersionMismatch",
+      "entity": {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "2w8l1bcem16l"
+            }
+          },
+          "id": "1gygHdM8KbQfoELmArs27D",
+          "type": "Asset",
+          "createdAt": "2019-06-06T08:28:47.425Z",
+          "updatedAt": "2019-09-02T00:11:32.795Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "publishedVersion": 15,
+          "publishedAt": "2019-08-08T12:59:43.298Z",
+          "firstPublishedAt": "2019-06-06T08:30:59.282Z",
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6IuCy1YvZDi5QYyZnCkV6Z"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6SozqT4fGTYorccFX9HCer"
+            }
+          },
+          "publishedCounter": 4,
+          "version": 18,
+          "publishedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6SozqT4fGTYorccFX9HCer"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "download on app store",
+            "zh-CN": "image"
+          },
+          "file": {
+            "en-US": {
+              "url": "//images.ctfassets.net/2w8l1bcem16l/1gygHdM8KbQfoELmArs27D/cbaf1322c90e1d70a7092b7842009ab6/image.svg",
+              "details": {
+                "size": 8429,
+                "image": {
+                  "width": 169,
+                  "height": 50
+                }
+              },
+              "fileName": "image.svg",
+              "contentType": "image/svg+xml"
+            },
+            "zh-CN": {
+              "upload": "https://images.ctfassets.net/2w8l1bcem16l/1gygHdM8KbQfoELmArs27D/3ed6cddda83f2bab6a40db9e34648785/image.svg",
+              "fileName": "image.svg",
+              "contentType": "image/svg+xml"
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 409,
+        "statusText": "Conflict",
+        "message": "",
+        "details": {
+        },
+        "request": {
+          "url": "https://api.contentful.com:443/spaces/2w8l1bcem16l/environments/master/assets/1gygHdM8KbQfoELmArs27D/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.36.2; feature space-import; sdk contentful-management.js/5.2.1; platform node.js/v10.15.3; os macOS/18.7.0;",
+            "Authorization": "Bearer ...jORoA",
+            "user-agent": "node.js/v10.15.3",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 18
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "50562b36ae17ac6473d6fdf80c08a842"
+      }
+    }
+  },
+  {
+    "ts": "2019-09-02T00:13:01.368Z",
+    "level": "error",
+    "error": {
+      "name": "VersionMismatch",
+      "entity": {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "2w8l1bcem16l"
+            }
+          },
+          "id": "7gspsNt6SqxBsKqEu7I71A",
+          "type": "Asset",
+          "createdAt": "2019-06-06T08:28:49.160Z",
+          "updatedAt": "2019-09-02T00:11:21.594Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "publishedVersion": 15,
+          "publishedAt": "2019-08-08T12:59:34.778Z",
+          "firstPublishedAt": "2019-06-06T08:31:17.205Z",
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6IuCy1YvZDi5QYyZnCkV6Z"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6SozqT4fGTYorccFX9HCer"
+            }
+          },
+          "publishedCounter": 4,
+          "version": 18,
+          "publishedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "6SozqT4fGTYorccFX9HCer"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "23",
+            "zh-CN": "23"
+          },
+          "file": {
+            "en-US": {
+              "url": "//images.ctfassets.net/2w8l1bcem16l/7gspsNt6SqxBsKqEu7I71A/817b77e3cbb7f124255649f9bec082ae/23.svg",
+              "details": {
+                "size": 1755,
+                "image": {
+                  "width": 110,
+                  "height": 86
+                }
+              },
+              "fileName": "23.svg",
+              "contentType": "image/svg+xml"
+            },
+            "zh-CN": {
+              "upload": "https://images.ctfassets.net/2w8l1bcem16l/7gspsNt6SqxBsKqEu7I71A/bb39d045befcff13bc3094bbd22758c0/23.svg",
+              "fileName": "23.svg",
+              "contentType": "image/svg+xml"
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 409,
+        "statusText": "Conflict",
+        "message": "",
+        "details": {
+        },
+        "request": {
+          "url": "https://api.contentful.com:443/spaces/2w8l1bcem16l/environments/master/assets/7gspsNt6SqxBsKqEu7I71A/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.36.2; feature space-import; sdk contentful-management.js/5.2.1; platform node.js/v10.15.3; os macOS/18.7.0;",
+            "Authorization": "Bearer ...jORoA",
+            "user-agent": "node.js/v10.15.3",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 18
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "ae7a2d06869c6e20271b0cc30d8d9a01"
+      }
+    }
+  },
+  {
+    "ts": "2019-09-02T00:13:01.368Z",
+    "level": "error",
+    "error": "Could not publish the following entities: download on app store (1gygHdM8KbQfoELmArs27D), 23 (7gspsNt6SqxBsKqEu7I71A)"
+  }
+]
