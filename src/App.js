@@ -7,7 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      environment: "master",
+      environment: "staging",
       locale: "en-US",
       getADemoEmail: "",
       chinaSpace: {
@@ -105,7 +105,7 @@ class App extends Component {
         //   country_code: country_code,
         //   spaceName: this.state.chinaSpace.spaceName
         // });
-        window.location.href="https://cialfo.cn"
+        window.location.href = "https://cialfo.cn";
       } else if (country_code === "country_code=IN") {
         this.setState({
           space: this.state.indiaSpace.space,
@@ -152,7 +152,7 @@ class App extends Component {
   setSpace = url => {
     if (url === "cn") {
       // return this.state.spaces.cn.space;
-      window.location.href="https://cialfo.cn"
+      window.location.href = "https://cialfo.cn";
     } else if (url === "intl") {
       return this.state.spaces.intl.space;
     } else if (url === "in") {
