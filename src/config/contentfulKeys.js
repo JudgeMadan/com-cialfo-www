@@ -1,5 +1,5 @@
 export const contenfulConfig = {
-  environment: "staging",
+  environment: "master",
   chinaSpace: {
     space: "1acwuo4zy8aa",
     accessToken:
@@ -25,5 +25,5 @@ export const contenfulConfig = {
     space: "6z68mehe72kf",
     accessToken: "yuqqUFmLi3xxrPn472eQQJP5Qe5hcjxZahdXKfdNnrc",
     spaceName: "shared"
-  },
-}
+  }
+};
