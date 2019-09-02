@@ -20,6 +20,7 @@ class App extends Component {
     });
   };
 
+
   componentDidMount() {
     if (this.context.generateSpaceAndAccess().spaceName === "china") {
       window.location.href = "https://cialfo.cn"
